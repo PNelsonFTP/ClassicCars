@@ -341,10 +341,10 @@ describe("unknown values, sale types and grouping", () => {
     ).toBeNull();
   });
 
-  it("surfaces two ungrouped lookalikes for review without collapsing them", () => {
+  it("keeps generic lookalikes separate without flooding evidence review", () => {
     const a = car("a");
     const b = car("b");
-    expect(potentialDuplicates([a, b])).toEqual([["a", "b"]]);
+    expect(potentialDuplicates([a, b])).toEqual([]);
     expect(searchListings([a, b], search())).toMatchObject({
       rawCount: 2,
       groupCount: 2,

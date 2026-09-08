@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:70078ca1-0a50-4b39-8a02-5bef376467d6",
+  "serialNumber": "urn:uuid:b1fc3239-f438-4fea-ac58-f4d4243b1d93",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-09-08T03:25:44.600Z",
+    "timestamp": "2026-09-08T17:09:59.693Z",
     "lifecycles": [
       {
         "phase": "build"
@@ -19,12 +19,12 @@
       }
     ],
     "component": {
-      "bom-ref": "musclescout@1.0.0",
+      "bom-ref": "musclescout@1.1.0",
       "type": "application",
       "name": "musclescout",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "scope": "required",
-      "purl": "pkg:npm/musclescout@1.0.0",
+      "purl": "pkg:npm/musclescout@1.1.0",
       "properties": [
         {
           "name": "cdx:npm:package:private",
@@ -36,7 +36,7 @@
         },
         {
           "name": "musclescout:package-lock:sha256",
-          "value": "e8e19800d9cbdfb26b673831fc73ce96641c01ec7b577836db5a424f6f4c3092"
+          "value": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa"
         }
       ],
       "externalReferences": []
@@ -4672,6 +4672,41 @@
       ]
     },
     {
+      "bom-ref": "ajv-formats-draft2019@1.6.1",
+      "type": "library",
+      "name": "ajv-formats-draft2019",
+      "version": "1.6.1",
+      "scope": "required",
+      "author": "Carlo Quinonez <carlo@machina.bio>",
+      "description": "Plugin for AJV that adds support for some of string formats adding in the draft2019 JSON Schema.",
+      "purl": "pkg:npm/ajv-formats-draft2019@1.6.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/ajv-formats-draft2019/-/ajv-formats-draft2019-1.6.1.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "2503ef6afa64583bc8b01a76677dd49180ad5c24a95b81c3ded019fa82f888414e93da1b4197dfc74c80370102b7abf3afa113fbb1cde5ccd1caa5db9eafeed1"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "fast-uri@3.1.7",
       "type": "library",
       "name": "fast-uri",
@@ -4764,6 +4799,10 @@
         {
           "name": "cdx:npm:package:development",
           "value": "true"
+        },
+        {
+          "name": "musclescout:original-vcs-reference",
+          "value": "git@github.com:chaijs/assertion-error.git"
         }
       ],
       "externalReferences": [
@@ -4773,7 +4812,7 @@
         },
         {
           "type": "vcs",
-          "url": "git@github.com:chaijs/assertion-error.git"
+          "url": "ssh://git@github.com/chaijs/assertion-error.git"
         }
       ],
       "hashes": [
@@ -5556,6 +5595,45 @@
       ]
     },
     {
+      "bom-ref": "commander@2.20.3",
+      "type": "library",
+      "name": "commander",
+      "version": "2.20.3",
+      "scope": "required",
+      "author": "TJ Holowaychuk <tj@vision-media.ca>",
+      "description": "the complete solution for node.js command-line programs",
+      "purl": "pkg:npm/commander@2.20.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/tj/commander.js.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1a956498cf2f176bd05248f62ef6660f7e49c5e24e2c2c09f5c524ba0ca4da7ba16efdfe989be92d862dfb4f9448cc44fa88fe7b2fe52449e1670ef9c7f38c71"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "confbox@0.2.4",
       "type": "library",
       "name": "confbox",
@@ -5666,7 +5744,12 @@
       "author": "André Cruz <andre@moxy.studio>",
       "description": "Cross platform child_process#spawn and child_process#spawnSync",
       "purl": "pkg:npm/cross-spawn@7.0.6",
-      "properties": [],
+      "properties": [
+        {
+          "name": "musclescout:original-vcs-reference",
+          "value": "git@github.com:moxystudio/node-cross-spawn.git"
+        }
+      ],
       "externalReferences": [
         {
           "type": "distribution",
@@ -5674,7 +5757,7 @@
         },
         {
           "type": "vcs",
-          "url": "git@github.com:moxystudio/node-cross-spawn.git"
+          "url": "ssh://git@github.com/moxystudio/node-cross-spawn.git"
         },
         {
           "type": "website",
@@ -6520,6 +6603,53 @@
       ]
     },
     {
+      "bom-ref": "discontinuous-range@1.0.0",
+      "type": "library",
+      "name": "discontinuous-range",
+      "version": "1.0.0",
+      "scope": "required",
+      "author": "David Tudury <david.tudury@gmail.com>",
+      "description": "for adding, subtracting, and indexing discontinuous ranges of numbers",
+      "purl": "pkg:npm/discontinuous-range@1.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/discontinuous-range/-/discontinuous-range-1.0.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/dtudury/discontinuous-range.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/dtudury/discontinuous-range"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/dtudury/discontinuous-range/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "73af0ba4b6cefbb90ffdbd47af5aacf3f049d3d1799216464f1ab166e873c699b024a3a04451c95886fdfca9aa9ea1e12dd3b9e5a3b1147fc4181bd441b2ff45"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "dom-serializer@2.0.0",
       "type": "library",
       "name": "dom-serializer",
@@ -7195,6 +7325,45 @@
         {
           "alg": "SHA-512",
           "content": "f54fe36548239d21b29ed46beb2e4cbaed4c25cc0597a90fbbb93ca8b17420c35f2eabf0d0d6789e7543ab4455a19d11bc2cae9a26f8133dca62b55f8a5af0fa"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "extend@3.0.2",
+      "type": "library",
+      "name": "extend",
+      "version": "3.0.2",
+      "scope": "required",
+      "author": "Stefan Thomas <justmoon@members.fsf.org> (http://www.justmoon.net)",
+      "description": "Port of jQuery.extend for node.js and the browser",
+      "purl": "pkg:npm/extend@3.0.2",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/extend/-/extend-3.0.2.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/justmoon/node-extend.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "7e3aae0b9f5c0fb0b25babab3572b4141b9f9197288861bcd304ee3ee8d7e7dd1c0794ed967db4136501e12fd601156a8577df665d8b3604be81074f2088a6fe"
         }
       ],
       "licenses": [
@@ -9039,6 +9208,41 @@
       ]
     },
     {
+      "bom-ref": "moo@0.5.3",
+      "type": "library",
+      "name": "moo",
+      "version": "0.5.3",
+      "scope": "required",
+      "author": "Tim Radvan <tim@tjvr.org>",
+      "description": "Optimised tokenizer/lexer generator! 🐄 Much performance. Moo!",
+      "purl": "pkg:npm/moo@0.5.3",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/moo/-/moo-0.5.3.tgz"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "9b67e63367439bb19942c63b28ad9c99ef1a822f800258c82e3427a1fee9d593037ba750e1b76748cc7470fa69b9da1e36fe61105422acdeaef8ee1f0c4d0858"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-3-Clause"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "mysql2@3.24.3",
       "type": "library",
       "name": "mysql2",
@@ -9210,6 +9414,45 @@
         {
           "alg": "SHA-512",
           "content": "1846eb6246df17b32835aa21da2186f383277ff5997c1d0674612c33cc33ec4c69c7f2e559fe54f2df67bc92974a9deaaf922c11b2b4e1c04686897f2b03ac58"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "nearley@2.20.1",
+      "type": "library",
+      "name": "nearley",
+      "version": "2.20.1",
+      "scope": "required",
+      "author": "Hardmath123",
+      "description": "Simple, fast, powerful parser toolkit for JavaScript.",
+      "purl": "pkg:npm/nearley@2.20.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/nearley/-/nearley-2.20.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/hardmath123/nearley.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f8c73c51a01e6c5ce057e2a92399fb0dab2eb9008703cf5d9b09bb257c374d5e37ba47cd43d0e7047dcc75bda0fc8e05771736ea9c229815af8c8c3450020b49"
         }
       ],
       "licenses": [
@@ -10387,7 +10630,12 @@
       "author": "André Cruz <andre@moxy.studio>",
       "description": "A inter-process and inter-machine lockfile utility that works on a local or network file system",
       "purl": "pkg:npm/proper-lockfile@4.1.2",
-      "properties": [],
+      "properties": [
+        {
+          "name": "musclescout:original-vcs-reference",
+          "value": "git@github.com:moxystudio/node-proper-lockfile.git"
+        }
+      ],
       "externalReferences": [
         {
           "type": "distribution",
@@ -10395,7 +10643,7 @@
         },
         {
           "type": "vcs",
-          "url": "git@github.com:moxystudio/node-proper-lockfile.git"
+          "url": "ssh://git@github.com/moxystudio/node-proper-lockfile.git"
         },
         {
           "type": "website",
@@ -10489,6 +10737,49 @@
       ]
     },
     {
+      "bom-ref": "punycode@2.3.1",
+      "type": "library",
+      "name": "punycode",
+      "version": "2.3.1",
+      "scope": "required",
+      "author": "Mathias Bynens",
+      "description": "A robust Punycode converter that fully complies to RFC 3492 and RFC 5891, and works on nearly all JavaScript platforms.",
+      "purl": "pkg:npm/punycode@2.3.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/punycode/-/punycode-2.3.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/mathiasbynens/punycode.js.git"
+        },
+        {
+          "type": "website",
+          "url": "https://mths.be/punycode"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "bd8b7b503d54f5683ad77f2c84bb4b3af740bbef03b02fe2945b44547707fb0c9d712a4d136d007d239db9fe8c91115a84be4563b5f5a14ee7295645b5fabc16"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "pure-rand@6.1.0",
       "type": "library",
       "name": "pure-rand",
@@ -10562,6 +10853,135 @@
         {
           "alg": "SHA-512",
           "content": "b580b5435860c91b87825a15fd85ecdb0d79ba73d587ca9fbbfa824df85361a99ac3b7f286e98a6b6c86a5d4a8f3bbd8df6ac87258fee1f59841750cb3d107be"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "railroad-diagrams@1.0.0",
+      "type": "library",
+      "name": "railroad-diagrams",
+      "version": "1.0.0",
+      "scope": "required",
+      "author": "Tab Atkins Jr.",
+      "description": "A small JS+SVG library for drawing railroad syntax diagrams.",
+      "purl": "pkg:npm/railroad-diagrams@1.0.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/railroad-diagrams/-/railroad-diagrams-1.0.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "https://github.com/tabatkins/railroad-diagrams.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/tabatkins/railroad-diagrams"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/tabatkins/railroad-diagrams/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "733f770e335e2d8d2276b08d387e8fbe264644df46261b1d9bd8699f56024bcefd7e3e16fb1e4814986191165cc1580c98517b47cd9403fece87e47c94b660e8"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "CC0-1.0"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "randexp@0.4.6",
+      "type": "library",
+      "name": "randexp",
+      "version": "0.4.6",
+      "scope": "required",
+      "author": "Roly Fentanes (https://github.com/fent)",
+      "description": "Create random strings that match a given regular expression.",
+      "purl": "pkg:npm/randexp@0.4.6",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/randexp/-/randexp-0.4.6.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/fent/randexp.js.git"
+        },
+        {
+          "type": "website",
+          "url": "http://fent.github.io/randexp.js/"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "f3458d99df43034b6666bc3da906bad863cf59fb972649eb99598b731beae2e641758a9bd706282939a794651c86f5567b45e22eea58901a1754ec73dc2f0361"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "ret@0.1.15",
+      "type": "library",
+      "name": "ret",
+      "version": "0.1.15",
+      "scope": "required",
+      "author": "Roly Fentanes (https://github.com/fent)",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "purl": "pkg:npm/ret@0.1.15",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/ret/-/ret-0.1.15.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/fent/ret.js.git"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "4d3958a5af8e2febcc30d1b6e314a5406109dc1fd1cc47d494b72dedbe46ff2b5abfec0fae9942a55305bb0cd76e479c26b6fa218a358856f44bdbf7efbe789a"
         }
       ],
       "licenses": [
@@ -11482,6 +11902,53 @@
       ]
     },
     {
+      "bom-ref": "schemes@1.4.0",
+      "type": "library",
+      "name": "schemes",
+      "version": "1.4.0",
+      "scope": "required",
+      "author": "Peter Müller <munter@fumle.dk>",
+      "description": "IANA Uniform Resource Identifier (URI) Schemes list, including crowd sourced unofficial ones",
+      "purl": "pkg:npm/schemes@1.4.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/schemes/-/schemes-1.4.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git://github.com/Munter/schemes.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/Munter/schemes"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/Munter/schemes/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "226172f456c2b109558271374c25a62cf0859d5cf1d251cbfe5fae987a650ea00a7747731699d2ea51592296a00656212b0cd59a5577e9e7346355d3bbc24101"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "secure-json-parse@4.1.0",
       "type": "library",
       "name": "secure-json-parse",
@@ -11844,6 +12311,53 @@
         {
           "alg": "SHA-512",
           "content": "6ebbfba795a01f48e6409af56430df2833927965a0f8e572a46f7d03fe6f6063ea27aa7189a1cbcbc9f1b458c103ba0c6b4d5e6c0f607e1d6e30216a3ae5f1bc"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ]
+    },
+    {
+      "bom-ref": "smtp-address-parser@1.1.0",
+      "type": "library",
+      "name": "smtp-address-parser",
+      "version": "1.1.0",
+      "scope": "required",
+      "author": "Gene Hightower <gene@digilicious.com> (https://digilicious.com/)",
+      "description": "Parse an SMTP (RFC-5321) address",
+      "purl": "pkg:npm/smtp-address-parser@1.1.0",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/smtp-address-parser/-/smtp-address-parser-1.1.0.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "git+https://github.com/gene-hightower/smtp-address-parser.git"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/gene-hightower/smtp-address-parser#readme"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/gene-hightower/smtp-address-parser/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "1b3d758db354d2996b45e53d4a3edf9ac852071c49f5285d0f6ab892d1c81e8feba531fa945c90a181d828834f26d3def1a1c59ec6ed5b8e8bb34b42081b0866"
         }
       ],
       "licenses": [
@@ -12868,6 +13382,53 @@
       ]
     },
     {
+      "bom-ref": "uri-js@4.4.1",
+      "type": "library",
+      "name": "uri-js",
+      "version": "4.4.1",
+      "scope": "required",
+      "author": "Gary Court <gary.court@gmail.com>",
+      "description": "An RFC 3986/3987 compliant, scheme extendable URI/IRI parsing/validating/resolving library for JavaScript.",
+      "purl": "pkg:npm/uri-js@4.4.1",
+      "properties": [
+        {
+          "name": "cdx:npm:package:development",
+          "value": "true"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "distribution",
+          "url": "https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz"
+        },
+        {
+          "type": "vcs",
+          "url": "http://github.com/garycourt/uri-js"
+        },
+        {
+          "type": "website",
+          "url": "https://github.com/garycourt/uri-js"
+        },
+        {
+          "type": "issue-tracker",
+          "url": "https://github.com/garycourt/uri-js/issues"
+        }
+      ],
+      "hashes": [
+        {
+          "alg": "SHA-512",
+          "content": "eeb294cb2df7435c9cf7ca50d430262edc17d74f45ed321f5a55b561da3c5a5d628b549e1e279e8741c77cf78bd9f3172bacf4b3c79c2acf5fac2b8b26f9dd06"
+        }
+      ],
+      "licenses": [
+        {
+          "license": {
+            "id": "BSD-2-Clause"
+          }
+        }
+      ]
+    },
+    {
       "bom-ref": "use-callback-ref@1.3.3",
       "type": "library",
       "name": "use-callback-ref",
@@ -13476,7 +14037,7 @@
   ],
   "dependencies": [
     {
-      "ref": "musclescout@1.0.0",
+      "ref": "musclescout@1.1.0",
       "dependsOn": [
         "@fastify/cors@11.3.0",
         "@fastify/rate-limit@10.3.0",
@@ -13503,6 +14064,9 @@
         "@types/nodemailer@8.0.1",
         "@types/react@19.2.18",
         "@types/react-dom@19.2.7",
+        "ajv@8.20.0",
+        "ajv-formats@3.0.1",
+        "ajv-formats-draft2019@1.6.1",
         "prettier@3.9.6",
         "prisma@7.10.0",
         "tsx@4.23.13",
@@ -14364,6 +14928,16 @@
       ]
     },
     {
+      "ref": "ajv-formats-draft2019@1.6.1",
+      "dependsOn": [
+        "ajv@8.20.0",
+        "punycode@2.3.1",
+        "schemes@1.4.0",
+        "smtp-address-parser@1.1.0",
+        "uri-js@4.4.1"
+      ]
+    },
+    {
       "ref": "fast-uri@3.1.7",
       "dependsOn": []
     },
@@ -14504,6 +15078,10 @@
     },
     {
       "ref": "client-only@0.0.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "commander@2.20.3",
       "dependsOn": []
     },
     {
@@ -14649,6 +15227,10 @@
       "dependsOn": []
     },
     {
+      "ref": "discontinuous-range@1.0.0",
+      "dependsOn": []
+    },
+    {
       "ref": "dom-serializer@2.0.0",
       "dependsOn": [
         "domelementtype@2.3.0",
@@ -14747,6 +15329,10 @@
     },
     {
       "ref": "exsolve@1.1.1",
+      "dependsOn": []
+    },
+    {
+      "ref": "extend@3.0.2",
       "dependsOn": []
     },
     {
@@ -15006,6 +15592,10 @@
       "dependsOn": []
     },
     {
+      "ref": "moo@0.5.3",
+      "dependsOn": []
+    },
+    {
       "ref": "mysql2@3.24.3",
       "dependsOn": [
         "@types/node@22.20.1",
@@ -15037,6 +15627,15 @@
     {
       "ref": "napi-build-utils@2.0.0",
       "dependsOn": []
+    },
+    {
+      "ref": "nearley@2.20.1",
+      "dependsOn": [
+        "commander@2.20.3",
+        "moo@0.5.3",
+        "railroad-diagrams@1.0.0",
+        "randexp@0.4.6"
+      ]
     },
     {
       "ref": "next@16.3.4",
@@ -15257,11 +15856,30 @@
       ]
     },
     {
+      "ref": "punycode@2.3.1",
+      "dependsOn": []
+    },
+    {
       "ref": "pure-rand@6.1.0",
       "dependsOn": []
     },
     {
       "ref": "quick-format-unescaped@4.0.4",
+      "dependsOn": []
+    },
+    {
+      "ref": "railroad-diagrams@1.0.0",
+      "dependsOn": []
+    },
+    {
+      "ref": "randexp@0.4.6",
+      "dependsOn": [
+        "discontinuous-range@1.0.0",
+        "ret@0.1.15"
+      ]
+    },
+    {
+      "ref": "ret@0.1.15",
       "dependsOn": []
     },
     {
@@ -15400,6 +16018,12 @@
       "dependsOn": []
     },
     {
+      "ref": "schemes@1.4.0",
+      "dependsOn": [
+        "extend@3.0.2"
+      ]
+    },
+    {
       "ref": "secure-json-parse@4.1.0",
       "dependsOn": []
     },
@@ -15449,6 +16073,12 @@
         "decompress-response@6.0.0",
         "once@1.4.0",
         "simple-concat@1.0.1"
+      ]
+    },
+    {
+      "ref": "smtp-address-parser@1.1.0",
+      "dependsOn": [
+        "nearley@2.20.1"
       ]
     },
     {
@@ -15582,6 +16212,12 @@
     {
       "ref": "undici-types@6.21.0",
       "dependsOn": []
+    },
+    {
+      "ref": "uri-js@4.4.1",
+      "dependsOn": [
+        "punycode@2.3.1"
+      ]
     },
     {
       "ref": "use-callback-ref@1.3.3",

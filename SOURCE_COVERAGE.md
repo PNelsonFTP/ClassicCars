@@ -1,5 +1,8 @@
 # Source coverage
 
+> **September 8, 2026 final review refresh:** 3,139 retained ads / 3,139 groups, 3,120 public ads, 16 coordinate records and zero actual road routes. The final pass fetched 93 fresh catalog pages and exhausted the accessible configured queues. Details and real duplicate reconciliation remain open; 500 Classic and Autotrader stayed paused. See [current scan evidence](docs/validation/inventory-full-scan.json), [scope validation](docs/CONFIGURED_SCOPE_VALIDATION.md) and [handoff](HANDOFF.md). The earlier observations and counts below remain historical evidence.
+
+
 Report generated 2026-09-08T03:17:11.110Z. Evaluated 26 configured candidates across marketplaces, dealers, consignment, regional classifieds, forums, auctions and manual sources. Nine contributed real observations; seven passed live production inventory parsing checks during the initial session. The later recorded Autotrader refresh returned an unavailable template and 500 Classic returned 403, preserving their prior 19/3 ads. These are blocked refreshes, not zero inventory.
 
 Initial research documents: [dealer evidence](docs/DEALER_RESEARCH.md), [marketplace/access evidence](docs/MARKETPLACE_RESEARCH.md), [vehicle/routing references](docs/REFERENCE_RESEARCH.md). Their dates, HTTP evidence, query URLs, pagination and policy links explain each decision. Configuring a source is not a promise of successful coverage.

@@ -1,6 +1,6 @@
 # Dependency license inventory
 
-Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cbdfb26b673831fc73ce96641c01ec7b577836db5a424f6f4c3092`. Counts are lockfile installation locations, including optional platform packages and repeated versions. These are package-declared license expressions, not a verification of every shipped file. MuscleScout itself has no declared distribution license. Listing content, images, map data and external services are outside these npm license grants.
+Generated 2026-09-08T17:09:59.435Z from package-lock.json, SHA-256 `cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa`. Counts are lockfile installation locations, including optional platform packages and repeated versions. These are package-declared license expressions, not a verification of every shipped file. MuscleScout itself has no declared distribution license. Listing content, images, map data and external services are outside these npm license grants.
 
 ## Declared license totals
 
@@ -12,13 +12,14 @@ Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cb
 | Apache-2.0 | 43 |
 | Apache-2.0 AND LGPL-3.0-or-later | 3 |
 | Apache-2.0 AND LGPL-3.0-or-later AND MIT | 1 |
-| BSD-2-Clause | 12 |
-| BSD-3-Clause | 7 |
+| BSD-2-Clause | 13 |
+| BSD-3-Clause | 8 |
 | CC-BY-4.0 | 1 |
+| CC0-1.0 | 1 |
 | EPL-2.0 | 1 |
 | ISC | 33 |
 | LGPL-3.0-or-later | 10 |
-| MIT | 316 |
+| MIT | 326 |
 | MIT and ISC | 1 |
 | MIT-0 | 1 |
 | MPL-2.0 | 24 |
@@ -53,6 +54,9 @@ Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cb
 | @types/nodemailer | ^8.0.1 | 8.0.1 | MIT | development/build/test |
 | @types/react | ^19.2.0 | 19.2.18 | MIT | development/build/test |
 | @types/react-dom | ^19.2.0 | 19.2.7 | MIT | development/build/test |
+| ajv | 8.20.0 | 8.20.0 | MIT | development/build/test |
+| ajv-formats | 3.0.1 | 3.0.1 | MIT | development/build/test |
+| ajv-formats-draft2019 | 1.6.1 | 1.6.1 | MIT | development/build/test |
 | prettier | ^3.9.6 | 3.9.6 | MIT | development/build/test |
 | prisma | 7.10.0 | 7.10.0 | Apache-2.0 | development/build/test |
 | tsx | ^4.21.0 | 4.23.13 | MIT | development/build/test |
@@ -266,6 +270,7 @@ Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cb
 | abstract-logging | 2.0.1 | MIT | node_modules/abstract-logging | Yes |
 | ajv | 8.20.0 | MIT | node_modules/ajv | Yes |
 | ajv-formats | 3.0.1 | MIT | node_modules/ajv-formats | Yes |
+| ajv-formats-draft2019 | 1.6.1 | MIT | node_modules/ajv-formats-draft2019 | Yes |
 | fast-uri | 3.1.7 | BSD-3-Clause | node_modules/ajv/node_modules/fast-uri | Yes |
 | aria-hidden | 1.2.6 | MIT | node_modules/aria-hidden | Yes |
 | assertion-error | 2.0.1 | MIT | node_modules/assertion-error | Yes |
@@ -289,6 +294,7 @@ Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cb
 | chownr | 1.1.4 | ISC | node_modules/chownr | Yes |
 | classnames | 2.5.1 | MIT | node_modules/classnames | Yes |
 | client-only | 0.0.1 | MIT | node_modules/client-only | Yes |
+| commander | 2.20.3 | MIT | node_modules/commander | Yes |
 | confbox | 0.2.4 | MIT | node_modules/confbox | Yes |
 | convert-source-map | 2.0.0 | MIT | node_modules/convert-source-map | Yes |
 | cookie | 1.1.1 | MIT | node_modules/cookie | Yes |
@@ -316,6 +322,7 @@ Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cb
 | destr | 2.0.5 | MIT | node_modules/destr | Yes |
 | detect-libc | 2.1.2 | Apache-2.0 | node_modules/detect-libc | Yes |
 | detect-node-es | 1.1.0 | MIT | node_modules/detect-node-es | Yes |
+| discontinuous-range | 1.0.0 | MIT | node_modules/discontinuous-range | Yes |
 | dom-serializer | 2.0.0 | MIT | node_modules/dom-serializer | Yes |
 | domelementtype | 2.3.0 | BSD-2-Clause | node_modules/domelementtype | Yes |
 | domhandler | 5.0.3 | BSD-2-Clause | node_modules/domhandler | Yes |
@@ -335,6 +342,7 @@ Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cb
 | expand-template | 2.0.3 | (MIT OR WTFPL) | node_modules/expand-template | Yes |
 | expect-type | 1.4.0 | Apache-2.0 | node_modules/expect-type | Yes |
 | exsolve | 1.1.1 | MIT | node_modules/exsolve | Yes |
+| extend | 3.0.2 | MIT | node_modules/extend | Yes |
 | fast-check | 3.23.2 | MIT | node_modules/fast-check | Yes |
 | fast-decode-uri-component | 1.0.1 | MIT | node_modules/fast-decode-uri-component | Yes |
 | fast-deep-equal | 3.1.3 | MIT | node_modules/fast-deep-equal | Yes |
@@ -394,11 +402,13 @@ Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cb
 | mimic-response | 3.1.0 | MIT | node_modules/mimic-response | Yes |
 | minimist | 1.2.8 | MIT | node_modules/minimist | Yes |
 | mkdirp-classic | 0.5.3 | MIT | node_modules/mkdirp-classic | Yes |
+| moo | 0.5.3 | BSD-3-Clause | node_modules/moo | Yes |
 | mysql2 | 3.24.3 | MIT | node_modules/mysql2 | Yes |
 | iconv-lite | 0.7.3 | MIT | node_modules/mysql2/node_modules/iconv-lite | Yes |
 | named-placeholders | 1.1.6 | MIT | node_modules/named-placeholders | Yes |
 | nanoid | 3.3.18 | MIT | node_modules/nanoid | Yes |
 | napi-build-utils | 2.0.0 | MIT | node_modules/napi-build-utils | Yes |
+| nearley | 2.20.1 | MIT | node_modules/nearley | Yes |
 | next | 16.3.4 | MIT | node_modules/next | Yes |
 | postcss | 8.5.23 | MIT | node_modules/next/node_modules/postcss | Yes |
 | node-abi | 3.96.0 | MIT | node_modules/node-abi | Yes |
@@ -433,8 +443,12 @@ Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cb
 | proper-lockfile | 4.1.2 | MIT | node_modules/proper-lockfile | Yes |
 | signal-exit | 3.0.7 | ISC | node_modules/proper-lockfile/node_modules/signal-exit | Yes |
 | pump | 3.0.4 | MIT | node_modules/pump | Yes |
+| punycode | 2.3.1 | MIT | node_modules/punycode | Yes |
 | pure-rand | 6.1.0 | MIT | node_modules/pure-rand | Yes |
 | quick-format-unescaped | 4.0.4 | MIT | node_modules/quick-format-unescaped | Yes |
+| railroad-diagrams | 1.0.0 | CC0-1.0 | node_modules/railroad-diagrams | Yes |
+| randexp | 0.4.6 | MIT | node_modules/randexp | Yes |
+| ret | 0.1.15 | MIT | node_modules/randexp/node_modules/ret | Yes |
 | rc | 1.2.8 | (BSD-2-Clause OR MIT OR Apache-2.0) | node_modules/rc | Yes |
 | rc9 | 3.1.0 | MIT | node_modules/rc9 | Yes |
 | react | 19.2.8 | MIT | node_modules/react | Yes |
@@ -459,6 +473,7 @@ Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cb
 | safe-stable-stringify | 2.5.0 | MIT | node_modules/safe-stable-stringify | Yes |
 | safer-buffer | 2.1.2 | MIT | node_modules/safer-buffer | Yes |
 | scheduler | 0.27.0 | MIT | node_modules/scheduler | Yes |
+| schemes | 1.4.0 | MIT | node_modules/schemes | Yes |
 | secure-json-parse | 4.1.0 | BSD-3-Clause | node_modules/secure-json-parse | Yes |
 | semver | 7.8.5 | ISC | node_modules/semver | Yes |
 | set-cookie-parser | 2.7.2 | MIT | node_modules/set-cookie-parser | Yes |
@@ -469,6 +484,7 @@ Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cb
 | signal-exit | 4.1.0 | ISC | node_modules/signal-exit | Yes |
 | simple-concat | 1.0.1 | MIT | node_modules/simple-concat | Yes |
 | simple-get | 4.0.1 | MIT | node_modules/simple-get | Yes |
+| smtp-address-parser | 1.1.0 | MIT | node_modules/smtp-address-parser | Yes |
 | sonic-boom | 4.2.1 | MIT | node_modules/sonic-boom | Yes |
 | source-map-js | 1.2.1 | BSD-3-Clause | node_modules/source-map-js | Yes |
 | split2 | 4.2.0 | ISC | node_modules/split2 | Yes |
@@ -495,6 +511,7 @@ Generated 2026-09-08T03:25:44.370Z from package-lock.json, SHA-256 `e8e19800d9cb
 | typescript | 5.9.3 | Apache-2.0 | node_modules/typescript | Yes |
 | undici | 7.29.1 | MIT | node_modules/undici | Yes |
 | undici-types | 6.21.0 | MIT | node_modules/undici-types | Yes |
+| uri-js | 4.4.1 | BSD-2-Clause | node_modules/uri-js | Yes |
 | use-callback-ref | 1.3.3 | MIT | node_modules/use-callback-ref | Yes |
 | use-sidecar | 1.1.3 | MIT | node_modules/use-sidecar | Yes |
 | util-deprecate | 1.0.2 | MIT | node_modules/util-deprecate | Yes |

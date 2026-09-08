@@ -1,0 +1,59 @@
+{
+  "status": "partial",
+  "jobId": "d98f1b7e-d381-47de-922f-2d6997e8a453",
+  "scope": "nationwide",
+  "sources": [
+    {
+      "source": "classiccars",
+      "status": "partial",
+      "jobId": "d98f1b7e-d381-47de-922f-2d6997e8a453",
+      "checkpointId": "classiccars:nationwide:8e4ed3aec624803f2b1b48f3",
+      "catalogCycle": 1,
+      "pagesDiscovered": 18,
+      "configuredUrls": [
+        "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&ps=60&s=datelisted",
+        "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&ps=60&s=datelisted",
+        "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&ps=60&s=datelisted"
+      ],
+      "discoveryMiles": 300,
+      "pagesFetched": 3,
+      "detailRequests": 3,
+      "detailsSucceeded": 3,
+      "freshDetailsSkipped": 20,
+      "failedInventoryPages": 0,
+      "failedDetails": 0,
+      "cacheHits": 0,
+      "discoveredCandidates": 180,
+      "uniqueAds": 180,
+      "duplicateIds": 0,
+      "skippedCandidates": 0,
+      "remainingEnrichment": 160,
+      "catalogBacklog": 15,
+      "blockedCatalogBacklog": 0,
+      "totalCatalogPages": 18,
+      "totalDetailBacklog": 1481,
+      "blockedDetailBacklog": 0,
+      "currentScopeDetailBacklog": 159,
+      "currentScopeBlockedDetails": 0,
+      "failedPages": [],
+      "pageCap": 3,
+      "detailCap": 3,
+      "note": "Catalog cap reached; the next run resumes queued pages.",
+      "accessHealth": {
+        "sourceId": "classiccars",
+        "state": "active",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T02:54:45.440Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ],
+        "lastSuccessAt": "2026-09-08T17:10:01.004Z",
+        "lastLiveValidatedAt": "2026-09-08T17:10:01.004Z"
+      }
+    }
+  ]
+}

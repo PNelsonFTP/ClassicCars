@@ -1,0 +1,722 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-08T16:55:05.534Z",
+  "fixedEvaluationAt": "2026-09-08T12:00:00.000Z",
+  "syntheticAds": 50000,
+  "fixture": "Deterministic synthetic crossposts spanning classic and later specialty identities, source claims/clones, exact 240-minute routes, expired/future routes, unknown/offsite/non-US locations, auctions and stale observations. No real records or service calls are used.",
+  "environment": {
+    "node": "v26.7.0",
+    "platform": "darwin",
+    "arch": "arm64",
+    "cpu": "Apple M5 Max",
+    "logicalCpus": 18,
+    "explicitGcBetweenQueries": true
+  },
+  "durationMs": 59879.63,
+  "generationMs": 221.04,
+  "bytes": {
+    "fullListingJson": 223817309,
+    "compactListingJson": 144683969,
+    "packedCatalogJson": 86765445,
+    "reductionFromFullPercent": 61.23,
+    "dictionaryStrings": 211670
+  },
+  "codec": {
+    "packMs": 885.63,
+    "unpackMs": 650.83,
+    "losslessCompactRoundTrip": true
+  },
+  "candidateIndex": {
+    "listings": 50000,
+    "indexKeys": 58309,
+    "comparedPairs": 22500,
+    "titleOnlyExcluded": true,
+    "groupsAreVerifiedUniqueCars": false,
+    "totalCandidates": 22500,
+    "durationMs": 237.35,
+    "allPairsUpperBound": 1249975000,
+    "comparedFractionOfAllPairs": 0.000018000360007200145
+  },
+  "memory": {
+    "maxRssKiBReportedByNode": 1971520,
+    "maxSampledRssBytes": 1997193216,
+    "phases": [
+      {
+        "phase": "generated-full-and-compact",
+        "rssBytes": 373489664,
+        "heapUsedBytes": 249637624
+      },
+      {
+        "phase": "packed-transport",
+        "rssBytes": 1239580672,
+        "heapUsedBytes": 949367976
+      },
+      {
+        "phase": "decoded-browser-catalog",
+        "rssBytes": 1323040768,
+        "heapUsedBytes": 1021948872
+      },
+      {
+        "phase": "strict-240-minute-boundary",
+        "rssBytes": 1389330432,
+        "heapUsedBytes": 1068214784
+      },
+      {
+        "phase": "unknown-route",
+        "rssBytes": 1414414336,
+        "heapUsedBytes": 1087711144
+      },
+      {
+        "phase": "nationwide-grouped",
+        "rssBytes": 1680818176,
+        "heapUsedBytes": 1353629136
+      },
+      {
+        "phase": "nationwide-price-known",
+        "rssBytes": 1675886592,
+        "heapUsedBytes": 1017252808
+      },
+      {
+        "phase": "live-upcoming-auctions",
+        "rssBytes": 1672429568,
+        "heapUsedBytes": 940719760
+      },
+      {
+        "phase": "supported-specialty-common-filters",
+        "rssBytes": 1672953856,
+        "heapUsedBytes": 1111052352
+      },
+      {
+        "phase": "identity-review",
+        "rssBytes": 1259110400,
+        "heapUsedBytes": 937594816
+      },
+      {
+        "phase": "specialty-seller-claim-review",
+        "rssBytes": 1262649344,
+        "heapUsedBytes": 909806008
+      },
+      {
+        "phase": "favorites",
+        "rssBytes": 1262747648,
+        "heapUsedBytes": 925252464
+      },
+      {
+        "phase": "engine-rule",
+        "rssBytes": 1465745408,
+        "heapUsedBytes": 1140940352
+      },
+      {
+        "phase": "gallery-length-rule",
+        "rssBytes": 1767604224,
+        "heapUsedBytes": 1159408312
+      },
+      {
+        "phase": "exact-second-photo-rule",
+        "rssBytes": 1997193216,
+        "heapUsedBytes": 1152814880
+      },
+      {
+        "phase": "field-evidence-rule",
+        "rssBytes": 1818673152,
+        "heapUsedBytes": 1475819832
+      },
+      {
+        "phase": "original-source-text-rule",
+        "rssBytes": 1836236800,
+        "heapUsedBytes": 1183830368
+      },
+      {
+        "phase": "review-reason-rule",
+        "rssBytes": 1831845888,
+        "heapUsedBytes": 908913560
+      },
+      {
+        "phase": "query-and-source-filter",
+        "rssBytes": 1828225024,
+        "heapUsedBytes": 929851096
+      },
+      {
+        "phase": "candidate-index",
+        "rssBytes": 1828732928,
+        "heapUsedBytes": 938058448
+      }
+    ]
+  },
+  "queries": [
+    {
+      "name": "strict-240-minute-boundary",
+      "matchedAds": 10306,
+      "displayedGroupsOrAds": 10306,
+      "groupCount": 10306,
+      "parity": "passed",
+      "fullSearchMs": 70.66,
+      "compactSearchMs": 51.97,
+      "decodedSearchMs": 53.38,
+      "alertBaselineMs": 77.71,
+      "resultIdsSha256": "15e8da86648c7e008e8ad76b8cd81bff1ff0c0e1a9a52d35491c356171780daf",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 914.13
+        },
+        {
+          "offset": 5153,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 937.12
+        },
+        {
+          "offset": 10258,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 972.22
+        }
+      ]
+    },
+    {
+      "name": "unknown-route",
+      "matchedAds": 12764,
+      "displayedGroupsOrAds": 11034,
+      "groupCount": 11034,
+      "parity": "passed",
+      "fullSearchMs": 67.36,
+      "compactSearchMs": 60.38,
+      "decodedSearchMs": 60.01,
+      "alertBaselineMs": 99.56,
+      "resultIdsSha256": "00e215bdb6096e9c94fb0a5634b60030cf41dd4f3bd35aa12e66ae5ca0a232be",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 972.39
+        },
+        {
+          "offset": 5517,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 974.55
+        },
+        {
+          "offset": 10986,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 977.42
+        }
+      ]
+    },
+    {
+      "name": "nationwide-grouped",
+      "matchedAds": 36076,
+      "displayedGroupsOrAds": 36076,
+      "groupCount": 36076,
+      "parity": "passed",
+      "fullSearchMs": 175.22,
+      "compactSearchMs": 164.73,
+      "decodedSearchMs": 159.89,
+      "alertBaselineMs": 225.96,
+      "resultIdsSha256": "c5e93722aba8497933dd8afb42d831c49d49aac9da386f537fab71f1529ad661",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1112.76
+        },
+        {
+          "offset": 18038,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1218.09
+        },
+        {
+          "offset": 36028,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1122.8
+        }
+      ]
+    },
+    {
+      "name": "nationwide-price-known",
+      "matchedAds": 6573,
+      "displayedGroupsOrAds": 6573,
+      "groupCount": 6573,
+      "parity": "passed",
+      "fullSearchMs": 28.41,
+      "compactSearchMs": 17.24,
+      "decodedSearchMs": 13.84,
+      "alertBaselineMs": 33.62,
+      "resultIdsSha256": "fc386827a0e6795d41af7ba20f8eddd7fe3b4d6652be23181e9b3bf7c405f388",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 954.92
+        },
+        {
+          "offset": 3286,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 903.38
+        },
+        {
+          "offset": 6525,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 889.8
+        }
+      ]
+    },
+    {
+      "name": "live-upcoming-auctions",
+      "matchedAds": 1774,
+      "displayedGroupsOrAds": 1686,
+      "groupCount": 1686,
+      "parity": "passed",
+      "fullSearchMs": 21.8,
+      "compactSearchMs": 16.73,
+      "decodedSearchMs": 9.49,
+      "alertBaselineMs": 21.7,
+      "resultIdsSha256": "85e34166a5691a5e0a8a68be9708b6c5cbd37627f1a65500c70862b4efffa3b2",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 890.38
+        },
+        {
+          "offset": 843,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 881.63
+        },
+        {
+          "offset": 1638,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 880.2
+        }
+      ]
+    },
+    {
+      "name": "supported-specialty-common-filters",
+      "matchedAds": 10708,
+      "displayedGroupsOrAds": 10708,
+      "groupCount": 10708,
+      "parity": "passed",
+      "fullSearchMs": 39.63,
+      "compactSearchMs": 25.9,
+      "decodedSearchMs": 22.23,
+      "alertBaselineMs": 53.8,
+      "resultIdsSha256": "d9b77d246c6f9b8d077830c7278985648f66ff4484053a9c94bd79939884e663",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 983.49
+        },
+        {
+          "offset": 5354,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 933.75
+        },
+        {
+          "offset": 10660,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 994.41
+        }
+      ]
+    },
+    {
+      "name": "identity-review",
+      "matchedAds": 1614,
+      "displayedGroupsOrAds": 1533,
+      "groupCount": 1533,
+      "parity": "passed",
+      "fullSearchMs": 19.89,
+      "compactSearchMs": 15.99,
+      "decodedSearchMs": 11.14,
+      "alertBaselineMs": 22.06,
+      "resultIdsSha256": "bc40750ef3e6beafba4ab277d437a29f3f89784653dfc0f672d08ddce7cf475c",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 889.86
+        },
+        {
+          "offset": 766,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 872.48
+        },
+        {
+          "offset": 1485,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 882.55
+        }
+      ]
+    },
+    {
+      "name": "specialty-seller-claim-review",
+      "matchedAds": 1390,
+      "displayedGroupsOrAds": 1251,
+      "groupCount": 1251,
+      "parity": "passed",
+      "fullSearchMs": 16.44,
+      "compactSearchMs": 15.24,
+      "decodedSearchMs": 7.71,
+      "alertBaselineMs": 16.48,
+      "resultIdsSha256": "68d70df9c47d0fb13913233bf9c014e13b8484456d40cccdfa78f60b70830095",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 879.86
+        },
+        {
+          "offset": 625,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 868.72
+        },
+        {
+          "offset": 1203,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 869.77
+        }
+      ]
+    },
+    {
+      "name": "favorites",
+      "matchedAds": 371,
+      "displayedGroupsOrAds": 371,
+      "groupCount": 371,
+      "parity": "passed",
+      "fullSearchMs": 369.18,
+      "compactSearchMs": 365.97,
+      "decodedSearchMs": 368.24,
+      "alertBaselineMs": 556.64,
+      "resultIdsSha256": "7c4c76a1f7b8ddadd9befc5236159401cf5b7b8869d75bd74a151d441bffc02a",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1238.73
+        },
+        {
+          "offset": 185,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1181.83
+        },
+        {
+          "offset": 323,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1183.66
+        }
+      ]
+    },
+    {
+      "name": "engine-rule",
+      "matchedAds": 16034,
+      "displayedGroupsOrAds": 16034,
+      "groupCount": 16034,
+      "parity": "passed",
+      "fullSearchMs": 105.72,
+      "compactSearchMs": 91.89,
+      "decodedSearchMs": 92.71,
+      "alertBaselineMs": 145.76,
+      "resultIdsSha256": "fbb0bd10d5b6b097ccf22623b1dcb48870012d6916a67a83584d037f794cea1d",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1055.15
+        },
+        {
+          "offset": 8017,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1048.47
+        },
+        {
+          "offset": 15986,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 979.83
+        }
+      ]
+    },
+    {
+      "name": "gallery-length-rule",
+      "matchedAds": 36076,
+      "displayedGroupsOrAds": 36076,
+      "groupCount": 36076,
+      "parity": "passed",
+      "fullSearchMs": 163.59,
+      "compactSearchMs": 156.91,
+      "decodedSearchMs": 145.44,
+      "alertBaselineMs": 211.04,
+      "resultIdsSha256": "c5e93722aba8497933dd8afb42d831c49d49aac9da386f537fab71f1529ad661",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1074.91
+        },
+        {
+          "offset": 18038,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1095.58
+        },
+        {
+          "offset": 36028,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1196.51
+        }
+      ]
+    },
+    {
+      "name": "exact-second-photo-rule",
+      "matchedAds": 36076,
+      "displayedGroupsOrAds": 36076,
+      "groupCount": 36076,
+      "parity": "passed",
+      "fullSearchMs": 165.59,
+      "compactSearchMs": 161.61,
+      "decodedSearchMs": 162.58,
+      "alertBaselineMs": 235.29,
+      "resultIdsSha256": "c5e93722aba8497933dd8afb42d831c49d49aac9da386f537fab71f1529ad661",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1159.08
+        },
+        {
+          "offset": 18038,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1097.7
+        },
+        {
+          "offset": 36028,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1222.39
+        }
+      ]
+    },
+    {
+      "name": "field-evidence-rule",
+      "matchedAds": 36076,
+      "displayedGroupsOrAds": 36076,
+      "groupCount": 36076,
+      "parity": "passed",
+      "fullSearchMs": 157.79,
+      "compactSearchMs": 158.14,
+      "decodedSearchMs": 158.04,
+      "alertBaselineMs": 222.33,
+      "resultIdsSha256": "c5e93722aba8497933dd8afb42d831c49d49aac9da386f537fab71f1529ad661",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1084.82
+        },
+        {
+          "offset": 18038,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1110.6
+        },
+        {
+          "offset": 36028,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1141.72
+        }
+      ]
+    },
+    {
+      "name": "original-source-text-rule",
+      "matchedAds": 36076,
+      "displayedGroupsOrAds": 36076,
+      "groupCount": 36076,
+      "parity": "passed",
+      "fullSearchMs": 167.98,
+      "compactSearchMs": 166.19,
+      "decodedSearchMs": 164,
+      "alertBaselineMs": 228.49,
+      "resultIdsSha256": "c5e93722aba8497933dd8afb42d831c49d49aac9da386f537fab71f1529ad661",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1129.72
+        },
+        {
+          "offset": 18038,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1095.44
+        },
+        {
+          "offset": 36028,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 1227.94
+        }
+      ]
+    },
+    {
+      "name": "review-reason-rule",
+      "matchedAds": 878,
+      "displayedGroupsOrAds": 878,
+      "groupCount": 878,
+      "parity": "passed",
+      "fullSearchMs": 60.24,
+      "compactSearchMs": 48.86,
+      "decodedSearchMs": 43.87,
+      "alertBaselineMs": 82.71,
+      "resultIdsSha256": "5a016f78ef0072a44376c1333c9c8c9cc6172ffc7e9730216223c64480979983",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 902.14
+        },
+        {
+          "offset": 439,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 903.41
+        },
+        {
+          "offset": 830,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 907.6
+        }
+      ]
+    },
+    {
+      "name": "query-and-source-filter",
+      "matchedAds": 2822,
+      "displayedGroupsOrAds": 2822,
+      "groupCount": 2822,
+      "parity": "passed",
+      "fullSearchMs": 43.61,
+      "compactSearchMs": 32.48,
+      "decodedSearchMs": 24.25,
+      "alertBaselineMs": 54.23,
+      "resultIdsSha256": "47426ad6d4b623f757992c4d309dccf5085bccc15248fed314e81ad1d61b161e",
+      "pages": [
+        {
+          "offset": 0,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 896.12
+        },
+        {
+          "offset": 1411,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 890.42
+        },
+        {
+          "offset": 2774,
+          "rows": 48,
+          "scannedRows": 50000,
+          "databaseBatches": 100,
+          "durationMs": 892.21
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "allQueriesPassed": true,
+    "initialAlertBaselinesQuiet": true,
+    "realDatabaseStorageBenchmark": false,
+    "realBrowserRenderingBenchmark": false,
+    "liveNetworkRequests": 0
+  },
+  "limitations": [
+    "API page core uses 500-row in-memory batches with real JSON parsing and shared predicates; this measures its algorithm, not SQLite disk latency or HTTP/browser rendering.",
+    "Every requested API offset still scans all candidate rows and retains all matching listings for sorting/grouping. Bounded database reads do not establish bounded total memory.",
+    "Candidate indexes exclude generic titles, but a heavily colliding distinctive-title/stock/identifier bucket can still produce quadratic work; this fixture is not a worst-case collision proof.",
+    "No source coverage, vehicle authenticity, deduplication precision on real inventory, or hosting behavior is established by synthetic performance results.",
+    "Elapsed times and resident memory depend on the host and concurrent workloads; use this report as a recorded baseline, not a universal service-level promise."
+  ]
+}

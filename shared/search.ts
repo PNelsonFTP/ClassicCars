@@ -1,3 +1,4 @@
+import { rankDuplicateCandidates } from "./duplicates";
 import {
   defaultSearch,
   type Listing,
@@ -136,8 +137,12 @@ export function fieldValue(l: Listing, field: string): unknown {
           l,
         );
 }
-export function matches(l: Listing, s: Search, w?: Workspace) {
-  const now = Date.now();
+export function matches(
+  l: Listing,
+  s: Search,
+  w?: Workspace,
+  now = Date.now(),
+) {
   if (s.mode === "identity-review") {
     if (l.identityStatus !== "review") return false;
   } else if (s.mode === "specialty-review") {
@@ -225,11 +230,16 @@ export function matches(l: Listing, s: Search, w?: Workspace) {
     return r.operator === "include" ? equal : !equal;
   });
 }
-export function searchListings(listings: Listing[], s: Search, w?: Workspace) {
-  let rows = listings.filter((l) => matches(l, s, w));
+export function searchListings(
+  listings: Listing[],
+  s: Search,
+  w?: Workspace,
+  now = Date.now(),
+) {
+  let rows = listings.filter((l) => matches(l, s, w, now));
   const value = (l: Listing) =>
     s.sort === "nearest"
-      ? routeKnown(l, Date.now(), s.routeMaxAgeDays)
+      ? routeKnown(l, now, s.routeMaxAgeDays)
         ? l.route!.minutes
         : 1e6 + (l.straightLineMiles ?? 1e6)
       : s.sort === "price-asc"
@@ -245,6 +255,7 @@ export function searchListings(listings: Listing[], s: Search, w?: Workspace) {
               : -Date.parse(l.firstSeenAt);
   rows = rows.sort((a, b) => value(a) - value(b) || a.id.localeCompare(b.id));
   const rawCount = rows.length;
+  const groupCount = new Set(rows.map((l) => l.groupId || l.id)).size;
   if (s.grouped) {
     const seen = new Set<string>();
     rows = rows.filter((l) => {
@@ -257,9 +268,7 @@ export function searchListings(listings: Listing[], s: Search, w?: Workspace) {
   return {
     rows,
     rawCount,
-    groupCount: new Set(
-      listings.filter((l) => matches(l, s, w)).map((l) => l.groupId || l.id),
-    ).size,
+    groupCount,
   };
 }
 export function quickSearch(mode: Search["mode"], previous?: Search): Search {
@@ -315,20 +324,17 @@ export function strongGroupKey(l: Listing) {
     return `${normalizeText(l.seller.name)}:${l.stockNumber}:${l.year}:${l.model}`;
   return null;
 }
+/** Compatibility helper; paginated review consumers should call rankDuplicateCandidates directly. */
 export function potentialDuplicates(listings: Listing[]) {
-  return listings.flatMap((a, i) =>
-    listings
-      .slice(i + 1)
-      .filter(
-        (b) =>
-          a.model === b.model &&
-          a.year === b.year &&
-          (!a.groupId || a.groupId !== b.groupId) &&
-          a.id !== b.id &&
-          normalizeText(a.title) === normalizeText(b.title),
-      )
-      .map((b) => [a.id, b.id]),
-  );
+  const page = rankDuplicateCandidates(listings, { limit: 100 });
+  const pairs = page.rows.map((c) => c.ids);
+  for (let offset = 100; offset < page.total; offset += 100)
+    pairs.push(
+      ...rankDuplicateCandidates(listings, { offset, limit: 100 }).rows.map(
+        (c) => c.ids,
+      ),
+    );
+  return pairs;
 }
 export function storageKey(basePath: string, mode: string, backend = "") {
   return `musclescout:v1:${basePath.replace(/\/$/, "") || "/"}:${mode}${mode === "connected" || mode === "session" ? ":" + backend : ""}`;

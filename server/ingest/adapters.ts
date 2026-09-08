@@ -36,7 +36,10 @@ const clean = (s: string | undefined) => s?.replace(/\s+/g, " ").trim() || "";
 export function parseAsk(s: string) {
   if (/month|\/mo|payment|deposit|bid|auction/i.test(s)) return null;
   const m = s.match(/\$\s*([\d,]+(?:\.\d{2})?)/);
-  return m ? Number(m[1].replace(/,/g, "")) : null;
+  const amount = m ? Number(m[1].replace(/,/g, "")) : null;
+  return amount !== null && Number.isFinite(amount) && amount > 0
+    ? amount
+    : null;
 }
 const absolute = (u: string | undefined, base: string) => {
   try {
@@ -190,6 +193,8 @@ export function parseInventory(
           parseAsk(p),
           img ? [img] : [],
           {
+            priceOnRequest:
+              /call|request/i.test(p) || /\$\s*0(?:\.0+)?(?:\s|$)/.test(p),
             saleType: /auction/i.test(p)
               ? "auction"
               : /obo/i.test(p)

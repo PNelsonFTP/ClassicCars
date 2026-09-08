@@ -10,3 +10,11 @@ backups
 test-results
 playwright-report
 *.tsbuildinfo
+
+logs
+cache
+generated
+.agents
+.codex
+
+docs/sbom/targets

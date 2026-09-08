@@ -1,31 +1,10 @@
-# MuscleScout handoff
+# MuscleScout handoff — 1.1.0
 
-Documentation updated September 8, 2026 UTC. This handoff covers the initial build requested in [MuscleCarPrompt.md](MuscleCarPrompt.md) and the follow-up documentation/SBOM audit. Inventory observations and validation dates are separate from this document's update date.
+Updated September 8, 2026 UTC. This delivery includes the initial [project brief](MuscleCarPrompt.md), its documentation, and the implemented [19-item improvement register](docs/IMPROVEMENTS_STATUS.md). The final cleanup and inventory scan are complete. The user reviewed the local preview and approved the final commit, push and wind down. [Delivery status](docs/DELIVERY.md) records the repository, publication and shutdown results. The original delivery is preserved in baseline commit `4835c0a`.
 
-## Current deliverable
+## Open and review
 
-MuscleScout is a working personal car-search workspace with a static Next/React frontend, separate authenticated Fastify API, Prisma/SQLite persistence, local worker, nine source adapters, explicit geocoding/routing commands and three isolated workspace modes. The implementation is in this project directory and does not depend on the boating project.
-
-| Area | Handoff state |
-|---|---|
-| Local website | [http://127.0.0.1:3100](http://127.0.0.1:3100); started during implementation. Process availability is not permanent. |
-| Local backend | Loopback port 4410; [health endpoint](http://127.0.0.1:4410/health). Password lives only in the private local environment. |
-| Worker | Started separately during implementation; must remain running for scheduled collection, queued requests and alert evaluation. No OS startup service is installed. |
-| Database | `data/musclescout.db`, 1,576 observed ads, 1,576 current groups at the documentation audit. These are not 1,576 verified unique physical cars. |
-| Public snapshot | 1,557 ads, generated `2026-09-08T03:16:07.457Z`; Autotrader's 19 records excluded by export settings. |
-| Static exports | Root build in `out/`; `/ClassicCars` build in `out-subpath/`. Both were browser-verified locally. These ignored build folders can be recreated. |
-| Tests | Initial handoff passed 52 unit/API/adapter/security tests, 10 desktop/mobile browser tests, both production builds and export isolation checks. See dated [validation](VALIDATION.md). |
-| Routing | Wheaton city center geocoded; no ORS credential supplied. Zero actual road routes established. |
-| Publication | No remote repository or destination supplied; no push or public deployment performed. Local repository currently has no initial commit; project files are working-tree files. |
-| SBOM | Installed-graph CycloneDX and SPDX, runtime subset, all 458 lock entries, license inventory, hashes and dated audit. See [SBOM.md](SBOM.md). |
-
-The documentation audit did not launch new collectors, change inventory or personal data, or send external alerts. It added documentation, a reproducible SBOM command and dependency reports; it also identified additional implementation limits for the backlog.
-
-## First use or resume
-
-Open the website and choose **Review cars**. The strict four-hour search is intentionally empty until genuine road estimates exist. Use **Settings & connection** to enter the generated `MUSCLESCOUT_PASSWORD` from your local `.env` and connect to the backend. Do not copy that value into documentation or public build configuration.
-
-If the services are no longer running, use a terminal in this directory:
+The local preview, private API and worker were stopped for the requested wind down. After starting with the commands below, the preview is [http://127.0.0.1:3100](http://127.0.0.1:3100) and the private API is [http://127.0.0.1:4410/health](http://127.0.0.1:4410/health). Use **Settings & connection** and the password in the private `.env` to connect. An API restart expires prior sessions; reconnect if needed. No password is printed here or bundled into the site.
 
 ```sh
 npm ci
@@ -33,63 +12,56 @@ npm run setup
 npm run dev
 ```
 
-For the existing populated installation, `npm run setup` preserves the database, password, settings and workspace. `npm ci` reinstalls the locked dependencies; it does not contain or recreate the private real-inventory database. A fresh clone starts with a dated public snapshot, while its new connected database is empty until collection or an intentional private restore/import.
+Setup preserves the database, environment/password, settings and workspace. The launchers provide the same local option. A fresh clone has the public snapshot but an empty connected database until intentional collection/import/restore. Existing preview processes are transient; the commands above reproduce them. Do not stop unrelated software to free a port.
 
-If 3100 or 4410 is occupied, inspect which application's process owns it or change this application's ports and exact allowed origins. Do not stop an unrelated application. The combined launcher cannot start a second copy over the separately started services. See [operations](docs/OPERATIONS.md) for stopping and restarting just MuscleScout.
+## What changed
 
-## What was delivered
+- Collection persists catalog page queues by source/query/scope, independent detail queues, job IDs/cancel/retry/recovery, and partial scheduling. Legacy observations now populate the operational backlog without inventing fresh requests. Source failures retain typed access/policy/layout/network causes, shared daily budgets, Retry-After and review pauses.
+- Duplicate review ranks corroborated evidence, displays conflicts and all source asks/links, supports dealer aliases, conservative stock normalization, manual selection, pagination, dismiss/undo and overlapping merge-history replay. Ads remain source records; group counts are not verified unique cars.
+- Saved searches offer vehicle/ad alert policies and optional crosspost notifications. Delivery uses immutable digest identities, deadlines, opt-in checks and visible blocked/uncertain/dead-letter recovery. The initial baseline remains quiet. No real external notification was sent.
+- Geocoding validates address evidence, rotates work fairly and sends ambiguous records to explicit review. Routing honors caller freshness, exact endpoints/options, shared quotas and location changes. No real ORS routes exist without the missing key.
+- Source/user provenance, field-specific reason/date, reset and generation recomputation are exposed in the UI. Public exports remove private evidence and reevaluate feed permissions/expiry. Browser availability ages from original observations, including auction freshness and deadlines.
+- Static mode loads a smaller dictionary catalog with lazy exact-ad details. Rendered cards are paginated. API reads use bounded batches and source/favorite prefilters; remaining all-match memory/rescans are documented. Image failures try only that ad's own photos.
+- Backend URL editing now stays separate from the authenticated endpoint, and redirects are rejected. Debounced private-workspace writes are serialized through acknowledged revisions; a conflict retains edits on screen for explicit recovery rather than silently overwriting another tab.
+- Authorized feed import, a permission-gated eBay request adapter, specialty documentary evidence and dated year-ceiling data are available. No provider agreement or live auction feed was fabricated. New operational/readiness/service/release/SBOM tools have runbooks.
 
-- Search defaults for Mustang/Camaro/Corvette, model years 1960–1989; explicit unknown-value handling; Camero normalization; verified model/generation boundaries and separate advertised-year text.
-- Strict routed travel, unknown-route review, broad regional discovery, nationwide job expansion and a separate specialty-Mustang toggle. Seller-only specialty claims remain a review category.
-- Real source images, grid/list/map, source coverage and run detail, favorites, private notes/data flags, comparison up to six ads, saved comparisons/searches, manual entries/import/export and reviewed identity/location edits.
-- Versioned canonical schema, separate vehicle/seller locations, evidence-bearing specifications, source/ask/bid/availability observations, first-seen preservation, conservative grouping and reversible reviewed merges.
-- Authenticated single-user API, session-scoped tokens, optimistic workspace revisions, explicit external delivery opt-in, durable alert attempts, private raw cache, bounded fetches, access-policy checks and source-isolated errors.
-- Renewable collection/worker leases, bounded per-source work, request/detail counters, retained original cache timestamps, explicit geocoding, ORS adapter and honest missing-key fallback.
-- Setup, migrations, combined/separate launch commands, macOS/Windows launchers, VS Code tasks, optional Docker configuration, root/subpath Pages builds, manual publication workflow and backup/restore guidance.
-- Three dated research reports, live-data and source/run ledgers, validation record, implementation decisions, build history and a prioritized improvement register.
+## Inventory and outstanding data work
 
-The [implementation log](IMPLEMENTATION_LOG.md) records concrete fixes made during development. The [architecture](docs/ARCHITECTURE.md) maps those features to files, entities and endpoints.
+The final refresh retains **3,139 ads / 3,139 current groups** from nine sources, with **3,120 ads publicly exportable**, 16 established coordinate records and zero actual routes. The scan fetched **93 fresh catalog pages**, completing at `2026-09-08T17:23:23.991Z`. Initial inventory was 1,576 ads, with 1,557 publicly exportable. A subsequent three-query national ClassicCars check fetched three pages and three details successfully and retained further page/detail work. The final configured catalog scan, refreshed counts, scope limits and blocked sources are recorded in [inventory scan evidence](docs/validation/inventory-full-scan.json) and [scope validation](docs/CONFIGURED_SCOPE_VALIDATION.md).
 
-## Open items the next maintainer should read first
+The scan covers the configured inventory catalogs of enabled, permitted adapters. It is not a claim that all US sellers or all detail pages have been inspected. Full detail enrichment remains a separate cumulative queue. Existing 500 Classic and Autotrader restrictions remain paused; disabled marketplaces/forums are not enabled by the scan. Prior observations survive unavailable sources and failed pages. The public snapshot continues to exclude Autotrader.
 
-| Priority | Unfinished area | Practical effect and next step |
-|---|---|---|
-| P1 | Cross-listed vehicle identity | No existing automatic groups were found. Many marketplace/dealer ads can still represent the same physical car; weak exact-title suggestions are noisy and only 15 pairs appear in review. Build evidence-ranked, paginated review before claiming unique-car counts. |
-| P1 | Source access and coverage | Autotrader refresh became unavailable, 500 Classic returns 403, several other sites restrict access or require approved APIs. Prior records remain; never treat blocked sources as empty. Consult the source-specific register before new requests. |
-| P1 | Resumable collection | Detail attempts rotate, but catalog page queues restart each cycle. Repeated small caps can keep revisiting early pages. Add durable source/scope cursors and queues with progress tests. |
-| P1 | Real routes and geography progress | Add a permitted ORS key, verify representative road routes, fix cache freshness consistency and geocoder fairness. Keep strict results empty for unresolved cars meanwhile. |
-| P1 | Duplicate alerts across crossposts | Alerts are keyed to ad IDs, and group representative changes can appear as new matches. Specify vehicle-level versus ad-level notification behavior and test transitions. |
-| P2 | Staleness, evidence and job operations | Static availability is frozen at export; some source/user provenance is DB-only; a single coalescing collection request has no resumable job dashboard. Improve these deliberately. |
-| P2 | External services and platforms | SMTP/webhook, actual Pages/HTTPS connectivity, Windows, Node 24 execution, Docker and supported WebMCP context remain unverified. |
+The strict four-hour search remains empty until actual fresh road routes exist. Use **Travel time unknown · review** to inspect unresolved candidates. Coordinates and straight-line miles never become drive times. Most specialty claims still require documentation or review. Cross-listed duplicate cars may remain separate even after the new matching tools were implemented.
 
-Full causes, mitigations, evidence and acceptance criteria are in [FUTURE_IMPROVEMENTS.md](FUTURE_IMPROVEMENTS.md). Read it together with [SOURCE_COVERAGE.md](SOURCE_COVERAGE.md); neither document promises completeness or unrestricted access.
+## Website options and publication
 
-## Data and transfer checklist
+**GitHub Pages remains fully supported and does not require Docker.** It serves the static frontend and dated public inventory; browser-local shortlists/notes/searches work without a backend. Private collection, SQLite, route jobs and scheduled alerts require a separately running local API/worker. HTTPS-to-local-network access is browser-dependent and needs validation at the intended deployed origin.
 
-| Keep / transfer | Reason |
-|---|---|
-| Source, lockfile, migrations, configs, docs and fixtures | Reproducible software and review evidence; safe to version after the ordinary publication review. |
-| `public/data/snapshot.json` | Dated redacted real inventory for static mode. Source redistribution decisions still apply. |
-| Private consistent DB backup + matching `.env` | Connected inventory, notes, settings, searches, history and credentials. Transfer privately, separately from a public repository. |
-| `data/research/` and `data/cache/` | Private raw source evidence and original timestamps. The DB backup command does not copy these directories. |
-| Browser workspace export per mode/path | Snapshot/sample notes and favorites are not in the backend DB. Clearing browser data loses them without a separate export. |
-| `out/`, `out-subpath/`, `node_modules/`, test screenshots | Disposable outputs, not the authoritative source. Rebuild/reinstall as needed. |
+```sh
+npm run export:snapshot
+npm run build:exports
+npm run verify:exports
+```
 
-Never merge another project's `.env`, browser keys, ports, databases or Docker volumes into this one. The boating service remained reachable on its separate port during implementation; same-origin storage isolation was tested with MuscleScout's two builds and a synthetic separate-app sentinel, not by modifying BoatScout's real browser workspace.
+The root build is `out/`; the `/ClassicCars` example is `out-subpath/`. Set `NEXT_PUBLIC_BASE_PATH` to the actual repository name before release. The manual Pages Actions workflow uploads static output only, with pinned actions. The user has approved delivery after local review; [delivery status](docs/DELIVERY.md) records the selected destination and actual publication result.
 
-Before another release, regenerate SBOMs after dependency changes, rerun the checks relevant to changed behavior, refresh the source/snapshot dates, confirm export exclusions and build the intended base path. A commit/tag and deployment destination should identify an actual reviewed release; none is invented in this handoff.
+Docker is an optional local packaging route. The pinned Linux arm64 image built and passed isolated release checks. Its static output contains build-time data and requires a refresh/rebuild or connected mode. `docker compose up --build` is available, but no Compose deployment or OS autostart was installed. `npm run service -- generate` produced reviewable startup templates; install/uninstall are explicit operator actions.
 
-## Documentation map
+## Checks and evidence
 
-| Document | Purpose |
-|---|---|
-| [README](README.md) | User entry point, controls and command overview. |
-| [Operations](docs/OPERATIONS.md) | Configuration, processes, refresh, backups, restore and troubleshooting. |
-| [Architecture](docs/ARCHITECTURE.md) | Code/data flow, entities, API and security boundaries. |
-| [Implementation log](IMPLEMENTATION_LOG.md) | What was built, researched, corrected and verified. |
-| [Decisions](DECISIONS.md) | Architectural choices and tradeoffs. |
-| [Live data](LIVE_DATA.md) | Dated ads/groups/search counts and interpretation. |
-| [Source coverage](SOURCE_COVERAGE.md) | Every candidate, live scope, pagination and run history. |
-| [Validation](VALIDATION.md) | Executed checks versus unverified integrations. |
-| [Future improvements](FUTURE_IMPROVEMENTS.md) | Open struggles, priorities and acceptance criteria. |
-| [SBOM](SBOM.md) | Dependency artifacts, provenance, scope, licensing and regeneration. |
+[VALIDATION.md](VALIDATION.md) records 222 passing unit/API tests, 16 passing desktop/mobile browser tests, both static builds and final export privacy checks. The final [static review receipt](docs/validation/static-review.json) matches the 3,120-ad snapshot. Clean macOS Node 24 and Linux Docker Node 24 passed the release smoke; Windows and remote GitHub CI remain unexecuted targets. Native Chromium 153 WebMCP registration/invocation/lifecycle passed without a polyfill. Local root/subpath isolation passed; public HTTPS connectivity remains a separate deployment check.
+
+[SBOM.md](SBOM.md) links full/runtime CycloneDX, SPDX, all 471 lock locations/licenses, native/WASM hashes, target OS evidence and the fresh zero-vulnerability advisory query. Four formerly unresolved optional-WASM package versions were directly inspected in the integrity-verified archive. This is package inventory evidence, not blanket source-content redistribution permission.
+
+## Resume external acceptance when ready
+
+```sh
+npm run verify:routing
+npm run verify:delivery -- --channel=webhook
+npm run verify:delivery -- --channel=email
+npm run coverage:report -- docs/CONFIGURED_SCOPE_VALIDATION
+```
+
+Readiness commands send nothing by default. Real routing requires `MUSCLESCOUT_ORS_KEY` and explicit `--live`; a synthetic notification requires a user-authorized destination, enabled channel and `--send-test`. See [service acceptance](docs/SERVICE_ACCEPTANCE.md) for route geometry/receipt review and uncertain-send recovery. Approved feed files stay private and import dry-run unless `--apply` is supplied. Live source permission and credentials remain external inputs; [delivery status](docs/DELIVERY.md) tracks remote platform acceptance.
+
+Back up with `npm run backup` before changing persistence. Keep SQLite/environment backups private; separately preserve raw evidence and browser-only exports when needed. [Operations](docs/OPERATIONS.md) documents restore, [architecture](docs/ARCHITECTURE.md) maps code/APIs, and [future work](FUTURE_IMPROVEMENTS.md) retains all real-world struggles.

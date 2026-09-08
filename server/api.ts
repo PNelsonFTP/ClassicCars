@@ -18,7 +18,7 @@ import {
   upsertListing,
   snapshot,
 } from "./store";
-import { searchListings, potentialDuplicates } from "../shared/search";
+import { searchListings } from "../shared/search";
 import {
   searchSchema,
   workspaceSchema,
@@ -26,6 +26,19 @@ import {
   listingSchema,
   locationSchema,
 } from "../shared/schema";
+import { correctListing, resetCorrection, provenance } from "./reviews";
+import { registerCollectionRoutes } from "./collection-api";
+import { getServiceBudgets } from "./service-budget";
+import { retryGeocode } from "./geography";
+import { searchPage } from "./search-page";
+import {
+  duplicateReviewPage,
+  mergeReviewedGroups,
+  unmergeReviewedGroup,
+  reviewDuplicateDecision,
+  saveSellerAliases,
+} from "./grouping";
+import { retryDelivery } from "./alerts";
 export async function buildApi() {
   const app = Fastify({
     logger: {
@@ -45,7 +58,19 @@ export async function buildApi() {
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
   });
-  await app.register(rateLimit, { max: 180, timeWindow: "1 minute" });
+  await app.register(rateLimit, {
+    max: 180,
+    timeWindow: "1 minute",
+    keyGenerator: (request) => {
+      const value = request.headers.authorization?.replace(/^Bearer /, "");
+      const hash = value
+        ? createHash("sha256").update(value).digest("hex")
+        : "";
+      return hash && (sessions.get(hash) || 0) > Date.now()
+        ? `session:${hash}`
+        : request.ip;
+    },
+  });
   const password = process.env.MUSCLESCOUT_PASSWORD;
   if (!password)
     throw new Error("Run npm run setup to generate the backend password.");
@@ -124,6 +149,16 @@ export async function buildApi() {
       (await getWorkspace()).workspace,
     ),
   );
+  app.post("/api/search/page", async (req) => {
+    const { filters, offset, limit } = z
+      .object({
+        filters: searchSchema,
+        offset: z.number().int().min(0).default(0),
+        limit: z.number().int().min(1).max(200).default(48),
+      })
+      .parse(req.body);
+    return searchPage(filters, offset, limit);
+  });
   app.get("/api/snapshot", () => snapshot(false));
   app.get("/api/workspace", getWorkspace);
   app.put("/api/workspace", async (req, reply) => {
@@ -220,204 +255,96 @@ export async function buildApi() {
     });
   });
   app.patch("/api/listings/:id/location", async (req) => {
-    const { id } = z.object({ id: z.string() }).parse(req.params),
-      location = locationSchema.parse(req.body);
-    const row = await db.listing.findUniqueOrThrow({ where: { id } }),
-      l = listingSchema.parse(JSON.parse(row.payload));
-    l.vehicleLocation = location;
-    l.userOverrides = {
-      ...l.userOverrides,
-      vehicleLocation: location,
-      reviewedAt: new Date().toISOString(),
-    };
-    l.route = null;
-    l.straightLineMiles = null;
-    l.flags.push("Location corrected by user; routing refresh required.");
-    await db.listing.update({
-      where: { id },
-      data: {
-        payload: JSON.stringify(l),
-        driveMinutes: null,
-        vehicleState: location.state,
-      },
+    const { id } = z.object({ id: z.string() }).parse(req.params);
+    const body = z
+      .object({
+        reason: z
+          .string()
+          .min(5)
+          .default(
+            "User corrected actual vehicle location through the legacy location editor.",
+          ),
+      })
+      .passthrough()
+      .parse(req.body);
+    return correctListing(id, {
+      vehicleLocation: locationSchema.parse(body),
+      reason: body.reason,
     });
-    return l;
   });
   app.patch("/api/listings/:id/review", async (req) => {
     const { id } = z.object({ id: z.string() }).parse(req.params);
-    const patch = z
-      .object({
-        year: z.number().int().min(1885).max(2100).nullable(),
-        specialtyEvidence: z.enum([
-          "unknown",
-          "seller-claimed",
-          "document-supported",
-          "user-reviewed",
-        ]),
-        vehicleLocation: locationSchema.nullable(),
-        reason: z.string().min(5).max(5000),
-      })
-      .parse(req.body);
-    const row = await db.listing.findUniqueOrThrow({ where: { id } });
-    const old = listingSchema.parse(JSON.parse(row.payload));
-    const updated = {
-      ...old,
-      userOverrides: {
-        year: patch.year,
-        specialtyEvidence: patch.specialtyEvidence,
-        vehicleLocation: patch.vehicleLocation,
-        identityStatus: patch.year
-          ? ("consistent" as const)
-          : ("review" as const),
-        reviewedAt: new Date().toISOString(),
-      },
-      year: patch.year,
-      specialtyEvidence: patch.specialtyEvidence,
-      vehicleLocation: patch.vehicleLocation,
-      identityStatus: patch.year
-        ? ("consistent" as const)
-        : ("review" as const),
-      identityNotes: [
-        ...old.identityNotes,
-        `User-reviewed correction: ${patch.reason}`,
-      ],
-      route: null,
-      straightLineMiles: null,
-    };
-    await db.$transaction(async (tx) => {
-      await tx.listing.update({
-        where: { id },
-        data: {
-          year: updated.year,
-          vehicleState: updated.vehicleLocation?.state,
-          driveMinutes: null,
-          payload: JSON.stringify(updated),
-        },
-      });
-      await tx.observation.create({
-        data: {
-          listingId: id,
-          kind: "user-correction",
-          observedAt: new Date(),
-          payload: JSON.stringify({
-            previous: {
-              year: old.year,
-              location: old.vehicleLocation,
-              specialtyEvidence: old.specialtyEvidence,
-            },
-            patch,
-          }),
-        },
-      });
-    });
-    return updated;
+    return correctListing(id, req.body);
   });
-  app.get("/api/groups/review", async () =>
-    potentialDuplicates(await allListings()),
+  app.post("/api/listings/:id/review/reset", async (req) => {
+    const { id } = z.object({ id: z.string() }).parse(req.params);
+    const { reason } = z
+      .object({ reason: z.string().trim().min(5).max(5000) })
+      .parse(req.body);
+    return resetCorrection(id, reason);
+  });
+  app.get("/api/listings/:id/provenance", async (req) => {
+    const { id } = z.object({ id: z.string() }).parse(req.params);
+    const { offset, limit } = z
+      .object({
+        offset: z.coerce.number().int().min(0).default(0),
+        limit: z.coerce.number().int().min(1).max(100).default(25),
+      })
+      .parse(req.query);
+    return provenance(id, offset, limit);
+  });
+  app.get("/api/groups/review", async (req) => {
+    const options = z
+      .object({
+        offset: z.coerce.number().int().min(0).default(0),
+        limit: z.coerce.number().int().min(1).max(100).default(15),
+        includeDismissed: z
+          .enum(["true", "false"])
+          .default("false")
+          .transform((v) => v === "true"),
+      })
+      .parse(req.query);
+    return duplicateReviewPage(await allListings(), options);
+  });
+  app.post("/api/groups/merge", async (req) =>
+    mergeReviewedGroups(req.body as Parameters<typeof mergeReviewedGroups>[0]),
   );
-  app.post("/api/groups/merge", async (req) => {
-    const { ids, reason } = z
-      .object({
-        ids: z.array(z.string()).min(2).max(20),
-        reason: z.string().min(3),
-      })
-      .parse(req.body);
-    const listings = await db.listing.findMany({ where: { id: { in: ids } } });
-    if (listings.length !== ids.length)
-      throw new Error("Unknown listing in merge");
-    const id = `reviewed:${randomUUID()}`;
-    await db.$transaction(async (tx) => {
-      await tx.groupReview.create({
-        data: {
-          id,
-          listingIds: JSON.stringify(
-            listings.map((l) => ({ id: l.id, groupId: l.groupId })),
-          ),
-          action: "merge",
-          reason,
-        },
-      });
-      for (const row of listings)
-        await tx.listing.update({
-          where: { id: row.id },
-          data: {
-            groupId: id,
-            payload: JSON.stringify({
-              ...JSON.parse(row.payload),
-              groupId: id,
-            }),
-          },
-        });
-    });
-    return { groupId: id };
-  });
   app.post("/api/groups/unmerge", async (req) => {
-    const { groupId } = z.object({ groupId: z.string() }).parse(req.body),
-      review = await db.groupReview.findUniqueOrThrow({
-        where: { id: groupId },
-      });
-    await db.$transaction(async (tx) => {
-      for (const entry of JSON.parse(review.listingIds)) {
-        const row = await tx.listing.findUniqueOrThrow({
-          where: { id: entry.id },
-        });
-        await tx.listing.update({
-          where: { id: entry.id },
-          data: {
-            groupId: entry.groupId,
-            payload: JSON.stringify({
-              ...JSON.parse(row.payload),
-              groupId: entry.groupId,
-            }),
-          },
-        });
-      }
-      await tx.groupReview.update({
-        where: { id: groupId },
-        data: { action: "unmerged" },
-      });
-    });
-    return { ok: true };
-  });
-  app.post("/api/collect", async (req) => {
     const body = z
-      .object({ scope: z.enum(["regional", "nationwide"]).default("regional") })
+      .object({
+        groupId: z.string().optional(),
+        reviewId: z.string().optional(),
+      })
+      .refine((b) => !!(b.reviewId || b.groupId))
       .parse(req.body);
-    await db.setting.upsert({
-      where: { key: "collection-request" },
-      create: {
-        key: "collection-request",
-        value: JSON.stringify({
-          scope: body.scope,
-          requestedAt: new Date().toISOString(),
-        }),
-      },
-      update: {
-        value: JSON.stringify({
-          scope: body.scope,
-          requestedAt: new Date().toISOString(),
-        }),
-      },
-    });
-    return { status: "queued", scope: body.scope };
+    return unmergeReviewedGroup((body.reviewId || body.groupId)!);
   });
-  app.post("/api/collection/expand", async () => {
-    const s = await getSettings();
-    s.nationwideEnabled = true;
-    await db.setting.upsert({
-      where: { key: "settings" },
-      create: { key: "settings", value: JSON.stringify(s) },
-      update: { value: JSON.stringify(s) },
-    });
-    await db.setting.upsert({
-      where: { key: "collection-request" },
-      create: {
-        key: "collection-request",
-        value: JSON.stringify({ scope: "nationwide" }),
-      },
-      update: { value: JSON.stringify({ scope: "nationwide" }) },
-    });
-    return { status: "queued", scope: "nationwide" };
+  app.post("/api/groups/decision", async (req) =>
+    reviewDuplicateDecision(
+      req.body as Parameters<typeof reviewDuplicateDecision>[0],
+    ),
+  );
+  app.put("/api/groups/aliases", async (req) =>
+    saveSellerAliases(
+      z.object({ aliases: z.array(z.unknown()) }).parse(req.body)
+        .aliases as Parameters<typeof saveSellerAliases>[0],
+    ),
+  );
+  app.post("/api/delivery-attempts/:id/retry", async (req) => {
+    const { id } = z.object({ id: z.string() }).parse(req.params);
+    const { acknowledgeUncertain } = z
+      .object({ acknowledgeUncertain: z.boolean().default(false) })
+      .parse(req.body);
+    return retryDelivery(id, acknowledgeUncertain);
+  });
+  registerCollectionRoutes(app);
+  app.get("/api/service-budgets", getServiceBudgets);
+  app.post("/api/listings/:id/geocode/retry", async (req) => {
+    const { id } = z.object({ id: z.string() }).parse(req.params);
+    const { reason } = z
+      .object({ reason: z.string().trim().min(5).max(5000) })
+      .parse(req.body);
+    return retryGeocode(id, reason);
   });
   app.get("/api/alerts", () =>
     db.alert.findMany({ orderBy: { createdAt: "desc" }, take: 100 }),

@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import * as Switch from "@radix-ui/react-switch";
 import {
@@ -56,8 +56,18 @@ import {
   specFields,
   targetMatch,
 } from "@/shared/search";
+import DeliveryAttempts from "./DeliveryAttempts";
+import DuplicateReview from "./DuplicateReview";
+import { OperationsPanel } from "./OperationsPanel";
+import Photo from "./ListingPhoto";
+import EvidenceTimeline from "./EvidenceTimeline";
+import { webMcpPatchSchema } from "../shared/webmcp";
+import { unpackCatalog } from "../shared/catalog";
+import { projectSnapshot } from "../shared/freshness";
+import { apiRequest } from "../shared/api-client";
+import { workspaceSaveQueue } from "../shared/workspace-save";
 import ListingMap from "./ListingMap";
-import { ManualEntry, ReviewedData, GroupReview } from "./WorkspaceTools";
+import { ManualEntry, ReviewedData } from "./WorkspaceTools";
 const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const empty: Snapshot = {
   schemaVersion: 1,
@@ -143,35 +153,10 @@ function Modal({
     </Dialog.Root>
   );
 }
-function Photo({
-  listing,
-  large = false,
-}: {
-  listing: Listing;
-  large?: boolean;
-}) {
-  const [failed, setFailed] = useState(false);
-  return listing.photos[0] && !failed ? (
-    <img
-      className={large ? "detail-photo" : "car-photo"}
-      src={listing.photos[0]}
-      alt={listing.title}
-      loading={large ? "eager" : "lazy"}
-      onError={() => setFailed(true)}
-    />
-  ) : (
-    <div className={`photo-placeholder ${large ? "large" : ""}`}>
-      <CarFront size={50} strokeWidth={1} />
-      <span>
-        {listing.isSample ? "Fictional example" : "Photo unavailable"}
-      </span>
-    </div>
-  );
-}
 export default function MuscleScout() {
   const [displayLimit, setDisplayLimit] = useState(24),
     [page, setPage] = useState<Page>("discover"),
-    [data, setData] = useState<Snapshot>(empty),
+    [rawData, setData] = useState<Snapshot>(empty),
     [mode, setMode] = useState("snapshot"),
     [filters, setFilters] = useState<Search>(defaultSearch()),
     [workspace, setWorkspace] = useState<Workspace>(emptyWorkspace()),
@@ -184,13 +169,13 @@ export default function MuscleScout() {
     [dark, setDark] = useState(false),
     [mobileFilters, setMobileFilters] = useState(false),
     [backend, setBackend] = useState("http://127.0.0.1:4410"),
+    [backendDraft, setBackendDraft] = useState("http://127.0.0.1:4410"),
     [password, setPassword] = useState(""),
     [token, setToken] = useState(""),
     [connecting, setConnecting] = useState(false),
     [manualOpen, setManualOpen] = useState(false),
     [importOpen, setImportOpen] = useState(false),
     [importText, setImportText] = useState(""),
-    [revision, setRevision] = useState(0),
     [history, setHistory] = useState<
       { kind: string; amount: number | null; observedAt: string }[]
     >([]),
@@ -208,42 +193,63 @@ export default function MuscleScout() {
     >([]),
     [settings, setSettings] = useState<Record<string, unknown>>({}),
     [busy, setBusy] = useState(false);
+  const [viewTime, setViewTime] = useState(Date.now());
+  const data = useMemo(
+    () => projectSnapshot(rawData, viewTime),
+    [rawData, viewTime],
+  );
+  useEffect(() => {
+    const timer = setInterval(() => setViewTime(Date.now()), 30000);
+    return () => clearInterval(timer);
+  }, []);
   useEffect(() => setDisplayLimit(24), [filters, page]);
   const workspaceKey = storageKey(base, mode, backend),
-    writeTimer = useRef<ReturnType<typeof setTimeout> | null>(null),
+    workspaceWriter = useRef<ReturnType<
+      typeof workspaceSaveQueue<Workspace>
+    > | null>(null),
     loadedKey = useRef("");
   const modeRef = useRef(mode);
   modeRef.current = mode;
+  const connectionRef = useRef("");
+  connectionRef.current = `${mode}:${backend}:${token}`;
   function inform(s: string) {
     setNotice(s);
   }
-  async function api(path: string, options: RequestInit = {}, auth = token) {
-    const response = await fetch(`${backend.replace(/\/$/, "")}${path}`, {
-      ...options,
-      headers: {
-        "Content-Type": "application/json",
-        ...(auth ? { Authorization: `Bearer ${auth}` } : {}),
-      },
-    });
-    const payload = await response.json();
-    if (response.status === 401 && auth) {
-      sessionStorage.removeItem(storageKey(base, "connection"));
-      setToken("");
-      setMode("snapshot");
-    }
-    if (!response.ok)
-      throw new Error(payload.error || `Request failed (${response.status})`);
-    return payload;
-  }
+  const api = useCallback(
+    async <T = any,>(
+      path: string,
+      options: RequestInit = {},
+      auth = token,
+    ): Promise<T> => {
+      try {
+        return await apiRequest<T>(backend, auth, path, options);
+      } catch (error) {
+        if (
+          (error as { status?: number }).status === 401 &&
+          auth &&
+          connectionRef.current === `${modeRef.current}:${backend}:${auth}`
+        ) {
+          sessionStorage.removeItem(storageKey(base, "connection"));
+          setToken("");
+          setMode("snapshot");
+        }
+        throw error;
+      }
+    },
+    [backend, token],
+  );
   async function refresh() {
     if (mode === "connected") {
+      const connection = connectionRef.current;
       const result = await api("/api/snapshot");
-      setSettings(await api("/api/settings"));
-      if (modeRef.current !== mode) return;
-      setData(result);
+      const nextSettings = await api("/api/settings");
       const a = await api("/api/alerts");
+      const attempts = await api("/api/delivery-attempts");
+      if (connectionRef.current !== connection) return;
+      setSettings(nextSettings);
+      setData(result);
       setAlerts(a);
-      setDeliveries(await api("/api/delivery-attempts"));
+      setDeliveries(attempts);
     } else if (mode === "sample" && process.env.NODE_ENV === "development") {
       const { sampleListings } = await import("@/shared/sample");
       setData({
@@ -255,12 +261,16 @@ export default function MuscleScout() {
         ],
       });
     } else {
-      const response = await fetch(`${base}/data/snapshot.json`, {
+      let response = await fetch(`${base}/data/catalog.json`, {
         cache: "no-store",
       });
+      if (response.status === 404)
+        response = await fetch(`${base}/data/snapshot.json`, {
+          cache: "no-store",
+        });
       if (!response.ok)
         throw new Error("Published snapshot could not be loaded.");
-      const result = await response.json();
+      const result = unpackCatalog<Snapshot>(await response.json());
       if (modeRef.current !== mode) return;
       let manual: Listing[] = [];
       try {
@@ -292,6 +302,7 @@ export default function MuscleScout() {
       );
       if (connection?.token && connection?.backend) {
         setBackend(connection.backend);
+        setBackendDraft(connection.backend);
         setToken(connection.token);
         setMode("connected");
       }
@@ -304,6 +315,7 @@ export default function MuscleScout() {
     } catch {}
   }, [dark]);
   useEffect(() => {
+    let active = true;
     setReady(false);
     loadedKey.current = "";
     refresh().catch((e) => inform(e.message));
@@ -325,30 +337,37 @@ export default function MuscleScout() {
     } else {
       api("/api/workspace")
         .then((r) => {
-          setWorkspace(workspaceSchema.parse(r.workspace));
-          setRevision(r.revision);
+          if (!active) return;
+          const loaded = workspaceSchema.parse(r.workspace);
+          workspaceWriter.current = workspaceSaveQueue({
+            initial: loaded,
+            revision: r.revision,
+            send: (value, revision) =>
+              api("/api/workspace", {
+                method: "PUT",
+                body: JSON.stringify({ workspace: value, revision }),
+              }),
+            onError: (error) =>
+              inform(
+                `Workspace save failed: ${(error as Error).message}. Your latest edits remain on screen; export them before reconnecting.`,
+              ),
+          });
+          setWorkspace(loaded);
           loadedKey.current = workspaceKey;
           setReady(true);
         })
         .catch((e) => inform(e.message));
     }
     return () => {
-      if (writeTimer.current) clearTimeout(writeTimer.current);
+      active = false;
+      workspaceWriter.current?.dispose();
+      workspaceWriter.current = null;
     };
   }, [mode, workspaceKey, token]);
   useEffect(() => {
     if (!ready || loadedKey.current !== workspaceKey) return;
     if (mode === "connected") {
-      writeTimer.current = setTimeout(
-        () =>
-          api("/api/workspace", {
-            method: "PUT",
-            body: JSON.stringify({ workspace, revision }),
-          })
-            .then((r) => setRevision(r.revision))
-            .catch((e) => inform(`Workspace save failed: ${e.message}`)),
-        450,
-      );
+      workspaceWriter.current?.enqueue(workspace);
     } else {
       try {
         localStorage.setItem(workspaceKey, JSON.stringify(workspace));
@@ -358,15 +377,53 @@ export default function MuscleScout() {
         );
       }
     }
-    return () => {
-      if (writeTimer.current) clearTimeout(writeTimer.current);
-    };
   }, [workspace, ready]);
   useEffect(() => {
     if (!notice) return;
     const timer = setTimeout(() => setNotice(""), 6500);
     return () => clearTimeout(timer);
   }, [notice]);
+  const detailCache = useRef(new Map<string, Listing[]>());
+  useEffect(() => {
+    const filename = detail && data.detailFiles?.[detail.id];
+    if (!detail || !filename || mode === "connected") return;
+    let active = true;
+    const id = detail.id;
+    if (!/^details\/[a-f0-9]{24}\.json$/.test(filename)) return;
+    const cached = detailCache.current.get(filename);
+    const load = cached
+      ? Promise.resolve(cached)
+      : fetch(`${base}/data/${filename}`).then(async (r) => {
+          if (!r.ok)
+            throw new Error(
+              "Full source details could not be loaded. Retry by reopening this ad.",
+            );
+          return (await r.json()).map((l: unknown) =>
+            listingSchema.parse(l),
+          ) as Listing[];
+        });
+    load
+      .then((rows) => {
+        detailCache.current.set(filename, rows);
+        if (!active) return;
+        const full = rows.find((l) => l.id === id);
+        if (full)
+          setDetail(
+            projectSnapshot(
+              {
+                ...empty,
+                listings: [full],
+                freshnessPolicy: data.freshnessPolicy,
+              },
+              Date.now(),
+            ).listings[0],
+          );
+      })
+      .catch((e) => inform(e.message));
+    return () => {
+      active = false;
+    };
+  }, [detail?.id, data.detailFiles, mode]);
   useEffect(() => {
     if (detail && mode === "connected")
       api(`/api/listings/${encodeURIComponent(detail.id)}/history`)
@@ -401,7 +458,7 @@ export default function MuscleScout() {
           },
           annotations: { readOnlyHint: false },
           execute(input: unknown) {
-            const parsed = searchSchema.partial().parse(input);
+            const parsed = webMcpPatchSchema.parse(input);
             setFilters((p) => searchSchema.parse({ ...p, ...parsed }));
             setPage("discover");
             return { applied: parsed };
@@ -504,23 +561,46 @@ export default function MuscleScout() {
   async function connect() {
     setConnecting(true);
     try {
-      const result = await api(
-        "/api/login",
-        { method: "POST", body: JSON.stringify({ password }) },
+      const target = new URL(backendDraft.trim());
+      if (
+        !["http:", "https:"].includes(target.protocol) ||
+        target.username ||
+        target.password ||
+        target.search ||
+        target.hash
+      )
+        throw new Error(
+          "Use an HTTP or HTTPS backend URL without credentials, query or fragment.",
+        );
+      const authenticatedBackend = target.href.replace(/\/$/, "");
+      const result = await apiRequest<{ token: string }>(
+        authenticatedBackend,
         "",
+        "/api/login",
+        {
+          method: "POST",
+          body: JSON.stringify({ password }),
+        },
       );
+      const nextSettings = await apiRequest<Record<string, unknown>>(
+        authenticatedBackend,
+        result.token,
+        "/api/settings",
+      );
+      setBackend(authenticatedBackend);
+      setBackendDraft(authenticatedBackend);
       setToken(result.token);
       sessionStorage.setItem(
-        storageKey(base, "session", backend),
+        storageKey(base, "session", authenticatedBackend),
         result.token,
       );
       sessionStorage.setItem(
         storageKey(base, "connection"),
-        JSON.stringify({ backend, token: result.token }),
+        JSON.stringify({ backend: authenticatedBackend, token: result.token }),
       );
       setPassword("");
       setMode("connected");
-      setSettings(await api("/api/settings", {}, result.token));
+      setSettings(nextSettings);
       inform("Connected to your private local workspace.");
     } catch (e) {
       inform((e as Error).message);
@@ -1347,7 +1427,9 @@ export default function MuscleScout() {
                     <div
                       className={`car-grid ${view === "list" ? "as-list" : ""}`}
                     >
-                      {results.rows.slice(0, displayLimit).map(carCard)}
+                      {results.rows
+                        .slice(displayLimit - 24, displayLimit)
+                        .map(carCard)}
                     </div>
                   ) : (
                     <div className="empty-state">
@@ -1376,16 +1458,30 @@ export default function MuscleScout() {
                       </button>
                     </div>
                   )}
-                  {view !== "map" && results.rows.length > displayLimit && (
-                    <div className="button-row">
+                  {view !== "map" && results.rows.length > 24 && (
+                    <nav className="button-row" aria-label="Result pages">
                       <button
                         className="button secondary"
+                        disabled={displayLimit <= 24}
+                        onClick={() =>
+                          setDisplayLimit((n) => Math.max(24, n - 24))
+                        }
+                      >
+                        Previous 24
+                      </button>
+                      <span>
+                        {displayLimit - 23}–
+                        {Math.min(displayLimit, results.rows.length)} of{" "}
+                        {results.rows.length}
+                      </span>
+                      <button
+                        className="button secondary"
+                        disabled={displayLimit >= results.rows.length}
                         onClick={() => setDisplayLimit((n) => n + 24)}
                       >
-                        Show 24 more · {results.rows.length - displayLimit}{" "}
-                        remaining
+                        Next 24
                       </button>
-                    </div>
+                    </nav>
                   )}
                   <div className="results-foot">
                     <span>
@@ -1722,6 +1818,59 @@ export default function MuscleScout() {
                       matching ads · Specialty{" "}
                       {s.filters.specialty ? "included" : "off"}
                     </p>
+                    <label className="field-label">
+                      NEW MATCH ALERT POLICY
+                    </label>
+                    <select
+                      aria-label={`Alert identity policy for ${s.name}`}
+                      value={s.filters.alertPolicy}
+                      onChange={(e) =>
+                        setWorkspace((w) => ({
+                          ...w,
+                          searches: w.searches.map((x) =>
+                            x.id === s.id
+                              ? {
+                                  ...x,
+                                  filters: {
+                                    ...x.filters,
+                                    alertPolicy: e.target.value as
+                                      "vehicle" | "ad",
+                                  },
+                                }
+                              : x,
+                          ),
+                        }))
+                      }
+                    >
+                      <option value="vehicle">
+                        Vehicle group · avoid repeat crossposts
+                      </option>
+                      <option value="ad">Every newly matching source ad</option>
+                    </select>
+                    <label className="check-label">
+                      <input
+                        type="checkbox"
+                        disabled={s.filters.alertPolicy === "ad"}
+                        checked={s.filters.crosspostAlerts}
+                        onChange={(e) =>
+                          setWorkspace((w) => ({
+                            ...w,
+                            searches: w.searches.map((x) =>
+                              x.id === s.id
+                                ? {
+                                    ...x,
+                                    filters: {
+                                      ...x.filters,
+                                      crosspostAlerts: e.target.checked,
+                                    },
+                                  }
+                                : x,
+                            ),
+                          }))
+                        }
+                      />
+                      Also notify when a known vehicle gains another source
+                    </label>
                     <label className="field-label">ALERT SCHEDULE</label>
                     <select
                       aria-label={`Alert schedule for ${s.name}`}
@@ -1996,8 +2145,9 @@ export default function MuscleScout() {
                   <label className="field-label">BACKEND URL</label>
                   <input
                     aria-label="Backend URL"
-                    value={backend}
-                    onChange={(e) => setBackend(e.target.value)}
+                    value={backendDraft}
+                    disabled={connecting}
+                    onChange={(e) => setBackendDraft(e.target.value)}
                   />
                   <label className="field-label">BACKEND PASSWORD</label>
                   <input
@@ -2169,32 +2319,27 @@ export default function MuscleScout() {
                   )}
                 </div>
                 {mode === "connected" && (
-                  <div className="panel">
-                    <h2>Alert delivery</h2>
-                    <p>
-                      External delivery requires a saved-search channel, an
-                      enabled setting, and a configured destination. Refresh the
-                      view to check retries.
-                    </p>
-                    {deliveries.length === 0 ? (
-                      <p className="field-help">
-                        No external delivery attempts. In-app alerts remain
-                        available.
-                      </p>
-                    ) : (
-                      deliveries.slice(0, 20).map((d) => (
-                        <div key={d.id} className="evidence-row">
-                          <strong>
-                            {d.channel} · {d.status}
-                          </strong>
-                          <p>
-                            {d.attempts} attempts
-                            {d.error ? ` · ${d.error}` : ""}
-                          </p>
-                        </div>
-                      ))
-                    )}
-                  </div>
+                  <DeliveryAttempts
+                    attempts={deliveries}
+                    api={api}
+                    refresh={refresh}
+                  />
+                )}
+                <DuplicateReview
+                  listings={data.listings}
+                  connected={mode === "connected"}
+                  api={api}
+                  refreshed={refresh}
+                />
+                {mode === "connected" && (
+                  <OperationsPanel
+                    api={api}
+                    onRefresh={refresh}
+                    sources={data.coverage.map((c) => ({
+                      id: c.id,
+                      name: c.name,
+                    }))}
+                  />
                 )}
                 <div className="panel">
                   <h2>Privacy & provider notes</h2>
@@ -2484,6 +2629,43 @@ export default function MuscleScout() {
                     }))
                   }
                 />
+                {mode === "connected" && (
+                  <EvidenceTimeline
+                    key={
+                      "evidence:" +
+                      detail.id +
+                      (detail.userOverrides?.reviewedAt || "")
+                    }
+                    id={detail.id}
+                    api={api}
+                    changed={async () => {
+                      await refresh();
+                      const updated = await api<Snapshot>("/api/snapshot");
+                      setDetail(
+                        updated.listings.find((l) => l.id === detail.id) ||
+                          null,
+                      );
+                    }}
+                  />
+                )}
+                {mode === "connected" && (
+                  <ReviewedData
+                    key={
+                      "editor:" +
+                      detail.id +
+                      (detail.userOverrides?.reviewedAt || "")
+                    }
+                    listing={detail}
+                    save={async (patch) => {
+                      const updated = await api<Listing>(
+                        `/api/listings/${encodeURIComponent(detail.id)}/review`,
+                        { method: "PATCH", body: JSON.stringify(patch) },
+                      );
+                      setDetail(updated);
+                      await refresh();
+                    }}
+                  />
+                )}
                 <h3>Your reviewed correction</h3>
                 <textarea
                   aria-label="Reviewed correction"

@@ -1,3 +1,4 @@
+import { FetchFailure, failureFromResponse } from "./ingest/failures";
 import { lookup } from "node:dns/promises";
 import { request } from "node:https";
 import { isIP } from "node:net";
@@ -152,11 +153,13 @@ export async function cachedPage(
     cacheHours = 24,
     delayMs = 10000,
     robots = true,
+    beforeRequest,
   }: {
     origins: string[];
     cacheHours?: number;
     delayMs?: number;
     robots?: boolean;
+    beforeRequest?: (url: string, delayMs: number) => Promise<void>;
   },
 ): Promise<Cached & { html: string; cacheHit: boolean }> {
   const key = createHash("sha256").update(url).digest("hex"),
@@ -180,28 +183,38 @@ export async function cachedPage(
       cacheHours: 24,
       delayMs,
       robots: false,
+      beforeRequest,
     });
     const parsed = robotsParser(`${origin}/robots.txt`, rules.html);
     if (
       parsed.isAllowed(url, "MuscleScout") === false ||
       parsed.isAllowed(url, "GPTBot") === false
     )
-      throw new Error("Robots policy disallows this path or AI collection.");
+      throw new FetchFailure(
+        "Robots policy disallows this path or AI collection.",
+        "policy",
+      );
     delayMs = Math.max(
       delayMs,
       (parsed.getCrawlDelay("MuscleScout") || 0) * 1000,
     );
   }
-  const response = await throttled(url, delayMs, { origins });
+  const response = beforeRequest
+    ? (await beforeRequest(url, delayMs), await safeRequest(url, { origins }))
+    : await throttled(url, delayMs, { origins });
   if (response.status !== 200)
-    throw new Error(`Source HTTP ${response.status}; stopped without bypass.`);
+    throw failureFromResponse(response.status, response.headers);
   if (
-    /<title[^>]*>\s*(just a moment|access denied|attention required|verify you are human)|id=["\']challenge-form["\']|cf-chl-container/i.test(
+    /<title[^>]*>\s*(just a moment|access denied|attention required|verify you are human|autotrader[^<]*page unavailable)|id=["\']challenge-form["\']|cf-chl-container/i.test(
       response.body,
     ) &&
     robots
   )
-    throw new Error("Access challenge; stopped without bypass.");
+    throw new FetchFailure(
+      "Access challenge; stopped without bypass.",
+      "access",
+      response.status,
+    );
   const observedAt = new Date().toISOString();
   const hash = createHash("sha256").update(response.body).digest("hex");
   const metadata = { url, observedAt, lastNetworkCheckedAt: observedAt, hash };

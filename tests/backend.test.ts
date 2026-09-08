@@ -250,12 +250,15 @@ describe("authenticated isolated backend", () => {
       payload: {},
     });
     expect((await store.getSettings()).nationwideEnabled).toBe(true);
+    const jobs = await api.inject({ url: "/api/jobs", headers: auth() });
     expect(
-      JSON.parse(
-        (await db.setting.findUnique({ where: { key: "collection-request" } }))!
-          .value,
-      ).scope,
-    ).toBe("nationwide");
+      jobs
+        .json()
+        .some(
+          (j: { scope: string; status: string }) =>
+            j.scope === "nationwide" && j.status === "queued",
+        ),
+    ).toBe(true);
   });
   it("enforces renewable exclusive leases and expiry recovery", async () => {
     const first = await store.acquireLease("fixture-lease");
@@ -359,6 +362,64 @@ describe("authenticated isolated backend", () => {
       "Reviewed actual vehicle paperwork",
     );
   });
+  it("audits source versus user corrections, recomputes metadata and resets to the latest source", async () => {
+    await store.upsertListing(car("reset", { year: 1969 }));
+    const headers = auth();
+    const correction = await api.inject({
+      method: "PATCH",
+      url: "/api/listings/reset/review",
+      headers,
+      payload: {
+        year: 1975,
+        reason: "Reviewed actual model year documentation",
+      },
+    });
+    expect(correction.json()).toMatchObject({
+      year: 1975,
+      generation: "Second generation",
+    });
+    await store.upsertListing(
+      car("reset", {
+        year: 1968,
+        lastObservedAt: new Date(Date.now() + 20000).toISOString(),
+      }),
+    );
+    const timeline = await api.inject({
+      url: "/api/listings/reset/provenance?limit=1",
+      headers,
+    });
+    expect(timeline.json()).toMatchObject({
+      current: { year: 1975 },
+      source: { year: 1968 },
+      nextOffset: 1,
+    });
+    const reset = await api.inject({
+      method: "POST",
+      url: "/api/listings/reset/review/reset",
+      headers,
+      payload: { reason: "Restore the latest source claim for another review" },
+    });
+    expect(reset.json()).toMatchObject({ year: 1968, route: null });
+    expect(reset.json().userOverrides).toBeUndefined();
+    expect(
+      await db.observation.count({
+        where: { listingId: "reset", kind: "correction-reset" },
+      }),
+    ).toBe(1);
+    const impossible = await api.inject({
+      method: "PATCH",
+      url: "/api/listings/reset/review",
+      headers,
+      payload: {
+        year: 1964,
+        reason: "Testing a conflicting claimed model year",
+      },
+    });
+    expect(impossible.json()).toMatchObject({
+      identityStatus: "review",
+      generation: null,
+    });
+  });
   it("uses the same stale inventory projection for snapshot and API search", async () => {
     await store.upsertListing(
       car("aged", { lastObservedAt: "2020-01-01T00:00:00Z" }),
@@ -378,6 +439,18 @@ describe("authenticated isolated backend", () => {
   });
   it("advances capped route enrichment beyond already fresh routes", async () => {
     const { routeListings } = await import("../server/geography");
+    await store.saveSettings({
+      ...(await store.getSettings()),
+      home: {
+        city: "Wheaton",
+        state: "IL",
+        country: "US",
+        lat: 41.86,
+        lon: -88.11,
+        precision: "city",
+        offsite: false,
+      },
+    });
     for (const id of ["route-a", "route-b"])
       await store.upsertListing(
         car(id, {

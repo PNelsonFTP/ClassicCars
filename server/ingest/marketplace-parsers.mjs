@@ -16,11 +16,12 @@ const modelFamily = (value) =>
         ? "Mustang"
         : null;
 const price = (raw) => ({
-  askingPrice: money(raw),
+  // A zero catalog offer is a placeholder, not evidence that this car is free.
+  askingPrice: money(raw) === 0 ? null : money(raw),
   currency: "USD",
   raw,
   negotiable: /\bOBO\b|best offer/i.test(raw),
-  priceOnRequest: /call|request/i.test(raw),
+  priceOnRequest: /call|request/i.test(raw) || money(raw) === 0,
   currentBid: null,
   buyItNow: null,
 });

@@ -40,6 +40,9 @@
   "exclude": [
     "node_modules",
     "out",
-    "out-subpath"
+    "out-subpath",
+    "test-results",
+    "playwright-report",
+    "generated"
   ]
 }

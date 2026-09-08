@@ -2,6 +2,17 @@ import { z } from "zod";
 export const SCHEMA_VERSION = 1;
 export const DEFAULTS_VERSION = 1;
 export const modelSchema = z.enum(["Mustang", "Camaro", "Corvette"]);
+export const availabilitySchema = z.enum([
+  "active",
+  "pending",
+  "sold",
+  "removed",
+  "stale",
+  "upcoming-auction",
+  "live-auction",
+  "auction-ended",
+  "unknown",
+]);
 export const locationSchema = z.object({
   city: z.string(),
   state: z.string(),
@@ -13,6 +24,16 @@ export const locationSchema = z.object({
     .enum(["exact", "postal", "city", "region", "ambiguous", "unknown"])
     .default("unknown"),
   provider: z.string().optional(),
+  evidence: z
+    .object({
+      placeId: z.string().optional(),
+      label: z.string().optional(),
+      countryCode: z.string().optional(),
+      state: z.string().optional(),
+      featureType: z.string().optional(),
+      validatedAddress: z.boolean().default(false),
+    })
+    .optional(),
   observedAt: z.string().optional(),
   offsite: z.boolean().default(false),
 });
@@ -30,6 +51,21 @@ export const evidenceSchema = z.object({
   sourceUrl: z.string().url().optional(),
   observedAt: z.string().optional(),
   note: z.string().optional(),
+});
+export const sourceRecordSchema = z.object({
+  year: z.number().int().nullable(),
+  model: modelSchema.nullable(),
+  generation: z.string().nullable(),
+  identityStatus: z.enum(["consistent", "review"]),
+  identityNotes: z.array(z.string()),
+  specialtyEvidence: z.enum([
+    "seller-claimed",
+    "document-supported",
+    "user-reviewed",
+    "unknown",
+  ]),
+  vehicleLocation: locationSchema.nullable(),
+  fieldEvidence: z.record(z.string(), evidenceSchema),
 });
 export const listingSchema = z.object({
   schemaVersion: z.literal(1).default(1),
@@ -67,24 +103,14 @@ export const listingSchema = z.object({
   saleType: z
     .enum(["fixed", "negotiable", "auction", "unknown"])
     .default("unknown"),
-  availability: z
-    .enum([
-      "active",
-      "pending",
-      "sold",
-      "removed",
-      "stale",
-      "upcoming-auction",
-      "live-auction",
-      "auction-ended",
-      "unknown",
-    ])
-    .default("unknown"),
+  availability: availabilitySchema.default("unknown"),
+  sourceAvailability: availabilitySchema.optional(),
   askingPrice: z.number().nonnegative().nullable().default(null),
   currency: z.string().default("USD"),
   priceOnRequest: z.boolean().default(false),
   currentBid: z.number().nonnegative().nullable().default(null),
   buyItNow: z.number().nonnegative().nullable().default(null),
+  auctionStart: z.string().nullable().default(null),
   auctionEnd: z.string().nullable().default(null),
   auctionTimezone: z.string().nullable().default(null),
   reserveStatus: z.string().nullable().default(null),
@@ -108,6 +134,7 @@ export const listingSchema = z.object({
       origin: z.string(),
       destination: z.string(),
       options: z.string(),
+      inputSignature: z.string().optional(),
       traffic: z.boolean().default(false),
       precision: z.string(),
     })
@@ -130,9 +157,11 @@ export const listingSchema = z.object({
         ])
         .optional(),
       vehicleLocation: locationSchema.nullable().optional(),
+      reason: z.string().max(5000).optional(),
       reviewedAt: z.string(),
     })
     .optional(),
+  sourceRecord: sourceRecordSchema.optional(),
   lastDetailAttemptAt: z.string().nullable().default(null),
   lastDetailObservedAt: z.string().nullable().default(null),
   fieldEvidence: z.record(z.string(), evidenceSchema).default({}),
@@ -194,6 +223,8 @@ export const searchSchema = z.object({
     .default("nearest"),
   grouped: z.boolean().default(true),
   favoritesOnly: z.boolean().default(false),
+  alertPolicy: z.enum(["vehicle", "ad"]).default("vehicle"),
+  crosspostAlerts: z.boolean().default(false),
   maxAgeDays: z.number().nonnegative().nullable().default(null),
 });
 export type Search = z.infer<typeof searchSchema>;
@@ -237,6 +268,10 @@ export const settingsSchema = z.object({
   cacheHours: z.number().min(1).default(24),
   staleDays: z.number().min(1).default(14),
   routeMaxAgeDays: z.number().min(1).default(30),
+  auctionMaxAgeHours: z.number().min(1).max(168).default(6),
+  geocodeCacheDays: z.number().min(1).max(3650).default(365),
+  geocodeDailyLimit: z.number().int().min(1).max(1000).default(100),
+  routingDailyLimit: z.number().int().min(1).max(100000).default(2000),
   specialtyMaxYear: z.number().int().min(1960).max(2100).default(2027),
   specialtyYearReference: z
     .string()
@@ -269,6 +304,8 @@ export type Snapshot = {
   schemaVersion: 1;
   generatedAt: string | null;
   listings: Listing[];
+  freshnessPolicy?: { staleDays: number; auctionMaxAgeHours?: number };
+  detailFiles?: Record<string, string>;
   coverage: Coverage[];
   runs: Record<string, unknown>[];
   limitations: string[];

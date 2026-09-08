@@ -1,5 +1,8 @@
 # Live data
 
+> **September 8, 2026 final review refresh:** 3,139 retained ads / 3,139 groups, 3,120 public ads, 16 coordinate records and zero actual road routes. The final pass fetched 93 fresh catalog pages and exhausted the accessible configured queues. Details and real duplicate reconciliation remain open; 500 Classic and Autotrader stayed paused. See [current scan evidence](docs/validation/inventory-full-scan.json), [scope validation](docs/CONFIGURED_SCOPE_VALIDATION.md) and [handoff](HANDOFF.md). The earlier observations and counts below remain historical evidence.
+
+
 Report generated 2026-09-08T03:17:11.110Z. Source observations occurred September 8, 2026 UTC (September 7 evening in Chicago); cached parsing preserves original times. Snapshot generation is not a new network observation.
 
 The local database contains **1576 ads / 1576 current groups**. The real static snapshot contains **1557 ads / 1557 groups**; Autotrader's 19 observations stay local by default due to its redistribution terms. No repeated eligible strong grouping key was found, so no automatic group formed. Cross-listings have not been eliminated or proven absent, and no full human deduplication review was completed. The follow-up audit found 23,963 weak exact-title/model/year pairs (1,156 across sources); those similarities are not confirmed duplicates. See [the duplicate backlog](FUTURE_IMPROVEMENTS.md#the-cross-listing-problem-remains-open).

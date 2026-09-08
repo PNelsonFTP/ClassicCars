@@ -2,22 +2,22 @@
   "spdxVersion": "SPDX-2.3",
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
-  "name": "musclescout@1.0.0",
-  "documentNamespace": "http://spdx.org/spdxdocs/musclescout-1.0.0-09c06efb-3de8-45be-bfb6-770b5580bee7",
+  "name": "musclescout@1.1.0",
+  "documentNamespace": "http://spdx.org/spdxdocs/musclescout-1.1.0-841fafed-3387-4f82-a835-ace4bd2a5044",
   "creationInfo": {
-    "created": "2026-09-08T03:25:45.049Z",
+    "created": "2026-09-08T17:10:00.190Z",
     "creators": [
       "Tool: npm/cli-11.19.0"
     ]
   },
   "documentDescribes": [
-    "SPDXRef-Package-musclescout-1.0.0"
+    "SPDXRef-Package-musclescout-1.1.0"
   ],
   "packages": [
     {
       "name": "musclescout",
-      "SPDXID": "SPDXRef-Package-musclescout-1.0.0",
-      "versionInfo": "1.0.0",
+      "SPDXID": "SPDXRef-Package-musclescout-1.1.0",
+      "versionInfo": "1.1.0",
       "packageFileName": "",
       "primaryPackagePurpose": "APPLICATION",
       "downloadLocation": "NOASSERTION",
@@ -28,7 +28,7 @@
         {
           "referenceCategory": "PACKAGE-MANAGER",
           "referenceType": "purl",
-          "referenceLocator": "pkg:npm/musclescout@1.0.0"
+          "referenceLocator": "pkg:npm/musclescout@1.1.0"
         }
       ]
     },
@@ -2883,6 +2883,30 @@
       ]
     },
     {
+      "name": "ajv-formats-draft2019",
+      "SPDXID": "SPDXRef-Package-ajv-formats-draft2019-1.6.1",
+      "versionInfo": "1.6.1",
+      "packageFileName": "node_modules/ajv-formats-draft2019",
+      "description": "Plugin for AJV that adds support for some of string formats adding in the draft2019 JSON Schema.",
+      "downloadLocation": "https://registry.npmjs.org/ajv-formats-draft2019/-/ajv-formats-draft2019-1.6.1.tgz",
+      "filesAnalyzed": false,
+      "homepage": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/ajv-formats-draft2019@1.6.1"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "2503ef6afa64583bc8b01a76677dd49180ad5c24a95b81c3ded019fa82f888414e93da1b4197dfc74c80370102b7abf3afa113fbb1cde5ccd1caa5db9eafeed1"
+        }
+      ]
+    },
+    {
       "name": "fast-uri",
       "SPDXID": "SPDXRef-Package-fast-uri-3.1.7",
       "versionInfo": "3.1.7",
@@ -3431,6 +3455,30 @@
         {
           "algorithm": "SHA512",
           "checksumValue": "215dcebb48d233366b777a59e3c9cb913f4303b020d699cfcda8908695bb73745b72aab3bf3cd5bbe2fc81fa8ca7ff08336310b528aa682c6badc7eef08f2b30"
+        }
+      ]
+    },
+    {
+      "name": "commander",
+      "SPDXID": "SPDXRef-Package-commander-2.20.3",
+      "versionInfo": "2.20.3",
+      "packageFileName": "node_modules/commander",
+      "description": "the complete solution for node.js command-line programs",
+      "downloadLocation": "https://registry.npmjs.org/commander/-/commander-2.20.3.tgz",
+      "filesAnalyzed": false,
+      "homepage": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/commander@2.20.3"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "1a956498cf2f176bd05248f62ef6660f7e49c5e24e2c2c09f5c524ba0ca4da7ba16efdfe989be92d862dfb4f9448cc44fa88fe7b2fe52449e1670ef9c7f38c71"
         }
       ]
     },
@@ -4083,6 +4131,30 @@
       ]
     },
     {
+      "name": "discontinuous-range",
+      "SPDXID": "SPDXRef-Package-discontinuous-range-1.0.0",
+      "versionInfo": "1.0.0",
+      "packageFileName": "node_modules/discontinuous-range",
+      "description": "for adding, subtracting, and indexing discontinuous ranges of numbers",
+      "downloadLocation": "https://registry.npmjs.org/discontinuous-range/-/discontinuous-range-1.0.0.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/dtudury/discontinuous-range",
+      "licenseDeclared": "MIT",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/discontinuous-range@1.0.0"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "73af0ba4b6cefbb90ffdbd47af5aacf3f049d3d1799216464f1ab166e873c699b024a3a04451c95886fdfca9aa9ea1e12dd3b9e5a3b1147fc4181bd441b2ff45"
+        }
+      ]
+    },
+    {
       "name": "dom-serializer",
       "SPDXID": "SPDXRef-Package-dom-serializer-2.0.0",
       "versionInfo": "2.0.0",
@@ -4534,6 +4606,30 @@
         {
           "algorithm": "SHA512",
           "checksumValue": "f54fe36548239d21b29ed46beb2e4cbaed4c25cc0597a90fbbb93ca8b17420c35f2eabf0d0d6789e7543ab4455a19d11bc2cae9a26f8133dca62b55f8a5af0fa"
+        }
+      ]
+    },
+    {
+      "name": "extend",
+      "SPDXID": "SPDXRef-Package-extend-3.0.2",
+      "versionInfo": "3.0.2",
+      "packageFileName": "node_modules/extend",
+      "description": "Port of jQuery.extend for node.js and the browser",
+      "downloadLocation": "https://registry.npmjs.org/extend/-/extend-3.0.2.tgz",
+      "filesAnalyzed": false,
+      "homepage": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/extend@3.0.2"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "7e3aae0b9f5c0fb0b25babab3572b4141b9f9197288861bcd304ee3ee8d7e7dd1c0794ed967db4136501e12fd601156a8577df665d8b3604be81074f2088a6fe"
         }
       ]
     },
@@ -5714,6 +5810,30 @@
       ]
     },
     {
+      "name": "moo",
+      "SPDXID": "SPDXRef-Package-moo-0.5.3",
+      "versionInfo": "0.5.3",
+      "packageFileName": "node_modules/moo",
+      "description": "Optimised tokenizer/lexer generator! 🐄 Much performance. Moo!",
+      "downloadLocation": "https://registry.npmjs.org/moo/-/moo-0.5.3.tgz",
+      "filesAnalyzed": false,
+      "homepage": "NOASSERTION",
+      "licenseDeclared": "BSD-3-Clause",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/moo@0.5.3"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "9b67e63367439bb19942c63b28ad9c99ef1a822f800258c82e3427a1fee9d593037ba750e1b76748cc7470fa69b9da1e36fe61105422acdeaef8ee1f0c4d0858"
+        }
+      ]
+    },
+    {
       "name": "mysql2",
       "SPDXID": "SPDXRef-Package-mysql2-3.24.3",
       "versionInfo": "3.24.3",
@@ -5830,6 +5950,30 @@
         {
           "algorithm": "SHA512",
           "checksumValue": "1846eb6246df17b32835aa21da2186f383277ff5997c1d0674612c33cc33ec4c69c7f2e559fe54f2df67bc92974a9deaaf922c11b2b4e1c04686897f2b03ac58"
+        }
+      ]
+    },
+    {
+      "name": "nearley",
+      "SPDXID": "SPDXRef-Package-nearley-2.20.1",
+      "versionInfo": "2.20.1",
+      "packageFileName": "node_modules/nearley",
+      "description": "Simple, fast, powerful parser toolkit for JavaScript.",
+      "downloadLocation": "https://registry.npmjs.org/nearley/-/nearley-2.20.1.tgz",
+      "filesAnalyzed": false,
+      "homepage": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/nearley@2.20.1"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "f8c73c51a01e6c5ce057e2a92399fb0dab2eb9008703cf5d9b09bb257c374d5e37ba47cd43d0e7047dcc75bda0fc8e05771736ea9c229815af8c8c3450020b49"
         }
       ]
     },
@@ -6649,6 +6793,30 @@
       ]
     },
     {
+      "name": "punycode",
+      "SPDXID": "SPDXRef-Package-punycode-2.3.1",
+      "versionInfo": "2.3.1",
+      "packageFileName": "node_modules/punycode",
+      "description": "A robust Punycode converter that fully complies to RFC 3492 and RFC 5891, and works on nearly all JavaScript platforms.",
+      "downloadLocation": "https://registry.npmjs.org/punycode/-/punycode-2.3.1.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://mths.be/punycode",
+      "licenseDeclared": "MIT",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/punycode@2.3.1"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "bd8b7b503d54f5683ad77f2c84bb4b3af740bbef03b02fe2945b44547707fb0c9d712a4d136d007d239db9fe8c91115a84be4563b5f5a14ee7295645b5fabc16"
+        }
+      ]
+    },
+    {
       "name": "pure-rand",
       "SPDXID": "SPDXRef-Package-pure-rand-6.1.0",
       "versionInfo": "6.1.0",
@@ -6693,6 +6861,78 @@
         {
           "algorithm": "SHA512",
           "checksumValue": "b580b5435860c91b87825a15fd85ecdb0d79ba73d587ca9fbbfa824df85361a99ac3b7f286e98a6b6c86a5d4a8f3bbd8df6ac87258fee1f59841750cb3d107be"
+        }
+      ]
+    },
+    {
+      "name": "railroad-diagrams",
+      "SPDXID": "SPDXRef-Package-railroad-diagrams-1.0.0",
+      "versionInfo": "1.0.0",
+      "packageFileName": "node_modules/railroad-diagrams",
+      "description": "A small JS+SVG library for drawing railroad syntax diagrams.",
+      "downloadLocation": "https://registry.npmjs.org/railroad-diagrams/-/railroad-diagrams-1.0.0.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/tabatkins/railroad-diagrams",
+      "licenseDeclared": "CC0-1.0",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/railroad-diagrams@1.0.0"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "733f770e335e2d8d2276b08d387e8fbe264644df46261b1d9bd8699f56024bcefd7e3e16fb1e4814986191165cc1580c98517b47cd9403fece87e47c94b660e8"
+        }
+      ]
+    },
+    {
+      "name": "randexp",
+      "SPDXID": "SPDXRef-Package-randexp-0.4.6",
+      "versionInfo": "0.4.6",
+      "packageFileName": "node_modules/randexp",
+      "description": "Create random strings that match a given regular expression.",
+      "downloadLocation": "https://registry.npmjs.org/randexp/-/randexp-0.4.6.tgz",
+      "filesAnalyzed": false,
+      "homepage": "http://fent.github.io/randexp.js/",
+      "licenseDeclared": "MIT",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/randexp@0.4.6"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "f3458d99df43034b6666bc3da906bad863cf59fb972649eb99598b731beae2e641758a9bd706282939a794651c86f5567b45e22eea58901a1754ec73dc2f0361"
+        }
+      ]
+    },
+    {
+      "name": "ret",
+      "SPDXID": "SPDXRef-Package-ret-0.1.15",
+      "versionInfo": "0.1.15",
+      "packageFileName": "node_modules/randexp/node_modules/ret",
+      "description": "Tokenizes a string that represents a regular expression.",
+      "downloadLocation": "https://registry.npmjs.org/ret/-/ret-0.1.15.tgz",
+      "filesAnalyzed": false,
+      "homepage": "NOASSERTION",
+      "licenseDeclared": "MIT",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/ret@0.1.15"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "4d3958a5af8e2febcc30d1b6e314a5406109dc1fd1cc47d494b72dedbe46ff2b5abfec0fae9942a55305bb0cd76e479c26b6fa218a358856f44bdbf7efbe789a"
         }
       ]
     },
@@ -7273,6 +7513,30 @@
       ]
     },
     {
+      "name": "schemes",
+      "SPDXID": "SPDXRef-Package-schemes-1.4.0",
+      "versionInfo": "1.4.0",
+      "packageFileName": "node_modules/schemes",
+      "description": "IANA Uniform Resource Identifier (URI) Schemes list, including crowd sourced unofficial ones",
+      "downloadLocation": "https://registry.npmjs.org/schemes/-/schemes-1.4.0.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/Munter/schemes",
+      "licenseDeclared": "MIT",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/schemes@1.4.0"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "226172f456c2b109558271374c25a62cf0859d5cf1d251cbfe5fae987a650ea00a7747731699d2ea51592296a00656212b0cd59a5577e9e7346355d3bbc24101"
+        }
+      ]
+    },
+    {
       "name": "secure-json-parse",
       "SPDXID": "SPDXRef-Package-secure-json-parse-4.1.0",
       "versionInfo": "4.1.0",
@@ -7509,6 +7773,30 @@
         {
           "algorithm": "SHA512",
           "checksumValue": "6ebbfba795a01f48e6409af56430df2833927965a0f8e572a46f7d03fe6f6063ea27aa7189a1cbcbc9f1b458c103ba0c6b4d5e6c0f607e1d6e30216a3ae5f1bc"
+        }
+      ]
+    },
+    {
+      "name": "smtp-address-parser",
+      "SPDXID": "SPDXRef-Package-smtp-address-parser-1.1.0",
+      "versionInfo": "1.1.0",
+      "packageFileName": "node_modules/smtp-address-parser",
+      "description": "Parse an SMTP (RFC-5321) address",
+      "downloadLocation": "https://registry.npmjs.org/smtp-address-parser/-/smtp-address-parser-1.1.0.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/gene-hightower/smtp-address-parser#readme",
+      "licenseDeclared": "MIT",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/smtp-address-parser@1.1.0"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "1b3d758db354d2996b45e53d4a3edf9ac852071c49f5285d0f6ab892d1c81e8feba531fa945c90a181d828834f26d3def1a1c59ec6ed5b8e8bb34b42081b0866"
         }
       ]
     },
@@ -8136,6 +8424,30 @@
       ]
     },
     {
+      "name": "uri-js",
+      "SPDXID": "SPDXRef-Package-uri-js-4.4.1",
+      "versionInfo": "4.4.1",
+      "packageFileName": "node_modules/uri-js",
+      "description": "An RFC 3986/3987 compliant, scheme extendable URI/IRI parsing/validating/resolving library for JavaScript.",
+      "downloadLocation": "https://registry.npmjs.org/uri-js/-/uri-js-4.4.1.tgz",
+      "filesAnalyzed": false,
+      "homepage": "https://github.com/garycourt/uri-js",
+      "licenseDeclared": "BSD-2-Clause",
+      "externalRefs": [
+        {
+          "referenceCategory": "PACKAGE-MANAGER",
+          "referenceType": "purl",
+          "referenceLocator": "pkg:npm/uri-js@4.4.1"
+        }
+      ],
+      "checksums": [
+        {
+          "algorithm": "SHA512",
+          "checksumValue": "eeb294cb2df7435c9cf7ca50d430262edc17d74f45ed321f5a55b561da3c5a5d628b549e1e279e8741c77cf78bd9f3172bacf4b3c79c2acf5fac2b8b26f9dd06"
+        }
+      ]
+    },
+    {
       "name": "use-callback-ref",
       "SPDXID": "SPDXRef-Package-use-callback-ref-1.3.3",
       "versionInfo": "1.3.3",
@@ -8523,157 +8835,172 @@
   "relationships": [
     {
       "spdxElementId": "SPDXRef-DOCUMENT",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DESCRIBES"
     },
     {
       "spdxElementId": "SPDXRef-Package-fastify.cors-11.3.0",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-fastify.rate-limit-10.3.0",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-prisma.adapter-better-sqlite3-7.10.0",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-prisma.client-7.10.0",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-radix-ui.react-dialog-1.1.23",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-radix-ui.react-switch-1.3.7",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-tailwindcss.postcss-4.3.3",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-cheerio-1.2.0",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-dotenv-17.4.2",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-fastify-5.12.3",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-leaflet-1.9.4",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-lucide-react-0.577.0",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-next-16.3.4",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-nodemailer-10.0.1",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-react-19.2.8",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-react-dom-19.2.8",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-robots-parser-3.0.1",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-tailwindcss-4.3.3",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-zod-4.5.4",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-playwright.test-1.63.0",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-types.leaflet-1.9.22",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-types.node-22.20.1",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-types.nodemailer-8.0.1",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-types.react-19.2.18",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-types.react-dom-19.2.7",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
+      "relationshipType": "DEV_DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-ajv-8.20.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
+      "relationshipType": "DEV_DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-ajv-formats-3.0.1",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
+      "relationshipType": "DEV_DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-ajv-formats-draft2019-1.6.1",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-prettier-3.9.6",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-prisma-7.10.0",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-tsx-4.23.13",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-typescript-5.9.3",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
       "spdxElementId": "SPDXRef-Package-vitest-4.1.11",
-      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-musclescout-1.1.0",
       "relationshipType": "DEV_DEPENDENCY_OF"
     },
     {
@@ -10147,6 +10474,31 @@
       "relationshipType": "DEPENDENCY_OF"
     },
     {
+      "spdxElementId": "SPDXRef-Package-ajv-8.20.0",
+      "relatedSpdxElement": "SPDXRef-Package-ajv-formats-draft2019-1.6.1",
+      "relationshipType": "PREREQUISITE_FOR"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-punycode-2.3.1",
+      "relatedSpdxElement": "SPDXRef-Package-ajv-formats-draft2019-1.6.1",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-schemes-1.4.0",
+      "relatedSpdxElement": "SPDXRef-Package-ajv-formats-draft2019-1.6.1",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-smtp-address-parser-1.1.0",
+      "relatedSpdxElement": "SPDXRef-Package-ajv-formats-draft2019-1.6.1",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-uri-js-4.4.1",
+      "relatedSpdxElement": "SPDXRef-Package-ajv-formats-draft2019-1.6.1",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
       "spdxElementId": "SPDXRef-Package-tslib-2.8.1",
       "relatedSpdxElement": "SPDXRef-Package-aria-hidden-1.2.6",
       "relationshipType": "DEPENDENCY_OF"
@@ -10812,6 +11164,26 @@
       "relationshipType": "DEPENDENCY_OF"
     },
     {
+      "spdxElementId": "SPDXRef-Package-commander-2.20.3",
+      "relatedSpdxElement": "SPDXRef-Package-nearley-2.20.1",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-moo-0.5.3",
+      "relatedSpdxElement": "SPDXRef-Package-nearley-2.20.1",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-railroad-diagrams-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-nearley-2.20.1",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-randexp-0.4.6",
+      "relatedSpdxElement": "SPDXRef-Package-nearley-2.20.1",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
       "spdxElementId": "SPDXRef-Package-react-19.2.8",
       "relatedSpdxElement": "SPDXRef-Package-next-16.3.4",
       "relationshipType": "PREREQUISITE_FOR"
@@ -11137,6 +11509,16 @@
       "relationshipType": "DEPENDENCY_OF"
     },
     {
+      "spdxElementId": "SPDXRef-Package-discontinuous-range-1.0.0",
+      "relatedSpdxElement": "SPDXRef-Package-randexp-0.4.6",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-ret-0.1.15",
+      "relatedSpdxElement": "SPDXRef-Package-randexp-0.4.6",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
       "spdxElementId": "SPDXRef-Package-deep-extend-0.6.0",
       "relatedSpdxElement": "SPDXRef-Package-rc-1.2.8",
       "relationshipType": "DEPENDENCY_OF"
@@ -11287,6 +11669,11 @@
       "relationshipType": "DEPENDENCY_OF"
     },
     {
+      "spdxElementId": "SPDXRef-Package-extend-3.0.2",
+      "relatedSpdxElement": "SPDXRef-Package-schemes-1.4.0",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
       "spdxElementId": "SPDXRef-Package-img.colour-1.1.0",
       "relatedSpdxElement": "SPDXRef-Package-sharp-0.35.4",
       "relationshipType": "DEPENDENCY_OF"
@@ -11329,6 +11716,11 @@
     {
       "spdxElementId": "SPDXRef-Package-simple-concat-1.0.1",
       "relatedSpdxElement": "SPDXRef-Package-simple-get-4.0.1",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-nearley-2.20.1",
+      "relatedSpdxElement": "SPDXRef-Package-smtp-address-parser-1.1.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {
@@ -11424,6 +11816,11 @@
     {
       "spdxElementId": "SPDXRef-Package-safe-buffer-5.2.1",
       "relatedSpdxElement": "SPDXRef-Package-tunnel-agent-0.6.0",
+      "relationshipType": "DEPENDENCY_OF"
+    },
+    {
+      "spdxElementId": "SPDXRef-Package-punycode-2.3.1",
+      "relatedSpdxElement": "SPDXRef-Package-uri-js-4.4.1",
       "relationshipType": "DEPENDENCY_OF"
     },
     {

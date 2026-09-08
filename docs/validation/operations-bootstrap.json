@@ -1,0 +1,322 @@
+{
+  "schemaVersion": 1,
+  "bootstrappedAt": "2026-09-08T17:04:24.363Z",
+  "networkRequests": 0,
+  "jobsCreated": 0,
+  "catalogCheckpointsCreated": 0,
+  "skippedSamples": 0,
+  "sources": [
+    {
+      "sourceId": "classiccars",
+      "retainedAds": 1387,
+      "addedDetails": 1387,
+      "healthCreated": true,
+      "healthState": "active",
+      "lastObservationAt": "2026-09-08T02:54:45.440Z",
+      "scopeMembership": {
+        "regional": 1387,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "volo",
+      "retainedAds": 50,
+      "addedDetails": 50,
+      "healthCreated": true,
+      "healthState": "active",
+      "lastObservationAt": "2026-09-08T02:55:06.006Z",
+      "scopeMembership": {
+        "regional": 50,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "grauto",
+      "retainedAds": 44,
+      "addedDetails": 44,
+      "healthCreated": true,
+      "healthState": "active",
+      "lastObservationAt": "2026-09-08T02:56:52.469Z",
+      "scopeMembership": {
+        "regional": 44,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "admcars",
+      "retainedAds": 34,
+      "addedDetails": 34,
+      "healthCreated": true,
+      "healthState": "active",
+      "lastObservationAt": "2026-09-08T02:56:57.724Z",
+      "scopeMembership": {
+        "regional": 34,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "midwest",
+      "retainedAds": 3,
+      "addedDetails": 0,
+      "healthCreated": false,
+      "healthState": "active",
+      "lastObservationAt": "2026-09-08T03:02:37.993Z",
+      "scopeMembership": {
+        "regional": 3,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "nsclassics",
+      "retainedAds": 12,
+      "addedDetails": 12,
+      "healthCreated": true,
+      "healthState": "active",
+      "lastObservationAt": "2026-09-08T03:13:57.819Z",
+      "scopeMembership": {
+        "regional": 12,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "jsmotors",
+      "retainedAds": 24,
+      "addedDetails": 24,
+      "healthCreated": true,
+      "healthState": "active",
+      "lastObservationAt": "2026-09-08T02:55:47.892Z",
+      "scopeMembership": {
+        "regional": 24,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "500classic",
+      "retainedAds": 3,
+      "addedDetails": 3,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": "2026-09-08T02:32:29.107Z",
+      "scopeMembership": {
+        "regional": 3,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "autotrader",
+      "retainedAds": 19,
+      "addedDetails": 19,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": "2026-09-08T02:40:00.746Z",
+      "scopeMembership": {
+        "regional": 19,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "hemmings",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "autotrader-classics",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "craigslist",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "ebay",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "cars",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "cargurus",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "bat",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "carsbids",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "mecum",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "barrett",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "corvetteforum",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "mustangforum",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "camaroforum",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "facebook",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "jws",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "duffys",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    },
+    {
+      "sourceId": "indyauto",
+      "retainedAds": 0,
+      "addedDetails": 0,
+      "healthCreated": true,
+      "healthState": "review",
+      "lastObservationAt": null,
+      "scopeMembership": {
+        "regional": 0,
+        "nationwide": 0
+      }
+    }
+  ]
+}

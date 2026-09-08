@@ -1,5 +1,7 @@
 # Implementation record
 
+> The sections describing the initial build are historical. Version 1.1.0 supersedes their open engineering gaps; see the update below and [current improvement status](FUTURE_IMPROVEMENTS.md).
+
 Initial build completed September 8, 2026 UTC (September 7 evening in Chicago); documentation/SBOM follow-up completed in the same session. This is a factual record of delivered work and observed struggles, not a Git commit history. The project has not been pushed or publicly deployed.
 
 ## Requirement interpretation and independence
@@ -77,3 +79,24 @@ Research reports remain dated archives. Their initial feasibility/version propos
 ## Work deliberately left for an authorized next step
 
 No site restriction was bypassed; no seller was contacted; no account cookies imported; no offers/bids/purchases made; no external alert sent; no ORS account/key obtained; and no public deployment or Git push performed. Windows/Docker/Node 24, public HTTPS backend connectivity and supported WebMCP integration were not executed on this host. Cross-listed duplicates, source blocks and the detailed engineering backlog remain explicit in [FUTURE_IMPROVEMENTS.md](FUTURE_IMPROVEMENTS.md).
+
+
+## Version 1.1.0 improvements and review handoff — September 8, 2026
+
+The original nineteen-item backlog was implemented and audited. Durable checkpoints/detail queues, source health/cooldowns, shared budgets, fair geocoding/cache freshness, ranked duplicate review and replay, group-aware alerts, provenance/reset, dynamic aging, job/delivery controls, authorized feed contracts, specialty/auction/scope evidence, compact/lazy static catalogs, bounded UI pages, typed API modules, optional startup tooling, CI/pins, full SBOM validation and bundled archive inspection are now in the code. [The implementation map](docs/IMPROVEMENTS_STATUS.md) links every item to its modules/tests and remaining acceptance work.
+
+State-integrity review corrected route preservation/invalidation, source-baseline/reset history, automatic grouping replay, permission expiry and obsolete exported detail chunks. Final review also corrected backend endpoint/token binding, serialized workspace revisions, revoked delivery consent and obsolete group-alert associations. Mobile operations tables now present each record with labels rather than clipping action columns.
+
+A 50,000-ad synthetic benchmark passed sixteen shared search/alert membership scenarios; dictionary JSON reduced the full fixture bytes by 61.23%. Full-match memory/rescans and dense candidate buckets remain documented limits. Clean official Node 24 macOS and pinned Linux Docker release checks passed. Native Chromium WebMCP lifecycle checks ran without a polyfill. Four optional-WASM bundled package versions were directly observed; schema/hash validation and fresh audit succeeded.
+
+Legacy operational queues were initialized offline from original observations. A bounded national ClassicCars check succeeded with three catalog pages/three details; the user's final catalog scan is recorded separately with current scope/counts. Site restrictions, pending enrichment and missing routing/delivery/feed credentials remain explicit. No challenge bypass, external message, OS service install or deployment occurred.
+
+The initial delivery was committed locally as `4835c0a`. The user then requested local review before publication and the final improvement commit; all subsequent improvement changes remain uncommitted. GitHub Pages is retained alongside local and optional Docker workflows. Exact final validation and scan evidence are in [VALIDATION.md](VALIDATION.md) and [HANDOFF.md](HANDOFF.md).
+
+The final catalog-only refresh completed at 17:23:23 UTC: 93 uncached pages, 3,139 retained ads and 3,120 public ads. It exhausted the accessible configured catalogs while preserving blocked sources and pending detail queues. A one-off report aggregation was rerun read-only to handle null vehicle locations; source results and inventory were unchanged. A new consistent private DB/environment backup was created after the scan.
+
+Final export QA found one newly observed ClassicCars `$0 (OBO)` placeholder. The production and research parsers now normalize zero catalog asks to unknown; a new fixture covers negotiable/price-on-request behavior. The single canonical ad was corrected from cached evidence, its old zero ask was reclassified as a retracted parser observation, and a correction event retained the reason and original timestamp. No additional site request was made.
+
+## Approved delivery and wind down — September 8, 2026
+
+After reviewing the refreshed local website, the user approved the final commit, push and cleanup. [Delivery status](docs/DELIVERY.md) records the selected repository, actual remote checks/publication, and runtime shutdown. The prior review hold is satisfied; earlier entries remain historical records of what had happened at each stage. Private data, environment, evidence caches and backups remain outside Git.

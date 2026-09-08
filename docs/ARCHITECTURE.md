@@ -1,125 +1,155 @@
 # Architecture and developer reference
 
-Updated September 8, 2026 UTC from the implemented code. This is a single-user local application with a separately distributable static frontend. The original requirements are in [MuscleCarPrompt.md](../MuscleCarPrompt.md); known implementation gaps are in [FUTURE_IMPROVEMENTS.md](../FUTURE_IMPROVEMENTS.md).
+Updated September 8, 2026 UTC from the integrated implementation. MuscleScout is a single-user local application with a separately distributable static frontend. The original requirements are in [MuscleCarPrompt.md](../MuscleCarPrompt.md); the implementation map and remaining acceptance work are in [IMPROVEMENTS_STATUS.md](IMPROVEMENTS_STATUS.md) and [FUTURE_IMPROVEMENTS.md](../FUTURE_IMPROVEMENTS.md).
 
 ## Data flow
 
 ```mermaid
 flowchart LR
-  Browser[Browser workspace] -->|Snapshot mode| Public[Redacted static JSON]
+  Browser[Browser workspace] -->|Snapshot mode| Public[Redacted catalog and detail chunks]
   Browser -->|Connected mode / bearer token| API[Fastify API]
-  API --> Store[Canonical store and search]
-  Worker[Local worker] --> Collector[Source collector]
-  Collector --> Fetch[Policy checks / bounded HTTPS]
-  Fetch --> Sources[Permitted source pages]
-  Fetch --> Cache[Private raw cache]
+  API --> Store[Canonical store / shared search / reviews]
+  API --> Jobs[Durable jobs and source health]
+  Worker[Local worker] --> Jobs
+  Jobs --> Collector[Resumable catalog and detail queues]
+  Collector --> Fetch[Policy checks / persistent budgets / bounded HTTPS]
+  Fetch --> Sources[Permitted sources]
+  Fetch --> Cache[Private raw evidence cache]
   Collector --> Store
-  Store --> DB[(SQLite / Prisma)]
-  Store -->|Export| Public
-  Geo[Explicit geocode / route CLI] --> Providers[Nominatim / ORS]
+  Jobs -->|Explicit geography jobs| Geo[Geocode and route validation]
+  Geo --> Providers[Configured geocoder / ORS]
   Geo --> Store
-  Worker --> Alerts[Saved-search evaluation / opt-in delivery]
-  Alerts --> Store
+  Store --> DB[(SQLite / Prisma)]
+  Store -->|Redacted export| Public
+  Worker --> Alerts[Saved-search policy / opt-in delivery]
+  Alerts --> DB
   Browser --> Tiles[OpenStreetMap tiles]
 ```
 
-The browser keeps functioning without maps or a backend through its published snapshot. Static hosting cannot execute the database, collector or private alerts. A snapshot refresh updates the source JSON; an existing production build/deployment remains dated until rebuilt or intentionally refreshed.
+The published snapshot works without a backend or maps. Static hosting cannot execute the collector, database or private alerts. Updating the source JSON does not update an existing static build or deployment until it is rebuilt or intentionally refreshed.
 
 ## Module responsibilities
 
-- `app/page.tsx` hosts the client workspace in `components/MuscleScout.tsx`; `WorkspaceTools.tsx` holds manual entry, reviewed corrections and duplicate review; `ListingMap.tsx` provides Leaflet maps. Next App Router exports static HTML/assets, with unoptimized original-source image URLs. The workspace route uses browser state and shared search; it is not a Next server/API application.
-- `shared/schema.ts` is the canonical Zod v1 contract and defaults v1. It covers identity, listing price/bid/availability, seller versus actual vehicle location, route provenance, evidence-bearing specifications, timestamps, public snapshot, private workspace, saved searches and settings. `shared/search.ts` is used by browser, backend and alerts. Database key columns support identity/lookups while JSON payload retains flexible specifications.
-- `server/index.ts` starts Fastify; `server/api.ts` owns authentication and APIs. Password comes from private environment, is scrypt-hashed per process, compared in constant time; random 8-hour bearer tokens are stored hashed in an in-memory map. Restarting the API invalidates existing sessions. Exact allowed Origin checks, loopback binding by default, request rate limits and a 5 MB body limit are implemented. There is one private `personal` workspace, not multiple user accounts.
-- `server/store.ts` owns listing merge/upsert, separate observation streams, first-seen preservation, user overrides, grouping, snapshot redaction, settings/home-route invalidation, stale projection and renewable leases. Older cached observations cannot replace newer canonical information.
-- `server/ingest/collector.ts` runs enabled configured sources serially with a global collection lease. Source-specific card/detail parsers live in `adapters.ts`, supplemental marketplace parsers in `marketplace-parsers.mjs`, normalized extraction in `normalize.ts`. `safe-fetch.ts` validates allowed HTTPS origins, public resolved IP addresses and same-origin GET redirects, pins DNS resolution, enforces request size/time bounds, respects robots, throttles by origin, and caches raw content privately by hash.
-- `server/worker.ts` polls every 10 seconds under a separate 30-minute worker lease renewed every 30 seconds. It runs durable collection requests or due interval collection (default 24 hours), then evaluates saved searches and attempts due external digests. It runs only while its local process is running; it is not a macOS LaunchAgent, Windows service, hosted cron or Codex automation. Setup initializes last-collection to setup time, so a new install does not immediately auto-collect.
-- `server/geography.ts` provides explicit CLI geocoding and routing. Public Nominatim calls are serialized with a 15-second per-origin interval within one process, cached by provider/city/state query. ORS uses driving-car, no traffic, avoids ferries/borders, caches by provider and exact endpoints/options. Missing ORS key returns an explicit no-op. Geocoding/routing are not automatic worker steps.
-- `server/alerts.ts` evaluates saved-search snapshots with quiet first baselines. Source-ad ID is the alert identity. Asking-price changes use a max($250, 1%) threshold; auction bids and 24-hour deadline reminders require opt-in. Availability changes are separate. External delivery requires environment destination, enabled backend setting and the search's channel. Failed network attempts back off through six attempts; stable IDs support receiver deduplication but cannot guarantee exactly once.
+| Area | Main implementation |
+|---|---|
+| Browser workspace | `app/page.tsx`, `components/MuscleScout.tsx`, `WorkspaceTools.tsx`, `ListingMap.tsx`; static Next App Router output with client state. |
+| Shared contracts and search | `shared/schema.ts`, `shared/search.ts`; versioned Zod contracts, time-dependent projection, eligibility, filtering, sorting and grouping shared by browser, API and alerts. |
+| Catalog transport | `shared/catalog.ts`, `server/store.ts`; public full snapshot, compact searchable catalog, lossless dictionary transport and lazy exact-ad detail chunks. |
+| API and storage | `server/index.ts`, `api.ts`, `store.ts`; authentication, optimistic workspace revisions, listing/observation merge, settings, export and renewable leases. |
+| Collection operations | `server/ingest/operations.ts`, `state.ts`, `collector.ts`, `failures.ts`, `server/collection-api.ts`; durable jobs, checkpoints, detail queues, failure classification and access reviews. |
+| Parsing and scope | `server/ingest/adapters.ts`, `marketplace-parsers.mjs`, `normalize.ts`, `scope-validation.ts`; source identity, evidence extraction, URL scope and terminal-page validation. |
+| Network and geography | `server/safe-fetch.ts`, `service-budget.ts`, `geography.ts`, `shared/location-merge.ts`; bounded requests, cross-process budgets, validated locations and fresh route caches. |
+| Duplicate reconciliation | `shared/duplicates.ts`, `server/grouping.ts`, `components/DuplicateReview.tsx`; candidate indexes, evidence/conflict ranking, auditable decisions and reversible reviewed merges. |
+| Field review | `shared/reviews.ts`, `server/reviews.ts`, `components/EvidenceTimeline.tsx`; source baseline, durable overrides, field evidence, paginated observation timeline and safe reset. |
+| Alerts and delivery | `shared/alert-policy.ts`, `server/alerts.ts`, `delivery-policy.ts`, `components/DeliveryAttempts.tsx`; group/ad policy, quiet baselines, leased frozen digests and reviewed retries. |
+| Worker and operations UI | `server/worker.ts`, `components/OperationsPanel.tsx`; scheduled collection, explicit geography jobs, status/cancel/retry, source review and provider budgets. |
+| Authorized feeds | `server/ingest/authorized-feed.ts`, `ebay-browse.ts`, `scripts/import-feed.ts`; permission-bearing import manifests and bounded licensed-provider adapter support. |
+| Browser integration | `shared/webmcp.ts`, `scripts/diagnose-browser-context.mjs`; optional native browser context tools with validated partial-filter updates and diagnostics. |
+
+The API uses a private environment password, scrypt comparison, and random eight-hour bearer tokens stored hashed in memory. API restart invalidates sessions. It binds loopback by default, checks exact allowed origins, rate-limits requests and caps bodies at 5 MB. It has one `personal` workspace, not multiple accounts. The frontend is not a Next API server.
 
 ## Persistence inventory
 
-`Listing`, `Observation`, `IngestRun`, `Lease`, `Setting`, `Workspace`, `SavedSearch`, `Alert`, `DeliveryAttempt`, `GeoCache` and `GroupReview` are Prisma SQLite tables. Two migrations initialize this schema and add bid/deadline alert preferences. `Observation` stores source payloads, asking-price, bid, availability and user-correction events separately. Private raw evidence is in ignored `data/research` and `data/cache`; a DB-only backup does not preserve these files. Source definitions and source allowlists are tracked in `config/sources.json`; credentials and runtime endpoints remain in `.env`; runtime user settings are in the database. The snapshot is a redacted derived artifact under `public/data/snapshot.json`.
+Prisma tables remain `Listing`, `Observation`, `IngestRun`, `Lease`, `Setting`, `Workspace`, `SavedSearch`, `Alert`, `DeliveryAttempt`, `GeoCache` and `GroupReview`. The two ordered migrations initialize the schema and add bid/deadline preferences. New operational records use namespaced JSON in `Setting`, so the improvements do not require replacing existing listing, workspace or history data.
 
-Browser snapshot/sample workspaces are independent of the database and require their own private UI export for backup. Keys include app namespace, deployment path and mode; connected/session keys additionally include backend. Connected state is stored through optimistic workspace revisions and returns 409 instead of overwriting a concurrent edit. Connected bearer sessions survive reload in the tab through sessionStorage, while the password is not stored. Source-ad notes/favorites survive grouping because IDs are retained.
+| State | Key or table | Meaning |
+|---|---|---|
+| Job | `collection:v1:job:<uuid>` | Kind, scope/caps, status, heartbeat, attempts, cancellation, result and next eligible run. |
+| Catalog progress | `collection:v1:catalog:<source>:<scope>:<configured-URL-hash>` | Separate query seeds, FIFO page tasks, attempts, terminal evidence, original observation time and cycle completion. |
+| Detail progress | `collection:v1:details:<source>` | Source-wide tasks keyed by stable ad ID, with discovered scopes/query IDs and independent attempt/due dates. |
+| Source health | `collection:v1:health:<source>` | Active/cooldown/review/smoke-required state, classified failure, next permitted time and bounded review history. |
+| Schedule | `collection:v1:schedule` | Last attempt/completion and next due interval. Legacy `last-collection` remains compatible; old `collection-request` is migrated to a real job. |
+| Provider budget | `service-budget:<service-or-origin>` | UTC-day reservations, next request slot and persisted cooldown/reason. |
+| Geography fairness | `geo-attempt:<ad-id>`, `route-attempt:<ad-id>` | Last attempted time used to rotate eligible work across restarts. |
+| Geography result | `GeoCache` | Versioned provider/address geocode keys and route keys derived from endpoints/options; observation age is validated on reads. |
+| Duplicate review | `grouping-base-v1`, `seller-aliases-v1`, `duplicate-decisions-v1`; `GroupReview` | Stable automatic-group baseline, reviewed aliases/pair decisions, merge/undo audit events. |
+| Delivery | `DeliveryAttempt`; `delivery-batch:<hash>`, `delivery-retry:<attempt-id>:<time>` | Per-alert attempts, frozen batch membership/stable deduplication identity and manual retry audit. |
+| Feed import | `feed-receipt:<feed-id>:<content-hash>`, `feed-progress:<feed-id>:<scope>:<query-hash>` | Exact-page idempotency, manifest receipt and declared query cursor continuity. |
+
+The operational adapter performs compare-and-swap writes so cancellation and worker checkpoints cannot silently overwrite each other. Leases separately protect the worker cycle, collection, geocoding, routing, alert evaluation and delivery; expiration is recovery support, not permission to run concurrently with an active owner.
+
+`Observation` separates source payloads, asks, bids, availability and user review events. Raw evidence remains in ignored `data/cache` and `data/research`; database-only backup cannot recover those files. Sources/origins are tracked in `config/sources.json`; credentials/endpoints remain in `.env` and user settings in SQLite.
+
+`operations:bootstrap` imports existing inventory and historical run evidence into missing operational queues/health entirely offline. It retains original listing scope and observation dates, uses `legacy-observation` query attribution, and creates no jobs, network requests, listing observations or fictional catalog completion. Existing new-state records win. This bootstrap was executed on the local real inventory; its report is [operations-bootstrap.json](validation/operations-bootstrap.json).
+
+Browser snapshot/sample workspaces remain independent of the database. Storage keys include application, base path and mode; connected/session keys also include backend. Connected updates require the latest workspace revision and return 409 on conflict. Tokens use tab sessionStorage; passwords are not stored. Stable source-ad IDs preserve notes/favorites when grouping changes.
 
 ## API inventory
 
-All routes except health, login and OPTIONS require Bearer authentication; requests with a supplied unapproved Origin are rejected even for public routes.
+All routes except health, login and OPTIONS require bearer authentication. A supplied unapproved Origin is rejected even on those public routes. Detailed Zod validation is in `server/api.ts` and `server/collection-api.ts`.
 
 | Method and path | Purpose / contract |
 |---|---|
 | GET `/health` | Application/status/schema identity. |
-| POST `/api/login` | `{password}` -> token, expiry; 8 attempts/minute. |
-| POST `/api/logout` | Invalidates current token. |
-| POST `/api/search` | Full shared Search schema -> rows/rawCount/groupCount using private favorites. |
-| GET `/api/snapshot` | Private inventory, coverage and latest 60 ingest runs; no export redaction. |
-| GET `/api/workspace` | Workspace and revision. |
-| PUT `/api/workspace` | `{workspace, revision}`; synchronizes saved searches, resets their baseline when filters change; 409 conflict protection. |
-| GET `/api/settings` | Runtime settings, no environment secrets. |
-| PUT `/api/settings` | `{settings, dryRun}`; validates full configuration; home change invalidates all routes. |
-| POST `/api/import` | `{listings}` up to 5,000; accepted count and indexed rejections; canonical data only, no source fetching. |
-| GET `/api/listings/:id/history` | Ask/bid/availability history only, ascending observation time. |
-| PATCH `/api/listings/:id/location` | Location-schema body; reviewed location override and route invalidation. |
-| PATCH `/api/listings/:id/review` | `{year, specialtyEvidence, vehicleLocation, reason}`; durable override plus user-correction observation, route invalidation. |
-| GET `/api/groups/review` | Weak exact normalized-title/model/year pairs requiring user review. |
-| POST `/api/groups/merge` | `{ids, reason}` (2–20); new reviewed group retains former group identities in audit record. |
-| POST `/api/groups/unmerge` | `{groupId}`; restores prior group identities, marks review reversed. |
-| POST `/api/collect` | `{scope: regional|nationwide}` -> queued; requires running worker. |
-| POST `/api/collection/expand` | Enables nationwide setting and queues broader job. |
-| GET `/api/alerts` | Latest 100 persisted alerts. |
-| GET `/api/delivery-attempts` | Latest 100 delivery attempts/failures. |
-| POST `/api/alerts/:id/read` | Marks alert read. |
+| POST `/api/login`; POST `/api/logout` | Password login (8 attempts/minute), token expiry and session invalidation. |
+| POST `/api/search` | Shared Search body; complete rows, raw ad count and group count. |
+| POST `/api/search/page` | `{filters, offset, limit}`; paginated results and counts using the same predicate/projection. |
+| GET `/api/snapshot` | Private inventory/coverage and recent runs; not a publication-safe export. |
+| GET/PUT `/api/workspace` | Read or update `{workspace, revision}`; synchronize saved searches; 409 conflict protection. |
+| GET/PUT `/api/settings` | Read or validate/save `{settings, dryRun}`; full settings parse; home changes invalidate routes. |
+| POST `/api/import` | `{listings}` up to 5,000 canonical records; indexed rejections; no source requests. |
+| GET `/api/listings/:id/history` | Ask/bid/availability observations in ascending time. |
+| PATCH `/api/listings/:id/location` | Legacy location correction, now routed through reviewed evidence handling. |
+| PATCH `/api/listings/:id/review` | Optional year, specialty evidence and/or actual vehicle location plus reason. |
+| POST `/api/listings/:id/review/reset` | Reasoned reset to retained source baseline; 409 if a safe legacy baseline is absent. |
+| GET `/api/listings/:id/provenance` | Current/source/override values and paginated source/review events (`offset`, `limit`). |
+| GET `/api/groups/review` | Ranked candidate evidence, conflicts, decisions and merge audit; paginated, optionally includes dismissed pairs. |
+| POST `/api/groups/merge` | 2–100 ad IDs and reason; identifier conflicts require explicit acknowledgement. |
+| POST `/api/groups/unmerge` | `{reviewId}` or legacy `{groupId}`; replay remaining review edges instead of restoring obsolete assignments. |
+| POST `/api/groups/decision` | Two IDs, dismissed/restored action and reason. |
+| PUT `/api/groups/aliases` | Auditable seller-alias registry used for candidate review. |
+| POST `/api/collect`; POST `/api/jobs` | Enqueue separate UUID jobs: collection/geocode/routes, regional/nationwide scope, optional source/caps/limit/smoke. |
+| GET `/api/jobs`; GET `/api/jobs/:id` | Durable job history or one job. |
+| POST `/api/jobs/:id/cancel`; POST `/api/jobs/:id/retry` | Cooperative cancellation or explicit retry retaining history/progress. |
+| GET `/api/collection/progress` | Catalog checkpoints, source-wide queues and scope summaries; optional `sourceId`. |
+| GET `/api/source-health` | Current access state and dated failure/review history. |
+| POST `/api/source-health/:sourceId/review` | Pause or request bounded smoke with an 8–2,000-character reason. Cannot grant source permission or override Retry-After. |
+| POST `/api/collection/expand` | Enable nationwide setting and enqueue a nationwide collection job. |
+| GET `/api/service-budgets` | Persisted provider request reservations and cooldowns. |
+| POST `/api/listings/:id/geocode/retry` | Reasoned invalidation of this query's cached geocode/route and attempt marker; eligible for the next explicit geocoder run. |
+| GET `/api/alerts`; POST `/api/alerts/:id/read` | Latest 100 alerts and read state. |
+| GET `/api/delivery-attempts`; POST `/api/delivery-attempts/:id/retry` | Latest 100 attempts and audited retry; uncertain outcomes require acknowledgement. |
 
+Job statuses are queued, running, partial, interrupted, completed, failed and cancelled. A partial result with `nextRunAt: null` is waiting for explicit work/review, not secretly scheduled. Cancellation takes effect at bounded work boundaries. Collection caps permit zero through the API, useful for separate catalog/detail passes; CLI examples use positive caps. Source selection applies only to collection. Geocode/routes jobs use their explicit item limit and are never created by scheduled collection.
 
-## Repository map
+## Canonical search and public transport
 
-| Path | Responsibility |
-|---|---|
-| `app/` | Static App Router entry, metadata and responsive theme/styles. |
-| `components/` | Workspace views, manual/review tools and Leaflet map. |
-| `shared/` | Canonical versioned contracts, predicates, defaults, safe grouping and fictional development examples. |
-| `server/` | API, data access, geography, network guardrails, alert evaluation and worker. |
-| `server/ingest/` | Source-specific parsers, normalizer and bounded orchestration. |
-| `prisma/` | Database schema and two ordered SQLite migrations; Prisma configuration is at the project root. |
-| `config/` | Source feasibility/query definitions and dated vehicle/routing reference facts. |
-| `scripts/` | Setup, launch, CLI, static server/export verification, isolated browser-test API, initial research import and SBOM generation. |
-| `tests/` | Portable fixtures, unit/API tests and browser workflow tests. |
-| `public/data/` | Redacted real snapshot consumed by static mode; no backend workspace. |
-| `docs/` | Research archives, architecture/operations and generated dependency evidence. |
-| `data/`, `backups/` | Private ignored local state; `.gitkeep` is the sole tracked-data placeholder. |
-| `.github/`, `.vscode/` | Manual Pages publication workflow and local task definitions. |
+A `Listing` is a source advertisement. `groupId` is a reversible relation, not a claim that a heuristic has authenticated one physical car. Price/history remain ad-specific. Specifications and field evidence carry basis/source/time; unavailable values remain unknown. An identifier or seller claim alone does not authenticate a vehicle.
 
-## Canonical contracts and search
+The shared predicate combines the classic model/year branch with selected specialty Mustang eligibility, then applies common geography, price, state, availability and preferences. Unknown/review paths remain visible. Actual location and a fresh, non-future route are required for driving-time eligibility; seller coordinates, straight-line miles or off-site stock cannot substitute. One evaluation clock is propagated through matching, projection and sorting. Staleness/auction freshness are projected consistently for full and compact snapshots, API pages and alerts.
 
-The schema/defaults versions start at 1. A `Listing` is a **source advertisement** with stable source identity, not a claim of one unique physical car. `groupId` is a reversible relation across advertisements. Price observations are source-specific. `specs` and `fieldEvidence` hold values with basis/source/time; current adapters populate only evidence they can actually extract. A field being expressible or filterable in the schema does not mean every source supplies it.
+Public export writes `snapshot.json`, dictionary-packed `catalog.json` and hashed detail chunks. `catalogListing` retains all top-level searchable fields because arbitrary field filters can address them; only specification metadata outside predicate-visible value/basis is deferred. The dictionary envelope is `musclescout-dictionary-v1`; explicit container tags prevent user objects/arrays from colliding with reference markers. Decoder checks cover bounds, duplicate keys and malformed references. The browser decodes before schema parsing and resolves a selected ad through its exact `detailFiles` entry. Full snapshot remains available for compatible consumers.
 
-The vehicle predicate combines classic model/year eligibility with an optional selected specialty-Mustang branch, then applies common geography/price/status/preferences. Target year limits do not invent nonexistent models; advertised year/half-year text and identity-review status remain distinct. Route eligibility requires established actual vehicle location and a fresh non-future estimate at or below the selected minutes. Seller coordinates, straight-line miles and off-site stock do not substitute for it.
+Connected page search reads projected database columns in 500-row ID batches, with safe indexed prefilters for sources and small favorites sets. It still retains all matching ads for correct sort/group selection, and each offset request rescans candidates. The 50,000-ad synthetic benchmark checks full/compact/decoded/page/alert predicate parity and measures time, bytes, memory and candidate comparisons; it is not proof of bounded browser memory or production database performance. See [scale-50000.json](validation/scale-50000.json). Future top-K/group-aware selection or revision-keyed result caching must preserve representative choice, order and counts.
 
-`Search`, `Workspace`, `SavedSearch` and `Settings` are validated contracts. Independent filters combine with AND; selected states combine with OR. Saved searches retain their own defaults version and preferences. Backend search, the client and alert evaluation use the same predicates, but input projections must also agree: the current static-export availability-aging gap is documented in the backlog.
+## Collection, access and evidence
 
-A missing value stays unknown. Asking prices, auction bids, monthly financing, deposits, buyer premiums and odometer claims must not be merged into comparable numbers without evidence. Engine displacement does not become horsepower. Identity decoding or a copied seller claim never authenticates the physical car.
+Catalog checkpoints are keyed by source, requested scope and configured URL set. Query attribution survives pagination. Canonical URLs suppress duplicate work; scope guards reject pagination that drifts to a different configured query. Successful pages append discovered pages and detail IDs to durable queues. Tiny repeated caps therefore advance existing queues instead of rebuilding the first pages. Detail tasks survive independently of rediscovery and report both source-wide and scoped backlog. A completed catalog cycle can refresh later according to cache policy.
 
-## Collection, evidence and lifecycle
+Terminal-page evidence includes original observation time, parser version and cache identity. Reports distinguish configured scope, observed inventory, incomplete traversal, stale evidence and complete traversal of a declared query. Neither queue exhaustion nor removing a travel filter establishes nationwide market completeness. `coverage:report` is offline and cannot refresh live validation dates.
 
-Source `config/sources.json` statuses describe initial feasibility; latest `IngestRun` status describes the last attempted run. The UI combines both. Sources are independent, have explicit HTTPS origins and retain public source URLs. Raw bodies are cached once by SHA-256 under `data/cache`; metadata retains original network observation time. Initial research evidence lives under `data/research`. Those private files are referenced by local observations and omitted from public output.
+Failures distinguish access, policy, layout, rate limits, server/network errors, missing pages, budgets and cancellation. Access/policy failures pause for review; transient failures receive bounded retries/cooldowns. Source review requires a reason and a successful bounded live smoke before normal access resumes. Reviews retain server Retry-After. Cache hits preserve their network observation time and do not consume new network request reservations. Raw source failures never establish a sale/removal.
 
-Collection uses a renewable global lease, per-source run records, source delays, catalog/detail caps and exact source IDs. Fresh detail records are skipped; attempted details rotate within rediscovered candidates. Catalog cursors are not yet durable across cycles. Counts such as `remainingEnrichment` describe that run's encountered IDs, not all retained source inventory. Neither an outer `finished` cycle nor a source `complete` status proves market completeness.
+`safe-fetch.ts` allows configured credential-free HTTPS origins/public DNS destinations, pins DNS resolution, permits bounded same-origin GET redirects, limits size/time and checks robots. Persistent origin/provider budgets reserve slots atomically across CLI/API/worker processes and survive restart; counts represent accepted reservations, including a slot whose later network attempt fails or is cancelled. Daily limits reset by UTC day, while cooldowns survive that reset.
 
-The merge path retains first-tracked time, rich detail values when sparse summaries omit them, original price evidence dates and durable user overrides. A newer source observation is not proof that every retained field was reobserved. Explicit changed/off-site location evidence invalidates routes. Read-time staleness does not imply a sale. Source failures and missing pages never establish removal.
+## Geography, groups, reviews and delivery
 
-Automatic grouping is deliberately narrow. The review heuristic is currently weak exact-title matching with a 15-pair UI limit. No automatic group was formed in the initial real collection. Detailed duplicate metrics and the proposed reconciliation work are in the improvement register.
+Geocoder results must agree with requested US city/state/country and acceptable feature evidence. Ambiguous/unsupported results enter review rather than acquiring trusted coordinates. Cache reads enforce provider identity and configured age; future cache times are rejected. Last-attempt records rotate eligible work fairly; ambiguous entries require explicit correction/retry. A provider lease prevents concurrent geography batches, and shared budgets enforce request spacing and daily limits across processes. Defaults include a conservative 15-second public geocoder interval and 100 geocoder requests/day.
 
-## Security and publication boundary
+ORS uses driving-car, no live traffic, and ferry/border avoidance. Route keys include exact endpoints/options; reads enforce routeMaxAgeDays. Changing home or actual vehicle location invalidates route evidence. An unchanged source address preserves its validated geocode/route across later sparse observations. Missing ORS credentials returns unavailable without fabricating travel estimates. Real provider behavior still needs an authorized route test.
 
-- Default API binding is loopback; remote hosting needs deliberate network/TLS configuration and exact allowed origins. CORS is not a replacement for authentication.
-- Public health/login are narrow exceptions. Bearer token values are never placed in URLs or long-lived localStorage; in-memory server sessions expire on restart and after eight hours.
-- Source fetches permit only HTTPS/public resolved addresses and configured origins, pin DNS resolution, bound redirects/body/time, and stop on access restrictions. Imported records do not trigger arbitrary network fetching.
-- Remote prose is rendered as text. Map tooltips/popups use DOM text content for listing data. Source photos can fail independently and have a neutral fallback.
-- Real imports reject sample records. Public export omits configured sources, full identifier fields, raw evidence references, original seller prose and private overrides/workspace. Contact-pattern redaction and source-hosted images do not constitute blanket redistribution permission.
-- The database, raw cache, environment, backups, build outputs and browser-test artifacts are ignored by Git. Public snapshot and source/SBOM documentation are explicit distributable artifacts, subject to review before publication.
+Duplicate candidate indexes combine valid identifiers, normalized seller/stock context, aliases, model/year, distinctive title evidence and corroborating attributes. Strong identifier conflicts prevent automatic joining. Manual review can acknowledge a documented conflict; dismissed pairs and reversed reviews cannot be silently recreated by ingestion. Active review edges replay over the automatic-group baseline, supporting overlapping/nested merge undo. There is no permanent 15-pair review ceiling; that is a page size. Candidate indexing reduces typical comparisons, but a dense individual bucket can still generate quadratic work. Matching photos are not treated as authenticated identity evidence.
 
-## Extension rules
+User corrections preserve source baseline and explicit override separately; year/specialty/location review carries reason/date and observation history. Reset requires a real retained source baseline and recalculates derived eligibility; changing/restoring location invalidates travel evidence. Public export removes these private review details.
 
-Add a source only after verifying permitted access and stable catalog/detail identity; save sanitized fixtures, test pagination/sale semantics, then run a small dated live check. A fixture-only adapter must not be called live-validated. Add a field through the shared schema and source evidence, then test identical filter behavior in browser/API/alerts. Preserve original source data and version private workspace/schema changes deliberately.
+Saved searches support vehicle-group or source-ad alert policy and optional crosspost notifications. Quiet first baselines and stable membership avoid manufactured new-car alerts after regrouping; price/bid/availability history stays ad-level. A renewable delivery lease freezes digest membership and deduplication IDs. SMTP has bounded connection/socket and overall deadlines. Transient failures retry up to six times, permanent failures stop, and interrupted/timed-out sends become uncertain. Manual retry retains the same batch key and requires acknowledgement when the receiver may already have accepted it. Exactly-once delivery cannot be guaranteed without receiver cooperation. Environment destination, enabled backend setting and search-channel opt-in are all required; no real external delivery was performed for fixture validation.
 
-Before widening strong grouping, build conflict and false-positive fixtures. Before widening geography, verify route options/freshness and keep unknowns visible. Before optimizing national-scale search, benchmark and preserve shared predicate parity. Review [operations](OPERATIONS.md), [SBOM](../SBOM.md) and [future work](../FUTURE_IMPROVEMENTS.md) when changing deployment or dependencies.
+## Security, repository and extension boundaries
+
+Public export redacts configured sources, restricted/expired feed content, full identifiers, raw references, original seller prose, contact patterns and private workspace/override data. Source-hosted photos can independently fail; the photo component tries only the selected ad's own gallery and then a neutral fallback. Remote prose and map content are rendered as text. Imports reject fictional sample rows in real mode and do not trigger arbitrary URL fetching.
+
+Private `.env`, SQLite, raw evidence, backups, build outputs and test artifacts remain ignored. Directories/files receive owner-only access where supported. Source-hosted image URLs or redacted content still require an appropriate redistribution basis. Authorized feed manifests declare provider permission, expiry, query/scope and pagination; byte-identical receipts are idempotent. The eBay adapter requires actual approved credentials and reviewed vehicle-category scope; scaffolding does not confer access.
+
+`app/` and `components/` hold UI; `shared/` holds portable contracts/policy; `server/` holds backend logic; `prisma/` holds schema/migrations; `config/` holds source/reference definitions; `scripts/` holds setup/operations/build/release tools; `tests/` holds sanitized fixtures and isolated tests; `public/data/` holds distributable exports; `docs/` holds dated evidence. `.github/` contains pinned CI/manual publication workflows. Generated local-service definitions are opt-in and do not install themselves.
+
+Read the installed Next guides under `node_modules/next/dist/docs/` before changing framework code. Add a source only after permitted access and identity/scope semantics are established; save sanitized fixtures before a bounded dated live check. Extend shared fields/predicates with full/compact/API/alert parity tests. Keep the [operations guide](OPERATIONS.md), [SBOM](../SBOM.md), [validation ledger](../VALIDATION.md) and improvement tracker aligned with actual evidence, not only configured capabilities.

@@ -1,0 +1,23 @@
+{
+  "manifest": {
+    "schemaVersion": 1,
+    "feedId": "dealer-export-example",
+    "sourceId": "authorized-dealer",
+    "sourceName": "Replace with authorized provider name",
+    "generatedAt": "2026-09-08T00:00:00Z",
+    "scope": "nationwide",
+    "query": "Mustang Cobra / Shelby / Mach 1 / Boss / GTD, permitted provider inventory",
+    "authorization": {
+      "basis": "dealer-permission",
+      "reference": "Replace with permission or license reference before adding records",
+      "reviewedAt": "2026-09-08T00:00:00Z",
+      "expiresAt": null,
+      "publicRedistribution": false,
+      "imageRedistribution": false
+    },
+    "allowedListingHosts": ["dealer.example"],
+    "allowedImageHosts": ["dealer.example"],
+    "pagination": { "cursor": null, "nextCursor": null, "terminal": true, "declaredTotal": 0 }
+  },
+  "listings": []
+}

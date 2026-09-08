@@ -1,0 +1,355 @@
+{
+  "generatedAt": "2026-09-08T17:10:00.836Z",
+  "node": "v26.7.0",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "lockfileSha256": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa",
+  "nativeAndWasmArtifacts": [
+    {
+      "path": "node_modules/.prisma/client/query_compiler_fast_bg.wasm",
+      "kind": "webassembly",
+      "bytes": 3304603,
+      "sha256": "3e45427e3ed15080a4084dbe15e83912ce6ef22f6505161eaae9ddd912bed430",
+      "owningPackage": {
+        "name": "prisma-client-d0b473fe72720dd3405ba964ea21ffbba982d82a23d38100605d622a8b2bef9f",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@electric-sql/pglite-tools/dist/pg_dump.wasm",
+      "kind": "webassembly",
+      "bytes": 657340,
+      "sha256": "097c638e45ccb7ff16c72a927ddce2fee126076f2c41a25abef951b03897860d",
+      "owningPackage": {
+        "name": "@electric-sql/pglite-tools",
+        "version": "0.3.3"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@electric-sql/pglite/dist/initdb.wasm",
+      "kind": "webassembly",
+      "bytes": 169969,
+      "sha256": "13ed8475e33d092d03e2378d6b78d52da0c4d497b1df2c2a62d33fe32ceb67e2",
+      "owningPackage": {
+        "name": "@electric-sql/pglite",
+        "version": "0.4.3"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@electric-sql/pglite/dist/pglite.wasm",
+      "kind": "webassembly",
+      "bytes": 8740135,
+      "sha256": "a197681ba0d51f76508b8ab0a872b47bc9dbab9dc42814cce50cf241fb0c22dd",
+      "owningPackage": {
+        "name": "@electric-sql/pglite",
+        "version": "0.4.3"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@img/sharp-darwin-arm64/lib/sharp-darwin-arm64-0.35.4.node",
+      "kind": "native-node-addon",
+      "bytes": 280256,
+      "sha256": "389121ae6516bd89e92fa81b68d94b09e0b084cc53d57919e2140a73d9e3ca4c",
+      "owningPackage": {
+        "name": "@img/sharp-darwin-arm64",
+        "version": "0.35.4"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@next/swc-darwin-arm64/next-swc.darwin-arm64.node",
+      "kind": "native-node-addon",
+      "bytes": 88930328,
+      "sha256": "d9968e32edd926ed8d26b087bf483774c58b83c869c8c189e4e6158dac6d054e",
+      "owningPackage": {
+        "name": "@next/swc-darwin-arm64",
+        "version": "16.3.4"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@prisma/dev/dist/runtime-assets/initdb.wasm",
+      "kind": "webassembly",
+      "bytes": 169969,
+      "sha256": "13ed8475e33d092d03e2378d6b78d52da0c4d497b1df2c2a62d33fe32ceb67e2",
+      "owningPackage": {
+        "name": "@prisma/dev",
+        "version": "0.24.17"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@prisma/dev/dist/runtime-assets/pglite.wasm",
+      "kind": "webassembly",
+      "bytes": 8740135,
+      "sha256": "a197681ba0d51f76508b8ab0a872b47bc9dbab9dc42814cce50cf241fb0c22dd",
+      "owningPackage": {
+        "name": "@prisma/dev",
+        "version": "0.24.17"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node",
+      "kind": "native-node-addon",
+      "bytes": 16556000,
+      "sha256": "5ffd080b2e52e7997659a073b65ccf17d30b96b65aa4877058c5a1c1014c8d4b",
+      "owningPackage": {
+        "name": "@rolldown/binding-darwin-arm64",
+        "version": "1.2.7"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node",
+      "kind": "native-node-addon",
+      "bytes": 2926752,
+      "sha256": "dbb1ced076c313dde5f967c1299ea725c866daec610ee510c9fac85dbb147470",
+      "owningPackage": {
+        "name": "@tailwindcss/oxide-darwin-arm64",
+        "version": "4.3.3"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/better-sqlite3/build/Release/better_sqlite3.node",
+      "kind": "native-node-addon",
+      "bytes": 1932672,
+      "sha256": "0000d73c6e2e94318ed2b9339139623d5a0908b195f1e761c16cfd98f9cc6229",
+      "owningPackage": {
+        "name": "better-sqlite3",
+        "version": "12.11.1"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/fsevents/fsevents.node",
+      "kind": "native-node-addon",
+      "bytes": 163626,
+      "sha256": "40f2f51199e4f5fc46fa6b985fb3461bb63e6cd86c62bfa9bcee45ed4438d5fb",
+      "owningPackage": {
+        "name": "fsevents",
+        "version": "2.3.3"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node",
+      "kind": "native-node-addon",
+      "bytes": 8516384,
+      "sha256": "6ac4ba1cce8aca75dbcafafa1951955dd30d99ca9953fa81020d0c5246cbd317",
+      "owningPackage": {
+        "name": "lightningcss-darwin-arm64",
+        "version": "1.32.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/llhttp/llhttp.wasm",
+      "kind": "webassembly",
+      "bytes": 61045,
+      "sha256": "f37ae8e0ee713aed2aa405539a82994cc28473348a4e23e219760e52eabb07e3",
+      "owningPackage": {
+        "name": "next",
+        "version": "16.3.4"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/next/dist/compiled/@vercel/og/resvg.wasm",
+      "kind": "webassembly",
+      "bytes": 1378357,
+      "sha256": "6332e8ff5ef63cb18592370d4f799c8551d886c90b8563e1323fdabee2371e24",
+      "owningPackage": {
+        "name": "@vercel/og",
+        "version": "0.11.1"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/next/dist/compiled/@vercel/og/yoga.wasm",
+      "kind": "webassembly",
+      "bytes": 71736,
+      "sha256": "7ba9c9483c8c38a468e9aef4a95ed72fad8a43594be8e5123eb3bdb6479edf5b",
+      "owningPackage": {
+        "name": "@vercel/og",
+        "version": "0.11.1"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/next/dist/compiled/source-map08/mappings.wasm",
+      "kind": "webassembly",
+      "bytes": 48693,
+      "sha256": "be2dc7da3885e55013c8da58d7ba356705d932459db94ada37d5de2fa8733cfe",
+      "owningPackage": {
+        "name": "next",
+        "version": "16.3.4"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/playwright-core/lib/webp_codec.wasm",
+      "kind": "webassembly",
+      "bytes": 565369,
+      "sha256": "164cd9583a3e4d081f767d3b41ff0a730443dc7535fcc5caff83561463384b79",
+      "owningPackage": {
+        "name": "playwright-core",
+        "version": "1.63.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/prisma_schema_build_bg.wasm",
+      "kind": "webassembly",
+      "bytes": 3165164,
+      "sha256": "e77f37d7e9bdae4100769cbcd5a59918796943f6bed0f8ee99d9eeb7f75fde58",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_fast_bg.cockroachdb.wasm",
+      "kind": "webassembly",
+      "bytes": 3484499,
+      "sha256": "1d29c3df6d7521b42b971cdca19991a9e00d16b5d9de8ececd2006dc9988c2cb",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_fast_bg.mysql.wasm",
+      "kind": "webassembly",
+      "bytes": 3391959,
+      "sha256": "1d1914e4d9d968f57030198c6155964745a9567037a9ed5d949e0d0e8520a7f0",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_fast_bg.postgresql.wasm",
+      "kind": "webassembly",
+      "bytes": 3437252,
+      "sha256": "f2592df4586bc42ceffbfcdbaa764cc44612b533b61293119a7e6222cf5637f9",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_fast_bg.sqlite.wasm",
+      "kind": "webassembly",
+      "bytes": 3304603,
+      "sha256": "3e45427e3ed15080a4084dbe15e83912ce6ef22f6505161eaae9ddd912bed430",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_fast_bg.sqlserver.wasm",
+      "kind": "webassembly",
+      "bytes": 3525178,
+      "sha256": "af15f99d63115e52d14280533dcf6fc88a6b3a8d3c5c76ba7172c30d3c35898f",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_small_bg.cockroachdb.wasm",
+      "kind": "webassembly",
+      "bytes": 1757294,
+      "sha256": "f96e7ab79813da297643ca28fd796c5bb29a780de257dd1fb560c2604d6f22f3",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_small_bg.mysql.wasm",
+      "kind": "webassembly",
+      "bytes": 1703240,
+      "sha256": "8301163586fe63e98f91f85a749ab0a646b4996a7bd6c229caa20f3e883beb7c",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_small_bg.postgresql.wasm",
+      "kind": "webassembly",
+      "bytes": 1734597,
+      "sha256": "d7534d8306b4e184ecea651a74fad747bd990e158f289cc04747c43602b74bda",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_small_bg.sqlite.wasm",
+      "kind": "webassembly",
+      "bytes": 1661169,
+      "sha256": "811de306a07795a36f4335000c7c3e39b31dfaa093998ab32d34a9901f6fda71",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_small_bg.sqlserver.wasm",
+      "kind": "webassembly",
+      "bytes": 1731787,
+      "sha256": "9d361e233107f308708c4e8a9e69ffd46c67c483af458dda471bec6441fff160",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/schema_engine_bg.wasm",
+      "kind": "webassembly",
+      "bytes": 5405929,
+      "sha256": "c8d00b95bdf2259b6a41914ad28e9b247d1e46462cd92a02f0939c6d17577a1e",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/vite/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node",
+      "kind": "native-node-addon",
+      "bytes": 8532944,
+      "sha256": "aee1601d7145d89f262d4c777f308ef06ed53046ee49b780d31a98f02db2e253",
+      "owningPackage": {
+        "name": "lightningcss-darwin-arm64",
+        "version": "1.33.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    }
+  ],
+  "osPackageInventory": null,
+  "limitations": [
+    "File hashes and owning package versions are observed; embedded component versions require their own evidence.",
+    "OS package inventory covers dpkg only when available on the target; other package managers and manually installed OS files remain outside this report."
+  ]
+}

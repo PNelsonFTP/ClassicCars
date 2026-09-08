@@ -10,8 +10,27 @@ import {
   type Snapshot,
   type Coverage,
 } from "../shared/schema";
+import {
+  feedAllowsPublicExport,
+  feedAllowsPublicImages,
+} from "./ingest/authorized-feed";
+import { catalogSnapshot, packCatalog } from "../shared/catalog";
+import {
+  applyOverrides,
+  sourceRecord,
+  retainedReviewEvidence,
+} from "../shared/reviews";
+import { projectFreshness } from "../shared/freshness";
+import {
+  mayAutoGroup,
+  pairId,
+  identifierConflicts,
+} from "../shared/duplicates";
+import { blockedAutomaticPairs } from "./grouping";
 import { strongGroupKey } from "../shared/search";
-import { readFile, writeFile, mkdir } from "node:fs/promises";
+import { readFile, writeFile, mkdir, readdir, unlink } from "node:fs/promises";
+import { mergeVehicleGeography } from "../shared/location-merge";
+import { redactPublicListing } from "./public-redaction";
 export async function getSettings(): Promise<Settings> {
   const row = await db.setting.findUnique({ where: { key: "settings" } });
   return settingsSchema.parse(row ? JSON.parse(row.value) : {});
@@ -41,12 +60,12 @@ export async function allListings(): Promise<Listing[]> {
   const settings = await getSettings();
   return (await db.listing.findMany()).map((row) => {
     const l = listingSchema.parse(JSON.parse(row.payload));
-    if (
-      ["active", "unknown"].includes(l.availability) &&
-      Date.now() - Date.parse(l.lastObservedAt) > settings.staleDays * 864e5
-    )
-      l.availability = "stale";
-    return l;
+    return projectFreshness(
+      l,
+      settings.staleDays,
+      Date.now(),
+      settings.auctionMaxAgeHours,
+    );
   });
 }
 export async function getWorkspace() {
@@ -60,7 +79,12 @@ export function mergeObservation(
   old: Listing | undefined,
   incoming: Listing,
 ): Listing {
-  if (!old) return incoming;
+  // A projected/user-reviewed row is not evidence of its pre-review source values.
+  const incomingSource =
+    incoming.sourceRecord ||
+    (!incoming.userOverrides ? sourceRecord(incoming) : old?.sourceRecord);
+  if (!old)
+    return applyOverrides({ ...incoming, sourceRecord: incomingSource });
   if (Date.parse(incoming.lastObservedAt) < Date.parse(old.lastObservedAt))
     return {
       ...incoming,
@@ -71,14 +95,11 @@ export function mergeObservation(
   const richer =
     Object.keys(incoming.specs).length >= Object.keys(old.specs).length;
   const detail = incoming.parserVersion.includes("detail");
-  const locationChanged =
-    detail &&
-    JSON.stringify(incoming.vehicleLocation) !==
-      JSON.stringify(old.vehicleLocation);
+  const geography = mergeVehicleGeography(old, incoming, detail);
   const preserveDetails =
     !detail &&
     !!(old.lastDetailObservedAt || old.parserVersion.includes("detail"));
-  return {
+  return applyOverrides({
     ...old,
     ...incoming,
     firstSeenAt: old.firstSeenAt,
@@ -98,6 +119,7 @@ export function mergeObservation(
     fieldEvidence: {
       ...old.fieldEvidence,
       ...incoming.fieldEvidence,
+      ...retainedReviewEvidence(old, incoming),
       ...(preserveDetails &&
       incoming.askingPrice == null &&
       !incoming.priceOnRequest &&
@@ -120,25 +142,31 @@ export function mergeObservation(
       preserveDetails && incoming.availability === "unknown"
         ? old.availability
         : incoming.availability,
-    vehicleLocation: detail
-      ? incoming.vehicleLocation
-      : incoming.vehicleLocation || old.vehicleLocation,
-    route: locationChanged ? incoming.route : incoming.route || old.route,
-    straightLineMiles: locationChanged
-      ? incoming.straightLineMiles
-      : (incoming.straightLineMiles ?? old.straightLineMiles),
+    sourceAvailability:
+      preserveDetails &&
+      (incoming.sourceAvailability || incoming.availability) === "unknown"
+        ? old.sourceAvailability || old.availability
+        : incoming.sourceAvailability || incoming.availability,
+    sourceRecord: incomingSource
+      ? {
+          ...incomingSource,
+          vehicleLocation: detail
+            ? incomingSource.vehicleLocation
+            : incomingSource.vehicleLocation ||
+              old.sourceRecord?.vehicleLocation ||
+              null,
+          fieldEvidence: {
+            ...old.sourceRecord?.fieldEvidence,
+            ...incomingSource.fieldEvidence,
+          },
+        }
+      : undefined,
+    ...geography,
     groupId: old.groupId || incoming.groupId,
     parserVersion: richer ? incoming.parserVersion : old.parserVersion,
     flags: [...new Set([...old.flags, ...incoming.flags])],
     userOverrides: incoming.userOverrides || old.userOverrides,
-    ...(incoming.userOverrides || old.userOverrides
-      ? Object.fromEntries(
-          Object.entries(incoming.userOverrides || old.userOverrides!).filter(
-            ([key]) => key !== "reviewedAt",
-          ),
-        )
-      : {}),
-  };
+  });
 }
 export async function upsertListing(input: unknown) {
   const candidate = listingSchema.parse(input);
@@ -166,15 +194,44 @@ export async function upsertListing(input: unknown) {
   const old = existing
     ? listingSchema.parse(JSON.parse(existing.payload))
     : undefined;
+  if (!candidate.sourceAvailability)
+    candidate.sourceAvailability = candidate.availability;
   const listing = mergeObservation(old, candidate);
+  if (listing.groupId?.startsWith("vehicle:")) {
+    const peers = await db.listing.findMany({
+      where: { groupId: listing.groupId, id: { not: listing.id } },
+    });
+    if (
+      peers.some(
+        (p) =>
+          identifierConflicts(
+            listing,
+            listingSchema.parse(JSON.parse(p.payload)),
+          ).length,
+      )
+    ) {
+      listing.groupId = null;
+      listing.identityStatus = "review";
+      listing.identityNotes.push(
+        "Source identifiers now conflict with the automatic group; review the documents.",
+      );
+    }
+  }
   const key = strongGroupKey(listing);
   if (!listing.groupId && key) {
     const others = await db.listing.findMany({
       where: { model: listing.model, year: listing.year },
     });
+    const blocked = await blockedAutomaticPairs();
     const peer = others
       .map((r) => listingSchema.parse(JSON.parse(r.payload)))
-      .find((l) => l.id !== listing.id && strongGroupKey(l) === key);
+      .find(
+        (l) =>
+          l.id !== listing.id &&
+          strongGroupKey(l) === key &&
+          mayAutoGroup(listing, l) &&
+          !blocked.has(pairId(listing.id, l.id)),
+      );
     if (peer) {
       listing.groupId =
         peer.groupId ||
@@ -314,16 +371,25 @@ export async function snapshot(redact = true): Promise<Snapshot> {
   return {
     schemaVersion: 1,
     generatedAt: new Date().toISOString(),
+    freshnessPolicy: {
+      staleDays: settings.staleDays,
+      auctionMaxAgeHours: settings.auctionMaxAgeHours,
+    },
     collectionCounts: {
       rawAds: listings.length,
       groups: new Set(listings.map((l) => l.groupId || l.id)).size,
       publicAds: listings.filter(
-        (l) => !settings.snapshotExcludeSources.includes(l.sourceId),
+        (l) =>
+          !settings.snapshotExcludeSources.includes(l.sourceId) &&
+          feedAllowsPublicExport(l),
       ).length,
     },
     listings: listings
       .filter(
-        (l) => !redact || !settings.snapshotExcludeSources.includes(l.sourceId),
+        (l) =>
+          !redact ||
+          (!settings.snapshotExcludeSources.includes(l.sourceId) &&
+            feedAllowsPublicExport(l)),
       )
       .map((l) => {
         const stale =
@@ -335,38 +401,7 @@ export async function snapshot(redact = true): Promise<Snapshot> {
             stale && ["active", "unknown"].includes(l.availability)
               ? "stale"
               : l.availability,
-          ...(redact
-            ? {
-                identifier: null,
-                userOverrides: undefined,
-                identityNotes: l.identityNotes.filter(
-                  (n) => !n.startsWith("User-reviewed correction:"),
-                ),
-                evidenceRef: undefined,
-                originalSellerText: "",
-                description: l.description
-                  .replace(
-                    /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi,
-                    "[contact redacted]",
-                  )
-                  .replace(
-                    /(?:\+?1[ -]?)?\(?\d{3}\)?[- .]\d{3}[- .]\d{4}/g,
-                    "[phone redacted]",
-                  ),
-                specs: Object.fromEntries(
-                  Object.entries(l.specs).filter(
-                    ([k]) => !["cowlTag", "identifier", "vin"].includes(k),
-                  ),
-                ),
-                seller: {
-                  ...l.seller,
-                  name:
-                    l.seller.type === "private"
-                      ? "Private seller"
-                      : l.seller.name,
-                },
-              }
-            : {}),
+          ...(redact ? redactPublicListing(l) : {}),
         };
       }),
     coverage,
@@ -385,10 +420,31 @@ export async function snapshot(redact = true): Promise<Snapshot> {
     ],
   };
 }
-export async function exportSnapshot() {
-  await mkdir("public/data", { recursive: true });
+export async function exportSnapshot(outputDirectory = "public/data") {
+  await mkdir(outputDirectory, { recursive: true });
   const result = await snapshot(true);
-  await writeFile("public/data/snapshot.json", JSON.stringify(result));
+  await writeFile(`${outputDirectory}/snapshot.json`, JSON.stringify(result));
+  const detailFiles: Record<string, string> = {};
+  await mkdir(`${outputDirectory}/details`, { recursive: true });
+  for (let offset = 0; offset < result.listings.length; offset += 100) {
+    const rows = result.listings.slice(offset, offset + 100),
+      body = JSON.stringify(rows);
+    const filename = `details/${createHash("sha256").update(body).digest("hex").slice(0, 24)}.json`;
+    await writeFile(`${outputDirectory}/${filename}`, body);
+    for (const l of rows) detailFiles[l.id] = filename;
+  }
+  await writeFile(
+    `${outputDirectory}/catalog.json`,
+    JSON.stringify(packCatalog(catalogSnapshot(result, detailFiles))),
+  );
+  const currentFiles = new Set(
+    Object.values(detailFiles).map((file) => file.slice("details/".length)),
+  );
+  for (const name of await readdir(`${outputDirectory}/details`)) {
+    if (/^[a-f0-9]{24}\.json$/.test(name) && !currentFiles.has(name))
+      await unlink(`${outputDirectory}/details/${name}`);
+  }
+
   return {
     ads: result.listings.length,
     groups: new Set(result.listings.map((l) => l.groupId || l.id)).size,

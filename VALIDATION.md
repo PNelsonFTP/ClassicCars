@@ -1,4 +1,46 @@
-# Validation
+# Validation — 1.1.0
+
+Updated September 8, 2026 UTC. This records actual checks and separates them from external acceptance still requiring credentials, permission, a Windows target or a deployment destination. Final inventory dates are source observation dates, not software build times.
+
+| Executed check | Result |
+|---|---|
+| Strict TypeScript | Passed after final code integration. Generated/test-result directories are excluded from application typechecking. |
+| Portable unit/API/adapter/security suite | **222 tests passed across 20 files.** Disposable SQLite, synthetic fixtures and injected transports; no real delivery or routing calls. |
+| Desktop/mobile browser suite | **16 tests passed**, including correction/reset, merge/undo, jobs/cancel, pagination/image fallback, connection reload and endpoint/token isolation. Disposable API port 4411. |
+| Static exports | Both root and `/ClassicCars` builds passed; local browser verifier reported zero runtime errors/missing local assets, real image loading and independent path-specific workspaces. |
+| Review of visuals | Desktop and mobile discovery/coverage/operations screenshots inspected; mobile operations tables changed to labeled records to keep job actions and IDs visible. |
+| State-integrity audit | Eleven targeted regressions integrated, covering source baselines, geography, grouping replay, public evidence, permission expiry and stale detail chunks. |
+| Save and consent audit | Serialized revision tests retain later edits through in-flight saves; backend draft URL cannot redirect the active credential. Queued deliveries honor current search/event/channel consent, including after budget waits. |
+| Release smoke, current macOS host | Setup twice/password preservation, pending migrations, native SQLite, backup/restore and API startup/shutdown passed using a temporary database. |
+| Clean macOS Node 24.20.0 | Official arm64 runtime checksum verified; fresh locked install and isolated release/SBOM schema checks passed. [Evidence](docs/NODE24_VALIDATION.md). |
+| Linux arm64 Docker Node 24.20.0 | Pinned image built; isolated migration/native SQLite/restore/API check passed. [Target evidence](docs/RELEASE_VALIDATION.md). |
+| Native WebMCP | Chromium 153 native feature flag: registration/invocation, invalid input, reload, abort cleanup and independent-filter preservation passed; no polyfill. [Evidence](docs/BROWSER_CONNECTIVITY_VALIDATION.md). |
+| 50,000-ad benchmark | Sixteen full/compact/dictionary/API-core/ad-alert membership scenarios passed. Packed fixture JSON 61.23% smaller; indexed candidate comparisons 22,500. [Raw measurement](docs/validation/scale-50000.json). |
+| SBOM | CycloneDX full/runtime and SPDX passed pinned full-schema and input/artifact hash validation offline; 471 lock entries and observed native/optional-WASM evidence retained. |
+| Fresh dependency audit | Full npm registry audit around 17:09 UTC on September 8 returned zero vulnerabilities. This is separate from offline SBOM generation. |
+| Final public-data/privacy scan | 144 static files checked; no configured backend secrets, private listing fields, sample ads, Autotrader records or zero asking prices. [Receipt](docs/validation/public-export-review.json). |
+| Release configuration | Full immutable direct Action commits and Node base digest validated. GitHub workflows were written, not remotely executed. |
+| Operational upgrade | All-source legacy detail queues/access health initialized from retained observations, preserving original dates; zero requests/jobs created by bootstrap. [Receipt](docs/validation/operations-bootstrap.json). |
+| National query check | Three ClassicCars national catalog pages and three details succeeded with no cache hits; 180 ads observed and pending pages retained. [Receipt](docs/validation/national-smoke.json). |
+| Full configured catalog refresh | Completed 93 fresh catalog pages, retaining 3,139 ads (3,120 public); accessible queues exhausted. Exact per-source results, timestamps and limits in the [scan report](docs/validation/inventory-full-scan.json). Detail enrichment remains separately queued. |
+| Service readiness | Real local CLI checks reported missing ORS/webhook/SMTP configuration, zero provider operations and zero messages. Fifteen injected acceptance-tool tests passed. |
+
+## Scope and limits
+
+The national-scale benchmark uses serialized in-memory batches and the real search core; it does not measure real SQLite disk, HTTP or browser throughput. It retains multiple fixture representations and samples about 2 GB RSS. API sorting/grouping still retains all matches and rescans for each offset; dense duplicate buckets remain a worst-case cost. No real-market precision/recall is claimed from the small synthetic identity-label dataset.
+
+A successful catalog scan establishes only its configured URLs and observed terminal pages. Disabled/restricted sources are not searched through alternate identities. Fresh snapshots retain original source dates and pending/blocked detail backlog. Most real vehicles, seller claims and crossposts remain unreviewed. No real ORS route was created, and coordinates alone cannot establish four-hour eligibility.
+
+Windows launcher/CI execution, a real opted-in notification receipt, authorized auction/API import, real ORS route geometry/quota behavior and deployed HTTPS-to-local-network connectivity remain open acceptance. Root/subpath local exports and native WebMCP tests do not prove public Pages connectivity. Docker is optional and does not replace the GitHub Pages deployment path.
+
+The user reviewed the local preview and approved the final commit, push and wind down. [Delivery status](docs/DELIVERY.md) records publication and remote CI results separately from the local evidence above. The original baseline is `4835c0a`. See [handoff](HANDOFF.md) and [current improvement register](FUTURE_IMPROVEMENTS.md).
+
+---
+
+## Historical initial build and documentation validation
+
+The following dated record is preserved for provenance. Its statements about features or targets then unverified are superseded by the current checks above and the implementation map.
+
 
 Verified September 8, 2026 UTC / September 7 evening, America/Chicago. Tests ran on macOS, Node 26.7.0, npm 11, Chromium, and the project’s package lockfile. This report distinguishes executed checks from supplied integrations.
 

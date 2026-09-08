@@ -1,0 +1,3351 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-09-08T17:15:40.104Z",
+  "intent": "Refresh all configured permitted inventory catalogs; keep detail enrichment separate and source restrictions in force.",
+  "freshNetwork": true,
+  "pageCapPerPass": 500,
+  "detailsRequestedPerSource": 0,
+  "status": "finished-with-source-limits",
+  "results": [
+    {
+      "status": "partial",
+      "jobId": "c44f2922-0c8e-47f2-b5ef-54f73e949a4f",
+      "scope": "regional",
+      "sources": [
+        {
+          "source": "classiccars",
+          "status": "partial",
+          "jobId": "c44f2922-0c8e-47f2-b5ef-54f73e949a4f",
+          "checkpointId": "classiccars:regional:aef052e1670468dbd712f2fe",
+          "catalogCycle": 1,
+          "pagesDiscovered": 25,
+          "configuredUrls": [
+            "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
+            "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
+            "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&ps=60&s=datelisted&zip=60187"
+          ],
+          "discoveryMiles": 300,
+          "pagesFetched": 25,
+          "detailRequests": 0,
+          "detailsSucceeded": 0,
+          "freshDetailsSkipped": 33,
+          "failedInventoryPages": 0,
+          "failedDetails": 0,
+          "cacheHits": 0,
+          "discoveredCandidates": 1387,
+          "uniqueAds": 1387,
+          "duplicateIds": 0,
+          "skippedCandidates": 0,
+          "remainingEnrichment": 1354,
+          "catalogBacklog": 0,
+          "blockedCatalogBacklog": 0,
+          "totalCatalogPages": 25,
+          "totalDetailBacklog": 1481,
+          "blockedDetailBacklog": 0,
+          "currentScopeDetailBacklog": 1353,
+          "currentScopeBlockedDetails": 0,
+          "failedPages": [],
+          "pageCap": 500,
+          "detailCap": 0,
+          "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+          "accessHealth": {
+            "sourceId": "classiccars",
+            "state": "active",
+            "consecutiveFailures": 0,
+            "nextPermittedAt": null,
+            "history": [
+              {
+                "at": "2026-09-08T02:54:45.440Z",
+                "action": "legacy-bootstrap",
+                "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+              }
+            ],
+            "lastSuccessAt": "2026-09-08T17:17:49.087Z",
+            "lastLiveValidatedAt": "2026-09-08T17:17:49.087Z"
+          }
+        }
+      ],
+      "completedAt": "2026-09-08T17:17:49.222Z"
+    },
+    {
+      "status": "partial",
+      "jobId": "e8321c6f-d187-4ad4-8e4f-575ad0e7243e",
+      "scope": "regional",
+      "sources": [
+        {
+          "source": "volo",
+          "status": "partial",
+          "jobId": "e8321c6f-d187-4ad4-8e4f-575ad0e7243e",
+          "checkpointId": "volo:regional:ed209aa95381978862c4d8db",
+          "catalogCycle": 1,
+          "pagesDiscovered": 2,
+          "configuredUrls": [
+            "https://www.volocars.com/vehicles"
+          ],
+          "discoveryMiles": 300,
+          "pagesFetched": 2,
+          "detailRequests": 0,
+          "detailsSucceeded": 0,
+          "freshDetailsSkipped": 1,
+          "failedInventoryPages": 0,
+          "failedDetails": 0,
+          "cacheHits": 0,
+          "discoveredCandidates": 323,
+          "uniqueAds": 50,
+          "duplicateIds": 0,
+          "skippedCandidates": 273,
+          "remainingEnrichment": 49,
+          "catalogBacklog": 0,
+          "blockedCatalogBacklog": 0,
+          "totalCatalogPages": 2,
+          "totalDetailBacklog": 49,
+          "blockedDetailBacklog": 0,
+          "currentScopeDetailBacklog": 49,
+          "currentScopeBlockedDetails": 0,
+          "failedPages": [],
+          "pageCap": 500,
+          "detailCap": 0,
+          "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+          "accessHealth": {
+            "sourceId": "volo",
+            "state": "active",
+            "consecutiveFailures": 0,
+            "nextPermittedAt": null,
+            "history": [
+              {
+                "at": "2026-09-08T02:55:06.006Z",
+                "action": "legacy-bootstrap",
+                "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+              }
+            ],
+            "lastSuccessAt": "2026-09-08T17:18:00.186Z",
+            "lastLiveValidatedAt": "2026-09-08T17:18:00.186Z"
+          }
+        }
+      ],
+      "completedAt": "2026-09-08T17:18:00.330Z"
+    },
+    {
+      "status": "partial",
+      "jobId": "c195a022-5e9c-465d-a639-656268bc2ded",
+      "scope": "regional",
+      "sources": [
+        {
+          "source": "grauto",
+          "status": "partial",
+          "jobId": "c195a022-5e9c-465d-a639-656268bc2ded",
+          "checkpointId": "grauto:regional:e8b0bb9ddc37499d0026f629",
+          "catalogCycle": 1,
+          "pagesDiscovered": 5,
+          "configuredUrls": [
+            "https://www.grautogallery.com/vehicles"
+          ],
+          "discoveryMiles": 300,
+          "pagesFetched": 5,
+          "detailRequests": 0,
+          "detailsSucceeded": 0,
+          "freshDetailsSkipped": 1,
+          "failedInventoryPages": 0,
+          "failedDetails": 0,
+          "cacheHits": 0,
+          "discoveredCandidates": 511,
+          "uniqueAds": 43,
+          "duplicateIds": 1,
+          "skippedCandidates": 468,
+          "remainingEnrichment": 45,
+          "catalogBacklog": 0,
+          "blockedCatalogBacklog": 0,
+          "totalCatalogPages": 5,
+          "totalDetailBacklog": 45,
+          "blockedDetailBacklog": 0,
+          "currentScopeDetailBacklog": 45,
+          "currentScopeBlockedDetails": 0,
+          "failedPages": [],
+          "pageCap": 500,
+          "detailCap": 0,
+          "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+          "accessHealth": {
+            "sourceId": "grauto",
+            "state": "active",
+            "consecutiveFailures": 0,
+            "nextPermittedAt": null,
+            "history": [
+              {
+                "at": "2026-09-08T02:56:52.469Z",
+                "action": "legacy-bootstrap",
+                "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+              }
+            ],
+            "lastSuccessAt": "2026-09-08T17:18:40.858Z",
+            "lastLiveValidatedAt": "2026-09-08T17:18:40.858Z"
+          }
+        }
+      ],
+      "completedAt": "2026-09-08T17:18:40.988Z"
+    },
+    {
+      "status": "partial",
+      "jobId": "99cfa0d5-2311-43f3-ac73-f4152c9145ca",
+      "scope": "regional",
+      "sources": [
+        {
+          "source": "admcars",
+          "status": "partial",
+          "jobId": "99cfa0d5-2311-43f3-ac73-f4152c9145ca",
+          "checkpointId": "admcars:regional:6c4dfd126ac0b83596b0f3b9",
+          "catalogCycle": 1,
+          "pagesDiscovered": 4,
+          "configuredUrls": [
+            "https://www.admcars.com/inventory.htm"
+          ],
+          "discoveryMiles": 300,
+          "pagesFetched": 4,
+          "detailRequests": 0,
+          "detailsSucceeded": 0,
+          "freshDetailsSkipped": 5,
+          "failedInventoryPages": 0,
+          "failedDetails": 0,
+          "cacheHits": 0,
+          "discoveredCandidates": 85,
+          "uniqueAds": 38,
+          "duplicateIds": 0,
+          "skippedCandidates": 47,
+          "remainingEnrichment": 33,
+          "catalogBacklog": 0,
+          "blockedCatalogBacklog": 0,
+          "totalCatalogPages": 4,
+          "totalDetailBacklog": 33,
+          "blockedDetailBacklog": 0,
+          "currentScopeDetailBacklog": 33,
+          "currentScopeBlockedDetails": 0,
+          "failedPages": [],
+          "pageCap": 500,
+          "detailCap": 0,
+          "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+          "accessHealth": {
+            "sourceId": "admcars",
+            "state": "active",
+            "consecutiveFailures": 0,
+            "nextPermittedAt": null,
+            "history": [
+              {
+                "at": "2026-09-08T02:56:57.724Z",
+                "action": "legacy-bootstrap",
+                "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+              }
+            ],
+            "lastSuccessAt": "2026-09-08T17:18:56.320Z",
+            "lastLiveValidatedAt": "2026-09-08T17:18:56.320Z"
+          }
+        }
+      ],
+      "completedAt": "2026-09-08T17:18:56.448Z"
+    },
+    {
+      "status": "finished",
+      "jobId": "6d8f0155-49c4-428a-ae54-112a50176ceb",
+      "scope": "regional",
+      "sources": [
+        {
+          "source": "midwest",
+          "status": "complete",
+          "jobId": "6d8f0155-49c4-428a-ae54-112a50176ceb",
+          "checkpointId": "midwest:regional:d36bfb15d4147186d81376a0",
+          "catalogCycle": 2,
+          "pagesDiscovered": 1,
+          "configuredUrls": [
+            "https://www.midwestmusclecars.com/listings/sale/"
+          ],
+          "discoveryMiles": 300,
+          "pagesFetched": 1,
+          "detailRequests": 0,
+          "detailsSucceeded": 0,
+          "freshDetailsSkipped": 3,
+          "failedInventoryPages": 0,
+          "failedDetails": 0,
+          "cacheHits": 0,
+          "discoveredCandidates": 9,
+          "uniqueAds": 3,
+          "duplicateIds": 0,
+          "skippedCandidates": 6,
+          "remainingEnrichment": 0,
+          "catalogBacklog": 0,
+          "blockedCatalogBacklog": 0,
+          "totalCatalogPages": 1,
+          "totalDetailBacklog": 0,
+          "blockedDetailBacklog": 0,
+          "currentScopeDetailBacklog": 0,
+          "currentScopeBlockedDetails": 0,
+          "failedPages": [],
+          "pageCap": 500,
+          "detailCap": 0,
+          "note": "Configured scope exhausted; this does not establish full nationwide coverage.",
+          "accessHealth": {
+            "sourceId": "midwest",
+            "state": "active",
+            "consecutiveFailures": 0,
+            "nextPermittedAt": null,
+            "history": [],
+            "lastSuccessAt": "2026-09-08T17:18:56.742Z",
+            "lastLiveValidatedAt": "2026-09-08T17:18:56.742Z"
+          }
+        }
+      ],
+      "completedAt": "2026-09-08T17:18:56.862Z"
+    },
+    {
+      "status": "partial",
+      "jobId": "40aa7eaa-f673-4ce3-adad-0f52d6ae0d82",
+      "scope": "regional",
+      "sources": [
+        {
+          "source": "nsclassics",
+          "status": "partial",
+          "jobId": "40aa7eaa-f673-4ce3-adad-0f52d6ae0d82",
+          "checkpointId": "nsclassics:regional:0e0a6a3071baeecd70a322ac",
+          "catalogCycle": 1,
+          "pagesDiscovered": 6,
+          "configuredUrls": [
+            "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=0&orderby=year%2Cmake%2Cmodel&pageID=741"
+          ],
+          "discoveryMiles": 300,
+          "pagesFetched": 6,
+          "detailRequests": 0,
+          "detailsSucceeded": 0,
+          "freshDetailsSkipped": 1,
+          "failedInventoryPages": 0,
+          "failedDetails": 0,
+          "cacheHits": 0,
+          "discoveredCandidates": 123,
+          "uniqueAds": 12,
+          "duplicateIds": 0,
+          "skippedCandidates": 111,
+          "remainingEnrichment": 11,
+          "catalogBacklog": 0,
+          "blockedCatalogBacklog": 0,
+          "totalCatalogPages": 6,
+          "totalDetailBacklog": 11,
+          "blockedDetailBacklog": 0,
+          "currentScopeDetailBacklog": 11,
+          "currentScopeBlockedDetails": 0,
+          "failedPages": [],
+          "pageCap": 500,
+          "detailCap": 0,
+          "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+          "accessHealth": {
+            "sourceId": "nsclassics",
+            "state": "active",
+            "consecutiveFailures": 0,
+            "nextPermittedAt": null,
+            "history": [
+              {
+                "at": "2026-09-08T03:13:57.819Z",
+                "action": "legacy-bootstrap",
+                "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+              }
+            ],
+            "lastSuccessAt": "2026-09-08T17:19:22.058Z",
+            "lastLiveValidatedAt": "2026-09-08T17:19:22.058Z"
+          }
+        }
+      ],
+      "completedAt": "2026-09-08T17:19:22.193Z"
+    },
+    {
+      "status": "partial",
+      "jobId": "f6cf37e1-ce6e-4523-ad30-0be7fc0e7dbe",
+      "scope": "regional",
+      "sources": [
+        {
+          "source": "jsmotors",
+          "status": "partial",
+          "jobId": "f6cf37e1-ce6e-4523-ad30-0be7fc0e7dbe",
+          "checkpointId": "jsmotors:regional:91c10634ba72a97f2181ee2e",
+          "catalogCycle": 1,
+          "pagesDiscovered": 2,
+          "configuredUrls": [
+            "https://jsmotors.com/collections/all"
+          ],
+          "discoveryMiles": 300,
+          "pagesFetched": 2,
+          "detailRequests": 0,
+          "detailsSucceeded": 0,
+          "freshDetailsSkipped": 2,
+          "failedInventoryPages": 0,
+          "failedDetails": 0,
+          "cacheHits": 0,
+          "discoveredCandidates": 45,
+          "uniqueAds": 24,
+          "duplicateIds": 0,
+          "skippedCandidates": 21,
+          "remainingEnrichment": 22,
+          "catalogBacklog": 0,
+          "blockedCatalogBacklog": 0,
+          "totalCatalogPages": 2,
+          "totalDetailBacklog": 22,
+          "blockedDetailBacklog": 0,
+          "currentScopeDetailBacklog": 22,
+          "currentScopeBlockedDetails": 0,
+          "failedPages": [],
+          "pageCap": 500,
+          "detailCap": 0,
+          "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+          "accessHealth": {
+            "sourceId": "jsmotors",
+            "state": "active",
+            "consecutiveFailures": 0,
+            "nextPermittedAt": null,
+            "history": [
+              {
+                "at": "2026-09-08T02:55:47.892Z",
+                "action": "legacy-bootstrap",
+                "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+              }
+            ],
+            "lastSuccessAt": "2026-09-08T17:19:27.842Z",
+            "lastLiveValidatedAt": "2026-09-08T17:19:27.842Z"
+          }
+        }
+      ],
+      "completedAt": "2026-09-08T17:19:27.972Z"
+    },
+    {
+      "status": "partial",
+      "jobId": "31dcc19e-6ef8-4f71-97c3-73bdf58cadad",
+      "scope": "regional",
+      "sources": [
+        {
+          "source": "500classic",
+          "status": "blocked",
+          "jobId": "31dcc19e-6ef8-4f71-97c3-73bdf58cadad",
+          "checkpointId": "500classic:regional:1ca3bc21d94e59d8074815ee",
+          "catalogCycle": 1,
+          "pagesDiscovered": 1,
+          "configuredUrls": [
+            "https://www.500classicauto.com/cars-for-sale"
+          ],
+          "discoveryMiles": 300,
+          "pagesFetched": 0,
+          "detailRequests": 0,
+          "detailsSucceeded": 0,
+          "freshDetailsSkipped": 0,
+          "failedInventoryPages": 0,
+          "failedDetails": 0,
+          "cacheHits": 0,
+          "discoveredCandidates": 0,
+          "uniqueAds": 0,
+          "duplicateIds": 0,
+          "skippedCandidates": 0,
+          "remainingEnrichment": 3,
+          "catalogBacklog": 1,
+          "blockedCatalogBacklog": 0,
+          "totalCatalogPages": 1,
+          "totalDetailBacklog": 3,
+          "blockedDetailBacklog": 3,
+          "currentScopeDetailBacklog": 3,
+          "currentScopeBlockedDetails": 3,
+          "failedPages": [],
+          "pageCap": 500,
+          "detailCap": 0,
+          "note": "Source access is paused or cooling down; see classified health and next permitted check.",
+          "accessHealth": {
+            "sourceId": "500classic",
+            "state": "review",
+            "consecutiveFailures": 1,
+            "nextPermittedAt": null,
+            "history": [
+              {
+                "at": "2026-09-08T02:56:57.974Z",
+                "action": "legacy-failure",
+                "reason": "Retained run cmts2wbel000sogpcpu85zwd8: Source HTTP 403; stopped without bypass.",
+                "kind": "access"
+              },
+              {
+                "at": "2026-09-08T02:32:29.107Z",
+                "action": "legacy-bootstrap",
+                "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+              }
+            ],
+            "lastSuccessAt": "2026-09-08T02:32:29.107Z",
+            "lastFailure": {
+              "kind": "access",
+              "message": "Source HTTP 403; stopped without bypass.",
+              "httpStatus": 403,
+              "at": "2026-09-08T02:56:57.974Z"
+            }
+          }
+        }
+      ],
+      "completedAt": "2026-09-08T17:19:28.113Z"
+    },
+    {
+      "status": "partial",
+      "jobId": "bf337598-2c71-48fe-a069-8b77fa28ebc4",
+      "scope": "regional",
+      "sources": [
+        {
+          "source": "autotrader",
+          "status": "blocked",
+          "jobId": "bf337598-2c71-48fe-a069-8b77fa28ebc4",
+          "checkpointId": "autotrader:regional:1e8a1db4f43d196e2f51d35e",
+          "catalogCycle": 1,
+          "pagesDiscovered": 1,
+          "configuredUrls": [
+            "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?endYear=1989&searchRadius=500&startYear=1960&zip=60187"
+          ],
+          "discoveryMiles": 300,
+          "pagesFetched": 0,
+          "detailRequests": 0,
+          "detailsSucceeded": 0,
+          "freshDetailsSkipped": 1,
+          "failedInventoryPages": 0,
+          "failedDetails": 0,
+          "cacheHits": 0,
+          "discoveredCandidates": 0,
+          "uniqueAds": 0,
+          "duplicateIds": 0,
+          "skippedCandidates": 0,
+          "remainingEnrichment": 18,
+          "catalogBacklog": 1,
+          "blockedCatalogBacklog": 0,
+          "totalCatalogPages": 1,
+          "totalDetailBacklog": 18,
+          "blockedDetailBacklog": 18,
+          "currentScopeDetailBacklog": 18,
+          "currentScopeBlockedDetails": 18,
+          "failedPages": [],
+          "pageCap": 500,
+          "detailCap": 0,
+          "note": "Source access is paused or cooling down; see classified health and next permitted check.",
+          "accessHealth": {
+            "sourceId": "autotrader",
+            "state": "review",
+            "consecutiveFailures": 1,
+            "nextPermittedAt": null,
+            "history": [
+              {
+                "at": "2026-09-08T02:56:58.100Z",
+                "action": "legacy-failure",
+                "reason": "Retained run cmts2wbjs000togpcoe7ytkug: https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?zip=60187&startYear=1960&endYear=1989&searchRadius=500: Autotrader public Next state missing; do not use disallowed internal service endpoint",
+                "kind": "layout"
+              },
+              {
+                "at": "2026-09-08T02:40:00.746Z",
+                "action": "legacy-bootstrap",
+                "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+              }
+            ],
+            "lastSuccessAt": "2026-09-08T02:40:00.746Z",
+            "lastFailure": {
+              "kind": "layout",
+              "message": "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?zip=60187&startYear=1960&endYear=1989&searchRadius=500: Autotrader public Next state missing; do not use disallowed internal service endpoint",
+              "at": "2026-09-08T02:56:58.100Z"
+            }
+          }
+        }
+      ],
+      "completedAt": "2026-09-08T17:19:28.245Z"
+    },
+    {
+      "status": "partial",
+      "jobId": "a03a1502-356e-45de-927e-6dfada10db58",
+      "scope": "nationwide",
+      "sources": [
+        {
+          "source": "classiccars",
+          "status": "partial",
+          "jobId": "a03a1502-356e-45de-927e-6dfada10db58",
+          "checkpointId": "classiccars:nationwide:8e4ed3aec624803f2b1b48f3",
+          "catalogCycle": 1,
+          "pagesDiscovered": 51,
+          "configuredUrls": [
+            "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&ps=60&s=datelisted",
+            "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&ps=60&s=datelisted",
+            "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&ps=60&s=datelisted"
+          ],
+          "discoveryMiles": 300,
+          "pagesFetched": 48,
+          "detailRequests": 0,
+          "detailsSucceeded": 0,
+          "freshDetailsSkipped": 33,
+          "failedInventoryPages": 0,
+          "failedDetails": 0,
+          "cacheHits": 0,
+          "discoveredCandidates": 2764,
+          "uniqueAds": 2764,
+          "duplicateIds": 0,
+          "skippedCandidates": 0,
+          "remainingEnrichment": 2911,
+          "catalogBacklog": 0,
+          "blockedCatalogBacklog": 0,
+          "totalCatalogPages": 51,
+          "totalDetailBacklog": 2911,
+          "blockedDetailBacklog": 0,
+          "currentScopeDetailBacklog": 2910,
+          "currentScopeBlockedDetails": 0,
+          "failedPages": [],
+          "pageCap": 500,
+          "detailCap": 0,
+          "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+          "accessHealth": {
+            "sourceId": "classiccars",
+            "state": "active",
+            "consecutiveFailures": 0,
+            "nextPermittedAt": null,
+            "history": [
+              {
+                "at": "2026-09-08T02:54:45.440Z",
+                "action": "legacy-bootstrap",
+                "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+              }
+            ],
+            "lastSuccessAt": "2026-09-08T17:23:23.511Z",
+            "lastLiveValidatedAt": "2026-09-08T17:23:23.511Z"
+          }
+        }
+      ],
+      "completedAt": "2026-09-08T17:23:23.731Z"
+    },
+    {
+      "status": "partial",
+      "jobId": "ec079526-1806-445f-a9df-efd6d7f4ca21",
+      "scope": "nationwide",
+      "sources": [
+        {
+          "source": "autotrader",
+          "status": "blocked",
+          "jobId": "ec079526-1806-445f-a9df-efd6d7f4ca21",
+          "checkpointId": "autotrader:nationwide:fc22df80e9cb74b6fe110530",
+          "catalogCycle": 1,
+          "pagesDiscovered": 3,
+          "configuredUrls": [
+            "https://www.autotrader.com/cars-for-sale/ford/mustang?endYear=1989&searchRadius=0&startYear=1960",
+            "https://www.autotrader.com/cars-for-sale/chevrolet/camaro?endYear=1989&searchRadius=0&startYear=1960",
+            "https://www.autotrader.com/cars-for-sale/chevrolet/corvette?endYear=1989&searchRadius=0&startYear=1960"
+          ],
+          "discoveryMiles": 300,
+          "pagesFetched": 0,
+          "detailRequests": 0,
+          "detailsSucceeded": 0,
+          "freshDetailsSkipped": 0,
+          "failedInventoryPages": 0,
+          "failedDetails": 0,
+          "cacheHits": 0,
+          "discoveredCandidates": 0,
+          "uniqueAds": 0,
+          "duplicateIds": 0,
+          "skippedCandidates": 0,
+          "remainingEnrichment": 0,
+          "catalogBacklog": 3,
+          "blockedCatalogBacklog": 0,
+          "totalCatalogPages": 3,
+          "totalDetailBacklog": 18,
+          "blockedDetailBacklog": 18,
+          "currentScopeDetailBacklog": 0,
+          "currentScopeBlockedDetails": 0,
+          "failedPages": [],
+          "pageCap": 500,
+          "detailCap": 0,
+          "note": "Source access is paused or cooling down; see classified health and next permitted check.",
+          "accessHealth": {
+            "sourceId": "autotrader",
+            "state": "review",
+            "consecutiveFailures": 1,
+            "nextPermittedAt": null,
+            "history": [
+              {
+                "at": "2026-09-08T02:56:58.100Z",
+                "action": "legacy-failure",
+                "reason": "Retained run cmts2wbjs000togpcoe7ytkug: https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?zip=60187&startYear=1960&endYear=1989&searchRadius=500: Autotrader public Next state missing; do not use disallowed internal service endpoint",
+                "kind": "layout"
+              },
+              {
+                "at": "2026-09-08T02:40:00.746Z",
+                "action": "legacy-bootstrap",
+                "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+              }
+            ],
+            "lastSuccessAt": "2026-09-08T02:40:00.746Z",
+            "lastFailure": {
+              "kind": "layout",
+              "message": "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?zip=60187&startYear=1960&endYear=1989&searchRadius=500: Autotrader public Next state missing; do not use disallowed internal service endpoint",
+              "at": "2026-09-08T02:56:58.100Z"
+            }
+          }
+        }
+      ],
+      "completedAt": "2026-09-08T17:23:23.991Z"
+    }
+  ],
+  "sameCatalogScopes": [
+    {
+      "sourceId": "volo",
+      "note": "Regional scan traverses the identical configured catalog URLs. This does not establish national market completeness."
+    },
+    {
+      "sourceId": "grauto",
+      "note": "Regional scan traverses the identical configured catalog URLs. This does not establish national market completeness."
+    },
+    {
+      "sourceId": "admcars",
+      "note": "Regional scan traverses the identical configured catalog URLs. This does not establish national market completeness."
+    },
+    {
+      "sourceId": "midwest",
+      "note": "Regional scan traverses the identical configured catalog URLs. This does not establish national market completeness."
+    },
+    {
+      "sourceId": "nsclassics",
+      "note": "Regional scan traverses the identical configured catalog URLs. This does not establish national market completeness."
+    },
+    {
+      "sourceId": "jsmotors",
+      "note": "Regional scan traverses the identical configured catalog URLs. This does not establish national market completeness."
+    },
+    {
+      "sourceId": "500classic",
+      "note": "Regional scan traverses the identical configured catalog URLs. This does not establish national market completeness."
+    }
+  ],
+  "disabledSources": [
+    {
+      "sourceId": "hemmings",
+      "status": "blocked"
+    },
+    {
+      "sourceId": "autotrader-classics",
+      "status": "blocked"
+    },
+    {
+      "sourceId": "craigslist",
+      "status": "restricted"
+    },
+    {
+      "sourceId": "ebay",
+      "status": "credential-required"
+    },
+    {
+      "sourceId": "cars",
+      "status": "restricted"
+    },
+    {
+      "sourceId": "cargurus",
+      "status": "incomplete"
+    },
+    {
+      "sourceId": "bat",
+      "status": "restricted"
+    },
+    {
+      "sourceId": "carsbids",
+      "status": "blocked"
+    },
+    {
+      "sourceId": "mecum",
+      "status": "permission-required"
+    },
+    {
+      "sourceId": "barrett",
+      "status": "restricted"
+    },
+    {
+      "sourceId": "corvetteforum",
+      "status": "restricted"
+    },
+    {
+      "sourceId": "mustangforum",
+      "status": "restricted"
+    },
+    {
+      "sourceId": "camaroforum",
+      "status": "restricted"
+    },
+    {
+      "sourceId": "facebook",
+      "status": "manual-only"
+    },
+    {
+      "sourceId": "jws",
+      "status": "incomplete"
+    },
+    {
+      "sourceId": "duffys",
+      "status": "blocked"
+    },
+    {
+      "sourceId": "indyauto",
+      "status": "unsuitable"
+    }
+  ],
+  "remainingLimits": [
+    "This is configured catalog coverage, not a nationwide market census.",
+    "Detail enrichment, actual vehicle identity and road routes remain separate work."
+  ],
+  "finishedAt": "2026-09-08T17:23:23.991Z",
+  "reportAggregationNote": "Source scans completed. Final read-only metrics were recomputed to handle unknown/null vehicle locations; this did not recollect or modify any ad.",
+  "inventory": {
+    "ads": 3139,
+    "groups": 3139,
+    "publicAds": 3120,
+    "coordinates": 16,
+    "routes": 0,
+    "sourceCounts": {
+      "500classic": 3,
+      "admcars": 38,
+      "autotrader": 19,
+      "classiccars": 2944,
+      "grauto": 46,
+      "jsmotors": 24,
+      "midwest": 3,
+      "nsclassics": 12,
+      "volo": 50
+    }
+  },
+  "catalogScan": {
+    "pagesFetched": 93,
+    "detailRequests": 0,
+    "sourceScopes": [
+      {
+        "scope": "regional",
+        "source": "classiccars",
+        "status": "partial",
+        "pagesFetched": 25,
+        "cacheHits": 0,
+        "remainingEnrichment": 1354,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains."
+      },
+      {
+        "scope": "regional",
+        "source": "volo",
+        "status": "partial",
+        "pagesFetched": 2,
+        "cacheHits": 0,
+        "remainingEnrichment": 49,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains."
+      },
+      {
+        "scope": "regional",
+        "source": "grauto",
+        "status": "partial",
+        "pagesFetched": 5,
+        "cacheHits": 0,
+        "remainingEnrichment": 45,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains."
+      },
+      {
+        "scope": "regional",
+        "source": "admcars",
+        "status": "partial",
+        "pagesFetched": 4,
+        "cacheHits": 0,
+        "remainingEnrichment": 33,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains."
+      },
+      {
+        "scope": "regional",
+        "source": "midwest",
+        "status": "complete",
+        "pagesFetched": 1,
+        "cacheHits": 0,
+        "remainingEnrichment": 0,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "note": "Configured scope exhausted; this does not establish full nationwide coverage."
+      },
+      {
+        "scope": "regional",
+        "source": "nsclassics",
+        "status": "partial",
+        "pagesFetched": 6,
+        "cacheHits": 0,
+        "remainingEnrichment": 11,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains."
+      },
+      {
+        "scope": "regional",
+        "source": "jsmotors",
+        "status": "partial",
+        "pagesFetched": 2,
+        "cacheHits": 0,
+        "remainingEnrichment": 22,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains."
+      },
+      {
+        "scope": "regional",
+        "source": "500classic",
+        "status": "blocked",
+        "pagesFetched": 0,
+        "cacheHits": 0,
+        "remainingEnrichment": 3,
+        "catalogBacklog": 1,
+        "blockedCatalogBacklog": 0,
+        "note": "Source access is paused or cooling down; see classified health and next permitted check."
+      },
+      {
+        "scope": "regional",
+        "source": "autotrader",
+        "status": "blocked",
+        "pagesFetched": 0,
+        "cacheHits": 0,
+        "remainingEnrichment": 18,
+        "catalogBacklog": 1,
+        "blockedCatalogBacklog": 0,
+        "note": "Source access is paused or cooling down; see classified health and next permitted check."
+      },
+      {
+        "scope": "nationwide",
+        "source": "classiccars",
+        "status": "partial",
+        "pagesFetched": 48,
+        "cacheHits": 0,
+        "remainingEnrichment": 2911,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains."
+      },
+      {
+        "scope": "nationwide",
+        "source": "autotrader",
+        "status": "blocked",
+        "pagesFetched": 0,
+        "cacheHits": 0,
+        "remainingEnrichment": 0,
+        "catalogBacklog": 3,
+        "blockedCatalogBacklog": 0,
+        "note": "Source access is paused or cooling down; see classified health and next permitted check."
+      }
+    ]
+  },
+  "progress": {
+    "catalogs": [
+      {
+        "id": "midwest:regional:d36bfb15d4147186d81376a0",
+        "sourceId": "midwest",
+        "scope": "regional",
+        "configuredUrls": [
+          "https://www.midwestmusclecars.com/listings/sale/"
+        ],
+        "cycle": 2,
+        "startedAt": "2026-09-08T17:18:56.449Z",
+        "completedAt": "2026-09-08T17:18:56.741Z",
+        "tasks": [
+          {
+            "queryId": "d36bfb15d4147186d81376a0",
+            "url": "https://www.midwestmusclecars.com/listings/sale/",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": true,
+            "observedAt": "2026-09-08T17:18:56.723Z",
+            "evidenceHash": "211ab49b496dca99115db383a3aebb70a36b5ef138d4cf1df6dcc14000384458",
+            "cacheHit": false,
+            "parserVersion": "midwest-v1",
+            "completedAt": "2026-09-08T17:18:56.741Z",
+            "lastAttemptAt": "2026-09-08T17:18:56.741Z"
+          }
+        ],
+        "counts": {
+          "total": 1,
+          "complete": 1,
+          "pending": 0,
+          "blocked": 0
+        }
+      },
+      {
+        "id": "classiccars:nationwide:8e4ed3aec624803f2b1b48f3",
+        "sourceId": "classiccars",
+        "scope": "nationwide",
+        "configuredUrls": [
+          "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&ps=60&s=datelisted",
+          "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&ps=60&s=datelisted",
+          "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&ps=60&s=datelisted"
+        ],
+        "cycle": 1,
+        "startedAt": "2026-09-08T17:09:35.780Z",
+        "completedAt": "2026-09-08T17:23:23.510Z",
+        "tasks": [
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:09:36.164Z",
+            "evidenceHash": "4f03d40b9e186f68c681b60064667cd071188f5287250630daebb5c2abc44914",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:09:36.311Z",
+            "lastAttemptAt": "2026-09-08T17:09:36.311Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:09:41.025Z",
+            "evidenceHash": "5afa7f4a35260ccbde16db049472f010185c52a7267e63ae24099987601c3f68",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:09:41.132Z",
+            "lastAttemptAt": "2026-09-08T17:09:41.132Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:09:46.025Z",
+            "evidenceHash": "935b9c7b9fc62c5da194f5173752a9494ee7c1d8e213ff8a7d6a744610bdad75",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:09:46.122Z",
+            "lastAttemptAt": "2026-09-08T17:09:46.122Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=2&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:28.544Z",
+            "evidenceHash": "dccb1fcaa66d5b4464980ff7eb087125268e5170b4dbca593a665b8cedaf7578",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:19:28.659Z",
+            "lastAttemptAt": "2026-09-08T17:19:28.659Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=3&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:33.456Z",
+            "evidenceHash": "8241b9f477aaa8cf96cc0673bc48f6e9c6facf5e6e5b51209c915cc892012760",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:19:33.571Z",
+            "lastAttemptAt": "2026-09-08T17:19:33.571Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=4&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:38.463Z",
+            "evidenceHash": "70fba76a8dad4e600eb04749c88c335eb1e87e91fc50e5ea9df13c373f8bcc78",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:19:38.567Z",
+            "lastAttemptAt": "2026-09-08T17:19:38.567Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=5&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:43.454Z",
+            "evidenceHash": "7156c5261bc11bbe083f1d1f3e17d62a743cac901b3c27d01bbe5596094c4e4b",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:19:43.553Z",
+            "lastAttemptAt": "2026-09-08T17:19:43.553Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=6&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:48.453Z",
+            "evidenceHash": "96ba4e8d8d013318e206a666f8c7dc605b1d428326a4284b672bba547df8a432",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:19:48.556Z",
+            "lastAttemptAt": "2026-09-08T17:19:48.556Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=2&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:53.437Z",
+            "evidenceHash": "04d125c821d151e0ecb1cd24281f40be937b4617b388ea1466934a792807a98f",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:19:53.540Z",
+            "lastAttemptAt": "2026-09-08T17:19:53.540Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=3&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:58.447Z",
+            "evidenceHash": "4db7e4d76c491bf3da07fcca4891b487df18e8550ce8bf61ed4a3ee5404945ad",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:19:58.555Z",
+            "lastAttemptAt": "2026-09-08T17:19:58.555Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=4&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:03.534Z",
+            "evidenceHash": "71c36c6217c64525d285d80c4be0dcb22c1a886e2af7555ecd09d0e6fb483d3c",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:03.632Z",
+            "lastAttemptAt": "2026-09-08T17:20:03.632Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=5&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:08.462Z",
+            "evidenceHash": "5747327c35361873115cd7470e1a482b81132bf391c0d0efc3a43eb4eb1767ec",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:08.573Z",
+            "lastAttemptAt": "2026-09-08T17:20:08.573Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=6&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:17.435Z",
+            "evidenceHash": "bec26812f2f9b893c8ba2841610da06a8f2886e9d60d7b17c41e8f660b4eb331",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:17.531Z",
+            "lastAttemptAt": "2026-09-08T17:20:17.531Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=2&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:18.460Z",
+            "evidenceHash": "410b172ee895de83b2aa50bbd4d7438a583042a8c2e67159b927d8df351813d2",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:18.559Z",
+            "lastAttemptAt": "2026-09-08T17:20:18.559Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=3&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:23.458Z",
+            "evidenceHash": "b199cdc07e11a55eeea23476efed0b009e5e8b8d368e8d6829f7ab3aa6377043",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:23.562Z",
+            "lastAttemptAt": "2026-09-08T17:20:23.562Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=4&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:28.544Z",
+            "evidenceHash": "b4bafb4cddc7749ef7a4d79e6bc236bd78425976aa01a75177fdfc274e2b2872",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:28.656Z",
+            "lastAttemptAt": "2026-09-08T17:20:28.656Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=5&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:33.451Z",
+            "evidenceHash": "98e61317c41ec4a007c8df014306a0ce269fdbfe9e958cdaad36159b16ed87cf",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:33.559Z",
+            "lastAttemptAt": "2026-09-08T17:20:33.559Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=6&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:38.445Z",
+            "evidenceHash": "282225b05caa3dacedf1f1d1afeaa5b42f6374f591012950b7949baf7fd8dc7d",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:38.545Z",
+            "lastAttemptAt": "2026-09-08T17:20:38.545Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=7&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:43.459Z",
+            "evidenceHash": "19a90b945557c6e75ac1959aba2fdd04a58ff8b4ce0fb064aeb36e22ac2ae765",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:43.561Z",
+            "lastAttemptAt": "2026-09-08T17:20:43.561Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=8&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:48.457Z",
+            "evidenceHash": "8510d8ee1fd5fb0dae46f78a6cb7a02d63bd2f7a7164cedaa0512005c502770c",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:48.563Z",
+            "lastAttemptAt": "2026-09-08T17:20:48.563Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=9&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:53.453Z",
+            "evidenceHash": "2c2ca30a69cbe16c5577e8b928a03c540afef10dee43af17594d6651cfe0918f",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:53.553Z",
+            "lastAttemptAt": "2026-09-08T17:20:53.553Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=10&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:20:58.450Z",
+            "evidenceHash": "6e1e45f46041fde0a00242770abbfeb57e86782c41ca021b51700d3189622a40",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:20:58.555Z",
+            "lastAttemptAt": "2026-09-08T17:20:58.555Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=11&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:03.456Z",
+            "evidenceHash": "98fd4789f608777cfeb8edab3cbaf08945ecbfc54b0677810a9fc9fcf0a3055e",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:03.550Z",
+            "lastAttemptAt": "2026-09-08T17:21:03.550Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=7&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:08.451Z",
+            "evidenceHash": "61ac9410c3c69b88fecfb9726fd46e2b972d0f33db00d8ab499b98833b77f3d8",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:08.551Z",
+            "lastAttemptAt": "2026-09-08T17:21:08.551Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=8&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:13.453Z",
+            "evidenceHash": "54fac09525b96582391dd42012a4003b3be816ceec1a4e9ba9c68a961684704d",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:13.559Z",
+            "lastAttemptAt": "2026-09-08T17:21:13.559Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=9&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:18.453Z",
+            "evidenceHash": "aa147d8c1bcbc84f56d4e3ee35691a3751baab69b34d2fa45cbaaabeddbbeac0",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:18.560Z",
+            "lastAttemptAt": "2026-09-08T17:21:18.560Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=10&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:23.466Z",
+            "evidenceHash": "2c1e860e712c92c1d8402d1f463e9f929e9b467958aa2ce2155f00f2ed433b99",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:23.559Z",
+            "lastAttemptAt": "2026-09-08T17:21:23.559Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=11&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:28.448Z",
+            "evidenceHash": "b4b1a058c479510e7a01bb06b79e8d7be04db95ba47a858b676f5811c45ad2b2",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:28.546Z",
+            "lastAttemptAt": "2026-09-08T17:21:28.546Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=7&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:33.442Z",
+            "evidenceHash": "ccd4a2b986eb315676413407d89099044d80b9c79e5fdf4390fa9abb2989ed50",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:33.528Z",
+            "lastAttemptAt": "2026-09-08T17:21:33.528Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=8&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:38.509Z",
+            "evidenceHash": "377fe525469ec75a3d346d9074cc0d2fb9e8121aea49642037ad64c3af6ec4c4",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:38.623Z",
+            "lastAttemptAt": "2026-09-08T17:21:38.623Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=9&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:43.447Z",
+            "evidenceHash": "b478cc78effa79339740885ed8ebf02ecd0400ccacb84599b882708feb6ca307",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:43.528Z",
+            "lastAttemptAt": "2026-09-08T17:21:43.528Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=10&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:48.454Z",
+            "evidenceHash": "1084cc11a98e05828060311d4b9c4c7b2e33da0b01ae62bf4d51dcd95242645c",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:48.551Z",
+            "lastAttemptAt": "2026-09-08T17:21:48.551Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=11&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:53.460Z",
+            "evidenceHash": "c5a663685b0b50bd806686ec25e6e241498d56f0fdf0e33b1b9bc0168a5730cd",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:53.550Z",
+            "lastAttemptAt": "2026-09-08T17:21:53.550Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=12&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:21:58.478Z",
+            "evidenceHash": "47e77e79a2d1a573af20baa516d54e7451d510f19b9102181333a618cf842044",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:21:58.574Z",
+            "lastAttemptAt": "2026-09-08T17:21:58.574Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=13&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:03.457Z",
+            "evidenceHash": "8897040d50d3099a305709ae2483daa3c0a1585ee28fd7298b3ecee4b2acbab9",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:03.557Z",
+            "lastAttemptAt": "2026-09-08T17:22:03.557Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=14&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:08.462Z",
+            "evidenceHash": "ff9a88845a0e5f9dd20a1e872734acce73d360d4cf67aede51b46436973f354a",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:08.568Z",
+            "lastAttemptAt": "2026-09-08T17:22:08.568Z"
+          },
+          {
+            "queryId": "e0936ee58b1bd3de5f635025",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&p=15&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:13.441Z",
+            "evidenceHash": "1a48dfdf96520ebecd8d64b61beb8870e9dca96c644a6712a7e6b0d37213a185",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:13.487Z",
+            "lastAttemptAt": "2026-09-08T17:22:13.487Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=12&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:18.445Z",
+            "evidenceHash": "f47231d787af9a530892963b05fd444e5c75f5141e00a5bf35eae9fcf629c14e",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:18.542Z",
+            "lastAttemptAt": "2026-09-08T17:22:18.542Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=13&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:23.443Z",
+            "evidenceHash": "fb85a9e52d981951eb8086bd6179a36eb57bf02d342ddea32d949c43d54e7381",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:23.551Z",
+            "lastAttemptAt": "2026-09-08T17:22:23.551Z"
+          },
+          {
+            "queryId": "40543aa9f743358fca31896e",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&p=14&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:28.474Z",
+            "evidenceHash": "fe8c87ce73fb78c297beb2f9e29734b0f814438f8e2ee9252b2aa352561a9fd8",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:28.565Z",
+            "lastAttemptAt": "2026-09-08T17:22:28.565Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=12&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:33.448Z",
+            "evidenceHash": "72c89849267d0a56fe74a71b6c71c507def2120565f0f20fb24bc94604b31a70",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:33.556Z",
+            "lastAttemptAt": "2026-09-08T17:22:33.556Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=13&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:38.450Z",
+            "evidenceHash": "66fe63411b2759be5774b3d8994b14bc131291baf0dbe2305e595a8399bbec2a",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:38.558Z",
+            "lastAttemptAt": "2026-09-08T17:22:38.558Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=14&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:43.451Z",
+            "evidenceHash": "f187cbaf2623c5e7ada44da419054fec7fa9515380188f9e28ec787f9a22d91e",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:43.558Z",
+            "lastAttemptAt": "2026-09-08T17:22:43.558Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=15&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:48.460Z",
+            "evidenceHash": "19590593e18bb187bae9bf1aa84662f196712eae1e759cc03a18d827a043a46c",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:48.564Z",
+            "lastAttemptAt": "2026-09-08T17:22:48.564Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=16&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:53.447Z",
+            "evidenceHash": "d33df9e6f38526657200fb9f3e42651ba00f49e88f2c4e001a5c723df4b16f6f",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:53.547Z",
+            "lastAttemptAt": "2026-09-08T17:22:53.547Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=17&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:22:58.474Z",
+            "evidenceHash": "4e46a10583ec9d208dcb37d58589a186c50deeaf0cb938cbcd25b7a4b68252e1",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:22:58.580Z",
+            "lastAttemptAt": "2026-09-08T17:22:58.580Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=18&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:23:03.451Z",
+            "evidenceHash": "5d928fee27b24fddf2a2ac2eb5d3fb76e0669ebdf06cb93040eca465b33fab40",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:23:03.562Z",
+            "lastAttemptAt": "2026-09-08T17:23:03.562Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=19&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:23:08.452Z",
+            "evidenceHash": "9c099023c6228cee201c973b632fd70dab2719da79810c2e4d2a30af4f247e29",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:23:08.561Z",
+            "lastAttemptAt": "2026-09-08T17:23:08.561Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=20&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:23:13.448Z",
+            "evidenceHash": "9e39ac66e726693a3493aed28a1bcd41d037067d077fe1bbe09ae6250abf44cb",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:23:13.556Z",
+            "lastAttemptAt": "2026-09-08T17:23:13.556Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=21&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:23:18.442Z",
+            "evidenceHash": "ade1c8b336a9cbf5867732e5375c4688bde1137dd6e295d7053dc0e73c33b5ea",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:23:18.551Z",
+            "lastAttemptAt": "2026-09-08T17:23:18.551Z"
+          },
+          {
+            "queryId": "181a8fe0d0dc20359d246013",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&p=22&ps=60&s=datelisted",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:23:23.472Z",
+            "evidenceHash": "845ec15b4b6bed63e1875f01f31b309b9bf4ec117ec9848554f5f37b5ee620ec",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:23:23.510Z",
+            "lastAttemptAt": "2026-09-08T17:23:23.510Z"
+          }
+        ],
+        "counts": {
+          "total": 51,
+          "complete": 51,
+          "pending": 0,
+          "blocked": 0
+        }
+      },
+      {
+        "id": "classiccars:regional:aef052e1670468dbd712f2fe",
+        "sourceId": "classiccars",
+        "scope": "regional",
+        "configuredUrls": [
+          "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
+          "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
+          "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&ps=60&s=datelisted&zip=60187"
+        ],
+        "cycle": 1,
+        "startedAt": "2026-09-08T17:15:40.179Z",
+        "completedAt": "2026-09-08T17:17:49.086Z",
+        "tasks": [
+          {
+            "queryId": "cf5b1dae1c93ae0c303041b2",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:15:40.516Z",
+            "evidenceHash": "c9d5fd893c817e470c19bf5b5df0e454798ee4fcc9324cfcf1898f2b383b68e9",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:15:40.642Z",
+            "lastAttemptAt": "2026-09-08T17:15:40.642Z"
+          },
+          {
+            "queryId": "e73da14e2219c1c62650ed42",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:15:45.410Z",
+            "evidenceHash": "0739b2b1ec07bba2908a7874b5db1883392932c53c225071cfe190d10db6c539",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:15:45.512Z",
+            "lastAttemptAt": "2026-09-08T17:15:45.512Z"
+          },
+          {
+            "queryId": "b1aa15f55aaa9afe1ddbee72",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:15:50.403Z",
+            "evidenceHash": "c7ada1596b8fd6fdfb7d82d8fde884b48b03733684367d77bd8a8fdaee86326a",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:15:50.494Z",
+            "lastAttemptAt": "2026-09-08T17:15:50.494Z"
+          },
+          {
+            "queryId": "cf5b1dae1c93ae0c303041b2",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&p=2&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:15:55.403Z",
+            "evidenceHash": "d602f5953a2465fb5f9861bb2ab94f23b1a479d47373e9a4ec48f68a71a23a9d",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:15:55.506Z",
+            "lastAttemptAt": "2026-09-08T17:15:55.506Z"
+          },
+          {
+            "queryId": "cf5b1dae1c93ae0c303041b2",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&p=3&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:16:00.407Z",
+            "evidenceHash": "58da810a008a54c1443e6976e228878b9e4bf46d6e75e73185195e57ed14db27",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:16:00.491Z",
+            "lastAttemptAt": "2026-09-08T17:16:00.491Z"
+          },
+          {
+            "queryId": "cf5b1dae1c93ae0c303041b2",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&p=4&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:16:05.403Z",
+            "evidenceHash": "719b1a607d52160d19ae711da62a07a3f74b629d1a50fecfc5e9d1bb6bc665b5",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:16:05.489Z",
+            "lastAttemptAt": "2026-09-08T17:16:05.489Z"
+          },
+          {
+            "queryId": "cf5b1dae1c93ae0c303041b2",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&p=5&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:16:10.391Z",
+            "evidenceHash": "afc367ae5e2bfccfa94ed4e48713f94d49eab58a070bcb2d45bf6f08477d3874",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:16:10.482Z",
+            "lastAttemptAt": "2026-09-08T17:16:10.482Z"
+          },
+          {
+            "queryId": "cf5b1dae1c93ae0c303041b2",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&p=6&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:16:15.395Z",
+            "evidenceHash": "76215e1c518c3e34d8ed0394c96c9b60930bf5782107680f5fc4cbe8f6d5f1aa",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:16:15.480Z",
+            "lastAttemptAt": "2026-09-08T17:16:15.480Z"
+          },
+          {
+            "queryId": "e73da14e2219c1c62650ed42",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&p=2&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:16:20.426Z",
+            "evidenceHash": "7df9b1be62894b98889a3359fcf87febe3fc5bd2d3481a795fbad395e32d5747",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:16:20.517Z",
+            "lastAttemptAt": "2026-09-08T17:16:20.517Z"
+          },
+          {
+            "queryId": "e73da14e2219c1c62650ed42",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&p=3&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:16:25.408Z",
+            "evidenceHash": "4e13b2df003b13b93cbd9326e0245edfe38f338a5eaafdeda4d1528c7b980c9c",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:16:25.501Z",
+            "lastAttemptAt": "2026-09-08T17:16:25.501Z"
+          },
+          {
+            "queryId": "e73da14e2219c1c62650ed42",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&p=4&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:16:30.405Z",
+            "evidenceHash": "634775b3a5c2a17792c2de1c41806a0d23a40e605001e59071fd16fb9fee9aa1",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:16:30.499Z",
+            "lastAttemptAt": "2026-09-08T17:16:30.499Z"
+          },
+          {
+            "queryId": "e73da14e2219c1c62650ed42",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&p=5&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:16:48.777Z",
+            "evidenceHash": "c4126467c00b963e03df822732d0fb9574be80ff4ce4c081e2764322ee696e13",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:16:48.865Z",
+            "lastAttemptAt": "2026-09-08T17:16:48.865Z"
+          },
+          {
+            "queryId": "e73da14e2219c1c62650ed42",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&p=6&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:16:49.366Z",
+            "evidenceHash": "4a8d13b903314617e73a794f3cd72bed121ce72ea2f4e597a8192866b8ad81e3",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:16:49.444Z",
+            "lastAttemptAt": "2026-09-08T17:16:49.444Z"
+          },
+          {
+            "queryId": "b1aa15f55aaa9afe1ddbee72",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&p=2&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:16:54.028Z",
+            "evidenceHash": "39fbbc3be79da0a4b07146fc2318db4faf7b01481f416d39fd8797e6f83c8ff1",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:16:54.110Z",
+            "lastAttemptAt": "2026-09-08T17:16:54.110Z"
+          },
+          {
+            "queryId": "b1aa15f55aaa9afe1ddbee72",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&p=3&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:16:59.526Z",
+            "evidenceHash": "efbcfb39c6ef92c2e2f0298c8c0f668899ec2301ec547376bbbf648cbf78d6d5",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:16:59.612Z",
+            "lastAttemptAt": "2026-09-08T17:16:59.612Z"
+          },
+          {
+            "queryId": "b1aa15f55aaa9afe1ddbee72",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&p=4&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:17:04.087Z",
+            "evidenceHash": "8fed2f35b27df6a54d8386c34f2b5b7cb849bc9ed005e948702e0c831e40dece",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:17:04.167Z",
+            "lastAttemptAt": "2026-09-08T17:17:04.167Z"
+          },
+          {
+            "queryId": "b1aa15f55aaa9afe1ddbee72",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&p=5&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:17:09.042Z",
+            "evidenceHash": "277f245319dc445e247c00d594aea7f6d1454ca2732f88096fef554e74d6ba5c",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:17:09.128Z",
+            "lastAttemptAt": "2026-09-08T17:17:09.128Z"
+          },
+          {
+            "queryId": "b1aa15f55aaa9afe1ddbee72",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&p=6&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:17:14.042Z",
+            "evidenceHash": "22557238f7ec5f2965d2c38b7948fec0f1808606caf085961fce52c9c0d11531",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:17:14.118Z",
+            "lastAttemptAt": "2026-09-08T17:17:14.118Z"
+          },
+          {
+            "queryId": "cf5b1dae1c93ae0c303041b2",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&p=7&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:17:19.025Z",
+            "evidenceHash": "fe66b8e2213d93ba8d85f702b95e4cc93b3ef82c27bc1b386071665a8294ed29",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:17:19.112Z",
+            "lastAttemptAt": "2026-09-08T17:17:19.112Z"
+          },
+          {
+            "queryId": "cf5b1dae1c93ae0c303041b2",
+            "url": "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&p=8&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:17:24.016Z",
+            "evidenceHash": "8cd392256776c73a5c56743ee4ea1720801e967998270dac1dc1142012bfa588",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:17:24.033Z",
+            "lastAttemptAt": "2026-09-08T17:17:24.033Z"
+          },
+          {
+            "queryId": "e73da14e2219c1c62650ed42",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&p=7&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:17:29.012Z",
+            "evidenceHash": "3f88f5efd953148fcee8638a4d2d978b93dc33125cdf8883a5a0953d3a6d3ea1",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:17:29.059Z",
+            "lastAttemptAt": "2026-09-08T17:17:29.059Z"
+          },
+          {
+            "queryId": "b1aa15f55aaa9afe1ddbee72",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&p=7&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:17:34.050Z",
+            "evidenceHash": "4133561272fed69f59f728641e61a8299d4d8483380c141f3677f4da7c3586dc",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:17:34.148Z",
+            "lastAttemptAt": "2026-09-08T17:17:34.148Z"
+          },
+          {
+            "queryId": "b1aa15f55aaa9afe1ddbee72",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&p=8&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:17:39.043Z",
+            "evidenceHash": "67281f61d839b05924860b424e633692e2670ee8cefe803ad7d16847c924da39",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:17:39.136Z",
+            "lastAttemptAt": "2026-09-08T17:17:39.136Z"
+          },
+          {
+            "queryId": "b1aa15f55aaa9afe1ddbee72",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&p=9&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:17:44.057Z",
+            "evidenceHash": "57b254ec09182f3b53e84b1165f7af09e37e633fbc2a17d5dc8eb48c7c61fd5e",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:17:44.152Z",
+            "lastAttemptAt": "2026-09-08T17:17:44.152Z"
+          },
+          {
+            "queryId": "b1aa15f55aaa9afe1ddbee72",
+            "url": "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&p=10&ps=60&s=datelisted&zip=60187",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:17:49.026Z",
+            "evidenceHash": "902d3aef71779bddd2f0bbf97a8bf740b371101fb329f3ec0dcb2e885f5eb4ec",
+            "cacheHit": false,
+            "parserVersion": "classiccars-v1",
+            "completedAt": "2026-09-08T17:17:49.086Z",
+            "lastAttemptAt": "2026-09-08T17:17:49.086Z"
+          }
+        ],
+        "counts": {
+          "total": 25,
+          "complete": 25,
+          "pending": 0,
+          "blocked": 0
+        }
+      },
+      {
+        "id": "volo:regional:ed209aa95381978862c4d8db",
+        "sourceId": "volo",
+        "scope": "regional",
+        "configuredUrls": [
+          "https://www.volocars.com/vehicles"
+        ],
+        "cycle": 1,
+        "startedAt": "2026-09-08T17:17:49.225Z",
+        "completedAt": "2026-09-08T17:18:00.185Z",
+        "tasks": [
+          {
+            "queryId": "ed209aa95381978862c4d8db",
+            "url": "https://www.volocars.com/vehicles",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:17:51.126Z",
+            "evidenceHash": "c27e137c54a530b90eaec29dd7765fbd4be499f133c2e4da079336dd0d8133e2",
+            "cacheHit": false,
+            "parserVersion": "volo-v1",
+            "completedAt": "2026-09-08T17:17:51.339Z",
+            "lastAttemptAt": "2026-09-08T17:17:51.339Z"
+          },
+          {
+            "queryId": "ed209aa95381978862c4d8db",
+            "url": "https://www.volocars.com/vehicles?page=2",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:18:00.157Z",
+            "evidenceHash": "58efb274f954806e3e57a1f760055ac0665598e5553b98188433aa301c5b7ae6",
+            "cacheHit": false,
+            "parserVersion": "volo-v1",
+            "completedAt": "2026-09-08T17:18:00.185Z",
+            "lastAttemptAt": "2026-09-08T17:18:00.185Z"
+          }
+        ],
+        "counts": {
+          "total": 2,
+          "complete": 2,
+          "pending": 0,
+          "blocked": 0
+        }
+      },
+      {
+        "id": "grauto:regional:e8b0bb9ddc37499d0026f629",
+        "sourceId": "grauto",
+        "scope": "regional",
+        "configuredUrls": [
+          "https://www.grautogallery.com/vehicles"
+        ],
+        "cycle": 1,
+        "startedAt": "2026-09-08T17:18:00.333Z",
+        "completedAt": "2026-09-08T17:18:40.857Z",
+        "tasks": [
+          {
+            "queryId": "e8b0bb9ddc37499d0026f629",
+            "url": "https://www.grautogallery.com/vehicles",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:18:01.199Z",
+            "evidenceHash": "eaa4c13923c23348996a16786c7f42820ad4ae1cce14799ea3d979b25b54e0c1",
+            "cacheHit": false,
+            "parserVersion": "grauto-v1",
+            "completedAt": "2026-09-08T17:18:01.254Z",
+            "lastAttemptAt": "2026-09-08T17:18:01.254Z"
+          },
+          {
+            "queryId": "e8b0bb9ddc37499d0026f629",
+            "url": "https://www.grautogallery.com/vehicles?page=2",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:18:11.218Z",
+            "evidenceHash": "8942236fc436a3593fb0194d342d5455dbc0b2aa3310ee7fd1e7c76db2432ca4",
+            "cacheHit": false,
+            "parserVersion": "grauto-v1",
+            "completedAt": "2026-09-08T17:18:11.267Z",
+            "lastAttemptAt": "2026-09-08T17:18:11.267Z"
+          },
+          {
+            "queryId": "e8b0bb9ddc37499d0026f629",
+            "url": "https://www.grautogallery.com/vehicles?page=3",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:18:21.400Z",
+            "evidenceHash": "f26af99c658e5513129ae7e5dae45075b8b8286144d4e32c9a2399e90bf06f8a",
+            "cacheHit": false,
+            "parserVersion": "grauto-v1",
+            "completedAt": "2026-09-08T17:18:21.447Z",
+            "lastAttemptAt": "2026-09-08T17:18:21.447Z"
+          },
+          {
+            "queryId": "e8b0bb9ddc37499d0026f629",
+            "url": "https://www.grautogallery.com/vehicles?page=4",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:18:31.408Z",
+            "evidenceHash": "00d703f5662f89a6a49babe1670e44edef647bf06a514933bea1b14d0925a908",
+            "cacheHit": false,
+            "parserVersion": "grauto-v1",
+            "completedAt": "2026-09-08T17:18:31.444Z",
+            "lastAttemptAt": "2026-09-08T17:18:31.444Z"
+          },
+          {
+            "queryId": "e8b0bb9ddc37499d0026f629",
+            "url": "https://www.grautogallery.com/vehicles?page=5",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:18:40.834Z",
+            "evidenceHash": "39e1d82837edde3349c1a46e08db1f285047a7a0c29761288911a3913b5acbe3",
+            "cacheHit": false,
+            "parserVersion": "grauto-v1",
+            "completedAt": "2026-09-08T17:18:40.857Z",
+            "lastAttemptAt": "2026-09-08T17:18:40.857Z"
+          }
+        ],
+        "counts": {
+          "total": 5,
+          "complete": 5,
+          "pending": 0,
+          "blocked": 0
+        }
+      },
+      {
+        "id": "admcars:regional:6c4dfd126ac0b83596b0f3b9",
+        "sourceId": "admcars",
+        "scope": "regional",
+        "configuredUrls": [
+          "https://www.admcars.com/inventory.htm"
+        ],
+        "cycle": 1,
+        "startedAt": "2026-09-08T17:18:40.990Z",
+        "completedAt": "2026-09-08T17:18:56.319Z",
+        "tasks": [
+          {
+            "queryId": "6c4dfd126ac0b83596b0f3b9",
+            "url": "https://www.admcars.com/inventory.htm",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:18:41.408Z",
+            "evidenceHash": "ef9e03b7a0804ffcf5071e2c9a7298594d5e8c2fb1cae19e591c056585ad12ee",
+            "cacheHit": false,
+            "parserVersion": "admcars-v1",
+            "completedAt": "2026-09-08T17:18:41.445Z",
+            "lastAttemptAt": "2026-09-08T17:18:41.445Z"
+          },
+          {
+            "queryId": "6c4dfd126ac0b83596b0f3b9",
+            "url": "https://www.admcars.com/isapi_xml.php?module=inventory&offset=25&orderby=price%2Cdesc&sold=Available",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:18:46.120Z",
+            "evidenceHash": "64414185eb862e25efa278a92facc366edca6afbce51d6e0b7cd4864694cde52",
+            "cacheHit": false,
+            "parserVersion": "admcars-v1",
+            "completedAt": "2026-09-08T17:18:46.152Z",
+            "lastAttemptAt": "2026-09-08T17:18:46.152Z"
+          },
+          {
+            "queryId": "6c4dfd126ac0b83596b0f3b9",
+            "url": "https://www.admcars.com/isapi_xml.php?module=inventory&offset=50&orderby=price%2Cdesc&sold=Available",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:18:51.121Z",
+            "evidenceHash": "044a76c56428f248498463ade2bc435256d0bc0297046da43ac889a3b71fdbe6",
+            "cacheHit": false,
+            "parserVersion": "admcars-v1",
+            "completedAt": "2026-09-08T17:18:51.153Z",
+            "lastAttemptAt": "2026-09-08T17:18:51.153Z"
+          },
+          {
+            "queryId": "6c4dfd126ac0b83596b0f3b9",
+            "url": "https://www.admcars.com/isapi_xml.php?module=inventory&offset=75&orderby=price%2Cdesc&sold=Available",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": true,
+            "observedAt": "2026-09-08T17:18:56.304Z",
+            "evidenceHash": "eead73c1c973af77d82aa096264bf3a85a4d57ef03f7e3966194763ce5609dab",
+            "cacheHit": false,
+            "parserVersion": "admcars-v1",
+            "completedAt": "2026-09-08T17:18:56.319Z",
+            "lastAttemptAt": "2026-09-08T17:18:56.319Z"
+          }
+        ],
+        "counts": {
+          "total": 4,
+          "complete": 4,
+          "pending": 0,
+          "blocked": 0
+        }
+      },
+      {
+        "id": "nsclassics:regional:0e0a6a3071baeecd70a322ac",
+        "sourceId": "nsclassics",
+        "scope": "regional",
+        "configuredUrls": [
+          "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=0&orderby=year%2Cmake%2Cmodel&pageID=741"
+        ],
+        "cycle": 1,
+        "startedAt": "2026-09-08T17:18:56.864Z",
+        "completedAt": "2026-09-08T17:19:22.057Z",
+        "tasks": [
+          {
+            "queryId": "0e0a6a3071baeecd70a322ac",
+            "url": "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=0&orderby=year%2Cmake%2Cmodel&pageID=741",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:18:57.287Z",
+            "evidenceHash": "54d1c44fe339c559478f9c2b3bf228cff5cad608649be6bdae5dbd6ce42d7c61",
+            "cacheHit": false,
+            "parserVersion": "nsclassics-v1",
+            "completedAt": "2026-09-08T17:18:57.299Z",
+            "lastAttemptAt": "2026-09-08T17:18:57.299Z"
+          },
+          {
+            "queryId": "0e0a6a3071baeecd70a322ac",
+            "url": "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=24&orderby=year%2Cmake%2Cmodel&pageID=741",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:02.125Z",
+            "evidenceHash": "5947c0b190bb88bda036aed7820a73ffd97215c314de7d86f9c0ed985837f245",
+            "cacheHit": false,
+            "parserVersion": "nsclassics-v1",
+            "completedAt": "2026-09-08T17:19:02.140Z",
+            "lastAttemptAt": "2026-09-08T17:19:02.140Z"
+          },
+          {
+            "queryId": "0e0a6a3071baeecd70a322ac",
+            "url": "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=48&orderby=year%2Cmake%2Cmodel&pageID=741",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:07.114Z",
+            "evidenceHash": "9c709a875061d270a078fb85256324f1cb90acefdbdf297c862bdb7e951e9143",
+            "cacheHit": false,
+            "parserVersion": "nsclassics-v1",
+            "completedAt": "2026-09-08T17:19:07.127Z",
+            "lastAttemptAt": "2026-09-08T17:19:07.127Z"
+          },
+          {
+            "queryId": "0e0a6a3071baeecd70a322ac",
+            "url": "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=72&orderby=year%2Cmake%2Cmodel&pageID=741",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:12.109Z",
+            "evidenceHash": "65298f967bc127072cbc5ed6147d926f56b75eb8ebeb801b4d5fe7b276fbb219",
+            "cacheHit": false,
+            "parserVersion": "nsclassics-v1",
+            "completedAt": "2026-09-08T17:19:12.126Z",
+            "lastAttemptAt": "2026-09-08T17:19:12.126Z"
+          },
+          {
+            "queryId": "0e0a6a3071baeecd70a322ac",
+            "url": "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=96&orderby=year%2Cmake%2Cmodel&pageID=741",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:17.116Z",
+            "evidenceHash": "02d54ac6e0e5d2c4d9ea43192f1e3fe6f3c50a162a10e15022138f307d2dd82e",
+            "cacheHit": false,
+            "parserVersion": "nsclassics-v1",
+            "completedAt": "2026-09-08T17:19:17.126Z",
+            "lastAttemptAt": "2026-09-08T17:19:17.126Z"
+          },
+          {
+            "queryId": "0e0a6a3071baeecd70a322ac",
+            "url": "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=120&orderby=year%2Cmake%2Cmodel&pageID=741",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": true,
+            "observedAt": "2026-09-08T17:19:22.052Z",
+            "evidenceHash": "85b7591e0029d02d06eca7226140b3b7fb73fe756d8a9c603a3ef7b00c7c2516",
+            "cacheHit": false,
+            "parserVersion": "nsclassics-v1",
+            "completedAt": "2026-09-08T17:19:22.057Z",
+            "lastAttemptAt": "2026-09-08T17:19:22.057Z"
+          }
+        ],
+        "counts": {
+          "total": 6,
+          "complete": 6,
+          "pending": 0,
+          "blocked": 0
+        }
+      },
+      {
+        "id": "jsmotors:regional:91c10634ba72a97f2181ee2e",
+        "sourceId": "jsmotors",
+        "scope": "regional",
+        "configuredUrls": [
+          "https://jsmotors.com/collections/all"
+        ],
+        "cycle": 1,
+        "startedAt": "2026-09-08T17:19:22.195Z",
+        "completedAt": "2026-09-08T17:19:27.842Z",
+        "tasks": [
+          {
+            "queryId": "91c10634ba72a97f2181ee2e",
+            "url": "https://jsmotors.com/collections/all",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:22.761Z",
+            "evidenceHash": "758fce7277605008eba9515a88d3361782ce3c7786670addad3089ebb1c38c71",
+            "cacheHit": false,
+            "parserVersion": "jsmotors-v1",
+            "completedAt": "2026-09-08T17:19:22.792Z",
+            "lastAttemptAt": "2026-09-08T17:19:22.792Z"
+          },
+          {
+            "queryId": "91c10634ba72a97f2181ee2e",
+            "url": "https://jsmotors.com/collections/all?page=2",
+            "status": "complete",
+            "attempts": 1,
+            "nextAttemptAt": null,
+            "terminal": false,
+            "observedAt": "2026-09-08T17:19:27.811Z",
+            "evidenceHash": "c4cc7b2fa3ad3f43fbefe5ccc9950f89a9a54d537179e0c7869110636e014f6e",
+            "cacheHit": false,
+            "parserVersion": "jsmotors-v1",
+            "completedAt": "2026-09-08T17:19:27.842Z",
+            "lastAttemptAt": "2026-09-08T17:19:27.842Z"
+          }
+        ],
+        "counts": {
+          "total": 2,
+          "complete": 2,
+          "pending": 0,
+          "blocked": 0
+        }
+      },
+      {
+        "id": "500classic:regional:1ca3bc21d94e59d8074815ee",
+        "sourceId": "500classic",
+        "scope": "regional",
+        "configuredUrls": [
+          "https://www.500classicauto.com/cars-for-sale"
+        ],
+        "cycle": 1,
+        "startedAt": "2026-09-08T17:19:27.974Z",
+        "completedAt": null,
+        "tasks": [
+          {
+            "queryId": "1ca3bc21d94e59d8074815ee",
+            "url": "https://www.500classicauto.com/cars-for-sale",
+            "status": "pending",
+            "attempts": 0,
+            "nextAttemptAt": null
+          }
+        ],
+        "counts": {
+          "total": 1,
+          "complete": 0,
+          "pending": 1,
+          "blocked": 0
+        }
+      },
+      {
+        "id": "autotrader:regional:1e8a1db4f43d196e2f51d35e",
+        "sourceId": "autotrader",
+        "scope": "regional",
+        "configuredUrls": [
+          "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?endYear=1989&searchRadius=500&startYear=1960&zip=60187"
+        ],
+        "cycle": 1,
+        "startedAt": "2026-09-08T17:19:28.115Z",
+        "completedAt": null,
+        "tasks": [
+          {
+            "queryId": "1e8a1db4f43d196e2f51d35e",
+            "url": "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?endYear=1989&searchRadius=500&startYear=1960&zip=60187",
+            "status": "pending",
+            "attempts": 0,
+            "nextAttemptAt": null
+          }
+        ],
+        "counts": {
+          "total": 1,
+          "complete": 0,
+          "pending": 1,
+          "blocked": 0
+        }
+      },
+      {
+        "id": "autotrader:nationwide:fc22df80e9cb74b6fe110530",
+        "sourceId": "autotrader",
+        "scope": "nationwide",
+        "configuredUrls": [
+          "https://www.autotrader.com/cars-for-sale/ford/mustang?endYear=1989&searchRadius=0&startYear=1960",
+          "https://www.autotrader.com/cars-for-sale/chevrolet/camaro?endYear=1989&searchRadius=0&startYear=1960",
+          "https://www.autotrader.com/cars-for-sale/chevrolet/corvette?endYear=1989&searchRadius=0&startYear=1960"
+        ],
+        "cycle": 1,
+        "startedAt": "2026-09-08T17:23:23.734Z",
+        "completedAt": null,
+        "tasks": [
+          {
+            "queryId": "905a1041142d146bdcdc6412",
+            "url": "https://www.autotrader.com/cars-for-sale/ford/mustang?endYear=1989&searchRadius=0&startYear=1960",
+            "status": "pending",
+            "attempts": 0,
+            "nextAttemptAt": null
+          },
+          {
+            "queryId": "48e6cd7c414589ca7add71c6",
+            "url": "https://www.autotrader.com/cars-for-sale/chevrolet/camaro?endYear=1989&searchRadius=0&startYear=1960",
+            "status": "pending",
+            "attempts": 0,
+            "nextAttemptAt": null
+          },
+          {
+            "queryId": "89009e4b9eb694138b1f366d",
+            "url": "https://www.autotrader.com/cars-for-sale/chevrolet/corvette?endYear=1989&searchRadius=0&startYear=1960",
+            "status": "pending",
+            "attempts": 0,
+            "nextAttemptAt": null
+          }
+        ],
+        "counts": {
+          "total": 3,
+          "complete": 0,
+          "pending": 3,
+          "blocked": 0
+        }
+      }
+    ],
+    "details": [
+      {
+        "sourceId": "midwest",
+        "counts": {
+          "total": 3,
+          "complete": 3,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 3,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "classiccars",
+        "counts": {
+          "total": 2944,
+          "complete": 34,
+          "pending": 2910,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 1387,
+          "nationwide": 2944
+        }
+      },
+      {
+        "sourceId": "volo",
+        "counts": {
+          "total": 50,
+          "complete": 1,
+          "pending": 49,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 50,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "grauto",
+        "counts": {
+          "total": 46,
+          "complete": 1,
+          "pending": 45,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 46,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "admcars",
+        "counts": {
+          "total": 38,
+          "complete": 5,
+          "pending": 33,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 38,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "nsclassics",
+        "counts": {
+          "total": 12,
+          "complete": 1,
+          "pending": 11,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 12,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "jsmotors",
+        "counts": {
+          "total": 24,
+          "complete": 2,
+          "pending": 22,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 24,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "500classic",
+        "counts": {
+          "total": 3,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 3
+        },
+        "scopes": {
+          "regional": 3,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "autotrader",
+        "counts": {
+          "total": 19,
+          "complete": 1,
+          "pending": 0,
+          "blocked": 18
+        },
+        "scopes": {
+          "regional": 19,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "hemmings",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "autotrader-classics",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "craigslist",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "ebay",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "cars",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "cargurus",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "bat",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "carsbids",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "mecum",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "barrett",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "corvetteforum",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "mustangforum",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "camaroforum",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "facebook",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "jws",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "duffys",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      },
+      {
+        "sourceId": "indyauto",
+        "counts": {
+          "total": 0,
+          "complete": 0,
+          "pending": 0,
+          "blocked": 0
+        },
+        "scopes": {
+          "regional": 0,
+          "nationwide": 0
+        }
+      }
+    ],
+    "health": [
+      {
+        "sourceId": "midwest",
+        "state": "active",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [],
+        "lastSuccessAt": "2026-09-08T17:18:56.742Z",
+        "lastLiveValidatedAt": "2026-09-08T17:18:56.742Z"
+      },
+      {
+        "sourceId": "classiccars",
+        "state": "active",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T02:54:45.440Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ],
+        "lastSuccessAt": "2026-09-08T17:23:23.511Z",
+        "lastLiveValidatedAt": "2026-09-08T17:23:23.511Z"
+      },
+      {
+        "sourceId": "volo",
+        "state": "active",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T02:55:06.006Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ],
+        "lastSuccessAt": "2026-09-08T17:18:00.186Z",
+        "lastLiveValidatedAt": "2026-09-08T17:18:00.186Z"
+      },
+      {
+        "sourceId": "grauto",
+        "state": "active",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T02:56:52.469Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ],
+        "lastSuccessAt": "2026-09-08T17:18:40.858Z",
+        "lastLiveValidatedAt": "2026-09-08T17:18:40.858Z"
+      },
+      {
+        "sourceId": "admcars",
+        "state": "active",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T02:56:57.724Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ],
+        "lastSuccessAt": "2026-09-08T17:18:56.320Z",
+        "lastLiveValidatedAt": "2026-09-08T17:18:56.320Z"
+      },
+      {
+        "sourceId": "nsclassics",
+        "state": "active",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T03:13:57.819Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ],
+        "lastSuccessAt": "2026-09-08T17:19:22.058Z",
+        "lastLiveValidatedAt": "2026-09-08T17:19:22.058Z"
+      },
+      {
+        "sourceId": "jsmotors",
+        "state": "active",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T02:55:47.892Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ],
+        "lastSuccessAt": "2026-09-08T17:19:27.842Z",
+        "lastLiveValidatedAt": "2026-09-08T17:19:27.842Z"
+      },
+      {
+        "sourceId": "500classic",
+        "state": "review",
+        "consecutiveFailures": 1,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T02:56:57.974Z",
+            "action": "legacy-failure",
+            "reason": "Retained run cmts2wbel000sogpcpu85zwd8: Source HTTP 403; stopped without bypass.",
+            "kind": "access"
+          },
+          {
+            "at": "2026-09-08T02:32:29.107Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ],
+        "lastSuccessAt": "2026-09-08T02:32:29.107Z",
+        "lastFailure": {
+          "kind": "access",
+          "message": "Source HTTP 403; stopped without bypass.",
+          "httpStatus": 403,
+          "at": "2026-09-08T02:56:57.974Z"
+        }
+      },
+      {
+        "sourceId": "autotrader",
+        "state": "review",
+        "consecutiveFailures": 1,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T02:56:58.100Z",
+            "action": "legacy-failure",
+            "reason": "Retained run cmts2wbjs000togpcoe7ytkug: https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?zip=60187&startYear=1960&endYear=1989&searchRadius=500: Autotrader public Next state missing; do not use disallowed internal service endpoint",
+            "kind": "layout"
+          },
+          {
+            "at": "2026-09-08T02:40:00.746Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ],
+        "lastSuccessAt": "2026-09-08T02:40:00.746Z",
+        "lastFailure": {
+          "kind": "layout",
+          "message": "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?zip=60187&startYear=1960&endYear=1989&searchRadius=500: Autotrader public Next state missing; do not use disallowed internal service endpoint",
+          "at": "2026-09-08T02:56:58.100Z"
+        }
+      },
+      {
+        "sourceId": "hemmings",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains blocked in configuration. Bootstrap does not enable it. AI crawling restricted; homepage HTTP 403. No feed license or working pagination supplied.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "autotrader-classics",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains blocked in configuration. Bootstrap does not enable it. Direct homepage HTTP 403; indexed snippets are not live inventory.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "craigslist",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains restricted in configuration. Bootstrap does not enable it. Terms prohibit content collection without permission. Surrounding regional boards not collected.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "ebay",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains credential-required in configuration. Bootstrap does not enable it. Official Browse API credentials and vehicle coverage validation required.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "cars",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains restricted in configuration. Bootstrap does not enable it. Required filtered search and detail paths restricted; no stock count inferred.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "cargurus",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains incomplete in configuration. Bootstrap does not enable it. Public model page accessible; classic filters, current detail route and pagination not validated. Storage restrictions need review.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "bat",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains restricted in configuration. Bootstrap does not enable it. Terms prohibit scraping and aggregation. No bids collected.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "carsbids",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains blocked in configuration. Bootstrap does not enable it. Homepage returned 403; no challenge bypass.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "mecum",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains permission-required in configuration. Bootstrap does not enable it. Written permission required for automated data collection.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "barrett",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains restricted in configuration. Bootstrap does not enable it. Robots denies general crawlers.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "corvetteforum",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains restricted in configuration. Bootstrap does not enable it. AI agents restricted; no authorized feed verified.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "mustangforum",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains restricted in configuration. Bootstrap does not enable it. AI agents explicitly blocked; no collection.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "camaroforum",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains restricted in configuration. Bootstrap does not enable it. AI agents explicitly blocked; no collection.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "facebook",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains manual-only in configuration. Bootstrap does not enable it. User-provided records or exports only; no authenticated scraping.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "jws",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains incomplete in configuration. Bootstrap does not enable it. Catalog accessible, advertised detail route fails HTTP 500. Not zero inventory.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "duffys",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains blocked in configuration. Bootstrap does not enable it. Inventory HTTP 403; stopped.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      },
+      {
+        "sourceId": "indyauto",
+        "state": "review",
+        "consecutiveFailures": 0,
+        "nextPermittedAt": null,
+        "history": [
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "configuration-review",
+            "reason": "Source remains unsuitable in configuration. Bootstrap does not enable it. Observed domain landing page has no vehicle inventory.",
+            "kind": "policy"
+          },
+          {
+            "at": "2026-09-08T17:04:24.363Z",
+            "action": "legacy-bootstrap",
+            "reason": "Initialized from retained local records only; no request, new observation, repair validation or collection job was created."
+          }
+        ]
+      }
+    ]
+  },
+  "postScanCorrections": [
+    {
+      "listingId": "classiccars:CC-2012338",
+      "reason": "A cached $0 (OBO) catalog placeholder was normalized to unknown negotiable ask; the zero ask observation was retained under parser-retracted-ask and a parser-correction was recorded. Original source timestamp and raw evidence were preserved.",
+      "networkRequests": 0
+    }
+  ]
+}

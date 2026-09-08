@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import { readFile, writeFile, mkdir, chmod } from "node:fs/promises";
 import { randomBytes } from "node:crypto";
 import { spawnSync } from "node:child_process";
+import { createRequire } from "node:module";
 import { config } from "dotenv";
 await mkdir("data", { recursive: true });
 await chmod("data", 0o700);
@@ -31,15 +32,17 @@ if (!existsSync(".env")) {
   console.log("Preserved existing settings and password.");
 }
 config({ quiet: true });
-const command = process.platform === "win32" ? "npx.cmd" : "npx";
+const prismaCli = createRequire(import.meta.url).resolve(
+  "prisma/build/index.js",
+);
 const { db: initialDb } = await import("../server/db");
 await initialDb.$queryRawUnsafe("SELECT 1");
 await initialDb.$disconnect();
-for (const args of [
-  ["prisma", "generate"],
-  ["prisma", "migrate", "deploy"],
-]) {
-  const r = spawnSync(command, args, { stdio: "inherit", env: process.env });
+for (const args of [["generate"], ["migrate", "deploy"]]) {
+  const r = spawnSync(process.execPath, [prismaCli, ...args], {
+    stdio: "inherit",
+    env: process.env,
+  });
   if (r.status !== 0) process.exit(r.status || 1);
 }
 const { db } = await import("../server/db"),

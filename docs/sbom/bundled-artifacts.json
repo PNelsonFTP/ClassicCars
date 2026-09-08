@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "observedAt": "2026-09-08T17:00:00.250Z",
+  "package": "@tailwindcss/oxide-wasm32-wasi",
+  "version": "4.3.3",
+  "artifactUrl": "https://registry.npmjs.org/@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.3.3.tgz",
+  "lockfileIntegrity": "sha512-jx1+rPhY/5Ympkktd656HBWEBLxP7dH06losBLjjf5vgCODXvi9KhtftWcMIwTFIDqBr7cRnQkdLnAG+IOlGvQ==",
+  "integrityVerified": true,
+  "artifactSha256": "d5b61fbe10d237f7565032a74b03b5be6c83b309037ee407e2b5b46f24738823",
+  "bytes": 1829808,
+  "installed": false,
+  "codeExecuted": false,
+  "observedPackages": [
+    {
+      "path": "package/node_modules/@emnapi/core/package.json",
+      "name": "@emnapi/core",
+      "version": "1.11.1",
+      "license": "MIT",
+      "packageJsonSha256": "ef9b64c17a928e8197624b57df118a8f095cabbebb66e134daebc9d487541266",
+      "dependencies": {
+        "@emnapi/wasi-threads": "1.2.2",
+        "tslib": "^2.4.0"
+      }
+    },
+    {
+      "path": "package/node_modules/@emnapi/runtime/package.json",
+      "name": "@emnapi/runtime",
+      "version": "1.11.1",
+      "license": "MIT",
+      "packageJsonSha256": "d67a7be4cce81ade30e27261b34a65af3e72ff69d35b313d14a16c8ba4247d8e",
+      "dependencies": {
+        "tslib": "^2.4.0"
+      }
+    },
+    {
+      "path": "package/node_modules/@emnapi/wasi-threads/package.json",
+      "name": "@emnapi/wasi-threads",
+      "version": "1.2.2",
+      "license": "MIT",
+      "packageJsonSha256": "d0e6e4255490f8eb9c916a8061c21ef645c6104edf7b88d927b930a588b9a659",
+      "dependencies": {
+        "tslib": "^2.4.0"
+      }
+    },
+    {
+      "path": "package/node_modules/@napi-rs/wasm-runtime/package.json",
+      "name": "@napi-rs/wasm-runtime",
+      "version": "1.1.4",
+      "license": "MIT",
+      "packageJsonSha256": "5f9db850fde3b2adaf40343485598ad1606d5177748c4cdede5ddc8696940ab1",
+      "dependencies": {
+        "@tybys/wasm-util": "^0.10.1"
+      }
+    },
+    {
+      "path": "package/node_modules/@tybys/wasm-util/package.json",
+      "name": "@tybys/wasm-util",
+      "version": "0.10.2",
+      "license": "MIT",
+      "packageJsonSha256": "a7b1718e6616ae2cd235a365d03b8d5b5e8c5d6a27e9f7604a3d51ed20ca9c29",
+      "dependencies": {
+        "tslib": "^2.4.0"
+      }
+    },
+    {
+      "path": "package/node_modules/tslib/package.json",
+      "name": "tslib",
+      "version": "2.8.1",
+      "license": "0BSD",
+      "packageJsonSha256": "f02b4851df316f29bdfcd404aa1eb41e4e216b5859015f81fcd3e91caf8be931",
+      "dependencies": {}
+    },
+    {
+      "path": "package/package.json",
+      "name": "@tailwindcss/oxide-wasm32-wasi",
+      "version": "4.3.3",
+      "license": "MIT",
+      "packageJsonSha256": "992d12fdcbea73c338441142f7d629ac22561c3d25c72fa8ca93768353a5947f",
+      "dependencies": {
+        "@napi-rs/wasm-runtime": "^1.1.4",
+        "@emnapi/core": "^1.11.1",
+        "@emnapi/runtime": "^1.11.1",
+        "@tybys/wasm-util": "^0.10.2",
+        "@emnapi/wasi-threads": "^1.2.2",
+        "tslib": "^2.8.1"
+      }
+    }
+  ],
+  "unresolvedRequestedPackages": [],
+  "limits": [
+    "Package manifest versions are observed from this exact archive; embedded native/WASM component versions are not inferred.",
+    "This optional platform archive was inspected, not installed or executed. It is not part of the installed host graph solely because it was inspected."
+  ]
+}

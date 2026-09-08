@@ -2,10 +2,10 @@
   "$schema": "http://cyclonedx.org/schema/bom-1.5.schema.json",
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:791e6d0d-aced-4675-bf55-438b20d838ec",
+  "serialNumber": "urn:uuid:4bc3df21-22e9-47d9-b278-f4aeb2106005",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-09-08T03:25:44.841Z",
+    "timestamp": "2026-09-08T17:09:59.960Z",
     "lifecycles": [
       {
         "phase": "build"
@@ -19,12 +19,12 @@
       }
     ],
     "component": {
-      "bom-ref": "musclescout@1.0.0",
+      "bom-ref": "musclescout@1.1.0",
       "type": "application",
       "name": "musclescout",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "scope": "required",
-      "purl": "pkg:npm/musclescout@1.0.0",
+      "purl": "pkg:npm/musclescout@1.1.0",
       "properties": [
         {
           "name": "cdx:npm:package:private",
@@ -36,7 +36,7 @@
         },
         {
           "name": "musclescout:package-lock:sha256",
-          "value": "e8e19800d9cbdfb26b673831fc73ce96641c01ec7b577836db5a424f6f4c3092"
+          "value": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa"
         }
       ],
       "externalReferences": []
@@ -1913,48 +1913,6 @@
         {
           "alg": "SHA-512",
           "content": "d818d14d9c533ef85e3af19b06c94549839492bf928cfb4e9eb2cfdf77fe54858bcdecd0a5972a560ee36b72f87415e6cf38304fe6b4dbd8d1c793c28b726e88"
-        }
-      ],
-      "licenses": [
-        {
-          "license": {
-            "id": "MIT"
-          }
-        }
-      ]
-    },
-    {
-      "bom-ref": "ajv-formats@3.0.1",
-      "type": "library",
-      "name": "ajv-formats",
-      "version": "3.0.1",
-      "scope": "required",
-      "author": "Evgeny Poberezkin",
-      "description": "Format validation for Ajv v7+",
-      "purl": "pkg:npm/ajv-formats@3.0.1",
-      "properties": [],
-      "externalReferences": [
-        {
-          "type": "distribution",
-          "url": "https://registry.npmjs.org/ajv-formats/-/ajv-formats-3.0.1.tgz"
-        },
-        {
-          "type": "vcs",
-          "url": "git+https://github.com/ajv-validator/ajv-formats.git"
-        },
-        {
-          "type": "website",
-          "url": "https://github.com/ajv-validator/ajv-formats#readme"
-        },
-        {
-          "type": "issue-tracker",
-          "url": "https://github.com/ajv-validator/ajv-formats/issues"
-        }
-      ],
-      "hashes": [
-        {
-          "alg": "SHA-512",
-          "content": "f2252a979d04511fae51c7514371c3a9ae84572a3776870bf20e5627714d7169aeeb621b90652e7bfa44c8b056f1518a2ae7133e0a9e92ce1f214d43038ca8c1"
         }
       ],
       "licenses": [
@@ -4957,7 +4915,7 @@
   ],
   "dependencies": [
     {
-      "ref": "musclescout@1.0.0",
+      "ref": "musclescout@1.1.0",
       "dependsOn": [
         "@fastify/cors@11.3.0",
         "@fastify/rate-limit@10.3.0",
@@ -4984,7 +4942,6 @@
     {
       "ref": "@fastify/ajv-compiler@4.0.6",
       "dependsOn": [
-        "ajv-formats@3.0.1",
         "fast-uri@4.1.4"
       ]
     },
@@ -5270,10 +5227,6 @@
       "dependsOn": []
     },
     {
-      "ref": "ajv-formats@3.0.1",
-      "dependsOn": []
-    },
-    {
       "ref": "aria-hidden@1.2.6",
       "dependsOn": [
         "tslib@2.8.1"
@@ -5406,7 +5359,6 @@
       "ref": "fast-json-stringify@7.0.1",
       "dependsOn": [
         "@fastify/merge-json-schemas@0.2.1",
-        "ajv-formats@3.0.1",
         "fast-uri@4.1.4",
         "json-schema-ref-resolver@3.0.0",
         "rfdc@1.4.1"

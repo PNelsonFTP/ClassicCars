@@ -1,0 +1,800 @@
+{
+  "generatedAt": "2026-09-08T17:30:00.561Z",
+  "node": "v24.20.0",
+  "platform": "linux",
+  "architecture": "arm64",
+  "lockfileSha256": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa",
+  "nativeAndWasmArtifacts": [
+    {
+      "path": "node_modules/.prisma/client/query_compiler_fast_bg.wasm",
+      "kind": "webassembly",
+      "bytes": 3304603,
+      "sha256": "3e45427e3ed15080a4084dbe15e83912ce6ef22f6505161eaae9ddd912bed430",
+      "owningPackage": {
+        "name": "prisma-client-d0b473fe72720dd3405ba964ea21ffbba982d82a23d38100605d622a8b2bef9f",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@electric-sql/pglite-tools/dist/pg_dump.wasm",
+      "kind": "webassembly",
+      "bytes": 657340,
+      "sha256": "097c638e45ccb7ff16c72a927ddce2fee126076f2c41a25abef951b03897860d",
+      "owningPackage": {
+        "name": "@electric-sql/pglite-tools",
+        "version": "0.3.3"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@electric-sql/pglite/dist/initdb.wasm",
+      "kind": "webassembly",
+      "bytes": 169969,
+      "sha256": "13ed8475e33d092d03e2378d6b78d52da0c4d497b1df2c2a62d33fe32ceb67e2",
+      "owningPackage": {
+        "name": "@electric-sql/pglite",
+        "version": "0.4.3"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@electric-sql/pglite/dist/pglite.wasm",
+      "kind": "webassembly",
+      "bytes": 8740135,
+      "sha256": "a197681ba0d51f76508b8ab0a872b47bc9dbab9dc42814cce50cf241fb0c22dd",
+      "owningPackage": {
+        "name": "@electric-sql/pglite",
+        "version": "0.4.3"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@img/sharp-linux-arm64/lib/sharp-linux-arm64-0.35.4.node",
+      "kind": "native-node-addon",
+      "bytes": 530120,
+      "sha256": "4f53dd2f4ce3ca21ec01f908f7c475d9ca0c9d0d6555180abcbd6e8e4f09722d",
+      "owningPackage": {
+        "name": "@img/sharp-linux-arm64",
+        "version": "0.35.4"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@next/swc-linux-arm64-gnu/next-swc.linux-arm64-gnu.node",
+      "kind": "native-node-addon",
+      "bytes": 89858144,
+      "sha256": "876a85f90bea3735f799939ec891af556b9e4f58d97c2dc96f9d44e6fd8ac6ce",
+      "owningPackage": {
+        "name": "@next/swc-linux-arm64-gnu",
+        "version": "16.3.4"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@prisma/dev/dist/runtime-assets/initdb.wasm",
+      "kind": "webassembly",
+      "bytes": 169969,
+      "sha256": "13ed8475e33d092d03e2378d6b78d52da0c4d497b1df2c2a62d33fe32ceb67e2",
+      "owningPackage": {
+        "name": "@prisma/dev",
+        "version": "0.24.17"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@prisma/dev/dist/runtime-assets/pglite.wasm",
+      "kind": "webassembly",
+      "bytes": 8740135,
+      "sha256": "a197681ba0d51f76508b8ab0a872b47bc9dbab9dc42814cce50cf241fb0c22dd",
+      "owningPackage": {
+        "name": "@prisma/dev",
+        "version": "0.24.17"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@rolldown/binding-linux-arm64-gnu/rolldown-binding.linux-arm64-gnu.node",
+      "kind": "native-node-addon",
+      "bytes": 17403216,
+      "sha256": "48558d8ee1e36f707ebdb972e6eca4f8693ea8048ce35bde937cf84c7cf53e3e",
+      "owningPackage": {
+        "name": "@rolldown/binding-linux-arm64-gnu",
+        "version": "1.2.7"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/@tailwindcss/oxide-linux-arm64-gnu/tailwindcss-oxide.linux-arm64-gnu.node",
+      "kind": "native-node-addon",
+      "bytes": 2648992,
+      "sha256": "b851cce7433b03db12c11d7d34a5471c1a62dffbc2ffe115afedd8eb77f78d71",
+      "owningPackage": {
+        "name": "@tailwindcss/oxide-linux-arm64-gnu",
+        "version": "4.3.3"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/better-sqlite3/build/Release/better_sqlite3.node",
+      "kind": "native-node-addon",
+      "bytes": 1992696,
+      "sha256": "9205c98574900414ce2f9c74b1c3b77054c99e90eef1bd23e44a8854e347ce18",
+      "owningPackage": {
+        "name": "better-sqlite3",
+        "version": "12.11.1"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/lightningcss-linux-arm64-gnu/lightningcss.linux-arm64-gnu.node",
+      "kind": "native-node-addon",
+      "bytes": 8868608,
+      "sha256": "d1d49e9d946775577d8894d0fbf8ecc3675de61af14884b5b0c78744afbe7061",
+      "owningPackage": {
+        "name": "lightningcss-linux-arm64-gnu",
+        "version": "1.32.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/next/dist/compiled/@mswjs/interceptors/ClientRequest/llhttp/llhttp.wasm",
+      "kind": "webassembly",
+      "bytes": 61045,
+      "sha256": "f37ae8e0ee713aed2aa405539a82994cc28473348a4e23e219760e52eabb07e3",
+      "owningPackage": {
+        "name": "next",
+        "version": "16.3.4"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/next/dist/compiled/@vercel/og/resvg.wasm",
+      "kind": "webassembly",
+      "bytes": 1378357,
+      "sha256": "6332e8ff5ef63cb18592370d4f799c8551d886c90b8563e1323fdabee2371e24",
+      "owningPackage": {
+        "name": "@vercel/og",
+        "version": "0.11.1"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/next/dist/compiled/@vercel/og/yoga.wasm",
+      "kind": "webassembly",
+      "bytes": 71736,
+      "sha256": "7ba9c9483c8c38a468e9aef4a95ed72fad8a43594be8e5123eb3bdb6479edf5b",
+      "owningPackage": {
+        "name": "@vercel/og",
+        "version": "0.11.1"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/next/dist/compiled/source-map08/mappings.wasm",
+      "kind": "webassembly",
+      "bytes": 48693,
+      "sha256": "be2dc7da3885e55013c8da58d7ba356705d932459db94ada37d5de2fa8733cfe",
+      "owningPackage": {
+        "name": "next",
+        "version": "16.3.4"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/playwright-core/lib/webp_codec.wasm",
+      "kind": "webassembly",
+      "bytes": 565369,
+      "sha256": "164cd9583a3e4d081f767d3b41ff0a730443dc7535fcc5caff83561463384b79",
+      "owningPackage": {
+        "name": "playwright-core",
+        "version": "1.63.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/prisma_schema_build_bg.wasm",
+      "kind": "webassembly",
+      "bytes": 3165164,
+      "sha256": "e77f37d7e9bdae4100769cbcd5a59918796943f6bed0f8ee99d9eeb7f75fde58",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_fast_bg.cockroachdb.wasm",
+      "kind": "webassembly",
+      "bytes": 3484499,
+      "sha256": "1d29c3df6d7521b42b971cdca19991a9e00d16b5d9de8ececd2006dc9988c2cb",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_fast_bg.mysql.wasm",
+      "kind": "webassembly",
+      "bytes": 3391959,
+      "sha256": "1d1914e4d9d968f57030198c6155964745a9567037a9ed5d949e0d0e8520a7f0",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_fast_bg.postgresql.wasm",
+      "kind": "webassembly",
+      "bytes": 3437252,
+      "sha256": "f2592df4586bc42ceffbfcdbaa764cc44612b533b61293119a7e6222cf5637f9",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_fast_bg.sqlite.wasm",
+      "kind": "webassembly",
+      "bytes": 3304603,
+      "sha256": "3e45427e3ed15080a4084dbe15e83912ce6ef22f6505161eaae9ddd912bed430",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_fast_bg.sqlserver.wasm",
+      "kind": "webassembly",
+      "bytes": 3525178,
+      "sha256": "af15f99d63115e52d14280533dcf6fc88a6b3a8d3c5c76ba7172c30d3c35898f",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_small_bg.cockroachdb.wasm",
+      "kind": "webassembly",
+      "bytes": 1757294,
+      "sha256": "f96e7ab79813da297643ca28fd796c5bb29a780de257dd1fb560c2604d6f22f3",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_small_bg.mysql.wasm",
+      "kind": "webassembly",
+      "bytes": 1703240,
+      "sha256": "8301163586fe63e98f91f85a749ab0a646b4996a7bd6c229caa20f3e883beb7c",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_small_bg.postgresql.wasm",
+      "kind": "webassembly",
+      "bytes": 1734597,
+      "sha256": "d7534d8306b4e184ecea651a74fad747bd990e158f289cc04747c43602b74bda",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_small_bg.sqlite.wasm",
+      "kind": "webassembly",
+      "bytes": 1661169,
+      "sha256": "811de306a07795a36f4335000c7c3e39b31dfaa093998ab32d34a9901f6fda71",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/query_compiler_small_bg.sqlserver.wasm",
+      "kind": "webassembly",
+      "bytes": 1731787,
+      "sha256": "9d361e233107f308708c4e8a9e69ffd46c67c483af458dda471bec6441fff160",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/prisma/build/schema_engine_bg.wasm",
+      "kind": "webassembly",
+      "bytes": 5405929,
+      "sha256": "c8d00b95bdf2259b6a41914ad28e9b247d1e46462cd92a02f0939c6d17577a1e",
+      "owningPackage": {
+        "name": "prisma",
+        "version": "7.10.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    },
+    {
+      "path": "node_modules/vite/node_modules/lightningcss-linux-arm64-gnu/lightningcss.linux-arm64-gnu.node",
+      "kind": "native-node-addon",
+      "bytes": 8893184,
+      "sha256": "630753f910bd6235aad7d702a984c109aa723563342b8057b88f34306702b626",
+      "owningPackage": {
+        "name": "lightningcss-linux-arm64-gnu",
+        "version": "1.33.0"
+      },
+      "embeddedComponentVersions": "not inferred from owning package or filename"
+    }
+  ],
+  "osPackageInventory": [
+    {
+      "name": "adduser",
+      "version": "3.134",
+      "architecture": "all"
+    },
+    {
+      "name": "apt",
+      "version": "2.6.1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "base-files",
+      "version": "12.4+deb12u15",
+      "architecture": "arm64"
+    },
+    {
+      "name": "base-passwd",
+      "version": "3.6.1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "bash",
+      "version": "5.2.15-2+b13",
+      "architecture": "arm64"
+    },
+    {
+      "name": "bsdutils",
+      "version": "1:2.38.1-5+deb12u3",
+      "architecture": "arm64"
+    },
+    {
+      "name": "ca-certificates",
+      "version": "20250419~deb12u1",
+      "architecture": "all"
+    },
+    {
+      "name": "coreutils",
+      "version": "9.1-1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "dash",
+      "version": "0.5.12-2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "debconf",
+      "version": "1.5.82",
+      "architecture": "all"
+    },
+    {
+      "name": "debian-archive-keyring",
+      "version": "2023.3+deb12u2",
+      "architecture": "all"
+    },
+    {
+      "name": "debianutils",
+      "version": "5.7-0.5~deb12u1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "diffutils",
+      "version": "1:3.8-4",
+      "architecture": "arm64"
+    },
+    {
+      "name": "dpkg",
+      "version": "1.21.23",
+      "architecture": "arm64"
+    },
+    {
+      "name": "e2fsprogs",
+      "version": "1.47.0-2+b2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "findutils",
+      "version": "4.9.0-4",
+      "architecture": "arm64"
+    },
+    {
+      "name": "gcc-12-base",
+      "version": "12.2.0-14+deb12u1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "gpgv",
+      "version": "2.2.40-1.1+deb12u2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "grep",
+      "version": "3.8-5",
+      "architecture": "arm64"
+    },
+    {
+      "name": "gzip",
+      "version": "1.12-1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "hostname",
+      "version": "3.23+nmu1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "init-system-helpers",
+      "version": "1.65.2+deb12u1",
+      "architecture": "all"
+    },
+    {
+      "name": "libacl1",
+      "version": "2.3.1-3",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libapt-pkg6.0",
+      "version": "2.6.1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libattr1",
+      "version": "1:2.5.1-4",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libaudit-common",
+      "version": "1:3.0.9-1",
+      "architecture": "all"
+    },
+    {
+      "name": "libaudit1",
+      "version": "1:3.0.9-1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libblkid1",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libbz2-1.0",
+      "version": "1.0.8-5+b1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libc-bin",
+      "version": "2.36-9+deb12u14",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libc6",
+      "version": "2.36-9+deb12u14",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libcap-ng0",
+      "version": "0.8.3-1+b3",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libcap2",
+      "version": "1:2.66-4+deb12u3+b1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libcom-err2",
+      "version": "1.47.0-2+b2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libcrypt1",
+      "version": "1:4.4.33-2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libdb5.3",
+      "version": "5.3.28+dfsg2-1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libdebconfclient0",
+      "version": "0.270",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libext2fs2",
+      "version": "1.47.0-2+b2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libffi8",
+      "version": "3.4.4-1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libgcc-s1",
+      "version": "12.2.0-14+deb12u1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libgcrypt20",
+      "version": "1.10.1-3+deb12u1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libgmp10",
+      "version": "2:6.2.1+dfsg1-1.1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libgnutls30",
+      "version": "3.7.9-2+deb12u7",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libgpg-error0",
+      "version": "1.46-1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libhogweed6",
+      "version": "3.8.1-2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libidn2-0",
+      "version": "2.3.3-1+b1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "liblz4-1",
+      "version": "1.9.4-1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "liblzma5",
+      "version": "5.4.1-1+deb12u1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libmd0",
+      "version": "1.0.4-2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libmount1",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libnettle8",
+      "version": "3.8.1-2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libp11-kit0",
+      "version": "0.24.1-2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libpam-modules",
+      "version": "1.5.2-6+deb12u2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libpam-modules-bin",
+      "version": "1.5.2-6+deb12u2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libpam-runtime",
+      "version": "1.5.2-6+deb12u2",
+      "architecture": "all"
+    },
+    {
+      "name": "libpam0g",
+      "version": "1.5.2-6+deb12u2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libpcre2-8-0",
+      "version": "10.42-1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libseccomp2",
+      "version": "2.5.4-1+deb12u1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libselinux1",
+      "version": "3.4-1+b6",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libsemanage-common",
+      "version": "3.4-1",
+      "architecture": "all"
+    },
+    {
+      "name": "libsemanage2",
+      "version": "3.4-1+b5",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libsepol2",
+      "version": "3.4-2.1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libsmartcols1",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libss2",
+      "version": "1.47.0-2+b2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libssl3",
+      "version": "3.0.20-1~deb12u2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libstdc++6",
+      "version": "12.2.0-14+deb12u1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libsystemd0",
+      "version": "252.39-1~deb12u2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libtasn1-6",
+      "version": "4.19.0-2+deb12u1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libtinfo6",
+      "version": "6.4-4",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libudev1",
+      "version": "252.39-1~deb12u2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libunistring2",
+      "version": "1.0-2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libuuid1",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libxxhash0",
+      "version": "0.8.1-1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "libzstd1",
+      "version": "1.5.4+dfsg2-5",
+      "architecture": "arm64"
+    },
+    {
+      "name": "login",
+      "version": "1:4.13+dfsg1-1+deb12u2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "logsave",
+      "version": "1.47.0-2+b2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "mawk",
+      "version": "1.3.4.20200120-3.1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "mount",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "arm64"
+    },
+    {
+      "name": "ncurses-base",
+      "version": "6.4-4",
+      "architecture": "all"
+    },
+    {
+      "name": "ncurses-bin",
+      "version": "6.4-4",
+      "architecture": "arm64"
+    },
+    {
+      "name": "openssl",
+      "version": "3.0.20-1~deb12u2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "passwd",
+      "version": "1:4.13+dfsg1-1+deb12u2",
+      "architecture": "arm64"
+    },
+    {
+      "name": "perl-base",
+      "version": "5.36.0-7+deb12u3",
+      "architecture": "arm64"
+    },
+    {
+      "name": "sed",
+      "version": "4.9-1+deb12u1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "sysvinit-utils",
+      "version": "3.06-4",
+      "architecture": "arm64"
+    },
+    {
+      "name": "tar",
+      "version": "1.34+dfsg-1.2+deb12u1",
+      "architecture": "arm64"
+    },
+    {
+      "name": "tzdata",
+      "version": "2026b-0+deb12u1",
+      "architecture": "all"
+    },
+    {
+      "name": "usr-is-merged",
+      "version": "37~deb12u1",
+      "architecture": "all"
+    },
+    {
+      "name": "util-linux",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "arm64"
+    },
+    {
+      "name": "util-linux-extra",
+      "version": "2.38.1-5+deb12u3",
+      "architecture": "arm64"
+    },
+    {
+      "name": "zlib1g",
+      "version": "1:1.2.13.dfsg-1",
+      "architecture": "arm64"
+    }
+  ],
+  "limitations": [
+    "File hashes and owning package versions are observed; embedded component versions require their own evidence.",
+    "OS package inventory covers dpkg only when available on the target; other package managers and manually installed OS files remain outside this report."
+  ]
+}

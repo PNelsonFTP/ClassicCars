@@ -1,0 +1,78 @@
+{
+  "observedAt": "2026-09-08T16:35:02.717Z",
+  "isolatedBrowserProfiles": true,
+  "polyfillUsed": false,
+  "externalRequestsBlocked": true,
+  "publicDeploymentTested": false,
+  "reports": [
+    {
+      "nativeFeatureFlag": null,
+      "browserVersion": "153.0.8010.12",
+      "url": "http://127.0.0.1:3100/",
+      "secureContext": true,
+      "protocol": "http:",
+      "modelContextPresent": false,
+      "methods": {},
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "application": null,
+      "lifecycle": null,
+      "pageErrors": []
+    },
+    {
+      "nativeFeatureFlag": "--enable-features=WebMCP",
+      "browserVersion": "153.0.8010.12",
+      "url": "http://127.0.0.1:3100/",
+      "secureContext": true,
+      "protocol": "http:",
+      "modelContextPresent": true,
+      "methods": {
+        "registerTool": {
+          "type": "function",
+          "native": true
+        },
+        "getTools": {
+          "type": "function",
+          "native": true
+        },
+        "executeTool": {
+          "type": "function",
+          "native": true
+        }
+      },
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/153.0.8010.12 Safari/537.36",
+      "application": {
+        "registered": true,
+        "matchingToolCount": 1,
+        "registeredInputSchemaType": "string",
+        "inputFormat": "json-string",
+        "objectInputError": {
+          "name": "UnknownError",
+          "message": "Failed to parse input arguments"
+        },
+        "executionResult": "{\"applied\":{\"query\":\"Camero\",\"mode\":\"unknown-route\"}}",
+        "invalidInputRejected": true,
+        "invalidInputError": "UnknownError",
+        "visibleQueryAfterExecution": "Camero",
+        "preexistingMaxPrice": "45000",
+        "maxPriceAfterExecution": "45000",
+        "unrelatedPriceFilterPreserved": true,
+        "registrationCountAfterReload": 1
+      },
+      "lifecycle": {
+        "registerReturnedPromise": true,
+        "registered": true,
+        "echo": "{\"echoed\":\"native-check\"}",
+        "removedAfterAbort": true,
+        "callbackStarted": true,
+        "receivedSignal": true,
+        "callbackAborted": true,
+        "cancellation": {
+          "cancelled": true,
+          "error": "AbortError"
+        },
+        "remainingDiagnosticTools": 0
+      },
+      "pageErrors": []
+    }
+  ]
+}

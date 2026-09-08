@@ -1,5 +1,7 @@
 # Implementation decisions
 
+> The sections describing the initial build are historical. Version 1.1.0 supersedes their open engineering gaps; see the update below and [current improvement status](FUTURE_IMPROVEMENTS.md).
+
 Reviewed September 8, 2026 UTC (September 7 in Chicago).
 
 1. **Local-first architecture.** The explicit Next.js/Fastify/Prisma/GitHub Pages brief takes precedence over a hosted Sites starter. No Sites project, GitHub remote or deployment was created. Next App Router exports one browser workspace route; stateful features call a separate authenticated API. SQLite retains key searchable columns plus validated canonical JSON for extensible specifications. `Observation` keeps source, ask, bid, availability and user-correction series separately.
@@ -15,3 +17,13 @@ Reviewed September 8, 2026 UTC (September 7 in Chicago).
 
 
 11. **Explicit handoff and supply-chain scope.** The documentation follow-up adds architecture, operations, implementation history and a prioritized unresolved-issues register rather than presenting catalog breadth as proven unique-car coverage. SBOMs use npm's installed dependency graph on the recorded macOS platform, supplemented by every lockfile entry and license. The optional WASM bundled-dependency limitation of lock-only export is retained explicitly. A dated advisory report and hashes accompany the inventory; no application license, exact unobserved bundled version or target-platform validation is invented.
+
+
+## Version 1.1.0 decisions
+
+12. **Persist operational state without adding infrastructure.** Versioned Setting records use compare-and-swap for queues, jobs, source health, budgets, grouping replay and delivery batches. Existing SQLite tables and both migrations remain compatible. Freshness is computed from retained observation times rather than cache processing time.
+13. **Keep grouping evidence and ad histories separate.** Candidate ranking is review assistance; identifiers and conflicts constrain automatic grouping. Reviewed merge replay preserves all ads, personal state and source-specific asks. Alert policy uses current membership and explicit source-added preferences.
+14. **Preserve consent and unresolved state.** Delivery rechecks saved-search/channel consent, keeps immutable batch IDs, and treats uncertain outcomes as requiring acknowledgment. Browser edits bind to the authenticated endpoint and serialize acknowledged workspace revisions; conflicts remain visible.
+15. **Measure optimizations and their limits.** Compact dictionary catalogs, lazy detail files, 24-card pages and indexed candidate blocks improve the measured 50,000-ad fixture. API matching still retains all matches and can rescan, and dense candidate blocks remain costly. These facts are part of the handoff, not hidden by pagination.
+16. **Multiple release options.** GitHub Pages remains a static, Docker-free deployment. Docker is optional local packaging. Native macOS Node 24 and Linux Docker checks are actual evidence; Windows and external HTTPS remain pending. Direct Action/base-image pins and target SBOM artifacts improve provenance without claiming a hermetic build.
+17. **Review before publication and commit.** The final scan and local preview were reviewed first. The user subsequently approved the final commit, push and wind down. [Delivery status](docs/DELIVERY.md) records the selected destination and completed release actions.

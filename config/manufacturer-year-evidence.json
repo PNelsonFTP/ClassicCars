@@ -1,0 +1,19 @@
+{
+  "reviewedAt": "2026-09-08T15:50:00Z",
+  "manufacturer": "Ford",
+  "model": "Mustang",
+  "maxExplicitlyVerifiedModelYear": 2027,
+  "variantEstablishingCeiling": "Mustang GTD",
+  "source": {
+    "url": "https://www.fromtheroad.ford.com/us/en/articles/2026/mustang-gtd-applications-open-april-17",
+    "title": "Your Chance Is Coming: 2027 Mustang GTD Applications Open on April 17",
+    "publishedAt": "2026-03-23",
+    "publisher": "Ford"
+  },
+  "inferenceLimits": [
+    "An explicitly announced GTD model year establishes the family ceiling; it does not establish retail availability of every Mustang trim.",
+    "A three-year production application window is not used to infer unannounced model-year numbers.",
+    "Seller claims, clones, replicas and tributes remain separate from document-supported specialty identity."
+  ],
+  "onFailedRefresh": "Retain the last dated evidence; do not increase the ceiling without an explicit manufacturer model-year statement."
+}

@@ -5,9 +5,22 @@ import { readFile, writeFile, mkdir, rename } from "node:fs/promises";
 import path from "node:path";
 
 // Documentation only: reads npm metadata; never installs, updates or executes packages.
-const root = path.resolve(import.meta.dirname, "..");
-const folder = path.join(root, "docs/sbom");
-const npm = process.platform === "win32" ? "npm.cmd" : "npm";
+const argument = (name) =>
+  process.argv
+    .find((value) => value.startsWith(`--${name}=`))
+    ?.slice(name.length + 3);
+const root = path.resolve(
+  argument("root") || path.join(import.meta.dirname, ".."),
+);
+const folder = path.resolve(argument("folder") || path.join(root, "docs/sbom"));
+const npmCli =
+  process.env.npm_execpath ||
+  (process.platform === "win32"
+    ? path.join(
+        path.dirname(process.execPath),
+        "node_modules/npm/bin/npm-cli.js",
+      )
+    : null);
 const pkgBytes = await readFile(path.join(root, "package.json"));
 const lockBytes = await readFile(path.join(root, "package-lock.json"));
 const pkg = JSON.parse(pkgBytes);
@@ -17,12 +30,16 @@ const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
 await mkdir(folder, { recursive: true });
 
 function runNpm(args) {
-  const result = spawnSync(npm, args, {
-    cwd: root,
-    encoding: "utf8",
-    maxBuffer: 30e6,
-    env: { ...process.env, npm_config_update_notifier: "false" },
-  });
+  const result = spawnSync(
+    npmCli ? process.execPath : "npm",
+    npmCli ? [npmCli, ...args] : args,
+    {
+      cwd: root,
+      encoding: "utf8",
+      maxBuffer: 30e6,
+      env: { ...process.env, npm_config_update_notifier: "false" },
+    },
+  );
   if (result.status !== 0)
     throw new Error(
       `npm ${args.join(" ")} failed. No package changes were attempted.\n${result.stderr || result.error}`,
@@ -60,6 +77,22 @@ for (const [filename, format, omitDev] of [
   ];
   const bom = JSON.parse(runNpm(args));
   if (format === "cyclonedx") {
+    // npm can emit Git's scp-style repository shorthand where CycloneDX needs
+    // an IRI. Preserve the original declaration alongside a valid SSH URI.
+    for (const component of bom.components || []) {
+      for (const reference of component.externalReferences || []) {
+        const scp =
+          reference.type === "vcs" &&
+          reference.url.match(/^([a-zA-Z0-9_.-]+)@([a-zA-Z0-9.-]+):([^\s]+)$/);
+        if (!scp) continue;
+        component.properties ||= [];
+        component.properties.push({
+          name: "musclescout:original-vcs-reference",
+          value: reference.url,
+        });
+        reference.url = `ssh://${scp[1]}@${scp[2]}/${scp[3]}`;
+      }
+    }
     // npm uses the checkout directory name here; use the actual package name.
     bom.metadata.component.name = pkg.name;
     bom.metadata.component.properties.push(
@@ -119,13 +152,24 @@ const entries = Object.entries(lock.packages)
     bundledDependencies: p.bundleDependencies || p.bundledDependencies || [],
   }))
   .sort((a, b) => a.location.localeCompare(b.location));
+const bundlePath = path.join(folder, "bundled-artifacts.json");
+const bundleEvidence = existsSync(bundlePath)
+  ? JSON.parse(await readFile(bundlePath, "utf8"))
+  : null;
+const bundleObserved =
+  bundleEvidence?.integrityVerified &&
+  bundleEvidence.lockfileIntegrity ===
+    lock.packages["node_modules/@tailwindcss/oxide-wasm32-wasi"]?.integrity &&
+  bundleEvidence.unresolvedRequestedPackages?.length === 0;
 const gaps = [
   {
     component: "@tailwindcss/oxide-wasm32-wasi@4.3.3",
     status:
       "npm 11.19.0 lock-only SBOM export returned ESBOMPROBLEMS during the documentation audit",
-    detail:
-      "Optional WASM package is not installed on this macOS host. Its metadata declares bundled dependencies; four dependency edges have no separately resolved lockfile entry. Their exact bundled versions are not inferred.",
+    detail: bundleObserved
+      ? "Exact bundled versions were observed from the integrity-verified optional archive. See bundled-artifacts.json. The npm lock-only graph-export issue remains historical tool behavior; inspected archive packages are separate from the installed graph."
+      : "Optional WASM bundled edges lack separately resolved lock entries; inspect the exact locked archive before asserting their versions.",
+    resolutionEvidence: bundleObserved ? "bundled-artifacts.json" : null,
     unresolvedBundledRanges: {
       "@emnapi/core": "^1.11.1",
       "@emnapi/wasi-threads": "^1.2.2",
@@ -206,7 +250,7 @@ await save("manifest.json", {
     : null,
   limitations: [
     "Installed graph SBOMs are platform-specific and not a browser-bundle or container OS SBOM.",
-    "Lockfile inventory includes optional platform packages; bundled files without separate resolved versions remain an explicit gap.",
+    "Lockfile inventory includes optional platform packages; exact inspected bundled package versions are recorded separately in bundled-artifacts.json, when its integrity matches the lock.",
     "npm licenses/advisories do not grant rights to third-party vehicle photos or listing data.",
   ],
 });

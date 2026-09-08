@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-09-08T17:31:26.781936+00:00",
+  "staticFilesScanned": 144,
+  "configuredSecretValuesChecked": 1,
+  "filesContainingConfiguredSecrets": [],
+  "publicAds": 3120,
+  "forbiddenPublicFieldsPresent": {
+    "identifier": 0,
+    "evidenceRef": 0,
+    "originalSellerText": 0,
+    "userOverrides": 0,
+    "sourceRecord": 0,
+    "isSample": 0
+  },
+  "autotraderAds": 0,
+  "zeroAskingPrices": 0
+}

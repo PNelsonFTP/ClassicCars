@@ -1,0 +1,2137 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-09-08T17:23:54.959Z",
+  "basis": "Local configuration, retained observations, durable checkpoints and historical run records. This report makes no network requests.",
+  "nationwideCompleteness": "not established",
+  "sources": [
+    {
+      "sourceId": "classiccars",
+      "name": "ClassicCars.com",
+      "enabled": true,
+      "policyStatus": "partial",
+      "documentedScope": "1960–1989 · three models · 500-mile source discovery from 60187",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [
+            "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
+            "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
+            "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&ps=60&s=datelisted&zip=60187"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "classic-only-queries",
+            "urls": []
+          },
+          "checkpointId": "classiccars:regional:aef052e1670468dbd712f2fe",
+          "checkpointCycle": 1,
+          "configuredCatalogStatus": "configured-checkpoint-exhausted",
+          "counts": {
+            "catalogPages": 25,
+            "completed": 25,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "Checkpoint exhausted, but no explicit terminal-page provenance was retained by the older collector.",
+          "freshness": {
+            "adsObservedInThisScope": 53,
+            "freshObservedAds": 53,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": "2026-09-08T17:15:50.403Z",
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": {
+            "status": "partial",
+            "startedAt": "2026-09-08T17:15:40.231Z",
+            "finishedAt": "2026-09-08T17:17:49.097Z",
+            "error": null
+          },
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [
+            "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&ps=60&s=datelisted",
+            "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&ps=60&s=datelisted",
+            "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&ps=60&s=datelisted"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "classic-only-queries",
+            "urls": []
+          },
+          "checkpointId": "classiccars:nationwide:8e4ed3aec624803f2b1b48f3",
+          "checkpointCycle": 1,
+          "configuredCatalogStatus": "configured-checkpoint-exhausted",
+          "counts": {
+            "catalogPages": 51,
+            "completed": 51,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "Checkpoint exhausted, but no explicit terminal-page provenance was retained by the older collector.",
+          "freshness": {
+            "adsObservedInThisScope": 2891,
+            "freshObservedAds": 2891,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": "2026-09-08T17:23:23.472Z",
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": {
+            "status": "partial",
+            "startedAt": "2026-09-08T17:19:28.284Z",
+            "finishedAt": "2026-09-08T17:23:23.522Z",
+            "error": null
+          },
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "volo",
+      "name": "Volo Museum Auto Sales",
+      "enabled": true,
+      "policyStatus": "partial",
+      "documentedScope": "Volo, IL · broad inventory",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [
+            "https://www.volocars.com/vehicles"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": "volo:regional:ed209aa95381978862c4d8db",
+          "checkpointCycle": 1,
+          "configuredCatalogStatus": "configured-checkpoint-exhausted",
+          "counts": {
+            "catalogPages": 2,
+            "completed": 2,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "Checkpoint exhausted, but no explicit terminal-page provenance was retained by the older collector.",
+          "freshness": {
+            "adsObservedInThisScope": 50,
+            "freshObservedAds": 50,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": "2026-09-08T17:17:51.126Z",
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": {
+            "status": "partial",
+            "startedAt": "2026-09-08T17:17:49.263Z",
+            "finishedAt": "2026-09-08T17:18:00.186Z",
+            "error": null
+          },
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [
+            "https://www.volocars.com/vehicles"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "not-run-with-durable-checkpoints",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "grauto",
+      "name": "GR Auto Gallery",
+      "enabled": true,
+      "policyStatus": "partial",
+      "documentedScope": "MI / IN branches",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [
+            "https://www.grautogallery.com/vehicles"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": "grauto:regional:e8b0bb9ddc37499d0026f629",
+          "checkpointCycle": 1,
+          "configuredCatalogStatus": "configured-checkpoint-exhausted",
+          "counts": {
+            "catalogPages": 5,
+            "completed": 5,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "Checkpoint exhausted, but no explicit terminal-page provenance was retained by the older collector.",
+          "freshness": {
+            "adsObservedInThisScope": 46,
+            "freshObservedAds": 46,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": "2026-09-08T17:18:40.834Z",
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": {
+            "status": "partial",
+            "startedAt": "2026-09-08T17:18:00.374Z",
+            "finishedAt": "2026-09-08T17:18:40.860Z",
+            "error": null
+          },
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [
+            "https://www.grautogallery.com/vehicles"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "not-run-with-durable-checkpoints",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "admcars",
+      "name": "American Dream Machines",
+      "enabled": true,
+      "policyStatus": "partial",
+      "documentedScope": "Des Moines, IA",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [
+            "https://www.admcars.com/inventory.htm"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": "admcars:regional:6c4dfd126ac0b83596b0f3b9",
+          "checkpointCycle": 1,
+          "configuredCatalogStatus": "configured-checkpoint-exhausted",
+          "counts": {
+            "catalogPages": 4,
+            "completed": 4,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [
+            {
+              "queryId": "6c4dfd126ac0b83596b0f3b9",
+              "url": "https://www.admcars.com/isapi_xml.php?module=inventory&offset=75&orderby=price%2Cdesc&sold=Available",
+              "observedAt": "2026-09-08T17:18:56.304Z",
+              "evidenceHash": "eead73c1c973af77d82aa096264bf3a85a4d57ef03f7e3966194763ce5609dab",
+              "parserVersion": "admcars-v1",
+              "cacheHit": false,
+              "provenance": "retained-observation"
+            }
+          ],
+          "terminalEvidenceLimit": "Recorded parser output establishes only the configured page chain; remote filters and broader coverage need source-specific verification.",
+          "freshness": {
+            "adsObservedInThisScope": 38,
+            "freshObservedAds": 38,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": "2026-09-08T17:18:56.304Z",
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": {
+            "status": "partial",
+            "startedAt": "2026-09-08T17:18:41.023Z",
+            "finishedAt": "2026-09-08T17:18:56.321Z",
+            "error": null
+          },
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [
+            "https://www.admcars.com/inventory.htm"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "not-run-with-durable-checkpoints",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "midwest",
+      "name": "Midwest Muscle Cars",
+      "enabled": true,
+      "policyStatus": "complete",
+      "documentedScope": "Lake Zurich, IL",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [
+            "https://www.midwestmusclecars.com/listings/sale/"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": "midwest:regional:d36bfb15d4147186d81376a0",
+          "checkpointCycle": 2,
+          "configuredCatalogStatus": "configured-checkpoint-exhausted",
+          "counts": {
+            "catalogPages": 1,
+            "completed": 1,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [
+            {
+              "queryId": "d36bfb15d4147186d81376a0",
+              "url": "https://www.midwestmusclecars.com/listings/sale/",
+              "observedAt": "2026-09-08T17:18:56.723Z",
+              "evidenceHash": "211ab49b496dca99115db383a3aebb70a36b5ef138d4cf1df6dcc14000384458",
+              "parserVersion": "midwest-v1",
+              "cacheHit": false,
+              "provenance": "retained-observation"
+            }
+          ],
+          "terminalEvidenceLimit": "Recorded parser output establishes only the configured page chain; remote filters and broader coverage need source-specific verification.",
+          "freshness": {
+            "adsObservedInThisScope": 3,
+            "freshObservedAds": 3,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": "2026-09-08T17:18:56.723Z",
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": {
+            "status": "complete",
+            "startedAt": "2026-09-08T17:18:56.483Z",
+            "finishedAt": "2026-09-08T17:18:56.743Z",
+            "error": null
+          },
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [
+            "https://www.midwestmusclecars.com/listings/sale/"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "not-run-with-durable-checkpoints",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "nsclassics",
+      "name": "North Shore Classics",
+      "enabled": true,
+      "policyStatus": "partial",
+      "documentedScope": "Mundelein, IL",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [
+            "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=0&orderby=year%2Cmake%2Cmodel&pageID=741"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": "nsclassics:regional:0e0a6a3071baeecd70a322ac",
+          "checkpointCycle": 1,
+          "configuredCatalogStatus": "configured-checkpoint-exhausted",
+          "counts": {
+            "catalogPages": 6,
+            "completed": 6,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [
+            {
+              "queryId": "0e0a6a3071baeecd70a322ac",
+              "url": "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=120&orderby=year%2Cmake%2Cmodel&pageID=741",
+              "observedAt": "2026-09-08T17:19:22.052Z",
+              "evidenceHash": "85b7591e0029d02d06eca7226140b3b7fb73fe756d8a9c603a3ef7b00c7c2516",
+              "parserVersion": "nsclassics-v1",
+              "cacheHit": false,
+              "provenance": "retained-observation"
+            }
+          ],
+          "terminalEvidenceLimit": "Recorded parser output establishes only the configured page chain; remote filters and broader coverage need source-specific verification.",
+          "freshness": {
+            "adsObservedInThisScope": 12,
+            "freshObservedAds": 12,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": "2026-09-08T17:19:12.109Z",
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": {
+            "status": "partial",
+            "startedAt": "2026-09-08T17:18:56.896Z",
+            "finishedAt": "2026-09-08T17:19:22.061Z",
+            "error": null
+          },
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [
+            "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=0&orderby=year%2Cmake%2Cmodel&pageID=741"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "not-run-with-durable-checkpoints",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "jsmotors",
+      "name": "J & S Motors",
+      "enabled": true,
+      "policyStatus": "partial",
+      "documentedScope": "Fairmount, IN",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [
+            "https://jsmotors.com/collections/all"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": "jsmotors:regional:91c10634ba72a97f2181ee2e",
+          "checkpointCycle": 1,
+          "configuredCatalogStatus": "configured-checkpoint-exhausted",
+          "counts": {
+            "catalogPages": 2,
+            "completed": 2,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "Checkpoint exhausted, but no explicit terminal-page provenance was retained by the older collector.",
+          "freshness": {
+            "adsObservedInThisScope": 24,
+            "freshObservedAds": 24,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": "2026-09-08T17:19:27.811Z",
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": {
+            "status": "partial",
+            "startedAt": "2026-09-08T17:19:22.228Z",
+            "finishedAt": "2026-09-08T17:19:27.843Z",
+            "error": null
+          },
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [
+            "https://jsmotors.com/collections/all"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "not-run-with-durable-checkpoints",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "500classic",
+      "name": "500 Classic Auto Sales",
+      "enabled": true,
+      "policyStatus": "partial",
+      "documentedScope": "Knightstown, IN · first page only",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [
+            "https://www.500classicauto.com/cars-for-sale"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": "500classic:regional:1ca3bc21d94e59d8074815ee",
+          "checkpointCycle": 1,
+          "configuredCatalogStatus": "partial",
+          "counts": {
+            "catalogPages": 1,
+            "completed": 0,
+            "pending": 1,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 3,
+            "freshObservedAds": 3,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": "2026-09-08T02:32:29.107Z",
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": {
+            "status": "blocked",
+            "startedAt": "2026-09-08T17:19:28.006Z",
+            "finishedAt": "2026-09-08T17:19:28.007Z",
+            "error": "Source HTTP 403; stopped without bypass."
+          },
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [
+            "https://www.500classicauto.com/cars-for-sale"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": true,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "incidental-broad-inventory",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "not-run-with-durable-checkpoints",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "autotrader",
+      "name": "Autotrader",
+      "enabled": true,
+      "policyStatus": "partial",
+      "documentedScope": "Mustang 1960–1989 · 500-mile query",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [
+            "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?endYear=1989&searchRadius=500&startYear=1960&zip=60187"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "classic-only-queries",
+            "urls": []
+          },
+          "checkpointId": "autotrader:regional:1e8a1db4f43d196e2f51d35e",
+          "checkpointCycle": 1,
+          "configuredCatalogStatus": "partial",
+          "counts": {
+            "catalogPages": 1,
+            "completed": 0,
+            "pending": 1,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 19,
+            "freshObservedAds": 19,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": "2026-09-08T02:40:00.746Z",
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": {
+            "status": "blocked",
+            "startedAt": "2026-09-08T17:19:28.149Z",
+            "finishedAt": "2026-09-08T17:19:28.149Z",
+            "error": "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?zip=60187&startYear=1960&endYear=1989&searchRadius=500: Autotrader public Next state missing; do not use disallowed internal service endpoint"
+          },
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [
+            "https://www.autotrader.com/cars-for-sale/ford/mustang?endYear=1989&searchRadius=0&startYear=1960",
+            "https://www.autotrader.com/cars-for-sale/chevrolet/camaro?endYear=1989&searchRadius=0&startYear=1960",
+            "https://www.autotrader.com/cars-for-sale/chevrolet/corvette?endYear=1989&searchRadius=0&startYear=1960"
+          ],
+          "configuration": "configuration-consistent",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "classic-only-queries",
+            "urls": []
+          },
+          "checkpointId": "autotrader:nationwide:fc22df80e9cb74b6fe110530",
+          "checkpointCycle": 1,
+          "configuredCatalogStatus": "partial",
+          "counts": {
+            "catalogPages": 3,
+            "completed": 0,
+            "pending": 3,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": {
+            "status": "blocked",
+            "startedAt": "2026-09-08T17:23:23.792Z",
+            "finishedAt": "2026-09-08T17:23:23.793Z",
+            "error": "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?zip=60187&startYear=1960&endYear=1989&searchRadius=500: Autotrader public Next state missing; do not use disallowed internal service endpoint"
+          },
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "hemmings",
+      "name": "Hemmings",
+      "enabled": false,
+      "policyStatus": "blocked",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "autotrader-classics",
+      "name": "Classics on Autotrader",
+      "enabled": false,
+      "policyStatus": "blocked",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "craigslist",
+      "name": "Craigslist Chicago & region",
+      "enabled": false,
+      "policyStatus": "restricted",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "ebay",
+      "name": "eBay Motors",
+      "enabled": false,
+      "policyStatus": "credential-required",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "cars",
+      "name": "Cars.com",
+      "enabled": false,
+      "policyStatus": "restricted",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "cargurus",
+      "name": "CarGurus",
+      "enabled": false,
+      "policyStatus": "incomplete",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "bat",
+      "name": "Bring a Trailer",
+      "enabled": false,
+      "policyStatus": "restricted",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "carsbids",
+      "name": "Cars & Bids",
+      "enabled": false,
+      "policyStatus": "blocked",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "mecum",
+      "name": "Mecum",
+      "enabled": false,
+      "policyStatus": "permission-required",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "barrett",
+      "name": "Barrett-Jackson",
+      "enabled": false,
+      "policyStatus": "restricted",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "corvetteforum",
+      "name": "CorvetteForum",
+      "enabled": false,
+      "policyStatus": "restricted",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "mustangforum",
+      "name": "Vintage Mustang Forums",
+      "enabled": false,
+      "policyStatus": "restricted",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "camaroforum",
+      "name": "Team Camaro",
+      "enabled": false,
+      "policyStatus": "restricted",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "facebook",
+      "name": "Facebook Marketplace",
+      "enabled": false,
+      "policyStatus": "manual-only",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "jws",
+      "name": "JWS Classics",
+      "enabled": false,
+      "policyStatus": "incomplete",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "duffys",
+      "name": "Duffy’s Classic Cars",
+      "enabled": false,
+      "policyStatus": "blocked",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    },
+    {
+      "sourceId": "indyauto",
+      "name": "indyauto.com",
+      "enabled": false,
+      "policyStatus": "unsuitable",
+      "documentedScope": "Not integrated / not collected",
+      "scopes": [
+        {
+          "scope": "regional",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        },
+        {
+          "scope": "nationwide",
+          "urls": [],
+          "configuration": "unconfigured",
+          "issues": [],
+          "sameCatalogForBothScopes": false,
+          "remoteFilterAcceptance": "not established by URL inspection or offline fixtures",
+          "specialtyDiscovery": {
+            "kind": "unconfigured",
+            "urls": []
+          },
+          "checkpointId": null,
+          "checkpointCycle": null,
+          "configuredCatalogStatus": "disabled",
+          "counts": {
+            "catalogPages": 0,
+            "completed": 0,
+            "pending": 0,
+            "blocked": 0
+          },
+          "terminalPageEvidence": [],
+          "terminalEvidenceLimit": "No retained terminal-page observation establishes completion for this configuration.",
+          "freshness": {
+            "adsObservedInThisScope": 0,
+            "freshObservedAds": 0,
+            "staleObservedAds": 0,
+            "futureOrInvalidObservedAds": 0,
+            "newestObservationAt": null,
+            "staleDays": 14
+          },
+          "supportedLaterSpecialtyAds": 0,
+          "latestRun": null,
+          "nationwideCompleteness": "not established"
+        }
+      ]
+    }
+  ]
+}

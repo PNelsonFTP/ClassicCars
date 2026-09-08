@@ -21,6 +21,19 @@ const context = (id: string, url?: string) => ({
 const parse = (id: string, name: string) =>
   parseInventory(fixture(name), source(id), context(id));
 describe("sanitized live-source fixture contracts", () => {
+  it("keeps a ClassicCars zero OBO catalog offer out of asking prices", () => {
+    const html =
+      '<div class="search-result-item"><a href="/listings/view/2012338/car"><span class="h-sri-car-title">1966 Chevrolet Corvette</span></a><div class="mrg-b-sri-price">$0 (OBO)</div></div>';
+    const result = parseInventory(
+      html,
+      source("classiccars"),
+      context("classiccars"),
+    ).listings[0];
+    expect(result.askingPrice).toBeNull();
+    expect(result.priceOnRequest).toBe(true);
+    expect(result.saleType).toBe("negotiable");
+    expect(result.currentBid).toBeNull();
+  });
   it.each([
     ["volo", "volo-card-19325", "volo:19325", 88998],
     ["grauto", "grauto-card-bw4525", "grauto:bw4525", 184900],

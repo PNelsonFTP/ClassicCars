@@ -1,81 +1,67 @@
 # Software bill of materials
 
-Generated September 8, 2026 UTC for `musclescout@1.0.0` on macOS arm64, Node `26.7.0`, npm `11.19.0`. The exact generation time, input SHA-256 values and output hashes are in [manifest.json](docs/sbom/manifest.json). The application has no declared distribution license; SPDX records `NOASSERTION`. No license for the original application has been invented.
+Updated September 8, 2026 UTC for **musclescout@1.1.0**. The application has no declared distribution license; SPDX records `NOASSERTION`. Generation times, platform, input hashes and output hashes are retained in each target's manifest.
 
 ## Delivered inventories
 
-| Artifact | Format / coverage | Recorded size |
-|---|---|---:|
-| [Full installed SBOM](docs/sbom/musclescout.cdx.json) | CycloneDX 1.5 JSON; installed application, development, build, test and optional dependencies | 355 dependency components + root application |
-| [Runtime dependency SBOM](docs/sbom/musclescout-runtime.cdx.json) | CycloneDX 1.5 JSON; npm installed graph with `--omit=dev` | 129 dependency components + root application |
-| [SPDX SBOM](docs/sbom/musclescout.spdx.json) | SPDX 2.3 JSON; full installed graph | 356 packages including root, 628 relationships |
-| [Full lockfile inventory](docs/sbom/lockfile-inventory.json) | Supplemental JSON; every resolved lock entry, requested edges, integrity, license and platform metadata | 458 package installation locations |
-| [License inventory](docs/sbom/LICENSE_INVENTORY.md) | Direct dependency versions and all lock entries with declared license expressions | 458 entries; no missing license field in the current dependency lock |
-| [Provenance manifest](docs/sbom/manifest.json) | Environment, inputs, counts, output hashes and scope limits | SHA-256 for each generated artifact |
-| [Advisory report](docs/sbom/npm-audit.json) | Separate npm registry audit, queried September 8, 2026 UTC during documentation | 0 reported vulnerabilities |
-
-Counts differ by design. The lockfile contains optional packages for other operating systems/architectures and repeated installation locations. On this host, 356 lock entries are installed; npm merges identical package/version identities into 355 dependency components. The root application is additional. The runtime subset is an npm dependency classification, not an exact inventory of JavaScript that survives bundling into a browser asset.
-
-## What the records contain
-
-The npm-generated CycloneDX/SPDX records include dependency names and versions, package URLs, available distribution URLs and integrity hashes, package-declared licenses and graph relationships. Root CycloneDX naming is normalized from the checkout directory name `ClassicCars` to the actual package name `musclescout`; a lockfile hash and inventory-basis property are added. No dependency version is synthesized.
-
-The supplemental lock inventory preserves every lockfile location and its development/optional flags, OS/CPU/libc restrictions, declared regular/optional/peer dependency ranges and declared bundled dependencies. It records which locations were present on this generation host. The license table is package metadata, not a file-level analysis or a replacement for retaining dependency notices when redistributing software.
-
-The current `package-lock.json` SHA-256 is:
-
-```text
-e8e19800d9cbdfb26b673831fc73ce96641c01ec7b577836db5a424f6f4c3092
-```
-
-## Known SBOM generation limitation
-
-The attempted npm `--package-lock-only` SBOM export returned `ESBOMPROBLEMS` for the optional `@tailwindcss/oxide-wasm32-wasi@4.3.3` package. Its metadata declares bundled dependencies, and the lock-only exporter could not resolve four edges into separate exact-version entries:
-
-| Declared dependency | Declared range |
+| Artifact | Scope and observed count |
 |---|---|
-| `@emnapi/core` | `^1.11.1` |
-| `@emnapi/wasi-threads` | `^1.2.2` |
-| `@napi-rs/wasm-runtime` | `^1.1.4` |
-| `@tybys/wasm-util` | `^0.10.2` |
+| [Full CycloneDX 1.5](docs/sbom/musclescout.cdx.json) | macOS arm64 Node 26.7.0 installed graph: 368 dependency components plus the application. |
+| [Runtime CycloneDX](docs/sbom/musclescout-runtime.cdx.json) | npm `--omit=dev` graph: 128 dependency components plus the application. |
+| [SPDX 2.3](docs/sbom/musclescout.spdx.json) | 369 packages including the application; 645 relationships. |
+| [Complete lock inventory](docs/sbom/lockfile-inventory.json) | All 471 resolved installation locations, including optional platforms; 369 installed locations on the host. |
+| [Declared licenses](docs/sbom/LICENSE_INVENTORY.md) | Direct requirements and every lock entry's declared license expression. |
+| [Host artifact inventory](docs/sbom/target-artifacts.json) | 31 observed native/WASM files, owning package versions, byte sizes and SHA-256 hashes. |
+| [Bundled archive inspection](docs/sbom/bundled-artifacts.json) | Seven directly inspected package manifests; all four formerly unresolved bundled package versions observed. |
+| [Manifest](docs/sbom/manifest.json) | Hashes for the seven main/artifact reports, package/lock inputs and separate advisory report. |
+| [npm audit](docs/sbom/npm-audit.json) | Fresh full registry query on September 8, 2026, approximately 17:09 UTC: zero reported vulnerabilities. |
 
-That WASM target is not installed on this macOS host. The installed-graph exports succeeded and include the dependencies actually resolved here; the separate lock inventory retains the optional WASM package, its tarball integrity and declared bundled ranges. Exact versions inside uninspected platform tarballs are intentionally not guessed. This is an explicit inventory gap for those bundled files, not a claim that a tested macOS dependency is missing or that every other platform was validated.
+Counts differ because npm merges repeated package/version identities, the root is additional, and the lock contains optional packages for other targets. Runtime classification is not an inventory of code that survives browser bundling. Licenses are declared package metadata, not a file-by-file legal review.
 
-For a release targeting Windows/Linux/Docker/WASM, generate an installed SBOM inside the actual clean target build and inspect its bundled/native artifacts. Keep the target's platform metadata. A future lock-only exporter or a verified bundled-artifact scan may close this gap without changing application behavior. The generator retains this observation against the original lock hash as historical provenance; reevaluate it after lock changes.
+The exact current lockfile SHA-256 is `cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa`.
 
-## Regeneration
+## Resolved optional-WASM metadata gap
 
-From the project root with the intended dependencies installed:
+The original npm lock-only exporter returned `ESBOMPROBLEMS` for bundled dependencies inside `@tailwindcss/oxide-wasm32-wasi@4.3.3`. The exact locked archive was subsequently obtained and its SHA-512 integrity checked against the lock; its SHA-256 is `d5b61fbe10d237f7565032a74b03b5be6c83b309037ee407e2b5b46f24738823`. It was inspected without installing or executing it.
+
+| Previously unresolved bundled dependency | Directly observed version |
+|---|---|
+| `@emnapi/core` | 1.11.1 |
+| `@emnapi/wasi-threads` | 1.2.2 |
+| `@napi-rs/wasm-runtime` | 1.1.4 |
+| `@tybys/wasm-util` | 0.10.2 |
+
+The historical exporter limitation remains documented, but these exact package versions are no longer guessed or unknown. Archive contents are separate evidence from packages installed on a particular host. Embedded Rust/native components are not inferred from the nearest npm package version. See [inspection details](docs/BUNDLED_WASM_REVIEW.md).
+
+## Platform and container evidence
+
+A fresh official Node 24.20.0 macOS arm64 installation passed clean `npm ci`, repeated setup, migration/native SQLite, backup/restore, API startup/shutdown and schema validation; see [Node 24 evidence](docs/NODE24_VALIDATION.md). The pinned Linux arm64 Node 24 image also built and passed the isolated release smoke. Its installed dependency and native/dpkg inventories are captured in the [Linux target manifest](docs/sbom/targets/linux-arm64-node24/manifest.json) and [release evidence](docs/RELEASE_VALIDATION.md), rather than being substituted for the macOS host reports.
+
+Windows and other unexecuted architectures remain pending CI targets. Container dpkg evidence inventories observed Debian packages; manually installed OS files, the host operating system, downloaded browsers, complete embedded native component graphs and GitHub runner images remain outside the main npm SBOM. Action commits and the multi-platform Node base digest are pinned; apt and hosted runner inputs are still time-dependent.
+
+## Reproduction and review
 
 ```sh
+npm ci
 npm run sbom
+npm run sbom:artifacts
+npm run sbom:validate
+npm run sbom:compare -- path/to/previous-lockfile-inventory.json
 ```
 
-This runs [scripts/generate-sbom.mjs](scripts/generate-sbom.mjs). It calls npm's built-in offline SBOM exporter, reads package/lock metadata, validates reference closure and direct dependency presence, then writes the three SBOMs, lock inventory, license table and hash manifest. It does not install/update dependencies, start application services, read `.env`, collect cars or refresh the advisory report. On a clean machine, run `npm ci` first. Windows execution of the generator has not been verified.
+Generation and validation are offline. They read package metadata and installed artifacts, without application secrets or private inventory. The validator uses pinned local full CycloneDX/SPDX schemas with AJV, validates input/output hashes and graph references, and checks direct dependency presence. npm scp-style Git references are normalized to SSH URIs with their exact original values retained. A documented scheme normalization accommodates npm Git transport prefixes.
 
-The underlying commands are:
+`sbom:artifacts` records actual native/WASM file hashes and dpkg versions where available, then adds those report hashes to the manifest. `sbom:bundled -- --archive=/path/to/exact-locked-package.tgz` repeats the separate archive integrity/manifest check. Regenerate the main SBOM and artifacts afterward to record the new evidence hash. The [baseline-to-1.1.0 comparison](docs/validation/dependency-diff.json) adds 13 lock locations for schema validation and changes/removes no prior package locations.
 
-```sh
-npm sbom --offline --sbom-format=cyclonedx --sbom-type=application
-npm sbom --offline --omit=dev --sbom-format=cyclonedx --sbom-type=application
-npm sbom --offline --sbom-format=spdx --sbom-type=application
-```
-
-Refresh advisories separately when preparing a release:
+Refresh advisory data separately:
 
 ```sh
 npm audit --json > docs/sbom/npm-audit.json
 npm run sbom
+npm run sbom:artifacts
+npm run sbom:validate
 ```
 
-An audit command can exit nonzero when vulnerabilities are found; inspect its JSON and distinguish an advisory result from a network/configuration error. Update the observation date in this document and [validation](VALIDATION.md). An SBOM regeneration alone must not be described as a fresh vulnerability scan.
+An offline regeneration is not a new advisory query. Inspect audit JSON on nonzero exit to distinguish vulnerabilities from a service failure. Existing `deepmerge-ts` and `mysql2` overrides remain until verified upstream fixes permit their removal. Zero reported advisories is a dated result, not a guarantee of defect-free software.
 
-## Security and completeness boundaries
-
-The documentation-time full audit reported zero vulnerabilities. Earlier Prisma CLI transitive advisories were addressed with the existing `deepmerge-ts` and `mysql2` overrides, recorded in `package.json`. A zero advisory count is a dated registry result, not a guarantee of defect-free software; the SBOM is an inventory, not an exploitability assessment.
-
-These files inventory npm components. They do **not** fully inventory the host OS, the Node executable, the Playwright-downloaded browser, GitHub Actions runner images, container OS packages or every file bundled inside native/WASM artifacts. Docker has not been built/validated here. The Docker base image and Actions are referenced by version/tag rather than immutable release digests; pinning and target-image SBOMs are tracked in [future improvements](FUTURE_IMPROVEMENTS.md).
-
-PostgreSQL-related tooling may appear transitively through Prisma; MuscleScout itself uses SQLite and does not require a PostgreSQL service. Likewise, package presence does not establish that every optional library is exercised by the app.
-
-Third-party vehicle listings/photos, geocoding responses, OpenStreetMap tiles/data, ORS, npm registry services and GitHub hosting are external content/services, not npm software license grants. Their source-specific access/redistribution limitations are documented in [source coverage](SOURCE_COVERAGE.md) and [future improvements](FUTURE_IMPROVEMENTS.md). Credentials, private inventory history and user workspaces are deliberately absent from the SBOM artifacts.
+CI archives target inventories, full-schema results and dependency diffs. The diff is a review aid, not automatic license approval. Third-party listings/photos, maps and routing services have separate permissions; their availability is not granted by npm licenses. No private database, password, destination or user workspace is part of these inventories.

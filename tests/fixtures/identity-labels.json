@@ -1,0 +1,17 @@
+{
+  "description": "Synthetic labeled regression evidence. These fixtures measure behavior, not real-market precision or vehicle authenticity.",
+  "pairs": [
+    {"name":"same complete modern identifier on two sources","sameCar":true,"left":{"year":1993,"model":"Mustang","identifier":"1FACP42E1PF100001"},"right":{"year":1993,"model":"Mustang","identifier":"1FACP42E1PF100001"},"candidate":true,"strong":true},
+    {"name":"same supported historic Mustang identifier","sameCar":true,"left":{"year":1969,"model":"Mustang","identifier":"9F02M123456"},"right":{"year":1969,"model":"Mustang","identifier":"9F02M123456"},"candidate":true,"strong":true},
+    {"name":"same dealer stock with formatting variation","sameCar":true,"left":{"stockNumber":"Stock # 001-25"},"right":{"stockNumber":"00125"},"candidate":true,"strong":true},
+    {"name":"dealer alias and stock normalization","sameCar":true,"left":{"seller":{"name":"Gallery Motors Chicago","type":"dealer"},"stockNumber":"A-77"},"right":{"seller":{"name":"Gallery Motors","type":"dealer"},"stockNumber":"A77"},"candidate":true,"strong":true},
+    {"name":"common stock number at unrelated dealers","sameCar":false,"left":{"seller":{"name":"Unrelated Motors A","type":"dealer"},"stockNumber":"1001"},"right":{"seller":{"name":"Unrelated Motors B","type":"dealer"},"stockNumber":"1001"},"candidate":false,"strong":false},
+    {"name":"conflicting identifiers despite same dealer stock","sameCar":false,"left":{"year":1993,"model":"Mustang","identifier":"1FACP42E1PF100001","stockNumber":"77"},"right":{"year":1993,"model":"Mustang","identifier":"1FACP42E1PF100002","stockNumber":"77"},"candidate":true,"strong":false,"conflict":true},
+    {"name":"generic title and identical ask are not candidate evidence","sameCar":false,"left":{"title":"1969 Chevrolet Camaro","askingPrice":39900},"right":{"title":"1969 Chevrolet Camaro","askingPrice":39900},"candidate":false,"strong":false},
+    {"name":"leading zeroes remain significant in stock","sameCar":false,"left":{"stockNumber":"00125"},"right":{"stockNumber":"125"},"candidate":false,"strong":false},
+    {"name":"partial identifier supports review only","sameCar":true,"left":{"identifier":"12345678"},"right":{"identifier":"12345678"},"candidate":true,"strong":false},
+    {"name":"unsupported historic identifier retained as weak evidence","sameCar":true,"left":{"identifier":"124379N123456"},"right":{"identifier":"124379N123456"},"candidate":true,"strong":false},
+    {"name":"matching year/model/title with unrelated stock is not a match","sameCar":false,"left":{"stockNumber":"A1"},"right":{"stockNumber":"B2"},"candidate":false,"strong":false},
+    {"name":"same identifier with conflicting identity requires review","sameCar":false,"left":{"year":1993,"model":"Mustang","identifier":"1FACP42E1PF100001"},"right":{"year":1994,"model":"Mustang","identifier":"1FACP42E1PF100001"},"candidate":true,"strong":false,"conflict":true}
+  ]
+}

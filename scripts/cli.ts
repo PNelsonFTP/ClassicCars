@@ -2,6 +2,7 @@ import "dotenv/config";
 import { readFile, writeFile, mkdir, copyFile, chmod } from "node:fs/promises";
 import { db } from "../server/db";
 import { collect } from "../server/ingest/collector";
+import { collectionCliCaps } from "./collection-cli-options";
 import {
   getSettings,
   saveSettings,
@@ -21,18 +22,7 @@ try {
         await collect(
           args.includes("--nationwide") ? "nationwide" : "regional",
           args.find((a) => a.startsWith("--source="))?.split("=")[1],
-          {
-            pageCap:
-              Number(
-                args.find((a) => a.startsWith("--pages="))?.split("=")[1] ||
-                  (args.includes("--smoke") ? 1 : 0),
-              ) || undefined,
-            detailCap:
-              Number(
-                args.find((a) => a.startsWith("--details="))?.split("=")[1] ||
-                  (args.includes("--smoke") ? 1 : 0),
-              ) || undefined,
-          },
+          collectionCliCaps(args),
         ),
         null,
         2,

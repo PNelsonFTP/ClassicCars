@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "enabledByDefault": false,
+  "profile": "permitted-specialty-discovery",
+  "maxYearEvidence": "config/manufacturer-year-evidence.json",
+  "queries": [
+    { "query": "Ford Mustang SVT Cobra", "family": "SVT/Cobra", "minYear": 1993, "maxYear": 2004 },
+    { "query": "Ford Mustang Shelby GT350", "family": "Shelby GT350/GT500", "minYear": 1990, "maxYear": 2027 },
+    { "query": "Ford Mustang Shelby GT500", "family": "Shelby GT350/GT500", "minYear": 1990, "maxYear": 2027 },
+    { "query": "Ford Mustang Mach 1", "family": "Mach 1", "minYear": 1990, "maxYear": 2027 },
+    { "query": "Ford Mustang Boss", "family": "Boss", "minYear": 1990, "maxYear": 2027 },
+    { "query": "Ford Mustang GTD", "family": "GTD", "minYear": 2025, "maxYear": 2027 }
+  ],
+  "constraints": [
+    "Only send queries to a source whose permission covers its API/feed and the intended use.",
+    "Record source, profile, exact query, returned category, page cursor and observed time for each run.",
+    "Matched keywords are seller claims until documented or reviewed. Tribute/clone/replica status is retained.",
+    "Common year, text, price, engine, transmission and geography filters still apply independently.",
+    "Exhausting a query or a provider's feed does not prove nationwide completeness."
+  ]
+}

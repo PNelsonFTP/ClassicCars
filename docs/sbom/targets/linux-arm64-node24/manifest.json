@@ -1,0 +1,81 @@
+{
+  "generatedAt": "2026-09-08T17:29:59.249Z",
+  "application": {
+    "name": "musclescout",
+    "version": "1.1.0",
+    "declaredLicense": "NOASSERTION"
+  },
+  "platform": "linux",
+  "architecture": "arm64",
+  "node": "v24.20.0",
+  "npm": "11.19.0",
+  "inputs": {
+    "packageJsonSha256": "732a372baa7354b8b6de88a92549f34eaeae39db16dbaeb7ff3c664b81e4ba15",
+    "packageLockSha256": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa"
+  },
+  "counts": {
+    "musclescout.cdx.json": {
+      "dependencies": 367,
+      "rootComponents": 1,
+      "graphEntries": 368
+    },
+    "musclescout-runtime.cdx.json": {
+      "dependencies": 128,
+      "rootComponents": 1,
+      "graphEntries": 129
+    },
+    "musclescout.spdx.json": {
+      "packagesIncludingRoot": 368,
+      "relationships": 643
+    }
+  },
+  "lockEntries": 471,
+  "installedLockEntries": 368,
+  "files": [
+    {
+      "file": "musclescout.cdx.json",
+      "bytes": 447417,
+      "sha256": "76f21ff6920ac71b9d88b3f33438239d0a79606d8c2c0438f44b89f6fd0a050c"
+    },
+    {
+      "file": "musclescout-runtime.cdx.json",
+      "bytes": 159140,
+      "sha256": "845d5a80b5604fbc1ad21a3534b4f7ce54b27eb1656dc42e5beda43cef2df2ed"
+    },
+    {
+      "file": "musclescout.spdx.json",
+      "bytes": 455025,
+      "sha256": "23a3ecfd41638aa5c58ab3c743e3b2aa967746f7433f46729a8b868e06b932c5"
+    },
+    {
+      "file": "lockfile-inventory.json",
+      "bytes": 343204,
+      "sha256": "f09fb710d9555a23134f5cdc44fe98e35bc58f2dcbc5bb3873955f4f0733c0cd"
+    },
+    {
+      "file": "LICENSE_INVENTORY.md",
+      "bytes": 40140,
+      "sha256": "03282b62a86569d1fd7cb4e315f3d0b45ac75126992d937bad9830dc596b5172"
+    },
+    {
+      "file": "target-artifacts.json",
+      "bytes": 22264,
+      "sha256": "2e8a2af55311e9151e3306b06717e06dc2fcc84a97890706d1c666bf1c4546fe"
+    },
+    {
+      "file": "bundled-artifacts.json",
+      "bytes": 3337,
+      "sha256": "abc761a746c19e95087c64fba7cb6593cbc6eb5f684bf402bc29f70e5bfb5a50"
+    }
+  ],
+  "audit": {
+    "file": "npm-audit.json",
+    "sha256": "bbbb58b124f657098e123fd8f11b50ab61c00c6c33869d25ca97578d4521e989",
+    "note": "Separate advisory query; generation does not refresh it. See SBOM.md for its observation date."
+  },
+  "limitations": [
+    "Installed graph SBOMs are platform-specific and not a browser-bundle or container OS SBOM.",
+    "Lockfile inventory includes optional platform packages; exact inspected bundled package versions are recorded separately in bundled-artifacts.json, when its integrity matches the lock.",
+    "npm licenses/advisories do not grant rights to third-party vehicle photos or listing data."
+  ]
+}

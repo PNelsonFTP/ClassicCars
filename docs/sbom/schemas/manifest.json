@@ -1,0 +1,29 @@
+{
+  "retrievedAt": "2026-09-08T15:50:40.912Z",
+  "files": [
+    {
+      "file": "bom-1.5.schema.json",
+      "url": "https://cyclonedx.org/schema/bom-1.5.schema.json",
+      "sha256": "a00fcba23a44b72179ac1f288be4c3529b59f6e1b3719709a40685f177516b46",
+      "id": "http://cyclonedx.org/schema/bom-1.5.schema.json"
+    },
+    {
+      "file": "spdx.schema.json",
+      "url": "https://cyclonedx.org/schema/spdx.schema.json",
+      "sha256": "c87aa7bb5eb503d40b52ec6bf00de8045df15da7a13cea48d290cf6d36a8d2ea",
+      "id": "http://cyclonedx.org/schema/spdx.schema.json"
+    },
+    {
+      "file": "jsf-0.82.schema.json",
+      "url": "https://cyclonedx.org/schema/jsf-0.82.schema.json",
+      "sha256": "2faf5eb3651f2ae5f46091a131770d8d847bbd121139d19c85fc7051bfa58c46",
+      "id": "http://cyclonedx.org/schema/jsf-0.82.schema.json"
+    },
+    {
+      "file": "spdx-2.3.schema.json",
+      "url": "https://raw.githubusercontent.com/spdx/spdx-spec/v2.3/schemas/spdx-schema.json",
+      "sha256": "239208b7ac287b3cf5d9a9af23f9d69863971102a5e1587a27a398b43490b89b",
+      "id": "http://spdx.org/rdf/terms/2.3"
+    }
+  ]
+}

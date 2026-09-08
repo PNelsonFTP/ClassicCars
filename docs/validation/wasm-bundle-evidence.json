@@ -1,0 +1,56 @@
+{
+  "observedAt": "2026-09-08T16:36:00.418Z",
+  "package": "@tailwindcss/oxide-wasm32-wasi",
+  "version": "4.3.3",
+  "artifactUrl": "https://registry.npmjs.org/@tailwindcss/oxide-wasm32-wasi/-/oxide-wasm32-wasi-4.3.3.tgz",
+  "lockfileIntegrity": "sha512-jx1+rPhY/5Ympkktd656HBWEBLxP7dH06losBLjjf5vgCODXvi9KhtftWcMIwTFIDqBr7cRnQkdLnAG+IOlGvQ==",
+  "integrityVerified": true,
+  "sha256": "d5b61fbe10d237f7565032a74b03b5be6c83b309037ee407e2b5b46f24738823",
+  "bytes": 1829808,
+  "installed": false,
+  "codeExecuted": false,
+  "observedBundledPackages": [
+    {
+      "path": "package/node_modules/@emnapi/core/package.json",
+      "name": "@emnapi/core",
+      "version": "1.11.1",
+      "license": "MIT",
+      "sha256": "ef9b64c17a928e8197624b57df118a8f095cabbebb66e134daebc9d487541266",
+      "dependencies": {
+        "@emnapi/wasi-threads": "1.2.2",
+        "tslib": "^2.4.0"
+      }
+    },
+    {
+      "path": "package/node_modules/@emnapi/wasi-threads/package.json",
+      "name": "@emnapi/wasi-threads",
+      "version": "1.2.2",
+      "license": "MIT",
+      "sha256": "d0e6e4255490f8eb9c916a8061c21ef645c6104edf7b88d927b930a588b9a659",
+      "dependencies": {
+        "tslib": "^2.4.0"
+      }
+    },
+    {
+      "path": "package/node_modules/@napi-rs/wasm-runtime/package.json",
+      "name": "@napi-rs/wasm-runtime",
+      "version": "1.1.4",
+      "license": "MIT",
+      "sha256": "5f9db850fde3b2adaf40343485598ad1606d5177748c4cdede5ddc8696940ab1",
+      "dependencies": {
+        "@tybys/wasm-util": "^0.10.1"
+      }
+    },
+    {
+      "path": "package/node_modules/@tybys/wasm-util/package.json",
+      "name": "@tybys/wasm-util",
+      "version": "0.10.2",
+      "license": "MIT",
+      "sha256": "a7b1718e6616ae2cd235a365d03b8d5b5e8c5d6a27e9f7604a3d51ed20ca9c29",
+      "dependencies": {
+        "tslib": "^2.4.0"
+      }
+    }
+  ],
+  "unresolvedRequestedPackages": []
+}

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { listingSchema, type Listing } from "@/shared/schema";
-import { identify, generation, potentialDuplicates } from "@/shared/search";
+import { identify, generation } from "@/shared/search";
 export function ManualEntry({
   save,
   close,
@@ -219,109 +219,5 @@ export function ReviewedData({
       </div>
       {message && <p role="status">{message}</p>}
     </details>
-  );
-}
-export function GroupReview({
-  listings,
-  connected,
-  merge,
-  unmerge,
-}: {
-  listings: Listing[];
-  connected: boolean;
-  merge: (ids: string[], reason: string) => Promise<void>;
-  unmerge: (id: string) => Promise<void>;
-}) {
-  const [selected, setSelected] = useState<string[]>([]),
-    [reason, setReason] = useState(""),
-    [message, setMessage] = useState("");
-  const candidates = potentialDuplicates(listings).slice(0, 15);
-  const groups = [
-    ...new Set(
-      listings
-        .map((l) => l.groupId)
-        .filter((g): g is string => !!g?.startsWith("reviewed:")),
-    ),
-  ];
-  return (
-    <div className="panel">
-      <h2>Possible cross-posts · review</h2>
-      <p>
-        {candidates.length
-          ? `Showing ${candidates.length} title/model/year similarities for review. Similarity alone does not merge cars.`
-          : "No title-based cross-post candidates are currently suggested. Similar photos alone are never used to merge."}{" "}
-        Exact compatible identifiers and corroborated dealer stock IDs use
-        separate strong-evidence grouping.
-      </p>
-      {!connected && (
-        <p className="field-help">
-          Connect the backend to review merge/unmerge. Personal notes remain
-          attached to every source ad.
-        </p>
-      )}
-      <div className="duplicate-list">
-        {candidates.map(([a, b]) => (
-          <div key={a + b}>
-            <label className="check-label">
-              <input
-                type="checkbox"
-                disabled={!connected}
-                checked={selected.includes(a) && selected.includes(b)}
-                onChange={(e) => setSelected(e.target.checked ? [a, b] : [])}
-              />
-              <span>
-                {listings.find((l) => l.id === a)?.title}
-                <small>
-                  {listings.find((l) => l.id === a)?.sourceName} ↔{" "}
-                  {listings.find((l) => l.id === b)?.sourceName}
-                </small>
-              </span>
-            </label>
-          </div>
-        ))}
-      </div>
-      {connected && (
-        <>
-          <input
-            aria-label="Merge evidence"
-            placeholder="Evidence confirming the selected ads describe the same vehicle"
-            value={reason}
-            onChange={(e) => setReason(e.target.value)}
-          />
-          <div className="button-row">
-            <button
-              className="button secondary"
-              disabled={selected.length < 2 || reason.trim().length < 5}
-              onClick={() =>
-                merge(selected, reason)
-                  .then(() => {
-                    setSelected([]);
-                    setMessage("Ads grouped. Notes and histories preserved.");
-                  })
-                  .catch((e) => setMessage(e.message))
-              }
-            >
-              Merge reviewed ads
-            </button>
-          </div>
-          {groups.map((g) => (
-            <button
-              className="button secondary"
-              key={g}
-              onClick={() =>
-                unmerge(g)
-                  .then(() =>
-                    setMessage("Group reversed; personal data preserved."),
-                  )
-                  .catch((e) => setMessage(e.message))
-              }
-            >
-              Unmerge {listings.find((l) => l.groupId === g)?.title}
-            </button>
-          ))}
-        </>
-      )}
-      {message && <p role="status">{message}</p>}
-    </div>
   );
 }

@@ -1,6 +1,6 @@
 {
   "name": "musclescout",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
   "engines": {
@@ -27,7 +27,22 @@
     "db:generate": "prisma generate",
     "postinstall": "prisma generate",
     "verify:exports": "node --import tsx scripts/verify-exports.ts",
-    "sbom": "node scripts/generate-sbom.mjs"
+    "sbom": "node scripts/generate-sbom.mjs",
+    "import:feed": "node --import tsx scripts/import-feed.ts",
+    "test:release": "node scripts/release-smoke.mjs",
+    "build:exports": "node scripts/build-exports.mjs",
+    "sbom:validate": "node scripts/validate-sbom.mjs",
+    "sbom:artifacts": "node scripts/sbom-artifacts.mjs",
+    "sbom:compare": "node scripts/compare-sbom.mjs",
+    "coverage:report": "node --import tsx scripts/generate-scope-report.ts",
+    "service": "node scripts/local-service.mjs",
+    "verify:browser-context": "node scripts/diagnose-browser-context.mjs",
+    "verify:release-config": "node scripts/validate-release-config.mjs",
+    "benchmark:scale": "node --expose-gc --import tsx scripts/benchmark-scale.ts",
+    "sbom:bundled": "node scripts/inspect-bundled.mjs",
+    "operations:bootstrap": "node --import tsx scripts/bootstrap-operations.ts",
+    "verify:routing": "node --import tsx scripts/verify-routing.ts",
+    "verify:delivery": "node --import tsx scripts/verify-delivery.ts"
   },
   "dependencies": {
     "@fastify/cors": "^11.0.0",
@@ -57,6 +72,9 @@
     "@types/nodemailer": "^8.0.1",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.0",
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "ajv-formats-draft2019": "1.6.1",
     "prettier": "^3.9.6",
     "prisma": "7.10.0",
     "tsx": "^4.21.0",
