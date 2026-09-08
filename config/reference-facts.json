@@ -1,0 +1,91 @@
+{
+  "reviewedAt": "2026-09-08T02:28:55Z",
+  "localReviewDate": "2026-09-07",
+  "reviewTimezone": "America/Chicago",
+  "classicRequestedWindow": { "min": 1960, "max": 1989 },
+  "mustangModelYearReference": {
+    "maxVerified": 2027,
+    "ordinaryRetailPageYear": 2026,
+    "variantEstablishingMax": "Mustang GTD",
+    "sourcePublishedDate": "2026-03-23",
+    "sourceUrl": "https://www.fromtheroad.ford.com/us/en/articles/2026/mustang-gtd-applications-open-april-17",
+    "retailSourceUrl": "https://www.ford.com/cars/mustang/",
+    "preserveOnRefreshFailure": true,
+    "automaticVariantInclusion": false
+  },
+  "generations": {
+    "Mustang": [
+      { "name": "First generation", "introductionYear": 1964, "normalizedModelYearStart": 1965, "end": 1973, "preserveHalfYearWording": true },
+      { "name": "Mustang II", "start": 1974, "end": 1978 },
+      { "name": "Fox body", "start": 1979, "end": 1993 },
+      { "name": "SN95", "start": 1994, "end": 2004 },
+      { "name": "S197", "start": 2005, "end": 2014 }
+    ],
+    "Camaro": [
+      { "name": "First generation", "start": 1967, "end": 1969 },
+      { "name": "Second generation", "start": 1970, "end": 1981 },
+      { "name": "Third generation", "start": 1982, "end": 1992 }
+    ],
+    "Corvette": [
+      { "name": "C1", "start": 1953, "end": 1962 },
+      { "name": "C2", "start": 1963, "end": 1967 },
+      { "name": "C3", "start": 1968, "end": 1982 },
+      { "name": "C4", "start": 1984, "end": 1996 }
+    ]
+  },
+  "generationSources": {
+    "Mustang": "https://www.ford.com.ar/content/dam/Ford/website-assets/latam/ar/nameplate/mustang/far-mustang-catalogo-jun-19.pdf",
+    "Camaro": "https://www.chevrolet.com/legacy/camaro",
+    "Corvette": "https://www.chevrolet.com/content/dam/chevrolet/na/us/english/index/about/new-roads-issue-12/teasers/02-pdfs/CHEVY_OWNER_NR15_CORVETTE_interactive_POST_1.pdf"
+  },
+  "identityReview": { "camaroBefore": 1967, "mustangBeforeIntroduction": 1964, "corvetteYears": [1983], "bare1964Mustang": true, "maskedIdentifier": true, "conflictingYears": true },
+  "vin": { "modernDefaultStartYear": 1981, "historicalPreserved": true, "rejectHistoricalForModernLength": false, "modernChecksumIsAuthenticityEvidence": false, "source": "https://vpic.nhtsa.dot.gov/" },
+  "specialty": { "enabledByDefault": false, "selectedByDefault": ["svt-cobra"], "optionalDistinctFamilies": ["shelby-gt350", "shelby-gt500", "cobra-ii", "king-cobra", "cobra-package", "cobra-jet", "gtd", "dark-horse", "boss", "mach-1"], "bareCobraEstablishesMustang": false, "svtBroadFamilySpan": [1993, 2004], "svtContinuousOrdinaryUsProductionAssumed": false, "evidenceRequiredForVerifiedFactoryVariant": true },
+  "routing": {
+    "provider": "openrouteservice",
+    "endpoint": "https://api.openrouteservice.org/v2/directions/driving-car/json",
+    "method": "POST",
+    "credentialHeader": "Authorization",
+    "profile": "driving-car",
+    "options": { "avoid_features": ["ferries"], "avoid_borders": "all" },
+    "coordinateOrder": ["longitude", "latitude"],
+    "trafficIncluded": false,
+    "strictMaximumSeconds": 14400,
+    "standardCostEur": 0,
+    "standardDirectionsPerDay": 2000,
+    "standardDirectionsPerMinute": 40,
+    "maximumDirectionsKm": 6000,
+    "maximumWaypoints": 50,
+    "maximumHostedDrivingIsochroneMinutes": 60,
+    "credentialFreeDuration": null,
+    "attribution": "© openrouteservice by HeiGIT | Data from OpenStreetMap",
+    "resultLicense": "CC-BY-SA-4.0",
+    "optionsSource": "https://giscience.github.io/openrouteservice/api-reference/endpoints/directions/routing-options",
+    "plansSource": "https://account.heigit.org/info/plans",
+    "termsSource": "https://account.heigit.org/info/tos",
+    "trafficSource": "https://ask.openrouteservice.org/t/isochrone-trafic-data/7875",
+    "liveRoutingTested": false
+  },
+  "nominatim": {
+    "policy": "https://operations.osmfoundation.org/policies/nominatim/",
+    "maximumRequestsPerSecond": 1,
+    "recurringScriptMaximumRequestsPerMinute": 4,
+    "recommendedCliIntervalMs": 15000,
+    "singleThread": true,
+    "singleMachine": true,
+    "persistentCacheRequired": true,
+    "identifyingUserAgentRequired": true,
+    "automaticWorkerUseRecommended": false,
+    "autocompletePermitted": false,
+    "informedDeveloperChoiceAndProminentPolicyRequired": true,
+    "liveGeocodeTested": false
+  },
+  "dependenciesObserved": {
+    "next": { "version": "16.3.4", "nodeEngine": ">=20.9.0", "react19Supported": true, "source": "https://registry.npmjs.org/next/latest" },
+    "react": { "version": "19.2.8", "source": "https://registry.npmjs.org/react/latest" },
+    "tailwindcss": { "version": "4.3.3", "source": "https://registry.npmjs.org/tailwindcss/latest" },
+    "fastify": { "versionFromDocs": "5.12.1", "nodeMinimumMajor": 20, "source": "https://fastify.dev/docs/v5.7.x/Reference/" },
+    "prisma": { "currentMajorFromDocs": 8, "currentNodeMinimumMajor": 24, "supportedAlternativeMajor": 7, "source": "https://docs.prisma.io/docs/prisma-orm/quickstart/postgresql", "exactPackageVersionVerified": false },
+    "zod": { "exactPackageVersionVerified": false }
+  }
+}

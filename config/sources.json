@@ -1,0 +1,460 @@
+[
+  {
+    "id": "classiccars",
+    "name": "ClassicCars.com",
+    "category": "Marketplace",
+    "url": "https://classiccars.com",
+    "status": "partial",
+    "scope": "1960–1989 · three models · 500-mile source discovery from 60187",
+    "note": "25 catalog pages verified. 1,387 ad observations; 31 details checked. This is a discovery envelope, not a four-hour limit.",
+    "enabled": true,
+    "origins": [
+      "https://classiccars.com"
+    ],
+    "inventory": [
+      "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
+      "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
+      "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&distance=500&ps=60&s=datelisted&zip=60187"
+    ],
+    "nationwideInventory": [
+      "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&ps=60&s=datelisted",
+      "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&ps=60&s=datelisted",
+      "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&ps=60&s=datelisted"
+    ],
+    "delayMs": 5000
+  },
+  {
+    "id": "volo",
+    "name": "Volo Museum Auto Sales",
+    "category": "Classic dealer",
+    "url": "https://www.volocars.com",
+    "status": "partial",
+    "scope": "Volo, IL · broad inventory",
+    "note": "Two catalog pages verified; rentals excluded. Detail enrichment partial; hidden generic pending modal ignored.",
+    "enabled": true,
+    "origins": [
+      "https://www.volocars.com"
+    ],
+    "inventory": [
+      "https://www.volocars.com/vehicles"
+    ],
+    "nationwideInventory": [
+      "https://www.volocars.com/vehicles"
+    ],
+    "delayMs": 10000
+  },
+  {
+    "id": "grauto",
+    "name": "GR Auto Gallery",
+    "category": "Consignment dealer",
+    "url": "https://www.grautogallery.com",
+    "status": "partial",
+    "scope": "MI / IN branches",
+    "note": "Five catalog pages verified; duplicate IDs deduplicated. Later specialty claims separated.",
+    "enabled": true,
+    "origins": [
+      "https://www.grautogallery.com"
+    ],
+    "inventory": [
+      "https://www.grautogallery.com/vehicles"
+    ],
+    "nationwideInventory": [
+      "https://www.grautogallery.com/vehicles"
+    ],
+    "delayMs": 10000
+  },
+  {
+    "id": "admcars",
+    "name": "American Dream Machines",
+    "category": "Classic dealer",
+    "url": "https://www.admcars.com",
+    "status": "partial",
+    "scope": "Des Moines, IA",
+    "note": "Four public HTML inventory pages verified at 25-ad offsets. Main vehicle detail fields are isolated from similar cars.",
+    "enabled": true,
+    "origins": [
+      "https://www.admcars.com"
+    ],
+    "inventory": [
+      "https://www.admcars.com/inventory.htm"
+    ],
+    "nationwideInventory": [
+      "https://www.admcars.com/inventory.htm"
+    ],
+    "delayMs": 5000
+  },
+  {
+    "id": "midwest",
+    "name": "Midwest Muscle Cars",
+    "category": "Local consignment",
+    "url": "https://www.midwestmusclecars.com",
+    "status": "complete",
+    "scope": "Lake Zurich, IL",
+    "note": "One sale page, three target details verified. Actual listing location stated; driving route still unavailable.",
+    "enabled": true,
+    "origins": [
+      "https://www.midwestmusclecars.com"
+    ],
+    "inventory": [
+      "https://www.midwestmusclecars.com/listings/sale/"
+    ],
+    "nationwideInventory": [
+      "https://www.midwestmusclecars.com/listings/sale/"
+    ],
+    "delayMs": 5000
+  },
+  {
+    "id": "nsclassics",
+    "name": "North Shore Classics",
+    "category": "Classic dealer",
+    "url": "https://www.nsclassics.com",
+    "status": "partial",
+    "scope": "Mundelein, IL",
+    "note": "Six 24-ad offsets verified; 12 target catalog ads. One public HTML detail endpoint verified with exact ID and price/specifications; 11 details remain.",
+    "enabled": true,
+    "origins": [
+      "https://www.nsclassics.com"
+    ],
+    "inventory": [
+      "https://www.nsclassics.com/isapi_xml.php?module=inventory&pageID=741&main=&limit=24&orderby=year,make,model&offset=0"
+    ],
+    "nationwideInventory": [
+      "https://www.nsclassics.com/isapi_xml.php?module=inventory&pageID=741&main=&limit=24&orderby=year,make,model&offset=0"
+    ],
+    "delayMs": 5000
+  },
+  {
+    "id": "jsmotors",
+    "name": "J & S Motors",
+    "category": "Classic dealer",
+    "url": "https://jsmotors.com",
+    "status": "partial",
+    "scope": "Fairmount, IN",
+    "note": "Two Shopify catalog pages verified. Sold status comes from card CSS or matching Product Offer, not hidden badge text.",
+    "enabled": true,
+    "origins": [
+      "https://jsmotors.com"
+    ],
+    "inventory": [
+      "https://jsmotors.com/collections/all"
+    ],
+    "nationwideInventory": [
+      "https://jsmotors.com/collections/all"
+    ],
+    "delayMs": 5000
+  },
+  {
+    "id": "500classic",
+    "name": "500 Classic Auto Sales",
+    "category": "Classic dealer",
+    "url": "https://www.500classicauto.com",
+    "status": "partial",
+    "scope": "Knightstown, IN · first page only",
+    "note": "24 of 77 cards scanned. Detail 403; challenge-associated POST pagination intentionally not attempted.",
+    "enabled": true,
+    "origins": [
+      "https://www.500classicauto.com"
+    ],
+    "inventory": [
+      "https://www.500classicauto.com/cars-for-sale"
+    ],
+    "nationwideInventory": [
+      "https://www.500classicauto.com/cars-for-sale"
+    ],
+    "delayMs": 5000
+  },
+  {
+    "id": "autotrader",
+    "name": "Autotrader",
+    "category": "Marketplace",
+    "url": "https://www.autotrader.com",
+    "status": "partial",
+    "scope": "Mustang 1960–1989 · 500-mile query",
+    "note": "19 matching catalog ads, one detail. Active-results IDs exclude sponsored off-filter ads. Further models and nationwide queries remain unverified.",
+    "enabled": true,
+    "origins": [
+      "https://www.autotrader.com"
+    ],
+    "inventory": [
+      "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?zip=60187&startYear=1960&endYear=1989&searchRadius=500"
+    ],
+    "nationwideInventory": [
+      "https://www.autotrader.com/cars-for-sale/ford/mustang?startYear=1960&endYear=1989&searchRadius=0",
+      "https://www.autotrader.com/cars-for-sale/chevrolet/camaro?startYear=1960&endYear=1989&searchRadius=0",
+      "https://www.autotrader.com/cars-for-sale/chevrolet/corvette?startYear=1960&endYear=1989&searchRadius=0"
+    ],
+    "delayMs": 10000
+  },
+  {
+    "id": "hemmings",
+    "name": "Hemmings",
+    "category": "Marketplace",
+    "url": "https://www.hemmings.com",
+    "status": "blocked",
+    "scope": "Not integrated / not collected",
+    "note": "AI crawling restricted; homepage HTTP 403. No feed license or working pagination supplied.",
+    "enabled": false,
+    "origins": [
+      "https://www.hemmings.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "autotrader-classics",
+    "name": "Classics on Autotrader",
+    "category": "Marketplace",
+    "url": "https://classics.autotrader.com",
+    "status": "blocked",
+    "scope": "Not integrated / not collected",
+    "note": "Direct homepage HTTP 403; indexed snippets are not live inventory.",
+    "enabled": false,
+    "origins": [
+      "https://classics.autotrader.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "craigslist",
+    "name": "Craigslist Chicago & region",
+    "category": "Owner / dealer classifieds",
+    "url": "https://chicago.craigslist.org",
+    "status": "restricted",
+    "scope": "Not integrated / not collected",
+    "note": "Terms prohibit content collection without permission. Surrounding regional boards not collected.",
+    "enabled": false,
+    "origins": [
+      "https://chicago.craigslist.org"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "ebay",
+    "name": "eBay Motors",
+    "category": "Marketplace / auction",
+    "url": "https://www.ebay.com",
+    "status": "credential-required",
+    "scope": "Not integrated / not collected",
+    "note": "Official Browse API credentials and vehicle coverage validation required.",
+    "enabled": false,
+    "origins": [
+      "https://www.ebay.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "cars",
+    "name": "Cars.com",
+    "category": "Marketplace",
+    "url": "https://www.cars.com",
+    "status": "restricted",
+    "scope": "Not integrated / not collected",
+    "note": "Required filtered search and detail paths restricted; no stock count inferred.",
+    "enabled": false,
+    "origins": [
+      "https://www.cars.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "cargurus",
+    "name": "CarGurus",
+    "category": "Marketplace",
+    "url": "https://www.cargurus.com",
+    "status": "incomplete",
+    "scope": "Not integrated / not collected",
+    "note": "Public model page accessible; classic filters, current detail route and pagination not validated. Storage restrictions need review.",
+    "enabled": false,
+    "origins": [
+      "https://www.cargurus.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "bat",
+    "name": "Bring a Trailer",
+    "category": "Auction",
+    "url": "https://bringatrailer.com",
+    "status": "restricted",
+    "scope": "Not integrated / not collected",
+    "note": "Terms prohibit scraping and aggregation. No bids collected.",
+    "enabled": false,
+    "origins": [
+      "https://bringatrailer.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "carsbids",
+    "name": "Cars & Bids",
+    "category": "Auction",
+    "url": "https://carsandbids.com",
+    "status": "blocked",
+    "scope": "Not integrated / not collected",
+    "note": "Homepage returned 403; no challenge bypass.",
+    "enabled": false,
+    "origins": [
+      "https://carsandbids.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "mecum",
+    "name": "Mecum",
+    "category": "Auction",
+    "url": "https://www.mecum.com",
+    "status": "permission-required",
+    "scope": "Not integrated / not collected",
+    "note": "Written permission required for automated data collection.",
+    "enabled": false,
+    "origins": [
+      "https://www.mecum.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "barrett",
+    "name": "Barrett-Jackson",
+    "category": "Auction",
+    "url": "https://www.barrett-jackson.com",
+    "status": "restricted",
+    "scope": "Not integrated / not collected",
+    "note": "Robots denies general crawlers.",
+    "enabled": false,
+    "origins": [
+      "https://www.barrett-jackson.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "corvetteforum",
+    "name": "CorvetteForum",
+    "category": "Enthusiast classifieds",
+    "url": "https://www.corvetteforum.com",
+    "status": "restricted",
+    "scope": "Not integrated / not collected",
+    "note": "AI agents restricted; no authorized feed verified.",
+    "enabled": false,
+    "origins": [
+      "https://www.corvetteforum.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "mustangforum",
+    "name": "Vintage Mustang Forums",
+    "category": "Enthusiast classifieds",
+    "url": "https://www.vintage-mustang.com",
+    "status": "restricted",
+    "scope": "Not integrated / not collected",
+    "note": "AI agents explicitly blocked; no collection.",
+    "enabled": false,
+    "origins": [
+      "https://www.vintage-mustang.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "camaroforum",
+    "name": "Team Camaro",
+    "category": "Enthusiast classifieds",
+    "url": "https://www.camaros.net",
+    "status": "restricted",
+    "scope": "Not integrated / not collected",
+    "note": "AI agents explicitly blocked; no collection.",
+    "enabled": false,
+    "origins": [
+      "https://www.camaros.net"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "facebook",
+    "name": "Facebook Marketplace",
+    "category": "Manual entry",
+    "url": "https://www.facebook.com/marketplace",
+    "status": "manual-only",
+    "scope": "Not integrated / not collected",
+    "note": "User-provided records or exports only; no authenticated scraping.",
+    "enabled": false,
+    "origins": [
+      "https://www.facebook.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "jws",
+    "name": "JWS Classics",
+    "category": "Classic dealer",
+    "url": "https://www.jwsclassics.com",
+    "status": "incomplete",
+    "scope": "Not integrated / not collected",
+    "note": "Catalog accessible, advertised detail route fails HTTP 500. Not zero inventory.",
+    "enabled": false,
+    "origins": [
+      "https://www.jwsclassics.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "duffys",
+    "name": "Duffy’s Classic Cars",
+    "category": "Classic dealer",
+    "url": "https://www.iowaclassiccars.com",
+    "status": "blocked",
+    "scope": "Not integrated / not collected",
+    "note": "Inventory HTTP 403; stopped.",
+    "enabled": false,
+    "origins": [
+      "https://www.iowaclassiccars.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  },
+  {
+    "id": "indyauto",
+    "name": "indyauto.com",
+    "category": "Dealer candidate",
+    "url": "https://www.indyauto.com",
+    "status": "unsuitable",
+    "scope": "Not integrated / not collected",
+    "note": "Observed domain landing page has no vehicle inventory.",
+    "enabled": false,
+    "origins": [
+      "https://www.indyauto.com"
+    ],
+    "inventory": [],
+    "nationwideInventory": [],
+    "delayMs": 10000
+  }
+]

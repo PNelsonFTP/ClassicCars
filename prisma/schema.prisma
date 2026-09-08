@@ -1,0 +1,103 @@
+generator client {
+  provider = "prisma-client-js"
+}
+datasource db {
+  provider = "sqlite"
+}
+model Listing {
+  id String @id
+  sourceId String
+  sourceListingId String
+  model String?
+  year Int?
+  askingPrice Float?
+  availability String
+  saleType String
+  vehicleState String?
+  driveMinutes Float?
+  groupId String?
+  firstSeenAt DateTime
+  lastObservedAt DateTime
+  payload String
+  @@unique([sourceId, sourceListingId])
+  @@index([model, year, availability])
+  @@index([groupId])
+}
+model Observation {
+  id String @id @default(cuid())
+  listingId String
+  kind String
+  amount Float?
+  observedAt DateTime
+  evidenceRef String?
+  payload String
+  @@unique([listingId, kind, observedAt])
+  @@index([listingId, observedAt])
+}
+model IngestRun {
+  id String @id @default(cuid())
+  sourceId String
+  scope String
+  status String
+  startedAt DateTime @default(now())
+  finishedAt DateTime?
+  stats String @default("{}")
+  error String?
+}
+model Lease {
+  name String @id
+  owner String
+  expiresAt DateTime
+}
+model Setting {
+  key String @id
+  value String
+}
+model Workspace {
+  id String @id @default("personal")
+  payload String
+  revision Int @default(0)
+}
+model SavedSearch {
+  id String @id
+  name String
+  filters String
+  defaultsVersion Int
+  schedule String
+  delivery String @default("in-app")
+  bidAlerts Boolean @default(false)
+  deadlineAlerts Boolean @default(false)
+  baseline String?
+  evaluatedAt DateTime?
+}
+model Alert {
+  id String @id
+  searchId String
+  listingId String
+  kind String
+  message String
+  createdAt DateTime @default(now())
+  read Boolean @default(false)
+}
+model DeliveryAttempt {
+  id String @id
+  alertId String
+  channel String
+  status String
+  attempts Int @default(0)
+  nextAttemptAt DateTime
+  error String?
+}
+model GeoCache {
+  key String @id
+  provider String
+  payload String
+  observedAt DateTime
+}
+model GroupReview {
+  id String @id
+  listingIds String
+  action String
+  reason String
+  createdAt DateTime @default(now())
+}

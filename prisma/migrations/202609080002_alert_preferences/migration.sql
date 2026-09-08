@@ -1,0 +1,2 @@
+ALTER TABLE "SavedSearch" ADD COLUMN "bidAlerts" BOOLEAN NOT NULL DEFAULT false;
+ALTER TABLE "SavedSearch" ADD COLUMN "deadlineAlerts" BOOLEAN NOT NULL DEFAULT false;

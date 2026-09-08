@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.next*/
+out*/
+data/*
+!data/.gitkeep
+cache/
+logs/
+backups/
+test-results/
+playwright-report/
+*.tsbuildinfo
+.DS_Store
+generated/

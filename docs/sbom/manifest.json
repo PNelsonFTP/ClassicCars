@@ -1,0 +1,71 @@
+{
+  "generatedAt": "2026-09-08T03:25:44.370Z",
+  "application": {
+    "name": "musclescout",
+    "version": "1.0.0",
+    "declaredLicense": "NOASSERTION"
+  },
+  "platform": "darwin",
+  "architecture": "arm64",
+  "node": "v26.7.0",
+  "npm": "11.19.0",
+  "inputs": {
+    "packageJsonSha256": "b88651ca686d619d2eb8bdd05885368125b788c57083864e9e80f93b5e997cb0",
+    "packageLockSha256": "e8e19800d9cbdfb26b673831fc73ce96641c01ec7b577836db5a424f6f4c3092"
+  },
+  "counts": {
+    "musclescout.cdx.json": {
+      "dependencies": 355,
+      "rootComponents": 1,
+      "graphEntries": 356
+    },
+    "musclescout-runtime.cdx.json": {
+      "dependencies": 129,
+      "rootComponents": 1,
+      "graphEntries": 130
+    },
+    "musclescout.spdx.json": {
+      "packagesIncludingRoot": 356,
+      "relationships": 628
+    }
+  },
+  "lockEntries": 458,
+  "installedLockEntries": 356,
+  "files": [
+    {
+      "file": "musclescout.cdx.json",
+      "bytes": 431412,
+      "sha256": "45c98da61bfa7e9348740592dedd53d41ca1cd3b279a7a7f4875adacb08282e7"
+    },
+    {
+      "file": "musclescout-runtime.cdx.json",
+      "bytes": 160394,
+      "sha256": "d2173979228a5c621a8702ad0c9a78bec4b75a9ade70f7e7fc759288d4ff194c"
+    },
+    {
+      "file": "musclescout.spdx.json",
+      "bytes": 441233,
+      "sha256": "0e74cba0e9630411c12aed522d01ec03b8f6dc5da6f7e95a36c5fb6dd8396830"
+    },
+    {
+      "file": "lockfile-inventory.json",
+      "bytes": 334506,
+      "sha256": "d2ddeeaebb3608191af4538d2b65ed19dee42e9b7aa5351d81460d1f019d3ab1"
+    },
+    {
+      "file": "LICENSE_INVENTORY.md",
+      "bytes": 39089,
+      "sha256": "a8168249f505b8e39ce4eaa9764dfd53798194b8416f178fae80f4a00840e42d"
+    }
+  ],
+  "audit": {
+    "file": "npm-audit.json",
+    "sha256": "029221c1f61e71a1dbba30fe8b95da8701d0142f15061a6c3836d7a248f92023",
+    "note": "Separate advisory query; generation does not refresh it. See SBOM.md for its observation date."
+  },
+  "limitations": [
+    "Installed graph SBOMs are platform-specific and not a browser-bundle or container OS SBOM.",
+    "Lockfile inventory includes optional platform packages; bundled files without separate resolved versions remain an explicit gap.",
+    "npm licenses/advisories do not grant rights to third-party vehicle photos or listing data."
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "name": "musclescout",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "setup": "node --import tsx scripts/setup.ts",
+    "dev": "node --import tsx scripts/dev.ts",
+    "dev:web": "next dev --hostname 127.0.0.1 -p 3100",
+    "api": "node --import tsx server/index.ts",
+    "worker": "node --import tsx server/worker.ts",
+    "collect": "node --import tsx scripts/cli.ts collect",
+    "geocode:listings": "node --import tsx scripts/cli.ts geocode",
+    "route:listings": "node --import tsx scripts/cli.ts route",
+    "export:snapshot": "node --import tsx scripts/cli.ts snapshot",
+    "import:listings": "node --import tsx scripts/cli.ts import",
+    "config": "node --import tsx scripts/cli.ts config",
+    "backup": "node --import tsx scripts/cli.ts backup",
+    "build": "next build --webpack",
+    "serve": "node --import tsx scripts/serve.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "db:generate": "prisma generate",
+    "postinstall": "prisma generate",
+    "verify:exports": "node --import tsx scripts/verify-exports.ts",
+    "sbom": "node scripts/generate-sbom.mjs"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.0",
+    "@fastify/rate-limit": "^10.0.0",
+    "@prisma/adapter-better-sqlite3": "7.10.0",
+    "@prisma/client": "7.10.0",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-switch": "^1.2.6",
+    "@tailwindcss/postcss": "^4.1.18",
+    "cheerio": "^1.1.2",
+    "dotenv": "^17.2.3",
+    "fastify": "5.12.3",
+    "leaflet": "^1.9.4",
+    "lucide-react": "^0.577.0",
+    "next": "16.3.4",
+    "nodemailer": "^10.0.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "robots-parser": "^3.0.1",
+    "tailwindcss": "^4.1.18",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/leaflet": "^1.9.21",
+    "@types/node": "^22.19.0",
+    "@types/nodemailer": "^8.0.1",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "prettier": "^3.9.6",
+    "prisma": "7.10.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  },
+  "overrides": {
+    "deepmerge-ts": "^8.0.0",
+    "mysql2": "^3.24.0"
+  }
+}

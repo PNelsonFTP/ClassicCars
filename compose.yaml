@@ -1,0 +1,33 @@
+name: musclescout
+services:
+  api:
+    build: .
+    command: sh -c "npm run setup && npm run api"
+    env_file: .env
+    environment:
+      MUSCLESCOUT_BIND_HOST: 0.0.0.0
+      DATABASE_URL: file:/app/data/musclescout.db
+    ports: ["127.0.0.1:4410:4410"]
+    volumes: ["musclescout-data:/app/data"]
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:4410/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      retries: 6
+  worker:
+    build: .
+    command: npm run worker
+    env_file: .env
+    environment:
+      DATABASE_URL: file:/app/data/musclescout.db
+    volumes: ["musclescout-data:/app/data"]
+    depends_on:
+      api:
+        condition: service_healthy
+  web:
+    build: .
+    command: npm run serve
+    environment:
+      MUSCLESCOUT_BIND_HOST: 0.0.0.0
+    ports: ["127.0.0.1:3100:3100"]
+volumes:
+  musclescout-data:
