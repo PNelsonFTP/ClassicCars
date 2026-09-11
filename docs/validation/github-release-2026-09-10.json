@@ -1,0 +1,795 @@
+{
+  "recordedAt": "2026-09-11T00:54:38.314Z",
+  "sourceCommit": "844e9cd098e84d57d6250fe93c2d250ecc100555",
+  "ci": {
+    "id": 34548198449,
+    "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449",
+    "conclusion": "success",
+    "createdAt": "2026-09-11T00:50:34Z",
+    "updatedAt": "2026-09-11T00:53:34Z",
+    "jobs": [
+      {
+        "name": "browser",
+        "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449/job/103105277665",
+        "conclusion": "success",
+        "startedAt": "2026-09-11T00:50:36Z",
+        "completedAt": "2026-09-11T00:53:34Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npx --no-install playwright install --with-deps chromium",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:e2e",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run build:exports",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run verify:exports",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "container",
+        "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449/job/103105277787",
+        "conclusion": "success",
+        "startedAt": "2026-09-11T00:50:36Z",
+        "completedAt": "2026-09-11T00:51:40Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run docker build --pull -t musclescout-ci .",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run docker run --rm musclescout-ci npm run test:release",
+            "conclusion": "success"
+          },
+          {
+            "name": "Extract target container inventory",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "Node 24 on windows-2025",
+        "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449/job/103105277814",
+        "conclusion": "success",
+        "startedAt": "2026-09-11T00:50:36Z",
+        "completedAt": "2026-09-11T00:52:24Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run typecheck",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm test",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:release",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run node -e \"require('node:fs').copyFileSync('docs/sbom/lockfile-inventory.json','baseline-sbom.json')\"",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom:artifacts",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom:validate",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run node scripts/compare-sbom.mjs baseline-sbom.json",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "Node 24 on ubuntu-24.04",
+        "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449/job/103105277816",
+        "conclusion": "success",
+        "startedAt": "2026-09-11T00:50:38Z",
+        "completedAt": "2026-09-11T00:51:35Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run typecheck",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm test",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:release",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run node -e \"require('node:fs').copyFileSync('docs/sbom/lockfile-inventory.json','baseline-sbom.json')\"",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom:artifacts",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom:validate",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run node scripts/compare-sbom.mjs baseline-sbom.json",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "Node 24 on macos-15",
+        "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449/job/103105277891",
+        "conclusion": "success",
+        "startedAt": "2026-09-11T00:50:43Z",
+        "completedAt": "2026-09-11T00:52:07Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run typecheck",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm test",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:release",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run node -e \"require('node:fs').copyFileSync('docs/sbom/lockfile-inventory.json','baseline-sbom.json')\"",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom:artifacts",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom:validate",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run node scripts/compare-sbom.mjs baseline-sbom.json",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "Node 22.18.0 on ubuntu-24.04",
+        "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449/job/103105277899",
+        "conclusion": "success",
+        "startedAt": "2026-09-11T00:50:36Z",
+        "completedAt": "2026-09-11T00:51:33Z",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm ci",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run typecheck",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm test",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run test:release",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run node -e \"require('node:fs').copyFileSync('docs/sbom/lockfile-inventory.json','baseline-sbom.json')\"",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom:artifacts",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm run sbom:validate",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run node scripts/compare-sbom.mjs baseline-sbom.json",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@820762786026740c76f36085b0efc47a31fe5020",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "targets": [
+    {
+      "name": "sbom-ubuntu-24.04-node-24",
+      "generatedAt": "2026-09-11T00:51:26.558Z",
+      "platform": "linux",
+      "architecture": "x64",
+      "node": "v24.20.0",
+      "npm": "11.19.0",
+      "inputs": {
+        "packageJsonSha256": "732a372baa7354b8b6de88a92549f34eaeae39db16dbaeb7ff3c664b81e4ba15",
+        "packageLockSha256": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa"
+      },
+      "counts": {
+        "musclescout.cdx.json": {
+          "dependencies": 367,
+          "rootComponents": 1,
+          "graphEntries": 368
+        },
+        "musclescout-runtime.cdx.json": {
+          "dependencies": 128,
+          "rootComponents": 1,
+          "graphEntries": 129
+        },
+        "musclescout.spdx.json": {
+          "packagesIncludingRoot": 368,
+          "relationships": 642
+        }
+      },
+      "lockEntries": 471,
+      "installedLockEntries": 368,
+      "nativeAndWasmFiles": 30,
+      "osPackageCount": 1211,
+      "manifestSha256": "457c23ac2eabf6bcb27c7583d3d98b1820aeddc31dc4c9ddc231078d6f0bfa75",
+      "artifact": {
+        "id": 10179812977,
+        "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449/artifacts/10179812977",
+        "digest": "sha256:bd62e3ea600543b16475d759907b5df8cc470b2d9540d14578561465aed59c52",
+        "expiresAt": "2026-09-25T00:51:30Z"
+      },
+      "fileHashesVerified": true,
+      "files": [
+        {
+          "file": "musclescout.cdx.json",
+          "bytes": 447285,
+          "sha256": "a7225faac933f3051e2425d33617080d0a31f56fd34b256e21d785cac3603c5b"
+        },
+        {
+          "file": "musclescout-runtime.cdx.json",
+          "bytes": 159054,
+          "sha256": "d49251a72ab30174053bca6d5f402ecec6510e28a0e7f10146e75d802b15d529"
+        },
+        {
+          "file": "musclescout.spdx.json",
+          "bytes": 454700,
+          "sha256": "f46a583ea3abc6350837dd221269821c216e3a91bebd2aa518078008ad101ae9"
+        },
+        {
+          "file": "lockfile-inventory.json",
+          "bytes": 343204,
+          "sha256": "abf52226d1ae6602b7453a648eb10560339cb4a19eb5f9fdc58bc3542ddc6fde"
+        },
+        {
+          "file": "LICENSE_INVENTORY.md",
+          "bytes": 40140,
+          "sha256": "38906c2a80c03f7ed5db36a114aa830c572b23ce4b27411b0948c11ced5ff0d5"
+        },
+        {
+          "file": "target-artifacts.json",
+          "bytes": 146233,
+          "sha256": "17c407fc7e9a0c24948c03126e15409c22d6ceaeb2beebed4beb3b6e89787bfd"
+        },
+        {
+          "file": "bundled-artifacts.json",
+          "bytes": 3337,
+          "sha256": "abc761a746c19e95087c64fba7cb6593cbc6eb5f684bf402bc29f70e5bfb5a50"
+        }
+      ]
+    },
+    {
+      "name": "sbom-ubuntu-24.04-node-22.18.0",
+      "generatedAt": "2026-09-11T00:51:26.446Z",
+      "platform": "linux",
+      "architecture": "x64",
+      "node": "v22.18.0",
+      "npm": "10.9.3",
+      "inputs": {
+        "packageJsonSha256": "732a372baa7354b8b6de88a92549f34eaeae39db16dbaeb7ff3c664b81e4ba15",
+        "packageLockSha256": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa"
+      },
+      "counts": {
+        "musclescout.cdx.json": {
+          "dependencies": 369,
+          "rootComponents": 1,
+          "graphEntries": 370
+        },
+        "musclescout-runtime.cdx.json": {
+          "dependencies": 129,
+          "rootComponents": 1,
+          "graphEntries": 130
+        },
+        "musclescout.spdx.json": {
+          "packagesIncludingRoot": 370,
+          "relationships": 646
+        }
+      },
+      "lockEntries": 471,
+      "installedLockEntries": 370,
+      "nativeAndWasmFiles": 31,
+      "osPackageCount": 1211,
+      "manifestSha256": "604297f692fffa394c3956737663186a71fd260ac6112e4d9b5b34218c9a32a3",
+      "artifact": {
+        "id": 10179812483,
+        "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449/artifacts/10179812483",
+        "digest": "sha256:9d670bda0b4bbbfc16b392b448fa10befe0be395d76f796aec3a12fa8736f676",
+        "expiresAt": "2026-09-25T00:51:29Z"
+      },
+      "fileHashesVerified": true,
+      "files": [
+        {
+          "file": "musclescout.cdx.json",
+          "bytes": 536705,
+          "sha256": "812b6ee1b3d0536b965ffc3284a7d539ca86d5dca1bca5c7bcc95261a9a80e47"
+        },
+        {
+          "file": "musclescout-runtime.cdx.json",
+          "bytes": 187767,
+          "sha256": "df7bff8f2ce43a523a4405275cbccb3c384b939c6f8787af919d56691b5d1cf8"
+        },
+        {
+          "file": "musclescout.spdx.json",
+          "bytes": 461693,
+          "sha256": "3f9bd897bb70f04e30a5b098562f72bd6d95873b885cf95b510e37dae4f8328e"
+        },
+        {
+          "file": "lockfile-inventory.json",
+          "bytes": 343202,
+          "sha256": "8e7f97c438101862495bc8f638c5e4afe05714e43daa5bffdb23ab9f8ad4adc3"
+        },
+        {
+          "file": "LICENSE_INVENTORY.md",
+          "bytes": 40142,
+          "sha256": "17d556a2f4c8a1e89e1dc3fd737fd90324a0a789329ad1cc440151c82f83cc29"
+        },
+        {
+          "file": "target-artifacts.json",
+          "bytes": 146646,
+          "sha256": "ac92b3d9fc31f983ceb443b0498a133d7e962d1d0bf16c342fa1687fe10e392f"
+        },
+        {
+          "file": "bundled-artifacts.json",
+          "bytes": 3337,
+          "sha256": "abc761a746c19e95087c64fba7cb6593cbc6eb5f684bf402bc29f70e5bfb5a50"
+        }
+      ]
+    },
+    {
+      "name": "sbom-macos-15-node-24",
+      "generatedAt": "2026-09-11T00:51:54.752Z",
+      "platform": "darwin",
+      "architecture": "arm64",
+      "node": "v24.20.0",
+      "npm": "11.19.0",
+      "inputs": {
+        "packageJsonSha256": "732a372baa7354b8b6de88a92549f34eaeae39db16dbaeb7ff3c664b81e4ba15",
+        "packageLockSha256": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa"
+      },
+      "counts": {
+        "musclescout.cdx.json": {
+          "dependencies": 368,
+          "rootComponents": 1,
+          "graphEntries": 369
+        },
+        "musclescout-runtime.cdx.json": {
+          "dependencies": 128,
+          "rootComponents": 1,
+          "graphEntries": 129
+        },
+        "musclescout.spdx.json": {
+          "packagesIncludingRoot": 369,
+          "relationships": 644
+        }
+      },
+      "lockEntries": 471,
+      "installedLockEntries": 369,
+      "nativeAndWasmFiles": 31,
+      "osPackageCount": null,
+      "manifestSha256": "82e172c0e5538a04c92352a34872d042d3c1e783fac5ec879cb4f59d73dc744f",
+      "artifact": {
+        "id": 10179825581,
+        "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449/artifacts/10179825581",
+        "digest": "sha256:e6be05e0b3d4e4c9d2593f0ff6da67b17cd1b36fe70e2d23dfb415e62cfa919f",
+        "expiresAt": "2026-09-25T00:52:00Z"
+      },
+      "fileHashesVerified": true,
+      "files": [
+        {
+          "file": "musclescout.cdx.json",
+          "bytes": 448644,
+          "sha256": "80c859df3bfb5f01ddffa979949fbbe97b6601537c846d77c7ab2b4e81a70831"
+        },
+        {
+          "file": "musclescout-runtime.cdx.json",
+          "bytes": 159076,
+          "sha256": "5c29a1b7b0df323ee92abba3f9e4ab793ccd3d5318c01beaefd212126b9cf13a"
+        },
+        {
+          "file": "musclescout.spdx.json",
+          "bytes": 455959,
+          "sha256": "ee862bed115b8c8f144cadffd22ced9e8d5a95786b530eab2aa333b53655a97c"
+        },
+        {
+          "file": "lockfile-inventory.json",
+          "bytes": 343203,
+          "sha256": "9bdb33c241ffe3e6b01c0c7e052577fff89c675fd996c0af98ac78395174c777"
+        },
+        {
+          "file": "LICENSE_INVENTORY.md",
+          "bytes": 40141,
+          "sha256": "b14d4e2477469af286faab02905efcf556b63db482918eb309ae6294fcf8839a"
+        },
+        {
+          "file": "target-artifacts.json",
+          "bytes": 13246,
+          "sha256": "66ecba34f383be5fd5cc21a70330da30a2050d9424b57fed2b561cc7fa691b80"
+        },
+        {
+          "file": "bundled-artifacts.json",
+          "bytes": 3337,
+          "sha256": "abc761a746c19e95087c64fba7cb6593cbc6eb5f684bf402bc29f70e5bfb5a50"
+        }
+      ]
+    },
+    {
+      "name": "sbom-windows-2025-node-24",
+      "generatedAt": "2026-09-11T00:52:11.574Z",
+      "platform": "win32",
+      "architecture": "x64",
+      "node": "v24.20.0",
+      "npm": "11.19.0",
+      "inputs": {
+        "packageJsonSha256": "d4792aa8490eb8cae0f74a8e79bb2cbce2bdfa6cefc995f11995977d7dde0820",
+        "packageLockSha256": "73ee1bcb72395b2713e50ba2aeee30198d4549558dec3b605583f692ec3a95c2"
+      },
+      "counts": {
+        "musclescout.cdx.json": {
+          "dependencies": 366,
+          "rootComponents": 1,
+          "graphEntries": 367
+        },
+        "musclescout-runtime.cdx.json": {
+          "dependencies": 127,
+          "rootComponents": 1,
+          "graphEntries": 128
+        },
+        "musclescout.spdx.json": {
+          "packagesIncludingRoot": 367,
+          "relationships": 640
+        }
+      },
+      "lockEntries": 471,
+      "installedLockEntries": 367,
+      "nativeAndWasmFiles": 30,
+      "osPackageCount": null,
+      "manifestSha256": "37ffca0f837fcae2c9a30fc6058e5cc2cf7ca41cc6c3d47c93773dddc61830da",
+      "artifact": {
+        "id": 10179831512,
+        "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449/artifacts/10179831512",
+        "digest": "sha256:76cd48d8d073618329a1c5f553c10dfe5898b10f06b701f2ac2758e9473345f1",
+        "expiresAt": "2026-09-25T00:52:18Z"
+      },
+      "fileHashesVerified": true,
+      "files": [
+        {
+          "file": "musclescout.cdx.json",
+          "bytes": 445932,
+          "sha256": "3ef86217919189b69b9281847045d980ed68f01f152256ca9a42622cb51558dc"
+        },
+        {
+          "file": "musclescout-runtime.cdx.json",
+          "bytes": 157685,
+          "sha256": "9a361778aad97df629abead0242a7dbcc84f30d0f7df3d02f3336690dbb6d580"
+        },
+        {
+          "file": "musclescout.spdx.json",
+          "bytes": 453308,
+          "sha256": "b30d8aa09fdf9951920d1069306b2961b4d6c06549598d87d80127ae4d543e0a"
+        },
+        {
+          "file": "lockfile-inventory.json",
+          "bytes": 343205,
+          "sha256": "d248c3fd6198404477f9288a76cb0d9142293d1380ac4ad20537338b6fc62dd9"
+        },
+        {
+          "file": "LICENSE_INVENTORY.md",
+          "bytes": 40139,
+          "sha256": "4229066b437faa0f9fbb1e850e4177c0eec9e328d1c09f314e539ced9afce10e"
+        },
+        {
+          "file": "target-artifacts.json",
+          "bytes": 12886,
+          "sha256": "565f413f1089466f7708d16c965819b4242d83b679e072c18cff3b59b5c04464"
+        },
+        {
+          "file": "bundled-artifacts.json",
+          "bytes": 3431,
+          "sha256": "c44d0ac988afbb1bd02ff9560439ddd9131881a1cc21a337a7430996d8cce410"
+        }
+      ]
+    },
+    {
+      "name": "container-sbom",
+      "generatedAt": "2026-09-11T00:51:24.124Z",
+      "platform": "linux",
+      "architecture": "x64",
+      "node": "v24.20.0",
+      "npm": "11.19.0",
+      "inputs": {
+        "packageJsonSha256": "732a372baa7354b8b6de88a92549f34eaeae39db16dbaeb7ff3c664b81e4ba15",
+        "packageLockSha256": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa"
+      },
+      "counts": {
+        "musclescout.cdx.json": {
+          "dependencies": 367,
+          "rootComponents": 1,
+          "graphEntries": 368
+        },
+        "musclescout-runtime.cdx.json": {
+          "dependencies": 128,
+          "rootComponents": 1,
+          "graphEntries": 129
+        },
+        "musclescout.spdx.json": {
+          "packagesIncludingRoot": 368,
+          "relationships": 642
+        }
+      },
+      "lockEntries": 471,
+      "installedLockEntries": 368,
+      "nativeAndWasmFiles": 30,
+      "osPackageCount": 91,
+      "manifestSha256": "389c44f436832d9ba4d8c542f2c232c9b21fac99d99efa5f449a8a1bf6d8b5a7",
+      "artifact": {
+        "id": 10179815619,
+        "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449/artifacts/10179815619",
+        "digest": "sha256:11f6dd729c293e92ca6cccdb0f29512c72a4bd01c5c35cf46cf5769becd17a5e",
+        "expiresAt": "2026-09-25T00:51:37Z"
+      },
+      "fileHashesVerified": true,
+      "files": [
+        {
+          "file": "musclescout.cdx.json",
+          "bytes": 447285,
+          "sha256": "6deb8e4f72f202e803429e0212ad5e8765ade50c1ca9bb75c60908b86f9ca186"
+        },
+        {
+          "file": "musclescout-runtime.cdx.json",
+          "bytes": 159054,
+          "sha256": "1dbc8880889a33482080b2fcd691ab146af0b8fb9f07dffc970a72654bf4ecdc"
+        },
+        {
+          "file": "musclescout.spdx.json",
+          "bytes": 454700,
+          "sha256": "09095472996e91d44373fcd1c4b0f08188964397aa5ca4fea4563d242be3ce8a"
+        },
+        {
+          "file": "lockfile-inventory.json",
+          "bytes": 343204,
+          "sha256": "9dd0e580967871ad9c8998c1b3914233eaa75ef532e195d9755cb5443df24739"
+        },
+        {
+          "file": "LICENSE_INVENTORY.md",
+          "bytes": 40140,
+          "sha256": "8bef61d0b94e6ec9ad56a0761b7803fdbcc438b0b1a3e53749c254a4f4cf3a14"
+        },
+        {
+          "file": "target-artifacts.json",
+          "bytes": 22228,
+          "sha256": "9133e079adcc3e6a3bea810064bf82d3d78d0c8bc2c68e2e609edf945060d54d"
+        },
+        {
+          "file": "bundled-artifacts.json",
+          "bytes": 3337,
+          "sha256": "abc761a746c19e95087c64fba7cb6593cbc6eb5f684bf402bc29f70e5bfb5a50"
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "GitHub artifacts use the configured 14-day retention. This committed receipt retains target counts and file hashes; full downloaded reports are also retained in the private local backups folder.",
+    "Windows package and lock input byte hashes reflect Git CRLF checkout. The parsed lock dependency inventory is unchanged; pinned schema bytes are preserved by .gitattributes.",
+    "These SBOM checks do not refresh the separately dated September 8 advisory query, prove all embedded third-party component versions, or validate the Windows double-click launcher, autostart, Compose deployment, or public-origin access to a private backend."
+  ]
+}

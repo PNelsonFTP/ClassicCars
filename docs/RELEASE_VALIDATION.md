@@ -1,5 +1,13 @@
 # Release and supply-chain validation
 
+## Executed public release — September 10, 2026
+
+The [final GitHub run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449) on `844e9cd` passed all six jobs: Node 24 Linux/Windows/macOS, minimum Node 22.18.0 Linux, browser and Linux x64 Docker. Each native target passed 259 tests and the complete isolated release/SBOM sequence. Browser CI passed 16 tests and root/subpath builds; container build/release and inventory extraction passed. Exact target counts, report hashes and artifact links are retained in the [release receipt](validation/github-release-2026-09-10.json). The [deployed Pages site](https://pnelsonftp.github.io/ClassicCars/) passed separate live desktop/mobile and public-data checks; see [delivery](DELIVERY.md).
+
+The first remote runs identified three portability defects: Windows ESM loader paths needed file URLs, npm 10 emitted repeated SBOM identities, and Git CRLF conversion changed a pinned schema. The fixes retain every dependency location/relationship and preserve strict schema/hash/reference validation. No dependency or lockfile upgrade was needed. Windows double-click launcher/autostart and Docker Compose deployment remain separate manual/environment acceptance work.
+
+## Reproduction and scope
+
 The implemented CI matrix installs the locked dependency tree on Node24 Linux, Windows and macOS, with an additional minimum-supported Node22.18 Linux job. It runs types, unit tests, an isolated setup/migration/native-SQLite/backup/API smoke check, SBOM generation, full schema validation and a dependency inventory comparison. Browser CI exercises desktop/mobile behavior plus root and `/ClassicCars` static exports. Container CI builds the pinned image locally, runs the same isolated smoke test and extracts its target inventories. No workflow or container deployment is triggered by writing these files.
 
 ```sh
@@ -21,7 +29,7 @@ The SBOM validator uses pinned local CycloneDX 1.5 and SPDX 2.3 schemas, verifie
 
 All directly used GitHub Actions are pinned to full verified commits. The Docker base image uses a verified multi-platform Node24 digest. The workflow packages Pages directly with the pinned artifact action, avoiding a mutable action nested inside a composite uploader. Action updates and Docker/npm updates remain separate scoped Dependabot proposals. Runner images and apt packages still vary over time; record actual target contents rather than claiming a fully hermetic build. [Docker digest guidance](https://docs.docker.com/dhi/explore/security-concepts/digests/)
 
-The Docker UI contains its build-time public JSON. Refresh the export and rebuild that image explicitly, or connect the UI to the local API for current inventory. The Pages workflow remains manually dispatched and no destination has been supplied. Native Chromium 153 WebMCP registration, invocation, reload, abort cleanup and independent-filter preservation passed without a polyfill; see [browser evidence](BROWSER_CONNECTIVITY_VALIDATION.md). Actual public HTTPS-to-local-network behavior still needs the supplied authorized target environment.
+The Docker UI contains its build-time public JSON. Refresh the export and rebuild that image explicitly, or connect the UI to the local API for current inventory. The manually dispatched Pages workflow now publishes [MuscleScout](https://pnelsonftp.github.io/ClassicCars/); see [delivery evidence](DELIVERY.md). Native Chromium 153 WebMCP registration, invocation, reload, abort cleanup and independent-filter preservation passed without a polyfill; see [browser evidence](BROWSER_CONNECTIVITY_VALIDATION.md). Public HTTPS-to-local-network backend connectivity remains a separate acceptance check.
 
 
 ## Executed local review checks — September 8, 2026

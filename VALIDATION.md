@@ -1,5 +1,13 @@
 # Validation — 1.1.0
 
+## September 10 public GitHub Pages validation
+
+The [public website](https://pnelsonftp.github.io/ClassicCars/) is deployed from `ea6be78`; its [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34547932246) succeeded. Live desktop/mobile browser checks and exact public-data hash comparisons passed. The [machine-readable receipt](docs/validation/github-pages-2026-09-10.json) records 3,178 public ads, lazy detail loading, typo search, real images and zero runtime errors/missing local assets at 1440, 390 and 375 pixels. This validates static hosting; it does not establish browser permission to reach a private backend from the public origin.
+
+Publication added 11 SBOM regression tests, bringing the passing local suite to **259 tests across 26 files**, plus strict TypeScript and isolated release smoke. The exact remote matrix and publication history are recorded in [delivery status](docs/DELIVERY.md). Earlier dated checks below remain historical evidence.
+
+The final [six-job CI run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34548198449) on `844e9cd` passed: Node 24 Ubuntu/Windows/macOS, Node 22.18.0 Ubuntu, desktop/mobile browser and Linux x64 container. Each native job passed 259 tests and the isolated release/SBOM checks; browser CI passed 16 tests and both export paths. [Target evidence](docs/validation/github-release-2026-09-10.json) retains results, counts and report hashes. Downloaded SBOM report hashes were also independently checked against their manifests.
+
 ## September 10 inventory refresh checks
 
 The [refresh comparison](docs/validation/refresh-2026-09-10-comparison.md) covers original observations from `2026-09-10T20:09:42.325Z` through the final report at `2026-09-10T23:05:55.710Z`. September 8 release evidence below retains its original date and scope.
@@ -12,7 +20,7 @@ The [refresh comparison](docs/validation/refresh-2026-09-10-comparison.md) cover
 | Browser export checks | Both paths loaded real images with zero runtime errors or missing local assets; separate workspaces remained isolated. [Receipt](docs/validation/static-review-2026-09-10.json). |
 | Public data and privacy | 3,178 public ads / 3,162 groups; 32 exact detail chunks; 179 files scanned; 3,452 checks passed with no missing/unexpected ads, private fields, configured secrets, obsolete chunks or invalid asks. Both build copies match. [Receipt](docs/validation/public-export-review-2026-09-10.json). |
 | Backup | Consistent private database/environment copies created before and after collection. |
-| Runtime | Web 3100 and API 4410 restarted; worker off. No active collection remains. No push or publication configured. |
+| Runtime | Web 3100 and API 4410 restarted; worker off. No active collection remains. The later GitHub publication is recorded in [delivery status](docs/DELIVERY.md). |
 
 The configured ClassicCars daily limit ended detail collection; 500 Classic/Autotrader restrictions remain. This validates the collected snapshot, not completeness of every market or individual ad. The full 16-test browser suite, other-platform release checks, Docker image and vulnerability audit were not rerun for this refresh; their September 8 evidence follows.
 
@@ -49,7 +57,7 @@ The national-scale benchmark uses serialized in-memory batches and the real sear
 
 A successful catalog scan establishes only its configured URLs and observed terminal pages. Disabled/restricted sources are not searched through alternate identities. Fresh snapshots retain original source dates and pending/blocked detail backlog. Most real vehicles, seller claims and crossposts remain unreviewed. No real ORS route was created, and coordinates alone cannot establish four-hour eligibility.
 
-Windows launcher/CI execution, a real opted-in notification receipt, authorized auction/API import, real ORS route geometry/quota behavior and deployed HTTPS-to-local-network connectivity remain open acceptance. Root/subpath local exports and native WebMCP tests do not prove public Pages connectivity. Docker is optional and does not replace the GitHub Pages deployment path.
+Windows double-click launcher/autostart execution, a real opted-in notification receipt, authorized auction/API import, real ORS route geometry/quota behavior and deployed HTTPS-to-local-network connectivity remain open acceptance. Root/subpath exports and native WebMCP tests do not prove public-origin access to a private backend. Docker is optional and does not replace the GitHub Pages deployment path.
 
 The user reviewed the local preview and approved the final commit, push and wind down. [Delivery status](docs/DELIVERY.md) records publication and remote CI results separately from the local evidence above. The original baseline is `4835c0a`. See [handoff](HANDOFF.md) and [current improvement register](FUTURE_IMPROVEMENTS.md).
 

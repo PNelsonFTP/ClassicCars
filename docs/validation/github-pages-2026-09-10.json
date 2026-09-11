@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-09-11T00:48:21.170Z",
+  "url": "https://pnelsonftp.github.io/ClassicCars/",
+  "sourceCommit": "ea6be783a46bc37d5d7656ece71b22dadfe0e2b0",
+  "data": [
+    {
+      "path": "data/catalog.json",
+      "status": 200,
+      "bytes": 5722008,
+      "sha256": "3177111257c74e15446509cd57a9866c9d4f231b8f0755281b37f2ca287a0f01",
+      "matchesLocalPublicExport": true
+    },
+    {
+      "path": "data/snapshot.json",
+      "status": 200,
+      "bytes": 11570024,
+      "sha256": "3760f221c6334992025666676099e1cbab176c5f825ca86289af70e9d86a85e9",
+      "matchesLocalPublicExport": true
+    }
+  ],
+  "viewports": [
+    {
+      "viewport": 1440,
+      "document": 1440,
+      "saveButtonLeft": 1281.78125,
+      "saveButtonRight": 1402
+    },
+    {
+      "viewport": 390,
+      "document": 390,
+      "saveButtonLeft": 339,
+      "saveButtonRight": 371
+    },
+    {
+      "viewport": 375,
+      "document": 375,
+      "saveButtonLeft": 324,
+      "saveButtonRight": 356
+    }
+  ],
+  "snapshotGeneratedAt": "2026-09-10T23:06:00.330Z",
+  "publicAds": 3178,
+  "pageStatus": 200,
+  "typoSearch": "Camero returns Camaro",
+  "detail": {
+    "path": "data/details/78d59ef788d68144c1dfc07e.json",
+    "sha256": "78d59ef788d68144c1dfc07e2c56e0aedfb0c7df2d113852c0c9cf604415112d",
+    "matchesLocalPublicExport": true,
+    "dialogVisible": true
+  },
+  "realImageLoaded": true,
+  "runtimeErrors": [],
+  "missingLocalAssets": [],
+  "result": "passed"
+}

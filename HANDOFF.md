@@ -1,6 +1,6 @@
 # MuscleScout handoff — 1.1.0
 
-Operational status updated September 10, 2026 after the [local inventory refresh](docs/validation/refresh-2026-09-10-comparison.md). The 1.1.0 release checks remain dated September 8. Original local commits `4835c0a` (delivery) and `42a6622` (improvements) are preserved in the private prepublication Git bundle. Their public-history equivalents exclude research fixture data. The public [PNelsonFTP/ClassicCars repository](https://github.com/PNelsonFTP/ClassicCars) is configured as `origin`. [Delivery status](docs/DELIVERY.md) records the approved publication and actual remote results.
+Operational status updated September 10, 2026 after the [local inventory refresh](docs/validation/refresh-2026-09-10-comparison.md). The September 10 publication adds live Pages and remote CI evidence; earlier 1.1.0 release checks retain their September 8 dates. Original local commits `4835c0a` (delivery) and `42a6622` (improvements) are preserved in the private prepublication Git bundle. Their public-history equivalents exclude research fixture data. The public [PNelsonFTP/ClassicCars repository](https://github.com/PNelsonFTP/ClassicCars) is configured as `origin`. [Delivery status](docs/DELIVERY.md) records the approved publication and actual remote results.
 
 ## Open and review
 
@@ -51,11 +51,11 @@ Docker is an optional local packaging route. The pinned Linux arm64 image built 
 
 ## Checks and evidence
 
-September 10 checks passed: **248 tests / 25 files**, strict TypeScript, both static builds, browser export checks and a 179-file public privacy/consistency scan. [The dated validation record](VALIDATION.md) links the new receipts. The private post-refresh backup is retained; source data and personal state remain outside Git.
+The September 10 inventory refresh passed **248 tests / 25 files**, strict TypeScript, both static builds, browser export checks and a 179-file public privacy/consistency scan. Publication added 11 SBOM regression tests; the final suite passes **259 tests / 26 files**, with all six remote CI jobs and live Pages verification passing. [The dated validation record](VALIDATION.md) links the receipts. The private post-refresh backup is retained; source data and personal state remain outside Git.
 
-[VALIDATION.md](VALIDATION.md) records the September 8 results: 222 passing unit/API tests, 16 passing desktop/mobile browser tests, both static builds and final export privacy checks. The September 8 [static review receipt](docs/validation/static-review.json) matches the 3,120-ad snapshot. Clean macOS Node 24 and Linux Docker Node 24 passed the release smoke; Windows and remote GitHub CI remain unexecuted targets. Native Chromium 153 WebMCP registration/invocation/lifecycle passed without a polyfill. Local root/subpath isolation passed; public HTTPS connectivity remains a separate deployment check.
+[VALIDATION.md](VALIDATION.md) records the September 8 results: 222 passing unit/API tests, 16 passing desktop/mobile browser tests, both static builds and final export privacy checks. The September 8 [static review receipt](docs/validation/static-review.json) matches the 3,120-ad snapshot. Clean macOS Node 24 and Linux Docker Node 24 passed the release smoke. The September 10 GitHub native matrix now also passes Node 24 on Ubuntu, Windows and macOS, plus Node 22.18.0 on Ubuntu, including setup, SQLite, restore, startup and SBOM checks. The Windows double-click launcher is still a separate manual acceptance check. Native Chromium 153 WebMCP registration/invocation/lifecycle passed without a polyfill. Local root/subpath isolation passed; public HTTPS-to-private-backend connectivity remains a separate check; the static Pages site is live and verified.
 
-[SBOM.md](SBOM.md) links full/runtime CycloneDX, SPDX, all 471 lock locations/licenses, native/WASM hashes, target OS evidence and the fresh zero-vulnerability advisory query. Four formerly unresolved optional-WASM package versions were directly inspected in the integrity-verified archive. This is package inventory evidence, not blanket source-content redistribution permission.
+[SBOM.md](SBOM.md) links full/runtime CycloneDX, SPDX, all 471 lock locations/licenses, native/WASM hashes, target OS evidence and the September 8 zero-vulnerability advisory query. Four formerly unresolved optional-WASM package versions were directly inspected in the integrity-verified archive. This is package inventory evidence, not blanket source-content redistribution permission.
 
 ## Resume external acceptance when ready
 

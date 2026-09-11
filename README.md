@@ -25,7 +25,7 @@ The [September 8 release scan](docs/validation/inventory-full-scan.json) remains
 
 ## Open it
 
-Use **Node.js 24 LTS** and npm. Clean macOS arm64 Node 24.20.0 and Linux arm64 Docker Node 24.20.0 installation/release checks passed. The development host uses Node 26.7.0; Node 22.18+ remains the declared minimum, with its clean CI run still pending.
+Use **Node.js 24 LTS** and npm. Clean macOS arm64 Node 24.20.0 and Linux arm64 Docker Node 24.20.0 installation/release checks passed. The development host uses Node 26.7.0. Node 22.18+ remains the declared minimum; Node 22.18.0 now passes the Linux CI release and SBOM checks. See [current remote validation](docs/DELIVERY.md) for the full platform matrix.
 
 ```sh
 npm install
