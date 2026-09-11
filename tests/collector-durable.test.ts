@@ -283,3 +283,49 @@ describe("fresh catalog scan caps", () => {
       );
   });
 });
+
+it("separates repaired-run errors from retained source failure history", async () => {
+  const failure = "Detail layout unavailable in an earlier run";
+  memory.fails.set(
+    "https://example.com/car/m1",
+    new FetchFailure(failure, "layout"),
+  );
+  await collect("regional", "fixture", { pageCap: 10, detailCap: 10 });
+  expect(memory.runs.at(-1)).toMatchObject({ status: "blocked" });
+  expect(memory.runs.at(-1)!.error).toContain(failure);
+  const originalFailure = structuredClone(memory.runs.at(-1));
+
+  memory.fails.clear();
+  const calls = memory.calls.length;
+  await collect("regional", "fixture", { pageCap: 10, detailCap: 10 });
+  expect(memory.calls).toHaveLength(calls);
+  expect(memory.runs.at(-1)).toMatchObject({ status: "blocked" });
+  expect(memory.runs.at(-1)!.error).toBe(failure);
+  expect(JSON.parse(memory.runs.at(-1)!.stats as string).failedPages).toEqual(
+    [],
+  );
+
+  await operations.reviewSource(
+    "fixture",
+    "request-smoke",
+    "Parser repair verified against the failed fixture.",
+  );
+  await operations.reopenSourceTasks("fixture");
+  await collect("regional", "fixture", { smoke: true });
+  expect(memory.runs.at(-1)).toMatchObject({ status: "partial", error: null });
+  expect((await operations.health("fixture")).state).toBe("active");
+
+  await collect("regional", "fixture", { pageCap: 10, detailCap: 10 });
+  expect(memory.runs.at(-1)).toMatchObject({ status: "complete", error: null });
+  expect(JSON.parse(memory.runs.at(-1)!.stats as string).failedPages).toEqual(
+    [],
+  );
+  const health = await operations.health("fixture");
+  expect(health.lastFailure?.message).toBe(failure);
+  expect(
+    health.history.some(
+      (event) => event.kind === "layout" && event.reason === failure,
+    ),
+  ).toBe(true);
+  expect(memory.runs[0]).toEqual(originalFailure);
+});

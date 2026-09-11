@@ -442,7 +442,9 @@ export async function collect(
             stats: JSON.stringify(stats),
             error:
               stats.failedPages[0] ||
-              stats.accessHealth.lastFailure?.message ||
+              (status === "blocked"
+                ? stats.accessHealth.lastFailure?.message
+                : null) ||
               null,
           },
         });

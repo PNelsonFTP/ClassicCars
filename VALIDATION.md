@@ -1,5 +1,23 @@
 # Validation — 1.1.0
 
+## September 10 inventory refresh checks
+
+The [refresh comparison](docs/validation/refresh-2026-09-10-comparison.md) covers original observations from `2026-09-10T20:09:42.325Z` through the final report at `2026-09-10T23:05:55.710Z`. September 8 release evidence below retains its original date and scope.
+
+| Executed refresh check | Result |
+|---|---|
+| Parser, provenance, availability and recovery regressions | **248 tests passed across 25 files**; strict TypeScript passed. No dependency changes. |
+| Inventory comparison | 3,197 ads / 3,175 groups; 58 additions; 1,045 distinct fresh detail observations. [Aggregate evidence](docs/validation/refresh-2026-09-10-comparison.json). |
+| Root and GitHub Pages builds | `npm run build:exports` passed for `out/` and `/ClassicCars` in `out-subpath/`. |
+| Browser export checks | Both paths loaded real images with zero runtime errors or missing local assets; separate workspaces remained isolated. [Receipt](docs/validation/static-review-2026-09-10.json). |
+| Public data and privacy | 3,178 public ads / 3,162 groups; 32 exact detail chunks; 179 files scanned; 3,452 checks passed with no missing/unexpected ads, private fields, configured secrets, obsolete chunks or invalid asks. Both build copies match. [Receipt](docs/validation/public-export-review-2026-09-10.json). |
+| Backup | Consistent private database/environment copies created before and after collection. |
+| Runtime | Web 3100 and API 4410 restarted; worker off. No active collection remains. No push or publication configured. |
+
+The configured ClassicCars daily limit ended detail collection; 500 Classic/Autotrader restrictions remain. This validates the collected snapshot, not completeness of every market or individual ad. The full 16-test browser suite, other-platform release checks, Docker image and vulnerability audit were not rerun for this refresh; their September 8 evidence follows.
+
+## September 8 release validation
+
 Updated September 8, 2026 UTC. This records actual checks and separates them from external acceptance still requiring credentials, permission, a Windows target or a deployment destination. Final inventory dates are source observation dates, not software build times.
 
 | Executed check | Result |

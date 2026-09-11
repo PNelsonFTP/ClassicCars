@@ -1,5 +1,13 @@
 # Source coverage
 
+## September 10, 2026 source refresh
+
+The [latest comparison](docs/validation/refresh-2026-09-10-comparison.md) records 160 uncached catalog pages, 58 added ads, and 1,045 distinct fresh detail observations. All six active dealer detail queues are fresh and complete. ClassicCars has 870 newly observed details; its remaining work is paused at the configured 1,000-request daily limit. 500 Classic and Autotrader remain paused, and restricted or disabled sources remain uncollected. The latest ClassicCars checkpoints completed 25 regional pages and 50 nationwide pages. Dealer catalog URLs are shared across scopes; each broad dealer catalog was traversed once, with additional repair validation where required.
+
+Current source health is separate from recovered historical failures. The aggregate report contains per-source dates, request/parse counts, detail attempts, daily budgets and overlapping scope queues. Disabled or unavailable sources are not a zero-inventory finding.
+
+## Historical observations and ledger — September 8, 2026
+
 > **September 8, 2026 final review refresh:** 3,139 retained ads / 3,139 groups, 3,120 public ads, 16 coordinate records and zero actual road routes. The final pass fetched 93 fresh catalog pages and exhausted the accessible configured queues. Details and real duplicate reconciliation remain open; 500 Classic and Autotrader stayed paused. See [current scan evidence](docs/validation/inventory-full-scan.json), [scope validation](docs/CONFIGURED_SCOPE_VALIDATION.md) and [handoff](HANDOFF.md). The earlier observations and counts below remain historical evidence.
 
 

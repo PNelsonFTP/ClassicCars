@@ -1,16 +1,16 @@
 # Configured source scope validation
 
-Generated 2026-09-08T17:23:54.959Z. Local configuration, retained observations, durable checkpoints and historical run records. This report makes no network requests.
+Generated 2026-09-10T23:06:00.843Z. Local configuration, retained observations, durable checkpoints and historical run records. This report makes no network requests.
 
 No row establishes complete nationwide inventory. A terminal configured query, broad dealer catalog, fresh timestamp or matching URL parameter cannot establish that claim.
 
 | Source | Scope | Configuration | Catalog checkpoint | Observed ads / fresh | Explicit terminal observations |
 |---|---|---|---|---:|---:|
-| ClassicCars.com | regional | configuration-consistent | configured-checkpoint-exhausted | 53 / 53 | 0 |
-| ClassicCars.com | nationwide | configuration-consistent | configured-checkpoint-exhausted | 2891 / 2891 | 0 |
-| Volo Museum Auto Sales | regional | configuration-consistent | configured-checkpoint-exhausted | 50 / 50 | 0 |
+| ClassicCars.com | regional | configuration-consistent | configured-checkpoint-exhausted | 6 / 6 | 0 |
+| ClassicCars.com | nationwide | configuration-consistent | configured-checkpoint-exhausted | 2994 / 2994 | 0 |
+| Volo Museum Auto Sales | regional | configuration-consistent | configured-checkpoint-exhausted | 51 / 51 | 0 |
 | Volo Museum Auto Sales | nationwide | configuration-consistent | not-run-with-durable-checkpoints | 0 / 0 | 0 |
-| GR Auto Gallery | regional | configuration-consistent | configured-checkpoint-exhausted | 46 / 46 | 0 |
+| GR Auto Gallery | regional | configuration-consistent | configured-checkpoint-exhausted | 47 / 47 | 0 |
 | GR Auto Gallery | nationwide | configuration-consistent | not-run-with-durable-checkpoints | 0 / 0 | 0 |
 | American Dream Machines | regional | configuration-consistent | configured-checkpoint-exhausted | 38 / 38 | 1 |
 | American Dream Machines | nationwide | configuration-consistent | not-run-with-durable-checkpoints | 0 / 0 | 0 |

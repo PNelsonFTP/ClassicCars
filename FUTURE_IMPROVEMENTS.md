@@ -2,14 +2,18 @@
 
 Updated September 8, 2026 UTC for **MuscleScout 1.1.0**. The software changes for all 19 original items are implemented. Several real-world acceptance checks remain open because they require credentials, source permission, an actual Windows machine or target-environment validation. [Delivery status](docs/DELIVERY.md) records the approved final publication and remote checks. The original requirements remain available in the [archived backlog](docs/FUTURE_IMPROVEMENTS_BASELINE.md); the [implementation map](docs/IMPROVEMENTS_STATUS.md) links every item to code, tests and remaining limits.
 
+## September 10 data follow-up
+
+The [dated refresh](docs/validation/refresh-2026-09-10-comparison.md) added 58 ads and newly observed details for 1,045 distinct ads. All six active dealer detail queues are fresh and complete. ClassicCars has 870 newly observed details; its remaining work is paused at the configured 1,000-request daily limit. 500 Classic and Autotrader remain paused, and restricted or disabled sources remain uncollected. The final ClassicCars queue has 2,132 due tasks and one deferred retry; three auctions observed earlier in this run are already due again under their one-hour detail policy. Grouping, seller claims, external credentials and remote/platform acceptance still require the work described below.
+
 ## Implemented improvements
 
 | Original ID | Delivered behavior | Remaining acceptance or operational work |
 |---|---|---|
 | P1-01 | Indexed evidence ranking, conflicts, reviewed dealer aliases, conservative stock normalization, paginated/manual duplicate review, dismiss/undo and merge-history replay | Enrich and review actual crossposts; synthetic accuracy is not a market accuracy estimate. |
 | P1-02 | Vehicle/ad alert policies, optional source-added alerts, quiet baselines and source-specific price histories | Confirm real groups through evidence; grouping cannot authenticate a car. |
-| P1-03 | Durable source/query/scope pagination and independent source-wide detail queues; restart resumes bounded work | Run the outstanding permitted collection; most retained records are still catalog observations. |
-| P1-04 | Typed failures, persisted budgets, Retry-After/cooldowns, review pauses and fresh smoke recovery | Existing blocks and restrictions remain; no denied source has been declared repaired. |
+| P1-03 | Durable source/query/scope pagination and independent source-wide detail queues; restart resumes bounded work | Run the outstanding permitted collection; current remaining detail work is measured in the dated refresh report. |
+| P1-04 | Typed failures, persisted budgets, Retry-After/cooldowns, review pauses and fresh smoke recovery | Existing blocks and restrictions remain; later recovery requires dated permitted live validation and preserves failure history. |
 | P1-05 | Caller-controlled route freshness, input signatures, shared quotas and reviewed-location invalidation | Authorized ORS key and bounded real Lake Michigan detour/provider checks. |
 | P1-06 | Fair geocoder attempts, ambiguity review, explicit cache retry, validated address evidence and shared leases | Review unresolved real locations; validate any replacement provider in its target environment. |
 | P2-01 | Browser/API availability aging from original observations, with auction phase and freshness rules | Old snapshots remain dated; periodically regenerate approved public data. |
@@ -28,7 +32,7 @@ Updated September 8, 2026 UTC for **MuscleScout 1.1.0**. The software changes fo
 
 ## The cross-listing problem remains open in the real inventory
 
-**3,139 ads and 3,139 current groups do not establish 3,139 unique physical vehicles.** The initial collection had 1,576 ads before the final catalog refresh. No human review has reconciled the whole collection. Most ads still lack complete seller/stock/identifier evidence. Initial read-only analysis found 23,963 same-title/model/year lookalike pairs, including 1,156 across sources; those historical counts were produced by the old weak algorithm and are not current ranked suggestions or confirmed duplicates.
+**The September 10 inventory has 3,197 ads and 3,175 groups; these are not verified unique physical vehicles.** The initial collection had 1,576 ads before the final catalog refresh. No human review has reconciled the whole collection. Most ads still lack complete seller/stock/identifier evidence. Initial read-only analysis found 23,963 same-title/model/year lookalike pairs, including 1,156 across sources; those historical counts were produced by the old weak algorithm and are not current ranked suggestions or confirmed duplicates.
 
 The new candidate index requires corroboration and presents conflicting identifiers rather than automatically merging them. Reviewed aliases and conservative stock normalization retain raw evidence. Every original source URL, asking-price history, favorite and note survives grouping. Overlapping merge/undo sequences have regression coverage. A small labeled synthetic set measured candidate precision 0.75 and recall 1.0; it is a regression fixture, not evidence of production matching accuracy. No photo-similarity identification was introduced without appropriate image rights.
 
@@ -59,7 +63,7 @@ An HTTP block, a policy restriction, missing API credentials and an unvalidated 
 | **Duffy's Classic Cars:** inventory returns HTTP 403 | Disabled; snippets are not imported | Approved dealer feed/export or permitted access recheck |
 | **indyauto.com:** observed landing page was not usable dealer inventory | Unsuitable research candidate | Verify a genuine replacement source before adding it |
 
-The last seven successful production inventory parsers were **ClassicCars.com, Volo, GR Auto Gallery, American Dream Machines, Midwest Muscle Cars, North Shore Classics and J & S Motors**. They retain the following real collection backlog; adding resumable queues did not fetch these details:
+The following table preserves the **September 8 backlog before the September 10 refresh**. Current source totals and due/blocked queues are in the [September 10 comparison](docs/validation/refresh-2026-09-10-comparison.md); all six active dealer queues were freshly completed.
 
 | Accessible source | Retained ads | Previously completed detail records | Pending detail enrichment |
 |---|---:|---:|---:|

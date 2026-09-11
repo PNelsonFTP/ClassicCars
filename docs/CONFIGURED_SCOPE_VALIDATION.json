@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-09-08T17:23:54.959Z",
+  "generatedAt": "2026-09-10T23:06:00.843Z",
   "basis": "Local configuration, retained observations, durable checkpoints and historical run records. This report makes no network requests.",
   "nationwideCompleteness": "not established",
   "sources": [
@@ -27,7 +27,7 @@
             "urls": []
           },
           "checkpointId": "classiccars:regional:aef052e1670468dbd712f2fe",
-          "checkpointCycle": 1,
+          "checkpointCycle": 2,
           "configuredCatalogStatus": "configured-checkpoint-exhausted",
           "counts": {
             "catalogPages": 25,
@@ -38,19 +38,19 @@
           "terminalPageEvidence": [],
           "terminalEvidenceLimit": "Checkpoint exhausted, but no explicit terminal-page provenance was retained by the older collector.",
           "freshness": {
-            "adsObservedInThisScope": 53,
-            "freshObservedAds": 53,
+            "adsObservedInThisScope": 6,
+            "freshObservedAds": 6,
             "staleObservedAds": 0,
             "futureOrInvalidObservedAds": 0,
-            "newestObservationAt": "2026-09-08T17:15:50.403Z",
+            "newestObservationAt": "2026-09-10T20:52:29.074Z",
             "staleDays": 14
           },
           "supportedLaterSpecialtyAds": 0,
           "latestRun": {
-            "status": "partial",
-            "startedAt": "2026-09-08T17:15:40.231Z",
-            "finishedAt": "2026-09-08T17:17:49.097Z",
-            "error": null
+            "status": "blocked",
+            "startedAt": "2026-09-10T20:57:21.598Z",
+            "finishedAt": "2026-09-10T20:57:21.607Z",
+            "error": "Source request timed out."
           },
           "nationwideCompleteness": "not established"
         },
@@ -70,30 +70,30 @@
             "urls": []
           },
           "checkpointId": "classiccars:nationwide:8e4ed3aec624803f2b1b48f3",
-          "checkpointCycle": 1,
+          "checkpointCycle": 3,
           "configuredCatalogStatus": "configured-checkpoint-exhausted",
           "counts": {
-            "catalogPages": 51,
-            "completed": 51,
+            "catalogPages": 50,
+            "completed": 50,
             "pending": 0,
             "blocked": 0
           },
           "terminalPageEvidence": [],
           "terminalEvidenceLimit": "Checkpoint exhausted, but no explicit terminal-page provenance was retained by the older collector.",
           "freshness": {
-            "adsObservedInThisScope": 2891,
-            "freshObservedAds": 2891,
+            "adsObservedInThisScope": 2994,
+            "freshObservedAds": 2994,
             "staleObservedAds": 0,
             "futureOrInvalidObservedAds": 0,
-            "newestObservationAt": "2026-09-08T17:23:23.472Z",
+            "newestObservationAt": "2026-09-10T23:05:45.104Z",
             "staleDays": 14
           },
           "supportedLaterSpecialtyAds": 0,
           "latestRun": {
-            "status": "partial",
-            "startedAt": "2026-09-08T17:19:28.284Z",
-            "finishedAt": "2026-09-08T17:23:23.522Z",
-            "error": null
+            "status": "blocked",
+            "startedAt": "2026-09-10T22:41:15.449Z",
+            "finishedAt": "2026-09-10T23:05:45.158Z",
+            "error": "https://classiccars.com/listings/view/1989699/1967-chevrolet-camaro-for-sale-in-cadillac-michigan-49601: Daily request budget reached; no request sent."
           },
           "nationwideCompleteness": "not established"
         }
@@ -120,7 +120,7 @@
             "urls": []
           },
           "checkpointId": "volo:regional:ed209aa95381978862c4d8db",
-          "checkpointCycle": 1,
+          "checkpointCycle": 2,
           "configuredCatalogStatus": "configured-checkpoint-exhausted",
           "counts": {
             "catalogPages": 2,
@@ -131,18 +131,18 @@
           "terminalPageEvidence": [],
           "terminalEvidenceLimit": "Checkpoint exhausted, but no explicit terminal-page provenance was retained by the older collector.",
           "freshness": {
-            "adsObservedInThisScope": 50,
-            "freshObservedAds": 50,
+            "adsObservedInThisScope": 51,
+            "freshObservedAds": 51,
             "staleObservedAds": 0,
             "futureOrInvalidObservedAds": 0,
-            "newestObservationAt": "2026-09-08T17:17:51.126Z",
+            "newestObservationAt": "2026-09-10T20:34:19.302Z",
             "staleDays": 14
           },
           "supportedLaterSpecialtyAds": 0,
           "latestRun": {
-            "status": "partial",
-            "startedAt": "2026-09-08T17:17:49.263Z",
-            "finishedAt": "2026-09-08T17:18:00.186Z",
+            "status": "complete",
+            "startedAt": "2026-09-10T20:30:18.898Z",
+            "finishedAt": "2026-09-10T20:34:19.320Z",
             "error": null
           },
           "nationwideCompleteness": "not established"
@@ -206,7 +206,7 @@
             "urls": []
           },
           "checkpointId": "grauto:regional:e8b0bb9ddc37499d0026f629",
-          "checkpointCycle": 1,
+          "checkpointCycle": 3,
           "configuredCatalogStatus": "configured-checkpoint-exhausted",
           "counts": {
             "catalogPages": 5,
@@ -217,18 +217,18 @@
           "terminalPageEvidence": [],
           "terminalEvidenceLimit": "Checkpoint exhausted, but no explicit terminal-page provenance was retained by the older collector.",
           "freshness": {
-            "adsObservedInThisScope": 46,
-            "freshObservedAds": 46,
+            "adsObservedInThisScope": 47,
+            "freshObservedAds": 47,
             "staleObservedAds": 0,
             "futureOrInvalidObservedAds": 0,
-            "newestObservationAt": "2026-09-08T17:18:40.834Z",
+            "newestObservationAt": "2026-09-10T20:47:53.573Z",
             "staleDays": 14
           },
           "supportedLaterSpecialtyAds": 0,
           "latestRun": {
-            "status": "partial",
-            "startedAt": "2026-09-08T17:18:00.374Z",
-            "finishedAt": "2026-09-08T17:18:40.860Z",
+            "status": "complete",
+            "startedAt": "2026-09-10T20:39:33.876Z",
+            "finishedAt": "2026-09-10T20:47:53.584Z",
             "error": null
           },
           "nationwideCompleteness": "not established"
@@ -292,7 +292,7 @@
             "urls": []
           },
           "checkpointId": "admcars:regional:6c4dfd126ac0b83596b0f3b9",
-          "checkpointCycle": 1,
+          "checkpointCycle": 3,
           "configuredCatalogStatus": "configured-checkpoint-exhausted",
           "counts": {
             "catalogPages": 4,
@@ -304,8 +304,8 @@
             {
               "queryId": "6c4dfd126ac0b83596b0f3b9",
               "url": "https://www.admcars.com/isapi_xml.php?module=inventory&offset=75&orderby=price%2Cdesc&sold=Available",
-              "observedAt": "2026-09-08T17:18:56.304Z",
-              "evidenceHash": "eead73c1c973af77d82aa096264bf3a85a4d57ef03f7e3966194763ce5609dab",
+              "observedAt": "2026-09-10T20:28:03.485Z",
+              "evidenceHash": "1eb2c9f93a323f4d02df8456ff077af6bcc9ca1bd84974866953a3a6d63ec7ae",
               "parserVersion": "admcars-v1",
               "cacheHit": false,
               "provenance": "retained-observation"
@@ -317,14 +317,14 @@
             "freshObservedAds": 38,
             "staleObservedAds": 0,
             "futureOrInvalidObservedAds": 0,
-            "newestObservationAt": "2026-09-08T17:18:56.304Z",
+            "newestObservationAt": "2026-09-10T20:30:18.597Z",
             "staleDays": 14
           },
           "supportedLaterSpecialtyAds": 0,
           "latestRun": {
-            "status": "partial",
-            "startedAt": "2026-09-08T17:18:41.023Z",
-            "finishedAt": "2026-09-08T17:18:56.321Z",
+            "status": "complete",
+            "startedAt": "2026-09-10T20:27:48.980Z",
+            "finishedAt": "2026-09-10T20:30:18.619Z",
             "error": null
           },
           "nationwideCompleteness": "not established"
@@ -388,7 +388,7 @@
             "urls": []
           },
           "checkpointId": "midwest:regional:d36bfb15d4147186d81376a0",
-          "checkpointCycle": 2,
+          "checkpointCycle": 3,
           "configuredCatalogStatus": "configured-checkpoint-exhausted",
           "counts": {
             "catalogPages": 1,
@@ -400,7 +400,7 @@
             {
               "queryId": "d36bfb15d4147186d81376a0",
               "url": "https://www.midwestmusclecars.com/listings/sale/",
-              "observedAt": "2026-09-08T17:18:56.723Z",
+              "observedAt": "2026-09-10T20:13:24.695Z",
               "evidenceHash": "211ab49b496dca99115db383a3aebb70a36b5ef138d4cf1df6dcc14000384458",
               "parserVersion": "midwest-v1",
               "cacheHit": false,
@@ -413,14 +413,14 @@
             "freshObservedAds": 3,
             "staleObservedAds": 0,
             "futureOrInvalidObservedAds": 0,
-            "newestObservationAt": "2026-09-08T17:18:56.723Z",
+            "newestObservationAt": "2026-09-10T20:18:37.235Z",
             "staleDays": 14
           },
           "supportedLaterSpecialtyAds": 0,
           "latestRun": {
             "status": "complete",
-            "startedAt": "2026-09-08T17:18:56.483Z",
-            "finishedAt": "2026-09-08T17:18:56.743Z",
+            "startedAt": "2026-09-10T20:18:27.120Z",
+            "finishedAt": "2026-09-10T20:18:37.251Z",
             "error": null
           },
           "nationwideCompleteness": "not established"
@@ -484,7 +484,7 @@
             "urls": []
           },
           "checkpointId": "nsclassics:regional:0e0a6a3071baeecd70a322ac",
-          "checkpointCycle": 1,
+          "checkpointCycle": 3,
           "configuredCatalogStatus": "configured-checkpoint-exhausted",
           "counts": {
             "catalogPages": 6,
@@ -496,8 +496,8 @@
             {
               "queryId": "0e0a6a3071baeecd70a322ac",
               "url": "https://www.nsclassics.com/isapi_xml.php?limit=24&main=&module=inventory&offset=120&orderby=year%2Cmake%2Cmodel&pageID=741",
-              "observedAt": "2026-09-08T17:19:22.052Z",
-              "evidenceHash": "85b7591e0029d02d06eca7226140b3b7fb73fe756d8a9c603a3ef7b00c7c2516",
+              "observedAt": "2026-09-10T20:27:37.954Z",
+              "evidenceHash": "2ba6295bba961c1e1f280014df7b41cb2bfaaa1ddd83c362d37efe8c040680cf",
               "parserVersion": "nsclassics-v1",
               "cacheHit": false,
               "provenance": "retained-observation"
@@ -509,14 +509,14 @@
             "freshObservedAds": 12,
             "staleObservedAds": 0,
             "futureOrInvalidObservedAds": 0,
-            "newestObservationAt": "2026-09-08T17:19:12.109Z",
+            "newestObservationAt": "2026-09-10T20:27:43.084Z",
             "staleDays": 14
           },
           "supportedLaterSpecialtyAds": 0,
           "latestRun": {
-            "status": "partial",
-            "startedAt": "2026-09-08T17:18:56.896Z",
-            "finishedAt": "2026-09-08T17:19:22.061Z",
+            "status": "complete",
+            "startedAt": "2026-09-10T20:27:13.342Z",
+            "finishedAt": "2026-09-10T20:27:43.105Z",
             "error": null
           },
           "nationwideCompleteness": "not established"
@@ -580,7 +580,7 @@
             "urls": []
           },
           "checkpointId": "jsmotors:regional:91c10634ba72a97f2181ee2e",
-          "checkpointCycle": 1,
+          "checkpointCycle": 2,
           "configuredCatalogStatus": "configured-checkpoint-exhausted",
           "counts": {
             "catalogPages": 2,
@@ -595,14 +595,14 @@
             "freshObservedAds": 24,
             "staleObservedAds": 0,
             "futureOrInvalidObservedAds": 0,
-            "newestObservationAt": "2026-09-08T17:19:27.811Z",
+            "newestObservationAt": "2026-09-10T20:21:28.327Z",
             "staleDays": 14
           },
           "supportedLaterSpecialtyAds": 0,
           "latestRun": {
-            "status": "partial",
-            "startedAt": "2026-09-08T17:19:22.228Z",
-            "finishedAt": "2026-09-08T17:19:27.843Z",
+            "status": "complete",
+            "startedAt": "2026-09-10T20:19:33.113Z",
+            "finishedAt": "2026-09-10T20:21:28.340Z",
             "error": null
           },
           "nationwideCompleteness": "not established"
@@ -687,8 +687,8 @@
           "supportedLaterSpecialtyAds": 0,
           "latestRun": {
             "status": "blocked",
-            "startedAt": "2026-09-08T17:19:28.006Z",
-            "finishedAt": "2026-09-08T17:19:28.007Z",
+            "startedAt": "2026-09-10T20:14:05.567Z",
+            "finishedAt": "2026-09-10T20:14:05.568Z",
             "error": "Source HTTP 403; stopped without bypass."
           },
           "nationwideCompleteness": "not established"
@@ -773,8 +773,8 @@
           "supportedLaterSpecialtyAds": 0,
           "latestRun": {
             "status": "blocked",
-            "startedAt": "2026-09-08T17:19:28.149Z",
-            "finishedAt": "2026-09-08T17:19:28.149Z",
+            "startedAt": "2026-09-10T20:14:05.631Z",
+            "finishedAt": "2026-09-10T20:14:05.633Z",
             "error": "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?zip=60187&startYear=1960&endYear=1989&searchRadius=500: Autotrader public Next state missing; do not use disallowed internal service endpoint"
           },
           "nationwideCompleteness": "not established"

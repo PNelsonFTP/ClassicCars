@@ -627,6 +627,26 @@ export function detailUrl(l: Listing) {
     ? `https://www.nsclassics.com/isapi_xml.php?module=detailed&action=getPage&vid=${encodeURIComponent(l.sourceListingId)}`
     : l.url;
 }
+function canonicalMatchesListing(canonical: string, l: Listing) {
+  const resolved = absolute(canonical, l.url);
+  if (resolved?.replace(/\/$/, "") === l.url.replace(/\/$/, "")) return true;
+  if (l.sourceId !== "admcars" || !resolved) return false;
+  const requested = new URL(l.url),
+    actual = new URL(resolved);
+  // ADM catalog links append this observed inventory filter; the canonical
+  // omits it. No origin, path, ad identity, or other query difference is ignored.
+  if (
+    requested.origin !== "https://www.admcars.com" ||
+    actual.origin !== requested.origin ||
+    actual.pathname !== requested.pathname ||
+    requested.pathname.match(/-c-(\d+)\.htm$/)?.[1] !== l.sourceListingId ||
+    requested.searchParams.getAll("sold").length !== 1 ||
+    requested.searchParams.get("sold") !== "Available"
+  )
+    return false;
+  requested.searchParams.delete("sold");
+  return requested.href === actual.href;
+}
 export function parseDetail(
   html: string,
   l: Listing,
@@ -726,11 +746,18 @@ export function parseDetail(
         ? ".volo-header-specs dl.show-car-details"
         : ".ag-specs-summary-container dl.show-car-details";
     $(selector).each((_, dl) => {
-      const cells = $(dl).children("dt,dd");
+      const cells =
+        l.sourceId === "grauto" ? $(dl).find("dt,dd") : $(dl).children("dt,dd");
       for (let i = 0; i + 1 < cells.length; i += 2)
         values[clean(cells.eq(i).text()).replace(/:$/, "")] = clean(
           cells.eq(i + 1).text(),
         );
+      if (l.sourceId === "grauto") {
+        const price = clean(
+          $(dl).find(".ag-price .vehicle-price h2").first().text(),
+        );
+        if (price) values.Price = price;
+      }
     });
     description =
       l.sourceId === "volo"
@@ -749,10 +776,7 @@ export function parseDetail(
     );
   }
   const canonical = $('link[rel="canonical"]').attr("href");
-  if (
-    canonical &&
-    absolute(canonical, l.url)?.replace(/\/$/, "") !== l.url.replace(/\/$/, "")
-  )
+  if (canonical && !canonicalMatchesListing(canonical, l))
     throw new Error("Detail canonical identity does not match requested ad.");
   if (
     ["midwest", "admcars", "volo", "grauto"].includes(l.sourceId) &&
@@ -765,9 +789,28 @@ export function parseDetail(
     l.sourceId === "grauto" &&
     values.Stock &&
     values.Stock.toLowerCase() !== l.sourceListingId.toLowerCase()
+  ) {
+    // The observed B6309 B label uses spaces for URL-ID hyphens. Accept that
+    // formatting only when this page independently names the exact requested URL.
+    const equivalentStock =
+      values.Stock.toLowerCase().replace(/\s+/g, "-") ===
+      l.sourceListingId.toLowerCase();
+    const exactVehicleUrl = $('input[name="redirect_to"]')
+      .toArray()
+      .some((el) => absolute($(el).attr("value"), l.url) === l.url);
+    if (!equivalentStock || !exactVehicleUrl)
+      throw new Error("Detail stock identity mismatch.");
+  }
+  if (
+    l.sourceId === "nsclassics" &&
+    !description &&
+    // Some populated ads omit narrative. Exact data-pin identity was checked above;
+    // require the ad's own price and multiple vehicle fields before accepting it.
+    (parseAsk(values.Price || "") === null ||
+      ["Engine", "Transmission", "Interior", "Exterior"].filter((field) =>
+        Boolean(values[field]),
+      ).length < 2)
   )
-    throw new Error("Detail stock identity mismatch.");
-  if (l.sourceId === "nsclassics" && !description)
     throw new Error(
       "North Shore detail is an unrendered shell; catalog observation retained, enrichment pending.",
     );
@@ -809,7 +852,7 @@ export function parseDetail(
         ? parseAsk($(".inventory-detailed-internet-price").text())
         : l.askingPrice;
   let photos = l.photos,
-    availability = l.availability;
+    availability = l.sourceAvailability || l.availability;
   if (l.sourceId === "jsmotors") {
     let matchedProduct = false;
     $('script[type="application/ld+json"]').each((_, el) => {
@@ -850,11 +893,13 @@ export function parseDetail(
       .filter(Boolean) as string[];
     if (detailPhotos.length) photos = [...new Set(detailPhotos)];
   }
-  const specs = { ...l.specs, ...specsFrom(values) };
-  for (const v of Object.values(specs)) {
+  const observedSpecs = specsFrom(values);
+  for (const v of Object.values(observedSpecs)) {
     v.sourceUrl = l.url;
     v.observedAt = ctx.observedAt;
   }
+  // Retained fields were not reobserved merely because this detail page was fetched.
+  const specs = { ...l.specs, ...observedSpecs };
   return listingSchema.parse({
     ...l,
     saleType: isAuction ? "auction" : l.saleType,
@@ -863,6 +908,8 @@ export function parseDetail(
         ? parseAsk(values.Price) || null
         : ask,
     availability,
+    // This detail result is a source observation, not an age-projected display state.
+    sourceAvailability: availability,
     photos: photos.slice(0, 100),
     vehicleLocation: location,
     route: offsite ? null : l.route,

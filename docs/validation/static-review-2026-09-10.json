@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-09-10T23:06:41.506Z",
+  "snapshotGeneratedAt": "2026-09-10T23:06:00.330Z",
+  "publicAds": 3178,
+  "publicGroups": 3162,
+  "builds": [
+    "out/",
+    "out-subpath/"
+  ],
+  "checks": [
+    {
+      "base": "/",
+      "runtimeErrors": 0,
+      "missingLocalAssets": 0,
+      "realImageLoaded": true
+    },
+    {
+      "base": "/ClassicCars",
+      "runtimeErrors": 0,
+      "missingLocalAssets": 0,
+      "realImageLoaded": true
+    },
+    {
+      "storage": "root/subpath snapshot workspaces isolated; separate app sentinel preserved"
+    }
+  ]
+}

@@ -2,6 +2,8 @@
 
 Updated September 8, 2026 UTC for **musclescout@1.1.0**. The application has no declared distribution license; SPDX records `NOASSERTION`. Generation times, platform, input hashes and output hashes are retained in each target's manifest.
 
+The [September 10 inventory refresh](docs/validation/refresh-2026-09-10-comparison.md) includes parser corrections but no dependency or lockfile changes. The software inventories, target validation and advisory results below retain their September 8 timestamps; refreshing inventory is not a new vulnerability audit. The retained September 8 Docker image also contains its original build-time snapshot until rebuilt.
+
 ## Delivered inventories
 
 | Artifact | Scope and observed count |

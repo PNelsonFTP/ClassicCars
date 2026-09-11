@@ -2,7 +2,7 @@
 
 > The sections describing the initial build are historical. Version 1.1.0 supersedes their open engineering gaps; see the update below and [current improvement status](FUTURE_IMPROVEMENTS.md).
 
-Initial build completed September 8, 2026 UTC (September 7 evening in Chicago); documentation/SBOM follow-up completed in the same session. This is a factual record of delivered work and observed struggles, not a Git commit history. The project has not been pushed or publicly deployed.
+Initial build completed September 8, 2026 UTC (September 7 evening in Chicago); documentation/SBOM follow-up completed in the same session. This is a factual record of delivered work and observed struggles, not a Git commit history. Publication history after that initial local phase is recorded in [delivery status](docs/DELIVERY.md).
 
 ## Requirement interpretation and independence
 
@@ -100,3 +100,23 @@ Final export QA found one newly observed ClassicCars `$0 (OBO)` placeholder. The
 ## Approved delivery and wind down — September 8, 2026
 
 After reviewing the refreshed local website, the user approved the final commit, push and cleanup. [Delivery status](docs/DELIVERY.md) records the selected repository, actual remote checks/publication, and runtime shutdown. The prior review hold is satisfied; earlier entries remain historical records of what had happened at each stage. Private data, environment, evidence caches and backups remain outside Git.
+
+## Inventory refresh and parser repairs — September 10, 2026
+
+The web preview on 3100 and private API on 4410 were restarted for the requested refresh; the background worker remained off. A consistent private database/environment backup preceded collection. The [dated comparison](docs/validation/refresh-2026-09-10-comparison.md) records final counts, original observation dates, price/status changes, source health, quotas and remaining detail work.
+
+Fresh source responses exposed three layout cases that were repaired and validated through the normal reviewed catalog-and-detail smoke process:
+
+- North Shore ad 6144 had an empty narrative but exact identity, its own asking price and populated vehicle fields. The parser accepts that evidence while rejecting shells, wrong identities and insufficient fields.
+- American Dream Machines ad 1516 omitted the catalog's `sold=Available` filter from its canonical URL. The parser permits only that observed filter difference, with the same HTTPS origin, full path and durable ad ID.
+- GR Auto Gallery wrapped its specification pairs in nested elements and displayed stock `B6309 B` for URL ID `b6309-b`. The parser reads the own-vehicle specification/price container and accepts spacing only when an independent field names the exact requested vehicle URL. Financing and other-car prices remain excluded.
+
+Additional data-flow corrections preserve earlier provenance dates for specification fields absent from a new response, propagate newly observed availability into the retained source baseline, and keep historical health failures out of the current error field after a successful recovery. Four affected run metadata rows were corrected under explicit guards; original failed runs, health history and a private correction receipt were preserved. No inventory failure or source restriction was erased.
+
+The revised code passed 248 tests across 25 files and strict TypeScript checking. Fixtures were sanitized and cover identity rejection, price isolation, unavailable fields, sold/restocked transitions and recovery history. No package or lockfile changed. September 8 platform, browser-suite, Docker and advisory evidence remains separately dated.
+
+A ClassicCars request timeout and later repeated DNS lookup failures triggered the persisted cooldown/review behavior. DNS resolution subsequently succeeded for ClassicCars and an independent dealer domain; a fresh permitted smoke check validated recovery. The catalog cycle opened by that check was completed before continuing details. Existing source delays and daily budgets were preserved throughout. No automatic worker, external notification, blocked-source bypass or new marketplace integration was enabled.
+
+## Public GitHub delivery — September 10, 2026
+
+The user explicitly authorized a new public repository, committing and pushing the project, and GitHub Pages hosting. Created [PNelsonFTP/ClassicCars](https://github.com/PNelsonFTP/ClassicCars) and attached it as `origin`. The existing static workflow uses `/ClassicCars`, while private runtime data remains ignored. Actual commit, remote validation and publication evidence are recorded in [delivery status](docs/DELIVERY.md).

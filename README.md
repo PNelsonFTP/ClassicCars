@@ -2,11 +2,15 @@
 
 A personal classic-car shopping workspace for Mustangs, Camaros and Corvettes. Next.js serves a static website; the authenticated Fastify API, SQLite database and collection worker run locally. No other project is needed.
 
+[GitHub repository](https://github.com/PNelsonFTP/ClassicCars) · [GitHub Pages website](https://pnelsonftp.github.io/ClassicCars/) · [Delivery and deployment status](docs/DELIVERY.md)
+
 ## Project status and documentation
 
 Version **1.1.0** implements the 19-item reliability and product backlog: durable collection/jobs, evidence-ranked duplicate review, group-aware alerts, shared service budgets, provenance/reset, live snapshot aging, permission-aware feeds, compact catalogs, release checks and validated SBOMs. The [implementation map](docs/IMPROVEMENTS_STATUS.md) records every item and its remaining real-world acceptance work.
 
-The final catalog refresh retains **3,139 observed ads from nine sources**, with **3,120 included in the dated public snapshot**. It fetched 93 fresh catalog pages on September 8, 2026 and exhausted the accessible configured page queues. Detail enrichment remains separately queued. These are advertisements, not a verified count of distinct physical cars: cross-listings can remain separate. Seven source adapters passed live inventory parsing checks during the initial session; Autotrader's later refresh was unavailable and 500 Classic returned 403. Strict four-hour matches remain zero until real routes are established. See the dated reports for exact scope and current known gaps.
+The **September 10, 2026 refresh** retains **3,197 ads / 3,175 groups**, with **3,178 public ads**, **58 new ads**, and fresh details for **1,045 distinct ads**. It traversed all accessible configured catalogs. All six active dealer detail queues are fresh and complete. ClassicCars has 870 newly observed details; its remaining work is paused at the configured 1,000-request daily limit. 500 Classic and Autotrader remain paused, and restricted or disabled sources remain uncollected. See the [dated refresh comparison](docs/validation/refresh-2026-09-10-comparison.md) for original dates, price/status changes and remaining queues. Ads and groups are not verified unique physical cars; cross-listings and unreviewed claims remain. Strict four-hour matches still require actual road routes.
+
+The [September 8 release scan](docs/validation/inventory-full-scan.json) remains dated historical evidence: 93 catalog pages, 3,139 retained ads and 3,120 public ads. The new refresh does not redate earlier platform, Docker, SBOM or advisory checks.
 
 | Start here | Contents |
 |---|---|
@@ -30,6 +34,8 @@ npm run dev
 ```
 
 Open [MuscleScout](http://127.0.0.1:3100). The API uses [port 4410](http://127.0.0.1:4410/health). In **Settings & connection**, enter the `MUSCLESCOUT_PASSWORD` generated in the private `.env` file. Setup preserves the password, data and settings on later runs. The password is deliberately not printed or shipped to the frontend.
+
+Session status on September 10: web preview 3100 and API 4410 are running; the background worker remains off. The project now uses the public [PNelsonFTP/ClassicCars repository](https://github.com/PNelsonFTP/ClassicCars); [delivery status](docs/DELIVERY.md) records Pages deployment and remote checks.
 
 Alternatively, double-click `Launch MuscleScout.command` on macOS or `Launch MuscleScout.cmd` on Windows. VS Code / Cursor tasks are in `.vscode/tasks.json`. The Windows launcher still needs a Windows run. The Docker image build and isolated Linux release checks passed; Compose deployment is a separate optional step.
 
@@ -136,7 +142,7 @@ The feed example is a synthetic format template, not real inventory or a permiss
 
 `npm run service -- install` installs only this application's startup entry for the current OS; `uninstall` removes that exact owned entry. Stop existing MuscleScout processes before enabling a startup copy. Only template generation was executed in this session.
 
-The CI workflow runs on push/PR/manual dispatch and checks the platform matrix, browser flows, static exports, release smoke and SBOM changes. Direct actions and the Node container image are pinned; no GitHub run has occurred without a remote repository.
+The CI workflow runs on push/PR/manual dispatch and checks the platform matrix, browser flows, static exports, release smoke and SBOM changes. Direct actions and the Node container image are pinned. Actual remote run results are recorded in [delivery status](docs/DELIVERY.md).
 
 ## Backups and verification
 
