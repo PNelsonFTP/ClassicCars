@@ -8,6 +8,7 @@ import {
 } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import { spawnSync, spawn } from "node:child_process";
 import { createRequire } from "node:module";
 import { createHash } from "node:crypto";
@@ -22,6 +23,9 @@ const root = path.resolve(
   temporary = await mkdtemp(path.join(tmpdir(), "musclescout-release-"));
 const setupScript =
   argument("setup-script") || path.join(root, "scripts/setup.ts");
+const tsxLoader = pathToFileURL(
+  path.join(root, "node_modules/tsx/dist/loader.mjs"),
+).href;
 const env = {
   ...process.env,
   DATABASE_URL: `file:${path.join(temporary, "data/live.db").split(path.sep).join("/")}`,
@@ -67,16 +71,8 @@ try {
     "MUSCLESCOUT_PASSWORD=isolated-release-smoke\n",
   );
   const before = hash(await readFile(path.join(temporary, ".env")));
-  run([
-    "--import",
-    path.join(root, "node_modules/tsx/dist/loader.mjs"),
-    setupScript,
-  ]);
-  run([
-    "--import",
-    path.join(root, "node_modules/tsx/dist/loader.mjs"),
-    setupScript,
-  ]);
+  run(["--import", tsxLoader, setupScript]);
+  run(["--import", tsxLoader, setupScript]);
   assert.equal(hash(await readFile(path.join(temporary, ".env"))), before);
   const Database = createRequire(path.join(root, "package.json"))(
       "better-sqlite3",
@@ -101,11 +97,7 @@ try {
   restored.close();
   api = spawn(
     process.execPath,
-    [
-      "--import",
-      path.join(root, "node_modules/tsx/dist/loader.mjs"),
-      path.join(root, "server/index.ts"),
-    ],
+    ["--import", tsxLoader, path.join(root, "server/index.ts")],
     { cwd: root, env, stdio: "ignore" },
   );
   let healthy = false;

@@ -2,6 +2,10 @@ import { readFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
 import path from "node:path";
+import {
+  assertCycloneDxReferences,
+  assertSpdxReferences,
+} from "./normalize-sbom.mjs";
 const arg = (name) =>
   process.argv.find((a) => a.startsWith(`--${name}=`))?.slice(name.length + 3);
 const root = path.resolve(arg("root") || path.join(import.meta.dirname, ".."));
@@ -59,6 +63,8 @@ for (const file of [
     throw new Error(
       `${file} schema validation failed (${ajv.errors.length} errors):\n${ajv.errorsText(ajv.errors.slice(0, 20), { separator: "\n" })}`,
     );
+  if (file.endsWith("cdx.json")) assertCycloneDxReferences(bom);
+  else assertSpdxReferences(bom);
   checked.push({ file, schema, valid: true });
 }
 console.log(

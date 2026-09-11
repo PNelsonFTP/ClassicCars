@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { existsSync } from "node:fs";
 import { readFile, writeFile, mkdir, rename } from "node:fs/promises";
 import path from "node:path";
+import { normalizeCycloneDx, normalizeSpdx } from "./normalize-sbom.mjs";
 
 // Documentation only: reads npm metadata; never installs, updates or executes packages.
 const argument = (name) =>
@@ -77,6 +78,7 @@ for (const [filename, format, omitDev] of [
   ];
   const bom = JSON.parse(runNpm(args));
   if (format === "cyclonedx") {
+    normalizeCycloneDx(bom);
     // npm can emit Git's scp-style repository shorthand where CycloneDX needs
     // an IRI. Preserve the original declaration alongside a valid SSH URI.
     for (const component of bom.components || []) {
@@ -102,26 +104,13 @@ for (const [filename, format, omitDev] of [
       },
       { name: "musclescout:package-lock:sha256", value: sha256(lockBytes) },
     );
-    const refs = new Set([
-      bom.metadata.component["bom-ref"],
-      ...bom.components.map((c) => c["bom-ref"]),
-    ]);
-    if (refs.size !== bom.components.length + 1)
-      throw new Error("Duplicate CycloneDX references");
-    for (const edge of bom.dependencies) {
-      if (!refs.has(edge.ref) || edge.dependsOn.some((ref) => !refs.has(ref)))
-        throw new Error("Unresolved CycloneDX dependency reference");
-    }
     counts[filename] = {
       dependencies: bom.components.length,
       rootComponents: 1,
       graphEntries: bom.dependencies.length,
     };
   } else {
-    const ids = new Set([bom.SPDXID, ...bom.packages.map((p) => p.SPDXID)]);
-    for (const r of bom.relationships)
-      if (!ids.has(r.spdxElementId) || !ids.has(r.relatedSpdxElement))
-        throw new Error("Unresolved SPDX relationship");
+    normalizeSpdx(bom);
     counts[filename] = {
       packagesIncludingRoot: bom.packages.length,
       relationships: bom.relationships.length,
