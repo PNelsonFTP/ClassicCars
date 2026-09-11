@@ -1,0 +1,3 @@
+# These vendored schemas are checked against exact upstream SHA-256 hashes.
+# Preserve their bytes when Git checks them out on Windows.
+docs/sbom/**/schemas/*.json -text
