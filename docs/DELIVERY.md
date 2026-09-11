@@ -4,6 +4,8 @@
 
 The user explicitly approved creating a new public repository, committing and pushing the project, and hosting its static website with GitHub Pages. [PNelsonFTP/ClassicCars](https://github.com/PNelsonFTP/ClassicCars) is now the public repository and configured Git remote. The project-site base path is `/ClassicCars`; the Pages URL is [MuscleScout](https://pnelsonftp.github.io/ClassicCars/). The first push and deployment validation are in progress. Private environment files, the local database, caches, logs and backups remain excluded from Git; the redacted public snapshot is included.
 
+Before the first public push, seven research-derived fixtures were removed from the unpublished branch history. Public replacements use wholly synthetic Autotrader records and omit real VIN/contact fields in six other fixtures. The original local history remains in a private ignored Git bundle. Only the sanitized `main` branch is intended for upload; private backup and tool-capture refs are not published.
+
 ## September 10 local refresh status
 
 The [refresh comparison](validation/refresh-2026-09-10-comparison.md) records the latest data and outstanding source/detail limits. Both root and `/ClassicCars` exports were rebuilt and validated with 3,178 public ads. The local preview on 3100 and API on 4410 are running; the worker is off. The approved September 8 improvement commit is `42a6622`. This refresh is included in the newly authorized GitHub delivery above.

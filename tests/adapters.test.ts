@@ -136,7 +136,16 @@ describe("sanitized live-source fixture contracts", () => {
   });
   it("Autotrader joins active results rather than sponsored off-filter inventory", () => {
     const r = parse("autotrader", "autotrader-catalog");
-    expect(r.listings.length).toBeGreaterThan(0);
+    expect(r.listings.map((l) => l.sourceListingId)).toEqual([
+      "synthetic-active-001",
+      "synthetic-active-002",
+    ]);
+    expect(r.listings.map((l) => l.askingPrice)).toEqual([12345, 23456]);
+    expect(r.listings.map((l) => l.seller.name)).toEqual([
+      "Synthetic Fixture Dealer 1",
+      "Synthetic Fixture Dealer 2",
+    ]);
+    expect(r.listings.every((l) => l.identifier === null)).toBe(true);
     expect(
       r.listings.every(
         (l) =>

@@ -1,6 +1,6 @@
 # MuscleScout handoff — 1.1.0
 
-Operational status updated September 10, 2026 after the [local inventory refresh](docs/validation/refresh-2026-09-10-comparison.md). The 1.1.0 release checks remain dated September 8. Local commits `4835c0a` (original delivery) and `42a6622` (improvements) are preserved. The public [PNelsonFTP/ClassicCars repository](https://github.com/PNelsonFTP/ClassicCars) is configured as `origin`. [Delivery status](docs/DELIVERY.md) records the approved publication and actual remote results.
+Operational status updated September 10, 2026 after the [local inventory refresh](docs/validation/refresh-2026-09-10-comparison.md). The 1.1.0 release checks remain dated September 8. Original local commits `4835c0a` (delivery) and `42a6622` (improvements) are preserved in the private prepublication Git bundle. Their public-history equivalents exclude research fixture data. The public [PNelsonFTP/ClassicCars repository](https://github.com/PNelsonFTP/ClassicCars) is configured as `origin`. [Delivery status](docs/DELIVERY.md) records the approved publication and actual remote results.
 
 ## Open and review
 
