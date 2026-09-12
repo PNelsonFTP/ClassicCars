@@ -173,6 +173,7 @@ export async function collect(
         freshDetailsSkipped: 0,
         failedInventoryPages: 0,
         failedDetails: 0,
+        detailCollectionDisabled: source.detailMode === "catalog-only",
         cacheHits: 0,
         discoveredCandidates: 0,
         uniqueAds: 0,
@@ -288,7 +289,13 @@ export async function collect(
           maxAge,
         );
         for (const task of candidates) {
-          if (paused || interrupted || stats.detailRequests >= detailCap) break;
+          if (
+            paused ||
+            interrupted ||
+            source.detailMode === "catalog-only" ||
+            stats.detailRequests >= detailCap
+          )
+            break;
           if (await stopping()) {
             interrupted = true;
             break;
@@ -362,7 +369,7 @@ export async function collect(
         if (
           caps.smoke &&
           liveCatalog &&
-          liveDetail &&
+          (liveDetail || source.detailMode === "catalog-only") &&
           !stats.failedPages.length
         )
           await operations.success(source.id, true, true);
@@ -431,9 +438,11 @@ export async function collect(
             ? "Source access is paused or cooling down; see classified health and next permitted check."
             : stats.catalogBacklog
               ? "Catalog cap reached; the next run resumes queued pages."
-              : stats.remainingEnrichment
-                ? "Catalog checkpoint retained; independent detail enrichment remains."
-                : "Configured scope exhausted; this does not establish full nationwide coverage.";
+              : source.detailMode === "catalog-only"
+                ? "Catalog collected; detail collection is disabled for this source's broken detail endpoint. Prices and pending detail evidence remain unknown."
+                : stats.remainingEnrichment
+                  ? "Catalog checkpoint retained; independent detail enrichment remains."
+                  : "Configured scope exhausted; this does not establish full nationwide coverage.";
         await db.ingestRun.update({
           where: { id: run.id },
           data: {
@@ -473,6 +482,7 @@ export async function collect(
         s.status === "partial" &&
         ((pageCap > 0 && (s.catalogBacklog as number) > 0) ||
           (detailCap > 0 &&
+            !s.detailCollectionDisabled &&
             (s.remainingEnrichment as number) >
               (s.currentScopeBlockedDetails as number))),
     );

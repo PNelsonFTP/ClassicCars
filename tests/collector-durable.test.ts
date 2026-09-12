@@ -329,3 +329,47 @@ it("separates repaired-run errors from retained source failure history", async (
   ).toBe(true);
   expect(memory.runs[0]).toEqual(originalFailure);
 });
+
+it("keeps catalog-only details pending without an endless automatic resume", async () => {
+  Object.assign(memory.sources[0], { detailMode: "catalog-only" });
+  try {
+    const result = await collect("regional", "fixture", {
+      pageCap: 10,
+      detailCap: 50,
+    });
+    expect(memory.calls.every((url) => !url.includes("/car/"))).toBe(true);
+    expect(await operations.job(result.jobId!)).toMatchObject({
+      status: "partial",
+      nextRunAt: null,
+    });
+    expect(JSON.parse(memory.runs.at(-1)!.stats as string)).toMatchObject({
+      detailCollectionDisabled: true,
+      detailsSucceeded: 0,
+    });
+  } finally {
+    Reflect.deleteProperty(memory.sources[0], "detailMode");
+  }
+});
+
+it("validates only the configured catalog lane on a catalog-only smoke review", async () => {
+  Object.assign(memory.sources[0], { detailMode: "catalog-only" });
+  try {
+    await operations.reviewSource(
+      "fixture",
+      "request-smoke",
+      "Catalog-only adapter is now configured; detail endpoint remains broken.",
+    );
+    const result = await collect("regional", "fixture", { smoke: true });
+    expect((await operations.health("fixture")).state).toBe("active");
+    expect(memory.calls).toEqual(["https://example.com/mustang"]);
+    expect(
+      JSON.parse(memory.runs.at(-1)!.stats as string).detailsSucceeded,
+    ).toBe(0);
+    expect(await operations.job(result.jobId!)).toMatchObject({
+      status: "partial",
+      nextRunAt: null,
+    });
+  } finally {
+    Reflect.deleteProperty(memory.sources[0], "detailMode");
+  }
+});

@@ -295,6 +295,13 @@ export type Coverage = {
   status: string;
   scope: string;
   note: string;
+  access?: {
+    method: string;
+    checkedAt: string;
+    outcome: string;
+    nextStep: string;
+    evidenceUrls: string[];
+  };
   count?: number;
   lastObservedAt?: string;
   pages?: number;

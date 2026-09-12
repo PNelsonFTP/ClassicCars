@@ -42,7 +42,10 @@
     "sbom:bundled": "node scripts/inspect-bundled.mjs",
     "operations:bootstrap": "node --import tsx scripts/bootstrap-operations.ts",
     "verify:routing": "node --import tsx scripts/verify-routing.ts",
-    "verify:delivery": "node --import tsx scripts/verify-delivery.ts"
+    "verify:delivery": "node --import tsx scripts/verify-delivery.ts",
+    "sources:audit": "node --import tsx scripts/audit-sources.ts",
+    "sources:browser-check": "node --import tsx scripts/source-browser-check.mjs",
+    "sources:feed-template": "node --import tsx scripts/source-feed-template.ts"
   },
   "dependencies": {
     "@fastify/cors": "^11.0.0",

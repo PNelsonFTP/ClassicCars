@@ -1,5 +1,9 @@
 # MuscleScout 1.1.0 delivery
 
+## September 12 source-access release
+
+The [source-access update](SOURCE_ACCESS.md) adds dated methods and evidence for all 26 sources, fixes identified HTTP/robots issues, and enables JWS catalog-only collection. The public snapshot now contains 3,265 ads; the eight new JWS records are explicitly sold, not newly available stock. Release validation: 268 unit/API tests, 18 desktop/mobile E2E tests, both static export paths and public redaction checks passed. No dependency versions changed; SBOM input hashes were regenerated. Publication verification follows the release commit.
+
 ## September 12 inventory update
 
 The requested refresh added 79 ads and rebuilt the public snapshot with 3,257 ads. All 94 accessible configured catalog pages refreshed; 226 detail checks succeeded, with two J & S Motors URLs returning 404. ClassicCars has a separate 3,026-ad detail backlog after its configured 50-detail batch. Autotrader and 500 Classic remain paused. See the [comparison](validation/refresh-2026-09-12-comparison.md) and [privacy/consistency receipt](validation/public-export-review-2026-09-12.json). The updated snapshot is live at [MuscleScout](https://pnelsonftp.github.io/ClassicCars/). [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34694382537) passed from inventory commit `b4e0914cded3aac8e5ee72e1cc8c91a6c37721e6`; the [live receipt](validation/github-pages-2026-09-12.json) confirms exact public-data hashes, working search/details/images and desktop/mobile layouts at 1440, 390 and 375 pixels, with no runtime errors or missing local assets. The snapshot was generated at `2026-09-12T12:40:06.377Z`. The closing documentation commit does not change the deployed inventory. The September 10 deployment record below remains historical.

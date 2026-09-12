@@ -1,0 +1,385 @@
+{
+  "audit": {
+    "checkedAt": "2026-09-12T21:52:16.300Z",
+    "inventoryModified": false,
+    "sources": [
+      {
+        "id": "classiccars",
+        "checkedAt": "2026-09-12T21:52:16.361Z",
+        "robotsUrl": "https://classiccars.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "7f578e607a957b1a16e2cfd0bb7e73db3910e6e732b5e7ef78c4392547aa8571",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "volo",
+        "checkedAt": "2026-09-12T21:52:16.666Z",
+        "robotsUrl": "https://www.volocars.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "a137fd77f3b45b884b09e624970049c5c2ceb1d233e72165e19b4ae7007aa674",
+        "robots": {
+          "allowed": true,
+          "delayMs": 10000
+        }
+      },
+      {
+        "id": "grauto",
+        "checkedAt": "2026-09-12T21:52:16.849Z",
+        "robotsUrl": "https://www.grautogallery.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "41011c003657d3075f0a8959c33d8f376eaf4080341330a8cfda82e0b13ae90e",
+        "robots": {
+          "allowed": true,
+          "delayMs": 10000
+        }
+      },
+      {
+        "id": "admcars",
+        "checkedAt": "2026-09-12T21:52:17.039Z",
+        "robotsUrl": "https://www.admcars.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "afc6bce129d22f330a20862c9e6855bae5a0b39fcea5e448d436e686c047f52d",
+        "robots": {
+          "allowed": true,
+          "delayMs": 5000
+        }
+      },
+      {
+        "id": "midwest",
+        "checkedAt": "2026-09-12T21:52:17.276Z",
+        "robotsUrl": "https://www.midwestmusclecars.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "8660da5c5354ae5f6f9da2abdafc243513b8bf7f595e42ba1bebfac2f407560f",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "nsclassics",
+        "checkedAt": "2026-09-12T21:52:18.074Z",
+        "robotsUrl": "https://www.nsclassics.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "5c2efbe809342b13044e3dc1d74fb3770f214220bada5a2b8254afb27339a37e",
+        "robots": {
+          "allowed": true,
+          "delayMs": 5000
+        }
+      },
+      {
+        "id": "jsmotors",
+        "checkedAt": "2026-09-12T21:52:18.302Z",
+        "robotsUrl": "https://jsmotors.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "60fe1a52a050644fb8f35954b41f6289e34b0a6ea760b9fbbd73e6e86fbb3986",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "500classic",
+        "checkedAt": "2026-09-12T21:52:18.516Z",
+        "robotsUrl": "https://www.500classicauto.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "50711d102b69060a81f535848e02ef3b00f664f8bdd12113eb4d7ea45722524c",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "autotrader",
+        "checkedAt": "2026-09-12T21:52:18.640Z",
+        "robotsUrl": "https://www.autotrader.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "4a8bcea3207c1d115ddc1b46b7f177de3488a861469b0b12b1197787cb07cb7b",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "hemmings",
+        "checkedAt": "2026-09-12T21:52:18.765Z",
+        "robotsUrl": "https://www.hemmings.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "8ff18127bf81f03666d69a0956cc919debba02349c27b3e14e2e2f6188354eb8",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "autotrader-classics",
+        "checkedAt": "2026-09-12T21:52:18.922Z",
+        "robotsUrl": "https://classics.autotrader.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "37d140153d75d283c0cad97dd193d427237af98b57d45c9ddc60f87a2d25222d",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "craigslist",
+        "checkedAt": "2026-09-12T21:52:19.149Z",
+        "robotsUrl": "https://chicago.craigslist.org/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "5a9a92114f608593d9fe7d2ea52809032be3fbab3b0f019a980526acb695ee27",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "ebay",
+        "checkedAt": "2026-09-12T21:52:19.363Z",
+        "robotsUrl": "https://www.ebay.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "221797cd7a314aeba19bb83d7868af3ea04325e4f2f8fd9b8ba465649e091970",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "cars",
+        "checkedAt": "2026-09-12T21:52:19.649Z",
+        "robotsUrl": "https://www.cars.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 403,
+        "evidenceSha256": "a481d0ac738d64a6f48d8a04ba60b1cc5e85d9d74ec4d6ad585e9b1f0e3a96a3"
+      },
+      {
+        "id": "cargurus",
+        "checkedAt": "2026-09-12T21:52:19.775Z",
+        "robotsUrl": "https://www.cargurus.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "8a0995ff6919804ba07d1445d2d72674830711d9f6c2191656c4edb72dba5d08",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "bat",
+        "checkedAt": "2026-09-12T21:52:19.962Z",
+        "robotsUrl": "https://bringatrailer.com/robots.txt",
+        "catalog": "not-tested",
+        "failure": {
+          "kind": "policy",
+          "message": "Private or reserved network destination blocked."
+        }
+      },
+      {
+        "id": "carsbids",
+        "checkedAt": "2026-09-12T21:52:19.988Z",
+        "robotsUrl": "https://carsandbids.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "ce9cfdb70b781ea5d87ef9853d2c487cd0d9126d3a13546893f846037822d5d5",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "mecum",
+        "checkedAt": "2026-09-12T21:52:20.448Z",
+        "robotsUrl": "https://www.mecum.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "5e32ee193332d9c3db0ebc9c83022f79479a76f1ddbc80d92d475d3c1852a15f",
+        "robots": {
+          "allowed": true,
+          "delayMs": 1000
+        }
+      },
+      {
+        "id": "barrett",
+        "checkedAt": "2026-09-12T21:52:20.599Z",
+        "robotsUrl": "https://www.barrett-jackson.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "a39634decb681aafd18eab9fa58de174235cd6093b61599d06161721e309f0dd",
+        "robots": {
+          "allowed": false,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "corvetteforum",
+        "checkedAt": "2026-09-12T21:52:20.723Z",
+        "robotsUrl": "https://www.corvetteforum.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "9b317781b668a6694e68540b85c121ac646eb194c87cea4eb4704079c089d419",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "mustangforum",
+        "checkedAt": "2026-09-12T21:52:20.998Z",
+        "robotsUrl": "https://www.vintage-mustang.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "7fd4e650d061aae09d42c3b932b32f0ecd37132647dfe5d6752c404d3b9605a5",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "camaroforum",
+        "checkedAt": "2026-09-12T21:52:21.122Z",
+        "robotsUrl": "https://www.camaros.net/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "e7ea1895b64bee8d9f6308086cde90a987866f158a26488a3353a47ca2975570",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "facebook",
+        "checkedAt": "2026-09-12T21:52:21.280Z",
+        "robotsUrl": "https://www.facebook.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "934ce4f853a7c690e7cf61c1f1f001b16e37506923d444b082e5563685d64204",
+        "robots": {
+          "allowed": false,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "jws",
+        "checkedAt": "2026-09-12T21:52:21.461Z",
+        "robotsUrl": "https://www.jwsclassics.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "330c5ccc114a9933fc146c51012f8b7de9ba8aff1672fb846caf68cccf0b4dc8",
+        "robots": {
+          "allowed": true,
+          "delayMs": 10000
+        }
+      },
+      {
+        "id": "duffys",
+        "checkedAt": "2026-09-12T21:52:21.625Z",
+        "robotsUrl": "https://www.iowaclassiccars.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "c8d10c793ebb998db0311994fa311e0685d2496f8e86cdac171e75c8de0a82a3",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      },
+      {
+        "id": "indyauto",
+        "checkedAt": "2026-09-12T21:52:21.759Z",
+        "robotsUrl": "https://www.indyauto.com/robots.txt",
+        "catalog": "not-tested",
+        "httpStatus": 200,
+        "evidenceSha256": "84f7242b69a0d079d88d20a768e20124979f0499d2b0e5b947cc4b32bc07dff9",
+        "robots": {
+          "allowed": true,
+          "delayMs": 0
+        }
+      }
+    ]
+  },
+  "catalogScan": {
+    "source": "jws",
+    "observedAt": "2026-09-12T21:51:24.240Z",
+    "pages": 1,
+    "advertisedVehicles": 44,
+    "matchingAds": 8,
+    "activeMatchingAds": 0,
+    "soldMatchingAds": 8,
+    "knownAsks": 0,
+    "detailsFetched": 0,
+    "catalogBacklog": 0,
+    "pendingDetails": 8
+  },
+  "browserChecks": [
+    {
+      "source": "autotrader-classics",
+      "httpStatus": 403,
+      "outcome": "Access Denied"
+    },
+    {
+      "source": "duffys",
+      "httpStatus": 403,
+      "outcome": "Access denied"
+    },
+    {
+      "source": "500classic",
+      "httpStatus": 403,
+      "outcome": "Access denied"
+    },
+    {
+      "source": "autotrader",
+      "httpStatus": 200,
+      "outcome": "Page unavailable template"
+    }
+  ],
+  "allSourcesCollected": false,
+  "readOnlyCatalogAudit": {
+    "checkedAt": "2026-09-12T21:53:46.401Z",
+    "inventoryModified": false,
+    "sources": [
+      {
+        "id": "jws",
+        "checkedAt": "2026-09-12T21:53:46.465Z",
+        "robotsUrl": "https://www.jwsclassics.com/robots.txt",
+        "catalog": {
+          "url": "https://www.jwsclassics.com/inventory/",
+          "observedAt": "2026-09-12T21:53:56.688Z",
+          "evidenceSha256": "af6e301bc6a19b7a029ece288f04b964ceab233c8bb95c01614b4e63d628bdc9",
+          "discovered": 44,
+          "targetAds": 8,
+          "nextPages": 0,
+          "complete": false
+        },
+        "httpStatus": 200,
+        "evidenceSha256": "330c5ccc114a9933fc146c51012f8b7de9ba8aff1672fb846caf68cccf0b4dc8",
+        "robots": {
+          "allowed": true,
+          "delayMs": 10000
+        }
+      }
+    ]
+  },
+  "verification": {
+    "unitTests": 268,
+    "unitFiles": 27,
+    "browserTests": 18,
+    "rootAndSubpathBuilds": "passed",
+    "staticExportChecks": "passed",
+    "privateExportChecks": 3542,
+    "sbomSchemas": "passed"
+  }
+}

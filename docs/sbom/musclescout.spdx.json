@@ -3,9 +3,9 @@
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
   "name": "musclescout@1.1.0",
-  "documentNamespace": "http://spdx.org/spdxdocs/musclescout-1.1.0-841fafed-3387-4f82-a835-ace4bd2a5044",
+  "documentNamespace": "http://spdx.org/spdxdocs/musclescout-1.1.0-f887eda8-6d66-4c74-b9c4-350978064d6a",
   "creationInfo": {
-    "created": "2026-09-08T17:10:00.190Z",
+    "created": "2026-09-12T21:53:43.306Z",
     "creators": [
       "Tool: npm/cli-11.19.0"
     ]
@@ -9291,11 +9291,6 @@
     {
       "spdxElementId": "SPDXRef-Package-prisma.get-platform-7.10.0",
       "relatedSpdxElement": "SPDXRef-Package-prisma.fetch-engine-7.10.0",
-      "relationshipType": "DEPENDENCY_OF"
-    },
-    {
-      "spdxElementId": "SPDXRef-Package-prisma.debug-7.10.0",
-      "relatedSpdxElement": "SPDXRef-Package-prisma.get-platform-7.10.0",
       "relationshipType": "DEPENDENCY_OF"
     },
     {

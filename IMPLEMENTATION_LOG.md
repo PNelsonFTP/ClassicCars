@@ -1,5 +1,11 @@
 # Implementation record
 
+## September 12 source-access improvement
+
+The [access audit and operating guide](docs/SOURCE_ACCESS.md) replaces blanket “AI blocked” labels with dated methods, evidence and next steps for all 26 sources. Fixed robots user-agent matching and JWS content negotiation, added catalog-only collection, deterministic HTTP/Chromium diagnostics, and incomplete private feed templates for every configured source. The new JWS scan found 44 advertised vehicles and eight matching classics, **all explicitly sold**; it added no active stock or known asking prices. Current totals are **3,284 retained ads / 3,262 groups**, **3,265 public ads / 3,249 public groups**. This access audit does not redate the earlier inventory refresh.
+
+403 responses remain for Duffy’s, 500 Classic and Classics on Autotrader in HTTP/Chromium tests. Autotrader still serves an unavailable template. Forum, auction and other provider restrictions, missing eBay access, unresolved cross-listings, the ClassicCars detail backlog and J & S 404s remain documented. No new dependencies or credentials were added. [Machine-readable access evidence](docs/validation/source-access-2026-09-12.json).
+
 > The sections describing the initial build are historical. Version 1.1.0 supersedes their open engineering gaps; see the update below and [current improvement status](FUTURE_IMPROVEMENTS.md).
 
 Initial build completed September 8, 2026 UTC (September 7 evening in Chicago); documentation/SBOM follow-up completed in the same session. This is a factual record of delivered work and observed struggles, not a Git commit history. Publication history after that initial local phase is recorded in [delivery status](docs/DELIVERY.md).

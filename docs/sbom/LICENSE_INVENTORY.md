@@ -1,6 +1,6 @@
 # Dependency license inventory
 
-Generated 2026-09-08T17:09:59.435Z from package-lock.json, SHA-256 `cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa`. Counts are lockfile installation locations, including optional platform packages and repeated versions. These are package-declared license expressions, not a verification of every shipped file. MuscleScout itself has no declared distribution license. Listing content, images, map data and external services are outside these npm license grants.
+Generated 2026-09-12T21:53:42.645Z from package-lock.json, SHA-256 `cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa`. Counts are lockfile installation locations, including optional platform packages and repeated versions. These are package-declared license expressions, not a verification of every shipped file. MuscleScout itself has no declared distribution license. Listing content, images, map data and external services are outside these npm license grants.
 
 ## Declared license totals
 

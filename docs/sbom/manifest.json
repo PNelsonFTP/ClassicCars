@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T17:09:59.435Z",
+  "generatedAt": "2026-09-12T21:53:42.645Z",
   "application": {
     "name": "musclescout",
     "version": "1.1.0",
@@ -10,7 +10,7 @@
   "node": "v26.7.0",
   "npm": "11.19.0",
   "inputs": {
-    "packageJsonSha256": "732a372baa7354b8b6de88a92549f34eaeae39db16dbaeb7ff3c664b81e4ba15",
+    "packageJsonSha256": "2ac3dd2d604b50185cf3904d4db253d7c580c0476e23dc8a578bd44d2c2dbb5a",
     "packageLockSha256": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa"
   },
   "counts": {
@@ -26,7 +26,7 @@
     },
     "musclescout.spdx.json": {
       "packagesIncludingRoot": 369,
-      "relationships": 645
+      "relationships": 644
     }
   },
   "lockEntries": 471,
@@ -35,37 +35,27 @@
     {
       "file": "musclescout.cdx.json",
       "bytes": 448644,
-      "sha256": "0f15649478e09db3800618852eabdbe7e3e486d0f9cb18c4c70ee6d516649452"
+      "sha256": "4556993cea0a8ff7440f9b1351bd2bdef375429c3c9c1caa443b9fe933a01b3d"
     },
     {
       "file": "musclescout-runtime.cdx.json",
       "bytes": 159076,
-      "sha256": "3d08f6bdb51c2154fa2b5938b1fac685bf4a422922dacb61d91b5b22fd3ae95a"
+      "sha256": "3ec6f529004a3540729d051461844e200cd5ef378f4f566cf3d1bd2170373028"
     },
     {
       "file": "musclescout.spdx.json",
-      "bytes": 456150,
-      "sha256": "a957fa3f090e2d50d4855dd774f0a08f68e6baac9a510b34833b4a6f4603a47c"
+      "bytes": 455959,
+      "sha256": "e18a905a2b2b8645187e85e81fb19e838c0f7fd1fea1dbec85c610a4dc13a313"
     },
     {
       "file": "lockfile-inventory.json",
       "bytes": 343203,
-      "sha256": "70f7bcacc6b00a5f2eeb46a617e06d3295eb2666ab1858ced2224707b98a2a80"
+      "sha256": "6349e610bce63fa205a8080df716a0b8ef6f4b0ef67ec2dbc35fc8b7cc20ecd8"
     },
     {
       "file": "LICENSE_INVENTORY.md",
       "bytes": 40141,
-      "sha256": "8ede29b93c451c871df215509cc98112911c415a8862d2420aa1ad0e6e7cf7a6"
-    },
-    {
-      "file": "target-artifacts.json",
-      "bytes": 13245,
-      "sha256": "9d352312be14bcc1b13156856b3628b2b4ec410328e732e690039fbbab00351a"
-    },
-    {
-      "file": "bundled-artifacts.json",
-      "bytes": 3337,
-      "sha256": "abc761a746c19e95087c64fba7cb6593cbc6eb5f684bf402bc29f70e5bfb5a50"
+      "sha256": "6842139786dde69fd52c7fa5a850ea0c27ecabc2566b81de59488cb3ffb9bd7a"
     }
   ],
   "audit": {

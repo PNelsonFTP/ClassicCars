@@ -19,6 +19,7 @@ export type SourceConfig = {
   inventory?: string[];
   nationwideInventory?: string[];
   delayMs?: number;
+  detailMode?: "catalog-only";
 };
 export type PageContext = {
   url: string;
@@ -57,6 +58,7 @@ const places: Record<string, [string, string]> = {
   jsmotors: ["Fairmount", "IN"],
   nsclassics: ["Mundelein", "IL"],
   "500classic": ["Knightstown", "IN"],
+  jws: ["Greendale", "WI"],
 };
 function baseListing(
   source: SourceConfig,
@@ -408,7 +410,76 @@ export function parseInventory(
         ),
       );
     });
-  else if (source.id === "500classic")
+  else if (source.id === "jws") {
+    // The headings, not a whole-page "sold" search, establish card state.
+    // Only the site's observed legacy HTTP links are upgraded to HTTPS.
+    const sections = $("section").filter((_, el) =>
+      /^(Current Inventory|Recently Sold)$/.test(
+        clean($(el).find("h2").first().text()),
+      ),
+    );
+    if (sections.length !== 2)
+      throw new Error(
+        "JWS inventory sections unrecognized; empty stock cannot be established.",
+      );
+    sections.each((_, section) => {
+      const sold =
+        clean($(section).find("h2").first().text()) === "Recently Sold";
+      $(section)
+        .find('a[href*="/detail/?id="]')
+        .each((_, el) => {
+          const card = $(el);
+          const url = new URL(card.attr("href")!, ctx.url);
+          if (
+            url.hostname !== "www.jwsclassics.com" ||
+            url.port ||
+            url.username ||
+            url.password ||
+            url.pathname !== "/detail/"
+          )
+            return;
+          const id = url.searchParams.get("id");
+          if (
+            !id ||
+            !/^\d+$/.test(id) ||
+            [...url.searchParams.keys()].some((k) => k !== "id")
+          )
+            return;
+          url.protocol = "https:";
+          const imagePath = card
+            .find(".imagecar")
+            .attr("style")
+            ?.match(/background-image:\s*url\(([^)]+)\)/i)?.[1];
+          const img = imagePath?.match(
+            /^http:\/\/www\.jwsclassics\.com\/img-primary\/[\w.-]+$/,
+          )
+            ? imagePath.replace(/^http:/, "https:")
+            : absolute(imagePath, ctx.url);
+          add(
+            baseListing(
+              source,
+              ctx,
+              id,
+              clean(card.text()),
+              url.href,
+              null,
+              img ? [img] : [],
+              {
+                availability: sold ? "sold" : "active",
+                saleType: "unknown",
+                statusEvidence: sold
+                  ? "Dealer catalog: Recently Sold"
+                  : "Dealer catalog: Current Inventory",
+                flags: [
+                  "Catalog-only observation; dealer detail endpoint returns HTTP 500",
+                  "Asking price not supplied by catalog",
+                ],
+              },
+            ),
+          );
+        });
+    });
+  } else if (source.id === "500classic")
     $(".vehicle-snapshot").each((_, el) => {
       const c = $(el),
         a = c.find(".vehicle-snapshot__title a"),

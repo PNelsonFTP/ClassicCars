@@ -6,7 +6,28 @@ import { createHash } from "node:crypto";
 import { readFile, writeFile, mkdir } from "node:fs/promises";
 import robotsParser from "robots-parser";
 export const agent =
-  "MuscleScout/1.0 (personal classic-car research; local single-user collector)";
+  "MuscleScout/1.1 (+https://github.com/PNelsonFTP/ClassicCars; deterministic inventory collector)";
+export const accept =
+  "text/html,application/xhtml+xml,application/json,text/plain;q=0.9,*/*;q=0.8";
+
+// Match our declared product token. GPTBot/ChatGPT-User rules describe other
+// clients; provider terms and source enablement are separate access decisions.
+export function collectionRobotsPolicy(
+  robotsUrl: string,
+  body: string,
+  url: string,
+) {
+  if (/<(?:html|!doctype)/i.test(body))
+    throw new FetchFailure(
+      "Robots endpoint returned HTML instead of a policy; review required.",
+      "policy",
+    );
+  const parsed = robotsParser(robotsUrl, body);
+  return {
+    allowed: parsed.isAllowed(url, "MuscleScout") !== false,
+    delayMs: (parsed.getCrawlDelay("MuscleScout") || 0) * 1000,
+  };
+}
 export function publicAddress(ip: string) {
   if (isIP(ip) === 4) {
     const [a, b] = ip.split(".").map(Number);
@@ -64,7 +85,7 @@ export async function safeRequest(
         method: options.method || "GET",
         headers: {
           "User-Agent": agent,
-          Accept: "text/html,application/json;q=0.9",
+          Accept: accept,
           ...options.headers,
         },
         lookup: ((
@@ -185,19 +206,17 @@ export async function cachedPage(
       robots: false,
       beforeRequest,
     });
-    const parsed = robotsParser(`${origin}/robots.txt`, rules.html);
-    if (
-      parsed.isAllowed(url, "MuscleScout") === false ||
-      parsed.isAllowed(url, "GPTBot") === false
-    )
+    const policy = collectionRobotsPolicy(
+      `${origin}/robots.txt`,
+      rules.html,
+      url,
+    );
+    if (!policy.allowed)
       throw new FetchFailure(
-        "Robots policy disallows this path or AI collection.",
+        "Robots policy disallows this path for MuscleScout.",
         "policy",
       );
-    delayMs = Math.max(
-      delayMs,
-      (parsed.getCrawlDelay("MuscleScout") || 0) * 1000,
-    );
+    delayMs = Math.max(delayMs, policy.delayMs);
   }
   const response = beforeRequest
     ? (await beforeRequest(url, delayMs), await safeRequest(url, { origins }))

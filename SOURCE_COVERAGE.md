@@ -1,5 +1,11 @@
 # Source coverage
 
+## September 12 source-access improvement
+
+The [access audit and operating guide](docs/SOURCE_ACCESS.md) replaces blanket “AI blocked” labels with dated methods, evidence and next steps for all 26 sources. Fixed robots user-agent matching and JWS content negotiation, added catalog-only collection, deterministic HTTP/Chromium diagnostics, and incomplete private feed templates for every configured source. The new JWS scan found 44 advertised vehicles and eight matching classics, **all explicitly sold**; it added no active stock or known asking prices. Current totals are **3,284 retained ads / 3,262 groups**, **3,265 public ads / 3,249 public groups**. This access audit does not redate the earlier inventory refresh.
+
+403 responses remain for Duffy’s, 500 Classic and Classics on Autotrader in HTTP/Chromium tests. Autotrader still serves an unavailable template. Forum, auction and other provider restrictions, missing eBay access, unresolved cross-listings, the ClassicCars detail backlog and J & S 404s remain documented. No new dependencies or credentials were added. [Machine-readable access evidence](docs/validation/source-access-2026-09-12.json).
+
 ## September 12, 2026 source refresh
 
 The **September 12, 2026 refresh** retains **3,276 ads / 3,254 groups**, including **3,257 public ads**. It added **79 ads**, observed **47 numeric asking-price changes** (37 decreases, 10 increases), and refreshed details for **226 distinct ads**. All accessible configured catalogs completed: 25 regional and 49 national ClassicCars pages plus 20 dealer pages, with no catalog failures or cache hits. Five dealer detail queues are fully fresh; J & S Motors has 22 refreshed details and two older URLs returning 404. ClassicCars completed its configured 50-detail batch; 3,026 details remain due, rather than blocked by the daily budget. Autotrader and 500 Classic remain paused without new requests. See the [dated comparison](docs/validation/refresh-2026-09-12-comparison.md) for original observation dates and exact limits. Ads and groups are not verified unique physical vehicles; strict four-hour matches still require actual road routes.

@@ -1503,7 +1503,7 @@ export default function MuscleScout() {
               <PageHeading
                 eyebrow="A CLEAR VIEW OF THE SEARCH"
                 title="Coverage, without the guesswork."
-                text="A blocked source is not zero inventory. Here is exactly what this collection can tell you."
+                text="See the inventory collected, the access method tested and the next step for each source. Unavailable access never means zero cars."
               />
               <div className="stat-grid">
                 {[
@@ -1604,6 +1604,32 @@ export default function MuscleScout() {
                           <td>
                             <strong>{c.scope}</strong>
                             <p>{c.note}</p>
+                            {c.access && (
+                              <details>
+                                <summary>
+                                  {c.access.method} · checked{" "}
+                                  {fmtDate(c.access.checkedAt)}
+                                </summary>
+                                <p>{c.access.outcome}</p>
+                                <p>
+                                  <strong>Next step:</strong>{" "}
+                                  {c.access.nextStep}
+                                </p>
+                                <div className="button-row">
+                                  {c.access.evidenceUrls.map((url, index) => (
+                                    <a
+                                      key={url}
+                                      href={url}
+                                      target="_blank"
+                                      rel="noreferrer"
+                                    >
+                                      Source evidence {index + 1}{" "}
+                                      <ArrowUpRight size={13} />
+                                    </a>
+                                  ))}
+                                </div>
+                              </details>
+                            )}
                           </td>
                         </tr>
                       ))}

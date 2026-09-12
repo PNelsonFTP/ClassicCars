@@ -403,3 +403,30 @@ test("editing a backend URL never forwards the authenticated token or workspace"
   expect(JSON.parse(connection!).backend).toBe("http://127.0.0.1:4411");
   expect(foreign).toEqual([]);
 });
+
+test("source coverage exposes dated methods, evidence and actionable next steps", async ({
+  page,
+}) => {
+  await page.goto("/");
+  await page
+    .getByRole("button", { name: "Source coverage", exact: true })
+    .click();
+  const row = page
+    .getByRole("row")
+    .filter({
+      has: page.getByRole("link", { name: "JWS Classics", exact: true }),
+    });
+  await row.locator("summary").click();
+  await expect(row).toContainText("Deterministic public HTML");
+  await expect(row).toContainText("Next step:");
+  await expect(row).toContainText("HTTP 500");
+  await expect(
+    row.getByRole("link", { name: "Source evidence 2" }),
+  ).toHaveAttribute("href", "https://www.jwsclassics.com/inventory/");
+  expect(await page.locator("tbody summary").count()).toBe(26);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth + 1,
+    ),
+  ).toBe(true);
+});

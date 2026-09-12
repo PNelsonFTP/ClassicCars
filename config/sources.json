@@ -5,12 +5,10 @@
     "category": "Marketplace",
     "url": "https://classiccars.com",
     "status": "partial",
-    "scope": "1960–1989 · three models · 500-mile source discovery from 60187",
-    "note": "25 catalog pages verified. 1,387 ad observations; 31 details checked. This is a discovery envelope, not a four-hour limit.",
+    "scope": "1960\u20131989 \u00b7 three models \u00b7 500-mile source discovery from 60187",
+    "note": "Catalog traversal and detail enrichment are tracked independently. See latest run evidence and observation timestamps; ad counts do not prove unique physical vehicles.",
     "enabled": true,
-    "origins": [
-      "https://classiccars.com"
-    ],
+    "origins": ["https://classiccars.com"],
     "inventory": [
       "https://classiccars.com/listings/find/1960-1989/ford/mustang?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
       "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&distance=500&ps=60&s=datelisted&zip=60187",
@@ -21,7 +19,14 @@
       "https://classiccars.com/listings/find/1960-1989/chevrolet/camaro?country=united-states&ps=60&s=datelisted",
       "https://classiccars.com/listings/find/1960-1989/chevrolet/corvette?country=united-states&ps=60&s=datelisted"
     ],
-    "delayMs": 5000
+    "delayMs": 5000,
+    "access": {
+      "method": "Deterministic public HTML",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Public robots policy rechecked successfully. Existing catalog/detail adapter uses identified requests, persistent budgets and independent enrichment queues.",
+      "nextStep": "Continue regular bounded collection; review classified failures and unfinished detail work.",
+      "evidenceUrls": ["https://classiccars.com/robots.txt"]
+    }
   },
   {
     "id": "volo",
@@ -29,19 +34,20 @@
     "category": "Classic dealer",
     "url": "https://www.volocars.com",
     "status": "partial",
-    "scope": "Volo, IL · broad inventory",
-    "note": "Two catalog pages verified; rentals excluded. Detail enrichment partial; hidden generic pending modal ignored.",
+    "scope": "Volo, IL \u00b7 broad inventory",
+    "note": "Catalog traversal and detail enrichment are tracked independently. See latest run evidence and observation timestamps; ad counts do not prove unique physical vehicles.",
     "enabled": true,
-    "origins": [
-      "https://www.volocars.com"
-    ],
-    "inventory": [
-      "https://www.volocars.com/vehicles"
-    ],
-    "nationwideInventory": [
-      "https://www.volocars.com/vehicles"
-    ],
-    "delayMs": 10000
+    "origins": ["https://www.volocars.com"],
+    "inventory": ["https://www.volocars.com/vehicles"],
+    "nationwideInventory": ["https://www.volocars.com/vehicles"],
+    "delayMs": 10000,
+    "access": {
+      "method": "Deterministic public HTML",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Public robots policy rechecked successfully. Existing catalog/detail adapter uses identified requests, persistent budgets and independent enrichment queues.",
+      "nextStep": "Continue regular bounded collection; review classified failures and unfinished detail work.",
+      "evidenceUrls": ["https://www.volocars.com/robots.txt"]
+    }
   },
   {
     "id": "grauto",
@@ -50,18 +56,19 @@
     "url": "https://www.grautogallery.com",
     "status": "partial",
     "scope": "MI / IN branches",
-    "note": "Five catalog pages verified; duplicate IDs deduplicated. Later specialty claims separated.",
+    "note": "Catalog traversal and detail enrichment are tracked independently. See latest run evidence and observation timestamps; ad counts do not prove unique physical vehicles.",
     "enabled": true,
-    "origins": [
-      "https://www.grautogallery.com"
-    ],
-    "inventory": [
-      "https://www.grautogallery.com/vehicles"
-    ],
-    "nationwideInventory": [
-      "https://www.grautogallery.com/vehicles"
-    ],
-    "delayMs": 10000
+    "origins": ["https://www.grautogallery.com"],
+    "inventory": ["https://www.grautogallery.com/vehicles"],
+    "nationwideInventory": ["https://www.grautogallery.com/vehicles"],
+    "delayMs": 10000,
+    "access": {
+      "method": "Deterministic public HTML",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Public robots policy rechecked successfully. Existing catalog/detail adapter uses identified requests, persistent budgets and independent enrichment queues.",
+      "nextStep": "Continue regular bounded collection; review classified failures and unfinished detail work.",
+      "evidenceUrls": ["https://www.grautogallery.com/robots.txt"]
+    }
   },
   {
     "id": "admcars",
@@ -70,18 +77,19 @@
     "url": "https://www.admcars.com",
     "status": "partial",
     "scope": "Des Moines, IA",
-    "note": "Four public HTML inventory pages verified at 25-ad offsets. Main vehicle detail fields are isolated from similar cars.",
+    "note": "Catalog traversal and detail enrichment are tracked independently. See latest run evidence and observation timestamps; ad counts do not prove unique physical vehicles.",
     "enabled": true,
-    "origins": [
-      "https://www.admcars.com"
-    ],
-    "inventory": [
-      "https://www.admcars.com/inventory.htm"
-    ],
-    "nationwideInventory": [
-      "https://www.admcars.com/inventory.htm"
-    ],
-    "delayMs": 5000
+    "origins": ["https://www.admcars.com"],
+    "inventory": ["https://www.admcars.com/inventory.htm"],
+    "nationwideInventory": ["https://www.admcars.com/inventory.htm"],
+    "delayMs": 5000,
+    "access": {
+      "method": "Deterministic public HTML",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Public robots policy rechecked successfully. Existing catalog/detail adapter uses identified requests, persistent budgets and independent enrichment queues.",
+      "nextStep": "Continue regular bounded collection; review classified failures and unfinished detail work.",
+      "evidenceUrls": ["https://www.admcars.com/robots.txt"]
+    }
   },
   {
     "id": "midwest",
@@ -90,18 +98,19 @@
     "url": "https://www.midwestmusclecars.com",
     "status": "complete",
     "scope": "Lake Zurich, IL",
-    "note": "One sale page, three target details verified. Actual listing location stated; driving route still unavailable.",
+    "note": "Catalog traversal and detail enrichment are tracked independently. See latest run evidence and observation timestamps; ad counts do not prove unique physical vehicles.",
     "enabled": true,
-    "origins": [
-      "https://www.midwestmusclecars.com"
-    ],
-    "inventory": [
-      "https://www.midwestmusclecars.com/listings/sale/"
-    ],
-    "nationwideInventory": [
-      "https://www.midwestmusclecars.com/listings/sale/"
-    ],
-    "delayMs": 5000
+    "origins": ["https://www.midwestmusclecars.com"],
+    "inventory": ["https://www.midwestmusclecars.com/listings/sale/"],
+    "nationwideInventory": ["https://www.midwestmusclecars.com/listings/sale/"],
+    "delayMs": 5000,
+    "access": {
+      "method": "Deterministic public HTML",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Public robots policy rechecked successfully. Existing catalog/detail adapter uses identified requests, persistent budgets and independent enrichment queues.",
+      "nextStep": "Continue regular bounded collection; review classified failures and unfinished detail work.",
+      "evidenceUrls": ["https://www.midwestmusclecars.com/robots.txt"]
+    }
   },
   {
     "id": "nsclassics",
@@ -110,18 +119,23 @@
     "url": "https://www.nsclassics.com",
     "status": "partial",
     "scope": "Mundelein, IL",
-    "note": "Six 24-ad offsets verified; 12 target catalog ads. One public HTML detail endpoint verified with exact ID and price/specifications; 11 details remain.",
+    "note": "Catalog traversal and detail enrichment are tracked independently. See latest run evidence and observation timestamps; ad counts do not prove unique physical vehicles.",
     "enabled": true,
-    "origins": [
-      "https://www.nsclassics.com"
-    ],
+    "origins": ["https://www.nsclassics.com"],
     "inventory": [
       "https://www.nsclassics.com/isapi_xml.php?module=inventory&pageID=741&main=&limit=24&orderby=year,make,model&offset=0"
     ],
     "nationwideInventory": [
       "https://www.nsclassics.com/isapi_xml.php?module=inventory&pageID=741&main=&limit=24&orderby=year,make,model&offset=0"
     ],
-    "delayMs": 5000
+    "delayMs": 5000,
+    "access": {
+      "method": "Deterministic public HTML",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Public robots policy rechecked successfully. Existing catalog/detail adapter uses identified requests, persistent budgets and independent enrichment queues.",
+      "nextStep": "Continue regular bounded collection; review classified failures and unfinished detail work.",
+      "evidenceUrls": ["https://www.nsclassics.com/robots.txt"]
+    }
   },
   {
     "id": "jsmotors",
@@ -130,18 +144,19 @@
     "url": "https://jsmotors.com",
     "status": "partial",
     "scope": "Fairmount, IN",
-    "note": "Two Shopify catalog pages verified. Sold status comes from card CSS or matching Product Offer, not hidden badge text.",
+    "note": "Catalog traversal and detail enrichment are tracked independently. See latest run evidence and observation timestamps; ad counts do not prove unique physical vehicles.",
     "enabled": true,
-    "origins": [
-      "https://jsmotors.com"
-    ],
-    "inventory": [
-      "https://jsmotors.com/collections/all"
-    ],
-    "nationwideInventory": [
-      "https://jsmotors.com/collections/all"
-    ],
-    "delayMs": 5000
+    "origins": ["https://jsmotors.com"],
+    "inventory": ["https://jsmotors.com/collections/all"],
+    "nationwideInventory": ["https://jsmotors.com/collections/all"],
+    "delayMs": 5000,
+    "access": {
+      "method": "Deterministic public HTML",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Public robots policy rechecked successfully. Existing catalog/detail adapter uses identified requests, persistent budgets and independent enrichment queues.",
+      "nextStep": "Continue regular bounded collection; review classified failures and unfinished detail work.",
+      "evidenceUrls": ["https://jsmotors.com/robots.txt"]
+    }
   },
   {
     "id": "500classic",
@@ -149,19 +164,23 @@
     "category": "Classic dealer",
     "url": "https://www.500classicauto.com",
     "status": "partial",
-    "scope": "Knightstown, IN · first page only",
-    "note": "24 of 77 cards scanned. Detail 403; challenge-associated POST pagination intentionally not attempted.",
+    "scope": "Knightstown, IN \u00b7 first page only",
+    "note": "Catalog and linked model pages now return HTTP 403 in both transports. Sitemap HTTP 200 contains navigation links, not inventory records.",
     "enabled": true,
-    "origins": [
-      "https://www.500classicauto.com"
-    ],
-    "inventory": [
-      "https://www.500classicauto.com/cars-for-sale"
-    ],
-    "nationwideInventory": [
-      "https://www.500classicauto.com/cars-for-sale"
-    ],
-    "delayMs": 5000
+    "origins": ["https://www.500classicauto.com"],
+    "inventory": ["https://www.500classicauto.com/cars-for-sale"],
+    "nationwideInventory": ["https://www.500classicauto.com/cars-for-sale"],
+    "delayMs": 5000,
+    "access": {
+      "method": "HTTP + isolated Chromium + public sitemap",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Catalog and linked model pages now return HTTP 403 in both transports. Sitemap HTTP 200 contains navigation links, not inventory records.",
+      "nextStep": "Obtain a dealer inventory export or a working provider-approved catalog route; preserve prior observations.",
+      "evidenceUrls": [
+        "https://www.500classicauto.com/robots.txt",
+        "https://www.500classicauto.com/sitemap.xml"
+      ]
+    }
   },
   {
     "id": "autotrader",
@@ -169,12 +188,10 @@
     "category": "Marketplace",
     "url": "https://www.autotrader.com",
     "status": "partial",
-    "scope": "Mustang 1960–1989 · 500-mile query",
-    "note": "19 matching catalog ads, one detail. Active-results IDs exclude sponsored off-filter ads. Further models and nationwide queries remain unverified.",
+    "scope": "Mustang 1960\u20131989 \u00b7 500-mile query",
+    "note": "Chromium receives HTTP 200 with \u201cpage unavailable\u201d, not vehicle results. Prior 19 ads remain private.",
     "enabled": true,
-    "origins": [
-      "https://www.autotrader.com"
-    ],
+    "origins": ["https://www.autotrader.com"],
     "inventory": [
       "https://www.autotrader.com/cars-for-sale/ford/mustang/wheaton-il?zip=60187&startYear=1960&endYear=1989&searchRadius=500"
     ],
@@ -183,7 +200,17 @@
       "https://www.autotrader.com/cars-for-sale/chevrolet/camaro?startYear=1960&endYear=1989&searchRadius=0",
       "https://www.autotrader.com/cars-for-sale/chevrolet/corvette?startYear=1960&endYear=1989&searchRadius=0"
     ],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Public HTML + isolated Chromium",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Chromium receives HTTP 200 with \u201cpage unavailable\u201d, not vehicle results. Prior 19 ads remain private.",
+      "nextStep": "Use an approved Cox feed or dealer-provided inventory export. Recheck with a bounded smoke run after access changes.",
+      "evidenceUrls": [
+        "https://www.autotrader.com/robots.txt",
+        "https://www.autotrader.com/legal/visitor-agreement"
+      ]
+    }
   },
   {
     "id": "hemmings",
@@ -192,14 +219,19 @@
     "url": "https://www.hemmings.com",
     "status": "blocked",
     "scope": "Not integrated / not collected",
-    "note": "AI crawling restricted; homepage HTTP 403. No feed license or working pagination supplied.",
+    "note": "Robots HTTP 200; public policy request hits a 403 challenge. A named OAI-SearchBot product feed is advertised, but access/redistribution for MuscleScout is unverified.",
     "enabled": false,
-    "origins": [
-      "https://www.hemmings.com"
-    ],
+    "origins": ["https://www.hemmings.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Robots + public policy request",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Robots HTTP 200; public policy request hits a 403 challenge. A named OAI-SearchBot product feed is advertised, but access/redistribution for MuscleScout is unverified.",
+      "nextStep": "Obtain a Hemmings feed agreement or seller-provided export; do not impersonate its named partner crawler.",
+      "evidenceUrls": ["https://www.hemmings.com/robots.txt"]
+    }
   },
   {
     "id": "autotrader-classics",
@@ -208,14 +240,19 @@
     "url": "https://classics.autotrader.com",
     "status": "blocked",
     "scope": "Not integrated / not collected",
-    "note": "Direct homepage HTTP 403; indexed snippets are not live inventory.",
+    "note": "Ordinary inventory paths are allowed by robots for MuscleScout, but homepage is HTTP 403 in both transports.",
     "enabled": false,
-    "origins": [
-      "https://classics.autotrader.com"
-    ],
+    "origins": ["https://classics.autotrader.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Public HTTP + isolated Chromium",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Ordinary inventory paths are allowed by robots for MuscleScout, but homepage is HTTP 403 in both transports.",
+      "nextStep": "Use a Cox/provider-authorized export, or retest ordinary access after the provider resolves the block.",
+      "evidenceUrls": ["https://classics.autotrader.com/robots.txt"]
+    }
   },
   {
     "id": "craigslist",
@@ -224,14 +261,22 @@
     "url": "https://chicago.craigslist.org",
     "status": "restricted",
     "scope": "Not integrated / not collected",
-    "note": "Terms prohibit content collection without permission. Surrounding regional boards not collected.",
+    "note": "Robots is reachable. Current terms require a separate agreement for collection; this applies to ordinary scripts as well.",
     "enabled": false,
-    "origins": [
-      "https://chicago.craigslist.org"
-    ],
+    "origins": ["https://chicago.craigslist.org"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Policy review + feed import",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Robots is reachable. Current terms require a separate agreement for collection; this applies to ordinary scripts as well.",
+      "nextStep": "Import provider-licensed inventory or seller-owned records with permission; no Craigslist feed agreement is configured.",
+      "evidenceUrls": [
+        "https://chicago.craigslist.org/robots.txt",
+        "https://www.craigslist.org/about/terms"
+      ]
+    }
   },
   {
     "id": "ebay",
@@ -240,14 +285,22 @@
     "url": "https://www.ebay.com",
     "status": "credential-required",
     "scope": "Not integrated / not collected",
-    "note": "Official Browse API credentials and vehicle coverage validation required.",
+    "note": "Official API adapter exists with bounded pagination, vehicle-category checks and separate auction prices. Live credentials and approved whole-vehicle coverage are unverified.",
     "enabled": false,
-    "origins": [
-      "https://www.ebay.com"
-    ],
+    "origins": ["https://www.ebay.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Official Browse API adapter + feed import",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Official API adapter exists with bounded pagination, vehicle-category checks and separate auction prices. Live credentials and approved whole-vehicle coverage are unverified.",
+      "nextStep": "Supply eBay production application access, an approval reference and verified EBAY_US vehicle categories; validate a small live sample.",
+      "evidenceUrls": [
+        "https://www.ebay.com/robots.txt",
+        "https://developer.ebay.com/api-docs/buy/static/buy-requirements.html"
+      ]
+    }
   },
   {
     "id": "cars",
@@ -256,30 +309,43 @@
     "url": "https://www.cars.com",
     "status": "restricted",
     "scope": "Not integrated / not collected",
-    "note": "Required filtered search and detail paths restricted; no stock count inferred.",
+    "note": "Direct robots fetch is HTTP 403. Published robots disallows filtered results and vehicle detail paths; public catalog access is not a complete collection route.",
     "enabled": false,
-    "origins": [
-      "https://www.cars.com"
-    ],
+    "origins": ["https://www.cars.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Robots review + provider feed path",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Direct robots fetch is HTTP 403. Published robots disallows filtered results and vehicle detail paths; public catalog access is not a complete collection route.",
+      "nextStep": "Obtain a Cars.com feed agreement or collect the seller\u2019s own permitted catalog/export.",
+      "evidenceUrls": ["https://www.cars.com/robots.txt"]
+    }
   },
   {
     "id": "cargurus",
     "name": "CarGurus",
     "category": "Marketplace",
     "url": "https://www.cargurus.com",
-    "status": "incomplete",
+    "status": "permission-required",
     "scope": "Not integrated / not collected",
-    "note": "Public model page accessible; classic filters, current detail route and pagination not validated. Storage restrictions need review.",
+    "note": "Public model HTML returns 200, but the attempted classic-year URL resolves to all-year inventory. Storage and redistribution are restricted by current terms.",
     "enabled": false,
-    "origins": [
-      "https://www.cargurus.com"
-    ],
+    "origins": ["https://www.cargurus.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Public HTML + terms review",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Public model HTML returns 200, but the attempted classic-year URL resolves to all-year inventory. Storage and redistribution are restricted by current terms.",
+      "nextStep": "Use an approved inventory feed or seller export. Do not present an unfiltered page as classic inventory coverage.",
+      "evidenceUrls": [
+        "https://www.cargurus.com/robots.txt",
+        "https://www.cargurus.com/about/terms-of-use"
+      ]
+    }
   },
   {
     "id": "bat",
@@ -288,30 +354,46 @@
     "url": "https://bringatrailer.com",
     "status": "restricted",
     "scope": "Not integrated / not collected",
-    "note": "Terms prohibit scraping and aggregation. No bids collected.",
+    "note": "Current terms restrict data extraction and aggregation, including manual and automated tools. No licensed feed is configured.",
     "enabled": false,
-    "origins": [
-      "https://bringatrailer.com"
-    ],
+    "origins": ["https://bringatrailer.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Current terms + licensed feed path",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Current terms restrict data extraction and aggregation, including manual and automated tools. No licensed feed is configured.",
+      "nextStep": "Obtain a BaT data agreement or seller-owned export with auction timestamps and redistribution rights.",
+      "evidenceUrls": [
+        "https://bringatrailer.com/robots.txt",
+        "https://bringatrailer.com/terms-of-use/"
+      ]
+    }
   },
   {
     "id": "carsbids",
     "name": "Cars & Bids",
     "category": "Auction",
     "url": "https://carsandbids.com",
-    "status": "blocked",
+    "status": "permission-required",
     "scope": "Not integrated / not collected",
-    "note": "Homepage returned 403; no challenge bypass.",
+    "note": "Homepage is now HTTP 200, replacing the old 403 finding. Current terms still restrict unauthorized collection and significant content storage.",
     "enabled": false,
-    "origins": [
-      "https://carsandbids.com"
-    ],
+    "origins": ["https://carsandbids.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Public HTML + current terms review",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Homepage is now HTTP 200, replacing the old 403 finding. Current terms still restrict unauthorized collection and significant content storage.",
+      "nextStep": "Use a Cars & Bids agreement or seller-owned export; preserve bid, buy-now and auction end separately.",
+      "evidenceUrls": [
+        "https://carsandbids.com/robots.txt",
+        "https://carsandbids.com/terms-of-use/"
+      ]
+    }
   },
   {
     "id": "mecum",
@@ -320,14 +402,19 @@
     "url": "https://www.mecum.com",
     "status": "permission-required",
     "scope": "Not integrated / not collected",
-    "note": "Written permission required for automated data collection.",
+    "note": "Current robots explicitly requires prior written permission for automated extraction. A different browser does not resolve that requirement.",
     "enabled": false,
-    "origins": [
-      "https://www.mecum.com"
-    ],
+    "origins": ["https://www.mecum.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Robots + provider export path",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Current robots explicitly requires prior written permission for automated extraction. A different browser does not resolve that requirement.",
+      "nextStep": "Obtain permission and a Mecum lot export with event/timezone and fee fields.",
+      "evidenceUrls": ["https://www.mecum.com/robots.txt"]
+    }
   },
   {
     "id": "barrett",
@@ -336,62 +423,91 @@
     "url": "https://www.barrett-jackson.com",
     "status": "restricted",
     "scope": "Not integrated / not collected",
-    "note": "Robots denies general crawlers.",
+    "note": "Current robots disallows all paths for general crawlers; Google-specific exceptions do not apply to MuscleScout.",
     "enabled": false,
-    "origins": [
-      "https://www.barrett-jackson.com"
-    ],
+    "origins": ["https://www.barrett-jackson.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Robots + provider export path",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Current robots disallows all paths for general crawlers; Google-specific exceptions do not apply to MuscleScout.",
+      "nextStep": "Obtain a Barrett-Jackson lot feed/export and permission covering collection and public display.",
+      "evidenceUrls": ["https://www.barrett-jackson.com/robots.txt"]
+    }
   },
   {
     "id": "corvetteforum",
     "name": "CorvetteForum",
     "category": "Enthusiast classifieds",
     "url": "https://www.corvetteforum.com",
-    "status": "restricted",
+    "status": "permission-required",
     "scope": "Not integrated / not collected",
-    "note": "AI agents restricted; no authorized feed verified.",
+    "note": "GPTBot-specific robots rules are not MuscleScout rules. The linked Internet Brands terms separately restrict aggregation, including RSS.",
     "enabled": false,
-    "origins": [
-      "https://www.corvetteforum.com"
-    ],
+    "origins": ["https://www.corvetteforum.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Robots + linked operator terms",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "GPTBot-specific robots rules are not MuscleScout rules. The linked Internet Brands terms separately restrict aggregation, including RSS.",
+      "nextStep": "Obtain operator permission or independently supplied seller-owned records. A forum RSS link alone is not an approved import.",
+      "evidenceUrls": [
+        "https://www.corvetteforum.com/robots.txt",
+        "https://www.internetbrands.com/ibterms"
+      ]
+    }
   },
   {
     "id": "mustangforum",
     "name": "Vintage Mustang Forums",
     "category": "Enthusiast classifieds",
     "url": "https://www.vintage-mustang.com",
-    "status": "restricted",
+    "status": "permission-required",
     "scope": "Not integrated / not collected",
-    "note": "AI agents explicitly blocked; no collection.",
+    "note": "Terms HTTP 200 explicitly restrict collection by ordinary scripts as well as AI tools, absent a separate agreement.",
     "enabled": false,
-    "origins": [
-      "https://www.vintage-mustang.com"
-    ],
+    "origins": ["https://www.vintage-mustang.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Public terms + robots review",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Terms HTTP 200 explicitly restrict collection by ordinary scripts as well as AI tools, absent a separate agreement.",
+      "nextStep": "Obtain VerticalScope permission or independently supplied seller-owned records; do not collect member profiles or contact details.",
+      "evidenceUrls": [
+        "https://www.vintage-mustang.com/robots.txt",
+        "https://www.vintage-mustang.com/help/terms/"
+      ]
+    }
   },
   {
     "id": "camaroforum",
     "name": "Team Camaro",
     "category": "Enthusiast classifieds",
     "url": "https://www.camaros.net",
-    "status": "restricted",
+    "status": "permission-required",
     "scope": "Not integrated / not collected",
-    "note": "AI agents explicitly blocked; no collection.",
+    "note": "Terms HTTP 200 explicitly restrict collection by ordinary scripts as well as AI tools, absent a separate agreement.",
     "enabled": false,
-    "origins": [
-      "https://www.camaros.net"
-    ],
+    "origins": ["https://www.camaros.net"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Public terms + robots review",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Terms HTTP 200 explicitly restrict collection by ordinary scripts as well as AI tools, absent a separate agreement.",
+      "nextStep": "Obtain VerticalScope permission or independently supplied seller-owned records; distinguish whole cars from parts and wanted posts.",
+      "evidenceUrls": [
+        "https://www.camaros.net/robots.txt",
+        "https://www.camaros.net/help/terms/"
+      ]
+    }
   },
   {
     "id": "facebook",
@@ -400,46 +516,71 @@
     "url": "https://www.facebook.com/marketplace",
     "status": "manual-only",
     "scope": "Not integrated / not collected",
-    "note": "User-provided records or exports only; no authenticated scraping.",
+    "note": "Remains manual-only as originally configured. No Marketplace inventory API authorization or seller export is configured.",
     "enabled": false,
-    "origins": [
-      "https://www.facebook.com"
-    ],
+    "origins": ["https://www.facebook.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Seller export / manual records",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Remains manual-only as originally configured. No Marketplace inventory API authorization or seller export is configured.",
+      "nextStep": "Import independently supplied seller-owned records with provenance; account login alone does not grant bulk inventory access.",
+      "evidenceUrls": [
+        "https://www.facebook.com/marketplace/robots.txt",
+        "https://www.facebook.com/robots.txt"
+      ]
+    }
   },
   {
     "id": "jws",
     "name": "JWS Classics",
     "category": "Classic dealer",
     "url": "https://www.jwsclassics.com",
-    "status": "incomplete",
+    "status": "partial",
     "scope": "Not integrated / not collected",
-    "note": "Catalog accessible, advertised detail route fails HTTP 500. Not zero inventory.",
-    "enabled": false,
-    "origins": [
-      "https://www.jwsclassics.com"
-    ],
-    "inventory": [],
-    "nationwideInventory": [],
-    "delayMs": 10000
+    "note": "Corrected Accept header fixes robots HTTP 406 \u2192 200. Catalog HTTP 200 separates Current Inventory and Recently Sold. Detail endpoint still HTTP 500.",
+    "enabled": true,
+    "origins": ["https://www.jwsclassics.com"],
+    "inventory": ["https://www.jwsclassics.com/inventory/"],
+    "nationwideInventory": ["https://www.jwsclassics.com/inventory/"],
+    "delayMs": 10000,
+    "access": {
+      "method": "Deterministic public HTML",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Corrected Accept header fixes robots HTTP 406 \u2192 200. Catalog HTTP 200 separates Current Inventory and Recently Sold. Detail endpoint still HTTP 500.",
+      "nextStep": "Catalog collection is enabled. Retain unknown asks and sold labels; request a dealer export or repaired details for enrichment.",
+      "evidenceUrls": [
+        "https://www.jwsclassics.com/robots.txt",
+        "https://www.jwsclassics.com/inventory/"
+      ]
+    },
+    "detailMode": "catalog-only"
   },
   {
     "id": "duffys",
-    "name": "Duffy’s Classic Cars",
+    "name": "Duffy\u2019s Classic Cars",
     "category": "Classic dealer",
     "url": "https://www.iowaclassiccars.com",
     "status": "blocked",
     "scope": "Not integrated / not collected",
-    "note": "Inventory HTTP 403; stopped.",
+    "note": "Inventory is HTTP 403 in both transports. Sitemap HTTP 200 exposes model navigation; linked Mustang catalog also returns 403.",
     "enabled": false,
-    "origins": [
-      "https://www.iowaclassiccars.com"
-    ],
+    "origins": ["https://www.iowaclassiccars.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "HTTP + isolated Chromium + public sitemap",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Inventory is HTTP 403 in both transports. Sitemap HTTP 200 exposes model navigation; linked Mustang catalog also returns 403.",
+      "nextStep": "Obtain a dealer/Carsforsale inventory export or a provider-approved working route; sitemap links are not vehicle observations.",
+      "evidenceUrls": [
+        "https://www.iowaclassiccars.com/robots.txt",
+        "https://www.iowaclassiccars.com/sitemap.xml"
+      ]
+    }
   },
   {
     "id": "indyauto",
@@ -448,13 +589,21 @@
     "url": "https://www.indyauto.com",
     "status": "unsuitable",
     "scope": "Not integrated / not collected",
-    "note": "Observed domain landing page has no vehicle inventory.",
+    "note": "Homepage still returns a 114-byte landing response, not a vehicle catalog. The configured domain has no verified inventory.",
     "enabled": false,
-    "origins": [
-      "https://www.indyauto.com"
-    ],
+    "origins": ["https://www.indyauto.com"],
     "inventory": [],
     "nationwideInventory": [],
-    "delayMs": 10000
+    "delayMs": 10000,
+    "access": {
+      "method": "Public HTTP + identity review",
+      "checkedAt": "2026-09-12T21:50:00Z",
+      "outcome": "Homepage still returns a 114-byte landing response, not a vehicle catalog. The configured domain has no verified inventory.",
+      "nextStep": "Identify the intended dealer and its official catalog, or supply a dealer export. Do not silently substitute a different business.",
+      "evidenceUrls": [
+        "https://www.indyauto.com/robots.txt",
+        "https://www.indyauto.com/"
+      ]
+    }
   }
 ]

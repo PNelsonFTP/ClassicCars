@@ -1,5 +1,9 @@
 # Validation — 1.1.0
 
+## September 12 source-access changes
+
+268 tests across 27 files passed, including actual user-agent robots rules, HTML policy rejection, JWS section/identity parsing, incomplete feed templates, and catalog-only smoke/retry behavior. Both root and `/ClassicCars` production builds passed. The [public export audit](docs/validation/source-access-public-export-2026-09-12.json) passed 3,542 checks across 182 files with 3,265 public ads and 33 exact detail chunks; no forbidden fields or configured secrets were found. Live access observations are in the [source report](docs/validation/source-access-2026-09-12.json). All 18 desktop/mobile E2E tests passed, including the new source method/evidence controls. Static export checks passed at both paths with real images and no runtime errors or missing local assets. Publication results will be recorded after completion.
+
 ## September 12 inventory refresh
 
 The [dated comparison](docs/validation/refresh-2026-09-12-comparison.md) records 94 fresh catalog pages, 79 added ads, 226 successful detail checks out of 228 attempts, 47 numeric ask changes and one newly seller-reported sold listing. Two J & S Motors detail URLs returned 404; all accessible catalog checkpoints completed. No application code, configuration, dependency or lockfile changed.

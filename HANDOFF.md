@@ -1,5 +1,11 @@
 # MuscleScout handoff — 1.1.0
 
+## September 12 source-access improvement
+
+The [access audit and operating guide](docs/SOURCE_ACCESS.md) replaces blanket “AI blocked” labels with dated methods, evidence and next steps for all 26 sources. Fixed robots user-agent matching and JWS content negotiation, added catalog-only collection, deterministic HTTP/Chromium diagnostics, and incomplete private feed templates for every configured source. The new JWS scan found 44 advertised vehicles and eight matching classics, **all explicitly sold**; it added no active stock or known asking prices. Current totals are **3,284 retained ads / 3,262 groups**, **3,265 public ads / 3,249 public groups**. This access audit does not redate the earlier inventory refresh.
+
+403 responses remain for Duffy’s, 500 Classic and Classics on Autotrader in HTTP/Chromium tests. Autotrader still serves an unavailable template. Forum, auction and other provider restrictions, missing eBay access, unresolved cross-listings, the ClassicCars detail backlog and J & S 404s remain documented. No new dependencies or credentials were added. [Machine-readable access evidence](docs/validation/source-access-2026-09-12.json).
+
 Operational status updated September 12, 2026 after the [latest inventory refresh](docs/validation/refresh-2026-09-12-comparison.md). The September 10 publication adds live Pages and remote CI evidence; earlier 1.1.0 release checks retain their September 8 dates. Original local commits `4835c0a` (delivery) and `42a6622` (improvements) are preserved in the private prepublication Git bundle. Their public-history equivalents exclude research fixture data. The public [PNelsonFTP/ClassicCars repository](https://github.com/PNelsonFTP/ClassicCars) is configured as `origin`. [Delivery status](docs/DELIVERY.md) records the approved publication and actual remote results.
 
 ## Open and review
