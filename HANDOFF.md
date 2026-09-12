@@ -1,5 +1,9 @@
 # MuscleScout handoff — 1.1.0
 
+Final [CI run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34721449243) passed all six jobs on application/data commit `a639985`: Node 24 on Ubuntu, macOS and Windows; Node 22.18 on Ubuntu; hosted browser checks; and Docker.
+
+Final source-access site deployment: [`a639985`](https://github.com/PNelsonFTP/ClassicCars/commit/a6399850962290fbd3224d0bf2010e2a0d10a433), [successful Pages run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34721449077), and [live verification](docs/validation/source-access-pages-2026-09-12.json). Exact catalog/snapshot/detail hashes match the local public export; 1440/390/375-width checks and all 26 source methods passed. No collection runs or leases remain active.
+
 ## September 12 source-access improvement
 
 The [access audit and operating guide](docs/SOURCE_ACCESS.md) replaces blanket “AI blocked” labels with dated methods, evidence and next steps for all 26 sources. Fixed robots user-agent matching and JWS content negotiation, added catalog-only collection, deterministic HTTP/Chromium diagnostics, and incomplete private feed templates for every configured source. The new JWS scan found 44 advertised vehicles and eight matching classics, **all explicitly sold**; it added no active stock or known asking prices. Current totals are **3,284 retained ads / 3,262 groups**, **3,265 public ads / 3,249 public groups**. This access audit does not redate the earlier inventory refresh.

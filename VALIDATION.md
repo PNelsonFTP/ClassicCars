@@ -1,8 +1,12 @@
 # Validation — 1.1.0
 
+Final [CI run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34721449243) passed all six jobs on application/data commit `a639985`: Node 24 on Ubuntu, macOS and Windows; Node 22.18 on Ubuntu; hosted browser checks; and Docker.
+
+Final source-access site deployment: [`a639985`](https://github.com/PNelsonFTP/ClassicCars/commit/a6399850962290fbd3224d0bf2010e2a0d10a433), [successful Pages run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34721449077), and [live verification](docs/validation/source-access-pages-2026-09-12.json). Exact catalog/snapshot/detail hashes match the local public export; 1440/390/375-width checks and all 26 source methods passed. No collection runs or leases remain active.
+
 ## September 12 source-access changes
 
-268 tests across 27 files passed, including actual user-agent robots rules, HTML policy rejection, JWS section/identity parsing, incomplete feed templates, and catalog-only smoke/retry behavior. Both root and `/ClassicCars` production builds passed. The [public export audit](docs/validation/source-access-public-export-2026-09-12.json) passed 3,542 checks across 182 files with 3,265 public ads and 33 exact detail chunks; no forbidden fields or configured secrets were found. Live access observations are in the [source report](docs/validation/source-access-2026-09-12.json). All 18 desktop/mobile E2E tests passed, including the new source method/evidence controls. Static export checks passed at both paths with real images and no runtime errors or missing local assets. Publication results will be recorded after completion.
+268 tests across 27 files passed, including actual user-agent robots rules, HTML policy rejection, JWS section/identity parsing, incomplete feed templates, and catalog-only smoke/retry behavior. Both root and `/ClassicCars` production builds passed. The [public export audit](docs/validation/source-access-public-export-2026-09-12.json) passed 3,542 checks across 182 files with 3,265 public ads and 33 exact detail chunks; no forbidden fields or configured secrets were found. Live access observations are in the [source report](docs/validation/source-access-2026-09-12.json). All 18 desktop/mobile E2E tests passed, including the new source method/evidence controls. Static export checks passed at both paths with real images and no runtime errors or missing local assets. Final publication is verified in the receipt above.
 
 ## September 12 inventory refresh
 

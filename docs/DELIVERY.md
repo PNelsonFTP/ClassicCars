@@ -1,8 +1,10 @@
 # MuscleScout 1.1.0 delivery
 
+Final [CI run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34721449243) passed all six jobs on application/data commit `a639985`: Node 24 on Ubuntu, macOS and Windows; Node 22.18 on Ubuntu; hosted browser checks; and Docker.
+
 ## September 12 source-access release
 
-The [source-access update](SOURCE_ACCESS.md) adds dated methods and evidence for all 26 sources, fixes identified HTTP/robots issues, and enables JWS catalog-only collection. The public snapshot now contains 3,265 ads; the eight new JWS records are explicitly sold, not newly available stock. Release validation: 268 unit/API tests, 18 desktop/mobile E2E tests, both static export paths and public redaction checks passed. No dependency versions changed; SBOM input hashes were regenerated. Publication verification follows the release commit.
+The [source-access update](SOURCE_ACCESS.md) adds dated methods and evidence for all 26 sources, fixes identified HTTP/robots issues, and enables JWS catalog-only collection. The public snapshot now contains 3,265 ads; the eight new JWS records are explicitly sold, not newly available stock. Release validation: 268 unit/API tests, 18 desktop/mobile E2E tests, both static export paths and public redaction checks passed. No dependency versions changed; SBOM input hashes were regenerated. Deployed application/data commit: [`a639985`](https://github.com/PNelsonFTP/ClassicCars/commit/a6399850962290fbd3224d0bf2010e2a0d10a433). [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34721449077) and [live browser/data verification](validation/source-access-pages-2026-09-12.json) passed.
 
 ## September 12 inventory update
 
