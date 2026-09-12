@@ -1,5 +1,11 @@
 # Validation — 1.1.0
 
+## September 12 inventory refresh
+
+The [dated comparison](docs/validation/refresh-2026-09-12-comparison.md) records 94 fresh catalog pages, 79 added ads, 226 successful detail checks out of 228 attempts, 47 numeric ask changes and one newly seller-reported sold listing. Two J & S Motors detail URLs returned 404; all accessible catalog checkpoints completed. No application code, configuration, dependency or lockfile changed.
+
+Root and `/ClassicCars` production builds and their TypeScript checks passed. The [public export receipt](docs/validation/public-export-review-2026-09-12.json) passed 3,534 checks across 182 static files: 3,257 public ads, 33 exact detail chunks, no missing/unexpected ads, obsolete chunks, invalid asks, private fields or configured secrets. Both built data copies match the exported snapshot. [Browser export checks](docs/validation/static-review-2026-09-12.json) passed at both paths, with real images, zero runtime errors/missing local assets and isolated workspaces. These data checks do not redate the September 10 platform/SBOM or September 8 advisory evidence.
+
 ## September 10 public GitHub Pages validation
 
 The [public website](https://pnelsonftp.github.io/ClassicCars/) is deployed from `ea6be78`; its [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34547932246) succeeded. Live desktop/mobile browser checks and exact public-data hash comparisons passed. The [machine-readable receipt](docs/validation/github-pages-2026-09-10.json) records 3,178 public ads, lazy detail loading, typo search, real images and zero runtime errors/missing local assets at 1440, 390 and 375 pixels. This validates static hosting; it does not establish browser permission to reach a private backend from the public origin.

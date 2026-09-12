@@ -1,6 +1,12 @@
 # Future improvements and acceptance status
 
-Updated September 10, 2026 (America/Chicago) for **MuscleScout 1.1.0**. The software changes for all 19 original items are implemented. Several real-world acceptance checks remain open because they require credentials, source permission, manual launcher/autostart checks or target-environment validation. [Delivery status](docs/DELIVERY.md) records the approved final publication and remote checks. The original requirements remain available in the [archived backlog](docs/FUTURE_IMPROVEMENTS_BASELINE.md); the [implementation map](docs/IMPROVEMENTS_STATUS.md) links every item to code, tests and remaining limits.
+Updated September 12, 2026 (America/Chicago) for **MuscleScout 1.1.0**. The software changes for all 19 original items are implemented. Several real-world acceptance checks remain open because they require credentials, source permission, manual launcher/autostart checks or target-environment validation. [Delivery status](docs/DELIVERY.md) records the approved final publication and remote checks. The original requirements remain available in the [archived backlog](docs/FUTURE_IMPROVEMENTS_BASELINE.md); the [implementation map](docs/IMPROVEMENTS_STATUS.md) links every item to code, tests and remaining limits.
+
+## September 12 data follow-up
+
+The **September 12, 2026 refresh** retains **3,276 ads / 3,254 groups**, including **3,257 public ads**. It added **79 ads**, observed **47 numeric asking-price changes** (37 decreases, 10 increases), and refreshed details for **226 distinct ads**. All accessible configured catalogs completed: 25 regional and 49 national ClassicCars pages plus 20 dealer pages, with no catalog failures or cache hits. Five dealer detail queues are fully fresh; J & S Motors has 22 refreshed details and two older URLs returning 404. ClassicCars completed its configured 50-detail batch; 3,026 details remain due, rather than blocked by the daily budget. Autotrader and 500 Classic remain paused without new requests. See the [dated comparison](docs/validation/refresh-2026-09-12-comparison.md) for original observation dates and exact limits. Ads and groups are not verified unique physical vehicles; strict four-hour matches still require actual road routes.
+
+The two missing J & S Motors detail pages retain their prior ads and blocked detail tasks; HTTP 404 is not treated as proof of a sale. Cross-listing review remains open. Older detail observations remain dated, and this bounded refresh does not claim a full detail-page or market census.
 
 ## September 10 data follow-up
 
@@ -32,7 +38,7 @@ The [dated refresh](docs/validation/refresh-2026-09-10-comparison.md) added 58 a
 
 ## The cross-listing problem remains open in the real inventory
 
-**The September 10 inventory has 3,197 ads and 3,175 groups; these are not verified unique physical vehicles.** The initial collection had 1,576 ads before the final catalog refresh. No human review has reconciled the whole collection. Most ads still lack complete seller/stock/identifier evidence. Initial read-only analysis found 23,963 same-title/model/year lookalike pairs, including 1,156 across sources; those historical counts were produced by the old weak algorithm and are not current ranked suggestions or confirmed duplicates.
+**The September 12 inventory has 3,276 ads and 3,254 groups; these are not verified unique physical vehicles.** The initial collection had 1,576 ads before the final catalog refresh. No human review has reconciled the whole collection. Most ads still lack complete seller/stock/identifier evidence. Initial read-only analysis found 23,963 same-title/model/year lookalike pairs, including 1,156 across sources; those historical counts were produced by the old weak algorithm and are not current ranked suggestions or confirmed duplicates.
 
 The new candidate index requires corroboration and presents conflicting identifiers rather than automatically merging them. Reviewed aliases and conservative stock normalization retain raw evidence. Every original source URL, asking-price history, favorite and note survives grouping. Overlapping merge/undo sequences have regression coverage. A small labeled synthetic set measured candidate precision 0.75 and recall 1.0; it is a regression fixture, not evidence of production matching accuracy. No photo-similarity identification was introduced without appropriate image rights.
 

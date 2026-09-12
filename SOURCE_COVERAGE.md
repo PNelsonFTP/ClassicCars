@@ -1,8 +1,12 @@
 # Source coverage
 
+## September 12, 2026 source refresh
+
+The **September 12, 2026 refresh** retains **3,276 ads / 3,254 groups**, including **3,257 public ads**. It added **79 ads**, observed **47 numeric asking-price changes** (37 decreases, 10 increases), and refreshed details for **226 distinct ads**. All accessible configured catalogs completed: 25 regional and 49 national ClassicCars pages plus 20 dealer pages, with no catalog failures or cache hits. Five dealer detail queues are fully fresh; J & S Motors has 22 refreshed details and two older URLs returning 404. ClassicCars completed its configured 50-detail batch; 3,026 details remain due, rather than blocked by the daily budget. Autotrader and 500 Classic remain paused without new requests. See the [dated comparison](docs/validation/refresh-2026-09-12-comparison.md) for original observation dates and exact limits. Ads and groups are not verified unique physical vehicles; strict four-hour matches still require actual road routes.
+
 ## September 10, 2026 source refresh
 
-The [latest comparison](docs/validation/refresh-2026-09-10-comparison.md) records 160 uncached catalog pages, 58 added ads, and 1,045 distinct fresh detail observations. All six active dealer detail queues are fresh and complete. ClassicCars has 870 newly observed details; its remaining work is paused at the configured 1,000-request daily limit. 500 Classic and Autotrader remain paused, and restricted or disabled sources remain uncollected. The latest ClassicCars checkpoints completed 25 regional pages and 50 nationwide pages. Dealer catalog URLs are shared across scopes; each broad dealer catalog was traversed once, with additional repair validation where required.
+The [September 10 comparison](docs/validation/refresh-2026-09-10-comparison.md) records 160 uncached catalog pages, 58 added ads, and 1,045 distinct fresh detail observations. All six active dealer detail queues are fresh and complete. ClassicCars has 870 newly observed details; its remaining work is paused at the configured 1,000-request daily limit. 500 Classic and Autotrader remain paused, and restricted or disabled sources remain uncollected. The latest ClassicCars checkpoints completed 25 regional pages and 50 nationwide pages. Dealer catalog URLs are shared across scopes; each broad dealer catalog was traversed once, with additional repair validation where required.
 
 Current source health is separate from recovered historical failures. The aggregate report contains per-source dates, request/parse counts, detail attempts, daily budgets and overlapping scope queues. Disabled or unavailable sources are not a zero-inventory finding.
 

@@ -1,0 +1,3657 @@
+{
+  "schemaVersion": 1,
+  "reportGeneratedAt": "2026-09-12T12:40:08.141Z",
+  "window": {
+    "startedAt": "2026-09-12T12:03:44.618Z",
+    "endedAt": "2026-09-12T12:40:08.053Z",
+    "basis": "IngestRun.startedAt within the window; listing changes use original observation timestamps."
+  },
+  "status": "final-local-comparison",
+  "readOnly": true,
+  "networkRequests": 0,
+  "databaseWrites": 0,
+  "exportWrites": 0,
+  "inputEvidence": {
+    "baselineSha256": "a24a8865efd127c9bccdc63cfc4d4e1779a57abfff75eb63247ccc4cb9a97433",
+    "sourceConfigSha256": "1e548159b567e1ed7c44e423502a04f054cda934f5361c2d0eb91561a1bb1cad",
+    "baselineFileModifiedAt": "2026-09-12T12:03:45.029Z",
+    "databaseUnchangedAcrossSnapshotRead": true,
+    "baselineUnchangedDuringRead": true,
+    "baselineSettingsCaptured": false
+  },
+  "before": {
+    "retainedAds": 3197,
+    "retainedGroups": 3175,
+    "publicAdsUnderCurrentSettings": 3178,
+    "publicGroupsUnderCurrentSettings": 3162
+  },
+  "after": {
+    "retainedAds": 3276,
+    "retainedGroups": 3254,
+    "publicAdsUnderCurrentSettings": 3257,
+    "publicGroupsUnderCurrentSettings": 3241
+  },
+  "changes": {
+    "addedRetainedAds": 79,
+    "existingAdsReobservedInWindow": 2995,
+    "retainedAdsObservedInWindow": 3074,
+    "uniqueFreshDetailAds": 226,
+    "existingAdsWithFreshDetails": 223,
+    "uniqueAdsWithDetailAttemptRecordedInWindow": 228,
+    "baselineIdsNotRetainedNow": 0,
+    "numericAskingPriceChanges": 47,
+    "askingPriceIncreases": 10,
+    "askingPriceDecreases": 37,
+    "askingPriceBecameKnown": 6,
+    "askingPriceBecameUnknown": 1,
+    "observedAvailabilityChanges": 51,
+    "changedToSellerReportedSold": 1,
+    "changedToObservedRemoved": 0,
+    "availabilityProjectionOnlyChanges": 0,
+    "saleTypeChanges": 6
+  },
+  "totals": {
+    "sourceRuns": 11,
+    "activeSourceRuns": 0,
+    "returnedCatalogResponses": 94,
+    "catalogFetchOrParseFailures": 0,
+    "detailAttempts": 228,
+    "detailSuccesses": 226,
+    "detailFailures": 2,
+    "invalidFutureObservationDates": 0
+  },
+  "settings": {
+    "maxPagesPerDefaultRun": 5,
+    "maxDetailsPerDefaultRun": 50,
+    "cacheHours": 24,
+    "auctionDetailCacheHours": 1,
+    "staleDays": 14,
+    "scheduledScope": "regional",
+    "collectionIntervalHours": 24
+  },
+  "currentCollectionJobs": {
+    "statuses": {
+      "cancelled": 10,
+      "completed": 9,
+      "partial": 21
+    },
+    "running": 0
+  },
+  "overlappingRunsExcluded": 0,
+  "sources": [
+    {
+      "sourceId": "500classic",
+      "before": {
+        "retainedAds": 3,
+        "retainedGroups": 3,
+        "publicAdsUnderCurrentSettings": 3,
+        "publicGroupsUnderCurrentSettings": 3
+      },
+      "after": {
+        "retainedAds": 3,
+        "retainedGroups": 3,
+        "publicAdsUnderCurrentSettings": 3,
+        "publicGroupsUnderCurrentSettings": 3
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 1,
+        "statuses": {
+          "blocked": 1
+        },
+        "firstStartedAt": "2026-09-12T12:35:50.017Z",
+        "lastFinishedAt": "2026-09-12T12:35:50.018Z",
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [
+          500
+        ],
+        "recordedDetailCaps": [
+          50
+        ]
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 1,
+        "lastSuccessAt": "2026-09-08T02:32:29.107Z",
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": {
+          "at": "2026-09-08T02:56:57.974Z",
+          "kind": "access",
+          "httpStatus": 403,
+          "retryAfterAt": null
+        },
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": true,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": true,
+        "configurationStatus": "partial",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": true,
+        "minimumRequestSpacingMs": 5000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 3,
+        "scopes": {
+          "regional": {
+            "tracked": 3,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 3,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": {
+              "cycle": 1,
+              "startedAt": "2026-09-08T17:19:27.974Z",
+              "completedAt": null,
+              "trackedPages": 1,
+              "pendingPages": 1,
+              "blockedPages": 0,
+              "completePages": 0,
+              "successfulCompletionsInWindow": 0,
+              "freshObservedPagesInWindow": 0
+            },
+            "runs": 1,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.500classicauto.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "admcars",
+      "before": {
+        "retainedAds": 38,
+        "retainedGroups": 38,
+        "publicAdsUnderCurrentSettings": 38,
+        "publicGroupsUnderCurrentSettings": 38
+      },
+      "after": {
+        "retainedAds": 38,
+        "retainedGroups": 38,
+        "publicAdsUnderCurrentSettings": 38,
+        "publicGroupsUnderCurrentSettings": 38
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 38,
+        "retainedAdsObservedInWindow": 38,
+        "uniqueFreshDetailAds": 38,
+        "existingAdsWithFreshDetails": 38,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 38,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 1,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 1,
+        "statuses": {
+          "complete": 1
+        },
+        "firstStartedAt": "2026-09-12T12:28:18.678Z",
+        "lastFinishedAt": "2026-09-12T12:31:49.080Z",
+        "returnedCatalogResponses": 4,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 38,
+        "detailSuccesses": 38,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [
+          500
+        ],
+        "recordedDetailCaps": [
+          50
+        ]
+      },
+      "currentHealth": {
+        "state": "active",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": "2026-09-12T12:31:49.080Z",
+        "lastLiveValidatedAt": "2026-09-12T12:31:49.080Z",
+        "reviewedAt": "2026-09-10T20:27:43.326Z",
+        "lastFailure": {
+          "at": "2026-09-10T20:22:18.872Z",
+          "kind": "layout",
+          "httpStatus": null,
+          "retryAfterAt": null
+        },
+        "historicalFailureFollowedByLiveValidation": true,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": true,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": true,
+        "configurationStatus": "partial",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": true,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 5000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 38,
+        "scopes": {
+          "regional": {
+            "tracked": 38,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 38,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": {
+              "cycle": 4,
+              "startedAt": "2026-09-12T12:28:18.591Z",
+              "completedAt": "2026-09-12T12:28:38.770Z",
+              "trackedPages": 4,
+              "pendingPages": 0,
+              "blockedPages": 0,
+              "completePages": 4,
+              "successfulCompletionsInWindow": 4,
+              "freshObservedPagesInWindow": 4
+            },
+            "runs": 1,
+            "returnedCatalogResponses": 4,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 38,
+            "detailSuccesses": 38,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.admcars.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": "2026-09-12",
+          "recordedReservations": 43,
+          "todayReservations": 43,
+          "remainingReservations": 957,
+          "limitReached": false,
+          "nextRequestAt": "2026-09-12T12:31:53.680Z",
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": true
+        }
+      ]
+    },
+    {
+      "sourceId": "autotrader",
+      "before": {
+        "retainedAds": 19,
+        "retainedGroups": 19,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 19,
+        "retainedGroups": 19,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 1,
+        "statuses": {
+          "blocked": 1
+        },
+        "firstStartedAt": "2026-09-12T12:35:50.081Z",
+        "lastFinishedAt": "2026-09-12T12:35:50.083Z",
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [
+          500
+        ],
+        "recordedDetailCaps": [
+          50
+        ]
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 1,
+        "lastSuccessAt": "2026-09-08T02:40:00.746Z",
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": {
+          "at": "2026-09-08T02:56:58.100Z",
+          "kind": "layout",
+          "httpStatus": null,
+          "retryAfterAt": null
+        },
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": true,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": true,
+        "configurationStatus": "partial",
+        "excludedFromPublicSnapshot": true,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 19,
+        "scopes": {
+          "regional": {
+            "tracked": 19,
+            "dueByTaskState": 1,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 18,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": {
+              "cycle": 1,
+              "startedAt": "2026-09-08T17:19:28.115Z",
+              "completedAt": null,
+              "trackedPages": 1,
+              "pendingPages": 1,
+              "blockedPages": 0,
+              "completePages": 0,
+              "successfulCompletionsInWindow": 0,
+              "freshObservedPagesInWindow": 0
+            },
+            "runs": 1,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": {
+              "cycle": 1,
+              "startedAt": "2026-09-08T17:23:23.734Z",
+              "completedAt": null,
+              "trackedPages": 3,
+              "pendingPages": 3,
+              "blockedPages": 0,
+              "completePages": 0,
+              "successfulCompletionsInWindow": 0,
+              "freshObservedPagesInWindow": 0
+            },
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.autotrader.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "autotrader-classics",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "blocked",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://classics.autotrader.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "barrett",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "restricted",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.barrett-jackson.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "bat",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "restricted",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://bringatrailer.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "camaroforum",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "restricted",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.camaros.net",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "cargurus",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "incomplete",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.cargurus.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "cars",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "restricted",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.cars.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "carsbids",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "blocked",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://carsandbids.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "classiccars",
+      "before": {
+        "retainedAds": 3000,
+        "retainedGroups": 3000,
+        "publicAdsUnderCurrentSettings": 3000,
+        "publicGroupsUnderCurrentSettings": 3000
+      },
+      "after": {
+        "retainedAds": 3076,
+        "retainedGroups": 3076,
+        "publicAdsUnderCurrentSettings": 3076,
+        "publicGroupsUnderCurrentSettings": 3076
+      },
+      "changes": {
+        "addedRetainedAds": 76,
+        "existingAdsReobservedInWindow": 2822,
+        "retainedAdsObservedInWindow": 2898,
+        "uniqueFreshDetailAds": 50,
+        "existingAdsWithFreshDetails": 50,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 50,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 46,
+        "askingPriceIncreases": 10,
+        "askingPriceDecreases": 36,
+        "askingPriceBecameKnown": 6,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 50,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 6
+      },
+      "runWindow": {
+        "runs": 2,
+        "statuses": {
+          "partial": 2
+        },
+        "firstStartedAt": "2026-09-12T12:04:08.904Z",
+        "lastFinishedAt": "2026-09-12T12:40:06.297Z",
+        "returnedCatalogResponses": 74,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 50,
+        "detailSuccesses": 50,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 92,
+        "availabilityObservationRecords": 126,
+        "recordedPageCaps": [
+          500
+        ],
+        "recordedDetailCaps": [
+          0,
+          50
+        ]
+      },
+      "currentHealth": {
+        "state": "active",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": "2026-09-12T12:40:06.281Z",
+        "lastLiveValidatedAt": "2026-09-12T12:40:06.281Z",
+        "reviewedAt": "2026-09-10T22:10:04.736Z",
+        "lastFailure": {
+          "at": "2026-09-10T23:05:45.136Z",
+          "kind": "budget",
+          "httpStatus": null,
+          "retryAfterAt": "2026-09-11T00:00:00.000Z"
+        },
+        "historicalFailureFollowedByLiveValidation": true,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": true,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": true,
+        "configurationStatus": "partial",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": true,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 5000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 3076,
+        "scopes": {
+          "regional": {
+            "tracked": 1430,
+            "dueByTaskState": 1380,
+            "duePermittedByCurrentSourcePolicy": 1380,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 50,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": {
+              "cycle": 3,
+              "startedAt": "2026-09-12T12:04:08.801Z",
+              "completedAt": "2026-09-12T12:06:14.141Z",
+              "trackedPages": 25,
+              "pendingPages": 0,
+              "blockedPages": 0,
+              "completePages": 25,
+              "successfulCompletionsInWindow": 25,
+              "freshObservedPagesInWindow": 25
+            },
+            "runs": 1,
+            "returnedCatalogResponses": 25,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 50,
+            "detailSuccesses": 50,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 3076,
+            "dueByTaskState": 3026,
+            "duePermittedByCurrentSourcePolicy": 3026,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 50,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": {
+              "cycle": 4,
+              "startedAt": "2026-09-12T12:36:05.946Z",
+              "completedAt": "2026-09-12T12:40:06.280Z",
+              "trackedPages": 49,
+              "pendingPages": 0,
+              "blockedPages": 0,
+              "completePages": 49,
+              "successfulCompletionsInWindow": 49,
+              "freshObservedPagesInWindow": 49
+            },
+            "runs": 1,
+            "returnedCatalogResponses": 49,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://classiccars.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": "2026-09-12",
+          "recordedReservations": 125,
+          "todayReservations": 125,
+          "remainingReservations": 875,
+          "limitReached": false,
+          "nextRequestAt": "2026-09-12T12:40:11.046Z",
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": true
+        }
+      ]
+    },
+    {
+      "sourceId": "corvetteforum",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "restricted",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.corvetteforum.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "craigslist",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "restricted",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://chicago.craigslist.org",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "duffys",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "blocked",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.iowaclassiccars.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "ebay",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "credential-required",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.ebay.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "facebook",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "manual-only",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.facebook.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "grauto",
+      "before": {
+        "retainedAds": 47,
+        "retainedGroups": 47,
+        "publicAdsUnderCurrentSettings": 47,
+        "publicGroupsUnderCurrentSettings": 47
+      },
+      "after": {
+        "retainedAds": 50,
+        "retainedGroups": 50,
+        "publicAdsUnderCurrentSettings": 50,
+        "publicGroupsUnderCurrentSettings": 50
+      },
+      "changes": {
+        "addedRetainedAds": 3,
+        "existingAdsReobservedInWindow": 47,
+        "retainedAdsObservedInWindow": 50,
+        "uniqueFreshDetailAds": 50,
+        "existingAdsWithFreshDetails": 47,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 50,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 1,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 1,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 1,
+        "statuses": {
+          "complete": 1
+        },
+        "firstStartedAt": "2026-09-12T12:19:08.178Z",
+        "lastFinishedAt": "2026-09-12T12:28:18.589Z",
+        "returnedCatalogResponses": 5,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 50,
+        "detailSuccesses": 50,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 4,
+        "availabilityObservationRecords": 3,
+        "recordedPageCaps": [
+          500
+        ],
+        "recordedDetailCaps": [
+          50
+        ]
+      },
+      "currentHealth": {
+        "state": "active",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": "2026-09-12T12:28:18.587Z",
+        "lastLiveValidatedAt": "2026-09-12T12:28:18.587Z",
+        "reviewedAt": "2026-09-10T20:39:23.046Z",
+        "lastFailure": {
+          "at": "2026-09-10T20:34:20.046Z",
+          "kind": "layout",
+          "httpStatus": null,
+          "retryAfterAt": null
+        },
+        "historicalFailureFollowedByLiveValidation": true,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": true,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": true,
+        "configurationStatus": "partial",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": true,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 50,
+        "scopes": {
+          "regional": {
+            "tracked": 50,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 50,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": {
+              "cycle": 4,
+              "startedAt": "2026-09-12T12:19:08.098Z",
+              "completedAt": "2026-09-12T12:19:58.749Z",
+              "trackedPages": 5,
+              "pendingPages": 0,
+              "blockedPages": 0,
+              "completePages": 5,
+              "successfulCompletionsInWindow": 5,
+              "freshObservedPagesInWindow": 5
+            },
+            "runs": 1,
+            "returnedCatalogResponses": 5,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 50,
+            "detailSuccesses": 50,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.grautogallery.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": "2026-09-12",
+          "recordedReservations": 56,
+          "todayReservations": 56,
+          "remainingReservations": 944,
+          "limitReached": false,
+          "nextRequestAt": "2026-09-12T12:28:28.182Z",
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": true
+        }
+      ]
+    },
+    {
+      "sourceId": "hemmings",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "blocked",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.hemmings.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "indyauto",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "unsuitable",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.indyauto.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "jsmotors",
+      "before": {
+        "retainedAds": 24,
+        "retainedGroups": 24,
+        "publicAdsUnderCurrentSettings": 24,
+        "publicGroupsUnderCurrentSettings": 24
+      },
+      "after": {
+        "retainedAds": 24,
+        "retainedGroups": 24,
+        "publicAdsUnderCurrentSettings": 24,
+        "publicGroupsUnderCurrentSettings": 24
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 22,
+        "retainedAdsObservedInWindow": 22,
+        "uniqueFreshDetailAds": 22,
+        "existingAdsWithFreshDetails": 22,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 24,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 1,
+        "statuses": {
+          "partial": 1
+        },
+        "firstStartedAt": "2026-09-12T12:33:39.688Z",
+        "lastFinishedAt": "2026-09-12T12:35:49.928Z",
+        "returnedCatalogResponses": 2,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 24,
+        "detailSuccesses": 22,
+        "detailFailures": 2,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {
+          "missing": 2
+        },
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [
+          500
+        ],
+        "recordedDetailCaps": [
+          50
+        ]
+      },
+      "currentHealth": {
+        "state": "active",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": "2026-09-12T12:35:49.927Z",
+        "lastLiveValidatedAt": "2026-09-12T12:35:49.927Z",
+        "reviewedAt": null,
+        "lastFailure": {
+          "at": "2026-09-12T12:34:59.933Z",
+          "kind": "missing",
+          "httpStatus": 404,
+          "retryAfterAt": null
+        },
+        "historicalFailureFollowedByLiveValidation": true,
+        "failureHistoryEventsInWindow": 2,
+        "failureKindsInWindow": {
+          "missing": 2
+        },
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": true,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": true,
+        "configurationStatus": "partial",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": true,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 5000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 24,
+        "scopes": {
+          "regional": {
+            "tracked": 24,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 2,
+            "waitingRetry": 0,
+            "completedFresh": 22,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": {
+              "cycle": 3,
+              "startedAt": "2026-09-12T12:33:39.607Z",
+              "completedAt": "2026-09-12T12:33:50.083Z",
+              "trackedPages": 2,
+              "pendingPages": 0,
+              "blockedPages": 0,
+              "completePages": 2,
+              "successfulCompletionsInWindow": 2,
+              "freshObservedPagesInWindow": 2
+            },
+            "runs": 1,
+            "returnedCatalogResponses": 2,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 24,
+            "detailSuccesses": 22,
+            "detailFailures": 2
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://jsmotors.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": "2026-09-12",
+          "recordedReservations": 27,
+          "todayReservations": 27,
+          "remainingReservations": 973,
+          "limitReached": false,
+          "nextRequestAt": "2026-09-12T12:35:54.691Z",
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": true
+        }
+      ]
+    },
+    {
+      "sourceId": "jws",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "incomplete",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.jwsclassics.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "mecum",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "permission-required",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.mecum.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "midwest",
+      "before": {
+        "retainedAds": 3,
+        "retainedGroups": 3,
+        "publicAdsUnderCurrentSettings": 3,
+        "publicGroupsUnderCurrentSettings": 3
+      },
+      "after": {
+        "retainedAds": 3,
+        "retainedGroups": 3,
+        "publicAdsUnderCurrentSettings": 3,
+        "publicGroupsUnderCurrentSettings": 3
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 3,
+        "retainedAdsObservedInWindow": 3,
+        "uniqueFreshDetailAds": 3,
+        "existingAdsWithFreshDetails": 3,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 3,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 1,
+        "statuses": {
+          "complete": 1
+        },
+        "firstStartedAt": "2026-09-12T12:31:49.152Z",
+        "lastFinishedAt": "2026-09-12T12:32:09.257Z",
+        "returnedCatalogResponses": 1,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 3,
+        "detailSuccesses": 3,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [
+          500
+        ],
+        "recordedDetailCaps": [
+          50
+        ]
+      },
+      "currentHealth": {
+        "state": "active",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": "2026-09-12T12:32:09.257Z",
+        "lastLiveValidatedAt": "2026-09-12T12:32:09.257Z",
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": true,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": true,
+        "configurationStatus": "complete",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": true,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 5000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 3,
+        "scopes": {
+          "regional": {
+            "tracked": 3,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 3,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": {
+              "cycle": 4,
+              "startedAt": "2026-09-12T12:31:49.082Z",
+              "completedAt": "2026-09-12T12:31:54.369Z",
+              "trackedPages": 1,
+              "pendingPages": 0,
+              "blockedPages": 0,
+              "completePages": 1,
+              "successfulCompletionsInWindow": 1,
+              "freshObservedPagesInWindow": 1
+            },
+            "runs": 1,
+            "returnedCatalogResponses": 1,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 3,
+            "detailSuccesses": 3,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.midwestmusclecars.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": "2026-09-12",
+          "recordedReservations": 5,
+          "todayReservations": 5,
+          "remainingReservations": 995,
+          "limitReached": false,
+          "nextRequestAt": "2026-09-12T12:32:14.155Z",
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": true
+        }
+      ]
+    },
+    {
+      "sourceId": "mustangforum",
+      "before": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "after": {
+        "retainedAds": 0,
+        "retainedGroups": 0,
+        "publicAdsUnderCurrentSettings": 0,
+        "publicGroupsUnderCurrentSettings": 0
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 0,
+        "retainedAdsObservedInWindow": 0,
+        "uniqueFreshDetailAds": 0,
+        "existingAdsWithFreshDetails": 0,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 0,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 0,
+        "statuses": {},
+        "firstStartedAt": null,
+        "lastFinishedAt": null,
+        "returnedCatalogResponses": 0,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 0,
+        "detailSuccesses": 0,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [],
+        "recordedDetailCaps": []
+      },
+      "currentHealth": {
+        "state": "review",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": null,
+        "lastLiveValidatedAt": null,
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": false,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": false,
+        "configurationStatus": "restricted",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": false,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 0,
+        "scopes": {
+          "regional": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.vintage-mustang.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": null,
+          "recordedReservations": null,
+          "todayReservations": 0,
+          "remainingReservations": 1000,
+          "limitReached": false,
+          "nextRequestAt": null,
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": false
+        }
+      ]
+    },
+    {
+      "sourceId": "nsclassics",
+      "before": {
+        "retainedAds": 12,
+        "retainedGroups": 12,
+        "publicAdsUnderCurrentSettings": 12,
+        "publicGroupsUnderCurrentSettings": 12
+      },
+      "after": {
+        "retainedAds": 12,
+        "retainedGroups": 12,
+        "publicAdsUnderCurrentSettings": 12,
+        "publicGroupsUnderCurrentSettings": 12
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 12,
+        "retainedAdsObservedInWindow": 12,
+        "uniqueFreshDetailAds": 12,
+        "existingAdsWithFreshDetails": 12,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 12,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 0,
+        "changedToSellerReportedSold": 0,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 1,
+        "statuses": {
+          "complete": 1
+        },
+        "firstStartedAt": "2026-09-12T12:32:09.325Z",
+        "lastFinishedAt": "2026-09-12T12:33:39.606Z",
+        "returnedCatalogResponses": 6,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 12,
+        "detailSuccesses": 12,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 0,
+        "recordedPageCaps": [
+          500
+        ],
+        "recordedDetailCaps": [
+          50
+        ]
+      },
+      "currentHealth": {
+        "state": "active",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": "2026-09-12T12:33:39.605Z",
+        "lastLiveValidatedAt": "2026-09-12T12:33:39.605Z",
+        "reviewedAt": "2026-09-10T20:27:07.704Z",
+        "lastFailure": {
+          "at": "2026-09-10T20:19:32.826Z",
+          "kind": "layout",
+          "httpStatus": null,
+          "retryAfterAt": null
+        },
+        "historicalFailureFollowedByLiveValidation": true,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": true,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": true,
+        "configurationStatus": "partial",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": true,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 5000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 12,
+        "scopes": {
+          "regional": {
+            "tracked": 12,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 12,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": {
+              "cycle": 4,
+              "startedAt": "2026-09-12T12:32:09.258Z",
+              "completedAt": "2026-09-12T12:32:39.478Z",
+              "trackedPages": 6,
+              "pendingPages": 0,
+              "blockedPages": 0,
+              "completePages": 6,
+              "successfulCompletionsInWindow": 6,
+              "freshObservedPagesInWindow": 6
+            },
+            "runs": 1,
+            "returnedCatalogResponses": 6,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 12,
+            "detailSuccesses": 12,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.nsclassics.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": "2026-09-12",
+          "recordedReservations": 19,
+          "todayReservations": 19,
+          "remainingReservations": 981,
+          "limitReached": false,
+          "nextRequestAt": "2026-09-12T12:33:44.330Z",
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": true
+        }
+      ]
+    },
+    {
+      "sourceId": "volo",
+      "before": {
+        "retainedAds": 51,
+        "retainedGroups": 51,
+        "publicAdsUnderCurrentSettings": 51,
+        "publicGroupsUnderCurrentSettings": 51
+      },
+      "after": {
+        "retainedAds": 51,
+        "retainedGroups": 51,
+        "publicAdsUnderCurrentSettings": 51,
+        "publicGroupsUnderCurrentSettings": 51
+      },
+      "changes": {
+        "addedRetainedAds": 0,
+        "existingAdsReobservedInWindow": 51,
+        "retainedAdsObservedInWindow": 51,
+        "uniqueFreshDetailAds": 51,
+        "existingAdsWithFreshDetails": 51,
+        "uniqueAdsWithDetailAttemptRecordedInWindow": 51,
+        "baselineIdsNotRetainedNow": 0,
+        "numericAskingPriceChanges": 0,
+        "askingPriceIncreases": 0,
+        "askingPriceDecreases": 0,
+        "askingPriceBecameKnown": 0,
+        "askingPriceBecameUnknown": 0,
+        "observedAvailabilityChanges": 1,
+        "changedToSellerReportedSold": 1,
+        "changedToObservedRemoved": 0,
+        "availabilityProjectionOnlyChanges": 0,
+        "saleTypeChanges": 0
+      },
+      "runWindow": {
+        "runs": 2,
+        "statuses": {
+          "complete": 1,
+          "partial": 1
+        },
+        "firstStartedAt": "2026-09-12T12:10:27.675Z",
+        "lastFinishedAt": "2026-09-12T12:36:05.406Z",
+        "returnedCatalogResponses": 2,
+        "catalogFetchOrParseFailures": 0,
+        "detailAttempts": 51,
+        "detailSuccesses": 51,
+        "detailFailures": 0,
+        "cacheHitsAcrossCatalogAndDetails": 0,
+        "classifiedFailureMessages": {},
+        "askObservationRecords": 0,
+        "availabilityObservationRecords": 1,
+        "recordedPageCaps": [
+          0,
+          500
+        ],
+        "recordedDetailCaps": [
+          50
+        ]
+      },
+      "currentHealth": {
+        "state": "active",
+        "nextPermittedAt": null,
+        "consecutiveFailures": 0,
+        "lastSuccessAt": "2026-09-12T12:36:05.405Z",
+        "lastLiveValidatedAt": "2026-09-12T12:36:05.405Z",
+        "reviewedAt": null,
+        "lastFailure": null,
+        "historicalFailureFollowedByLiveValidation": false,
+        "failureHistoryEventsInWindow": 0,
+        "failureKindsInWindow": {},
+        "currentStateIsNotHistoricalError": true
+      },
+      "limits": {
+        "configurationEnabled": true,
+        "enabledBySettings": true,
+        "effectiveSourceEnabled": true,
+        "configurationStatus": "partial",
+        "excludedFromPublicSnapshot": false,
+        "ordinaryRequestsPermittedByHealthAndEnablement": true,
+        "detailPolicyPaused": false,
+        "minimumRequestSpacingMs": 10000,
+        "dailyLimitPerOrigin": 1000,
+        "budgetMayPreventRequests": false
+      },
+      "details": {
+        "distinctTrackedAdsAcrossScopes": 51,
+        "scopes": {
+          "regional": {
+            "tracked": 51,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 51,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": {
+              "cycle": 3,
+              "startedAt": "2026-09-12T12:10:27.597Z",
+              "completedAt": "2026-09-12T12:10:48.590Z",
+              "trackedPages": 2,
+              "pendingPages": 0,
+              "blockedPages": 0,
+              "completePages": 2,
+              "successfulCompletionsInWindow": 2,
+              "freshObservedPagesInWindow": 2
+            },
+            "runs": 2,
+            "returnedCatalogResponses": 2,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 51,
+            "detailSuccesses": 51,
+            "detailFailures": 0
+          },
+          "nationwide": {
+            "tracked": 0,
+            "dueByTaskState": 0,
+            "duePermittedByCurrentSourcePolicy": 0,
+            "blockedTasks": 0,
+            "waitingRetry": 0,
+            "completedFresh": 0,
+            "missingLocalAds": 0,
+            "currentConfiguredCatalog": null,
+            "runs": 0,
+            "returnedCatalogResponses": 0,
+            "catalogFetchOrParseFailures": 0,
+            "detailAttempts": 0,
+            "detailSuccesses": 0,
+            "detailFailures": 0
+          }
+        }
+      },
+      "dailyBudgets": [
+        {
+          "origin": "https://www.volocars.com",
+          "utcDay": "2026-09-12",
+          "configuredLimit": 1000,
+          "recordedDay": "2026-09-12",
+          "recordedReservations": 54,
+          "todayReservations": 54,
+          "remainingReservations": 946,
+          "limitReached": false,
+          "nextRequestAt": "2026-09-12T12:36:14.965Z",
+          "cooldownUntil": null,
+          "cooldownActive": false,
+          "recordPresent": true
+        }
+      ]
+    }
+  ],
+  "interpretation": [
+    "Baseline public/group counts are recalculated with current source-exclusion settings; the baseline contains listings, not a historical settings snapshot.",
+    "Added, reobserved and detail counts are distinct ad IDs. Scopes can contain the same detail task; do not sum regional and nationwide queue memberships as unique ads.",
+    "Numeric asking-price changes compare existing ads only. Newly known and now-unknown asks are separate; price changes are not evidence of a sale.",
+    "Observed sold/removed states are source claims. Absence from a catalog or this comparison never establishes a sale or removal.",
+    "Freshness-only availability transitions are separate from changes in sourceAvailability. Export/report generation time is never counted as an observation.",
+    "pagesFetched counts returned catalog responses, including cache reads; failedInventoryPages combines request and parse failures. The existing run counters do not support an exact separate catalog network-failure total.",
+    "Detail attempts and successes are operation counts and can include cache reads/retries. Unique fresh-detail ads require lastDetailObservedAt to advance into this run window.",
+    "Current-checkpoint completion counts retain the latest configured checkpoint cycle only; full window operation totals come from IngestRun records.",
+    "A historical error followed by later live validation is retained as history, not labeled an ongoing source failure. Specific blocked tasks and the 500classic detail pause remain separate.",
+    "Daily budgets count reserved request slots for the entire UTC day, across all scopes and operations sharing an origin; they are not this window's successful HTTP request count.",
+    "Due counts follow normal detail-cache policy and task retry times. Enablement/health gates, policy pauses and per-origin budgets can still prevent work. Manual smoke and cap overrides are reported separately where persisted.",
+    "Run after collection stops for final evidence. No private seller data, listing payloads, raw URLs, local evidence paths, error messages, home settings or credentials are emitted."
+  ]
+}

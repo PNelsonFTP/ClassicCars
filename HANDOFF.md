@@ -1,6 +1,6 @@
 # MuscleScout handoff — 1.1.0
 
-Operational status updated September 10, 2026 after the [local inventory refresh](docs/validation/refresh-2026-09-10-comparison.md). The September 10 publication adds live Pages and remote CI evidence; earlier 1.1.0 release checks retain their September 8 dates. Original local commits `4835c0a` (delivery) and `42a6622` (improvements) are preserved in the private prepublication Git bundle. Their public-history equivalents exclude research fixture data. The public [PNelsonFTP/ClassicCars repository](https://github.com/PNelsonFTP/ClassicCars) is configured as `origin`. [Delivery status](docs/DELIVERY.md) records the approved publication and actual remote results.
+Operational status updated September 12, 2026 after the [latest inventory refresh](docs/validation/refresh-2026-09-12-comparison.md). The September 10 publication adds live Pages and remote CI evidence; earlier 1.1.0 release checks retain their September 8 dates. Original local commits `4835c0a` (delivery) and `42a6622` (improvements) are preserved in the private prepublication Git bundle. Their public-history equivalents exclude research fixture data. The public [PNelsonFTP/ClassicCars repository](https://github.com/PNelsonFTP/ClassicCars) is configured as `origin`. [Delivery status](docs/DELIVERY.md) records the approved publication and actual remote results.
 
 ## Open and review
 
@@ -26,6 +26,10 @@ Setup preserves the database, environment/password, settings and workspace. The 
 - Authorized feed import, a permission-gated eBay request adapter, specialty documentary evidence and dated year-ceiling data are available. No provider agreement or live auction feed was fabricated. New operational/readiness/service/release/SBOM tools have runbooks.
 
 ## Inventory and outstanding data work
+
+The **September 12, 2026 refresh** retains **3,276 ads / 3,254 groups**, including **3,257 public ads**. It added **79 ads**, observed **47 numeric asking-price changes** (37 decreases, 10 increases), and refreshed details for **226 distinct ads**. All accessible configured catalogs completed: 25 regional and 49 national ClassicCars pages plus 20 dealer pages, with no catalog failures or cache hits. Five dealer detail queues are fully fresh; J & S Motors has 22 refreshed details and two older URLs returning 404. ClassicCars completed its configured 50-detail batch; 3,026 details remain due, rather than blocked by the daily budget. Autotrader and 500 Classic remain paused without new requests. See the [dated comparison](docs/validation/refresh-2026-09-12-comparison.md) for original observation dates and exact limits. Ads and groups are not verified unique physical vehicles; strict four-hour matches still require actual road routes.
+
+The September 12 collection ran through the CLI and is finished; the automatic worker remains off. Public exports were rebuilt at both root and `/ClassicCars`, with a new private consistent database/environment backup. Earlier dated results follow.
 
 The September 10 run retained **3,197 ads / 3,175 groups**, with **3,178 public ads**, 58 additions and 1,045 distinct fresh detail observations. All six active dealer detail queues are fresh and complete. ClassicCars has 870 newly observed details; its remaining work is paused at the configured 1,000-request daily limit. 500 Classic and Autotrader remain paused, and restricted or disabled sources remain uncollected. The [refresh comparison](docs/validation/refresh-2026-09-10-comparison.md) reports price/status changes, original observation dates, quotas and due/retry counts. No sale is inferred from absence.
 

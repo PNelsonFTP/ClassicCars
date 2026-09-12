@@ -1,5 +1,9 @@
 # MuscleScout 1.1.0 delivery
 
+## September 12 inventory update
+
+The requested refresh added 79 ads and rebuilt the public snapshot with 3,257 ads. All 94 accessible configured catalog pages refreshed; 226 detail checks succeeded, with two J & S Motors URLs returning 404. ClassicCars has a separate 3,026-ad detail backlog after its configured 50-detail batch. Autotrader and 500 Classic remain paused. See the [comparison](validation/refresh-2026-09-12-comparison.md) and [privacy/consistency receipt](validation/public-export-review-2026-09-12.json). Publication of this updated snapshot is being verified; the September 10 deployment record below remains historical.
+
 ## GitHub publication — September 10, 2026
 
 The project is committed and pushed to the public [PNelsonFTP/ClassicCars repository](https://github.com/PNelsonFTP/ClassicCars). [MuscleScout is live on GitHub Pages](https://pnelsonftp.github.io/ClassicCars/) with HTTPS enforced and project base path `/ClassicCars`. The [deployment of `ea6be78`](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34547932246) succeeded. Private environment files, the local database, caches, logs and backups remain excluded from Git; the redacted public snapshot is included.
