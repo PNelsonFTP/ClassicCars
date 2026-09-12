@@ -21,7 +21,7 @@ npm run collect -- --source=jws --fresh --pages=5 --details=0
 
 The audit checks all configured robots endpoints, writes private response evidence/hashes under `data/research/`, uses the collection lease and shared daily/interval budgets, and does not modify inventory or enable paused sources. `--catalog` parses one fresh configured page only for enabled, operationally allowed sources; counts never claim terminal coverage. Run it separately from collection.
 
-The browser diagnostic uses installed Playwright Chromium in a new isolated context, identifies MuscleScout, validates public HTTPS destinations, blocks foreign origins, non-GET requests, service workers and robots-disallowed requests. It performs no login, uses no personal browser profile and solves no challenge. Because third-party resources and POSTs are excluded, it is a conservative transport diagnostic, not proof that every interactive feature works in a consumer browser. Review provider access conditions before invoking it; it is not an automatic fallback in production. Its HTML stays private. Chromium remains a development/diagnostic dependency, not a requirement for normal collection or GitHub Pages.
+The browser diagnostic uses installed Playwright Chromium in a new isolated context, uses the actual Chromium user-agent plus MuscleScout identification, validates public HTTPS destinations, blocks foreign origins, non-GET requests, service workers and robots-disallowed requests. It performs no login, uses no personal browser profile and solves no challenge. Because third-party resources and POSTs are excluded, it is a conservative transport diagnostic, not proof that every interactive feature works in a consumer browser. Review provider access conditions before invoking it; it is not an automatic fallback in production. Its HTML stays private. Chromium remains a development/diagnostic dependency, not a requirement for normal collection or GitHub Pages.
 
 ## Results and remaining paths
 
@@ -47,6 +47,8 @@ The browser diagnostic uses installed Playwright Chromium in a new isolated cont
 | indyauto.com | Still a 114-byte landing response, not inventory. | Correct dealer identity and official catalog, or dealer export. No unrelated business was silently substituted. |
 
 No provider agreement, paid feed, API credential or permission request was obtained/submitted during this work. Changing libraries or user-agent text does not create those missing inputs. Seller-direct records preserve their actual origin; they must not be labeled as a completed scan of a marketplace. Cross-listed cars remain separate ads until existing duplicate evidence supports grouping.
+
+The final native-Chromium user-agent comparison reproduced the same four access failures. JWS’s displayed scope was corrected from the old uncollected label to its observed Greendale dealer catalog and sold archive.
 
 ## Connect a feed for any configured source
 

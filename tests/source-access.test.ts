@@ -32,6 +32,8 @@ describe("actual collector identity and source evidence", () => {
       expect(s.access.method).toBeTruthy();
       expect(Date.parse(s.access.checkedAt)).toBeGreaterThan(0);
       expect(s.access.nextStep).toBeTruthy();
+      if (s.id === "jws")
+        expect(s.scope).not.toMatch(/not integrated|not collected/i);
       expect(s.access.evidenceUrls.length).toBeGreaterThan(0);
       expect(s.note).not.toMatch(/AI agents.*blocked|AI crawling restricted/);
     }

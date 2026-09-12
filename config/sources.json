@@ -539,7 +539,7 @@
     "category": "Classic dealer",
     "url": "https://www.jwsclassics.com",
     "status": "partial",
-    "scope": "Not integrated / not collected",
+    "scope": "Greendale, WI dealer catalog and sold archive",
     "note": "Corrected Accept header fixes robots HTTP 406 \u2192 200. Catalog HTTP 200 separates Current Inventory and Recently Sold. Detail endpoint still HTTP 500.",
     "enabled": true,
     "origins": ["https://www.jwsclassics.com"],

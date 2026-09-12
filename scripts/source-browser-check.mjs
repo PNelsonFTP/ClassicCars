@@ -11,6 +11,10 @@ const urls = process.argv.slice(2);
 if (!urls.length || urls.length > 8)
   throw Error("Provide 1–8 public HTTPS catalog URLs");
 const browser = await chromium.launch({ headless: true });
+const identityContext = await browser.newContext();
+const identityPage = await identityContext.newPage();
+const browserAgent = await identityPage.evaluate(() => navigator.userAgent);
+await identityContext.close();
 await mkdir("data/research/browser-access", { recursive: true });
 try {
   for (const raw of urls) {
@@ -35,7 +39,7 @@ try {
       continue;
     }
     const context = await browser.newContext({
-      userAgent: `Mozilla/5.0 (compatible; ${agent})`,
+      userAgent: `${browserAgent} ${agent}`,
       serviceWorkers: "block",
     });
     const delay = Math.max(

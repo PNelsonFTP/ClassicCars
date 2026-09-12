@@ -381,5 +381,12 @@
     "staticExportChecks": "passed",
     "privateExportChecks": 3542,
     "sbomSchemas": "passed"
+  },
+  "browserCheckMethod": "Identified compatible user-agent, then actual Chromium native user-agent plus MuscleScout; same public-origin/GET/robots restrictions, no stealth or challenge solving.",
+  "crossPlatformCI": {
+    "commit": "0ba097d9b11604cde8efeadd42e46a088c1d0232",
+    "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/34721279471",
+    "conclusion": "success",
+    "jobs": 6
   }
 }
