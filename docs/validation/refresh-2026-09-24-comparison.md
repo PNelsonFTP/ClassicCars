@@ -86,3 +86,7 @@ Regional collection used `npm run collect -- --fresh --pages=50000 --details=50`
 Both root and `/ClassicCars` exports were rebuilt and passed browser checks. The [public export review](public-export-review-2026-09-24.json) checks exact redaction against local data, fresh/stale projection, every detail chunk, positive/null prices, byte-identical built copies, obsolete files, and configured-secret exclusion. The [static browser receipt](static-review-2026-09-24.json) records root/subpath image, runtime and workspace-isolation checks. Application code, dependencies, configuration and lockfile are unchanged; earlier platform/SBOM evidence retains its original date.
 
 [Aggregate collection evidence](refresh-2026-09-24.json). Public rows exclude the 19 retained Autotrader ads. Baseline/private seller payloads, cache evidence and backups remain local and ignored by Git.
+
+## Publication
+
+The [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/36003058178) succeeded for `fc2de2f05fe8496249778f2b418ebd4db17005cd`, including type checks and all 268 tests in 27 files. The [live receipt](github-pages-2026-09-24.json) verifies 3,806 public ads, exact exported data hashes, search, lazy details, real images and desktop/mobile layouts. Later documentation-only commits record the receipt and do not change the deployed application/data.

@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-09-24T13:05:26.939Z",
+  "sourceCommit": "fc2de2f05fe8496249778f2b418ebd4db17005cd",
+  "url": "https://pnelsonftp.github.io/ClassicCars/",
+  "files": [
+    {
+      "path": "data/catalog.json",
+      "sha256": "d2130f97c1bea029ae215c9b122f3f875e71e4c300b0a15e726eddc0f2e38bdc",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/snapshot.json",
+      "sha256": "11f35a0aac07a53da03d6aeb73e14d50414bfed046a4427842d69387f0e551ab",
+      "matchesLocal": true
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "width": 375,
+      "documentWidth": 375
+    }
+  ],
+  "publicAds": 3806,
+  "generatedAt": "2026-09-24T13:01:36.197Z",
+  "status": "passed",
+  "realImageLoaded": true,
+  "detailHashMatches": true,
+  "typoSearchPassed": true,
+  "sourceMethods": 26,
+  "runtimeErrors": [],
+  "missingAssets": [],
+  "workflow": {
+    "runId": 36003058178,
+    "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/36003058178",
+    "conclusion": "success",
+    "testFilesPassed": 27,
+    "testsPassed": 268
+  }
+}
