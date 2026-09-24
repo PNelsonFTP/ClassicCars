@@ -1,5 +1,13 @@
 # Future improvements and acceptance status
 
+## September 24 inventory refresh
+
+The September 24 refresh retains **3,825 ads / 3,802 groups**, with **3,806 public ads / 3,789 public groups**. It added **541 ads**, recorded **229 numeric asking-price changes** (220 decreases, 9 increases), and refreshed details for **238 distinct ads**. 7 previously tracked ads are newly seller-reported sold.
+
+See the [dated refresh report](docs/validation/refresh-2026-09-24-comparison.md) for catalog coverage, verification and remaining detail/source limitations. Older dated sections below are historical evidence.
+
+New follow-up: detail retry blocking uses a task's lifetime attempt count, including earlier successful checks. A temporary DNS failure therefore blocked one previously healthy J & S detail task. After cooldown and successful source recovery, this refresh reopened only that network-failed task and verified it successfully; the two historical 404 tasks stayed blocked. Track consecutive failures separately from lifetime attempts, and provide targeted transient-failure recovery. This data refresh does not change that collector behavior. ClassicCars still has 3,555 due detail tasks after its bounded 50-ad batch; cross-listing uncertainty and existing source-access restrictions remain open.
+
 ## September 12 source-access improvement
 
 The [access audit and operating guide](docs/SOURCE_ACCESS.md) replaces blanket “AI blocked” labels with dated methods, evidence and next steps for all 26 sources. Fixed robots user-agent matching and JWS content negotiation, added catalog-only collection, deterministic HTTP/Chromium diagnostics, and incomplete private feed templates for every configured source. The new JWS scan found 44 advertised vehicles and eight matching classics, **all explicitly sold**; it added no active stock or known asking prices. Current totals are **3,284 retained ads / 3,262 groups**, **3,265 public ads / 3,249 public groups**. This access audit does not redate the earlier inventory refresh.

@@ -1,5 +1,11 @@
 # Validation — 1.1.0
 
+## September 24 inventory refresh
+
+The September 24 refresh retains **3,825 ads / 3,802 groups**, with **3,806 public ads / 3,789 public groups**. It added **541 ads**, recorded **229 numeric asking-price changes** (220 decreases, 9 increases), and refreshed details for **238 distinct ads**. 7 previously tracked ads are newly seller-reported sold.
+
+See the [dated refresh report](docs/validation/refresh-2026-09-24-comparison.md) for catalog coverage, verification and remaining detail/source limitations. Older dated sections below are historical evidence.
+
 Final [CI run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34721449243) passed all six jobs on application/data commit `a639985`: Node 24 on Ubuntu, macOS and Windows; Node 22.18 on Ubuntu; hosted browser checks; and Docker.
 
 Final source-access site deployment: [`a639985`](https://github.com/PNelsonFTP/ClassicCars/commit/a6399850962290fbd3224d0bf2010e2a0d10a433), [successful Pages run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34721449077), and [live verification](docs/validation/source-access-pages-2026-09-12.json). Exact catalog/snapshot/detail hashes match the local public export; 1440/390/375-width checks and all 26 source methods passed. No collection runs or leases remain active.

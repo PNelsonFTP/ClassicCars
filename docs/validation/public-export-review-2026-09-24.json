@@ -1,0 +1,16 @@
+{
+  "checkedAt": "2026-09-24T13:02:09.156Z",
+  "status": "passed",
+  "generatedAt": "2026-09-24T13:01:36.197Z",
+  "retainedAds": 3825,
+  "publicAds": 3806,
+  "publicGroups": 3789,
+  "detailChunks": 39,
+  "staticFilesScanned": 200,
+  "configuredSecretsChecked": 1,
+  "exactRedactionMatches": true,
+  "rootAndSubpathDataMatch": true,
+  "noMissingOrObsoleteChunks": true,
+  "snapshotSha256": "11f35a0aac07a53da03d6aeb73e14d50414bfed046a4427842d69387f0e551ab",
+  "catalogSha256": "d2130f97c1bea029ae215c9b122f3f875e71e4c300b0a15e726eddc0f2e38bdc"
+}

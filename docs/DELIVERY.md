@@ -1,5 +1,11 @@
 # MuscleScout 1.1.0 delivery
 
+## September 24 inventory refresh
+
+The September 24 refresh retains **3,825 ads / 3,802 groups**, with **3,806 public ads / 3,789 public groups**. It added **541 ads**, recorded **229 numeric asking-price changes** (220 decreases, 9 increases), and refreshed details for **238 distinct ads**. 7 previously tracked ads are newly seller-reported sold.
+
+See the [dated refresh report](validation/refresh-2026-09-24-comparison.md) for catalog coverage, verification and remaining detail/source limitations. Older dated sections below are historical evidence.
+
 Final [CI run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/34721449243) passed all six jobs on application/data commit `a639985`: Node 24 on Ubuntu, macOS and Windows; Node 22.18 on Ubuntu; hosted browser checks; and Docker.
 
 ## September 12 source-access release
