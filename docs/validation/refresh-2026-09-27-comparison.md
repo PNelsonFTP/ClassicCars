@@ -71,4 +71,3 @@ The North Shore detail parser now recognizes an explicit CALL FOR PRICE label on
 The [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/36349304979) succeeded for `b014782e82f1986fa473c1cfde171451b70a3171`, including type checks and all 269 tests in 27 files. The [live receipt](github-pages-2026-09-27.json) verifies 3,918 public ads, exact exported data hashes, search, lazy details, images and desktop/mobile layouts. Later documentation-only commits record the receipts and do not change the deployed application/data.
 
 All six jobs in the [CI run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/36349302914) passed for the deployed commit: Node 24 on Linux/macOS/Windows, Node 22.18 on Linux, hosted browser checks and Docker. [CI receipt](github-ci-2026-09-27.json).
-
