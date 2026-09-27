@@ -788,7 +788,11 @@ export function parseDetail(
     });
     values.Price = clean(
       $(".invent-detail-price h3")
-        .filter((_, el) => /Our Price:/i.test($(el).text()))
+        .filter(
+          (_, el) =>
+            /Our Price:/i.test($(el).text()) ||
+            /^call for price$/i.test(clean($(el).text())),
+        )
         .last()
         .text(),
     );
@@ -876,8 +880,10 @@ export function parseDetail(
     l.sourceId === "nsclassics" &&
     !description &&
     // Some populated ads omit narrative. Exact data-pin identity was checked above;
-    // require the ad's own price and multiple vehicle fields before accepting it.
-    (parseAsk(values.Price || "") === null ||
+    // Require an own-price label (including an explicit request to call) and
+    // multiple vehicle fields. A request to call must remain an unknown ask.
+    ((parseAsk(values.Price || "") === null &&
+      !/^call for price$/i.test(values.Price || "")) ||
       ["Engine", "Transmission", "Interior", "Exterior"].filter((field) =>
         Boolean(values[field]),
       ).length < 2)
@@ -978,6 +984,10 @@ export function parseDetail(
       l.sourceId === "jsmotors" && values.Price
         ? parseAsk(values.Price) || null
         : ask,
+    priceOnRequest:
+      l.sourceId === "nsclassics" && values.Price
+        ? /^call for price$/i.test(values.Price)
+        : l.priceOnRequest,
     availability,
     // This detail result is a source observation, not an age-projected display state.
     sourceAvailability: availability,

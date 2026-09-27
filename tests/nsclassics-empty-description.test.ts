@@ -33,8 +33,13 @@ const fixture = () =>
   );
 
 it("accepts observed North Shore 6144's own price and specifications despite an empty narrative", () => {
-  const detail = parseDetail(fixture(), listing(), context);
+  const detail = parseDetail(
+    fixture(),
+    { ...listing(), priceOnRequest: true },
+    context,
+  );
   expect(detail.askingPrice).toBe(21525);
+  expect(detail.priceOnRequest).toBe(false);
   expect(detail.specs.engineInstalled).toMatchObject({
     value: "350",
     observedAt,
@@ -64,9 +69,33 @@ it("still rejects wrong-ad identity and matching-ID shells without sufficient pr
     identity,
     identity + price,
     identity + price + field,
+    identity +
+      '<div class="invent-detail-price"><h3>CALL FOR PRICE</h3></div>' +
+      field,
     fixture().replace("Our Price: $21,525", "Average Price: $21,525"),
   ])
     expect(() => parseDetail(shell, listing(), context)).toThrow(
       /unrendered shell/,
     );
+});
+
+it("accepts an explicit call-for-price ad with vehicle fields and clears its older numeric ask", () => {
+  const html = fixture().replace("Our Price: $21,525", "CALL FOR PRICE");
+  const detail = parseDetail(
+    html,
+    { ...listing(), askingPrice: 25000 },
+    context,
+  );
+  expect(detail.askingPrice).toBeNull();
+  expect(detail.priceOnRequest).toBe(true);
+  expect(detail.specs.transmission.value).toBe("Automatic");
+  expect(detail.stockNumber).toBe("76484NSC");
+  expect(detail.lastDetailObservedAt).toBe(observedAt);
+  expect(() =>
+    parseDetail(
+      html.replace('data-pin="6144"', 'data-pin="9999"'),
+      listing(),
+      context,
+    ),
+  ).toThrow(/identity/);
 });
