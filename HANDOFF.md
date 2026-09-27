@@ -2,6 +2,10 @@
 
 ## September 27 inventory refresh
 
+All six jobs in the [CI run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/36349302914) passed for the deployed commit: Node 24 on Linux/macOS/Windows, Node 22.18 on Linux, hosted browser checks and Docker. [CI receipt](docs/validation/github-ci-2026-09-27.json).
+
+Published application/data commit [`b014782`](https://github.com/PNelsonFTP/ClassicCars/commit/b014782e82f1986fa473c1cfde171451b70a3171) passed the [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/36349304979), including 269 tests across 27 files. [Live verification](docs/validation/github-pages-2026-09-27.json) passed exact catalog/snapshot/detail hashes, search, images, 26 source-method entries and 1440/390/375px layouts, with no runtime errors or missing local assets. Collection finished with no running ingest runs or leases.
+
 This refresh also fixes North Shore’s populated “Call for price” detail pages being rejected as empty. The source passed live validation and all 14 retained ads have fresh details; regression tests preserve unknown prices and reject empty/wrong-ad pages.
 
 The September 27 refresh retains **3,937 ads / 3,914 groups**, including **3,918 public ads / 3,901 public groups**. It added **112 ads**, recorded **61 numeric asking-price changes** (50 decreases, 11 increases), and refreshed details for **246 distinct ads**. 2 previously tracked ads are newly seller-reported sold.

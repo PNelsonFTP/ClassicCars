@@ -65,3 +65,10 @@ Private backups were made before and after collection. The automatic worker was 
 The North Shore detail parser now recognizes an explicit CALL FOR PRICE label on an otherwise populated, exact-identity page. Missing narrative and a nonnumeric ask no longer trigger a false empty-page pause; the ask remains null and priceOnRequest is true. Numeric prices clear that flag. All 269 tests across 27 files passed locally. Regression coverage checks unknown prices, stale numeric-price removal, wrong identities and insufficient-field shells. Configuration, dependencies and lockfile are unchanged. Earlier platform, SBOM and security-audit receipts keep their original dates. Baselines, raw seller evidence, credentials and database backups remain private and ignored by Git. The public snapshot excludes the 19 retained Autotrader ads.
 
 [Aggregate refresh evidence](refresh-2026-09-27.json).
+
+## Publication
+
+The [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/36349304979) succeeded for `b014782e82f1986fa473c1cfde171451b70a3171`, including type checks and all 269 tests in 27 files. The [live receipt](github-pages-2026-09-27.json) verifies 3,918 public ads, exact exported data hashes, search, lazy details, images and desktop/mobile layouts. Later documentation-only commits record the receipts and do not change the deployed application/data.
+
+All six jobs in the [CI run](https://github.com/PNelsonFTP/ClassicCars/actions/runs/36349302914) passed for the deployed commit: Node 24 on Linux/macOS/Windows, Node 22.18 on Linux, hosted browser checks and Docker. [CI receipt](github-ci-2026-09-27.json).
+
