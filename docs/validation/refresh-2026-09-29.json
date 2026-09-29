@@ -1,0 +1,1007 @@
+{
+  "startedAt": "2026-09-29T23:02:00.590515+00:00",
+  "checkedAt": "2026-09-29T23:42:45.847016+00:00",
+  "baselineSha256": "98737f2760bf08c2e8bb84e03b54cbdf65e4b2c1c3309f53468d5a48eae791b5",
+  "before": {
+    "ads": 3937,
+    "groups": 3914
+  },
+  "after": {
+    "ads": 4001,
+    "groups": 3978
+  },
+  "changes": {
+    "addedAds": 64,
+    "removedBaselineIds": 0,
+    "observedAds": 3097,
+    "freshDetailAds": 260,
+    "priceChanges": 21,
+    "priceDrops": 18,
+    "priceIncreases": 3,
+    "priceBecameKnown": 4,
+    "priceBecameUnknown": 1,
+    "availabilityChanges": 52,
+    "newlySold": 0
+  },
+  "additionsBySource": {
+    "classiccars": 50,
+    "volo": 3,
+    "grauto": 5,
+    "admcars": 6
+  },
+  "freshDetailsBySource": {
+    "volo": 60,
+    "grauto": 64,
+    "admcars": 46,
+    "midwest": 3,
+    "jsmotors": 23,
+    "nsclassics": 14,
+    "classiccars": 50
+  },
+  "catalogs": [
+    {
+      "source": "midwest",
+      "scope": "regional",
+      "cycle": 7,
+      "tasks": {
+        "pending": 0,
+        "complete": 1,
+        "blocked": 0
+      }
+    },
+    {
+      "source": "classiccars",
+      "scope": "nationwide",
+      "cycle": 7,
+      "tasks": {
+        "pending": 0,
+        "complete": 50,
+        "blocked": 0
+      }
+    },
+    {
+      "source": "classiccars",
+      "scope": "regional",
+      "cycle": 6,
+      "tasks": {
+        "pending": 0,
+        "complete": 25,
+        "blocked": 0
+      }
+    },
+    {
+      "source": "volo",
+      "scope": "regional",
+      "cycle": 6,
+      "tasks": {
+        "pending": 0,
+        "complete": 2,
+        "blocked": 0
+      }
+    },
+    {
+      "source": "grauto",
+      "scope": "regional",
+      "cycle": 7,
+      "tasks": {
+        "pending": 0,
+        "complete": 5,
+        "blocked": 0
+      }
+    },
+    {
+      "source": "admcars",
+      "scope": "regional",
+      "cycle": 7,
+      "tasks": {
+        "pending": 0,
+        "complete": 4,
+        "blocked": 0
+      }
+    },
+    {
+      "source": "nsclassics",
+      "scope": "regional",
+      "cycle": 8,
+      "tasks": {
+        "pending": 0,
+        "complete": 6,
+        "blocked": 0
+      }
+    },
+    {
+      "source": "jsmotors",
+      "scope": "regional",
+      "cycle": 6,
+      "tasks": {
+        "pending": 0,
+        "complete": 2,
+        "blocked": 0
+      }
+    },
+    {
+      "source": "500classic",
+      "scope": "regional",
+      "cycle": 1,
+      "tasks": {
+        "pending": 1,
+        "complete": 0,
+        "blocked": 0
+      }
+    },
+    {
+      "source": "autotrader",
+      "scope": "regional",
+      "cycle": 1,
+      "tasks": {
+        "pending": 1,
+        "complete": 0,
+        "blocked": 0
+      }
+    },
+    {
+      "source": "jws",
+      "scope": "regional",
+      "cycle": 4,
+      "tasks": {
+        "pending": 0,
+        "complete": 1,
+        "blocked": 0
+      }
+    }
+  ],
+  "runs": [
+    {
+      "source": "classiccars",
+      "scope": "regional",
+      "status": "partial",
+      "startedAt": "2026-09-29T23:02:08.558+00:00",
+      "finishedAt": "2026-09-29T23:08:23.743+00:00",
+      "error": null,
+      "stats": {
+        "jobId": "b8ecdd19-7118-4065-ac3d-9f475e1780e0",
+        "checkpointId": "classiccars:regional:aef052e1670468dbd712f2fe",
+        "catalogCycle": 6,
+        "pagesDiscovered": 25,
+        "pagesFetched": 25,
+        "detailRequests": 50,
+        "detailsSucceeded": 50,
+        "freshDetailsSkipped": 50,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 1409,
+        "uniqueAds": 1409,
+        "duplicateIds": 0,
+        "skippedCandidates": 0,
+        "remainingEnrichment": 1785,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 25,
+        "totalDetailBacklog": 3677,
+        "blockedDetailBacklog": 0,
+        "currentScopeDetailBacklog": 762,
+        "currentScopeBlockedDetails": 0,
+        "pageCap": 50000,
+        "detailCap": 50,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+        "accessHealth": {
+          "sourceId": "classiccars",
+          "state": "active",
+          "consecutiveFailures": 0,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-29T23:08:23.733Z",
+          "lastLiveValidatedAt": "2026-09-29T23:08:23.733Z"
+        }
+      }
+    },
+    {
+      "source": "volo",
+      "scope": "regional",
+      "status": "partial",
+      "startedAt": "2026-09-29T23:08:23.851+00:00",
+      "finishedAt": "2026-09-29T23:17:04.346+00:00",
+      "error": null,
+      "stats": {
+        "jobId": "b8ecdd19-7118-4065-ac3d-9f475e1780e0",
+        "checkpointId": "volo:regional:ed209aa95381978862c4d8db",
+        "catalogCycle": 6,
+        "pagesDiscovered": 2,
+        "pagesFetched": 2,
+        "detailRequests": 50,
+        "detailsSucceeded": 50,
+        "freshDetailsSkipped": 50,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 329,
+        "uniqueAds": 52,
+        "duplicateIds": 0,
+        "skippedCandidates": 277,
+        "remainingEnrichment": 10,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 2,
+        "totalDetailBacklog": 10,
+        "blockedDetailBacklog": 0,
+        "currentScopeDetailBacklog": 0,
+        "currentScopeBlockedDetails": 0,
+        "pageCap": 50000,
+        "detailCap": 50,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+        "accessHealth": {
+          "sourceId": "volo",
+          "state": "active",
+          "consecutiveFailures": 0,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-29T23:17:04.345Z",
+          "lastLiveValidatedAt": "2026-09-29T23:17:04.345Z"
+        }
+      }
+    },
+    {
+      "source": "grauto",
+      "scope": "regional",
+      "status": "partial",
+      "startedAt": "2026-09-29T23:17:04.438+00:00",
+      "finishedAt": "2026-09-29T23:26:14.963+00:00",
+      "error": null,
+      "stats": {
+        "jobId": "b8ecdd19-7118-4065-ac3d-9f475e1780e0",
+        "checkpointId": "grauto:regional:e8b0bb9ddc37499d0026f629",
+        "catalogCycle": 7,
+        "pagesDiscovered": 5,
+        "pagesFetched": 5,
+        "detailRequests": 50,
+        "detailsSucceeded": 50,
+        "freshDetailsSkipped": 50,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 531,
+        "uniqueAds": 47,
+        "duplicateIds": 0,
+        "skippedCandidates": 484,
+        "remainingEnrichment": 14,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 5,
+        "totalDetailBacklog": 14,
+        "blockedDetailBacklog": 0,
+        "currentScopeDetailBacklog": 0,
+        "currentScopeBlockedDetails": 0,
+        "pageCap": 50000,
+        "detailCap": 50,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+        "accessHealth": {
+          "sourceId": "grauto",
+          "state": "active",
+          "consecutiveFailures": 0,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-29T23:26:14.962Z",
+          "lastLiveValidatedAt": "2026-09-29T23:26:14.962Z"
+        }
+      }
+    },
+    {
+      "source": "admcars",
+      "scope": "regional",
+      "status": "complete",
+      "startedAt": "2026-09-29T23:26:15.059+00:00",
+      "finishedAt": "2026-09-29T23:30:25.292+00:00",
+      "error": null,
+      "stats": {
+        "jobId": "b8ecdd19-7118-4065-ac3d-9f475e1780e0",
+        "checkpointId": "admcars:regional:6c4dfd126ac0b83596b0f3b9",
+        "catalogCycle": 7,
+        "pagesDiscovered": 4,
+        "pagesFetched": 4,
+        "detailRequests": 46,
+        "detailsSucceeded": 46,
+        "freshDetailsSkipped": 46,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 88,
+        "uniqueAds": 39,
+        "duplicateIds": 0,
+        "skippedCandidates": 49,
+        "remainingEnrichment": 0,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 4,
+        "totalDetailBacklog": 0,
+        "blockedDetailBacklog": 0,
+        "currentScopeDetailBacklog": 0,
+        "currentScopeBlockedDetails": 0,
+        "pageCap": 50000,
+        "detailCap": 50,
+        "note": "Configured scope exhausted; this does not establish full nationwide coverage.",
+        "accessHealth": {
+          "sourceId": "admcars",
+          "state": "active",
+          "consecutiveFailures": 0,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-29T23:30:25.291Z",
+          "lastLiveValidatedAt": "2026-09-29T23:30:25.291Z"
+        }
+      }
+    },
+    {
+      "source": "midwest",
+      "scope": "regional",
+      "status": "complete",
+      "startedAt": "2026-09-29T23:30:25.393+00:00",
+      "finishedAt": "2026-09-29T23:30:45.499+00:00",
+      "error": null,
+      "stats": {
+        "jobId": "b8ecdd19-7118-4065-ac3d-9f475e1780e0",
+        "checkpointId": "midwest:regional:d36bfb15d4147186d81376a0",
+        "catalogCycle": 7,
+        "pagesDiscovered": 1,
+        "pagesFetched": 1,
+        "detailRequests": 3,
+        "detailsSucceeded": 3,
+        "freshDetailsSkipped": 3,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 9,
+        "uniqueAds": 3,
+        "duplicateIds": 0,
+        "skippedCandidates": 6,
+        "remainingEnrichment": 0,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 1,
+        "totalDetailBacklog": 0,
+        "blockedDetailBacklog": 0,
+        "currentScopeDetailBacklog": 0,
+        "currentScopeBlockedDetails": 0,
+        "pageCap": 50000,
+        "detailCap": 50,
+        "note": "Configured scope exhausted; this does not establish full nationwide coverage.",
+        "accessHealth": {
+          "sourceId": "midwest",
+          "state": "active",
+          "consecutiveFailures": 0,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-29T23:30:45.498Z",
+          "lastLiveValidatedAt": "2026-09-29T23:30:45.498Z"
+        }
+      }
+    },
+    {
+      "source": "nsclassics",
+      "scope": "regional",
+      "status": "complete",
+      "startedAt": "2026-09-29T23:30:45.604+00:00",
+      "finishedAt": "2026-09-29T23:32:25.899+00:00",
+      "error": null,
+      "stats": {
+        "jobId": "b8ecdd19-7118-4065-ac3d-9f475e1780e0",
+        "checkpointId": "nsclassics:regional:0e0a6a3071baeecd70a322ac",
+        "catalogCycle": 8,
+        "pagesDiscovered": 6,
+        "pagesFetched": 6,
+        "detailRequests": 14,
+        "detailsSucceeded": 14,
+        "freshDetailsSkipped": 14,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 122,
+        "uniqueAds": 14,
+        "duplicateIds": 0,
+        "skippedCandidates": 108,
+        "remainingEnrichment": 0,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 6,
+        "totalDetailBacklog": 0,
+        "blockedDetailBacklog": 0,
+        "currentScopeDetailBacklog": 0,
+        "currentScopeBlockedDetails": 0,
+        "pageCap": 50000,
+        "detailCap": 50,
+        "note": "Configured scope exhausted; this does not establish full nationwide coverage.",
+        "accessHealth": {
+          "sourceId": "nsclassics",
+          "state": "active",
+          "consecutiveFailures": 0,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-29T23:32:25.898Z",
+          "lastLiveValidatedAt": "2026-09-29T23:32:25.898Z"
+        }
+      }
+    },
+    {
+      "source": "jsmotors",
+      "scope": "regional",
+      "status": "partial",
+      "startedAt": "2026-09-29T23:32:25.996+00:00",
+      "finishedAt": "2026-09-29T23:34:31.217+00:00",
+      "error": null,
+      "stats": {
+        "jobId": "b8ecdd19-7118-4065-ac3d-9f475e1780e0",
+        "checkpointId": "jsmotors:regional:91c10634ba72a97f2181ee2e",
+        "catalogCycle": 6,
+        "pagesDiscovered": 2,
+        "pagesFetched": 2,
+        "detailRequests": 23,
+        "detailsSucceeded": 23,
+        "freshDetailsSkipped": 23,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 44,
+        "uniqueAds": 23,
+        "duplicateIds": 0,
+        "skippedCandidates": 21,
+        "remainingEnrichment": 2,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 2,
+        "totalDetailBacklog": 2,
+        "blockedDetailBacklog": 2,
+        "currentScopeDetailBacklog": 2,
+        "currentScopeBlockedDetails": 2,
+        "pageCap": 50000,
+        "detailCap": 50,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+        "accessHealth": {
+          "sourceId": "jsmotors",
+          "state": "active",
+          "consecutiveFailures": 0,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-29T23:34:31.217Z",
+          "lastLiveValidatedAt": "2026-09-29T23:34:31.217Z"
+        }
+      }
+    },
+    {
+      "source": "500classic",
+      "scope": "regional",
+      "status": "blocked",
+      "startedAt": "2026-09-29T23:34:31.313+00:00",
+      "finishedAt": "2026-09-29T23:34:31.315+00:00",
+      "error": "Source paused; see dated source-access evidence",
+      "stats": {
+        "jobId": "b8ecdd19-7118-4065-ac3d-9f475e1780e0",
+        "checkpointId": "500classic:regional:1ca3bc21d94e59d8074815ee",
+        "catalogCycle": 1,
+        "pagesDiscovered": 1,
+        "pagesFetched": 0,
+        "detailRequests": 0,
+        "detailsSucceeded": 0,
+        "freshDetailsSkipped": 0,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 0,
+        "uniqueAds": 0,
+        "duplicateIds": 0,
+        "skippedCandidates": 0,
+        "remainingEnrichment": 3,
+        "catalogBacklog": 1,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 1,
+        "totalDetailBacklog": 3,
+        "blockedDetailBacklog": 3,
+        "currentScopeDetailBacklog": 3,
+        "currentScopeBlockedDetails": 3,
+        "pageCap": 50000,
+        "detailCap": 50,
+        "note": "Source access is paused or cooling down; see classified health and next permitted check.",
+        "accessHealth": {
+          "sourceId": "500classic",
+          "state": "review",
+          "consecutiveFailures": 1,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-08T02:32:29.107Z"
+        }
+      }
+    },
+    {
+      "source": "autotrader",
+      "scope": "regional",
+      "status": "blocked",
+      "startedAt": "2026-09-29T23:34:31.407+00:00",
+      "finishedAt": "2026-09-29T23:34:31.408+00:00",
+      "error": "Source paused; see dated source-access evidence",
+      "stats": {
+        "jobId": "b8ecdd19-7118-4065-ac3d-9f475e1780e0",
+        "checkpointId": "autotrader:regional:1e8a1db4f43d196e2f51d35e",
+        "catalogCycle": 1,
+        "pagesDiscovered": 1,
+        "pagesFetched": 0,
+        "detailRequests": 0,
+        "detailsSucceeded": 0,
+        "freshDetailsSkipped": 0,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 0,
+        "uniqueAds": 0,
+        "duplicateIds": 0,
+        "skippedCandidates": 0,
+        "remainingEnrichment": 19,
+        "catalogBacklog": 1,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 1,
+        "totalDetailBacklog": 19,
+        "blockedDetailBacklog": 18,
+        "currentScopeDetailBacklog": 18,
+        "currentScopeBlockedDetails": 18,
+        "pageCap": 50000,
+        "detailCap": 50,
+        "note": "Source access is paused or cooling down; see classified health and next permitted check.",
+        "accessHealth": {
+          "sourceId": "autotrader",
+          "state": "review",
+          "consecutiveFailures": 1,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-08T02:40:00.746Z"
+        }
+      }
+    },
+    {
+      "source": "jws",
+      "scope": "regional",
+      "status": "partial",
+      "startedAt": "2026-09-29T23:34:31.500+00:00",
+      "finishedAt": "2026-09-29T23:34:41.745+00:00",
+      "error": null,
+      "stats": {
+        "jobId": "b8ecdd19-7118-4065-ac3d-9f475e1780e0",
+        "checkpointId": "jws:regional:3efb602acc5228256ad1aca0",
+        "catalogCycle": 4,
+        "pagesDiscovered": 1,
+        "pagesFetched": 1,
+        "detailRequests": 0,
+        "detailsSucceeded": 0,
+        "freshDetailsSkipped": 0,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": true,
+        "cacheHits": 0,
+        "discoveredCandidates": 44,
+        "uniqueAds": 8,
+        "duplicateIds": 0,
+        "skippedCandidates": 36,
+        "remainingEnrichment": 8,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 1,
+        "totalDetailBacklog": 8,
+        "blockedDetailBacklog": 0,
+        "currentScopeDetailBacklog": 8,
+        "currentScopeBlockedDetails": 0,
+        "pageCap": 50000,
+        "detailCap": 50,
+        "note": "Catalog collected; detail collection is disabled for this source's broken detail endpoint. Prices and pending detail evidence remain unknown.",
+        "accessHealth": {
+          "sourceId": "jws",
+          "state": "active",
+          "consecutiveFailures": 0,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-29T23:34:41.744Z",
+          "lastLiveValidatedAt": "2026-09-29T23:34:41.744Z"
+        }
+      }
+    },
+    {
+      "source": "classiccars",
+      "scope": "nationwide",
+      "status": "partial",
+      "startedAt": "2026-09-29T23:34:57.610+00:00",
+      "finishedAt": "2026-09-29T23:39:02.802+00:00",
+      "error": null,
+      "stats": {
+        "jobId": "459854d8-1f07-43be-a3d8-cd48e818ca5f",
+        "checkpointId": "classiccars:nationwide:8e4ed3aec624803f2b1b48f3",
+        "catalogCycle": 7,
+        "pagesDiscovered": 50,
+        "pagesFetched": 50,
+        "detailRequests": 0,
+        "detailsSucceeded": 0,
+        "freshDetailsSkipped": 50,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 2868,
+        "uniqueAds": 2868,
+        "duplicateIds": 0,
+        "skippedCandidates": 0,
+        "remainingEnrichment": 3708,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 50,
+        "totalDetailBacklog": 3709,
+        "blockedDetailBacklog": 0,
+        "currentScopeDetailBacklog": 2685,
+        "currentScopeBlockedDetails": 0,
+        "pageCap": 50000,
+        "detailCap": 0,
+        "note": "Catalog checkpoint retained; independent detail enrichment remains.",
+        "accessHealth": {
+          "sourceId": "classiccars",
+          "state": "active",
+          "consecutiveFailures": 0,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-29T23:39:02.786Z",
+          "lastLiveValidatedAt": "2026-09-29T23:39:02.786Z"
+        }
+      }
+    },
+    {
+      "source": "volo",
+      "scope": "regional",
+      "status": "complete",
+      "startedAt": "2026-09-29T23:39:03.563+00:00",
+      "finishedAt": "2026-09-29T23:40:34.138+00:00",
+      "error": null,
+      "stats": {
+        "jobId": "4e103b7d-26af-4fcb-9c21-7fc8945b7292",
+        "checkpointId": "volo:regional:ed209aa95381978862c4d8db",
+        "catalogCycle": 6,
+        "pagesDiscovered": 2,
+        "pagesFetched": 0,
+        "detailRequests": 10,
+        "detailsSucceeded": 10,
+        "freshDetailsSkipped": 60,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 0,
+        "uniqueAds": 0,
+        "duplicateIds": 0,
+        "skippedCandidates": 0,
+        "remainingEnrichment": 0,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 2,
+        "totalDetailBacklog": 0,
+        "blockedDetailBacklog": 0,
+        "currentScopeDetailBacklog": 0,
+        "currentScopeBlockedDetails": 0,
+        "pageCap": 0,
+        "detailCap": 100,
+        "note": "Configured scope exhausted; this does not establish full nationwide coverage.",
+        "accessHealth": {
+          "sourceId": "volo",
+          "state": "active",
+          "consecutiveFailures": 0,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-29T23:40:34.138Z",
+          "lastLiveValidatedAt": "2026-09-29T23:40:34.138Z"
+        }
+      }
+    },
+    {
+      "source": "grauto",
+      "scope": "regional",
+      "status": "complete",
+      "startedAt": "2026-09-29T23:40:34.901+00:00",
+      "finishedAt": "2026-09-29T23:42:45.310+00:00",
+      "error": null,
+      "stats": {
+        "jobId": "d8e30711-6c47-46a9-b4c4-0749eab29d48",
+        "checkpointId": "grauto:regional:e8b0bb9ddc37499d0026f629",
+        "catalogCycle": 7,
+        "pagesDiscovered": 5,
+        "pagesFetched": 0,
+        "detailRequests": 14,
+        "detailsSucceeded": 14,
+        "freshDetailsSkipped": 64,
+        "failedInventoryPages": 0,
+        "failedDetails": 0,
+        "detailCollectionDisabled": false,
+        "cacheHits": 0,
+        "discoveredCandidates": 0,
+        "uniqueAds": 0,
+        "duplicateIds": 0,
+        "skippedCandidates": 0,
+        "remainingEnrichment": 0,
+        "catalogBacklog": 0,
+        "blockedCatalogBacklog": 0,
+        "totalCatalogPages": 5,
+        "totalDetailBacklog": 0,
+        "blockedDetailBacklog": 0,
+        "currentScopeDetailBacklog": 0,
+        "currentScopeBlockedDetails": 0,
+        "pageCap": 0,
+        "detailCap": 100,
+        "note": "Configured scope exhausted; this does not establish full nationwide coverage.",
+        "accessHealth": {
+          "sourceId": "grauto",
+          "state": "active",
+          "consecutiveFailures": 0,
+          "nextPermittedAt": null,
+          "lastSuccessAt": "2026-09-29T23:42:45.309Z",
+          "lastLiveValidatedAt": "2026-09-29T23:42:45.309Z"
+        }
+      }
+    }
+  ],
+  "health": {
+    "midwest": "active",
+    "classiccars": "active",
+    "volo": "active",
+    "grauto": "active",
+    "admcars": "active",
+    "nsclassics": "active",
+    "jsmotors": "active",
+    "500classic": "review",
+    "autotrader": "review",
+    "hemmings": "review",
+    "autotrader-classics": "review",
+    "craigslist": "review",
+    "ebay": "review",
+    "cars": "review",
+    "cargurus": "review",
+    "bat": "review",
+    "carsbids": "review",
+    "mecum": "review",
+    "barrett": "review",
+    "corvetteforum": "review",
+    "mustangforum": "review",
+    "camaroforum": "review",
+    "facebook": "review",
+    "jws": "active",
+    "duffys": "review",
+    "indyauto": "review"
+  },
+  "activeLeases": 0,
+  "detailQueues": {
+    "midwest": {
+      "total": 3,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 3
+    },
+    "classiccars": {
+      "total": 3759,
+      "due": 3709,
+      "blocked": 0,
+      "fresh": 50
+    },
+    "volo": {
+      "total": 60,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 60
+    },
+    "grauto": {
+      "total": 64,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 64
+    },
+    "admcars": {
+      "total": 46,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 46
+    },
+    "nsclassics": {
+      "total": 14,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 14
+    },
+    "jsmotors": {
+      "total": 25,
+      "due": 0,
+      "blocked": 2,
+      "fresh": 23
+    },
+    "500classic": {
+      "total": 3,
+      "due": 0,
+      "blocked": 3,
+      "fresh": 0
+    },
+    "autotrader": {
+      "total": 19,
+      "due": 1,
+      "blocked": 18,
+      "fresh": 0
+    },
+    "hemmings": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "autotrader-classics": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "craigslist": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "ebay": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "cars": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "cargurus": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "bat": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "carsbids": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "mecum": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "barrett": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "corvetteforum": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "mustangforum": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "camaroforum": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "facebook": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "jws": {
+      "total": 8,
+      "due": 8,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "duffys": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    },
+    "indyauto": {
+      "total": 0,
+      "due": 0,
+      "blocked": 0,
+      "fresh": 0
+    }
+  },
+  "bySource": {
+    "500classic": {
+      "before": 3,
+      "after": 3,
+      "added": 0,
+      "observed": 0,
+      "freshDetails": 0,
+      "numericPriceChanges": 0
+    },
+    "admcars": {
+      "before": 40,
+      "after": 46,
+      "added": 6,
+      "observed": 46,
+      "freshDetails": 46,
+      "numericPriceChanges": 0
+    },
+    "autotrader": {
+      "before": 19,
+      "after": 19,
+      "added": 0,
+      "observed": 0,
+      "freshDetails": 0,
+      "numericPriceChanges": 0
+    },
+    "classiccars": {
+      "before": 3709,
+      "after": 3759,
+      "added": 50,
+      "observed": 2879,
+      "freshDetails": 50,
+      "numericPriceChanges": 20
+    },
+    "grauto": {
+      "before": 59,
+      "after": 64,
+      "added": 5,
+      "observed": 64,
+      "freshDetails": 64,
+      "numericPriceChanges": 1
+    },
+    "jsmotors": {
+      "before": 25,
+      "after": 25,
+      "added": 0,
+      "observed": 23,
+      "freshDetails": 23,
+      "numericPriceChanges": 0
+    },
+    "jws": {
+      "before": 8,
+      "after": 8,
+      "added": 0,
+      "observed": 8,
+      "freshDetails": 0,
+      "numericPriceChanges": 0
+    },
+    "midwest": {
+      "before": 3,
+      "after": 3,
+      "added": 0,
+      "observed": 3,
+      "freshDetails": 3,
+      "numericPriceChanges": 0
+    },
+    "nsclassics": {
+      "before": 14,
+      "after": 14,
+      "added": 0,
+      "observed": 14,
+      "freshDetails": 14,
+      "numericPriceChanges": 0
+    },
+    "volo": {
+      "before": 57,
+      "after": 60,
+      "added": 3,
+      "observed": 60,
+      "freshDetails": 60,
+      "numericPriceChanges": 0
+    }
+  }
+}
