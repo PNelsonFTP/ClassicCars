@@ -1,0 +1,228 @@
+{
+  "checkedAt": "2026-10-01T11:36:04.041446+00:00",
+  "sourceCommit": "ac8bb6949c728bcc5cd8aa73c9b56bd0e148c70b",
+  "runId": 36855936263,
+  "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/36855936263",
+  "status": "passed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "browser",
+      "conclusion": "success",
+      "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/36855936263/job/110348293847",
+      "checks": [
+        {
+          "name": "Run npm ci",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npx --no-install playwright install --with-deps chromium",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run test:e2e",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run build:exports",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run verify:exports",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Node 22.18.0 on ubuntu-24.04",
+      "conclusion": "success",
+      "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/36855936263/job/110348294131",
+      "checks": [
+        {
+          "name": "Run npm ci",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run typecheck",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run test:release",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node -e \"require('node:fs').copyFileSync('docs/sbom/lockfile-inventory.json','baseline-sbom.json')\"",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom:artifacts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom:validate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node scripts/compare-sbom.mjs baseline-sbom.json",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Node 24 on ubuntu-24.04",
+      "conclusion": "success",
+      "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/36855936263/job/110348294283",
+      "checks": [
+        {
+          "name": "Run npm ci",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run typecheck",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run test:release",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node -e \"require('node:fs').copyFileSync('docs/sbom/lockfile-inventory.json','baseline-sbom.json')\"",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom:artifacts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom:validate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node scripts/compare-sbom.mjs baseline-sbom.json",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "container",
+      "conclusion": "success",
+      "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/36855936263/job/110348294288",
+      "checks": [
+        {
+          "name": "Run docker build --pull -t musclescout-ci .",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run docker run --rm musclescout-ci npm run test:release",
+          "conclusion": "success"
+        },
+        {
+          "name": "Extract target container inventory",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Node 24 on macos-15",
+      "conclusion": "success",
+      "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/36855936263/job/110348294374",
+      "checks": [
+        {
+          "name": "Run npm ci",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run typecheck",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run test:release",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node -e \"require('node:fs').copyFileSync('docs/sbom/lockfile-inventory.json','baseline-sbom.json')\"",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom:artifacts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom:validate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node scripts/compare-sbom.mjs baseline-sbom.json",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "name": "Node 24 on windows-2025",
+      "conclusion": "success",
+      "url": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/36855936263/job/110348294443",
+      "checks": [
+        {
+          "name": "Run npm ci",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run typecheck",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm test",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run test:release",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node -e \"require('node:fs').copyFileSync('docs/sbom/lockfile-inventory.json','baseline-sbom.json')\"",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom:artifacts",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run sbom:validate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node scripts/compare-sbom.mjs baseline-sbom.json",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

@@ -65,3 +65,7 @@ Private backups were made before and after collection. The automatic worker was 
 The ADM detail parser now recognizes an exact SOLD label in the ad’s own price field, records seller-reported sold evidence and leaves the asking price unknown. Seven regression cases cover persistence and unrelated narrative. [Captured-response correction](adm-sold-review-2026-10-01.json) preserves the original observation time without a new request. [All 276 tests in 27 files passed](unit-review-2026-10-01.json). Configuration, dependencies and lockfile are unchanged. Earlier platform, SBOM and security-audit receipts keep their original dates. Baselines, raw seller evidence, credentials and database backups remain private and ignored by Git. The public snapshot excludes the 19 retained Autotrader ads.
 
 [Aggregate refresh evidence](refresh-2026-10-01.json).
+
+## Publication
+
+The [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/36855941334) succeeded for `ac8bb6949c728bcc5cd8aa73c9b56bd0e148c70b`, including type checks and all 276 tests in 27 files. [All six CI jobs](github-ci-2026-10-01.json) passed across Linux, macOS, Windows, browser and container checks, including SBOM generation/validation and lockfile comparison. The [live receipt](github-pages-2026-10-01.json) verifies 4,037 public ads, exact exported data hashes, search, lazy details, images and desktop/mobile layouts. Later documentation-only commits record these receipts and do not change the deployed application/data.
