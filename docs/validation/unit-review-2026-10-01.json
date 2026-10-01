@@ -1,0 +1,9 @@
+{
+  "checkedAt": "2026-10-01T11:18:01.064985+00:00",
+  "status": "passed",
+  "command": "npm test",
+  "testFilesPassed": 27,
+  "testsPassed": 276,
+  "newRegressionCases": 7,
+  "change": "ADM exact SOLD detail price labels persist seller-reported sold; numeric prices, call-for-price, blank fields and unrelated narrative do not infer a sale"
+}

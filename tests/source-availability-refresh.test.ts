@@ -164,3 +164,65 @@ it("promotes a stored unknown ClassicCars ad when its captured detail explicitly
     sourceAvailability: "active",
   });
 });
+
+const admDetail = (listing: Listing, price: string, narrative = "") =>
+  `<link rel="canonical" href="${listing.url}"><div id="details"><div class="datatable"><dl><dt>Engine:</dt><dd>327</dd></dl><dl><dt>Transmission:</dt><dd>Automatic</dd></dl></div></div><div class="inventory-detailed-internet-price">${price}</div><div id="stock_options">${narrative}</div>`;
+
+it.each(["SOLD", "Sold", " sold "])(
+  "persists ADM's explicit %s price label as seller-reported sold without inventing a transaction price",
+  async (label) => {
+    const original = catalog("admcars", "admcars-card-1129");
+    await store.upsertListing(original);
+    const previous = (await store.allListings())[0];
+    const detail = parseDetail(
+      admDetail(previous, label).replace(
+        '<div class="datatable">',
+        '<div class="datatable"><dl><dt>Price:</dt><dd>$79,900</dd></dl>',
+      ),
+      previous,
+      context(previous.url, observedAt),
+    );
+    await store.upsertListing(detail);
+    const persisted = (await store.allListings())[0];
+    expect(persisted).toMatchObject({
+      availability: "sold",
+      sourceAvailability: "sold",
+      askingPrice: null,
+      lastDetailObservedAt: observedAt,
+      parserVersion: "admcars-detail-v2",
+    });
+    expect(persisted.fieldEvidence.availability).toMatchObject({
+      value: "sold",
+      basis: "seller-claimed",
+      sourceUrl: previous.url,
+      observedAt,
+    });
+    expect(persisted.statusEvidence).toContain("SOLD");
+    const observation = await db.observation.findFirstOrThrow({
+      where: {
+        listingId: previous.id,
+        kind: "availability",
+        observedAt: new Date(observedAt),
+      },
+    });
+    expect(JSON.parse(observation.payload).availability).toBe("sold");
+  },
+);
+
+it.each(["$79,900", "Call for price", "Not sold", ""])(
+  "does not infer ADM sold status from an unrelated narrative when the price field is %s",
+  (price) => {
+    const listing = catalog("admcars", "admcars-card-1129");
+    const detail = parseDetail(
+      admDetail(
+        listing,
+        price,
+        "Similar cars previously SOLD. Sold when new by a Chevrolet dealer.",
+      ),
+      listing,
+      context(listing.url, observedAt),
+    );
+    expect(detail.sourceAvailability).toBe("active");
+    expect(detail.availability).toBe("active");
+  },
+);

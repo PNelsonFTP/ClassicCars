@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-10-01T11:21:47.810Z",
+  "status": "passed",
+  "method": "Reparse exact private HTTP responses captured during this refresh; no new request or redated observation",
+  "corrections": [
+    {
+      "id": "admcars:1129",
+      "from": "active",
+      "to": "sold",
+      "observedAt": "2026-10-01T11:14:25.590Z",
+      "parserVersion": "admcars-detail-v2"
+    },
+    {
+      "id": "admcars:1763",
+      "from": "active",
+      "to": "sold",
+      "observedAt": "2026-10-01T11:14:45.561Z",
+      "parserVersion": "admcars-detail-v2"
+    },
+    {
+      "id": "admcars:1769",
+      "from": "active",
+      "to": "sold",
+      "observedAt": "2026-10-01T11:15:35.558Z",
+      "parserVersion": "admcars-detail-v2"
+    },
+    {
+      "id": "admcars:1771",
+      "from": "active",
+      "to": "sold",
+      "observedAt": "2026-10-01T11:14:55.567Z",
+      "parserVersion": "admcars-detail-v2"
+    },
+    {
+      "id": "admcars:1774",
+      "from": "active",
+      "to": "sold",
+      "observedAt": "2026-10-01T11:15:40.540Z",
+      "parserVersion": "admcars-detail-v2"
+    },
+    {
+      "id": "admcars:1776",
+      "from": "active",
+      "to": "sold",
+      "observedAt": "2026-10-01T11:15:05.568Z",
+      "parserVersion": "admcars-detail-v2"
+    },
+    {
+      "id": "admcars:1805",
+      "from": "active",
+      "to": "sold",
+      "observedAt": "2026-10-01T11:15:45.563Z",
+      "parserVersion": "admcars-detail-v2"
+    },
+    {
+      "id": "admcars:1807",
+      "from": "active",
+      "to": "sold",
+      "observedAt": "2026-10-01T11:16:45.538Z",
+      "parserVersion": "admcars-detail-v2"
+    }
+  ]
+}

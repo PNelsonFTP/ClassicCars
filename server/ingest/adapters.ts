@@ -921,15 +921,22 @@ export function parseDetail(
   const isAuction =
     l.sourceId === "classiccars" &&
     /auction/i.test(values.Price + " " + $("h1").text());
-  const ask = isAuction
-    ? null
-    : values.Price
-      ? parseAsk(values.Price)
-      : l.sourceId === "admcars"
-        ? parseAsk($(".inventory-detailed-internet-price").text())
-        : l.askingPrice;
+  const admPrice =
+    l.sourceId === "admcars"
+      ? clean($(".inventory-detailed-internet-price").first().text())
+      : "";
+  const admSold = /^sold$/i.test(admPrice);
+  const ask =
+    isAuction || admSold
+      ? null
+      : values.Price
+        ? parseAsk(values.Price)
+        : l.sourceId === "admcars"
+          ? parseAsk(admPrice)
+          : l.askingPrice;
   let photos = l.photos,
     availability = l.sourceAvailability || l.availability;
+  if (admSold) availability = "sold";
   if (l.sourceId === "jsmotors") {
     let matchedProduct = false;
     $('script[type="application/ld+json"]').each((_, el) => {
@@ -991,6 +998,20 @@ export function parseDetail(
     availability,
     // This detail result is a source observation, not an age-projected display state.
     sourceAvailability: availability,
+    statusEvidence: admSold
+      ? "Seller marks this ad SOLD in its detail price field."
+      : l.statusEvidence,
+    fieldEvidence: admSold
+      ? {
+          ...l.fieldEvidence,
+          availability: {
+            value: "sold",
+            basis: "seller-claimed",
+            sourceUrl: l.url,
+            observedAt: ctx.observedAt,
+          },
+        }
+      : l.fieldEvidence,
     photos: photos.slice(0, 100),
     vehicleLocation: location,
     route: offsite ? null : l.route,
@@ -1021,7 +1042,7 @@ export function parseDetail(
     lastObservedAt: ctx.observedAt,
     lastNetworkCheckedAt: ctx.lastNetworkCheckedAt,
     evidenceRef: ctx.hash,
-    parserVersion: `${l.sourceId}-detail-v1`,
+    parserVersion: `${l.sourceId}-detail-${l.sourceId === "admcars" ? "v2" : "v1"}`,
     lastDetailObservedAt: ctx.observedAt,
   });
 }

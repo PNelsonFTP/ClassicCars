@@ -1,5 +1,11 @@
 # Future improvements and acceptance status
 
+## October 1 inventory refresh
+
+The October 1 refresh retains **4,056 ads / 4,033 groups**, including **4,037 public ads / 4,020 public groups**. It added **55 ads**, recorded **42 numeric asking-price changes** (40 decreases, 2 increases), and refreshed details for **263 distinct ads**. 8 previously tracked ads are newly seller-reported sold.
+
+The [dated refresh report](docs/validation/refresh-2026-10-01-comparison.md) records source coverage, validation and remaining limitations. Earlier dated sections below remain historical evidence.
+
 ## September 29 inventory refresh
 
 The September 29 refresh retains **4,001 ads / 3,978 groups**, including **3,982 public ads / 3,965 public groups**. It added **64 ads**, recorded **21 numeric asking-price changes** (18 decreases, 3 increases), and refreshed details for **260 distinct ads**. No previously tracked ads were newly seller-reported sold.
