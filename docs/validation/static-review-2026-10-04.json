@@ -1,0 +1,22 @@
+{
+  "checkedAt": "2026-10-04T13:25:19.645850+00:00",
+  "status": "passed",
+  "command": "npm run verify:exports",
+  "results": [
+    {
+      "base": "/",
+      "runtimeErrors": 0,
+      "missingLocalAssets": 0,
+      "realImageLoaded": true
+    },
+    {
+      "base": "/ClassicCars",
+      "runtimeErrors": 0,
+      "missingLocalAssets": 0,
+      "realImageLoaded": true
+    },
+    {
+      "storage": "root/subpath snapshot workspaces isolated; separate app sentinel preserved"
+    }
+  ]
+}

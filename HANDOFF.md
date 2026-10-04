@@ -1,5 +1,11 @@
 # MuscleScout handoff — 1.1.0
 
+## October 4 inventory refresh
+
+The October 4 refresh retains **4,168 ads / 4,145 groups**, including **4,149 public ads / 4,132 public groups**. It added **112 ads**, recorded **73 numeric asking-price changes** (68 decreases, 5 increases), and refreshed details for **265 distinct ads**. One previously tracked ad is newly seller-reported sold.
+
+The [dated refresh report](docs/validation/refresh-2026-10-04-comparison.md) records source coverage, validation and remaining limitations. Earlier dated sections below remain historical evidence.
+
 ## October 1 inventory refresh
 
 Published data/code commit [`ac8bb69`](https://github.com/PNelsonFTP/ClassicCars/commit/ac8bb6949c728bcc5cd8aa73c9b56bd0e148c70b) passed the [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/36855941334) with 276 tests in 27 files and [all six CI jobs](docs/validation/github-ci-2026-10-01.json). [Live verification](docs/validation/github-pages-2026-10-01.json) passed exact catalog/snapshot/detail hashes, search, images, 26 source-method entries and 1440/390/375px layouts, with no runtime errors or missing local assets. No collection runs or leases remain active.
