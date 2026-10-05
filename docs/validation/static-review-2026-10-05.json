@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-10-05T12:27:07.917113+00:00",
+  "status": "passed",
+  "checks": [
+    {
+      "base": "/",
+      "runtimeErrors": 0,
+      "missingLocalAssets": 0,
+      "realImageLoaded": true
+    },
+    {
+      "base": "/ClassicCars",
+      "runtimeErrors": 0,
+      "missingLocalAssets": 0,
+      "realImageLoaded": true
+    },
+    {
+      "storage": "root/subpath snapshot workspaces isolated; separate app sentinel preserved"
+    }
+  ]
+}

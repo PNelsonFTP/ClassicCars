@@ -1,5 +1,11 @@
 # Validation — 1.1.0
 
+## October 5 inventory refresh
+
+The October 5 refresh retains **4,177 ads / 4,154 groups**, including **4,158 public ads / 4,141 public groups**. It added **9 ads**, recorded **7 numeric asking-price changes** (6 decreases, 1 increase), and refreshed details for **50 distinct ads**. No previously tracked ads changed to seller-reported sold.
+
+The [dated refresh report](docs/validation/refresh-2026-10-05-comparison.md) records source coverage, validation and remaining limitations. Earlier dated sections below remain historical evidence.
+
 ## October 4 inventory refresh
 
 Published data commit [`efad035`](https://github.com/PNelsonFTP/ClassicCars/commit/efad035303825ab57d1f1dc24407a93a449bc6b8) passed the [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/37205622804), including 276 tests across 27 files. [Live verification](docs/validation/github-pages-2026-10-04.json) passed exact catalog/snapshot/detail hashes, search, images, 26 source-method entries and 1440/390/375px layouts, with no runtime errors or missing local assets. No collection runs or leases remain active.
