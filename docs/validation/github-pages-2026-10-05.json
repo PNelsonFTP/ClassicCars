@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-10-05T12:33:08.101Z",
+  "sourceCommit": "7c1ea0f394de23fef157a35b7ec4adfcc38fb093",
+  "url": "https://pnelsonftp.github.io/ClassicCars/",
+  "files": [
+    {
+      "path": "data/catalog.json",
+      "sha256": "a5fab40b184b22a9487a178f33bdf712d129c2cc1436e4c1ab38167238a3d5ea",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/snapshot.json",
+      "sha256": "7233d222213753e41923eebbc7d53c87a306d4425029006ae28e802e3509e8a6",
+      "matchesLocal": true
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "documentWidth": 1440
+    },
+    {
+      "width": 390,
+      "documentWidth": 390
+    },
+    {
+      "width": 375,
+      "documentWidth": 375
+    }
+  ],
+  "publicAds": 4158,
+  "generatedAt": "2026-10-05T12:26:18.211Z",
+  "status": "passed",
+  "realImageLoaded": true,
+  "detailHashMatches": true,
+  "typoSearchPassed": true,
+  "sourceMethods": 26,
+  "runtimeErrors": [],
+  "missingAssets": [],
+  "workflowUrl": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/37309718857",
+  "workflowConclusion": "success",
+  "testsPassed": 276,
+  "testFilesPassed": 27,
+  "verificationNotes": [
+    "Two initial interaction checks timed out waiting for cards (30s and 60s). A fresh diagnostic loaded today\u2019s inventory without local request or runtime errors. The final complete check waited for the catalog to render before clicking Review cars, and passed. No application code was changed."
+  ]
+}
