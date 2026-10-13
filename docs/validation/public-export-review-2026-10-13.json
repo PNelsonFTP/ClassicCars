@@ -1,0 +1,20 @@
+{
+  "checkedAt": "2026-10-13T13:11:05.013Z",
+  "status": "passed",
+  "publicAds": 4399,
+  "publicGroups": 4381,
+  "generatedAt": "2026-10-13T13:10:12.489Z",
+  "detailChunks": 44,
+  "staticFilesScanned": 168,
+  "configuredSecretsTested": 1,
+  "snapshotSha256": "7c9e226156f4478b9ab23d5f7c82724f830cc1e32cbfd28d14c1b9a9bea63402",
+  "catalogSha256": "083a694650d7d683d1d4524b0af26b1980ef0005ca03ffe3090fc494c9566bd4",
+  "checks": [
+    "Exact public redaction and observation dates against local database",
+    "Catalog and lazy detail chunks match public snapshot",
+    "Content hashes and obsolete chunk removal",
+    "Positive or unknown asks",
+    "Root and /ClassicCars built data byte-identical",
+    "Configured secrets absent from both static outputs"
+  ]
+}

@@ -1,5 +1,13 @@
 # MuscleScout
 
+## October 13 inventory refresh
+
+The October 13 refresh retains **4,418 ads / 4,394 groups**, including **4,399 public ads / 4,381 public groups**. It added **91 ads**, recorded **66 numeric asking-price changes** (53 decreases, 13 increases), and refreshed details for **278 distinct ads**. One previously tracked ad changed to seller-reported sold.
+
+One GR Auto detail URL returned HTTP 404; its prior observation is retained and the task is blocked.
+
+The [dated refresh report](docs/validation/refresh-2026-10-13-comparison.md) records source coverage, validation and remaining limitations. Earlier dated sections below remain historical evidence.
+
 ## October 9 inventory refresh
 
 The October 9 refresh retains **4,327 ads / 4,304 groups**, including **4,308 public ads / 4,291 public groups**. It added **150 ads**, recorded **81 numeric asking-price changes** (77 decreases, 4 increases), and refreshed details for **273 distinct ads**. One previously tracked ad changed to seller-reported sold.

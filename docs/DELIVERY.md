@@ -1,5 +1,13 @@
 # MuscleScout 1.1.0 delivery
 
+## October 13 inventory refresh
+
+The October 13 refresh retains **4,418 ads / 4,394 groups**, including **4,399 public ads / 4,381 public groups**. It added **91 ads**, recorded **66 numeric asking-price changes** (53 decreases, 13 increases), and refreshed details for **278 distinct ads**. One previously tracked ad changed to seller-reported sold.
+
+One GR Auto detail URL returned HTTP 404; its prior observation is retained and the task is blocked.
+
+The [dated refresh report](validation/refresh-2026-10-13-comparison.md) records source coverage, validation and remaining limitations. Earlier dated sections below remain historical evidence.
+
 ## October 9 inventory refresh
 
 Published data commit [`d94c29d`](https://github.com/PNelsonFTP/ClassicCars/commit/d94c29d98e0bf6e728ece8fd37ff8ddd6b75460c) passed the [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/37944497957), including 276 tests across 27 files. [Live verification](validation/github-pages-2026-10-09.json) passed exact catalog/snapshot/detail hashes, search, images, 26 source-method entries and 1440/390/375px layouts, with no runtime errors or missing local assets. No collection runs or leases remain active.
