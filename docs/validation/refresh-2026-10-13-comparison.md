@@ -67,3 +67,7 @@ Private backups were made before and after collection. The automatic worker was 
 Application code, configuration, dependencies and lockfile are unchanged. Earlier platform, SBOM and security-audit receipts keep their original dates. Baselines, raw seller evidence, credentials and database backups remain private and ignored by Git. The public snapshot excludes the 19 retained Autotrader ads.
 
 [Aggregate refresh evidence](refresh-2026-10-13.json).
+
+## Publication
+
+The [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/38403130497) succeeded for `4893693ce774a67a07aec9ed3892cad190d01b55`, including type checks and all 276 tests in 27 files. The [live receipt](github-pages-2026-10-13.json) verifies 4,399 public ads, exact exported data hashes, search, lazy details, images and desktop/mobile layouts. The one collector HTTP 404 remains recorded above. This data/documentation-only refresh did not rerun the six-job platform CI; earlier platform and SBOM receipts retain their original dates. Later documentation-only commits record the receipt and do not change the deployed application/data.
