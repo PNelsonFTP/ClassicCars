@@ -1,5 +1,13 @@
 # Source coverage
 
+## October 17 inventory refresh
+
+The October 17 refresh retains **4,553 ads / 4,529 groups**, including **4,534 public ads / 4,516 public groups**. It added **135 ads**, recorded **87 numeric asking-price changes** (81 decreases, 6 increases), and refreshed details for **280 distinct ads**. 2 previously tracked ads changed to seller-reported sold.
+
+One additional J & S detail page returned HTTP 404 today. Its prior observation is retained; earlier GR Auto and J & S 404s remain documented with their original dates.
+
+The [dated refresh report](docs/validation/refresh-2026-10-17-comparison.md) records source coverage, validation and remaining limitations. Earlier dated sections below remain historical evidence.
+
 ## October 13 inventory refresh
 
 The October 13 refresh retains **4,418 ads / 4,394 groups**, including **4,399 public ads / 4,381 public groups**. It added **91 ads**, recorded **66 numeric asking-price changes** (53 decreases, 13 increases), and refreshed details for **278 distinct ads**. One previously tracked ad changed to seller-reported sold.
