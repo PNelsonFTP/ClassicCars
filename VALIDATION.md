@@ -2,6 +2,8 @@
 
 ## October 19 inventory refresh
 
+Published data commit [`7e6cde5`](https://github.com/PNelsonFTP/ClassicCars/commit/7e6cde55af10db37c8dbecf2df7f78f1549baaa0) passed the [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/39257896206), including 276 tests across 27 files. [Live verification](docs/validation/github-pages-2026-10-19.json) passed exact catalog/snapshot/detail hashes, including the catalog loaded by the browser, search, images, 26 source-method entries and 1440/390/375px layouts, with no runtime errors or missing local assets. No collection runs or leases remain active.
+
 The October 19 refresh retains **4,578 ads / 4,552 groups**, including **4,559 public ads / 4,539 public groups**. It added **25 ads**, recorded **14 numeric asking-price changes** (11 decreases, 3 increases), and refreshed details for **281 distinct ads**. No previously tracked ads changed to seller-reported sold.
 
 Existing GR Auto and J & S detail-page 404s remain documented with their original dates; prior observations are retained.
