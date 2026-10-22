@@ -1,5 +1,15 @@
 # MuscleScout 1.1.0 delivery
 
+## October 22 location and results release
+
+The approved application/data commit [`5533b17`](https://github.com/PNelsonFTP/ClassicCars/commit/5533b178f41fba4745fb87207da2771191537d2e) is pushed to `main` and live at [MuscleScout](https://pnelsonftp.github.io/ClassicCars/). The [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/39799973841) succeeded using `/ClassicCars`. [All six CI jobs](https://github.com/PNelsonFTP/ClassicCars/actions/runs/39799956316) passed; the [CI receipt](validation/github-ci-2026-10-22.json) records each target and job URL. The closing documentation update records these results without changing deployed application/data bytes.
+
+[Live verification](validation/github-pages-2026-10-22.json) matched every one of the **104 public JSON files**, including all detail chunks and city/ZIP reference shards. Browser checks at 1440, 390 and 375 pixels confirmed the actual loaded catalog, real road estimates, listing details/images, travel filters, ZIP/city lookup, explicit unsupported-origin behavior, saved travel preferences, typo search and 26 source-method entries. No browser runtime errors, missing site assets or horizontal overflow were found. Private screenshots are retained in ignored `data/reports/publication/github-pages-2026-10-22/`.
+
+The release supplies **1,484 estimated ads from 147 shared city routes**. Default approximate four-hour shopping returns **488 ads / 483 groups**, including **157 near-limit ads**. Excluding near-limit ads returns 331 ads / 330 groups; strict reported-vehicle routes return 204 ads. Wheaton is the published origin; other origins require their own generated road table. The static frontend requires no routing API key, running backend or Docker container.
+
+The release passed **305 unit tests in 29 files**, **20 desktop/mobile browser tests**, both static export paths, isolated release smoke, public travel/privacy/parity checks and the seven-report SBOM chain. Inventory remains **4,559 public ads / 4,539 groups**, with seller observations dated October 19. The geographic export's `2026-10-22T01:43:35.904Z` generation time does not renew those observations. Private credentials, database state, required backups, Low-confidence evidence and the road cache remain excluded from Git.
+
 ## October 19 inventory refresh
 
 Published data commit [`7e6cde5`](https://github.com/PNelsonFTP/ClassicCars/commit/7e6cde55af10db37c8dbecf2df7f78f1549baaa0) passed the [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/39257896206), including 276 tests across 27 files. [Live verification](validation/github-pages-2026-10-19.json) passed exact catalog/snapshot/detail hashes, including the catalog loaded by the browser, search, images, 26 source-method entries and 1440/390/375px layouts, with no runtime errors or missing local assets. No collection runs or leases remain active.

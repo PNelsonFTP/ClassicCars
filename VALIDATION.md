@@ -1,5 +1,13 @@
 # Validation — 1.1.0
 
+## October 22 GitHub Pages release — verified live
+
+Application/data commit [`5533b17`](https://github.com/PNelsonFTP/ClassicCars/commit/5533b178f41fba4745fb87207da2771191537d2e) passed the [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/39799973841) and [all six CI jobs](docs/validation/github-ci-2026-10-22.json): Node 24 on Linux/macOS/Windows, Node 22.18 on Linux, hosted browser checks and the container release. The release passes 305 unit tests across 29 files, 20 desktop/mobile browser tests, both static export paths, release smoke, public travel/privacy/parity checks and SBOM validation.
+
+[Live verification](docs/validation/github-pages-2026-10-22.json), completed at `2026-10-22T15:02:05.486Z`, matched all 104 published JSON files to local bytes and checked the catalog consumed by the browser. Default approximate four-hour results contain 488 ads / 483 groups; excluding near-limit cars returns 331 ads / 330 groups; strict reported-vehicle routes return 204 ads. ZIP lookup, a city without published routes, travel preference persistence, typo search, listing details, real images and all 26 source-method panels passed. Desktop 1440px and mobile 390/375px layouts have no horizontal overflow, runtime errors or missing site assets. Screenshots remain private under `data/reports/publication/github-pages-2026-10-22/`.
+
+The public export was generated at `2026-10-22T01:43:35.904Z`; latest source observations remain `2026-10-19T13:07:59.143Z`. No inventory refresh was requested or claimed for this publication.
+
 ## October 21 location/results implementation — verified
 
 The [implementation guide](docs/TRAVEL_AND_RESULTS_IMPLEMENTATION.md) and [machine-readable verification](docs/validation/travel-2026-10-21.json) record the completed release. It supplies **1,484 ads with real road estimates from 147 shared city routes**. Default about-four-hour shopping returns **488 ads / 483 groups**, including **157 near-limit ads**; 331 pass the within-range rule. Strict reported-location mode returns 204 ads. These are ads/groups, not verified unique cars.

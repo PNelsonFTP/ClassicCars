@@ -1,5 +1,11 @@
 # MuscleScout handoff — 1.1.0
 
+## October 22 approved GitHub delivery
+
+Application/data commit [`5533b17`](https://github.com/PNelsonFTP/ClassicCars/commit/5533b178f41fba4745fb87207da2771191537d2e) is pushed to `origin/main` and [published on GitHub Pages](https://pnelsonftp.github.io/ClassicCars/). The [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/39799973841) and [all six CI jobs](docs/validation/github-ci-2026-10-22.json) passed. [Live verification](docs/validation/github-pages-2026-10-22.json) confirmed all 104 public JSON hashes, the catalog consumed by the browser, approximate and strict travel filters, ZIP/city lookup, explicit unsupported-origin handling, persistent travel preferences, search/details/images, 26 source-method panels and 1440/390/375px layouts without runtime errors or missing site assets.
+
+The published defaults show 488 ads / 483 groups within the approximate four-hour search, including 157 near-limit ads. Inventory sightings remain October 19; publication does not renew source observations. Private environment/database files, required backups and road caches remain ignored. Closing delivery documentation does not change the deployed application or data. See [delivery status](docs/DELIVERY.md) for workflow links and retained evidence.
+
 ## October 21 location and results implementation
 
 The approved [review](docs/LOCATION_AND_RESULTS_REVIEW_2026-10-21.md) is implemented in the [travel/results guide](docs/TRAVEL_AND_RESULTS_IMPLEMENTATION.md). Approximate city road travel now drives everyday/regional discovery, with planning buffers, near-limit matches, location basis, origin binding, city/ZIP controls and a versioned static atlas. GitHub Pages needs no routing key or running backend. Unsupported origins/destinations remain explicit; off-site and ambiguous cars do not inherit a dealer trip.
