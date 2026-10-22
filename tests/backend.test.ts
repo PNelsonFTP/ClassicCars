@@ -90,6 +90,27 @@ describe("authenticated isolated backend", () => {
     expect(bad.json()).toMatchObject({ accepted: 0 });
     expect(bad.json().rejected).toHaveLength(1);
   });
+  it("preserves off-site detail disclosure through sparse catalog refreshes", () => {
+    const old = car("offsite-retention", {
+      vehicleLocation: null,
+      parserVersion: "fixture-detail-v1",
+      lastDetailObservedAt: now,
+      routeUnknownReason: "Seller explicitly describes an off-site vehicle.",
+    });
+    const incoming = car("offsite-retention", {
+      vehicleLocation: null,
+      parserVersion: "fixture-catalog-v1",
+      lastObservedAt: new Date(Date.parse(now) + 1000).toISOString(),
+    });
+    const merged = store.mergeObservation(old, incoming);
+    expect(merged.locationDisclosure).toMatchObject({
+      status: "offsite",
+      observedAt: now,
+      sourceUrl: old.url,
+    });
+    expect(merged.routeUnknownReason).toContain("off-site");
+    expect(old.locationDisclosure).toBeUndefined();
+  });
   it("preserves first tracking and changes price history only on changed observed asks", async () => {
     await store.upsertListing(car());
     await store.upsertListing(car());

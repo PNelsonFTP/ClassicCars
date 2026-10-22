@@ -146,7 +146,10 @@ describe("compact catalog and one-clock search parity", () => {
     };
     car.lastObservedAt = new Date(BENCHMARK_NOW).toISOString();
     car.identityStatus = "consistent";
-    const filters = scaleQueries()[0].filters;
+    const filters = {
+      ...scaleQueries()[0].filters,
+      travelMode: "strict" as const,
+    };
     expect(matches(car, filters, workspace, BENCHMARK_NOW)).toBe(true);
     expect(matches(car, filters, workspace, BENCHMARK_NOW + 1)).toBe(false);
     expect(

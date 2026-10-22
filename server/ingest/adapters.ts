@@ -992,8 +992,9 @@ export function parseDetail(
         ? parseAsk(values.Price) || null
         : ask,
     priceOnRequest:
-      l.sourceId === "nsclassics" && values.Price
-        ? /^call for price$/i.test(values.Price)
+      values.Price || admPrice
+        ? /call|contact|inquire|poa/i.test(String(values.Price || admPrice)) &&
+          ask == null
         : l.priceOnRequest,
     availability,
     // This detail result is a source observation, not an age-projected display state.
@@ -1014,6 +1015,15 @@ export function parseDetail(
       : l.fieldEvidence,
     photos: photos.slice(0, 100),
     vehicleLocation: location,
+    locationDisclosure: offsite
+      ? { status: "offsite", observedAt: ctx.observedAt, sourceUrl: l.url }
+      : location
+        ? {
+            status: "reported-vehicle",
+            observedAt: ctx.observedAt,
+            sourceUrl: l.url,
+          }
+        : l.locationDisclosure,
     route: offsite ? null : l.route,
     routeUnknownReason: offsite
       ? "Seller explicitly describes an off-site vehicle; actual location must be confirmed."
@@ -1029,7 +1039,10 @@ export function parseDetail(
     specs,
     flags: l.flags
       .filter(
-        (f) => !f.includes("pending") && !f.includes("Catalog observation"),
+        (f) =>
+          !f.includes("pending") &&
+          !f.includes("Catalog observation") &&
+          (f !== "Off-site vehicle location unknown" || offsite || !location),
       )
       .concat(offsite ? ["Off-site vehicle location unknown"] : []),
     description: `Seller advertises ${l.title}. ${Object.entries(specs)

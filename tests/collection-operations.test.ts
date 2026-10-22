@@ -216,6 +216,109 @@ describe("durable collection operations", () => {
     expect((await ops.catalogTasks(cp.id))[0].error?.httpStatus).toBe(403);
     expect((await ops.detailTasks("a", "regional", 1000))[0].attempts).toBe(1);
   });
+  it("reopens completed details when catalog facts change, without treating a new sighting as a fact change", async () => {
+    const { ops, now } = setup();
+    const row = {
+      id: "x",
+      url: "https://example.com/x",
+      catalogSignature: "ask:25000",
+    };
+    await ops.discoverDetails("a", "regional", "q", [row]);
+    await ops.completeDetail("a", "x", new Date(now()).toISOString());
+    await ops.discoverDetails("a", "regional", "q", [
+      { ...row, lastObservedAt: new Date(now() + 1000).toISOString() },
+    ]);
+    expect((await ops.details("a")).items.x.status).toBe("complete");
+    await ops.discoverDetails("a", "regional", "q", [
+      { ...row, catalogSignature: "ask:24000" },
+    ]);
+    expect((await ops.details("a")).items.x).toMatchObject({
+      status: "pending",
+      catalogChanged: true,
+    });
+  });
+  it("counts consecutive detail failures rather than lifetime successful refreshes", async () => {
+    const { ops, now } = setup();
+    await ops.discoverDetails("a", "regional", "q", [
+      { id: "x", url: "https://example.com/x" },
+    ]);
+    for (let i = 0; i < 8; i++)
+      await ops.completeDetail("a", "x", new Date(now()).toISOString());
+    const health = await ops.health("a");
+    await ops.failDetail(
+      "a",
+      "x",
+      new FetchFailure("DNS unavailable", "network"),
+      health,
+    );
+    let task = (await ops.details("a")).items.x;
+    expect(task.status).toBe("pending");
+    expect(task.attempts).toBe(9);
+    expect(task.consecutiveFailures).toBe(1);
+    await ops.completeDetail("a", "x", new Date(now()).toISOString());
+    expect((await ops.details("a")).items.x.consecutiveFailures).toBe(0);
+    for (let i = 0; i < 3; i++)
+      await ops.failDetail(
+        "a",
+        "x",
+        new FetchFailure("DNS unavailable", "network"),
+        health,
+      );
+    expect((await ops.details("a")).items.x.status).toBe("blocked");
+  });
+  it("does not spend a detail's failure allowance on budget waits or cancellation", async () => {
+    const { ops } = setup();
+    await ops.discoverDetails("a", "regional", "q", [
+      { id: "x", url: "https://example.com/x" },
+    ]);
+    for (let i = 0; i < 5; i++)
+      await ops.failDetail(
+        "a",
+        "x",
+        new FetchFailure("Budget wait", "budget"),
+        await ops.health("a"),
+      );
+    expect((await ops.details("a")).items.x.status).toBe("pending");
+    expect((await ops.details("a")).items.x.consecutiveFailures || 0).toBe(0);
+  });
+  it("audits targeted transient retries and preserves server retry times", async () => {
+    const { ops, now } = setup();
+    await ops.discoverDetails("a", "regional", "q", [
+      { id: "x", url: "https://example.com/x" },
+    ]);
+    const until = new Date(now() + 3600000).toISOString(),
+      error = new FetchFailure("Rate limited", "rate-limit", 429, until),
+      health = await ops.failure("a", error);
+    await ops.failDetail("a", "x", error, health);
+    await expect(ops.retryDetail("a", "x", "ok")).rejects.toThrow(/Explain/);
+    await ops.retryDetail(
+      "a",
+      "x",
+      "Service recovered; operator confirmed ordinary access.",
+    );
+    const task = (await ops.details("a")).items.x;
+    expect(task.nextAttemptAt).toBe(until);
+    expect(task.error?.httpStatus).toBe(429);
+    expect(task.retryHistory).toHaveLength(1);
+    expect(await ops.detailTasks("a", "regional", 0)).toEqual([]);
+  });
+  it("does not reopen missing or access/policy/layout failures through transient retry", async () => {
+    for (const kind of ["missing", "access", "policy", "layout"] as const) {
+      const { ops } = setup();
+      await ops.discoverDetails("a", "regional", "q", [
+        { id: "x", url: "https://example.com/x" },
+      ]);
+      await ops.failDetail(
+        "a",
+        "x",
+        new FetchFailure("Needs review", kind),
+        await ops.health("a"),
+      );
+      await expect(
+        ops.retryDetail("a", "x", "Review cannot grant access permission."),
+      ).rejects.toThrow(/transient failure/);
+    }
+  });
   it("creates distinct job IDs and retains shutdown work for recovery", async () => {
     const { ops, advance } = setup();
     const a = await ops.enqueue({ scope: "regional" }),

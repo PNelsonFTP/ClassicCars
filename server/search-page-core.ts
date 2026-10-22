@@ -1,3 +1,5 @@
+import { createPlaceIndex, resolveListingTravel } from "../shared/travel";
+import type { TravelAtlas } from "../shared/travel-contract";
 import {
   listingSchema,
   type Listing,
@@ -13,6 +15,7 @@ export type SearchPageInput = {
   staleDays: number;
   auctionMaxAgeHours: number;
   now?: number;
+  travelAtlas?: TravelAtlas;
 };
 /** The API and national benchmark share this bounded database-read boundary and one operation clock. */
 export async function searchPageFromBatches(
@@ -21,6 +24,9 @@ export async function searchPageFromBatches(
   limit: number,
   input: SearchPageInput,
 ): Promise<SearchPage> {
+  const placeIndex = input.travelAtlas
+    ? createPlaceIndex(input.travelAtlas.places)
+    : undefined;
   const now = input.now ?? Date.now(),
     matching: Listing[] = [];
   const start = Math.max(0, Math.floor(offset)),
@@ -33,6 +39,13 @@ export async function searchPageFromBatches(
         now,
         input.auctionMaxAgeHours,
       );
+      if (input.travelAtlas)
+        listing.travel = resolveListingTravel(
+          listing,
+          input.travelAtlas,
+          placeIndex,
+        );
+      else listing.travel = undefined;
       if (matches(listing, filters, input.workspace, now))
         matching.push(listing);
     }

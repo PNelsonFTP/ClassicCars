@@ -53,6 +53,41 @@ try {
         missing.push(r.url());
     });
     await page.goto(`http://127.0.0.1:3160${base}/`);
+    const travel = page.getByRole("region", {
+      name: "Home and approximate travel",
+    });
+    await page.locator(".car-card .travel.known").first().waitFor();
+    assert.match(await travel.innerText(), /About 4 hours from Wheaton, IL/);
+    await page
+      .locator(".car-card")
+      .filter({ has: page.locator(".travel.known") })
+      .first()
+      .locator(".car-title")
+      .click();
+    await page.getByRole("dialog").waitFor();
+    assert.match(
+      await page.getByRole("dialog").innerText(),
+      /drive|road estimate/i,
+    );
+    await page
+      .getByRole("button", { name: "Close dialog", exact: true })
+      .click();
+    await travel
+      .getByRole("combobox", { name: "Travel limit", exact: true })
+      .selectOption("180");
+    assert.match(await travel.innerText(), /About 3 hours from Wheaton, IL/);
+    await travel
+      .getByText("Change starting city or ZIP", { exact: true })
+      .click();
+    await travel
+      .getByRole("textbox", { name: "Starting city or ZIP" })
+      .fill("60187");
+    await travel
+      .getByRole("button", { name: "Find city", exact: true })
+      .click();
+    await travel
+      .getByRole("button", { name: "Wheaton, IL · ZIP area", exact: true })
+      .click();
     await page
       .getByRole("button", { name: "Review cars", exact: true })
       .click();
@@ -106,9 +141,18 @@ try {
       runtimeErrors: errors.length,
       missingLocalAssets: missing.length,
       realImageLoaded: true,
+      realRoadEstimateDisplayed: true,
+      cityZipLookup: true,
+      approximateTravelLimit: true,
     });
   }
   await root.reload();
+  assert.equal(
+    await root
+      .getByRole("combobox", { name: "Travel limit", exact: true })
+      .inputValue(),
+    "180",
+  );
   await root.getByRole("button", { name: /Shortlist/ }).click();
   assert.equal(await root.locator(".car-card").count(), 1);
   results.push({

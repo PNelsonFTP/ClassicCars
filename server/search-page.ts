@@ -1,3 +1,4 @@
+import { loadTravelAtlas } from "./travel";
 import { db } from "./db";
 import { getSettings, getWorkspace } from "./store";
 import type { Search } from "../shared/schema";
@@ -44,5 +45,6 @@ export async function searchPage(
     staleDays: settings.staleDays,
     auctionMaxAgeHours: settings.auctionMaxAgeHours,
     now,
+    travelAtlas: await loadTravelAtlas(),
   });
 }

@@ -45,7 +45,17 @@
     "verify:delivery": "node --import tsx scripts/verify-delivery.ts",
     "sources:audit": "node --import tsx scripts/audit-sources.ts",
     "sources:browser-check": "node --import tsx scripts/source-browser-check.mjs",
-    "sources:feed-template": "node --import tsx scripts/source-feed-template.ts"
+    "sources:feed-template": "node --import tsx scripts/source-feed-template.ts",
+    "places:build": "python3 scripts/build-place-catalog.py",
+    "travel:build": "node --import tsx scripts/build-travel.ts",
+    "verify:travel": "node --import tsx scripts/verify-travel.ts",
+    "publish:prepare": "node scripts/prepare-publication.mjs",
+    "backup:retention": "node scripts/backup-retention.mjs",
+    "sbom:refresh": "node scripts/refresh-sbom.mjs",
+    "places:download": "python3 scripts/download-place-sources.py",
+    "roads:prepare": "node scripts/prepare-road-graph.mjs",
+    "roads:serve": "node scripts/prepare-road-graph.mjs --serve",
+    "roads:verify": "node --import tsx scripts/verify-road-samples.ts"
   },
   "dependencies": {
     "@fastify/cors": "^11.0.0",

@@ -1,3 +1,4 @@
+import { placeKey, ROAD_PROFILE } from "../shared/travel-contract";
 import { createHash } from "node:crypto";
 import { db } from "./db";
 import {
@@ -470,8 +471,18 @@ export const openRouteService: RoutingProvider = {
       cached &&
       clock() >= cached.observedAt.getTime() &&
       clock() - cached.observedAt.getTime() <= maxAgeDays * 864e5
-    )
-      return JSON.parse(cached.payload);
+    ) {
+      const route = JSON.parse(cached.payload);
+      if (
+        route.context?.originKey === placeKey(origin) &&
+        route.context.profile === ROAD_PROFILE &&
+        route.context.originPoint?.[0] === origin.lon &&
+        route.context.originPoint?.[1] === origin.lat &&
+        route.context.destinationPoint?.[0] === destination.lon &&
+        route.context.destinationPoint?.[1] === destination.lat
+      )
+        return route;
+    }
     const service = "https://api.openrouteservice.org";
     await reserveServiceRequest(service, {
       minIntervalMs: 1600,
@@ -511,6 +522,15 @@ export const openRouteService: RoutingProvider = {
       destination: `${destination.city}, ${destination.state}`,
       options: JSON.stringify(routingOptions),
       inputSignature: signature,
+      context: {
+        originKey: placeKey(origin),
+        originPoint: [origin.lon, origin.lat] as [number, number],
+        destinationPoint: [destination.lon, destination.lat] as [
+          number,
+          number,
+        ],
+        profile: ROAD_PROFILE,
+      },
       traffic: false,
       precision: destination.precision,
     };

@@ -1,4 +1,4 @@
-import { readFile } from "node:fs/promises";
+import { readFile, access } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import { createRequire } from "node:module";
 import path from "node:path";
@@ -38,6 +38,17 @@ for (const entry of schemaManifest.files) {
   ajv.addSchema(JSON.parse(bytes));
 }
 const manifest = await readJSON(path.join(folder, "manifest.json"));
+for (const file of ["target-artifacts.json", "bundled-artifacts.json"]) {
+  let present = false;
+  try {
+    await access(path.join(folder, file));
+    present = true;
+  } catch {}
+  if (present && !manifest.files.some((entry) => entry.file === file))
+    throw new Error(
+      `SBOM manifest omits existing ${file}; run npm run sbom:refresh`,
+    );
+}
 for (const entry of manifest.files) {
   if (sha(await readFile(path.join(folder, entry.file))) !== entry.sha256)
     throw new Error(`SBOM artifact hash mismatch: ${entry.file}`);

@@ -140,7 +140,7 @@ test("keyboard access, theme and maps fail independently from lists", async ({
   await page.getByRole("button", { name: "Review cars", exact: true }).click();
   await page.getByRole("button", { name: "map view", exact: true }).click();
   await expect(page.locator(".map-caption")).toContainText(
-    "mappable vehicle locations",
+    "mappable city estimates",
   );
   await page.getByRole("button", { name: "list view", exact: true }).click();
   await expect(page.locator(".list-card").first()).toBeVisible();
@@ -411,11 +411,9 @@ test("source coverage exposes dated methods, evidence and actionable next steps"
   await page
     .getByRole("button", { name: "Source coverage", exact: true })
     .click();
-  const row = page
-    .getByRole("row")
-    .filter({
-      has: page.getByRole("link", { name: "JWS Classics", exact: true }),
-    });
+  const row = page.getByRole("row").filter({
+    has: page.getByRole("link", { name: "JWS Classics", exact: true }),
+  });
   await row.locator("summary").click();
   await expect(row).toContainText("Deterministic public HTML");
   await expect(row).toContainText("Next step:");
@@ -429,4 +427,64 @@ test("source coverage exposes dated methods, evidence and actionable next steps"
       () => document.documentElement.scrollWidth <= innerWidth + 1,
     ),
   ).toBe(true);
+});
+
+test("approximate travel, city and ZIP preferences work without a backend and retain origin context", async ({
+  page,
+}, testInfo) => {
+  const errors: string[] = [];
+  page.on("pageerror", (e) => errors.push(e.message));
+  await page.goto("/");
+  const controls = page.getByRole("region", {
+    name: "Home and approximate travel",
+  });
+  await expect(controls).toContainText("About 4 hours from Wheaton, IL");
+  await expect(controls.getByTestId("travel-quality")).toContainText(
+    "road estimates",
+  );
+  await expect(page.locator(".car-card .travel.known").first()).toBeVisible();
+  await controls.scrollIntoViewIfNeeded();
+  await page.screenshot({
+    path: `test-results/${testInfo.project.name}-travel-controls.png`,
+  });
+  await controls
+    .getByRole("combobox", { name: "Travel limit", exact: true })
+    .selectOption("180");
+  await expect(controls).toContainText("About 3 hours from Wheaton, IL");
+  await page.reload();
+  await expect(
+    page.getByRole("combobox", { name: "Travel limit", exact: true }),
+  ).toHaveValue("180");
+  await page.getByText("Change starting city or ZIP", { exact: true }).click();
+  await page
+    .getByRole("textbox", { name: "Starting city or ZIP" })
+    .fill("Madison, WI");
+  await page.getByRole("button", { name: "Find city", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Madison, WI · city", exact: true })
+    .click();
+  await expect(
+    page.getByRole("region", { name: "Home and approximate travel" }),
+  ).toContainText("No published road table for this starting city");
+  await expect(page.locator(".car-card .travel.known")).toHaveCount(0);
+  await page
+    .getByRole("button", { name: "Use Wheaton, IL", exact: true })
+    .click();
+  await page
+    .getByRole("textbox", { name: "Starting city or ZIP" })
+    .fill("60187");
+  await page.getByRole("button", { name: "Find city", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Wheaton, IL · ZIP area", exact: true })
+    .click();
+  await expect(
+    page.getByRole("region", { name: "Home and approximate travel" }),
+  ).toContainText("About 3 hours from Wheaton, IL");
+  await page
+    .getByRole("combobox", { name: "Travel basis", exact: true })
+    .selectOption("strict");
+  await expect(
+    page.getByRole("combobox", { name: "Travel basis", exact: true }),
+  ).toHaveValue("strict");
+  expect(errors).toEqual([]);
 });

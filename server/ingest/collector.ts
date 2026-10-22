@@ -1,3 +1,6 @@
+import { enrichTravel } from "../travel";
+import { placeKey } from "../../shared/travel-contract";
+import { prioritizeDetails, catalogDetailSignature } from "./detail-priority";
 import {
   configuredCatalogUrls,
   paginationScopeIssue,
@@ -7,6 +10,7 @@ import { db } from "../db";
 import {
   acquireLease,
   getSettings,
+  getWorkspace,
   allListings,
   upsertListing,
   exportSnapshot,
@@ -154,7 +158,10 @@ export async function collect(
         source.id,
         scope,
         "legacy-observation",
-        bootstrap,
+        bootstrap.map((l) => ({
+          ...l,
+          catalogSignature: catalogDetailSignature(l),
+        })),
       );
       const run = await db.ingestRun.create({
         data: { sourceId: source.id, scope, status: "running" },
@@ -250,7 +257,13 @@ export async function collect(
               source.id,
               scope,
               task.queryId,
-              parsed.listings.map((l) => existing.get(l.id) || l),
+              parsed.listings.map((l) => {
+                const saved = existing.get(l.id) || l;
+                return {
+                  ...saved,
+                  catalogSignature: catalogDetailSignature(saved),
+                };
+              }),
             );
             checkpoint = await operations.completePage(
               checkpoint.id,
@@ -288,7 +301,16 @@ export async function collect(
           scope,
           maxAge,
         );
-        for (const task of candidates) {
+        const priorityListings = new Map(
+          (await enrichTravel([...existing.values()])).map((l) => [l.id, l]),
+        );
+        const prioritized = prioritizeDetails(
+          candidates,
+          priorityListings,
+          (await getWorkspace()).workspace.favorites,
+          placeKey(settings.home),
+        );
+        for (const task of prioritized) {
           if (
             paused ||
             interrupted ||

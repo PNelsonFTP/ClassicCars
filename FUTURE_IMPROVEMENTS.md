@@ -1,5 +1,28 @@
 # Future improvements and acceptance status
 
+## October 21 location/results work delivered
+
+The approved [location/results review](docs/LOCATION_AND_RESULTS_REVIEW_2026-10-21.md) is implemented in the [operating guide](docs/TRAVEL_AND_RESULTS_IMPLEMENTATION.md): offline city/ZIP resolution, real regional road tables for Pages, origin/destination/profile binding, approximate planning bands, strict/borderline controls, dynamic travel counts and geographic regional discovery. Location basis stays distinct; off-site/ambiguous cars remain unresolved. Maps distinguish advertised and reported cities and retain original listings.
+
+Collector work now uses consecutive failures, audited targeted transient retries, changed-catalog facts and relevance priorities with oldest-task fairness. Stock normalization is shared with duplicate review, travel/search changes quietly reset alert baselines, prices distinguish absence from explicit requests, and verified publication checks guard public travel/data. The SBOM manifest chain is regenerated and enforced. Backup/evidence retention has a report-only command; it does not remove retained recovery states or Low-confidence cleanup files.
+
+Remaining data/operational limits are explicit: the initial road graph covers the US Midwest; unsupported destinations stay unknown. Additional origins need genuinely generated tables. Traffic and exact car addresses are not inferred. Road-reachability shading remains conditional on a validated polygon source; point estimates are never stretched into an isochrone. Cross-listing identity still needs documentary/detail review, and restricted-source credentials/permissions still need to be supplied. The [verification record](docs/validation/travel-2026-10-21.json) records 1,484 estimated ads and 488 nearby ads / 483 groups, with 305 unit and 20 browser tests plus both static exports passing. Earlier dated entries below are retained history.
+
+
+## October 21 pre-implementation baseline (historical)
+
+The user now prioritizes general driving times and useful “about four hours” results over minute-level precision. The [location and results review](docs/LOCATION_AND_RESULTS_REVIEW_2026-10-21.md) records the gaps measured before implementation. The approved changes are now delivered above.
+
+Of 4,559 public ads, 876 have a vehicle city, only 16 have coordinates, and none has a stored road estimate. At the review clock, the old strict four-hour filter therefore returned zero. A read-only match against official Census places/subdivisions found candidate advertised-city locations for 4,371 ads (95.9%); these are lexical candidates, not verified vehicle positions or calculated drive times. The review proposed canonical city/ZIP resolution, explicit vehicle-versus-advertised location confidence, shared road-based city estimates, rounded travel bands and visible near-limit matches. Publish coarse-origin travel data with the static catalog so GitHub Pages remains useful without a running backend or exposed provider key.
+
+Bind every estimate to its origin and routing options: the old shared predicate accepted a synthetic imported route from an unrelated origin. Keep explicitly off-site cars unresolved rather than assigning dealer-office eligibility. Separate collection scope from geographic discovery, improve nearby detail prioritization and source/availability explanations, and derive missing-location reasons from current structured state. The review includes provider alternatives, static-origin limits, other product improvements and acceptance checks; it does not authorize a new scheduled job or claim that routing access is configured.
+
+## October 20 project review follow-up
+
+The [full project review](docs/PROJECT_REVIEW_2026-10-20.md) and [per-path cleanup candidates](docs/CLEANUP_CANDIDATES_2026-10-20.csv) document the original retention decisions. The [approved cleanup](docs/CLEANUP_RESULTS_2026-10-20.md) subsequently removed only High/Medium candidates while retaining required recovery counterparts and all Low files. Define backup/evidence retention before automating cleanup: 14 redundant database/environment pairs were retired in favor of their required identical counterparts, while most cached HTML remains referenced by current or historical observations. Three unconsumed ADM test captures and 32 unresolved cache bodies require maintainer/evidence review rather than automatic removal.
+
+At the October 20 review, the host SBOM manifest validated five dependency/license reports but did not link the retained native/bundled artifact report hashes. All 31 recorded host native/WASM hashes still match local files in an independent comparison. The October 21 implementation regenerates and enforces the complete chain and fixes lifetime-attempt detail blocking. This earlier review did not refresh advisory data. Unresolved cross-listings, detail backlog, blocked sources and credential-dependent service acceptance remain open. Inventory dates below remain historical; no October 20 inventory refresh was performed.
+
 ## October 19 inventory refresh
 
 The October 19 refresh retains **4,578 ads / 4,552 groups**, including **4,559 public ads / 4,539 public groups**. It added **25 ads**, recorded **14 numeric asking-price changes** (11 decreases, 3 increases), and refreshed details for **281 distinct ads**. No previously tracked ads changed to seller-reported sold.

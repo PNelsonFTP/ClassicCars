@@ -1,0 +1,493 @@
+{
+  "reviewDate": "2026-10-21",
+  "timezone": "America/Chicago",
+  "reviewScope": "Location/travel and product improvement recommendations; runtime code not changed.",
+  "inventoryGeneratedAt": "2026-10-19T13:07:59.363Z",
+  "public": {
+    "counts": {
+      "ads": 4559,
+      "sellerLocation": 4559,
+      "locationNull": 3683,
+      "availability:active": 1277,
+      "availability:sold": 40,
+      "hasVehicleLocation": 876,
+      "hasCityState": 876,
+      "precision:city": 876,
+      "availability:stale": 841,
+      "coordinates": 16,
+      "straightLineMiles": 16,
+      "availability:unknown": 2401,
+      "distinctCityStateCountry": 149
+    },
+    "sources": {
+      "volo": {
+        "ads": 66,
+        "sellerLocation": 66
+      },
+      "grauto": {
+        "ads": 81,
+        "hasVehicleLocation": 81,
+        "hasCityState": 81,
+        "sellerLocation": 81
+      },
+      "admcars": {
+        "ads": 46,
+        "sellerLocation": 46
+      },
+      "midwest": {
+        "ads": 3,
+        "hasVehicleLocation": 3,
+        "hasCityState": 3,
+        "sellerLocation": 3
+      },
+      "500classic": {
+        "ads": 3,
+        "sellerLocation": 3
+      },
+      "jsmotors": {
+        "ads": 25,
+        "sellerLocation": 25
+      },
+      "nsclassics": {
+        "ads": 14,
+        "sellerLocation": 14
+      },
+      "classiccars": {
+        "ads": 4313,
+        "hasVehicleLocation": 792,
+        "hasCityState": 792,
+        "sellerLocation": 4313,
+        "coordinates": 16,
+        "straightLineMiles": 16
+      },
+      "jws": {
+        "ads": 8,
+        "sellerLocation": 8
+      }
+    },
+    "states": {
+      "MI": 182,
+      "IN": 103,
+      "IL": 157,
+      "IA": 46,
+      "SD": 2,
+      "TN": 51,
+      "MN": 66,
+      "PA": 60,
+      "OH": 88,
+      "KS": 19,
+      "MO": 36,
+      "WI": 39,
+      "KY": 6,
+      "NE": 1,
+      "NY": 20
+    },
+    "commonVehicleCities": [
+      {
+        "city": "kentwood",
+        "state": "MI",
+        "country": "US",
+        "ads": 77
+      },
+      {
+        "city": "hobart",
+        "state": "IN",
+        "country": "US",
+        "ads": 66
+      },
+      {
+        "city": "volo",
+        "state": "IL",
+        "country": "US",
+        "ads": 40
+      },
+      {
+        "city": "addison",
+        "state": "IL",
+        "country": "US",
+        "ads": 33
+      },
+      {
+        "city": "lavergne",
+        "state": "TN",
+        "country": "US",
+        "ads": 28
+      },
+      {
+        "city": "commerce township",
+        "state": "MI",
+        "country": "US",
+        "ads": 24
+      },
+      {
+        "city": "homer city",
+        "state": "PA",
+        "country": "US",
+        "ads": 24
+      },
+      {
+        "city": "caledonia",
+        "state": "WI",
+        "country": "US",
+        "ads": 23
+      },
+      {
+        "city": "mankato",
+        "state": "MN",
+        "country": "US",
+        "ads": 21
+      },
+      {
+        "city": "des moines",
+        "state": "IA",
+        "country": "US",
+        "ads": 20
+      },
+      {
+        "city": "dekalb",
+        "state": "IL",
+        "country": "US",
+        "ads": 20
+      },
+      {
+        "city": "cadillac",
+        "state": "MI",
+        "country": "US",
+        "ads": 17
+      }
+    ],
+    "unknownReasonCounts": {
+      "Actual vehicle location needs review; dealer location is not proof.": 151,
+      "Actual location is seller-claimed; driving route is not yet established.": 165,
+      "Seller location is recorded separately; actual stock location needs detail review.": 3,
+      "Actual vehicle location has not yet been established from detail evidence.": 4110,
+      "Seller explicitly describes an off-site vehicle; actual location must be confirmed.": 130
+    }
+  },
+  "additionalPublicMetrics": {
+    "sellerCityPairs": 523,
+    "vehicleCityPairs": 149,
+    "sources": {
+      "volo": {
+        "ads": 66,
+        "advertisedCityState": 66,
+        "vehicleUnknownSellerCityPresent": 66,
+        "everDetailObserved": 66,
+        "hasAsk": 46,
+        "hasStock": 66,
+        "hasPhotos": 66
+      },
+      "grauto": {
+        "ads": 81,
+        "advertisedCityState": 81,
+        "vehicleCity": 81,
+        "everDetailObserved": 81,
+        "hasAsk": 81,
+        "hasStock": 81,
+        "hasPhotos": 81
+      },
+      "admcars": {
+        "ads": 46,
+        "advertisedCityState": 46,
+        "vehicleUnknownSellerCityPresent": 46,
+        "everDetailObserved": 46,
+        "hasStock": 46,
+        "hasPhotos": 28,
+        "hasAsk": 17,
+        "priceOnRequest": 18
+      },
+      "midwest": {
+        "ads": 3,
+        "advertisedCityState": 3,
+        "vehicleCity": 3,
+        "everDetailObserved": 3,
+        "hasAsk": 3,
+        "hasPhotos": 3
+      },
+      "500classic": {
+        "ads": 3,
+        "advertisedCityState": 3,
+        "vehicleUnknownSellerCityPresent": 3,
+        "hasAsk": 2,
+        "hasPhotos": 3
+      },
+      "jsmotors": {
+        "ads": 25,
+        "advertisedCityState": 25,
+        "vehicleUnknownSellerCityPresent": 25,
+        "everDetailObserved": 25,
+        "hasPhotos": 25,
+        "hasAsk": 19
+      },
+      "nsclassics": {
+        "ads": 14,
+        "advertisedCityState": 14,
+        "vehicleUnknownSellerCityPresent": 14,
+        "everDetailObserved": 14,
+        "hasAsk": 13,
+        "hasStock": 14,
+        "hasPhotos": 14,
+        "priceOnRequest": 1
+      },
+      "classiccars": {
+        "ads": 4313,
+        "advertisedCityState": 4306,
+        "vehicleCity": 792,
+        "everDetailObserved": 1423,
+        "hasAsk": 3811,
+        "hasStock": 1340,
+        "hasPhotos": 4313,
+        "vehicleUnknownSellerCityPresent": 3521,
+        "offsiteReason": 130,
+        "priceOnRequest": 1
+      },
+      "jws": {
+        "ads": 8,
+        "advertisedCityState": 8,
+        "vehicleUnknownSellerCityPresent": 8,
+        "hasPhotos": 8
+      }
+    },
+    "publicBase": 4559
+  },
+  "projectedSearch": {
+    "evaluatedAt": "2026-10-22T00:55:31.393Z",
+    "inventoryGeneratedAt": "2026-10-19T13:07:59.363Z",
+    "availability": {
+      "active": 1277,
+      "sold": 40,
+      "stale": 841,
+      "unknown": 2401
+    },
+    "filters": {
+      "everyday": {
+        "ads": 0,
+        "groups": 0
+      },
+      "unknown-route": {
+        "ads": 3305,
+        "groups": 3292
+      },
+      "regional": {
+        "ads": 241,
+        "groups": 239
+      },
+      "nationwide": {
+        "ads": 661,
+        "groups": 653
+      }
+    }
+  },
+  "censusFeasibility": {
+    "vehicle": {
+      "counts": {
+        "missingCityState": 3683,
+        "oneSubdivisionCandidate": 25,
+        "onePlaceCandidate": 833,
+        "unmatched": 15,
+        "ambiguousSubdivisionCandidates": 3
+      },
+      "distinctNormalizedCityState": 148,
+      "distinctUnambiguousCandidateKeys": 136,
+      "unmatchedCityStateAds": [
+        {
+          "city": "Colombus",
+          "state": "OH",
+          "ads": 5
+        },
+        {
+          "city": "Clarkston",
+          "state": "MI",
+          "ads": 2
+        },
+        {
+          "city": "East Springfield",
+          "state": "PA",
+          "ads": 1
+        },
+        {
+          "city": "Piney Flats",
+          "state": "TN",
+          "ads": 1
+        },
+        {
+          "city": "Nashville",
+          "state": "TN",
+          "ads": 1
+        },
+        {
+          "city": "SaintPaul",
+          "state": "MN",
+          "ads": 1
+        },
+        {
+          "city": "Saint Louis",
+          "state": "MO",
+          "ads": 1
+        },
+        {
+          "city": "Wexford",
+          "state": "PA",
+          "ads": 1
+        },
+        {
+          "city": "Pittsbirgh",
+          "state": "PA",
+          "ads": 1
+        },
+        {
+          "city": "Fontana",
+          "state": "WI",
+          "ads": 1
+        }
+      ],
+      "warning": "Lexical candidates only, not confirmed car positions or drive times. Review subdivision extent, ambiguous names, postal names, road snapping and listing evidence before use."
+    },
+    "advertised": {
+      "counts": {
+        "onePlaceCandidate": 4265,
+        "oneSubdivisionCandidate": 106,
+        "unmatched": 176,
+        "ambiguousSubdivisionCandidates": 4,
+        "missingCityState": 7,
+        "ambiguousPlaceCandidates": 1
+      },
+      "distinctNormalizedCityState": 522,
+      "distinctUnambiguousCandidateKeys": 480,
+      "unmatchedCityStateAds": [
+        {
+          "city": "Ft Worth",
+          "state": "TX",
+          "ads": 43
+        },
+        {
+          "city": "New Braundfels",
+          "state": "TX",
+          "ads": 27
+        },
+        {
+          "city": "Santa Rosa",
+          "state": "FL",
+          "ads": 18
+        },
+        {
+          "city": "Libur",
+          "state": "GA",
+          "ads": 11
+        },
+        {
+          "city": "Chatsworth",
+          "state": "CA",
+          "ads": 10
+        },
+        {
+          "city": "Sun Valley",
+          "state": "CA",
+          "ads": 9
+        },
+        {
+          "city": "Colombus",
+          "state": "OH",
+          "ads": 7
+        },
+        {
+          "city": "Ventura",
+          "state": "CA",
+          "ads": 7
+        },
+        {
+          "city": "Cypress",
+          "state": "TX",
+          "ads": 5
+        },
+        {
+          "city": "Astoria",
+          "state": "NY",
+          "ads": 5
+        },
+        {
+          "city": "Clarkston",
+          "state": "MI",
+          "ads": 4
+        },
+        {
+          "city": "Palmer",
+          "state": "MA",
+          "ads": 3
+        }
+      ],
+      "warning": "Lexical candidates only, not confirmed car positions or drive times. Review subdivision extent, ambiguous names, postal names, road snapping and listing evidence before use."
+    },
+    "method": "State-constrained exact normalized names; strip only the Census legal suffix from dataset labels, preserve natural names such as Traverse City; add charter-township alias from the same official entity. Places preferred to subdivisions; reject multiple GEOIDs.",
+    "datasetRows": {
+      "subdivisions": 36381,
+      "places": 32363
+    }
+  },
+  "censusInputs": [
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2026_Gazetteer/2026_Gaz_place_national.zip",
+      "bytes": 1214650,
+      "sha256": "af678e2d990827c89ee39b98c82de6e90b693c7361ff0e559ae3076670dd2863",
+      "downloadedAt": "2026-10-22T00:54:30.138000+00:00"
+    },
+    {
+      "url": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2026_Gazetteer/2026_Gaz_cousubs_national.zip",
+      "bytes": 1476658,
+      "sha256": "9d528b39b70a27075c863b1572f27eadaf24484d5435fac17fc3b4cdd36434c2",
+      "downloadedAt": "2026-10-22T00:54:30.388721+00:00"
+    }
+  ],
+  "reproductions": {
+    "wrongOriginImportedRoute": {
+      "synthetic": true,
+      "routeKnown": true,
+      "passesEverydayFilter": true,
+      "finding": "Predicate checks age and destination precision, but does not bind imported route to active origin."
+    },
+    "staleMissingLocationReason": {
+      "adsWithVehicleCityButReasonSaysNotEstablished": 711
+    }
+  },
+  "changes": [
+    "New review documentation and aggregate evidence",
+    "Private analysis files and two official Census archives"
+  ],
+  "unchanged": [
+    "Application code",
+    "Private database",
+    ".env",
+    "public/data",
+    "All previously retained Low cleanup candidates"
+  ],
+  "noLiveGeocodingOrRouting": true,
+  "noInventoryRefresh": true,
+  "noCommitPushOrDeployment": true,
+  "limitations": [
+    "Census lexical candidates are not verified car positions or road estimates",
+    "No provider latency, quota, pricing or four-hour isochrone acceptance benchmark",
+    "No full test suite rerun because application code is unchanged",
+    "Projected counts are time-dependent and original observation age is preserved"
+  ],
+  "summary": {
+    "publicAds": 4559,
+    "vehicleCityAds": 876,
+    "vehicleLocationMissing": 3683,
+    "coordinateAds": 16,
+    "storedRoadEstimates": 0,
+    "advertisedCityStateAds": 4552,
+    "censusCandidateAds": 4371,
+    "censusCandidatePercent": 95.88,
+    "onePlaceCandidateAds": 4265,
+    "oneSubdivisionCandidateAds": 106,
+    "candidateNormalizedKeys": 480,
+    "routeOriginValidationReproduction": "synthetic mismatched-origin route currently passes"
+  },
+  "verification": {
+    "summaryTotals": "passed",
+    "protectedFilesUnchanged": 262,
+    "lowCleanupCandidatesUnchanged": 182,
+    "applicationCodeChanged": false,
+    "runtimeTestsRerun": false
+  }
+}

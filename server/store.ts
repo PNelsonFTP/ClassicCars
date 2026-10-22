@@ -1,3 +1,5 @@
+import { isOffsite } from "../shared/travel";
+import { enrichTravel, loadTravelAtlas } from "./travel";
 import { createHash, randomUUID } from "node:crypto";
 import { db } from "./db";
 import {
@@ -28,7 +30,14 @@ import {
 } from "../shared/duplicates";
 import { blockedAutomaticPairs } from "./grouping";
 import { strongGroupKey } from "../shared/search";
-import { readFile, writeFile, mkdir, readdir, unlink } from "node:fs/promises";
+import {
+  readFile,
+  writeFile,
+  rename,
+  mkdir,
+  readdir,
+  unlink,
+} from "node:fs/promises";
 import { mergeVehicleGeography } from "../shared/location-merge";
 import { redactPublicListing } from "./public-redaction";
 export async function getSettings(): Promise<Settings> {
@@ -56,17 +65,19 @@ export async function saveSettings(settings: Settings) {
     }
   });
 }
-export async function allListings(): Promise<Listing[]> {
+export async function allListings(now = Date.now()): Promise<Listing[]> {
   const settings = await getSettings();
-  return (await db.listing.findMany()).map((row) => {
-    const l = listingSchema.parse(JSON.parse(row.payload));
-    return projectFreshness(
-      l,
-      settings.staleDays,
-      Date.now(),
-      settings.auctionMaxAgeHours,
-    );
-  });
+  return enrichTravel(
+    (await db.listing.findMany()).map((row) => {
+      const l = listingSchema.parse(JSON.parse(row.payload));
+      return projectFreshness(
+        l,
+        settings.staleDays,
+        now,
+        settings.auctionMaxAgeHours,
+      );
+    }),
+  );
 }
 export async function getWorkspace() {
   const row = await db.workspace.findUnique({ where: { id: "personal" } });
@@ -134,6 +145,18 @@ export function mergeObservation(
     originalSellerText: preserveDetails
       ? old.originalSellerText
       : incoming.originalSellerText || old.originalSellerText,
+    locationDisclosure:
+      preserveDetails && isOffsite(old)
+        ? old.locationDisclosure || {
+            status: "offsite",
+            observedAt: old.lastDetailObservedAt || old.lastObservedAt,
+            sourceUrl: old.url,
+          }
+        : incoming.locationDisclosure || old.locationDisclosure,
+    routeUnknownReason:
+      preserveDetails && isOffsite(old)
+        ? old.routeUnknownReason
+        : incoming.routeUnknownReason,
     specs: { ...old.specs, ...incoming.specs },
     photos: incoming.photos.length ? incoming.photos : old.photos,
     identifier: incoming.identifier || old.identifier,
@@ -245,6 +268,7 @@ export async function upsertListing(input: unknown) {
       });
     }
   }
+  listing.travel = undefined;
   const record = {
     sourceId: listing.sourceId,
     sourceListingId: listing.sourceListingId,
@@ -344,7 +368,8 @@ export async function acquireLease(name: string, seconds = 120) {
   };
 }
 export async function snapshot(redact = true): Promise<Snapshot> {
-  const listings = await allListings(),
+  const now = Date.now(),
+    listings = await allListings(now),
     settings = await getSettings();
   const coverage: Coverage[] = JSON.parse(
     await readFile("config/sources.json", "utf8"),
@@ -370,7 +395,8 @@ export async function snapshot(redact = true): Promise<Snapshot> {
   }
   return {
     schemaVersion: 1,
-    generatedAt: new Date().toISOString(),
+    generatedAt: new Date(now).toISOString(),
+    travelAtlas: await loadTravelAtlas(),
     freshnessPolicy: {
       staleDays: settings.staleDays,
       auctionMaxAgeHours: settings.auctionMaxAgeHours,
@@ -393,8 +419,7 @@ export async function snapshot(redact = true): Promise<Snapshot> {
       )
       .map((l) => {
         const stale =
-          Date.now() - Date.parse(l.lastObservedAt) >
-          settings.staleDays * 864e5;
+          now - Date.parse(l.lastObservedAt) > settings.staleDays * 864e5;
         return {
           ...l,
           availability:
@@ -413,7 +438,7 @@ export async function snapshot(redact = true): Promise<Snapshot> {
     })),
     limitations: [
       "This is observed inventory, not a complete census of the market. Ads may change after observation.",
-      "Strict four-hour eligibility requires a fresh routed estimate to an established vehicle location. No routing credential was provided for the initial collection.",
+      "Approximate travel uses a matching-origin road table and city-level destinations. Advertised locations need confirmation; missing or off-site locations remain unresolved.",
       "Source details, location claims and specialty claims may need review. Cached reads retain their original observation time.",
       "Photos remain hosted by their original source and may be unavailable. Private evidence and workspace data are not in this snapshot.",
       "Nationwide collection uses broader jobs; removing a travel filter does not establish complete national coverage.",
@@ -421,9 +446,18 @@ export async function snapshot(redact = true): Promise<Snapshot> {
   };
 }
 export async function exportSnapshot(outputDirectory = "public/data") {
+  const writePublic = async (file: string, body: string) => {
+    await writeFile(file + ".tmp", body);
+    await rename(file + ".tmp", file);
+  };
   await mkdir(outputDirectory, { recursive: true });
   const result = await snapshot(true);
-  await writeFile(`${outputDirectory}/snapshot.json`, JSON.stringify(result));
+  await writePublic(`${outputDirectory}/snapshot.json`, JSON.stringify(result));
+  if (result.travelAtlas)
+    await writePublic(
+      `${outputDirectory}/travel.json`,
+      JSON.stringify(result.travelAtlas) + "\n",
+    );
   const detailFiles: Record<string, string> = {};
   await mkdir(`${outputDirectory}/details`, { recursive: true });
   for (let offset = 0; offset < result.listings.length; offset += 100) {
@@ -433,7 +467,7 @@ export async function exportSnapshot(outputDirectory = "public/data") {
     await writeFile(`${outputDirectory}/${filename}`, body);
     for (const l of rows) detailFiles[l.id] = filename;
   }
-  await writeFile(
+  await writePublic(
     `${outputDirectory}/catalog.json`,
     JSON.stringify(packCatalog(catalogSnapshot(result, detailFiles))),
   );

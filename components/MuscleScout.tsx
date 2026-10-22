@@ -49,9 +49,9 @@ import {
 } from "@/shared/schema";
 import {
   money,
+  matches,
   searchListings,
   quickSearch,
-  routeKnown,
   storageKey,
   specFields,
   targetMatch,
@@ -67,6 +67,9 @@ import { projectSnapshot } from "../shared/freshness";
 import { apiRequest } from "../shared/api-client";
 import { workspaceSaveQueue } from "../shared/workspace-save";
 import ListingMap from "./ListingMap";
+import TravelControls from "./TravelControls";
+import { travelAtlasSchema } from "../shared/travel-contract";
+import { travelResult, tripDestination, placeKey } from "../shared/travel";
 import { ManualEntry, ReviewedData } from "./WorkspaceTools";
 const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
 const empty: Snapshot = {
@@ -86,7 +89,7 @@ type Page =
   | "coverage"
   | "settings";
 const modeNames: Record<Search["mode"], string> = {
-  everyday: "Everyday classics · within 4 hours",
+  everyday: "Everyday classics · nearby",
   "unknown-route": "Travel time unknown · review",
   regional: "Broader regional ads",
   nationwide: "Nationwide classics",
@@ -162,7 +165,7 @@ export default function MuscleScout() {
     [workspace, setWorkspace] = useState<Workspace>(emptyWorkspace()),
     [ready, setReady] = useState(false),
     [view, setView] = useState("grid"),
-    [detail, setDetail] = useState<Listing | null>(null),
+    [selectedDetail, setDetail] = useState<Listing | null>(null),
     [saveOpen, setSaveOpen] = useState(false),
     [saveName, setSaveName] = useState(""),
     [notice, setNotice] = useState(""),
@@ -198,6 +201,21 @@ export default function MuscleScout() {
     () => projectSnapshot(rawData, viewTime),
     [rawData, viewTime],
   );
+  const detail = useMemo(
+    () =>
+      selectedDetail
+        ? projectSnapshot(
+            {
+              ...empty,
+              listings: [selectedDetail],
+              freshnessPolicy: data.freshnessPolicy,
+              travelAtlas: data.travelAtlas,
+            },
+            viewTime,
+          ).listings[0]
+        : null,
+    [selectedDetail, data.freshnessPolicy, data.travelAtlas, viewTime],
+  );
   useEffect(() => {
     const timer = setInterval(() => setViewTime(Date.now()), 30000);
     return () => clearInterval(timer);
@@ -208,6 +226,50 @@ export default function MuscleScout() {
       typeof workspaceSaveQueue<Workspace>
     > | null>(null),
     loadedKey = useRef("");
+  const travelLoaded = useRef("");
+  const travelSkipWrite = useRef(false);
+  useEffect(() => {
+    const key = workspaceKey + ":travel";
+    try {
+      const saved = JSON.parse(localStorage.getItem(key) || "null");
+      if (saved) setFilters((p) => searchSchema.parse({ ...p, ...saved }));
+    } catch {
+      /* Keep defaults if an older preference record is invalid. */
+    }
+    travelLoaded.current = key;
+    travelSkipWrite.current = true;
+  }, [workspaceKey]);
+  useEffect(() => {
+    const key = workspaceKey + ":travel";
+    if (travelLoaded.current !== key) return;
+    if (travelSkipWrite.current) {
+      travelSkipWrite.current = false;
+      return;
+    }
+    const {
+      originKey,
+      originLabel,
+      maxMinutes,
+      travelMode,
+      includeBorderline,
+      allowAdvertisedLocation,
+      planningBuffer,
+    } = filters;
+    try {
+      localStorage.setItem(
+        key,
+        JSON.stringify({
+          originKey,
+          originLabel,
+          maxMinutes,
+          travelMode,
+          includeBorderline,
+          allowAdvertisedLocation,
+          planningBuffer,
+        }),
+      );
+    } catch {}
+  }, [workspaceKey, filters]);
   const modeRef = useRef(mode);
   modeRef.current = mode;
   const connectionRef = useRef("");
@@ -247,6 +309,14 @@ export default function MuscleScout() {
       const attempts = await api("/api/delivery-attempts");
       if (connectionRef.current !== connection) return;
       setSettings(nextSettings);
+      const configuredHome = nextSettings.home as
+        { city: string; state: string; country?: string } | undefined;
+      if (configuredHome && !localStorage.getItem(workspaceKey + ":travel"))
+        setFilters((p) => ({
+          ...p,
+          originKey: placeKey(configuredHome),
+          originLabel: `${configuredHome.city}, ${configuredHome.state}`,
+        }));
       setData(result);
       setAlerts(a);
       setDeliveries(attempts);
@@ -271,6 +341,8 @@ export default function MuscleScout() {
       if (!response.ok)
         throw new Error("Published snapshot could not be loaded.");
       const result = unpackCatalog<Snapshot>(await response.json());
+      if (result.travelAtlas)
+        result.travelAtlas = travelAtlasSchema.parse(result.travelAtlas);
       if (modeRef.current !== mode) return;
       let manual: Listing[] = [];
       try {
@@ -414,6 +486,7 @@ export default function MuscleScout() {
                 ...empty,
                 listings: [full],
                 freshnessPolicy: data.freshnessPolicy,
+                travelAtlas: data.travelAtlas,
               },
               Date.now(),
             ).listings[0],
@@ -453,6 +526,19 @@ export default function MuscleScout() {
               query: { type: "string" },
               mode: { type: "string", enum: Object.keys(modeNames) },
               specialty: { type: "boolean" },
+              maxMinutes: {
+                type: "number",
+                minimum: 0,
+                description:
+                  "Approximate driving limit in minutes from the selected origin.",
+              },
+              travelMode: { type: "string", enum: ["approximate", "strict"] },
+              includeBorderline: { type: "boolean" },
+              allowAdvertisedLocation: { type: "boolean" },
+              planningBuffer: {
+                type: "string",
+                enum: ["typical", "conservative"],
+              },
             },
             additionalProperties: false,
           },
@@ -489,24 +575,23 @@ export default function MuscleScout() {
             data.listings,
             { ...filters, favoritesOnly: false },
             workspace,
+            viewTime,
           ),
-    [data, filters, workspace, page],
+    [data, filters, workspace, page, viewTime],
   );
-  const classics = data.listings.filter((l) => targetMatch(l, defaultSearch())),
+  const classics = data.listings.filter((l) => targetMatch(l, filters)),
     unknown = classics.filter(
-      (l) => !routeKnown(l, Date.now(), filters.routeMaxAgeDays),
+      (l) => travelResult(l, filters, viewTime).status === "unknown",
     ),
-    within = classics.filter(
-      (l) =>
-        routeKnown(l, Date.now(), filters.routeMaxAgeDays) &&
-        l.route!.minutes <= 240 &&
-        l.availability === "active" &&
-        ["fixed", "negotiable"].includes(l.saleType),
+    within = data.listings.filter((l) =>
+      matches(l, { ...filters, mode: "everyday" }, workspace, viewTime),
     );
-  const homeLabel =
-    mode === "connected" && settings.home
-      ? `${(settings.home as { city: string }).city}, ${(settings.home as { state: string }).state}`
-      : "Wheaton, Illinois";
+  const activeOrigin = data.travelAtlas?.origins.find(
+    (p) => placeKey(p) === filters.originKey,
+  );
+  const homeLabel = activeOrigin
+    ? `${activeOrigin.city}, ${activeOrigin.state}`
+    : filters.originLabel;
   const favorites = data.listings.filter((l) =>
     workspace.favorites.includes(l.id),
   );
@@ -601,6 +686,19 @@ export default function MuscleScout() {
       setPassword("");
       setMode("connected");
       setSettings(nextSettings);
+      const configuredHome = nextSettings.home as
+        { city: string; state: string; country?: string } | undefined;
+      if (
+        configuredHome &&
+        !localStorage.getItem(
+          storageKey(base, "connected", authenticatedBackend) + ":travel",
+        )
+      )
+        setFilters((p) => ({
+          ...p,
+          originKey: placeKey(configuredHome),
+          originLabel: `${configuredHome.city}, ${configuredHome.state}`,
+        }));
       inform("Connected to your private local workspace.");
     } catch (e) {
       inform((e as Error).message);
@@ -734,7 +832,9 @@ export default function MuscleScout() {
           <strong>
             {l.saleType === "auction"
               ? money(l.currentBid)
-              : money(l.askingPrice)}
+              : l.priceOnRequest && l.askingPrice == null
+                ? "Call for price"
+                : money(l.askingPrice)}
           </strong>
           <span>
             {l.saleType === "auction" ? "CURRENT BID" : "ASKING PRICE"}
@@ -751,21 +851,25 @@ export default function MuscleScout() {
         </div>
         <div className="location-row">
           <MapPin size={14} />
-          {l.vehicleLocation
-            ? `${l.vehicleLocation.city}, ${l.vehicleLocation.state}`
+          {tripDestination(l)
+            ? `${tripDestination(l)!.city}, ${tripDestination(l)!.state}`
             : "Vehicle location unknown"}
         </div>
         <div
-          className={`travel ${routeKnown(l, Date.now(), filters.routeMaxAgeDays) ? "known" : ""}`}
+          className={`travel ${travelResult(l, filters, viewTime).minutes != null ? "known" : ""} ${travelResult(l, filters, viewTime).status === "borderline" ? "travel-borderline" : ""}`}
         >
           <Clock3 size={14} />
-          {routeKnown(l, Date.now(), filters.routeMaxAgeDays)
-            ? `~${Math.floor(l.route!.minutes / 60)}h ${Math.round(l.route!.minutes % 60)}m drive`
-            : "Drive time unavailable"}
+          {travelResult(l, filters, viewTime).label}
+          {travelResult(l, filters, viewTime).status === "borderline" && (
+            <span> · near your limit</span>
+          )}
           {l.straightLineMiles != null && (
             <span>· {Math.round(l.straightLineMiles)} mi straight-line</span>
           )}
         </div>
+        <small className="travel-note">
+          {travelResult(l, filters, viewTime).reason}
+        </small>
         <div className="card-footer">
           <span>
             <span
@@ -1028,8 +1132,9 @@ export default function MuscleScout() {
                     ))}
                   </select>
                   <p className="field-help">
-                    Four hours means a known road route. Unknown routes have a
-                    separate review view.
+                    Approximate travel uses city-level road estimates.
+                    Near-limit cars are marked; unresolved trips have a separate
+                    review view.
                   </p>
                   <div className="filter-section">
                     <label className="field-label">MODEL YEAR</label>
@@ -1372,13 +1477,45 @@ export default function MuscleScout() {
                       </div>
                     </div>
                   </div>
+                  <TravelControls
+                    filters={filters}
+                    onChange={setFilters}
+                    data={data}
+                    base={base}
+                    saveHome={
+                      mode === "connected"
+                        ? async (place) => {
+                            const next = {
+                              ...settings,
+                              home: {
+                                city: place.city,
+                                state: place.state,
+                                country: "US",
+                                lat: place.lat,
+                                lon: place.lon,
+                                precision: "city",
+                                offsite: false,
+                              },
+                            };
+                            const result = await api("/api/settings", {
+                              method: "PUT",
+                              body: JSON.stringify({
+                                settings: next,
+                                dryRun: false,
+                              }),
+                            });
+                            setSettings(result.settings);
+                          }
+                        : undefined
+                    }
+                  />
                   <div className="active-filters">
                     <span>
                       {filters.minYear}–{filters.maxYear}
                     </span>
                     <span>
                       {filters.mode === "everyday"
-                        ? "≤ 4 hours · route required"
+                        ? `About ${filters.maxMinutes / 60} hours · ${filters.includeBorderline ? "near-limit included" : "within range"}`
                         : modeNames[filters.mode]}
                     </span>
                     {filters.specialty && (
@@ -1399,7 +1536,7 @@ export default function MuscleScout() {
                           <strong>
                             {unknown.length} classics need a travel-time check.
                           </strong>{" "}
-                          They aren’t counted as within four hours.
+                          They remain separate from cars with road estimates.
                         </>
                       ) : (
                         <>
@@ -1422,7 +1559,11 @@ export default function MuscleScout() {
                     </div>
                   )}
                   {view === "map" ? (
-                    <ListingMap listings={results.rows} onSelect={setDetail} />
+                    <ListingMap
+                      listings={results.rows}
+                      onSelect={setDetail}
+                      origin={activeOrigin}
+                    />
                   ) : results.rows.length ? (
                     <div
                       className={`car-grid ${view === "list" ? "as-list" : ""}`}
@@ -1441,7 +1582,7 @@ export default function MuscleScout() {
                       </h2>
                       <p>
                         {filters.mode === "everyday"
-                          ? `No collected cars currently have a confirmed route within four hours. ${unknown.length} classics are ready for travel-time review.`
+                          ? `No cars match the selected travel range and availability. ${unknown.length} classics are ready for travel-time review.`
                           : "Try broadening your filters or check source coverage for collection gaps."}
                       </p>
                       <button
@@ -1485,7 +1626,7 @@ export default function MuscleScout() {
                   )}
                   <div className="results-foot">
                     <span>
-                      Observed {fmtDate(data.generatedAt)} ·{" "}
+                      Exported {fmtDate(data.generatedAt)} ·{" "}
                       {mode === "sample"
                         ? "Fictional demonstration"
                         : "Real source observations, not a completeness guarantee"}
@@ -1517,7 +1658,10 @@ export default function MuscleScout() {
                       .length,
                   ],
                   ["Classic targets", classics.length],
-                  ["Within four hours", within.length],
+                  [
+                    `About ${filters.maxMinutes / 60} hours away`,
+                    within.length,
+                  ],
                   ["Unknown travel time", unknown.length],
                 ].map(([label, count]) => (
                   <div className="stat-card" key={label}>
@@ -1533,12 +1677,16 @@ export default function MuscleScout() {
                     ["All collected", data.listings.length],
                     ["Models & years", classics.length],
                     [
-                      "Route known",
-                      classics.filter((l) =>
-                        routeKnown(l, Date.now(), filters.routeMaxAgeDays),
+                      "Road estimate available",
+                      classics.filter(
+                        (l) =>
+                          travelResult(l, filters, viewTime).minutes != null,
                       ).length,
                     ],
-                    ["≤ 240 minutes, active asks", within.length],
+                    [
+                      `About ${filters.maxMinutes / 60} hours · selected availability`,
+                      within.length,
+                    ],
                     ["Current filters", results.rawCount],
                   ].map(([label, n]) => (
                     <div key={label}>
@@ -1571,7 +1719,7 @@ export default function MuscleScout() {
               <div className="panel">
                 <div className="section-heading">
                   <h2>Source health & reach</h2>
-                  <span>Snapshot {fmtDate(data.generatedAt)}</span>
+                  <span>Snapshot export {fmtDate(data.generatedAt)}</span>
                 </div>
                 <div className="table-wrap">
                   <table>
@@ -1759,13 +1907,7 @@ export default function MuscleScout() {
                                       ? `${l.vehicleLocation.city}, ${l.vehicleLocation.state}`
                                       : "Unknown"
                                     : i === 4
-                                      ? routeKnown(
-                                          l,
-                                          Date.now(),
-                                          filters.routeMaxAgeDays,
-                                        )
-                                        ? `${Math.round(l.route!.minutes)} minutes`
-                                        : "Unavailable"
+                                      ? travelResult(l, filters, viewTime).label
                                       : i === 5
                                         ? l.advertisedYear || "Unknown"
                                         : i === 6
@@ -2275,8 +2417,9 @@ export default function MuscleScout() {
                   <h2>Collection & routing</h2>
                   <p>
                     Local collection is bounded and records partial runs.
-                    Geocoding is explicit; road routing requires an
-                    openrouteservice key in your backend environment.
+                    Offline city lookup and published road tables work on GitHub
+                    Pages. Explicit backend routing can use an openrouteservice
+                    key.
                   </p>
                   <div className="button-row">
                     <button
@@ -2323,8 +2466,9 @@ export default function MuscleScout() {
                     </button>
                   </div>
                   <p className="field-help">
-                    No routing key means drive time unavailable. No
-                    miles-to-hours estimates are used.
+                    Published city road estimates need no browser API key.
+                    Unsupported origins and off-site cars stay unresolved; no
+                    straight-line miles-to-hours conversion is used.
                   </p>
                   {mode === "connected" && (
                     <SettingsEditor
@@ -2334,7 +2478,15 @@ export default function MuscleScout() {
                           method: "PUT",
                           body: JSON.stringify({ settings: value, dryRun }),
                         });
-                        if (!dryRun) setSettings(r.settings);
+                        if (!dryRun) {
+                          setSettings(r.settings);
+                          if (r.settings.home)
+                            setFilters((p) => ({
+                              ...p,
+                              originKey: placeKey(r.settings.home),
+                              originLabel: `${r.settings.home.city}, ${r.settings.home.state}`,
+                            }));
+                        }
                         inform(
                           dryRun
                             ? "Configuration validated. No changes saved."
@@ -2375,9 +2527,10 @@ export default function MuscleScout() {
                     claims remain claims.
                   </p>
                   <p>
-                    Map data © OpenStreetMap contributors. Routing, when
-                    configured: © openrouteservice by HeiGIT | Data from
-                    OpenStreetMap.
+                    Road and map data © OpenStreetMap contributors (ODbL).
+                    Published city trips use OSRM; optional configured routes
+                    use openrouteservice by HeiGIT. Geographic reference: US
+                    Census and GeoNames (CC BY 4.0).
                   </p>
                   <a
                     className="text-link"
@@ -2448,7 +2601,9 @@ export default function MuscleScout() {
                   <strong>
                     {detail.saleType === "auction"
                       ? money(detail.currentBid)
-                      : money(detail.askingPrice)}
+                      : detail.priceOnRequest && detail.askingPrice == null
+                        ? "Call for price"
+                        : money(detail.askingPrice)}
                   </strong>
                   <span>
                     {detail.saleType === "auction"
@@ -2494,12 +2649,12 @@ export default function MuscleScout() {
                 <h3>Location & travel</h3>
                 <p>
                   {detail.vehicleLocation
-                    ? `${detail.vehicleLocation.city}, ${detail.vehicleLocation.state} · ${detail.vehicleLocation.precision} precision`
+                    ? `${tripDestination(detail)!.city}, ${tripDestination(detail)!.state} · ${detail.vehicleLocation.precision} precision`
                     : "Actual vehicle location is unknown."}
                 </p>
                 <p>
-                  {routeKnown(detail, Date.now(), filters.routeMaxAgeDays)
-                    ? `Approximately ${Math.round(detail.route!.minutes)} minutes / ${Math.round(detail.route!.miles)} road miles. ${detail.route!.provider}, observed ${fmtDate(detail.route!.observedAt)}. ${detail.route!.traffic ? "Traffic included." : "Non-traffic baseline."}`
+                  {travelResult(detail, filters, viewTime).minutes != null
+                    ? `${travelResult(detail, filters, viewTime).label}. ${travelResult(detail, filters, viewTime).reason}.`
                     : detail.routeUnknownReason}
                 </p>
                 {detail.seller.location && (
@@ -2508,14 +2663,18 @@ export default function MuscleScout() {
                     {detail.seller.location.state}
                   </p>
                 )}
-                {detail.vehicleLocation && (
+                {tripDestination(detail) && (
                   <a
                     className="text-link"
-                    href={`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(homeLabel)}&destination=${encodeURIComponent(`${detail.vehicleLocation.city}, ${detail.vehicleLocation.state}`)}&travelmode=driving`}
+                    href={`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(homeLabel)}&destination=${encodeURIComponent(`${tripDestination(detail)!.city}, ${tripDestination(detail)!.state}`)}&travelmode=driving`}
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Check the trip before traveling <ArrowUpRight size={14} />
+                    Check trip to{" "}
+                    {detail.vehicleLocation
+                      ? "vehicle city"
+                      : "advertised city"}{" "}
+                    <ArrowUpRight size={14} />
                   </a>
                 )}
                 <h3>Source observation</h3>

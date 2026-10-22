@@ -3,9 +3,9 @@
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
   "name": "musclescout@1.1.0",
-  "documentNamespace": "http://spdx.org/spdxdocs/musclescout-1.1.0-f887eda8-6d66-4c74-b9c4-350978064d6a",
+  "documentNamespace": "http://spdx.org/spdxdocs/musclescout-1.1.0-8f9879fa-709d-40df-b7d9-dce0be685af3",
   "creationInfo": {
-    "created": "2026-09-12T21:53:43.306Z",
+    "created": "2026-10-22T01:43:37.350Z",
     "creators": [
       "Tool: npm/cli-11.19.0"
     ]

@@ -1,6 +1,12 @@
 import { z } from "zod";
+import {
+  DEFAULT_ORIGIN,
+  ROAD_PROFILE,
+  listingTravelSchema,
+  type TravelAtlas,
+} from "./travel-contract";
 export const SCHEMA_VERSION = 1;
-export const DEFAULTS_VERSION = 1;
+export const DEFAULTS_VERSION = 2;
 export const modelSchema = z.enum(["Mustang", "Camaro", "Corvette"]);
 export const availabilitySchema = z.enum([
   "active",
@@ -125,6 +131,19 @@ export const listingSchema = z.object({
     location: locationSchema.nullable().default(null),
   }),
   vehicleLocation: locationSchema.nullable().default(null),
+  locationDisclosure: z
+    .object({
+      status: z.enum([
+        "offsite",
+        "reported-vehicle",
+        "reviewed-vehicle",
+        "unknown",
+      ]),
+      observedAt: z.string().datetime(),
+      sourceUrl: z.string().url(),
+    })
+    .optional(),
+  travel: listingTravelSchema.optional(),
   route: z
     .object({
       minutes: z.number().nonnegative(),
@@ -135,6 +154,14 @@ export const listingSchema = z.object({
       destination: z.string(),
       options: z.string(),
       inputSignature: z.string().optional(),
+      context: z
+        .object({
+          originKey: z.string(),
+          originPoint: z.tuple([z.number(), z.number()]),
+          destinationPoint: z.tuple([z.number(), z.number()]),
+          profile: z.literal(ROAD_PROFILE),
+        })
+        .optional(),
       traffic: z.boolean().default(false),
       precision: z.string(),
     })
@@ -207,6 +234,13 @@ export const searchSchema = z.object({
   specialtyMaxYear: z.number().int().min(1960).max(2100).default(2027),
   routeMaxAgeDays: z.number().min(1).default(30),
   maxMinutes: z.number().nonnegative().default(240),
+  originKey: z.string().min(1).max(250).default(DEFAULT_ORIGIN),
+  originLabel: z.string().max(200).default("Wheaton, IL"),
+  travelMode: z.enum(["approximate", "strict"]).default("approximate"),
+  includeBorderline: z.boolean().default(true),
+  allowAdvertisedLocation: z.boolean().default(true),
+  planningBuffer: z.enum(["typical", "conservative"]).default("typical"),
+  travelMaxAgeDays: z.number().min(1).max(3650).default(180),
   discoveryMiles: z.number().positive().default(300),
   query: z.string().default(""),
   excludeText: z.string().default(""),
@@ -215,8 +249,8 @@ export const searchSchema = z.object({
   unknownPrice: z.boolean().default(true),
   states: z.array(z.string()).default([]),
   sources: z.array(z.string()).default([]),
-  availability: z.array(z.string()).default(["active"]),
-  saleTypes: z.array(z.string()).default(["fixed", "negotiable"]),
+  availability: z.array(z.string()).default(["active", "unknown", "pending"]),
+  saleTypes: z.array(z.string()).default(["fixed", "negotiable", "unknown"]),
   rules: z.array(ruleSchema).default([]),
   sort: z
     .enum(["nearest", "price-asc", "price-desc", "newest", "year", "deadline"])
@@ -313,6 +347,7 @@ export type Snapshot = {
   listings: Listing[];
   freshnessPolicy?: { staleDays: number; auctionMaxAgeHours?: number };
   detailFiles?: Record<string, string>;
+  travelAtlas?: TravelAtlas;
   coverage: Coverage[];
   runs: Record<string, unknown>[];
   limitations: string[];

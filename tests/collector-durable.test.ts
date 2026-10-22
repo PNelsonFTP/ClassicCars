@@ -64,12 +64,16 @@ vi.mock("../server/ingest/state", async () => {
     }),
   };
 });
+vi.mock("../server/travel", () => ({
+  enrichTravel: async (listings: Listing[]) => listings,
+}));
 vi.mock("../server/store", () => ({
   acquireLease: async () => ({
     renew: async () => {},
     release: async () => {},
   }),
   getSettings: async () => settingsSchema.parse({}),
+  getWorkspace: async () => ({ workspace: { favorites: [] } }),
   allListings: async () => [...memory.listings.values()],
   upsertListing: async (l: Listing) => {
     memory.listings.set(l.id, structuredClone(l));

@@ -1,5 +1,20 @@
 # Validation — 1.1.0
 
+## October 21 location/results implementation — verified
+
+The [implementation guide](docs/TRAVEL_AND_RESULTS_IMPLEMENTATION.md) and [machine-readable verification](docs/validation/travel-2026-10-21.json) record the completed release. It supplies **1,484 ads with real road estimates from 147 shared city routes**. Default about-four-hour shopping returns **488 ads / 483 groups**, including **157 near-limit ads**; 331 pass the within-range rule. Strict reported-location mode returns 204 ads. These are ads/groups, not verified unique cars.
+
+Fresh verification passed **305 unit tests in 29 files**, strict TypeScript, **20 desktop/mobile browser tests**, root and `/ClassicCars` static exports, real road/detail display, ZIP lookup, travel preference persistence/isolation, remote image loading and zero runtime errors/missing local assets. The isolated release smoke passed repeated setup, password preservation, migrations, native SQLite, backup/restore and API startup/shutdown. Three SBOM schemas and all seven manifest hashes validate; 13 Actions and the Docker base remain digest pinned. The public-data scan and full/compact/detail parity pass.
+
+The source sightings remain **October 19** (`2026-10-19T13:07:59.143Z` latest ad); the geographic export is `2026-10-22T01:43:35.904Z` UTC. The US Midwest graph is dated October 20. Six actual local road queries passed, including a 281-mile Milwaukee–Muskegon land detour around Lake Michigan with ferries excluded. They validate routing connectivity/options, not independent traffic accuracy. The planning band allows for the conservative stock car profile.
+
+All **214 protected non-public files** are unchanged, including the private database/credentials, the retained recovery states and Low-confidence evidence. **17 backup pairs remain.** Browser/release checks ran in an isolated copy; new evidence is private under ignored `data/reports/travel-implementation-2026-10-21/`. Temporary routing was stopped after generation. No source permission was bypassed, inventory renewed, external message sent, or Git/publication action performed. The local preview serves the verified static output.
+
+
+## October 20 cleanup verification
+
+After approved High/Medium cleanup, **276 unit tests / 27 files and 18 desktop/mobile browser tests passed**. Both static exports, strict TypeScript, isolated release smoke, root/subpath browser checks, all 18 SQLite integrity checks and SBOM/release-reference validation passed. All 182 Low candidates and 262 protected files match pre-cleanup hashes. No inventory refresh or deployment was performed. See the [cleanup report](docs/CLEANUP_RESULTS_2026-10-20.md) and [machine-readable receipt](docs/validation/cleanup-2026-10-20.json).
+
 ## October 19 inventory refresh
 
 Published data commit [`7e6cde5`](https://github.com/PNelsonFTP/ClassicCars/commit/7e6cde55af10db37c8dbecf2df7f78f1549baaa0) passed the [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/39257896206), including 276 tests across 27 files. [Live verification](docs/validation/github-pages-2026-10-19.json) passed exact catalog/snapshot/detail hashes, including the catalog loaded by the browser, search, images, 26 source-method entries and 1440/390/375px layouts, with no runtime errors or missing local assets. No collection runs or leases remain active.

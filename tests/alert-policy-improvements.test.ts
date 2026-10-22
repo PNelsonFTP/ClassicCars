@@ -43,6 +43,35 @@ describe("vehicle versus ad alert semantics", () => {
     ).toEqual([]);
     expect(parseAlertBaseline(JSON.stringify({ a: { ask: 100 } }))).toBeNull();
   });
+  it("quietly rebaselines when the origin or travel evidence changes", () => {
+    const a = car("a"),
+      b = car("b");
+    const previous = evaluateAlertPolicy({
+      allListings: [a],
+      matchingAds: [a],
+      previous: null,
+      now,
+      criteriaSignature: "origin-a/roads-v1",
+    }).baseline;
+    expect(
+      evaluateAlertPolicy({
+        allListings: [a, b],
+        matchingAds: [a, b],
+        previous,
+        now,
+        criteriaSignature: "origin-b/roads-v1",
+      }).changes,
+    ).toEqual([]);
+    expect(
+      evaluateAlertPolicy({
+        allListings: [a, b],
+        matchingAds: [a, b],
+        previous,
+        now,
+        criteriaSignature: "origin-a/roads-v1",
+      }).changes.map((e) => e.kind),
+    ).toEqual(["new-match"]);
+  });
   it("suppresses new-car notifications for crosspost arrival and reports its new source only when opted in", () => {
     const a = car("a"),
       base = evaluateAlertPolicy({

@@ -53,6 +53,12 @@ const car = (id: string, overrides: Partial<Listing> = {}): Listing =>
       origin: "Wheaton, IL",
       destination: "Wheaton, IL",
       options: "no ferries; no borders",
+      context: {
+        originKey: "US:IL:wheaton",
+        originPoint: [-88.107, 41.8661],
+        destinationPoint: [-88.107, 41.8661],
+        profile: "car-no-ferries-us-v1",
+      },
       traffic: false,
       precision: "city",
     },
@@ -62,6 +68,7 @@ const car = (id: string, overrides: Partial<Listing> = {}): Listing =>
   });
 const search = (changes: Partial<Search> = {}): Search => ({
   ...defaultSearch(),
+  travelMode: "strict",
   ...changes,
 });
 
@@ -241,6 +248,7 @@ describe("travel and independent preferences", () => {
   it("combines states with OR and independent preferences with AND", () => {
     const wisconsin = car("wisconsin");
     wisconsin.vehicleLocation!.state = "WI";
+    wisconsin.route!.destination = "Wheaton, WI";
     expect(matches(wisconsin, search({ states: ["IL", "WI"] }))).toBe(true);
     expect(
       matches(wisconsin, search({ states: ["IL", "WI"], maxPrice: 10000 })),
@@ -301,6 +309,14 @@ describe("unknown values, sale types and grouping", () => {
     ).toBe(true);
   });
 
+  it("shares conservative stock normalization between matching and duplicate review", () => {
+    const a = car("a", { stockNumber: "Stock # 00-123/A" }),
+      b = car("b", { stockNumber: "00123/A" }),
+      other = car("c", { stockNumber: "00123/B" });
+    expect(strongGroupKey(a)).toBe(strongGroupKey(b));
+    expect(strongGroupKey(a)).not.toBe(strongGroupKey(other));
+    expect(a.stockNumber).toBe("Stock # 00-123/A");
+  });
   it("groups compatible full historical identity but never masked or partial identifiers", () => {
     expect(
       strongGroupKey(

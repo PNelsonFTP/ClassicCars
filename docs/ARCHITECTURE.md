@@ -1,6 +1,15 @@
 # Architecture and developer reference
 
-Updated September 8, 2026 UTC from the integrated implementation. MuscleScout is a single-user local application with a separately distributable static frontend. The original requirements are in [MuscleCarPrompt.md](../MuscleCarPrompt.md); the implementation map and remaining acceptance work are in [IMPROVEMENTS_STATUS.md](IMPROVEMENTS_STATUS.md) and [FUTURE_IMPROVEMENTS.md](../FUTURE_IMPROVEMENTS.md).
+## October 21 travel architecture
+
+`shared/travel-contract.ts` defines validated place/road artifacts. `scripts/build-place-catalog.py` converts Census and GeoNames sources into lazy state catalogs. Native `scripts/prepare-road-graph.mjs` prepares the Midwest OSRM graph; `scripts/build-travel.ts` computes each distinct origin/place/profile once. The graph and heavy source files stay ignored under `data/routing/`; `public/data/travel.json` contains coarse place points and routed durations with explicit context/provenance.
+
+`server/travel.ts` caches/validates that artifact for backend reads. Canonical listing storage strips derived `.travel`; `allListings`, bounded API search and browser `projectSnapshot` apply the same shared resolver and travel predicate at one evaluation clock. Exports embed the atlas in full/dictionary catalogs and provide the standalone copy. City identity never establishes physical-vehicle identity. `locationDisclosure` preserves structured detail evidence independently from missing coordinates and advertised seller city.
+
+`TravelControls` exposes home/ZIP/time/buffer/status choices. The browser uses matching precomputed origins and explicitly declines unsupported contexts. `ListingMap` uses representative city points while retaining the actual Listing object for corrections. `verify:travel` checks public artifact consistency, route age/context and privacy before publication. The static site remains independent of routing tools, credentials and local API availability. See [full contracts and operations](TRAVEL_AND_RESULTS_IMPLEMENTATION.md).
+
+
+Reviewed October 20, 2026 against the current implementation. MuscleScout is a single-user local application with a separately distributable static frontend. The original requirements are in [MuscleCarPrompt.md](../MuscleCarPrompt.md); the implementation map and remaining acceptance work are in [IMPROVEMENTS_STATUS.md](IMPROVEMENTS_STATUS.md) and [FUTURE_IMPROVEMENTS.md](../FUTURE_IMPROVEMENTS.md). The [project review](PROJECT_REVIEW_2026-10-20.md) adds a complete command index, installed dependency review and file-retention inventory.
 
 ## Data flow
 
@@ -104,13 +113,14 @@ All routes except health, login and OPTIONS require bearer authentication. A sup
 | GET `/api/collection/progress` | Catalog checkpoints, source-wide queues and scope summaries; optional `sourceId`. |
 | GET `/api/source-health` | Current access state and dated failure/review history. |
 | POST `/api/source-health/:sourceId/review` | Pause or request bounded smoke with an 8–2,000-character reason. Cannot grant source permission or override Retry-After. |
+| POST `/api/collection/details/retry` | Reopen an identified transient failure with reason/history and cooldowns; source must be enabled and permitted. |
 | POST `/api/collection/expand` | Enable nationwide setting and enqueue a nationwide collection job. |
 | GET `/api/service-budgets` | Persisted provider request reservations and cooldowns. |
 | POST `/api/listings/:id/geocode/retry` | Reasoned invalidation of this query's cached geocode/route and attempt marker; eligible for the next explicit geocoder run. |
 | GET `/api/alerts`; POST `/api/alerts/:id/read` | Latest 100 alerts and read state. |
 | GET `/api/delivery-attempts`; POST `/api/delivery-attempts/:id/retry` | Latest 100 attempts and audited retry; uncertain outcomes require acknowledgement. |
 
-Job statuses are queued, running, partial, interrupted, completed, failed and cancelled. A partial result with `nextRunAt: null` is waiting for explicit work/review, not secretly scheduled. Cancellation takes effect at bounded work boundaries. Collection caps permit zero through the API, useful for separate catalog/detail passes; CLI examples use positive caps. Source selection applies only to collection. Geocode/routes jobs use their explicit item limit and are never created by scheduled collection.
+Job statuses are queued, running, partial, interrupted, completed, failed and cancelled. A partial result with `nextRunAt: null` is waiting for explicit work/review, not secretly scheduled. Cancellation takes effect at bounded work boundaries. Both CLI and API collection caps permit zero, useful for separate catalog/detail passes. Source selection applies only to collection. Geocode/routes jobs use their explicit item limit and are never created by scheduled collection.
 
 ## Canonical search and public transport
 
@@ -128,7 +138,7 @@ Catalog checkpoints are keyed by source, requested scope and configured URL set.
 
 Terminal-page evidence includes original observation time, parser version and cache identity. Reports distinguish configured scope, observed inventory, incomplete traversal, stale evidence and complete traversal of a declared query. Neither queue exhaustion nor removing a travel filter establishes nationwide market completeness. `coverage:report` is offline and cannot refresh live validation dates.
 
-Failures distinguish access, policy, layout, rate limits, server/network errors, missing pages, budgets and cancellation. Access/policy failures pause for review; transient failures receive bounded retries/cooldowns. Source review requires a reason and a successful bounded live smoke before normal access resumes. Reviews retain server Retry-After. Cache hits preserve their network observation time and do not consume new network request reservations. Raw source failures never establish a sale/removal.
+Failures distinguish access, policy, layout, rate limits, server/network errors, missing pages, budgets and cancellation. Access/policy failures pause for review; transient failures receive bounded retries/cooldowns. Detail tasks retain lifetime attempts for history and use a separate consecutive-failure counter for blocking; successes reset it. Audited per-detail transient retries preserve original errors and cooldowns. Access/policy/layout/missing failures do not use that transient path. Source review requires a reason and a successful bounded live smoke before normal access resumes. Reviews retain server Retry-After. Cache hits preserve their network observation time and do not consume new network request reservations. Raw source failures never establish a sale/removal.
 
 `safe-fetch.ts` allows configured credential-free HTTPS origins/public DNS destinations, pins DNS resolution, permits bounded same-origin GET redirects, limits size/time and checks robots. Persistent origin/provider budgets reserve slots atomically across CLI/API/worker processes and survive restart; counts represent accepted reservations, including a slot whose later network attempt fails or is cancelled. Daily limits reset by UTC day, while cooldowns survive that reset.
 

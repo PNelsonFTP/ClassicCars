@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "states": [
+    "AK",
+    "AL",
+    "AR",
+    "AZ",
+    "CA",
+    "CO",
+    "CT",
+    "DC",
+    "DE",
+    "FL",
+    "GA",
+    "HI",
+    "IA",
+    "ID",
+    "IL",
+    "IN",
+    "KS",
+    "KY",
+    "LA",
+    "MA",
+    "MD",
+    "ME",
+    "MH",
+    "MI",
+    "MN",
+    "MO",
+    "MS",
+    "MT",
+    "NC",
+    "ND",
+    "NE",
+    "NH",
+    "NJ",
+    "NM",
+    "NV",
+    "NY",
+    "OH",
+    "OK",
+    "OR",
+    "PA",
+    "PR",
+    "RI",
+    "SC",
+    "SD",
+    "TN",
+    "TX",
+    "UT",
+    "VA",
+    "VT",
+    "WA",
+    "WI",
+    "WV",
+    "WY"
+  ],
+  "inputs": [
+    {
+      "file": "2026_Gaz_cousubs_national.zip",
+      "sha256": "9d528b39b70a27075c863b1572f27eadaf24484d5435fac17fc3b4cdd36434c2",
+      "sourceUrl": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2026_Gazetteer/2026_Gaz_cousubs_national.zip",
+      "license": "US Government public domain"
+    },
+    {
+      "file": "2026_Gaz_place_national.zip",
+      "sha256": "af678e2d990827c89ee39b98c82de6e90b693c7361ff0e559ae3076670dd2863",
+      "sourceUrl": "https://www2.census.gov/geo/docs/maps-data/data/gazetteer/2026_Gazetteer/2026_Gaz_place_national.zip",
+      "license": "US Government public domain"
+    },
+    {
+      "file": "US.zip",
+      "sha256": "68774c95d3dc7c115eedb247a250a5d51bd0b7f70d73d21e6a5d2a866b33d6ef",
+      "sourceUrl": "https://download.geonames.org/export/zip/US.zip",
+      "license": "CC-BY-4.0",
+      "attribution": "GeoNames \u2014 https://www.geonames.org/"
+    }
+  ],
+  "reviewedAliases": [
+    {
+      "state": "TX",
+      "canonicalCity": "Fort Worth",
+      "rawAlias": "Ft Worth",
+      "reviewedOn": "2026-10-21",
+      "basis": "State-constrained canonical Census place; spelling or abbreviation normalization only."
+    },
+    {
+      "state": "TX",
+      "canonicalCity": "New Braunfels",
+      "rawAlias": "New Braundfels",
+      "reviewedOn": "2026-10-21",
+      "basis": "State-constrained canonical Census place; spelling or abbreviation normalization only."
+    },
+    {
+      "state": "OH",
+      "canonicalCity": "Columbus",
+      "rawAlias": "Colombus",
+      "reviewedOn": "2026-10-21",
+      "basis": "State-constrained canonical Census place; spelling or abbreviation normalization only."
+    },
+    {
+      "state": "PA",
+      "canonicalCity": "Pittsburgh",
+      "rawAlias": "Pittsbirgh",
+      "reviewedOn": "2026-10-21",
+      "basis": "State-constrained canonical Census place; spelling or abbreviation normalization only."
+    },
+    {
+      "state": "MN",
+      "canonicalCity": "St. Paul",
+      "rawAlias": "SaintPaul",
+      "reviewedOn": "2026-10-21",
+      "basis": "State-constrained canonical Census place; spelling or abbreviation normalization only."
+    },
+    {
+      "state": "MO",
+      "canonicalCity": "St. Louis",
+      "rawAlias": "Saint Louis",
+      "reviewedOn": "2026-10-21",
+      "basis": "State-constrained canonical Census place; spelling or abbreviation normalization only."
+    }
+  ],
+  "attribution": "US place reference: Census Bureau. Postal-code estimates: GeoNames (CC BY 4.0), https://www.geonames.org/; postal points may be approximate.",
+  "sourceUrl": "https://www.census.gov/geographies/reference-files/time-series/geo/gazetteer-files.2026.html"
+}

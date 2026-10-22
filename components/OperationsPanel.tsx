@@ -4,6 +4,7 @@ import type {
   CollectionJob,
   CatalogCheckpoint,
   SourceHealth,
+  DetailTask,
 } from "../server/ingest/operations";
 import type { ServiceBudget } from "../server/service-budget";
 export type OperationsApi = <T = unknown>(
@@ -22,6 +23,7 @@ type Progress = {
     sourceId: string;
     counts: Counts;
     scopes: Record<"regional" | "nationwide", number>;
+    blockedTasks?: Pick<DetailTask, "listingId" | "error" | "nextAttemptAt">[];
   }[];
   health: SourceHealth[];
 };
@@ -80,6 +82,7 @@ export function OperationsPanel({
     ),
     [jobPage, setJobPage] = useState(0),
     [showOnlyActive, setShowOnlyActive] = useState(false);
+  const [retryReason, setRetryReason] = useState("");
   const load = useCallback(async () => {
     if (inFlight.current) return;
     inFlight.current = true;
@@ -579,6 +582,68 @@ export function OperationsPanel({
               </tbody>
             </table>
           </div>
+        )}
+      </details>
+      <details>
+        <summary>
+          <strong>Retry individual transient detail failures</strong>
+        </summary>
+        <p>
+          Only network, server, rate-limit and interrupted work can be reopened
+          here. Source access reviews and server cooldowns still apply. The
+          reason is retained in the task audit history.
+        </p>
+        <label className="manual-field">
+          <span className="field-label">RETRY REASON</span>
+          <input
+            aria-label="Detail retry reason"
+            minLength={8}
+            maxLength={1000}
+            value={retryReason}
+            onChange={(e) => setRetryReason(e.target.value)}
+            placeholder="What changed since the failure?"
+          />
+        </label>
+        {progress.details.flatMap((d) =>
+          (d.blockedTasks || []).map((task) => (
+            <p key={`${d.sourceId}:${task.listingId}`}>
+              <strong>{sourceName(d.sourceId)}</strong> · {task.listingId} ·{" "}
+              {task.error?.kind || "unclassified"} · {task.error?.message}
+              {[
+                "network",
+                "server",
+                "rate-limit",
+                "budget",
+                "cancelled",
+              ].includes(task.error?.kind || "") &&
+                !progress.health.some(
+                  (h) =>
+                    h.sourceId === d.sourceId &&
+                    ["review", "smoke-required"].includes(h.state),
+                ) && (
+                  <button
+                    className="button secondary"
+                    disabled={busy || retryReason.trim().length < 8}
+                    onClick={() =>
+                      void change(
+                        "/api/collection/details/retry",
+                        {
+                          sourceId: d.sourceId,
+                          listingId: task.listingId,
+                          reason: retryReason,
+                        },
+                        "Detail reopened with its audit reason and cooldown preserved.",
+                      )
+                    }
+                  >
+                    Retry this detail
+                  </button>
+                )}
+            </p>
+          )),
+        )}
+        {!progress.details.some((d) => d.blockedTasks?.length) && (
+          <p>No blocked detail tasks are recorded.</p>
         )}
       </details>
       <details>

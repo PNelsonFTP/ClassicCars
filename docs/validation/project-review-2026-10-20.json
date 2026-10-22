@@ -1,0 +1,358 @@
+{
+  "reviewDate": "2026-10-20",
+  "timezone": "America/Chicago",
+  "inventoryStartedAt": "2026-10-20T23:53:50Z",
+  "baseCommit": "6e11907",
+  "deletedFiles": 0,
+  "inventoryRefreshed": false,
+  "filesScanned": 38757,
+  "directoriesScanned": 3019,
+  "symlinksScanned": 28,
+  "scanErrors": [],
+  "pathBytes": 7654235216,
+  "pathAllocatedBytes": 7801425920,
+  "topLevel": {
+    "MuscleCarPrompt.md": {
+      "files": 1,
+      "bytes": 32205,
+      "allocated": 32768
+    },
+    ".DS_Store": {
+      "files": 1,
+      "bytes": 10244,
+      "allocated": 12288
+    },
+    "SBOM.md": {
+      "files": 1,
+      "bytes": 8590,
+      "allocated": 12288
+    },
+    "FUTURE_IMPROVEMENTS.md": {
+      "files": 1,
+      "bytes": 24245,
+      "allocated": 24576
+    },
+    "IMPLEMENTATION_LOG.md": {
+      "files": 1,
+      "bytes": 31773,
+      "allocated": 32768
+    },
+    "postcss.config.mjs": {
+      "files": 1,
+      "bytes": 60,
+      "allocated": 4096
+    },
+    "Dockerfile": {
+      "files": 1,
+      "bytes": 423,
+      "allocated": 4096
+    },
+    "VALIDATION.md": {
+      "files": 1,
+      "bytes": 34658,
+      "allocated": 36864
+    },
+    "tsconfig.tsbuildinfo": {
+      "files": 1,
+      "bytes": 217745,
+      "allocated": 221184
+    },
+    "SOURCE_COVERAGE.md": {
+      "files": 1,
+      "bytes": 21592,
+      "allocated": 24576
+    },
+    "prisma.config.ts": {
+      "files": 1,
+      "bytes": 409,
+      "allocated": 4096
+    },
+    "next-env.d.ts": {
+      "files": 1,
+      "bytes": 288,
+      "allocated": 4096
+    },
+    "README.md": {
+      "files": 1,
+      "bytes": 27810,
+      "allocated": 28672
+    },
+    ".dockerignore": {
+      "files": 1,
+      "bytes": 170,
+      "allocated": 4096
+    },
+    ".gitignore": {
+      "files": 1,
+      "bytes": 166,
+      "allocated": 4096
+    },
+    "package-lock.json": {
+      "files": 1,
+      "bytes": 243136,
+      "allocated": 245760
+    },
+    "package.json": {
+      "files": 1,
+      "bytes": 3544,
+      "allocated": 4096
+    },
+    ".env": {
+      "files": 1,
+      "bytes": 422,
+      "allocated": 4096
+    },
+    ".gitattributes": {
+      "files": 1,
+      "bytes": 170,
+      "allocated": 4096
+    },
+    "compose.yaml": {
+      "files": 1,
+      "bytes": 896,
+      "allocated": 4096
+    },
+    "Launch MuscleScout.command": {
+      "files": 1,
+      "bytes": 259,
+      "allocated": 4096
+    },
+    "tsconfig.json": {
+      "files": 1,
+      "bytes": 856,
+      "allocated": 4096
+    },
+    "playwright.config.ts": {
+      "files": 1,
+      "bytes": 887,
+      "allocated": 4096
+    },
+    ".env.example": {
+      "files": 1,
+      "bytes": 414,
+      "allocated": 4096
+    },
+    "AGENTS.md": {
+      "files": 1,
+      "bytes": 678,
+      "allocated": 4096
+    },
+    "vitest.config.ts": {
+      "files": 1,
+      "bytes": 215,
+      "allocated": 4096
+    },
+    "HANDOFF.md": {
+      "files": 1,
+      "bytes": 25481,
+      "allocated": 28672
+    },
+    "CLAUDE.md": {
+      "files": 1,
+      "bytes": 11,
+      "allocated": 4096
+    },
+    "LIVE_DATA.md": {
+      "files": 1,
+      "bytes": 10947,
+      "allocated": 12288
+    },
+    "next.config.ts": {
+      "files": 1,
+      "bytes": 361,
+      "allocated": 4096
+    },
+    "DECISIONS.md": {
+      "files": 1,
+      "bytes": 8035,
+      "allocated": 8192
+    },
+    "Launch MuscleScout.cmd": {
+      "files": 1,
+      "bytes": 287,
+      "allocated": 4096
+    },
+    "generated": {
+      "files": 4,
+      "bytes": 2561,
+      "allocated": 16384
+    },
+    "app": {
+      "files": 3,
+      "bytes": 41383,
+      "allocated": 49152
+    },
+    "out": {
+      "files": 87,
+      "bytes": 43388620,
+      "allocated": 43618304
+    },
+    "config": {
+      "files": 5,
+      "bytes": 36894,
+      "allocated": 49152
+    },
+    ".next-dev": {
+      "files": 676,
+      "bytes": 150010832,
+      "allocated": 151912448
+    },
+    "node_modules": {
+      "files": 30391,
+      "bytes": 812203230,
+      "allocated": 898121728
+    },
+    "prisma": {
+      "files": 4,
+      "bytes": 5426,
+      "allocated": 16384
+    },
+    "tests": {
+      "files": 57,
+      "bytes": 312328,
+      "allocated": 438272
+    },
+    "server": {
+      "files": 29,
+      "bytes": 268260,
+      "allocated": 327680
+    },
+    "shared": {
+      "files": 12,
+      "bytes": 61425,
+      "allocated": 90112
+    },
+    "docs": {
+      "files": 125,
+      "bytes": 4538513,
+      "allocated": 4841472
+    },
+    ".next": {
+      "files": 131,
+      "bytes": 160850014,
+      "allocated": 161198080
+    },
+    "components": {
+      "files": 8,
+      "bytes": 180783,
+      "allocated": 192512
+    },
+    "public": {
+      "files": 50,
+      "bytes": 41967373,
+      "allocated": 42074112
+    },
+    "scripts": {
+      "files": 29,
+      "bytes": 120478,
+      "allocated": 188416
+    },
+    ".github": {
+      "files": 3,
+      "bytes": 5222,
+      "allocated": 12288
+    },
+    "out-subpath": {
+      "files": 87,
+      "bytes": 43389730,
+      "allocated": 43585536
+    },
+    ".git": {
+      "files": 187,
+      "bytes": 18093963,
+      "allocated": 18542592
+    },
+    ".vscode": {
+      "files": 1,
+      "bytes": 706,
+      "allocated": 4096
+    },
+    "test-results": {
+      "files": 31,
+      "bytes": 8632201,
+      "allocated": 8708096
+    },
+    "data": {
+      "files": 6741,
+      "bytes": 1312049103,
+      "allocated": 1331888128
+    },
+    "backups": {
+      "files": 64,
+      "bytes": 5057369194,
+      "allocated": 5094752256
+    }
+  },
+  "candidateTotals": {
+    "High": {
+      "candidateEntries": 14,
+      "files": 13,
+      "bytes": 334570,
+      "allocatedBytes": 364544
+    },
+    "Medium": {
+      "candidateEntries": 32,
+      "files": 1007,
+      "bytes": 2732315944,
+      "allocatedBytes": 2772303872
+    },
+    "Low": {
+      "candidateEntries": 182,
+      "files": 182,
+      "bytes": 118073610,
+      "allocatedBytes": 118517760
+    }
+  },
+  "duplicateBackupPairs": 14,
+  "unresolvedCacheBodies": 32,
+  "databaseCounts": {
+    "_prisma_migrations": 2,
+    "Listing": 4578,
+    "Observation": 77684,
+    "IngestRun": 222,
+    "Lease": 0,
+    "Setting": 178,
+    "Workspace": 1,
+    "SavedSearch": 0,
+    "Alert": 0,
+    "DeliveryAttempt": 0,
+    "GeoCache": 7,
+    "GroupReview": 0
+  },
+  "validation": {
+    "typecheckNoIncremental": "passed",
+    "sbomSchemas": "3 passed; 5 manifest report hashes verified",
+    "releasePins": "13 actions and Docker digest passed",
+    "liveDatabaseQuickCheck": "ok",
+    "latestBackupQuickCheck": "ok",
+    "duplicateKeeperQuickChecks": "14 passed",
+    "publicDetailChunks": "46; zero missing, orphaned or hash mismatches",
+    "localDocLinks": "44 Markdown files; zero missing local links",
+    "networkRequests": 0,
+    "nativeArtifactHashes": "31 matched retained host artifact report",
+    "javascriptSyntax": "14 passed",
+    "deletionCheck": "All 38,757 initial regular-file paths still present",
+    "candidateAccounting": "228 entries covering 1,202 unique regular files plus one empty directory; zero overlap"
+  },
+  "limitations": [
+    "No all-process or global external-consumer proof",
+    "Historical backup evidence references not exhaustively scanned",
+    "No new browser, integration, collection, deployment or vulnerability-audit run",
+    "Duplicate comparison excludes vendor/build/Git internals; identical owned/private size groups hashed",
+    "Low-confidence rows require review and are not approved disposal"
+  ],
+  "candidateCsv": "../CLEANUP_CANDIDATES_2026-10-20.csv",
+  "documentationChanges": [
+    "README.md",
+    "HANDOFF.md",
+    "SBOM.md",
+    "FUTURE_IMPROVEMENTS.md",
+    "docs/ARCHITECTURE.md",
+    "docs/OPERATIONS.md",
+    "docs/PROJECT_REVIEW_2026-10-20.md",
+    "docs/CLEANUP_CANDIDATES_2026-10-20.csv",
+    "docs/validation/project-review-2026-10-20.json"
+  ],
+  "phase": "Initial review before approved cleanup; baseline totals preserved",
+  "subsequentCleanupReceipt": "cleanup-2026-10-20.json"
+}

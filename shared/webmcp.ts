@@ -6,5 +6,12 @@ export const webMcpPatchSchema = z
     query: z.string().max(500).optional(),
     mode: searchSchema.shape.mode.removeDefault().optional(),
     specialty: z.boolean().optional(),
+    maxMinutes: searchSchema.shape.maxMinutes.removeDefault().optional(),
+    travelMode: searchSchema.shape.travelMode.removeDefault().optional(),
+    includeBorderline: z.boolean().optional(),
+    allowAdvertisedLocation: z.boolean().optional(),
+    planningBuffer: searchSchema.shape.planningBuffer
+      .removeDefault()
+      .optional(),
   })
   .strict();

@@ -1,3 +1,4 @@
+import { projectTravel } from "./travel";
 import type { Listing, Snapshot } from "./schema";
 
 export function observedAvailability(
@@ -47,13 +48,16 @@ export function projectSnapshot(
 ): Snapshot {
   return {
     ...snapshot,
-    listings: snapshot.listings.map((l) =>
-      projectFreshness(
-        l,
-        snapshot.freshnessPolicy?.staleDays ?? 14,
-        now,
-        snapshot.freshnessPolicy?.auctionMaxAgeHours ?? 6,
+    listings: projectTravel(
+      snapshot.listings.map((l) =>
+        projectFreshness(
+          l,
+          snapshot.freshnessPolicy?.staleDays ?? 14,
+          now,
+          snapshot.freshnessPolicy?.auctionMaxAgeHours ?? 6,
+        ),
       ),
+      snapshot.travelAtlas,
     ),
   };
 }

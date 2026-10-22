@@ -1,10 +1,19 @@
 # Operations and troubleshooting
 
-Updated September 8, 2026 UTC. Run commands from the MuscleScout project root. This supplements the [README](../README.md), [handoff](../HANDOFF.md) and [architecture](ARCHITECTURE.md).
+## October 21 travel and maintenance commands
+
+The [travel/results operating guide](TRAVEL_AND_RESULTS_IMPLEMENTATION.md) documents place downloads, native road preprocessing, additional origins, offline reuse and static export checks. Ordinary Pages builds use the committed geographic artifacts; no routing service/key is needed at runtime. `npm run verify:travel` validates matching origins, graph context/age, catalog/chunk parity and the public-data scan. `npm run publish:prepare` runs the full verification path and writes a private receipt without Git or deployment actions.
+
+Use `npm run sbom:refresh` after package/script changes to regenerate dependency, target and bundled manifest hashes in the required order. `npm run backup:retention` only reports recovery-pair duplicates and a suggested retention policy; it has no deletion option. Keep all currently retained recovery states, before-migration backups and Low-confidence cleanup evidence until separately approved.
+
+Detail recovery now counts consecutive failures; successes reset that counter. Connected Operations offers audited per-detail retry for transient errors while preserving source review states, Retry-After and service budgets. A catalog price/location/identity fact change can reopen a completed detail task; a new sighting timestamp alone cannot. Favorites/nearby/missing-detail relevance receives priority with every fourth slot reserved for oldest work.
+
+
+Reviewed October 20, 2026 against the current scripts and configuration. Run commands from the MuscleScout project root. This supplements the [README](../README.md), [handoff](../HANDOFF.md) and [architecture](ARCHITECTURE.md). The [project review](PROJECT_REVIEW_2026-10-20.md) records baseline local files, retention conditions and cleanup candidates. Approved High/Medium cleanup and fresh verification are recorded in the [cleanup results](CLEANUP_RESULTS_2026-10-20.md); Low evidence remains unchanged.
 
 ## Install and preserve state
 
-Use Node 24 and `npm ci` for locked repeat installations. `npm install` remains supported for the original setup contract; review intentional dependency changes in the lockfile. A clean official Node 24 macOS arm64 install and an isolated Node 24 Linux arm64 Docker build/release smoke have passed. Actual Windows execution and remote CI remain pending; consult [VALIDATION.md](../VALIDATION.md) and [Node 24 evidence](NODE24_VALIDATION.md) for dated scope.
+Use Node 24 and `npm ci` for locked repeat installations. `npm install` remains supported for the original setup contract; review intentional dependency changes in the lockfile. Clean Node 24 macOS arm64 and Linux arm64 Docker installation/release checks passed. Remote CI has also passed Node 24 on Linux, macOS and Windows, Node 22.18 on Linux, browser checks and Docker; see the [October 1 receipt](validation/github-ci-2026-10-01.json). Interactive Windows launcher/autostart and real provider/delivery acceptance remain separate. Consult [VALIDATION.md](../VALIDATION.md) and [Node 24 evidence](NODE24_VALIDATION.md) for dated scope.
 
 `npm run setup` creates absent private directories/environment/password, precreates SQLite, generates Prisma, applies pending migrations and inserts only missing defaults/workspace. It preserves existing data and password. A fresh connected database starts empty; the shipped public snapshot supports static mode independently.
 
@@ -76,7 +85,7 @@ npm run collect -- --nationwide
 npm run coverage:report -- data/reports/configured-scope
 ```
 
-Ordinary collection uses enabled permitted sources. Catalog progress is durable per source/scope/configured query, and details have independent source-wide queues, including retained legacy ads. Repeated small caps advance pending pages and details. A capped non-smoke job can continue automatically through the worker after its scheduled delay; a smoke is limited to one fresh catalog page and one detail and never expands itself into normal collection. API caps can be zero to separate catalog/detail work; use positive cap values in the CLI.
+Ordinary collection uses enabled permitted sources. Catalog progress is durable per source/scope/configured query, and details have independent source-wide queues, including retained legacy ads. Repeated small caps advance pending pages and details. A capped non-smoke job can continue automatically through the worker after its scheduled delay; a smoke is limited to one fresh catalog page and one detail and never expands itself into normal collection. Both API and CLI caps accept zero to disable a work lane; omitted caps use configured defaults. For example, `--pages=500 --details=0 --fresh` refreshes catalogs without detail enrichment.
 
 Read individual source results and `nextRunAt`. Completed means that job's work finished. Partial may mean resumable backlog, cooldown, blocked access or review; it does not imply a complete source catalog. `nextRunAt: null` requires explicit work/review. Interrupted work retains checkpoints. Source-wide/scoped pending and blocked details are distinct from a single run's processed count. Do not delete an active lease or manually edit queue JSON to force overlap.
 
@@ -145,7 +154,7 @@ npm run serve
 
 Public export emits the full redacted snapshot, dictionary-packed searchable catalog and exact-ad lazy detail chunks. Connected page search limits returned/rendered rows, but still retains all matched rows and rescans per page. The 50,000-ad [scale report](validation/scale-50000.json) covers synthetic predicate parity, payload/memory/timing/candidate comparisons; it does not measure a 50,000-row real browser session or solve all worst-case memory costs.
 
-The manually dispatched Pages workflow needs an authorized repository/destination; static hosting runs no private backend/worker. Public HTTPS-to-local-HTTP access may encounter mixed-content/local-network restrictions. Use the local frontend or a deliberately reachable HTTPS backend with an exact allowed origin. Native browser integration was tested in an actual supported Chromium feature context; ordinary unsupported browsers retain the regular UI. See [browser connectivity evidence](BROWSER_CONNECTIVITY_VALIDATION.md). A real hosted HTTPS destination is still pending.
+The manually dispatched Pages workflow publishes the public snapshot at [PNelsonFTP/ClassicCars](https://pnelsonftp.github.io/ClassicCars/); the latest recorded live verification is [October 19](validation/github-pages-2026-10-19.json). A push alone does not dispatch this workflow, and it does not collect inventory. Static hosting runs no private backend/worker. Public HTTPS-to-local-HTTP access may encounter mixed-content/local-network restrictions. Use the local frontend or a deliberately reachable HTTPS backend with an exact allowed origin. Native browser integration was tested in a supported Chromium feature context; ordinary unsupported browsers retain the regular UI. See [browser connectivity evidence](BROWSER_CONNECTIVITY_VALIDATION.md). Connectivity from the deployed site to a private backend remains a separate acceptance task.
 
 Docker Compose has its own `musclescout` project and named data volume. Create private `.env` through setup, then `docker compose up --build`; `docker compose down` preserves data. The static container uses build-time public JSON and does not automatically read new worker exports: rebuild the static image or use connected mode. The Node 24 Linux arm64 image build and isolated release smoke passed; that does not establish Windows, other architectures or every customized Compose port configuration.
 
@@ -167,7 +176,7 @@ A DB-only restore cannot recover missing raw HTML/browser notes. `docker compose
 
 | Symptom | Check / interpretation |
 |---|---|
-| No four-hour matches | Requires established actual location and verified fresh routes. Review ORS setup/freshness; never convert miles to hours. |
+| No nearby matches | Check selected origin, matching travel artifact/graph age, location basis, availability and near-limit preferences. Unsupported cities remain unknown; generate their real road table. ORS is an optional per-ad route path. Never convert air miles to driving hours. |
 | Nationwide fewer than review | Normal US location/availability/price filters still apply; review admits unknown candidates. Broader URLs do not prove complete coverage. |
 | Specialty adds no later cars | Seller-only variants remain in review until supported/reviewed authenticity exists. |
 | Similar/duplicate cards remain | Compare ranked evidence, dismiss/merge with reasons; source-ad identity and incomplete documentary evidence remain real limits. |
@@ -182,7 +191,7 @@ A DB-only restore cannot recover missing raw HTML/browser notes. `docker compose
 | Photos/map tiles fail | External hosts may deny/fail. Only the selected ad's own gallery is tried; source links and list/grid remain available. |
 | SBOM validation fails | Regenerate matching installed/target evidence and inspect exact schema/hash error; do not silently substitute another platform's artifact inventory. |
 
-Use [VALIDATION.md](../VALIDATION.md) for final test counts and dates. Live ORS, approved feed/licensed provider, opted-in SMTP/webhook, Windows and supplied hosted HTTPS acceptance remain separate from passing local fixtures/builds. No denied site or unprovided service was made available by the implementation.
+Use [VALIDATION.md](../VALIDATION.md) for test counts and dates. Live ORS, approved feed/licensed provider, opted-in SMTP/webhook, interactive Windows launcher/autostart and deployed-site private-backend connectivity remain separate acceptance tasks. No denied site or unprovided service was made available by the implementation.
 
 
 ## Final refresh and delivery refinements

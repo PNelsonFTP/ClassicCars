@@ -2388,3 +2388,65 @@ td strong {
     margin-bottom: 0.3rem;
   }
 }
+
+.travel-controls {
+  margin: 0 0 1.2rem;
+  padding: 1rem;
+}
+.travel-controls-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+}
+.travel-controls label {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+  font-size: 0.8rem;
+  flex-wrap: wrap;
+}
+.travel-controls select,
+.travel-controls input:not([type="checkbox"]) {
+  padding: 0.5rem;
+  border: 1px solid var(--line, #ddd);
+  border-radius: 6px;
+  background: var(--panel);
+  color: inherit;
+  max-width: 100%;
+}
+.travel-controls .button-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0.7rem 0;
+}
+.travel-controls details summary {
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+.place-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.travel-note {
+  font-size: 0.72rem;
+  line-height: 1.5;
+  display: block;
+  color: var(--muted, #666);
+}
+.travel-borderline {
+  color: #975517;
+}
+@media (max-width: 600px) {
+  .travel-controls-head {
+    flex-direction: column;
+  }
+  .travel-controls .button-row > label {
+    width: 100%;
+  }
+  .travel-controls input:not([type="checkbox"]) {
+    width: 100%;
+  }
+}

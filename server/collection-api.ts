@@ -91,6 +91,27 @@ export function registerCollectionRoutes(app: FastifyInstance) {
       }));
     return { health, job: await operations.job(job.id) };
   });
+  app.post("/api/collection/details/retry", async (req) => {
+    const body = z
+      .object({
+        sourceId: z.string().min(1).max(80),
+        listingId: z.string().min(1).max(200),
+        reason: z.string().trim().min(8).max(1000),
+      })
+      .parse(req.body);
+    if (!(await sources()).some((s) => s.id === body.sourceId && s.enabled))
+      throw Error("Source must already be enabled and permitted.");
+    const queue = await operations.retryDetail(
+      body.sourceId,
+      body.listingId,
+      body.reason,
+    );
+    return {
+      sourceId: body.sourceId,
+      listingId: body.listingId,
+      task: queue.items[body.listingId],
+    };
+  });
   app.post("/api/collection/expand", async () => {
     const settings = await getSettings();
     settings.nationwideEnabled = true;

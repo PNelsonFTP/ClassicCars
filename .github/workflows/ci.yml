@@ -32,6 +32,7 @@ jobs:
       - run: npm ci
       - run: npm run typecheck
       - run: npm test
+      - run: npm run verify:travel
       - run: npm run test:release
       - run: node -e "require('node:fs').copyFileSync('docs/sbom/lockfile-inventory.json','baseline-sbom.json')"
       - run: npm run sbom

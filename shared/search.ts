@@ -1,4 +1,14 @@
-import { rankDuplicateCandidates } from "./duplicates";
+import {
+  routeEvidenceKnown,
+  travelResult,
+  travelEligible,
+  tripDestination,
+} from "./travel";
+import {
+  rankDuplicateCandidates,
+  normalizeStock,
+  canonicalSeller,
+} from "./duplicates";
 import {
   defaultSearch,
   type Listing,
@@ -114,16 +124,7 @@ export function targetMatch(l: Listing, s: Search) {
     !["tribute", "clone", "replica"].includes(l.authenticity);
   return classic || special;
 }
-export function routeKnown(l: Listing, now = Date.now(), maxAgeDays = 30) {
-  return (
-    !!l.route &&
-    !!l.vehicleLocation &&
-    !l.vehicleLocation.offsite &&
-    !["unknown", "ambiguous"].includes(l.vehicleLocation.precision) &&
-    Date.parse(l.route.observedAt) <= now &&
-    now - Date.parse(l.route.observedAt) <= maxAgeDays * 864e5
-  );
-}
+export const routeKnown = routeEvidenceKnown;
 export function fieldValue(l: Listing, field: string): unknown {
   return field.startsWith("specs.")
     ? l.specs[field.slice(6)]?.value
@@ -156,17 +157,14 @@ export function matches(
     )
       return false;
   } else if (!targetMatch(l, s)) return false;
+  if (s.mode === "everyday" && !travelEligible(l, s, now)) return false;
+  if (s.mode === "unknown-route" && travelResult(l, s, now).minutes != null)
+    return false;
+  if (s.mode === "regional" && !travelEligible(l, s, now)) return false;
   if (
-    s.mode === "everyday" &&
-    (l.vehicleLocation?.country !== "US" ||
-      !routeKnown(l, now, s.routeMaxAgeDays) ||
-      l.route!.minutes > s.maxMinutes)
+    s.mode === "nationwide" &&
+    (l.vehicleLocation || l.seller.location)?.country !== "US"
   )
-    return false;
-  if (s.mode === "unknown-route" && routeKnown(l, now, s.routeMaxAgeDays))
-    return false;
-  if (s.mode === "regional" && l.scope !== "regional") return false;
-  if (s.mode === "nationwide" && l.vehicleLocation?.country !== "US")
     return false;
   if (s.mode === "auctions" && l.saleType !== "auction") return false;
   if (
@@ -177,7 +175,7 @@ export function matches(
     return false;
   if (s.availability.length && !s.availability.includes(l.availability))
     return false;
-  if (s.states.length && !s.states.includes(l.vehicleLocation?.state ?? ""))
+  if (s.states.length && !s.states.includes(tripDestination(l)?.state ?? ""))
     return false;
   if (s.sources.length && !s.sources.includes(l.sourceId)) return false;
   if (l.askingPrice == null) {
@@ -239,8 +237,8 @@ export function searchListings(
   let rows = listings.filter((l) => matches(l, s, w, now));
   const value = (l: Listing) =>
     s.sort === "nearest"
-      ? routeKnown(l, now, s.routeMaxAgeDays)
-        ? l.route!.minutes
+      ? travelResult(l, s, now).minutes != null
+        ? travelResult(l, s, now).minutes!
         : 1e6 + (l.straightLineMiles ?? 1e6)
       : s.sort === "price-asc"
         ? (l.askingPrice ?? Infinity)
@@ -275,14 +273,22 @@ export function quickSearch(mode: Search["mode"], previous?: Search): Search {
   const s = defaultSearch();
   s.mode = mode;
   if (previous) {
+    s.originKey = previous.originKey;
+    s.originLabel = previous.originLabel;
+    s.maxMinutes = previous.maxMinutes;
+    s.travelMode = previous.travelMode;
+    s.includeBorderline = previous.includeBorderline;
+    s.allowAdvertisedLocation = previous.allowAdvertisedLocation;
+    s.planningBuffer = previous.planningBuffer;
     s.specialty = previous.specialty;
     s.variants = previous.variants;
     s.specialtyMaxYear = previous.specialtyMaxYear;
   }
-  if (["regional", "identity-review", "specialty-review"].includes(mode)) {
+  if (["identity-review", "specialty-review"].includes(mode)) {
     s.availability = [];
     s.saleTypes = [];
   }
+  if (mode === "regional") s.maxMinutes = Math.max(360, s.maxMinutes);
   if (mode === "unknown-route") {
     s.availability = ["active", "unknown", "pending"];
     s.saleTypes = ["fixed", "negotiable", "unknown"];
@@ -312,7 +318,7 @@ export function strongGroupKey(l: Listing) {
     Number(vin[0]) === l.year % 10;
   if (vin && (modern || historic)) return `${l.model}:${l.year}:${vin}`;
   if (
-    l.stockNumber &&
+    normalizeStock(l.stockNumber) &&
     l.seller.name &&
     ["dealer", "consignment"].includes(l.seller.type) &&
     !["unknown", "private seller", "seller detail pending"].includes(
@@ -321,7 +327,7 @@ export function strongGroupKey(l: Listing) {
     l.year &&
     l.model
   )
-    return `${normalizeText(l.seller.name)}:${l.stockNumber}:${l.year}:${l.model}`;
+    return `${canonicalSeller(l.seller.name)}:${normalizeStock(l.stockNumber)}:${l.year}:${l.model}`;
   return null;
 }
 /** Compatibility helper; paginated review consumers should call rankDuplicateCandidates directly. */
@@ -341,7 +347,7 @@ export function storageKey(basePath: string, mode: string, backend = "") {
 }
 export function money(value: number | null) {
   return value == null
-    ? "Price on request"
+    ? "Price not stated"
     : new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "USD",

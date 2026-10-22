@@ -13,6 +13,7 @@ export type AlertBaseline = {
   policy: AlertPolicy;
   ads: Record<string, AlertAdState>;
   evaluatedAt: string;
+  criteriaSignature?: string;
 };
 export type AlertChange = {
   listing: Listing;
@@ -59,17 +60,24 @@ export function evaluateAlertPolicy(input: {
   bidAlerts?: boolean;
   deadlineAlerts?: boolean;
   now?: Date;
+  criteriaSignature?: string;
 }) {
   const { allListings, matchingAds } = input,
     policy = input.policy ?? "vehicle",
     now = input.now ?? new Date();
   // A policy change or v1 migration establishes a quiet, explicit baseline.
-  const previous = input.previous?.policy === policy ? input.previous : null;
+  const previous =
+    input.previous?.policy === policy &&
+    (!input.criteriaSignature ||
+      input.previous.criteriaSignature === input.criteriaSignature)
+      ? input.previous
+      : null;
   const baseline: AlertBaseline = {
       version: 2,
       policy,
       ads: { ...(previous?.ads ?? {}) },
       evaluatedAt: now.toISOString(),
+      criteriaSignature: input.criteriaSignature,
     },
     changes: AlertChange[] = [];
   const listingsById = new Map(allListings.map((l) => [l.id, l]));

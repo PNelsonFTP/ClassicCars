@@ -1,3 +1,4 @@
+import { loadTravelAtlas } from "./travel";
 import { createHash } from "node:crypto";
 import { db } from "./db";
 import { acquireLease, allListings, getSettings, getWorkspace } from "./store";
@@ -31,10 +32,32 @@ export async function evaluateAlerts(force = false) {
   const lease = await acquireLease("alert-evaluation", 120);
   if (!lease) return { created: 0 };
   try {
-    const listings = await allListings(),
+    const now = new Date();
+    const listings = await allListings(now.getTime()),
       workspace = (await getWorkspace()).workspace,
       searches = await db.savedSearch.findMany();
     let created = 0;
+    const atlas = await loadTravelAtlas();
+    const travelVersion = atlas
+      ? createHash("sha256")
+          .update(
+            JSON.stringify({
+              graph: atlas.graph,
+              origins: [...atlas.origins].sort((a, b) =>
+                a.id.localeCompare(b.id),
+              ),
+              places: [...atlas.places].sort((a, b) =>
+                a.id.localeCompare(b.id),
+              ),
+              estimates: [...atlas.estimates].sort((a, b) =>
+                (a.originKey + ":" + a.destinationId).localeCompare(
+                  b.originKey + ":" + b.destinationId,
+                ),
+              ),
+            }),
+          )
+          .digest("hex")
+      : "none";
     for (const saved of searches) {
       await lease.renew();
       if (
@@ -52,12 +75,19 @@ export async function evaluateAlerts(force = false) {
           listings,
           { ...filters, grouped: false },
           workspace,
+          now.getTime(),
         ).rows,
         previous: parseAlertBaseline(saved.baseline),
+        criteriaSignature: JSON.stringify({
+          filters,
+          travelVersion,
+          schema: 2,
+        }),
         policy: filters.alertPolicy,
         crosspostAlerts: filters.crosspostAlerts,
         bidAlerts: saved.bidAlerts,
         deadlineAlerts: saved.deadlineAlerts,
+        now,
       });
       await db.$transaction(async (tx) => {
         for (const change of changes) {

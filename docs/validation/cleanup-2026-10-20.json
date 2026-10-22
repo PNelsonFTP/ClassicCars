@@ -1,0 +1,477 @@
+{
+  "completedAt": "2026-10-21T00:09:07.240987+00:00",
+  "scope": "User-approved High and Medium candidates only; Low retained.",
+  "candidateBaseline": "CLEANUP_CANDIDATES_2026-10-20.csv",
+  "removed": [
+    {
+      "path": ".DS_Store",
+      "confidence": "High",
+      "category": "Finder metadata",
+      "retain_path": "",
+      "bytes": 10244,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-08T15-50-01-903Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-08T03-18-53-092Z.db",
+      "bytes": 10149888,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-08T15-50-01-903Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-08T03-18-53-092Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-10T20-09-18-602Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-08T17-29-49-526Z.db",
+      "bytes": 42315776,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-10T20-09-18-602Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-08T17-29-49-526Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-12T12-03-45-494Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-10T23-06-01-089Z.db",
+      "bytes": 86155264,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-12T12-03-45-494Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-10T23-06-01-089Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-12T21-50-42-509Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-12T12-40-08-380Z.db",
+      "bytes": 107671552,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-12T21-50-42-509Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-12T12-40-08-380Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-24T12-12-08-563Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-12T21-55-02-977Z.db",
+      "bytes": 107757568,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-24T12-12-08-563Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-12T21-55-02-977Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-27T20-04-57-044Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-24T13-01-44-858Z.db",
+      "bytes": 132714496,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-27T20-04-57-044Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-24T13-01-44-858Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-29T23-02-01-081Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-27T20-45-02-890Z.db",
+      "bytes": 154685440,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-09-29T23-02-01-081Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-27T20-45-02-890Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-01T10-49-07-000Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-29T23-42-46-277Z.db",
+      "bytes": 176566272,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-01T10-49-07-000Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-09-29T23-42-46-277Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-04T12-42-28-136Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-01T11-30-19-226Z.db",
+      "bytes": 198340608,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-04T12-42-28-136Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-01T11-30-19-226Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-05T12-13-58-235Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-04T13-24-17-136Z.db",
+      "bytes": 220672000,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-05T12-13-58-235Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-04T13-24-17-136Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-09T13-44-13-917Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-05T12-26-21-919Z.db",
+      "bytes": 240332800,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-09T13-44-13-917Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-05T12-26-21-919Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-13T12-25-54-717Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-09T14-27-34-563Z.db",
+      "bytes": 263360512,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-13T12-25-54-717Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-09T14-27-34-563Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-17T11-42-50-345Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-13T13-10-18-987Z.db",
+      "bytes": 285581312,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-17T11-42-50-345Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-13T13-10-18-987Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-19T12-23-05-679Z.db",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-17T12-27-46-396Z.db",
+      "bytes": 308379648,
+      "files": 1
+    },
+    {
+      "path": "backups/musclescout-2026-10-19T12-23-05-679Z.env",
+      "confidence": "Medium",
+      "category": "Duplicate recovery pair",
+      "retain_path": "backups/musclescout-2026-10-17T12-27-46-396Z.env",
+      "bytes": 422,
+      "files": 1
+    },
+    {
+      "path": "data/.DS_Store",
+      "confidence": "High",
+      "category": "Finder metadata",
+      "retain_path": "",
+      "bytes": 6148,
+      "files": 1
+    },
+    {
+      "path": "docs/.DS_Store",
+      "confidence": "High",
+      "category": "Finder metadata",
+      "retain_path": "",
+      "bytes": 6148,
+      "files": 1
+    },
+    {
+      "path": "node_modules/.DS_Store",
+      "confidence": "High",
+      "category": "Finder metadata",
+      "retain_path": "",
+      "bytes": 51204,
+      "files": 1
+    },
+    {
+      "path": "node_modules/next/.DS_Store",
+      "confidence": "High",
+      "category": "Finder metadata",
+      "retain_path": "",
+      "bytes": 6148,
+      "files": 1
+    },
+    {
+      "path": "node_modules/next/dist/.DS_Store",
+      "confidence": "High",
+      "category": "Finder metadata",
+      "retain_path": "",
+      "bytes": 6148,
+      "files": 1
+    },
+    {
+      "path": "out-subpath/.DS_Store",
+      "confidence": "High",
+      "category": "Finder metadata",
+      "retain_path": "",
+      "bytes": 6148,
+      "files": 1
+    },
+    {
+      "path": "out/.DS_Store",
+      "confidence": "High",
+      "category": "Finder metadata",
+      "retain_path": "",
+      "bytes": 6148,
+      "files": 1
+    },
+    {
+      "path": "public/.DS_Store",
+      "confidence": "High",
+      "category": "Finder metadata",
+      "retain_path": "",
+      "bytes": 6148,
+      "files": 1
+    },
+    {
+      "path": "test-results/.last-run.json",
+      "confidence": "High",
+      "category": "Test status cache",
+      "retain_path": "",
+      "bytes": 45,
+      "files": 1
+    },
+    {
+      "path": "tests/.DS_Store",
+      "confidence": "High",
+      "category": "Finder metadata",
+      "retain_path": "",
+      "bytes": 6148,
+      "files": 1
+    },
+    {
+      "path": "tsconfig.tsbuildinfo",
+      "confidence": "High",
+      "category": "Compiler cache",
+      "retain_path": "",
+      "bytes": 217745,
+      "files": 1
+    },
+    {
+      "path": ".next-dev/",
+      "confidence": "Medium",
+      "category": "Reproducible build output",
+      "retain_path": "",
+      "bytes": 150010832,
+      "files": 676
+    },
+    {
+      "path": ".next/",
+      "confidence": "Medium",
+      "category": "Reproducible build output",
+      "retain_path": "",
+      "bytes": 160850014,
+      "files": 131
+    },
+    {
+      "path": "lib/",
+      "confidence": "High",
+      "category": "Empty scaffold",
+      "retain_path": "",
+      "bytes": 0,
+      "files": 0
+    },
+    {
+      "path": "out-subpath/",
+      "confidence": "Medium",
+      "category": "Reproducible build output",
+      "retain_path": "",
+      "bytes": 43383582,
+      "files": 86
+    },
+    {
+      "path": "out/",
+      "confidence": "Medium",
+      "category": "Reproducible build output",
+      "retain_path": "",
+      "bytes": 43382472,
+      "files": 86
+    },
+    {
+      "path": ".git/.DS_Store",
+      "confidence": "High",
+      "category": "Finder metadata",
+      "retain_path": "",
+      "bytes": 6148,
+      "files": 1
+    }
+  ],
+  "skipped": [],
+  "lowConfidenceFilesPreserved": 182,
+  "protectedFilesVerified": 262,
+  "requiredBackupPairsKept": 14,
+  "remainingBackupPairs": 17,
+  "latestBackupKept": "backups/musclescout-2026-10-19T13-08-08-571Z.db",
+  "grossLogicalBytesRemoved": 2732650514,
+  "regeneratedOutput": {
+    ".next/": {
+      "bytes": 119917007,
+      "files": 106,
+      "exists": true
+    },
+    ".next-dev/": {
+      "bytes": 0,
+      "files": 0,
+      "exists": false
+    },
+    "out/": {
+      "bytes": 43382472,
+      "files": 86,
+      "exists": true
+    },
+    "out-subpath/": {
+      "bytes": 43383582,
+      "files": 86,
+      "exists": true
+    }
+  },
+  "logicalReductionInCandidateContent": 2525967453,
+  "spaceCaveat": "Logical size reduction within approved candidate paths after required rebuilds; APFS free space and new documentation/evidence sizes differ.",
+  "verification": {
+    "unitTests": {
+      "passed": 276,
+      "files": 27
+    },
+    "browserTests": {
+      "passed": 18,
+      "projects": [
+        "desktop",
+        "mobile"
+      ]
+    },
+    "rootAndSubpathBuilds": "passed",
+    "typecheckNoIncremental": "passed",
+    "releaseSmoke": {
+      "setupTwice": true,
+      "passwordPreserved": true,
+      "migrations": true,
+      "nativeSqlite": true,
+      "backupRestore": true,
+      "apiStartupShutdown": true
+    },
+    "staticBrowser": {
+      "paths": [
+        "/",
+        "/ClassicCars"
+      ],
+      "runtimeErrors": 0,
+      "missingLocalAssets": 0,
+      "realImagesLoaded": true,
+      "workspaceIsolation": "passed"
+    },
+    "publicExportComparison": {
+      "publicDataFiles": 48,
+      "exportFileMatches": 96,
+      "staticFilesChecked": 172,
+      "configuredPrivateValuesChecked": 1,
+      "secretMatches": 0
+    },
+    "sqliteQuickChecks": 18,
+    "sbomSchemas": 3,
+    "sbomManifestReportHashes": 5,
+    "pinnedWorkflowActions": 13,
+    "dockerBaseDigestPinned": true,
+    "temporaryVerificationWorkspaceRemoved": true,
+    "finalProtectedHashCheck": "262 match; all Low files unchanged",
+    "localMarkdownLinks": {
+      "files": 44,
+      "missing": 0
+    }
+  },
+  "unchanged": [
+    "all 182 Low candidate contents",
+    "required backup counterpart contents",
+    "latest backup pair",
+    "private database",
+    ".env",
+    "48 public inventory JSON files"
+  ],
+  "notPerformed": [
+    "inventory renewal",
+    "collector/geocoder/router/delivery operations",
+    "Docker deployment",
+    "commit",
+    "push",
+    "GitHub Pages publication"
+  ],
+  "initialVerificationSetupIssues": [
+    "Sandbox denied localhost binding; reran browser/release with required local execution permissions.",
+    "Temporary symlinked node_modules was rejected by Turbopack; reran with an isolated cloned dependency directory and all browser checks passed."
+  ]
+}

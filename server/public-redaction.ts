@@ -39,6 +39,15 @@ export function redactPublicListing(l: Listing): Listing {
     ...l,
     identifier: null,
     photos: feedAllowsPublicImages(l) ? l.photos : [],
+    locationDisclosure: l.userOverrides?.vehicleLocation
+      ? {
+          status: l.userOverrides.vehicleLocation.offsite
+            ? "offsite"
+            : "reviewed-vehicle",
+          observedAt: l.userOverrides.reviewedAt,
+          sourceUrl: l.url,
+        }
+      : l.locationDisclosure,
     userOverrides: undefined,
     sourceRecord: undefined,
     evidenceRef: undefined,

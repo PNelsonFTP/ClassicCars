@@ -2,9 +2,9 @@
 
 September 12 source-access update: no dependency or lockfile changes. The diagnostic browser uses the existing development Playwright package; the normal collector and GitHub Pages do not require a browser runtime. SBOM provenance is regenerated because package.json now includes diagnostic commands; dependency versions and the lockfile are unchanged.
 
-Updated September 8, 2026 UTC for **musclescout@1.1.0**. The application has no declared distribution license; SPDX records `NOASSERTION`. Generation times, platform, input hashes and output hashes are retained in each target's manifest.
+The current host graph and native/WASM artifact inventory were regenerated October 21, 2026 for **musclescout@1.1.0** after adding geographic/publication commands. Package dependencies and the lockfile are unchanged. The manifest now hashes all seven graph/license/target/bundled reports. The application has no declared distribution license (`NOASSERTION`). Generation date, platform and input/output hashes are recorded per target; a refreshed SBOM is not a new vulnerability query.
 
-The [September 10 inventory refresh](docs/validation/refresh-2026-09-10-comparison.md) includes parser corrections but no dependency or lockfile changes. The software inventories, target validation and advisory results below retain their September 8 timestamps; refreshing inventory is not a new vulnerability audit. The retained September 8 Docker image also contains its original build-time snapshot until rebuilt.
+The [September 10 inventory refresh](docs/validation/refresh-2026-09-10-comparison.md) includes parser corrections but no dependency or lockfile changes. The current host inventories were regenerated October 21; historical target folders and the advisory query retain their own timestamps. Refreshing vehicle inventory is not a new vulnerability audit. The retained September 8 Docker image also contains its original build-time snapshot until rebuilt.
 
 ## Delivered inventories
 
@@ -12,17 +12,23 @@ The [September 10 inventory refresh](docs/validation/refresh-2026-09-10-comparis
 |---|---|
 | [Full CycloneDX 1.5](docs/sbom/musclescout.cdx.json) | macOS arm64 Node 26.7.0 installed graph: 368 dependency components plus the application. |
 | [Runtime CycloneDX](docs/sbom/musclescout-runtime.cdx.json) | npm `--omit=dev` graph: 128 dependency components plus the application. |
-| [SPDX 2.3](docs/sbom/musclescout.spdx.json) | 369 packages including the application; 645 relationships. |
+| [SPDX 2.3](docs/sbom/musclescout.spdx.json) | 369 packages including the application; 644 relationships in the current host manifest. |
 | [Complete lock inventory](docs/sbom/lockfile-inventory.json) | All 471 resolved installation locations, including optional platforms; 369 installed locations on the host. |
 | [Declared licenses](docs/sbom/LICENSE_INVENTORY.md) | Direct requirements and every lock entry's declared license expression. |
 | [Host artifact inventory](docs/sbom/target-artifacts.json) | 31 observed native/WASM files, owning package versions, byte sizes and SHA-256 hashes. |
 | [Bundled archive inspection](docs/sbom/bundled-artifacts.json) | Seven directly inspected package manifests; all four formerly unresolved bundled package versions observed. |
-| [Manifest](docs/sbom/manifest.json) | Hashes for the seven main/artifact reports, package/lock inputs and separate advisory report. |
+| [Manifest](docs/sbom/manifest.json) | Current host manifest hashes seven dependency/license/target/bundled reports, package/lock inputs and the separate dated advisory report. |
 | [npm audit](docs/sbom/npm-audit.json) | Fresh full registry query on September 8, 2026, approximately 17:09 UTC: zero reported vulnerabilities. |
 
 Counts differ because npm merges repeated package/version identities, the root is additional, and the lock contains optional packages for other targets. Runtime classification is not an inventory of code that survives browser bundling. Licenses are declared package metadata, not a file-by-file legal review.
 
 The exact current lockfile SHA-256 is `cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa`.
+
+## October 21 manifest-chain repair
+
+`npm run sbom:refresh` sequentially generates the dependency reports, adds the current target/native and retained integrity-verified bundled evidence, then validates schemas, references and every manifest hash. `sbom:validate` now rejects an existing target/bundled report omitted from the manifest. The earlier October 20 five-report chain gap is resolved; target-specific folders and independent schema copies remain intentional evidence. No new advisory query was made.
+
+Native **OSRM 26.10.0 (BSD-2-Clause)** and **osmium-tool 1.19.1 (GPL-3.0)** are separately installed publication tools, outside the npm graph and static browser bundle. Road preprocessing uses OpenStreetMap/Geofabrik data under ODbL; Census place references and GeoNames postal references (CC BY 4.0) have separate provenance/attribution in `public/places/manifest.json` and the [travel implementation guide](docs/TRAVEL_AND_RESULTS_IMPLEMENTATION.md). The road graph manifest records OSRM/profile/input hashes. These tools/datasets are not falsely included in npm package counts, and no new npm dependency was added. Docker/application OS inventories retain their own build dates.
 
 ## Resolved optional-WASM metadata gap
 

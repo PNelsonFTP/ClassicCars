@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T21:53:42.645Z",
+  "generatedAt": "2026-10-22T01:43:36.521Z",
   "application": {
     "name": "musclescout",
     "version": "1.1.0",
@@ -10,7 +10,7 @@
   "node": "v26.7.0",
   "npm": "11.19.0",
   "inputs": {
-    "packageJsonSha256": "2ac3dd2d604b50185cf3904d4db253d7c580c0476e23dc8a578bd44d2c2dbb5a",
+    "packageJsonSha256": "8bbfbc273944540105ec308aa0e9fabe2e6a52b27700f6481f27f57c4f64df57",
     "packageLockSha256": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa"
   },
   "counts": {
@@ -35,27 +35,37 @@
     {
       "file": "musclescout.cdx.json",
       "bytes": 448644,
-      "sha256": "4556993cea0a8ff7440f9b1351bd2bdef375429c3c9c1caa443b9fe933a01b3d"
+      "sha256": "534249426bfa71434018feb9c300386ab5eefde9fbb90f2635e3c74acb962f2c"
     },
     {
       "file": "musclescout-runtime.cdx.json",
       "bytes": 159076,
-      "sha256": "3ec6f529004a3540729d051461844e200cd5ef378f4f566cf3d1bd2170373028"
+      "sha256": "824c96248f4c0924dbb650ebbe54b3705a8a100dea14208924e8014f6a9f122f"
     },
     {
       "file": "musclescout.spdx.json",
       "bytes": 455959,
-      "sha256": "e18a905a2b2b8645187e85e81fb19e838c0f7fd1fea1dbec85c610a4dc13a313"
+      "sha256": "667ef517b72577429553811a4a7ffb482cca86182a10168e3787f98323eb3072"
     },
     {
       "file": "lockfile-inventory.json",
       "bytes": 343203,
-      "sha256": "6349e610bce63fa205a8080df716a0b8ef6f4b0ef67ec2dbc35fc8b7cc20ecd8"
+      "sha256": "52f40eec1aea81668450a3861cf6e197f9a2bfc47658b3fdcd3e0b97e82157de"
     },
     {
       "file": "LICENSE_INVENTORY.md",
       "bytes": 40141,
-      "sha256": "6842139786dde69fd52c7fa5a850ea0c27ecabc2566b81de59488cb3ffb9bd7a"
+      "sha256": "bbe88a036999109e65af38308a22d098419cc3053ff7ee217d1234a58de479b2"
+    },
+    {
+      "file": "target-artifacts.json",
+      "bytes": 13245,
+      "sha256": "cc3babe7afeacb66d024b464c2a058f032e21177aebf80f366de7dbdd40192eb"
+    },
+    {
+      "file": "bundled-artifacts.json",
+      "bytes": 3337,
+      "sha256": "abc761a746c19e95087c64fba7cb6593cbc6eb5f684bf402bc29f70e5bfb5a50"
     }
   ],
   "audit": {

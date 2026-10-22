@@ -1,0 +1,240 @@
+{
+  "completedOn": "2026-10-21 America/Chicago",
+  "completedAt": "2026-10-22T01:49:40.573859+00:00",
+  "scope": "Approved location/results improvements. No seller inventory refresh, commit, push or deployment.",
+  "sourceObservationsRenewed": false,
+  "dataVerification": {
+    "verifiedAt": "2026-10-22T01:45:33.419Z",
+    "exportGeneratedAt": "2026-10-22T01:43:35.904Z",
+    "latestInventoryObservation": "2026-10-19T13:07:59.143Z",
+    "publicAds": 4559,
+    "origins": [
+      "Wheaton, IL"
+    ],
+    "roadGraph": {
+      "version": "29160383e0b6755e298daaea8bb3d44cfbbdb4239e913ccb8eaafa38dec19c6a",
+      "sourceUrl": "https://download.geofabrik.de/north-america/us-midwest-latest.osm.pbf",
+      "observedAt": "2026-10-20T20:23:47Z",
+      "profile": "car-no-ferries-us-v1",
+      "region": "US Midwest",
+      "attribution": "© OpenStreetMap contributors. Traffic-free OSRM city routes; ferries excluded; US regional graph.",
+      "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/"
+    },
+    "places": 109723,
+    "routedPlaces": 147,
+    "unresolvedPlaces": 334,
+    "quality": {
+      "vehicleCities": 876,
+      "advertisedCities": 4552,
+      "ambiguous": 108,
+      "offsite": 631,
+      "estimates": 1484,
+      "within": 423,
+      "borderline": 197,
+      "unknown": 3075,
+      "nearbyAwaitingDetail": 132
+    },
+    "defaultResults": 488,
+    "detailChunks": 46,
+    "publicFiles": 105,
+    "publicBytes": 65045022,
+    "travelSha256": "ba34188af0a437710eec341465d1262cc3a94b1f487cef199a77f6a561a3369b",
+    "privacyScan": true,
+    "catalogParity": true
+  },
+  "shoppingCounts": {
+    "default": {
+      "rawCount": 488,
+      "groupCount": 483,
+      "within": 331,
+      "borderline": 157
+    },
+    "presets": [
+      {
+        "maxMinutes": 60,
+        "ads": 185,
+        "groups": 184
+      },
+      {
+        "maxMinutes": 120,
+        "ads": 288,
+        "groups": 287
+      },
+      {
+        "maxMinutes": 180,
+        "ads": 331,
+        "groups": 330
+      },
+      {
+        "maxMinutes": 240,
+        "ads": 488,
+        "groups": 483
+      },
+      {
+        "maxMinutes": 360,
+        "ads": 1060,
+        "groups": 1047
+      }
+    ],
+    "strict": 204,
+    "estimateBasis": {
+      "advertised-city": 751,
+      "vehicle-city": 733
+    }
+  },
+  "routingAcceptance": {
+    "verifiedAt": "2026-10-22T01:43:30.864Z",
+    "provider": "Local OSRM 26.10.0 / OpenStreetMap",
+    "graphVersion": "29160383e0b6755e298daaea8bb3d44cfbbdb4239e913ccb8eaafa38dec19c6a",
+    "roadTimestamp": "2026-10-20T20:23:47Z",
+    "lakeMichiganLandDetourVerified": true,
+    "claims": "Traffic-free city baselines; not independent real-traffic calibration",
+    "results": [
+      {
+        "origin": "Wheaton, IL",
+        "destination": "Volo, IL",
+        "minutes": 60.92833333333333,
+        "miles": 41.701836276147304,
+        "exclude": "ferry",
+        "minLatitude": 41.857659,
+        "noFerrySteps": true
+      },
+      {
+        "origin": "Wheaton, IL",
+        "destination": "Milwaukee, WI",
+        "minutes": 130.085,
+        "miles": 101.3132680147936,
+        "exclude": "ferry",
+        "minLatitude": 41.857659,
+        "noFerrySteps": true
+      },
+      {
+        "origin": "Wheaton, IL",
+        "destination": "Indianapolis, IN",
+        "minutes": 246.18166666666667,
+        "miles": 203.48719726795514,
+        "exclude": "ferry",
+        "minLatitude": 39.775201,
+        "noFerrySteps": true
+      },
+      {
+        "origin": "Wheaton, IL",
+        "destination": "Grand Rapids, MI",
+        "minutes": 242.065,
+        "miles": 201.16855066412154,
+        "exclude": "ferry",
+        "minLatitude": 41.567231,
+        "noFerrySteps": true
+      },
+      {
+        "origin": "Wheaton, IL",
+        "destination": "St. Louis, MO",
+        "minutes": 325.5066666666667,
+        "miles": 282.5304596158435,
+        "exclude": "ferry",
+        "minLatitude": 38.615964,
+        "noFerrySteps": true
+      },
+      {
+        "origin": "Milwaukee, WI",
+        "destination": "Muskegon, MI",
+        "minutes": 337.73499999999996,
+        "miles": 281.1515748031496,
+        "exclude": "ferry",
+        "minLatitude": 41.584894,
+        "noFerrySteps": true
+      }
+    ]
+  },
+  "toolchain": {
+    "osrmVersion": "v26.10.0",
+    "osmiumVersion": "osmium version 1.19.1",
+    "profileSha256": "c38c7d05c0109b5cec06cf4bafad58ed0196eabc9f69a021c09167f2de7e5f89",
+    "pbfSha256": "1bd980b743d98c4779cd2abed9827d18617ab750afba3c13c3ed88ab01080a44",
+    "filter": [
+      "w/highway",
+      "r/type=restriction",
+      "r/route=ferry"
+    ],
+    "preparedAt": "2026-10-22T01:41:05.502Z",
+    "inputGenerator": "osmium/1.15.0 (transient Debian road filter)",
+    "originalExtractSha256": "bb79ee3885ba51247f549d4a8eef05692cd4a25f8c25c0630c8616b2b940c3d0",
+    "nativeCurrentOsmiumVersion": "osmium version 1.19.1"
+  },
+  "checks": {
+    "typecheck": "passed",
+    "unitTests": 305,
+    "unitTestFiles": 29,
+    "desktopBrowserTests": 10,
+    "mobileBrowserTests": 10,
+    "staticExports": [
+      {
+        "base": "/",
+        "runtimeErrors": 0,
+        "missingLocalAssets": 0,
+        "realImageLoaded": true,
+        "realRoadEstimateDisplayed": true,
+        "cityZipLookup": true,
+        "approximateTravelLimit": true
+      },
+      {
+        "base": "/ClassicCars",
+        "runtimeErrors": 0,
+        "missingLocalAssets": 0,
+        "realImageLoaded": true,
+        "realRoadEstimateDisplayed": true,
+        "cityZipLookup": true,
+        "approximateTravelLimit": true
+      },
+      {
+        "storage": "root/subpath snapshot workspaces isolated; separate app sentinel preserved"
+      }
+    ],
+    "isolatedRelease": {
+      "setupTwice": true,
+      "passwordPreserved": true,
+      "migrations": true,
+      "nativeSqlite": true,
+      "backupRestore": true,
+      "apiStartupShutdown": true
+    },
+    "sbomSchemas": 3,
+    "sbomManifestHashes": 7,
+    "pinnedActions": 13,
+    "dockerBaseDigestPinned": true,
+    "publicPrivacyScan": true
+  },
+  "preservation": {
+    "checked": 214,
+    "unchanged": true,
+    "changed": [],
+    "backupPairsRetained": 17,
+    "publicArtifactsRegenerated": true
+  },
+  "publicationReceipt": {
+    "verifiedAt": "2026-10-22T01:47:36.836Z",
+    "scope": "types, units, isolated release, desktop/mobile E2E, root and project Pages builds, browser export checks, public data and travel contract",
+    "published": false,
+    "inputs": {
+      "package.json": "8bbfbc273944540105ec308aa0e9fabe2e6a52b27700f6481f27f57c4f64df57",
+      "package-lock.json": "cdd0f7991945234d59d82283f2a974b7e77efa6302aae60116d4066081cdb1aa",
+      "public/data/snapshot.json": "134b26ed874fcd5b77ca28a5b916c5a0e258164dd97ad243feafee9b34a0b27d",
+      "public/data/catalog.json": "515e6f6eb95b649f5323785d3248db2901efc54abd7abd82b664cc8a24a0ccbd",
+      "public/data/travel.json": "696f73337398cb5cd22205586f3fefca518cbcc75c9cf9ae6efb589d23090c41"
+    }
+  },
+  "limitations": [
+    "US Midwest road coverage; outside destinations remain unknown.",
+    "Only the published Wheaton origin ships initially. Other cities require their own generated table.",
+    "City points and planning bands are approximate; OSRM default car speeds are not independently calibrated traffic predictions.",
+    "631 explicit off-site ads remain unqualified for travel; 108 unresolved city matches need review.",
+    "Cross-listing identity, old detail backlog, source restrictions and credential-dependent integrations remain separate real-world work.",
+    "Road reachability shading is conditional on a validated polygon source; no circle or invented isochrone is shipped."
+  ],
+  "windDown": {
+    "temporaryRouterStopped": true,
+    "verifiedStaticPreview": "http://127.0.0.1:3100/",
+    "validationWorkspaceRemovedAfterEvidenceTransfer": true,
+    "nativeRoutingCacheApproxGiB": 22
+  }
+}

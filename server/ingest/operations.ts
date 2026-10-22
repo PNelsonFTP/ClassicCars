@@ -91,6 +91,10 @@ export type DetailTask = {
   discoveredAt: string;
   status: "pending" | "complete" | "blocked";
   attempts: number;
+  consecutiveFailures?: number;
+  catalogSignature?: string;
+  catalogChanged?: boolean;
+  retryHistory?: { at: string; reason: string; previousKind: string }[];
   nextAttemptAt: string | null;
   lastAttemptAt?: string;
   completedAt?: string;
@@ -604,6 +608,7 @@ export class CollectionOperations {
       lastDetailAttemptAt?: string | null;
       parserVersion?: string;
       lastObservedAt?: string;
+      catalogSignature?: string;
     }[],
   ) {
     return this.mutate(
@@ -618,12 +623,26 @@ export class CollectionOperations {
               ? row.lastObservedAt
               : undefined);
           if (prior) {
+            if (
+              row.catalogSignature &&
+              prior.catalogSignature &&
+              row.catalogSignature !== prior.catalogSignature
+            ) {
+              prior.catalogChanged = true;
+              if (prior.status === "complete") {
+                prior.status = "pending";
+                prior.nextAttemptAt = null;
+              }
+            }
+            if (row.catalogSignature)
+              prior.catalogSignature = row.catalogSignature;
             prior.url = row.url;
             if (!prior.scopes.includes(scope)) prior.scopes.push(scope);
             if (!prior.queryIds.includes(queryId)) prior.queryIds.push(queryId);
           } else
             q.items[row.id] = {
               listingId: row.id,
+              catalogSignature: row.catalogSignature,
               url: row.url,
               scopes: [scope],
               queryIds: [queryId],
@@ -673,6 +692,8 @@ export class CollectionOperations {
         const task = q.items[id];
         if (task) {
           task.status = "complete";
+          task.consecutiveFailures = 0;
+          task.catalogChanged = false;
           task.attempts++;
           task.lastAttemptAt = iso(this.now());
           task.completedAt = observedAt;
@@ -696,10 +717,12 @@ export class CollectionOperations {
         const task = q.items[id];
         if (task) {
           task.error = classifyFailure(error, this.now());
+          if (!["budget", "cancelled"].includes(task.error.kind))
+            task.consecutiveFailures = (task.consecutiveFailures || 0) + 1;
           task.status =
             health.state === "review" ||
             task.error.kind === "missing" ||
-            task.attempts >= 2
+            (task.consecutiveFailures || 0) >= 3
               ? "blocked"
               : "pending";
           task.attempts++;
@@ -711,6 +734,45 @@ export class CollectionOperations {
     );
   }
   /** Manual reviewed resume reopens failed tasks, retaining their original error/attempt history. */
+  async retryDetail(sourceId: string, listingId: string, reason: string) {
+    if (reason.trim().length < 8)
+      throw Error("Explain why this transient task can be retried.");
+    const health = await this.health(sourceId);
+    if (["review", "smoke-required"].includes(health.state))
+      throw Error("Source access review must complete first.");
+    return this.mutate(
+      "details:" + sourceId,
+      () => ({ sourceId, items: {} }) as DetailQueue,
+      (q) => {
+        const task = q.items[listingId];
+        if (
+          !task?.error ||
+          !["network", "server", "rate-limit", "budget", "cancelled"].includes(
+            task.error.kind,
+          )
+        )
+          throw Error(
+            "Only an identified transient failure can be retried; missing/access/policy/layout failures require review.",
+          );
+        task.retryHistory = [
+          ...(task.retryHistory || []),
+          {
+            at: iso(this.now()),
+            reason: reason.trim(),
+            previousKind: task.error.kind,
+          },
+        ].slice(-20);
+        task.status = "pending";
+        task.consecutiveFailures = 0;
+        task.nextAttemptAt =
+          [health.nextPermittedAt, task.error.retryAfterAt]
+            .filter((x): x is string => !!x)
+            .sort()
+            .at(-1) || null;
+        return q;
+      },
+    );
+  }
   async reopenSourceTasks(sourceId: string) {
     for (const row of await this.store.list(
       PREFIX + "catalog:" + sourceId + ":",
@@ -762,6 +824,14 @@ export class CollectionOperations {
       })),
       details: queues.map((q) => ({
         sourceId: q.sourceId,
+        blockedTasks: Object.values(q.items)
+          .filter((t) => t.status === "blocked")
+          .slice(0, 50)
+          .map((t) => ({
+            listingId: t.listingId,
+            kind: t.error?.kind,
+            nextAttemptAt: t.nextAttemptAt,
+          })),
         counts: {
           total: Object.keys(q.items).length,
           complete: Object.values(q.items).filter(
