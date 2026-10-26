@@ -1,5 +1,13 @@
 # Future improvements and acceptance status
 
+## October 26 refresh and operational follow-up
+
+The October 26 refresh retains **4,737 ads / 4,711 groups**, including **4,718 public ads / 4,698 public groups**. It added **159 ads**, recorded **186 numeric asking-price changes** (106 decreases, 80 increases), and refreshed details for **290 distinct ads**. **1 previously tracked ad** is newly seller-reported sold.
+
+The [refresh report](docs/validation/refresh-2026-10-26-comparison.md) records fresh configured catalogs, completed eligible dealer detail queues, 4,459 due ClassicCars detail tasks, retained missing-page tasks, catalog-only JWS and the existing 500 Classic/Autotrader review pauses. Cross-listing identity and restricted-source permission remain unresolved; absence never proves a sale. The Wheaton atlas now provides 1,493 estimated ads from 148 city routes.
+
+Efficiency follow-up: a continuation selected some GR Auto detail pages already fetched earlier the same day. The refresh resumed using the valid same-day cache, preserving original observation dates and still fetching older pages. Review catalog-signature/queue reconciliation before forcing future continuation requests, and verify that genuine changed source facts still reopen detail work. Application code and collection settings were not changed by this refresh.
+
 ## October 21 location/results work delivered
 
 The approved [location/results review](docs/LOCATION_AND_RESULTS_REVIEW_2026-10-21.md) is implemented in the [operating guide](docs/TRAVEL_AND_RESULTS_IMPLEMENTATION.md): offline city/ZIP resolution, real regional road tables for Pages, origin/destination/profile binding, approximate planning bands, strict/borderline controls, dynamic travel counts and geographic regional discovery. Location basis stays distinct; off-site/ambiguous cars remain unresolved. Maps distinguish advertised and reported cities and retain original listings.

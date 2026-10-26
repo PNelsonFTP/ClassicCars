@@ -1,5 +1,11 @@
 # MuscleScout 1.1.0 delivery
 
+## October 26 inventory refresh
+
+The October 26 refresh retains **4,737 ads / 4,711 groups**, including **4,718 public ads / 4,698 public groups**. It added **159 ads**, recorded **186 numeric asking-price changes** (106 decreases, 80 increases), and refreshed details for **290 distinct ads**. **1 previously tracked ad** is newly seller-reported sold.
+
+The [refresh comparison](validation/refresh-2026-10-26-comparison.md), [public export audit](validation/public-export-review-2026-10-26.json), [travel verification](validation/travel-refresh-2026-10-26.json) and [root/project browser checks](validation/static-review-2026-10-26.json) record the verified inventory and static outputs. The updated export includes 1,493 ads with road estimates and 498 default approximate four-hour ads. Application code, dependencies and collection settings are unchanged; private state and backups remain excluded. Publication results are appended after deployment verification.
+
 ## October 22 location and results release
 
 The approved application/data commit [`5533b17`](https://github.com/PNelsonFTP/ClassicCars/commit/5533b178f41fba4745fb87207da2771191537d2e) is pushed to `main` and live at [MuscleScout](https://pnelsonftp.github.io/ClassicCars/). The [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/39799973841) succeeded using `/ClassicCars`. [All six CI jobs](https://github.com/PNelsonFTP/ClassicCars/actions/runs/39799956316) passed; the [CI receipt](validation/github-ci-2026-10-22.json) records each target and job URL. The closing documentation update records these results without changing deployed application/data bytes.

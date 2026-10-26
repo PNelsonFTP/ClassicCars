@@ -1,5 +1,13 @@
 # Validation — 1.1.0
 
+## October 26 inventory refresh — locally verified
+
+The October 26 refresh retains **4,737 ads / 4,711 groups**, including **4,718 public ads / 4,698 public groups**. It added **159 ads**, recorded **186 numeric asking-price changes** (106 decreases, 80 increases), and refreshed details for **290 distinct ads**. **1 previously tracked ad** is newly seller-reported sold.
+
+Strict TypeScript, 305 unit tests / 29 files, 20 desktop/mobile browser tests, isolated release smoke, both static exports, browser export checks, SQLite integrity and the seven-report SBOM chain pass. [Public export verification](docs/validation/public-export-review-2026-10-26.json) confirms canonical redaction and observation-date parity, all 48 detail chunks, matching built data and configured credential exclusion. [Travel verification](docs/validation/travel-refresh-2026-10-26.json) confirms 148 city routes and 1,493 estimated ads. Default four-hour results contain 498 ads / 493 groups; excluding near-limit results gives 335 ads / 334 groups; strict reported-vehicle routes return 199 ads.
+
+See the [refresh report](docs/validation/refresh-2026-10-26-comparison.md) and [root/project browser receipt](docs/validation/static-review-2026-10-26.json). Private backups and original evidence are retained. No ingest runs, collection leases or task-owned test/router listeners remain active. Live publication is recorded separately in [delivery status](docs/DELIVERY.md).
+
 ## October 22 GitHub Pages release — verified live
 
 Application/data commit [`5533b17`](https://github.com/PNelsonFTP/ClassicCars/commit/5533b178f41fba4745fb87207da2771191537d2e) passed the [Pages workflow](https://github.com/PNelsonFTP/ClassicCars/actions/runs/39799973841) and [all six CI jobs](docs/validation/github-ci-2026-10-22.json): Node 24 on Linux/macOS/Windows, Node 22.18 on Linux, hosted browser checks and the container release. The release passes 305 unit tests across 29 files, 20 desktop/mobile browser tests, both static export paths, release smoke, public travel/privacy/parity checks and SBOM validation.
