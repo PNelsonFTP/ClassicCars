@@ -69,3 +69,7 @@ Strict TypeScript, **305 unit tests in 29 files**, **20 desktop/mobile browser t
 Application code, collection settings, dependencies and lockfile are unchanged. Baselines, raw seller evidence, credentials, databases and recovery copies remain private and ignored. The public snapshot excludes the configured restricted observations.
 
 [Aggregate refresh evidence](refresh-2026-10-26.json). Publication results are recorded separately in [delivery status](../DELIVERY.md).
+
+## Publication
+
+Published data commit [`aa44d56`](https://github.com/PNelsonFTP/ClassicCars/commit/aa44d565f7d0a6c44f7dd6e50bebcdb1e5bc937a) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/40343140819) and [all six CI jobs](github-ci-2026-10-26.json). [Live verification](github-pages-2026-10-26.json) matched all 106 public JSON files and the catalog consumed by the browser, with search, details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passing without runtime errors, missing site assets or horizontal overflow. All 305 unit tests / 29 files, 20 desktop/mobile browser tests, root and project static exports, native release checks, SBOM validation and the container release pass. The closing documentation-only commit does not change published application/data bytes.

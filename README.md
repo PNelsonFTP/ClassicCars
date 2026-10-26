@@ -1,12 +1,14 @@
 # MuscleScout
 
-Published October 22, 2026 at [MuscleScout on GitHub Pages](https://pnelsonftp.github.io/ClassicCars/). The location/results update passed all six CI jobs and [live verification](docs/validation/github-pages-2026-10-22.json), including city/ZIP lookup, approximate four-hour results, mobile layouts and exact hashes for all 104 public JSON files. See [delivery status](docs/DELIVERY.md) for the deployed commit and workflow records.
+Inventory refreshed and published October 26, 2026 at [MuscleScout on GitHub Pages](https://pnelsonftp.github.io/ClassicCars/). All six CI jobs and [live verification](docs/validation/github-pages-2026-10-26.json) passed, including approximate four-hour results, city/ZIP lookup, mobile layouts and exact hashes for all 106 public JSON files. See [delivery status](docs/DELIVERY.md) for the deployed commit and workflow records.
 
 The October 21 update adds **about-four-hour road travel**, city/ZIP home controls, visible near-limit matches and a static travel table for GitHub Pages. It also improves location evidence, collector recovery/priority, duplicate stock matching, alerts and publication checks. See the [implementation and operating guide](docs/TRAVEL_AND_RESULTS_IMPLEMENTATION.md); the [review](docs/LOCATION_AND_RESULTS_REVIEW_2026-10-21.md) retains the original measured gaps. Inventory sightings remain dated October 19; geographic enrichment does not renew them. The verified release provides 1,484 ads with road estimates and 488 default nearby ads (483 groups, including 157 near-limit ads). See the [verification record](docs/validation/travel-2026-10-21.json): 305 unit tests, 20 desktop/mobile tests and both static exports pass.
 
 Documentation and approved cleanup completed October 20, 2026. Inventory at that cleanup remained the October 19 export. See the [full project review](docs/PROJECT_REVIEW_2026-10-20.md) and [cleanup results](docs/CLEANUP_RESULTS_2026-10-20.md): High/Medium candidates were cleaned, required backup copies and all Low files preserved, and both static builds, 276 unit tests and 18 browser tests passed. No commit or publication was performed during that cleanup turn.
 
 ## October 26 inventory refresh
+
+Published data commit [`aa44d56`](https://github.com/PNelsonFTP/ClassicCars/commit/aa44d565f7d0a6c44f7dd6e50bebcdb1e5bc937a) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/40343140819) and [all six CI jobs](docs/validation/github-ci-2026-10-26.json). [Live verification](docs/validation/github-pages-2026-10-26.json) matched all 106 public JSON files and the catalog consumed by the browser, with search, details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passing without runtime errors, missing site assets or horizontal overflow.
 
 The October 26 refresh retains **4,737 ads / 4,711 groups**, including **4,718 public ads / 4,698 public groups**. It added **159 ads**, recorded **186 numeric asking-price changes** (106 decreases, 80 increases), and refreshed details for **290 distinct ads**. **1 previously tracked ad** is newly seller-reported sold.
 

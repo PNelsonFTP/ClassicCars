@@ -1,12 +1,12 @@
 # Validation — 1.1.0
 
-## October 26 inventory refresh — locally verified
+## October 26 inventory refresh — verified live
 
 The October 26 refresh retains **4,737 ads / 4,711 groups**, including **4,718 public ads / 4,698 public groups**. It added **159 ads**, recorded **186 numeric asking-price changes** (106 decreases, 80 increases), and refreshed details for **290 distinct ads**. **1 previously tracked ad** is newly seller-reported sold.
 
 Strict TypeScript, 305 unit tests / 29 files, 20 desktop/mobile browser tests, isolated release smoke, both static exports, browser export checks, SQLite integrity and the seven-report SBOM chain pass. [Public export verification](docs/validation/public-export-review-2026-10-26.json) confirms canonical redaction and observation-date parity, all 48 detail chunks, matching built data and configured credential exclusion. [Travel verification](docs/validation/travel-refresh-2026-10-26.json) confirms 148 city routes and 1,493 estimated ads. Default four-hour results contain 498 ads / 493 groups; excluding near-limit results gives 335 ads / 334 groups; strict reported-vehicle routes return 199 ads.
 
-See the [refresh report](docs/validation/refresh-2026-10-26-comparison.md) and [root/project browser receipt](docs/validation/static-review-2026-10-26.json). Private backups and original evidence are retained. No ingest runs, collection leases or task-owned test/router listeners remain active. Live publication is recorded separately in [delivery status](docs/DELIVERY.md).
+See the [refresh report](docs/validation/refresh-2026-10-26-comparison.md) and [root/project browser receipt](docs/validation/static-review-2026-10-26.json). Private backups and original evidence are retained. No ingest runs, collection leases or task-owned test/router listeners remain active. Published data commit [`aa44d56`](https://github.com/PNelsonFTP/ClassicCars/commit/aa44d565f7d0a6c44f7dd6e50bebcdb1e5bc937a) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/40343140819) and [all six CI jobs](docs/validation/github-ci-2026-10-26.json). [Live verification](docs/validation/github-pages-2026-10-26.json) matched all 106 public JSON files and the catalog consumed by the browser, with search, details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passing without runtime errors, missing site assets or horizontal overflow. The closing documentation commit records these results without changing deployed application/data bytes.
 
 ## October 22 GitHub Pages release — verified live
 
