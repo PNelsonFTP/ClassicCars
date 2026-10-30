@@ -1,5 +1,11 @@
 # MuscleScout handoff — 1.1.0
 
+## October 30 inventory refresh
+
+The October 30 refresh retains **4,861 ads / 4,831 groups**, including **4,842 public ads / 4,818 public groups**. It added **124 ads**, recorded **125 numeric asking-price changes** (91 decreases, 34 increases), and refreshed details for **301 distinct ads**. **2 previously tracked ads** are newly seller-reported sold.
+
+The configured scan refreshed 95 catalog pages and observed 3,152 distinct ads. Updated road tables provide 1,527 estimated ads from 149 city routes; default approximate four-hour shopping returns 498 ads / 490 groups, including 170 near-limit ads. Restricted sources, missing detail pages and remaining enrichment are recorded in the [dated refresh report](docs/validation/refresh-2026-10-30-comparison.md). No sale is inferred from an absent page.
+
 ## October 26 inventory refresh
 
 Published data commit [`aa44d56`](https://github.com/PNelsonFTP/ClassicCars/commit/aa44d565f7d0a6c44f7dd6e50bebcdb1e5bc937a) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/40343140819) and [all six CI jobs](docs/validation/github-ci-2026-10-26.json). [Live verification](docs/validation/github-pages-2026-10-26.json) matched all 106 public JSON files and the catalog consumed by the browser, with search, details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passing without runtime errors, missing site assets or horizontal overflow.
@@ -130,7 +136,7 @@ The [access audit and operating guide](docs/SOURCE_ACCESS.md) replaces blanket �
 
 403 responses remain for Duffy’s, 500 Classic and Classics on Autotrader in HTTP/Chromium tests. Autotrader still serves an unavailable template. Forum, auction and other provider restrictions, missing eBay access, unresolved cross-listings, the ClassicCars detail backlog and J & S 404s remain documented. No new dependencies or credentials were added. [Machine-readable access evidence](docs/validation/source-access-2026-09-12.json).
 
-Operational documentation reviewed October 26, 2026; the latest inventory refresh is [October 26](docs/validation/refresh-2026-10-26-comparison.md). The September 10 publication adds live Pages and remote CI evidence; earlier 1.1.0 release checks retain their September 8 dates. Original local commits `4835c0a` (delivery) and `42a6622` (improvements) are preserved in the private prepublication Git bundle. Their public-history equivalents exclude research fixture data. The public [PNelsonFTP/ClassicCars repository](https://github.com/PNelsonFTP/ClassicCars) is configured as `origin`. [Delivery status](docs/DELIVERY.md) records the approved publication and actual remote results.
+Operational documentation reviewed October 30, 2026; the latest inventory refresh is [October 30](docs/validation/refresh-2026-10-30-comparison.md). The September 10 publication adds live Pages and remote CI evidence; earlier 1.1.0 release checks retain their September 8 dates. Original local commits `4835c0a` (delivery) and `42a6622` (improvements) are preserved in the private prepublication Git bundle. Their public-history equivalents exclude research fixture data. The public [PNelsonFTP/ClassicCars repository](https://github.com/PNelsonFTP/ClassicCars) is configured as `origin`. [Delivery status](docs/DELIVERY.md) records the approved publication and actual remote results.
 
 ## Open and review
 
@@ -157,7 +163,7 @@ Setup preserves the database, environment/password, settings and workspace. The 
 
 ## Inventory and outstanding data work
 
-The latest retained inventory is the **October 26, 2026 refresh: 4,737 ads / 4,711 groups**, including **4,718 public ads / 4,698 public groups**. It added 159 ads, recorded 186 numeric asking-price changes and refreshed 290 distinct detail pages. The public export is dated `2026-10-26T14:42:34.187Z`; source observation dates remain distinct from geographic generation. ClassicCars has 4,459 due detail tasks after bounded enrichment; existing GR Auto and J & S missing-page tasks and source-access restrictions remain open. See the [dated comparison](docs/validation/refresh-2026-10-26-comparison.md). Ads and groups are not verified unique physical vehicles. The updated Wheaton road atlas provides estimates for 1,493 ads from 148 city routes, with explicit advertised/reported location evidence and unknown destinations.
+The latest retained inventory is the **October 30, 2026 refresh: 4,861 ads / 4,831 groups**, including **4,842 public ads / 4,818 public groups**. It added 124 ads, recorded 125 numeric asking-price changes and refreshed 301 distinct detail pages. The public export is dated `2026-10-30T19:39:35.505Z`; source observation dates remain separate from geographic generation. ClassicCars has 4,526 due detail tasks after bounded enrichment. Existing missing-page tasks and source-access restrictions remain open; see the [dated comparison](docs/validation/refresh-2026-10-30-comparison.md). Ads and groups are not verified unique physical vehicles. Updated road tables provide 1,527 estimated ads from 149 city routes; default approximate four-hour shopping returns 498 ads / 490 groups, including 170 near-limit ads.
 
 The October 19 collection finished through the CLI. Both root and `/ClassicCars` exports and a private database/environment backup are retained. Process state must be checked at the time of use; historical refresh reports do not prove that a worker is currently running or stopped. Earlier dated results follow.
 
