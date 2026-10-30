@@ -1,0 +1,697 @@
+{
+  "checkedAt": "2026-10-30T19:44:13.145Z",
+  "sourceCommit": "cc7315652bc1bdb92fa330dd5980ffcf0f7fd0fd",
+  "url": "https://pnelsonftp.github.io/ClassicCars/",
+  "status": "passed",
+  "files": [
+    {
+      "path": "data/catalog.json",
+      "bytes": 10884944,
+      "sha256": "c4de9fa0489f3753f2fbaab333ced5478f7c3a7ea3e79c6338770cc8f03368ae",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/04803a300eadb8ec68d3a557.json",
+      "bytes": 479634,
+      "sha256": "04803a300eadb8ec68d3a557806fe855ea236fbd238755cad74190674a8e0dcd",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/11b5eb5c7c5be874b9e24301.json",
+      "bytes": 345558,
+      "sha256": "11b5eb5c7c5be874b9e2430170629eff559590b39ed768c5b59f21735a612eab",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/1a0e12479995daa294da120e.json",
+      "bytes": 342789,
+      "sha256": "1a0e12479995daa294da120e9d680ced75d4a4f9d3aed1b975d738444c6a76f0",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/1af38df435cebf126a7a5aa5.json",
+      "bytes": 343167,
+      "sha256": "1af38df435cebf126a7a5aa592df4d02fd89706e6402ff4afdf63d5426de3847",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/1bf6bdd12aa0d9c19921bbc3.json",
+      "bytes": 515338,
+      "sha256": "1bf6bdd12aa0d9c19921bbc334efdffc9704b598995aa01a1788bd28fa470a8e",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/1e621489b7e46be6d12fb9b7.json",
+      "bytes": 338912,
+      "sha256": "1e621489b7e46be6d12fb9b7c0f5a29492e7bbd971f34d3781b4ea51bad0d720",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/242184e5877b7e34ac7d773c.json",
+      "bytes": 485120,
+      "sha256": "242184e5877b7e34ac7d773c99076ad13eb0a16688bc5f882375fd6d32944c20",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/24697e4c0a37593b59dc2908.json",
+      "bytes": 503896,
+      "sha256": "24697e4c0a37593b59dc2908bc08bb70777de894a3b65784b4077a2d4d63b38b",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/26ab3b3b3b7ea63d22436567.json",
+      "bytes": 624199,
+      "sha256": "26ab3b3b3b7ea63d224365673cf8ad86decf70415d65cb7ee169ada78a13c0a9",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/2d7183518a53ba8b98b03576.json",
+      "bytes": 143189,
+      "sha256": "2d7183518a53ba8b98b035760ce8351387b783259b882c5ec1cfbcf617549c1b",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/2efdbb706a3d914c2cc29c1d.json",
+      "bytes": 509544,
+      "sha256": "2efdbb706a3d914c2cc29c1d0b573629c5d332d11519db5931ddea3611f2590f",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/2fefcdd38786b823bc728eac.json",
+      "bytes": 506850,
+      "sha256": "2fefcdd38786b823bc728eac2b51d7cc06550751f8e6e608fbb3886ca5a4fb6a",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/3cf4dbe1fb465101f049a714.json",
+      "bytes": 342244,
+      "sha256": "3cf4dbe1fb465101f049a7141b0ba804845bbfca3bd9935b65f0a3dfa27f2d9e",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/3da1450cc3cd52fcea25bf94.json",
+      "bytes": 359759,
+      "sha256": "3da1450cc3cd52fcea25bf94e9df133738589a8e5f8eeb2af7a01ff2b93df3e1",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/493ea51b03cbdc6b8a846738.json",
+      "bytes": 381732,
+      "sha256": "493ea51b03cbdc6b8a846738aeab75f3a9eb4fda16e7a49a20857a3f47000cf5",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/4d1b798393030de16253f0cc.json",
+      "bytes": 423039,
+      "sha256": "4d1b798393030de16253f0cc47059c0938d0e4adee2200f292a33e47337608e6",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/4d6ac6ad7c0eb7a2bb67a257.json",
+      "bytes": 340744,
+      "sha256": "4d6ac6ad7c0eb7a2bb67a2579e75c756eeabd03209248fdacf3aecd469c02b76",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/50a4e303a1124a204bba4b70.json",
+      "bytes": 347485,
+      "sha256": "50a4e303a1124a204bba4b70bdcc5cb4ce64d4e1194626db5acdaec6e401bdcf",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/5ad6e00a4db08d3d8e1a0c38.json",
+      "bytes": 498723,
+      "sha256": "5ad6e00a4db08d3d8e1a0c38589aeab7d72bc978c3ad006dab706fab27e72f0a",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/6083e3e943adeb315cae4c8b.json",
+      "bytes": 412302,
+      "sha256": "6083e3e943adeb315cae4c8ba938dc597b8296460dba8193c3537c2a87554366",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/6a1ee100b9d8e2b2929e55f4.json",
+      "bytes": 377114,
+      "sha256": "6a1ee100b9d8e2b2929e55f41ea8772f545b6a8b91bdece29b71cdfc26133171",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/6e2b52a2c776a5c4db70a345.json",
+      "bytes": 337375,
+      "sha256": "6e2b52a2c776a5c4db70a3450393f0515bc4dd4dc18775860ece59520e2ff7f3",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/6ead80c05b91441d4fe437ab.json",
+      "bytes": 342500,
+      "sha256": "6ead80c05b91441d4fe437ab32093bd1e4758dcf8e9e86c887c4164c52c5b7f8",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/7635c0189ca2ce6c515a9620.json",
+      "bytes": 351703,
+      "sha256": "7635c0189ca2ce6c515a962006a1578e9abc87c3b74e47d28e6280a7c64378ea",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/79501bdfd22f7ac5d871c818.json",
+      "bytes": 543283,
+      "sha256": "79501bdfd22f7ac5d871c8189a095c6f55d695c96e171da084767426fffc45d6",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/7c1b32b088215e0282099ff6.json",
+      "bytes": 389123,
+      "sha256": "7c1b32b088215e0282099ff61f09db74dc23c90fc36e1fc983ca7c198b55f5c9",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/81f4d91ef23e5cca91d6a83f.json",
+      "bytes": 363873,
+      "sha256": "81f4d91ef23e5cca91d6a83f266496497cdd40d996f1f7de64046773c48c3641",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/8b0fb54bdcb8ebe1fb6f79be.json",
+      "bytes": 394272,
+      "sha256": "8b0fb54bdcb8ebe1fb6f79be0fd3b80fc0b32f82dcf209d0e4ee60d1ccd3864e",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/8e95c96e152a6277e4af0ffc.json",
+      "bytes": 395640,
+      "sha256": "8e95c96e152a6277e4af0ffc3a4815ff05b7465b0d2e59eb8815e45ab0ee044c",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/92b73e426333e426a7891960.json",
+      "bytes": 477975,
+      "sha256": "92b73e426333e426a7891960b8b0035d2d6bc9a59e240b044dc51c15457de8a0",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/95304a48d8eda333d9ad254f.json",
+      "bytes": 341272,
+      "sha256": "95304a48d8eda333d9ad254ff49c3cb6372a9c5e04d9e0493e201f6e4cf52148",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/9807237a3556461ae96cba47.json",
+      "bytes": 498318,
+      "sha256": "9807237a3556461ae96cba4799306cd9b60b4305a914633bdcf11f55c4626909",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/9a32dc41902413221ca45bfb.json",
+      "bytes": 434913,
+      "sha256": "9a32dc41902413221ca45bfb1ad7b94d4f679d2c6c9acfe8005540655adeb461",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/af5623a364614cf82e32ca69.json",
+      "bytes": 391456,
+      "sha256": "af5623a364614cf82e32ca6960e162904d000e081b3625fd54458d1fc2483252",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/b1b74547bf0bf9d7baf93bc6.json",
+      "bytes": 340628,
+      "sha256": "b1b74547bf0bf9d7baf93bc643bf5ca3e58ffc1b69053fdddb7e681600eec0ba",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/b2869f3749f3ddf8fa9b29b1.json",
+      "bytes": 383812,
+      "sha256": "b2869f3749f3ddf8fa9b29b11fa3c6cc33891f3116c1f8222b1fc36a3434f316",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/c1c7bed313bb27b0ad51da91.json",
+      "bytes": 343052,
+      "sha256": "c1c7bed313bb27b0ad51da91986bd193ac184262af91f3db50f587a8b36dab91",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/c6b568b0e8e764f2c99d571e.json",
+      "bytes": 388118,
+      "sha256": "c6b568b0e8e764f2c99d571ee4bf107d790bfaa43d6249a5ccca88d8a2c7c912",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/cd48a70509b2a0cbfddc4084.json",
+      "bytes": 463887,
+      "sha256": "cd48a70509b2a0cbfddc40846dadef454703db60cac597127022ee2911e8842b",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/cdd6c1c0c9e332fe77a40b0b.json",
+      "bytes": 366610,
+      "sha256": "cdd6c1c0c9e332fe77a40b0bd6cf3360ee9b4feceeb22b0efa6b11741500c142",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/d0a86c6ee57fcb3efc3a0847.json",
+      "bytes": 475468,
+      "sha256": "d0a86c6ee57fcb3efc3a08475546de10a12b47ccf1e8cbba273f2514be80036e",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/dca0d89ea0ad18adad35ad3a.json",
+      "bytes": 506940,
+      "sha256": "dca0d89ea0ad18adad35ad3a0bcd84d3ecd0ab85e8616d041e1134280061bde7",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/dd4b19dbe77d9badaef0c7d1.json",
+      "bytes": 510595,
+      "sha256": "dd4b19dbe77d9badaef0c7d19adbdecec6de2c88eab46cdea5235d1bb11c2bed",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/de4942c92cc8e466f958acab.json",
+      "bytes": 337561,
+      "sha256": "de4942c92cc8e466f958acab0f4981a690392d21b6d424f4f035d9445647e5f1",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/e095d2b1fb0c4b196cb9c371.json",
+      "bytes": 356791,
+      "sha256": "e095d2b1fb0c4b196cb9c3715abc68b6e653df40b4d677b3f0c60764c406adad",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/e448c5d1a09515b71e7f0d37.json",
+      "bytes": 361900,
+      "sha256": "e448c5d1a09515b71e7f0d37c2c4f4b70d8928af6510b5bd7be376e17f927029",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/e646a3414c631abb21103315.json",
+      "bytes": 345230,
+      "sha256": "e646a3414c631abb21103315b0f65b4bf359fbe10873b8f1c23230188ce905c1",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/f9451c7b15847ba2708c1006.json",
+      "bytes": 338804,
+      "sha256": "f9451c7b15847ba2708c1006ad134af9a14b796140f4fcb02394d964c396de7c",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/details/fc3c96ee093268894a8255b9.json",
+      "bytes": 387224,
+      "sha256": "fc3c96ee093268894a8255b92a11f3fe5a7319edbda961527891d68295948138",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/snapshot.json",
+      "bytes": 20140081,
+      "sha256": "62c3a0329b679a210b5f40ad864c9ed539b083db9fce60d590ca2f24da34b909",
+      "matchesLocal": true
+    },
+    {
+      "path": "data/travel.json",
+      "bytes": 172998,
+      "sha256": "a7c686b4578f19c19ec6a293570d8ded98956b5c760ec1769689735cb26b5f4b",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/AK.json",
+      "bytes": 98680,
+      "sha256": "4fd996d86426f50b9a6ac830f84bb62341bf2ca8f5029aa8edec23c043cbbfe5",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/AL.json",
+      "bytes": 262756,
+      "sha256": "415c044366c9f5e573958c9f1e4d6fffc491613ecfb16bd5966b87d82036dc5f",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/AR.json",
+      "bytes": 368974,
+      "sha256": "3a13859966d1b113cba17ed1d361a4544c4b34635c8dd55784d934781e2470b6",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/AZ.json",
+      "bytes": 157983,
+      "sha256": "da2272ae21a90d4cddfe87fd688c8a4bf418ce33150f2485f3a61c1f24682e9a",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/CA.json",
+      "bytes": 676013,
+      "sha256": "2a53029cc561fa6e3b18c19020626221ed32bd7a47de002638d40d03475fff99",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/CO.json",
+      "bytes": 196339,
+      "sha256": "d6fc7629e0f18687441996140229306a1d1631dfc2a7e6a3802ecb5d2e4bbf53",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/CT.json",
+      "bytes": 121848,
+      "sha256": "3586713df8c74173339513e096ec1bede3cc3789d9ed61be6f65da7e11c639e8",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/DC.json",
+      "bytes": 38591,
+      "sha256": "bb0be8e0e380f4b1d12185de31c3c9a0f55405568558738c1ea0635d5439d9c7",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/DE.json",
+      "bytes": 29552,
+      "sha256": "c1785ce0324b9401940c9ae6cc9857339804262a2fc675c1f82d8f913c29a4df",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/FL.json",
+      "bytes": 403345,
+      "sha256": "a3f730657fde28b858258a6d721e45785f0e640ad2c3b87a3d8433d6c3ea9679",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/GA.json",
+      "bytes": 324604,
+      "sha256": "d363e360019dfeb32a4eabba420076a10382c0b0e546cacd6d7338326b2904b7",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/HI.json",
+      "bytes": 50827,
+      "sha256": "39ac9153bb032a4e8564d8765210e56b85295c7d09aa950409de68cddb46ff60",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/IA.json",
+      "bytes": 580595,
+      "sha256": "6962b6bf7b43747cdfaef3c249942e481c5e07b2649598efa4d01b65baa1af62",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/ID.json",
+      "bytes": 106161,
+      "sha256": "f6a1b81577a7d6b0e0ac873ded2b10b47eb579856b7ad4a8a9f4989074231692",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/IL.json",
+      "bytes": 727832,
+      "sha256": "556befa6e5435d3c37dde1dd3875cee47c5f98b84a7b7ae209eb5f85e86855a5",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/IN.json",
+      "bytes": 452625,
+      "sha256": "0ba190218fbae7cb70ad13090a4e285e4a0e5374781feae1a7440ffefeecce16",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/KS.json",
+      "bytes": 471045,
+      "sha256": "4d1741a100bb834957e328079deeb18faf4574a4039e15a636838bacea20efe4",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/KY.json",
+      "bytes": 292216,
+      "sha256": "29d6d51237f4098c61c17dd03cfc57d84cb18786c1c13772c509c1399d8c5d53",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/LA.json",
+      "bytes": 260792,
+      "sha256": "3cdb23865cf23463765a8eb9ba6205361ea3a34ea83617745d0a6823a8e04ed8",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/MA.json",
+      "bytes": 192182,
+      "sha256": "787b6150ce883d77b93104aaa8cdae15b69a785123a000fa07268b1dcd05d17b",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/manifest.json",
+      "bytes": 3242,
+      "sha256": "5a03080a319509a56cbc1ef62608a563b6d108757e0f51b1e03fda46cf03aa7f",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/MD.json",
+      "bytes": 214307,
+      "sha256": "475fe46f9b3e34d86f80be657a74e6e8edffb8eca95317d2b1ab0b98f3eff93e",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/ME.json",
+      "bytes": 178212,
+      "sha256": "2e1401beb47be41f9310a0947b8e5c4e1e246d283bef4f4d646ee68a18addbbf",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/MH.json",
+      "bytes": 286,
+      "sha256": "5337411e200c9383d8ccef2b1c0e14f5ffad64357e5310ad5bfa46c09f169730",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/MI.json",
+      "bytes": 544019,
+      "sha256": "7970af409a80d2a414f3aa91193284f754a7ebbf12849dd321f504b0252b72cb",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/MN.json",
+      "bytes": 742010,
+      "sha256": "9154879f734a962aebb987373e72ce08d1f48a9ce62221d8685f6b260fceceba",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/MO.json",
+      "bytes": 562471,
+      "sha256": "94ac9b17c7aca5ec802d2e4c5b3f89cb297e3eb36fd72502ca5458df8573ba52",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/MS.json",
+      "bytes": 200163,
+      "sha256": "de117ab09d640aa7d2c7e1e10260071e70a722f2009d6d24a68bfacf6626a545",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/MT.json",
+      "bytes": 163191,
+      "sha256": "84a1e75e0b5df4770f68155dd49bfff01ebbe11337a84415e69158ebb0335ad5",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/NC.json",
+      "bytes": 447590,
+      "sha256": "dc7fb6cd41f656ebf5c0615e70545f8f2aa990606adad1645143c39e6eb17c3f",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/ND.json",
+      "bytes": 413638,
+      "sha256": "76b522652560820561498b866943e4bf97fb50ab02bdbe17a9d83c6352cf008b",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/NE.json",
+      "bytes": 368272,
+      "sha256": "162e868dc427fb3cc257a2176d073c85e4ccfba7268fa1a497c1ce84b4bf8a97",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/NH.json",
+      "bytes": 97064,
+      "sha256": "783b08aeab4be29d6f84c2add87ee224d43e55c433feec3bc08773b53bdbd3fa",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/NJ.json",
+      "bytes": 307964,
+      "sha256": "d518c1c91e7446264969beda2baa3b9edafed46aa8252e3e39daee1dc52f9e0b",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/NM.json",
+      "bytes": 161149,
+      "sha256": "cf88779fc94d6df835804c8d314811b136468ca89ad1280c574ce11836c505e1",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/NV.json",
+      "bytes": 67462,
+      "sha256": "86d04d46685f64d9707bda5967a52c8fbd4c510941ba12bea09ef56baf026022",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/NY.json",
+      "bytes": 668345,
+      "sha256": "4bb71ed83639e2d211956c8a9b54cc38cf0d0770f2170f1c2a9fe448349866a0",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/OH.json",
+      "bytes": 663409,
+      "sha256": "0b2053c7d7e5af4cbf180998ff1923b9a26b139fabd8813aaab14a54a110a214",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/OK.json",
+      "bytes": 279149,
+      "sha256": "c3e86c69c0244859173a1f4ce8fe813378314b1865885e8b451a4decc7c35ab3",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/OR.json",
+      "bytes": 164898,
+      "sha256": "3cb1b2bdea4a1229ff75e98d5d5c32c972368e5ffb42e97b40ecebadaf6afb40",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/PA.json",
+      "bytes": 1052901,
+      "sha256": "f900d23808b7c8067914b88659ae5f31b27588de881118735f124c3708889cc0",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/PR.json",
+      "bytes": 195808,
+      "sha256": "269f55015150bf8c820b91846f34f4f2fce9a7c2eaf0189a18a64e374d14aa41",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/RI.json",
+      "bytes": 24817,
+      "sha256": "62fc6ffe9f06dce50e9319c88c9d72bd85b2665874bcd70f1c4230ceeb50fbba",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/SC.json",
+      "bytes": 192812,
+      "sha256": "f660084fa3b51e8c4ba22271b8608a274e0d9c3ec41148c6decdd30ffccf0859",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/SD.json",
+      "bytes": 349967,
+      "sha256": "a7a2090af8e9b2b0b51a924e75af6a59e6f02b611228a8a3918e6ddc279f856e",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/TN.json",
+      "bytes": 316313,
+      "sha256": "4c03843d58b1db8a429ee612e121f569cc07450cfb447499c638d2a4bab02373",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/TX.json",
+      "bytes": 775691,
+      "sha256": "f5eb92448c762bc8fe9728252ee07a00fb267a045b2bc0ac08af1a5d6ef29395",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/UT.json",
+      "bytes": 114045,
+      "sha256": "707d2c8cee7935585e58f9325828de9364edf3616b37f71814fdc760eb37d3d4",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/VA.json",
+      "bytes": 362835,
+      "sha256": "44a5dbb5e5a9dd69b3644b76225e101ee630ca8f4bd17aa9578143b4c3613626",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/VT.json",
+      "bytes": 113330,
+      "sha256": "6ae6b659569f72f6489b0bb5895f68610303f5f03bd0879285809cc4873aab45",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/WA.json",
+      "bytes": 235423,
+      "sha256": "f5e463f9240133bcdbea1236d99cca78630ee2c07c61f8e03c7b3a5296f445bf",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/WI.json",
+      "bytes": 569021,
+      "sha256": "22553b97951c3c9160c7c377c5f2488c7effe89f89d6b3244862ae34f9241996",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/WV.json",
+      "bytes": 218738,
+      "sha256": "102caa2d612b935ee72ae827c01b0f2f7c86ec13293cd07a112197f4dc1f062b",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/WY.json",
+      "bytes": 69468,
+      "sha256": "ae0be1b16171d6be288ee07bf01a9cbdc6a1f79cdc8cb3a5283b59c444615a3c",
+      "matchesLocal": true
+    },
+    {
+      "path": "places/zip-index.json",
+      "bytes": 532729,
+      "sha256": "4c7eecf9a8938f3129493a598e6d402b7b585f367803de98ac12189b937abbc3",
+      "matchesLocal": true
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1440,
+      "documentWidth": 1440,
+      "realRoadEstimateDisplayed": true,
+      "realImageLoaded": true,
+      "detailsPassed": true
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "realRoadEstimateDisplayed": true,
+      "realImageLoaded": true,
+      "detailsPassed": true
+    },
+    {
+      "width": 375,
+      "documentWidth": 375,
+      "realRoadEstimateDisplayed": true,
+      "realImageLoaded": true,
+      "detailsPassed": true
+    }
+  ],
+  "publicAds": 4842,
+  "generatedAt": "2026-10-30T19:39:35.505Z",
+  "browserCatalogHashMatches": true,
+  "allPublicJsonHashesMatch": true,
+  "defaultFourHourAds": 498,
+  "defaultFourHourGroups": 490,
+  "nearLimitExcludedAds": 328,
+  "strictVehicleRouteAds": 200,
+  "cityZipLookup": true,
+  "unsupportedOriginDoesNotBorrowRoutes": true,
+  "travelPreferencesPersist": true,
+  "typoSearchPassed": true,
+  "sourceMethods": 26,
+  "runtimeErrors": [],
+  "missingAssets": [],
+  "workflowUrl": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/41117389993",
+  "workflowConclusion": "success",
+  "ciUrl": "https://github.com/PNelsonFTP/ClassicCars/actions/runs/41117364053",
+  "ciConclusion": "success",
+  "testsPassed": 305,
+  "testFilesPassed": 29,
+  "e2eTestsPassed": 20,
+  "latestInventoryObservation": "2026-10-30T19:38:58.985Z",
+  "screenshots": "Private local evidence: data/reports/refresh-2026-10-30/live/"
+}
