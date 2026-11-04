@@ -1,10 +1,10 @@
 # Validation — 1.1.0
 
-## November 4 Volo link repair — locally verified
+## November 4 Volo link repair — verified live
 
 The [repair receipt](docs/validation/volo-link-repair-2026-11-04.json) confirms HTTP 404 → HTTP 200 replacement matching stock/year/model and six identical source photographs. Exactly one canonical payload changed; all other listing payloads, historical observations, prices, source dates, groups, settings and private workspace were preserved. No inventory was added or removed. SQLite integrity passes.
 
-Both hosting paths build and pass browser export checks; public snapshot/catalog/detail hashes and canonical redaction match. No obsolete chunks or configured credentials are present in either output. Road evidence and the 489-ad approximate four-hour result are unchanged. See [public export checks](docs/validation/public-export-review-volo-link-2026-11-04.json) and [static browser checks](docs/validation/static-review-volo-link-2026-11-04.json). Application code, dependencies and collection permissions are unchanged. Publication is recorded after live verification.
+Both hosting paths build and pass browser export checks; public snapshot/catalog/detail hashes and canonical redaction match. No obsolete chunks or configured credentials are present in either output. Road evidence and the 489-ad approximate four-hour result are unchanged. See [public export checks](docs/validation/public-export-review-volo-link-2026-11-04.json) and [static browser checks](docs/validation/static-review-volo-link-2026-11-04.json). Application code, dependencies and collection permissions are unchanged. Published correction commit [`bc72070`](https://github.com/PNelsonFTP/ClassicCars/commit/bc7207026008b008b7b3b2a7846600f4456a7eae) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/41886531152) and the [five completed CI jobs](docs/validation/github-ci-volo-link-2026-11-04.json). The macOS 15 job has not completed and remains queued as of 2026-11-04T18:29:29.107052+00:00. [Live verification](docs/validation/github-pages-volo-link-2026-11-04.json) matched all 108 public JSON files, checked the repaired listing dialog and both Volo group links, and passed search, images, city/ZIP lookup, driving controls and desktop/mobile layouts. No runtime errors, missing site assets or horizontal overflow were found. The closing documentation commit does not change deployed application/data bytes.
 
 ## November 4 inventory refresh — verified live
 
