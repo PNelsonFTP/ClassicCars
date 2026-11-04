@@ -1,0 +1,31 @@
+{
+  "repairedAt": "2026-11-04T18:18:54.056Z",
+  "verifiedAt": "2026-11-04T18:17:58.168Z",
+  "historicalId": "volo:19394",
+  "successorId": "volo:19445",
+  "previousUrl": "https://www.volocars.com/auto-sales/vehicles/19394/1968-chevrolet-camaro-heidts-r-d-car",
+  "currentUrl": "https://www.volocars.com/auto-sales/vehicles/19445/1968-chevrolet-camaro-heidts-r-d-car",
+  "previousStatus": 404,
+  "currentStatus": 200,
+  "matchingStockNumber": "V22466",
+  "matchingYear": 1968,
+  "matchingModel": "Camaro",
+  "identicalSourcePhotos": 6,
+  "existingGroupPreserved": "vehicle:0e144f565ffa9917573e",
+  "originalObservationDatesPreserved": true,
+  "originalSourceObservationsPreserved": true,
+  "canonicalAds": 4961,
+  "changedCanonicalRecords": 1,
+  "newAds": 0,
+  "removedAds": 0,
+  "privateWorkspaceUnchanged": true,
+  "collectionSettingsUnchanged": true,
+  "databaseIntegrity": "ok",
+  "historicalMissingTaskRetained": true,
+  "note": "The obsolete source ID remains a historical blocked task; the replacement source ID already has its own active collection task. No duplicate was created and no sale/removal or fresh inventory sighting was inferred from the link correction.",
+  "exported": {
+    "ads": 4942,
+    "groups": 4914,
+    "generatedAt": "2026-11-04T18:18:54.352Z"
+  }
+}

@@ -1,5 +1,11 @@
 # Validation — 1.1.0
 
+## November 4 Volo link repair — locally verified
+
+The [repair receipt](docs/validation/volo-link-repair-2026-11-04.json) confirms HTTP 404 → HTTP 200 replacement matching stock/year/model and six identical source photographs. Exactly one canonical payload changed; all other listing payloads, historical observations, prices, source dates, groups, settings and private workspace were preserved. No inventory was added or removed. SQLite integrity passes.
+
+Both hosting paths build and pass browser export checks; public snapshot/catalog/detail hashes and canonical redaction match. No obsolete chunks or configured credentials are present in either output. Road evidence and the 489-ad approximate four-hour result are unchanged. See [public export checks](docs/validation/public-export-review-volo-link-2026-11-04.json) and [static browser checks](docs/validation/static-review-volo-link-2026-11-04.json). Application code, dependencies and collection permissions are unchanged. Publication is recorded after live verification.
+
 ## November 4 inventory refresh — verified live
 
 The November 4 refresh retains **4,961 ads / 4,927 groups**, including **4,942 public ads / 4,914 public groups**. It added **100 ads**, recorded **60 numeric asking-price changes** (42 decreases, 18 increases), and refreshed details for **302 distinct ads**. No previously tracked ads changed to seller-reported sold.

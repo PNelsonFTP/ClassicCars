@@ -1,5 +1,11 @@
 # MuscleScout 1.1.0 delivery
 
+## November 4 Volo listing link repair
+
+Volo relisted the 1968 Camaro under ad ID `19445`; the former `19394` URL returns HTTP 404. The replacement returned HTTP 200 and matches stock `V22466`, year/model and six exact source photographs. The historical record now links to the [working Volo page](https://www.volocars.com/auto-sales/vehicles/19445/1968-chevrolet-camaro-heidts-r-d-car). Both records were already grouped together; no new ad, merge or removal was needed.
+
+The correction preserves original source IDs, observation dates, price history, existing groups and the private workspace. A separate link-correction audit records the verified destination. The obsolete source ID's missing task remains historical evidence; the replacement already has its own collection task. Public counts remain **4,942 ads / 4,914 groups**, and the approximate four-hour search remains **489 ads / 479 groups**. See the [repair receipt](validation/volo-link-repair-2026-11-04.json), [public export check](validation/public-export-review-volo-link-2026-11-04.json) and [static browser checks](validation/static-review-volo-link-2026-11-04.json). Publication is recorded after live verification.
+
 ## November 4 inventory refresh
 
 The November 4 refresh retains **4,961 ads / 4,927 groups**, including **4,942 public ads / 4,914 public groups**. It added **100 ads**, recorded **60 numeric asking-price changes** (42 decreases, 18 increases), and refreshed details for **302 distinct ads**. No previously tracked ads changed to seller-reported sold.

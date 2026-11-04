@@ -1,0 +1,21 @@
+{
+  "checkedAt": "2026-11-04T18:19:56.346Z",
+  "status": "passed",
+  "publicAds": 4942,
+  "publicGroups": 4914,
+  "generatedAt": "2026-11-04T18:18:54.352Z",
+  "detailChunks": 50,
+  "staticFilesScanned": 284,
+  "configuredSecretsTested": 1,
+  "snapshotSha256": "6552b72c1789f213e4f7c250d23b38dae4214d9a03b28f236ca89d24019f927b",
+  "catalogSha256": "33b3b089f9c09e8b7da660d496632db3f66dfa046ef2d7b2d9742a357c6b632f",
+  "travelSha256": "41d6a534c0cb24fd2d8b969e38eec7f370bd54ea37b41915b0ad71f9408d3de4",
+  "checks": [
+    "Exact public redaction and observation dates against canonical database",
+    "Full/compact/detail data parity and content hashes",
+    "No obsolete detail chunks",
+    "Positive or unknown asks",
+    "Root and project Pages data copies match",
+    "Configured credentials absent from both static outputs"
+  ]
+}

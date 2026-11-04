@@ -73,3 +73,7 @@ Application code, collection settings, dependencies and lockfile are unchanged. 
 ## Publication
 
 Published data commit [`7a1754f`](https://github.com/PNelsonFTP/ClassicCars/commit/7a1754fdf6dacae419c950d49520b5912bdd9103) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/41839112539) and [all six CI jobs](github-ci-2026-11-04.json). [Live verification](github-pages-2026-11-04.json) matched all 108 public JSON files and the catalog consumed by the browser. Search, listing details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passed without runtime errors, missing site assets or horizontal overflow. The closing documentation-only commit does not change published application/data bytes.
+
+## Later November 4 Volo link repair
+
+The earlier Volo 404 was investigated and resolved: stock V22466 was relisted under source ID 19445, matching six exact photographs and the year/model. The historical record now links to the verified current page. Original dates, prices, groups and source history were preserved; the old missing task remains historical evidence while the replacement continues normal collection. See the [repair receipt](volo-link-repair-2026-11-04.json). This follow-up does not change the original refresh statistics above.

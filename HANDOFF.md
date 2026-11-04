@@ -1,5 +1,11 @@
 # MuscleScout handoff — 1.1.0
 
+## November 4 Volo listing link repair
+
+Volo relisted the 1968 Camaro under ad ID `19445`; the former `19394` URL returns HTTP 404. The replacement returned HTTP 200 and matches stock `V22466`, year/model and six exact source photographs. The historical record now links to the [working Volo page](https://www.volocars.com/auto-sales/vehicles/19445/1968-chevrolet-camaro-heidts-r-d-car). Both records were already grouped together; no new ad, merge or removal was needed.
+
+The correction preserves original source IDs, observation dates, price history, existing groups and the private workspace. A separate link-correction audit records the verified destination. The obsolete source ID's missing task remains historical evidence; the replacement already has its own collection task. Public counts remain **4,942 ads / 4,914 groups**, and the approximate four-hour search remains **489 ads / 479 groups**. See the [repair receipt](docs/validation/volo-link-repair-2026-11-04.json), [public export check](docs/validation/public-export-review-volo-link-2026-11-04.json) and [static browser checks](docs/validation/static-review-volo-link-2026-11-04.json). Publication is recorded after live verification.
+
 ## November 4 inventory refresh
 
 Published data commit [`7a1754f`](https://github.com/PNelsonFTP/ClassicCars/commit/7a1754fdf6dacae419c950d49520b5912bdd9103) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/41839112539) and [all six CI jobs](docs/validation/github-ci-2026-11-04.json). [Live verification](docs/validation/github-pages-2026-11-04.json) matched all 108 public JSON files and the catalog consumed by the browser. Search, listing details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passed without runtime errors, missing site assets or horizontal overflow.
@@ -173,7 +179,7 @@ Setup preserves the database, environment/password, settings and workspace. The 
 
 ## Inventory and outstanding data work
 
-The latest retained inventory is the **November 4, 2026 refresh: 4,961 ads / 4,927 groups**, including **4,942 public ads / 4,914 public groups**. It added 100 ads, recorded 60 numeric asking-price changes and refreshed 302 distinct detail pages. The public export is dated `2026-11-04T13:30:44.579Z`; source observation dates remain separate from geographic generation. ClassicCars has 4,624 due detail tasks after bounded enrichment. Existing missing-page tasks and source-access restrictions remain open; see the [dated comparison](docs/validation/refresh-2026-11-04-comparison.md). Ads and groups are not verified unique physical vehicles. Updated road tables provide 1,548 estimated ads from 149 city routes; default approximate four-hour shopping returns 489 ads / 479 groups, including 165 near-limit ads.
+The latest retained inventory is the **November 4, 2026 refresh: 4,961 ads / 4,927 groups**, including **4,942 public ads / 4,914 public groups**. It added 100 ads, recorded 60 numeric asking-price changes and refreshed 302 distinct detail pages. The public export is dated `2026-11-04T18:18:54.352Z` after the verified Volo link correction; source observation dates remain separate from geographic generation. ClassicCars has 4,624 due detail tasks after bounded enrichment. Existing missing-page tasks and source-access restrictions remain open; see the [dated comparison](docs/validation/refresh-2026-11-04-comparison.md). Ads and groups are not verified unique physical vehicles. Updated road tables provide 1,548 estimated ads from 149 city routes; default approximate four-hour shopping returns 489 ads / 479 groups, including 165 near-limit ads.
 
 The October 19 collection finished through the CLI. Both root and `/ClassicCars` exports and a private database/environment backup are retained. Process state must be checked at the time of use; historical refresh reports do not prove that a worker is currently running or stopped. Earlier dated results follow.
 
