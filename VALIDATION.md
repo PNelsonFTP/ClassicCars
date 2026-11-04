@@ -1,5 +1,13 @@
 # Validation — 1.1.0
 
+## November 4 inventory refresh — locally verified
+
+The November 4 refresh retains **4,961 ads / 4,927 groups**, including **4,942 public ads / 4,914 public groups**. It added **100 ads**, recorded **60 numeric asking-price changes** (42 decreases, 18 increases), and refreshed details for **302 distinct ads**. No previously tracked ads changed to seller-reported sold.
+
+Strict TypeScript, 305 unit tests / 29 files, 20 desktop/mobile browser tests, isolated release smoke, both static exports, browser export checks, SQLite integrity and the seven-report SBOM chain pass. [Public export verification](docs/validation/public-export-review-2026-11-04.json) confirms canonical redaction, dates, content-addressed detail chunks, matching built data and configured credential exclusion. [Travel verification](docs/validation/travel-refresh-2026-11-04.json) confirms 149 city routes and 1,548 estimated ads. Default approximate four-hour results contain 489 ads / 479 groups; excluding near-limit results gives 324 ads / 322 groups; strict reported-vehicle routes return 194 ads.
+
+See the [refresh report](docs/validation/refresh-2026-11-04-comparison.md) and [static browser receipt](docs/validation/static-review-2026-11-04.json). Required backups and original evidence are retained. No ingest runs, collection leases or task-owned test/router listeners remain active at wind down. Live publication is recorded separately in [delivery status](docs/DELIVERY.md).
+
 ## October 30 inventory refresh — verified live
 
 The October 30 refresh retains **4,861 ads / 4,831 groups**, including **4,842 public ads / 4,818 public groups**. It added **124 ads**, recorded **125 numeric asking-price changes** (91 decreases, 34 increases), and refreshed details for **301 distinct ads**. **2 previously tracked ads** are newly seller-reported sold.

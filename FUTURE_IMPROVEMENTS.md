@@ -1,5 +1,11 @@
 # Future improvements and acceptance status
 
+## November 4 inventory refresh
+
+The November 4 refresh retains **4,961 ads / 4,927 groups**, including **4,942 public ads / 4,914 public groups**. It added **100 ads**, recorded **60 numeric asking-price changes** (42 decreases, 18 increases), and refreshed details for **302 distinct ads**. No previously tracked ads changed to seller-reported sold.
+
+The [refresh report](docs/validation/refresh-2026-11-04-comparison.md) records configured-source coverage, 4,624 due ClassicCars detail tasks and retained access/missing-page limits. One Volo detail URL newly returned HTTP 404 and is held for review without a sale inference. Updated road tables provide 1,548 estimated ads from 149 city routes; default approximate four-hour shopping returns 489 ads / 479 groups, including 165 near-limit ads. The refresh fetched catalogs first, then used separate freshness-aware detail passes to reduce unnecessary repeat requests. The earlier same-day task-selection efficiency follow-up remains a code-level review item. Cross-listing identity, source permissions, unsupported origins/destinations and exact vehicle-location uncertainty remain open. Application code, dependencies and collection settings are unchanged.
+
 ## October 30 inventory refresh
 
 The October 30 refresh retains **4,861 ads / 4,831 groups**, including **4,842 public ads / 4,818 public groups**. It added **124 ads**, recorded **125 numeric asking-price changes** (91 decreases, 34 increases), and refreshed details for **301 distinct ads**. **2 previously tracked ads** are newly seller-reported sold.
