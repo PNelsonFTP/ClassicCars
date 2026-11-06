@@ -1,0 +1,26 @@
+{
+  "verifiedAt": "2026-11-06T13:25:36.271Z",
+  "checks": [
+    {
+      "base": "/",
+      "runtimeErrors": 0,
+      "missingLocalAssets": 0,
+      "realImageLoaded": true,
+      "realRoadEstimateDisplayed": true,
+      "cityZipLookup": true,
+      "approximateTravelLimit": true
+    },
+    {
+      "base": "/ClassicCars",
+      "runtimeErrors": 0,
+      "missingLocalAssets": 0,
+      "realImageLoaded": true,
+      "realRoadEstimateDisplayed": true,
+      "cityZipLookup": true,
+      "approximateTravelLimit": true
+    },
+    {
+      "storage": "root/subpath snapshot workspaces isolated; separate app sentinel preserved"
+    }
+  ]
+}

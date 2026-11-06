@@ -6,6 +6,12 @@ The October 21 update adds **about-four-hour road travel**, city/ZIP home contro
 
 Documentation and approved cleanup completed October 20, 2026. Inventory at that cleanup remained the October 19 export. See the [full project review](docs/PROJECT_REVIEW_2026-10-20.md) and [cleanup results](docs/CLEANUP_RESULTS_2026-10-20.md): High/Medium candidates were cleaned, required backup copies and all Low files preserved, and both static builds, 276 unit tests and 18 browser tests passed. No commit or publication was performed during that cleanup turn.
 
+## November 6 inventory refresh
+
+The November 6 refresh retains **5,019 ads / 4,985 groups**, including **5,000 public ads / 4,972 public groups**. It added **58 ads**, recorded **50 numeric asking-price changes** (46 decreases, 4 increases), and refreshed details for **306 distinct ads**. **1 previously tracked ad** is newly seller-reported sold.
+
+The configured scan refreshed 95 catalog pages and observed 3,125 distinct ads. Updated road tables provide 1,555 estimated ads from 149 city routes; default approximate four-hour shopping returns 496 ads / 486 groups, including 168 near-limit ads. Restricted sources, missing detail pages and remaining enrichment are recorded in the [dated refresh report](docs/validation/refresh-2026-11-06-comparison.md). No sale is inferred from an absent page.
+
 ## November 4 Volo listing link repair
 
 Volo relisted the 1968 Camaro under ad ID `19445`; the former `19394` URL returns HTTP 404. The replacement returned HTTP 200 and matches stock `V22466`, year/model and six exact source photographs. The historical record now links to the [working Volo page](https://www.volocars.com/auto-sales/vehicles/19445/1968-chevrolet-camaro-heidts-r-d-car). Both records were already grouped together; no new ad, merge or removal was needed.
@@ -118,7 +124,7 @@ A personal classic-car shopping workspace for Mustangs, Camaros and Corvettes. N
 
 Version **1.1.0** implements the 19-item reliability and product backlog: durable collection/jobs, evidence-ranked duplicate review, group-aware alerts, shared service budgets, provenance/reset, live snapshot aging, permission-aware feeds, compact catalogs, release checks and validated SBOMs. The [implementation map](docs/IMPROVEMENTS_STATUS.md) records every item and its remaining real-world acceptance work.
 
-The latest retained inventory is the **November 4, 2026 refresh: 4,961 ads / 4,927 groups**, including **4,942 public ads / 4,914 public groups**. It added 100 ads, recorded 60 numeric asking-price changes and refreshed 302 distinct detail pages. The public export is dated `2026-11-04T18:18:54.352Z` after the verified Volo link correction; source observation dates remain separate from geographic generation. ClassicCars has 4,624 due detail tasks after bounded enrichment. Existing missing-page tasks and source-access restrictions remain open; see the [dated comparison](docs/validation/refresh-2026-11-04-comparison.md). Ads and groups are not verified unique physical vehicles. Updated road tables provide 1,548 estimated ads from 149 city routes; default approximate four-hour shopping returns 489 ads / 479 groups, including 165 near-limit ads.
+The latest retained inventory is the **November 6, 2026 refresh: 5,019 ads / 4,985 groups**, including **5,000 public ads / 4,972 public groups**. It added 58 ads, recorded 50 numeric asking-price changes and refreshed 306 distinct detail pages. The public export is dated `2026-11-06T13:24:46.796Z`; source observation dates remain separate from geographic generation. ClassicCars has 4,678 due detail tasks after bounded enrichment. Existing missing-page tasks and source-access restrictions remain open; see the [dated comparison](docs/validation/refresh-2026-11-06-comparison.md). Ads and groups are not verified unique physical vehicles. Updated road tables provide 1,555 estimated ads from 149 city routes; default approximate four-hour shopping returns 496 ads / 486 groups, including 168 near-limit ads.
 
 The [September 8 release scan](docs/validation/inventory-full-scan.json) remains dated historical evidence: 93 catalog pages, 3,139 retained ads and 3,120 public ads. The new refresh does not redate earlier platform, Docker, SBOM or advisory checks.
 

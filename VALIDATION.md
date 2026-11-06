@@ -1,5 +1,13 @@
 # Validation — 1.1.0
 
+## November 6 inventory refresh — locally verified
+
+The November 6 refresh retains **5,019 ads / 4,985 groups**, including **5,000 public ads / 4,972 public groups**. It added **58 ads**, recorded **50 numeric asking-price changes** (46 decreases, 4 increases), and refreshed details for **306 distinct ads**. **1 previously tracked ad** is newly seller-reported sold.
+
+Strict TypeScript, 305 unit tests / 29 files, 20 desktop/mobile browser tests, isolated release smoke, both static exports, browser export checks, SQLite integrity and the seven-report SBOM chain pass. [Public export verification](docs/validation/public-export-review-2026-11-06.json) confirms canonical redaction, dates, content-addressed detail chunks, matching built data and configured credential exclusion. [Travel verification](docs/validation/travel-refresh-2026-11-06.json) confirms 149 city routes and 1,555 estimated ads. Default approximate four-hour results contain 496 ads / 486 groups; excluding near-limit results gives 328 ads / 326 groups; strict reported-vehicle routes return 194 ads.
+
+See the [refresh report](docs/validation/refresh-2026-11-06-comparison.md) and [static browser receipt](docs/validation/static-review-2026-11-06.json). Required backups and original evidence are retained. No ingest runs, collection leases or task-owned test/router listeners remain active at wind down. Live publication is recorded separately in [delivery status](docs/DELIVERY.md).
+
 ## November 4 Volo link repair — verified live
 
 The [repair receipt](docs/validation/volo-link-repair-2026-11-04.json) confirms HTTP 404 → HTTP 200 replacement matching stock/year/model and six identical source photographs. Exactly one canonical payload changed; all other listing payloads, historical observations, prices, source dates, groups, settings and private workspace were preserved. No inventory was added or removed. SQLite integrity passes.

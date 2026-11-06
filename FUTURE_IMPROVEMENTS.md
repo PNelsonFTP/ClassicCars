@@ -1,5 +1,11 @@
 # Future improvements and acceptance status
 
+## November 6 inventory refresh
+
+The November 6 refresh retains **5,019 ads / 4,985 groups**, including **5,000 public ads / 4,972 public groups**. It added **58 ads**, recorded **50 numeric asking-price changes** (46 decreases, 4 increases), and refreshed details for **306 distinct ads**. **1 previously tracked ad** is newly seller-reported sold.
+
+The [refresh report](docs/validation/refresh-2026-11-06-comparison.md) records configured-source coverage, 4,678 due ClassicCars detail tasks and retained access/missing-page limits. Updated road tables provide 1,555 estimated ads from 149 city routes; default approximate four-hour shopping returns 496 ads / 486 groups, including 168 near-limit ads. The refresh fetched catalogs first, then used separate freshness-aware detail passes to reduce unnecessary repeat requests. The earlier same-day task-selection efficiency follow-up remains a code-level review item. Cross-listing identity, source permissions, unsupported origins/destinations and exact vehicle-location uncertainty remain open. Application code, dependencies and collection settings are unchanged.
+
 ## November 4 Volo listing link repair
 
 Volo relisted the 1968 Camaro under ad ID `19445`; the former `19394` URL returns HTTP 404. The replacement returned HTTP 200 and matches stock `V22466`, year/model and six exact source photographs. The historical record now links to the [working Volo page](https://www.volocars.com/auto-sales/vehicles/19445/1968-chevrolet-camaro-heidts-r-d-car). Both records were already grouped together; no new ad, merge or removal was needed.
