@@ -71,3 +71,7 @@ The previously queued macOS check for the November 4 Volo link correction subseq
 Application code, collection settings, dependencies and lockfile are unchanged. Baselines, raw seller evidence, credentials, databases and recovery copies remain private and ignored. The public snapshot excludes the configured restricted observations.
 
 [Aggregate refresh evidence](refresh-2026-11-06.json). Publication results are recorded separately in [delivery status](../DELIVERY.md).
+
+## Publication
+
+Published data commit [`afc5944`](https://github.com/PNelsonFTP/ClassicCars/commit/afc594426cf9aa583b541e94a217f2e3448187e8) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/42225606472) and [all six CI jobs](github-ci-2026-11-06.json). [Live verification](github-pages-2026-11-06.json) matched all 108 public JSON files and the catalog consumed by the browser. Search, listing details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passed without runtime errors, missing site assets or horizontal overflow. The closing documentation-only commit does not change published application/data bytes.
