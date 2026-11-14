@@ -1,5 +1,11 @@
 # Future improvements and acceptance status
 
+## November 14 inventory refresh
+
+The November 14 refresh retains **5,211 ads / 5,175 groups**, including **5,192 public ads / 5,162 public groups**. It added **192 ads**, recorded **275 numeric asking-price changes** (139 decreases, 136 increases), and refreshed details for **313 distinct ads**. **2 previously tracked ads** are newly seller-reported sold.
+
+The [refresh report](docs/validation/refresh-2026-11-14-comparison.md) records configured-source coverage, 4,863 due ClassicCars detail tasks and retained access/missing-page limits. Updated road tables provide 1,602 estimated ads from 150 city routes; default approximate four-hour shopping returns 486 ads / 476 groups, including 169 near-limit ads. The refresh fetched catalogs first, then used separate freshness-aware detail passes to reduce unnecessary repeat requests. The earlier same-day task-selection efficiency follow-up remains a code-level review item. Cross-listing identity, source permissions, unsupported origins/destinations and exact vehicle-location uncertainty remain open. Application code, dependencies and collection settings are unchanged.
+
 ## November 6 inventory refresh
 
 The November 6 refresh retains **5,019 ads / 4,985 groups**, including **5,000 public ads / 4,972 public groups**. It added **58 ads**, recorded **50 numeric asking-price changes** (46 decreases, 4 increases), and refreshed details for **306 distinct ads**. **1 previously tracked ad** is newly seller-reported sold.
