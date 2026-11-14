@@ -2,6 +2,8 @@
 
 ## November 14 inventory refresh
 
+Published data commit [`963ffe8`](https://github.com/PNelsonFTP/ClassicCars/commit/963ffe89d0a7a528e88e02b1c40d56f5e1a25586) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/43606208717) and [all six CI jobs](docs/validation/github-ci-2026-11-14.json). [Live verification](docs/validation/github-pages-2026-11-14.json) matched all 110 public JSON files and the catalog consumed by the browser. Search, listing details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passed without runtime errors, missing site assets or horizontal overflow.
+
 The November 14 refresh retains **5,211 ads / 5,175 groups**, including **5,192 public ads / 5,162 public groups**. It added **192 ads**, recorded **275 numeric asking-price changes** (139 decreases, 136 increases), and refreshed details for **313 distinct ads**. **2 previously tracked ads** are newly seller-reported sold.
 
 The configured scan refreshed 96 catalog pages and observed 3,166 distinct ads. Updated road tables provide 1,602 estimated ads from 150 city routes; default approximate four-hour shopping returns 486 ads / 476 groups, including 169 near-limit ads. Restricted sources, missing detail pages and remaining enrichment are recorded in the [dated refresh report](docs/validation/refresh-2026-11-14-comparison.md). No sale is inferred from an absent page.

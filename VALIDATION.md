@@ -1,12 +1,12 @@
 # Validation — 1.1.0
 
-## November 14 inventory refresh — locally verified
+## November 14 inventory refresh — verified live
 
 The November 14 refresh retains **5,211 ads / 5,175 groups**, including **5,192 public ads / 5,162 public groups**. It added **192 ads**, recorded **275 numeric asking-price changes** (139 decreases, 136 increases), and refreshed details for **313 distinct ads**. **2 previously tracked ads** are newly seller-reported sold.
 
 Strict TypeScript, 305 unit tests / 29 files, 20 desktop/mobile browser tests, isolated release smoke, both static exports, browser export checks, SQLite integrity and the seven-report SBOM chain pass. [Public export verification](docs/validation/public-export-review-2026-11-14.json) confirms canonical redaction, dates, content-addressed detail chunks, matching built data and configured credential exclusion. [Travel verification](docs/validation/travel-refresh-2026-11-14.json) confirms 150 city routes and 1,602 estimated ads. Default approximate four-hour results contain 486 ads / 476 groups; excluding near-limit results gives 317 ads / 316 groups; strict reported-vehicle routes return 187 ads.
 
-See the [refresh report](docs/validation/refresh-2026-11-14-comparison.md) and [static browser receipt](docs/validation/static-review-2026-11-14.json). Required backups and original evidence are retained. No ingest runs, collection leases or task-owned test/router listeners remain active at wind down. Live publication is recorded separately in [delivery status](docs/DELIVERY.md).
+See the [refresh report](docs/validation/refresh-2026-11-14-comparison.md) and [static browser receipt](docs/validation/static-review-2026-11-14.json). Required backups and original evidence are retained. No ingest runs, collection leases or task-owned test/router listeners remain active at wind down. Published data commit [`963ffe8`](https://github.com/PNelsonFTP/ClassicCars/commit/963ffe89d0a7a528e88e02b1c40d56f5e1a25586) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/43606208717) and [all six CI jobs](docs/validation/github-ci-2026-11-14.json). [Live verification](docs/validation/github-pages-2026-11-14.json) matched all 110 public JSON files and the catalog consumed by the browser. Search, listing details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passed without runtime errors, missing site assets or horizontal overflow. The closing documentation commit does not change deployed application/data bytes.
 
 ## November 6 inventory refresh — verified live
 
