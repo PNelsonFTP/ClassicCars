@@ -1,6 +1,6 @@
 # Validation — 1.1.0
 
-## November 23 inventory refresh — locally verified
+## November 23 inventory refresh — verified live
 
 [Browser verification follow-up](docs/validation/browser-readiness-2026-11-23.md): corrected a transient-state assertion in the existing mobile smoke test; all 20 desktop/mobile checks pass locally.
 
@@ -8,7 +8,7 @@ The November 23 refresh retains **5,382 ads / 5,346 groups**, including **5,363 
 
 Strict TypeScript, 305 unit tests / 29 files, 20 desktop/mobile browser tests, isolated release smoke, both static exports, browser export checks, SQLite integrity and the seven-report SBOM chain pass. [Public export verification](docs/validation/public-export-review-2026-11-23.json) confirms canonical redaction, dates, content-addressed detail chunks, matching built data and configured credential exclusion. [Travel verification](docs/validation/travel-refresh-2026-11-23.json) confirms 155 city routes and 1,649 estimated ads. Default approximate four-hour results contain 487 ads / 481 groups; excluding near-limit results gives 320 ads / 319 groups; strict reported-vehicle routes return 180 ads.
 
-See the [refresh report](docs/validation/refresh-2026-11-23-comparison.md) and [static browser receipt](docs/validation/static-review-2026-11-23.json). Required backups and original evidence are retained. No ingest runs, collection leases or task-owned test/router listeners remain active at wind down. Live publication is recorded separately in [delivery status](docs/DELIVERY.md).
+See the [refresh report](docs/validation/refresh-2026-11-23-comparison.md) and [static browser receipt](docs/validation/static-review-2026-11-23.json). Required backups and original evidence are retained. No ingest runs, collection leases or task-owned test/router listeners remain active at wind down. Published data commit [`f99c923`](https://github.com/PNelsonFTP/ClassicCars/commit/f99c92361f553d7c87b6d4831596163a8c308265) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/45189379325) and [five completed CI jobs](docs/validation/github-ci-2026-11-23.json). The macOS 15 job remains queued as of 2026-11-23T14:03:34.425609+00:00. [Live verification](docs/validation/github-pages-2026-11-23.json) matched all 112 public JSON files and the catalog consumed by the browser. Search, listing details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passed without runtime errors, missing site assets or horizontal overflow. The closing documentation commit does not change deployed application/data bytes.
 
 ## November 14 inventory refresh — verified live
 

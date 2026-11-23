@@ -75,3 +75,7 @@ Application code, collection settings, dependencies and lockfile are unchanged. 
 ## Browser verification follow-up
 
 The first remote mobile smoke check expected a transient empty-results heading after inventory had loaded. The existing browser test now waits for a real result card. Local desktop/mobile checks passed all 20 tests. The live Volo-link check now explicitly includes older observations because the replacement is seller-reported sold. See [verification follow-up](browser-readiness-2026-11-23.md). Application behavior and seller status were preserved.
+
+## Publication
+
+Published data commit [`f99c923`](https://github.com/PNelsonFTP/ClassicCars/commit/f99c92361f553d7c87b6d4831596163a8c308265) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/45189379325) and [five completed CI jobs](github-ci-2026-11-23.json). The macOS 15 job remains queued as of 2026-11-23T14:03:34.425609+00:00. [Live verification](github-pages-2026-11-23.json) matched all 112 public JSON files and the catalog consumed by the browser. Search, listing details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passed without runtime errors, missing site assets or horizontal overflow. The closing documentation-only commit does not change published application/data bytes.
