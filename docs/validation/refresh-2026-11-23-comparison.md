@@ -71,3 +71,7 @@ The previously queued macOS check for the November 4 Volo link correction subseq
 Application code, collection settings, dependencies and lockfile are unchanged. Baselines, raw seller evidence, credentials, databases and recovery copies remain private and ignored. The public snapshot excludes the configured restricted observations.
 
 [Aggregate refresh evidence](refresh-2026-11-23.json). Publication results are recorded separately in [delivery status](../DELIVERY.md).
+
+## Browser verification follow-up
+
+The first remote mobile smoke check expected a transient empty-results heading after inventory had loaded. The existing browser test now waits for a real result card. Local desktop/mobile checks passed all 20 tests. The live Volo-link check now explicitly includes older observations because the replacement is seller-reported sold. See [verification follow-up](browser-readiness-2026-11-23.md). Application behavior and seller status were preserved.

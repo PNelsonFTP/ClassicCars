@@ -11,11 +11,9 @@ test("real snapshot search, review, shortlist, notes, comparison and reload pers
   await expect(
     page.getByRole("switch", { name: "Include specialty Mustangs" }),
   ).not.toBeChecked();
-  await expect(
-    page.getByRole("heading", {
-      name: "The right car starts with an honest search.",
-    }),
-  ).toBeVisible();
+  await expect(page.locator(".car-card").first()).toBeVisible({
+    timeout: 30000,
+  });
   await page.getByRole("button", { name: "Review cars", exact: true }).click();
   await expect(page.locator(".car-card").first()).toBeVisible();
   await page.getByRole("textbox", { name: "Search cars" }).fill("Camero");
