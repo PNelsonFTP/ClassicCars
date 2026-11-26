@@ -71,3 +71,7 @@ The previously queued November 23 macOS check subsequently completed successfull
 Application code, collection settings, dependencies and lockfile are unchanged. Baselines, raw seller evidence, credentials, databases and recovery copies remain private and ignored. The public snapshot excludes the configured restricted observations.
 
 [Aggregate refresh evidence](refresh-2026-11-26.json). Publication results are recorded separately in [delivery status](../DELIVERY.md).
+
+## Publication
+
+Published data commit [`a399208`](https://github.com/PNelsonFTP/ClassicCars/commit/a399208bbac7ca32a11ec95112b96fc1fd76ba43) passed the [Pages deployment](https://github.com/PNelsonFTP/ClassicCars/actions/runs/45843066732) and [all six CI jobs](github-ci-2026-11-26.json). [Live verification](github-pages-2026-11-26.json) matched all 113 public JSON files and the catalog consumed by the browser. Search, listing details, real images, city/ZIP lookup, travel filters and 1440/390/375px layouts passed without runtime errors, missing site assets or horizontal overflow. The closing documentation-only commit does not change published application/data bytes.
