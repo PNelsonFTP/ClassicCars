@@ -1,0 +1,39 @@
+{
+  "verifiedAt": "2026-11-26T14:49:36.228Z",
+  "exportGeneratedAt": "2026-11-26T14:49:32.419Z",
+  "latestInventoryObservation": "2026-11-26T14:49:22.052Z",
+  "publicAds": 5450,
+  "origins": [
+    "Wheaton, IL"
+  ],
+  "roadGraph": {
+    "version": "29160383e0b6755e298daaea8bb3d44cfbbdb4239e913ccb8eaafa38dec19c6a",
+    "sourceUrl": "https://download.geofabrik.de/north-america/us-midwest-latest.osm.pbf",
+    "observedAt": "2026-10-20T20:23:47Z",
+    "profile": "car-no-ferries-us-v1",
+    "region": "US Midwest",
+    "attribution": "© OpenStreetMap contributors. Traffic-free OSRM city routes; ferries excluded; US regional graph.",
+    "licenseUrl": "https://opendatacommons.org/licenses/odbl/1-0/"
+  },
+  "places": 109723,
+  "routedPlaces": 156,
+  "unresolvedPlaces": 360,
+  "quality": {
+    "vehicleCities": 1001,
+    "advertisedCities": 5443,
+    "ambiguous": 145,
+    "offsite": 737,
+    "estimates": 1671,
+    "within": 495,
+    "borderline": 242,
+    "unknown": 3779,
+    "nearbyAwaitingDetail": 170
+  },
+  "defaultResults": 497,
+  "detailChunks": 55,
+  "publicFiles": 114,
+  "publicBytes": 74235863,
+  "travelSha256": "ed45791d0a9a92ff8098ecef8b4ac0b9d6e864d1aa70253d1f517f24d138b1e9",
+  "privacyScan": true,
+  "catalogParity": true
+}

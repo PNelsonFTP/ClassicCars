@@ -1,5 +1,11 @@
 # MuscleScout 1.1.0 delivery
 
+## November 26 inventory refresh
+
+The November 26 refresh retains **5,469 ads / 5,432 groups**, including **5,450 public ads / 5,419 public groups**. It added **87 ads**, recorded **70 numeric asking-price changes** (67 decreases, 3 increases), and refreshed details for **329 distinct ads**. **4 previously tracked ads** are newly seller-reported sold.
+
+The [refresh comparison](validation/refresh-2026-11-26-comparison.md), [public export audit](validation/public-export-review-2026-11-26.json), [travel verification](validation/travel-refresh-2026-11-26.json) and [static browser checks](validation/static-review-2026-11-26.json) record the verified data and exports. Updated road tables provide 1,671 estimated ads from 156 city routes; default approximate four-hour shopping returns 497 ads / 491 groups, including 172 near-limit ads. Private database/environment recovery pairs, raw evidence and road caches remain excluded from Git. Publication results are appended after deployment verification.
+
 ## November 23 inventory refresh
 
 The November 23 refresh retains **5,382 ads / 5,346 groups**, including **5,363 public ads / 5,333 public groups**. It added **171 ads**, recorded **161 numeric asking-price changes** (141 decreases, 20 increases), and refreshed details for **323 distinct ads**. **4 previously tracked ads** are newly seller-reported sold.
